@@ -17,16 +17,14 @@ function Header({ title, cta }: Props) {
   return (
     <div
       class={clx(
-        "flex justify-between items-center gap-2",
-        "px-5 sm:px-0",
+        "flex items-center gap-2",
+        "px-5 lg:px-0 pt-6 lg:pt-0",
+        title === "Mais vendidos"
+          ? "justify-center lg:justify-start"
+          : "justify-between lg:justify-center",
       )}
     >
-      <span class="text-2xl sm:text-3xl font-semibold">{title}</span>
-      {cta && (
-        <a class="text-sm font-medium text-primary" href={cta}>
-          See all
-        </a>
-      )}
+      <h2 class="text-[28px] lg:text-2x1 sm:text-3xl font-semibold">{title}</h2>
     </div>
   );
 }
@@ -52,7 +50,7 @@ function Container({ class: _class, ...props }: JSX.IntrinsicElements["div"]) {
     <div
       {...props}
       class={clx(
-        "container flex flex-col gap-4 sm:gap-6 w-full py-5 sm:py-10",
+        " lg:max-w-[1130px] mx-auto w-full",
         _class?.toString(),
       )}
     />

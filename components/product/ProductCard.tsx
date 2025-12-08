@@ -68,24 +68,29 @@ function ProductCard({
     },
   });
 
-  //Added it to check the variant name in the SKU Selector later, so it doesn't render the SKU to "shoes size" in the Product Card
   const firstVariantName = firstSkuVariations?.[0]?.toLowerCase();
   const shoeSizeVariant = "shoe size";
+
+  const collectionTag = product?.additionalProperty?.filter((item) =>
+    item?.description === "highlight"
+  );
 
   return (
     <div
       {...event}
-      class={clx("card card-compact group text-sm", _class)}
+      class={clx(
+        "card card-compact group text-sm lg:max-w-ft-210 border border-gray-15 rounded-lg",
+        _class,
+      )}
+      data-cy={`product-card-${title?.replace(/\s+/g, "-").toLowerCase()}`}
     >
       <figure
         class={clx(
           "relative bg-base-200",
           "rounded border border-transparent",
-          "group-hover:border-primary",
         )}
         style={{ aspectRatio: ASPECT_RATIO }}
       >
-        {/* Product Images */}
         <a
           href={relativeUrl}
           aria-label="view product"
@@ -96,6 +101,11 @@ function ProductCard({
             !inStock && "opacity-70",
           )}
         >
+          {collectionTag?.[0]?.value && (
+            <div class="hidden absolute top-0 bg-red-400 w-full items-center justify-center p-1 max-w-ft-106 h-6 rounded">
+              {collectionTag?.[0]?.value}
+            </div>
+          )}
           <Image
             src={front.url!}
             alt={front.alternateName}
@@ -107,7 +117,7 @@ function ProductCard({
               "rounded w-full",
               "col-span-full row-span-full",
             )}
-            sizes="(max-width: 640px) 50vw, 20vw"
+            sizes="(max-width: 160px) 50vw, 20vw"
             preload={preload}
             loading={preload ? "eager" : "lazy"}
             decoding="async"
@@ -130,52 +140,33 @@ function ProductCard({
           />
         </a>
 
-        {/* Wishlist button */}
-        <div class="absolute top-0 left-0 w-full flex items-center justify-between">
-          {/* Notify Me */}
-          <span
-            class={clx(
-              "text-sm/4 font-normal text-black bg-error bg-opacity-15 text-center rounded-badge px-2 py-1",
-              inStock && "opacity-0",
-            )}
-          >
-            Notify me
-          </span>
-
-          {/* Discounts */}
-          <span
-            class={clx(
-              "text-sm/4 font-normal text-black bg-primary bg-opacity-15 text-center rounded-badge px-2 py-1",
-              (percent < 1 || !inStock) && "opacity-0",
-            )}
-          >
-            {percent} % off
-          </span>
-        </div>
-
-        <div class="absolute bottom-0 right-0">
+        <div class="hidden absolute bottom-0 right-0">
           <WishlistButton item={item} variant="icon" />
         </div>
       </figure>
 
-      <a href={relativeUrl} class="pt-5">
-        <span class="font-medium">
+      <a href={relativeUrl} class="pt-3 px-ft-6">
+        <h3 class="text-base line-clamp-2 min-h-12">
           {title}
-        </span>
+        </h3>
 
-        <div class="flex gap-2 pt-2">
-          {listPrice && (
-            <span class="line-through font-normal text-gray-400">
+        <div
+          class={clx(
+            "flex gap-[2px] pt-3 flex-col min-h-[78px] pb-5 justify-end",
+            price === 0 ? "text-transparent" : "",
+          )}
+        >
+          {listPrice && listPrice !== price && (
+            <span class="line-through font-normal text-gray-400 text-xs">
               {formatPrice(listPrice, offers?.priceCurrency)}
             </span>
           )}
-          <span class="font-medium text-base-400">
+          <span class="font-bold text-lg text-black-5">
             {formatPrice(price, offers?.priceCurrency)}
           </span>
         </div>
       </a>
 
-      {/* SKU Selector */}
       {variants.length > 1 && firstVariantName !== shoeSizeVariant && (
         <ul class="flex items-center justify-start gap-2 pt-4 pb-1 pl-1 overflow-x-auto">
           {variants.map(([value, link]) => [value, relative(link)] as const)
@@ -197,7 +188,7 @@ function ProductCard({
 
       <div class="flex-grow" />
 
-      <div>
+      <div class="p-1">
         {inStock
           ? (
             <AddToCartButton
@@ -214,18 +205,17 @@ function ProductCard({
             />
           )
           : (
-            <a
-              href={relativeUrl}
+            <div
               class={clx(
                 "btn",
-                "btn-outline justify-start border-none !text-sm !font-medium px-0 no-animation w-full",
-                "hover:!bg-transparent",
-                "disabled:!bg-transparent disabled:!opacity-75",
-                "btn-error hover:!text-error disabled:!text-error",
+                "border-none text-sm no-animation w-full",
+                "disabled:!bg-transparent",
+                "hover:!text-error disabled:!text-error",
+                "flex w-full max-w-ft-152 justify-center rounded-lg mx-auto bg-gray-30 font-Inter text-black-15 font-medium text-base px-0 lg:text-base",
               )}
             >
-              Sold out
-            </a>
+              Produto Indisponível
+            </div>
           )}
       </div>
     </div>

@@ -5,7 +5,7 @@ export interface Props {
 }
 function Coupon({ coupon }: Props) {
   return (
-    <div class="flex justify-between items-center px-4">
+    <div class="justify-between items-center px-4 hidden">
       <span class="text-sm">Discount coupon</span>
 
       <button

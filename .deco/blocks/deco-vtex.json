@@ -1,1 +1,18 @@
-{}
+{
+  "__resolveType": "site/apps/deco/vtex.ts",
+  "setRefreshToken": false,
+  "defaultSegment": {
+    "channelPrivacy": "public"
+  },
+  "platform": "vtex",
+  "account": "vicbeaute",
+  "publicUrl": "https://vicbeaute.myvtex.com/",
+  "salesChannel": "1",
+  "cachedSearchTerms": {
+    "terms": {
+      "searches": [],
+      "products": null
+    },
+    "extraTerms": []
+  }
+}

@@ -3,7 +3,7 @@ import Image from "apps/website/components/Image.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { formatPrice } from "../../sdk/format.ts";
 import Icon from "../ui/Icon.tsx";
-import QuantitySelector from "../ui/QuantitySelector.tsx";
+import QuantitySelector from "../../islands/QuantitySelectorMinicartInteractive.tsx";
 import { useScript } from "@deco/deco/hooks";
 export type Item = AnalyticsItem & {
   listPrice: number;
@@ -33,52 +33,56 @@ function CartItem({ item, index, locale, currency }: Props) {
     <fieldset
       // deno-lint-ignore no-explicit-any
       data-item-id={(item as any).item_id}
-      class="grid grid-rows-1 gap-2"
+      class="grid grid-rows-1 gap-2 border-b py-3"
       style={{ gridTemplateColumns: "auto 1fr" }}
     >
       <Image
         alt={name}
         src={image}
-        style={{ aspectRatio: "108 / 150" }}
-        width={108}
-        height={150}
-        class="h-full object-contain"
+        width={90}
+        height={90}
+        class="object-contain"
       />
 
       {/* Info */}
-      <div class="flex flex-col gap-2">
+      <div class="flex flex-col justify-between">
         {/* Name and Remove button */}
-        <div class="flex justify-between items-center">
-          <legend>{name}</legend>
+        <div class="flex justify-between items-center lg:h-8">
+
+          <legend class="lg:text-[12px] text-[14px] text-black max-w-[182px] min-h-9 line-clamp-2">{name}</legend>
           <button
             class={clx(
               isGift && "hidden",
-              "btn btn-ghost btn-square no-animation",
+              "btn btn-ghost btn-square no-animation hover:bg-transparent",
             )}
             hx-on:click={useScript(removeItemHandler)}
           >
-            <Icon id="trash" size={24} />
+            <Icon id="trashnew" width={32} height={29} />
           </button>
         </div>
+        <div class="flex justify-between items-center lg:gap-0 h-[38px]">
 
         {/* Price Block */}
-        <div class="flex items-center gap-2">
-          <span class="line-through text-sm">
-            {formatPrice(listPrice, currency, locale)}
-          </span>
-          <span class="text-sm text-secondary">
+        <div class="flex items-start flex-col">
+          {listPrice > price && (
+            <span class="line-through text-sm">
+              {formatPrice(listPrice, currency, locale)}
+            </span>
+          )}
+          <span class="font-semibold text-[16px]">
             {isGift ? "Grátis" : formatPrice(price, currency, locale)}
           </span>
         </div>
 
         {/* Quantity Selector */}
-        <div class={clx(isGift && "hidden")}>
+        <div class={clx(isGift && "hidden", "max-w-[116px] w-full")}>
           <QuantitySelector
             min={0}
             max={QUANTITY_MAX_VALUE}
             value={quantity}
             name={`item::${index}`}
           />
+        </div>
         </div>
       </div>
     </fieldset>

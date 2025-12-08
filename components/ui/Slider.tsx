@@ -1,6 +1,7 @@
 import type { JSX } from "preact";
 import { clx } from "../../sdk/clx.ts";
 import { useScript } from "@deco/deco/hooks";
+
 function Dot({ index, ...props }: {
   index: number;
 } & JSX.IntrinsicElements["button"]) {
@@ -9,43 +10,77 @@ function Dot({ index, ...props }: {
       {...props}
       data-dot={index}
       aria-label={`go to slider item ${index}`}
-      class={clx("focus:outline-none group", props.class?.toString())}
+      class={clx(
+        "focus:outline-none group disabled:!bg-black disabled:!opacity-100 disabled:ring-2 disabled:ring-offset-2 bg-black-15 opacity-50 w-2 h-2 rounded-full transition-all duration-300 ring-custom",
+        props.class?.toString(),
+      )}
     />
   );
 }
+
 function Slider(props: JSX.IntrinsicElements["ul"]) {
-  return <ul data-slider {...props} />;
+  return (
+    <ul
+      data-slider
+      class={clx(
+        "flex snap-x snap-start scroll-x-mandatory overflow-x-scroll no-scrollbar",
+        "gap-4 xl:gap-0",
+        "lg:grid-cols-5 md:grid-cols-5",
+        props.class?.toString(),
+      )}
+      {...props}
+    />
+  );
 }
+
 function Item({ index, ...props }: JSX.IntrinsicElements["li"] & {
   index: number;
 }) {
-  return <li data-slider-item={index} {...props} />;
+  return (
+    <li
+      data-slider-item={index}
+      class={clx(
+        "md:min-w-[20%]",
+        "flex-grow-0 lg:flex-shrink-0 flex-shrink-0 md:flex-shrink-[unset]",
+        "snap-start",
+        props.class?.toString(),
+      )}
+      {...props}
+    />
+  );
 }
+
 function NextButton(props: JSX.IntrinsicElements["button"]) {
   return (
     <button
-      disabled
       data-slide="next"
       aria-label="Next item"
       {...props}
     />
   );
 }
+
 function PrevButton(props: JSX.IntrinsicElements["button"]) {
-  return (
-    <button disabled data-slide="prev" aria-label="Previous item" {...props} />
-  );
+  return <button data-slide="prev" aria-label="Previous item" {...props} />;
 }
+
 export interface Props {
   rootId: string;
   scroll?: "smooth" | "auto";
   interval?: number;
   infinite?: boolean;
+  /**
+   * @description Show dots for navigation
+   */
+  dots?: boolean;
+  /**
+   * @description Show arrows for navigation
+   */
+  arrows?: boolean;
 }
+
 const onLoad = ({ rootId, scroll, interval, infinite }: Props) => {
   function init() {
-    // Percentage of the item that has to be inside the container
-    // for it it be considered as inside the container
     const THRESHOLD = 0.6;
     const intersectionX = (element: DOMRect, container: DOMRect): number => {
       const delta = container.width / 1000;
@@ -63,9 +98,7 @@ const onLoad = ({ rootId, scroll, interval, infinite }: Props) => {
       }
       return element.width;
     };
-    // as any are ok in typeguard functions
     const isHTMLElement = (x: Element): x is HTMLElement =>
-      // deno-lint-ignore no-explicit-any
       typeof (x as any).offsetLeft === "number";
     const root = document.getElementById(rootId);
     const slider = root?.querySelector<HTMLElement>("[data-slider]");
@@ -73,6 +106,7 @@ const onLoad = ({ rootId, scroll, interval, infinite }: Props) => {
     const prev = root?.querySelector<HTMLElement>('[data-slide="prev"]');
     const next = root?.querySelector<HTMLElement>('[data-slide="next"]');
     const dots = root?.querySelectorAll<HTMLElement>("[data-dot]");
+
     if (!root || !slider || !items || items.length === 0) {
       console.warn(
         "Missing necessary slider attributes. It will not work as intended. Necessary elements:",
@@ -80,6 +114,7 @@ const onLoad = ({ rootId, scroll, interval, infinite }: Props) => {
       );
       return;
     }
+
     const getElementsInsideContainer = () => {
       const indices: number[] = [];
       const sliderRect = slider.getBoundingClientRect();
@@ -93,6 +128,7 @@ const onLoad = ({ rootId, scroll, interval, infinite }: Props) => {
       }
       return indices;
     };
+
     const goToItem = (to: number) => {
       const item = items.item(to);
       if (!isHTMLElement(item)) {
@@ -107,10 +143,10 @@ const onLoad = ({ rootId, scroll, interval, infinite }: Props) => {
         left: item.offsetLeft - slider.offsetLeft,
       });
     };
-    const onClickPrev = () => {
-      event?.stopPropagation();
+
+    const onClickPrev = (e: Event) => {
+      e.stopPropagation();
       const indices = getElementsInsideContainer();
-      // Wow! items per page is how many elements are being displayed inside the container!!
       const itemsPerPage = indices.length;
       const isShowingFirst = indices[0] === 0;
       const pageIndex = Math.floor(indices[indices.length - 1] / itemsPerPage);
@@ -118,21 +154,27 @@ const onLoad = ({ rootId, scroll, interval, infinite }: Props) => {
         isShowingFirst ? items.length - 1 : (pageIndex - 1) * itemsPerPage,
       );
     };
-    const onClickNext = () => {
-      event?.stopPropagation();
+
+    const onClickNext = (e: Event) => {
+      e.stopPropagation();
       const indices = getElementsInsideContainer();
-      // Wow! items per page is how many elements are being displayed inside the container!!
       const itemsPerPage = indices.length;
       const isShowingLast = indices[indices.length - 1] === items.length - 1;
       const pageIndex = Math.floor(indices[0] / itemsPerPage);
       goToItem(isShowingLast ? 0 : (pageIndex + 1) * itemsPerPage);
     };
+
+    prev?.addEventListener("click", onClickPrev);
+    next?.addEventListener("click", onClickNext);
+
     const observer = new IntersectionObserver(
       (elements) =>
         elements.forEach((e) => {
           const item = e.target.getAttribute("data-slider-item");
           const index = Number(item) || 0;
-          const dot = dots?.item(index);
+          const pageIndex = Math.floor(index / getElementsInsideContainer().length);
+          const dot = dots?.item(pageIndex);
+
           if (e.isIntersecting) {
             dot?.setAttribute("disabled", "");
           } else {
@@ -157,22 +199,31 @@ const onLoad = ({ rootId, scroll, interval, infinite }: Props) => {
         }),
       { threshold: THRESHOLD, root: slider },
     );
+
     items.forEach((item) => observer.observe(item));
+
     for (let it = 0; it < (dots?.length ?? 0); it++) {
-      dots?.item(it).addEventListener("click", () => goToItem(it));
+      dots?.item(it).addEventListener("click", () => {
+        const itemsPerPage = getElementsInsideContainer().length;
+        goToItem(it * itemsPerPage);
+      });
     }
+
     prev?.addEventListener("click", onClickPrev);
     next?.addEventListener("click", onClickNext);
+
     if (interval) {
       setInterval(onClickNext, interval);
     }
   }
+
   if (document.readyState === "complete") {
     init();
   } else {
     document.addEventListener("DOMContentLoaded", init);
   }
 };
+
 function JS({ rootId, scroll = "smooth", interval, infinite = false }: Props) {
   return (
     <script
@@ -183,9 +234,11 @@ function JS({ rootId, scroll = "smooth", interval, infinite = false }: Props) {
     />
   );
 }
+
 Slider.Dot = Dot;
 Slider.Item = Item;
 Slider.NextButton = NextButton;
 Slider.PrevButton = PrevButton;
 Slider.JS = JS;
+
 export default Slider;

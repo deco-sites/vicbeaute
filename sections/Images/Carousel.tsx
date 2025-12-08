@@ -1,11 +1,10 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
 import Icon from "../../components/ui/Icon.tsx";
-import Slider from "../../components/ui/Slider.tsx";
+import Slider from "../../components/product/SliderCarousel.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
-import { useDevice, useSetEarlyHints } from "@deco/deco/hooks";
 
 /**
  * @titleBy alt
@@ -13,52 +12,29 @@ import { useDevice, useSetEarlyHints } from "@deco/deco/hooks";
 export interface Banner {
   /** @description desktop otimized image */
   desktop: ImageWidget;
-
   /** @description mobile otimized image */
   mobile: ImageWidget;
-
   /** @description Image's alt text */
   alt: string;
-
   action?: {
     /** @description when user clicks on the image, go to this link */
     href: string;
-    /** @description Image text title */
-    title: string;
-    /** @description Image text subtitle */
-    subTitle: string;
-    /** @description Button label */
-    label: string;
   };
 }
 
 export interface Props {
   images?: Banner[];
-
-  /**
-   * @description Check this option when this banner is the biggest image on the screen for image optimizations
-   */
   preload?: boolean;
-
-  /**
-   * @title Autoplay interval
-   * @description time (in seconds) to start the carousel autoplay
-   */
   interval?: number;
+  arrows?: boolean;
+  dots?: boolean;
 }
 
 function BannerItem(
-  { image, lcp }: { image: Banner; lcp?: boolean },
+  { image, lcp, id }: { image: Banner; lcp?: boolean; id: string },
 ) {
-  const {
-    alt,
-    mobile,
-    desktop,
-    action,
-  } = image;
+  const { alt, mobile, desktop, action } = image;
   const params = { promotion_name: image.alt };
-  const setEarlyHint = useSetEarlyHints();
-  const device = useDevice();
 
   const selectPromotionEvent = useSendEvent({
     on: "click",
@@ -72,35 +48,11 @@ function BannerItem(
 
   return (
     <a
+      id={id}
       {...selectPromotionEvent}
       href={action?.href ?? "#"}
-      aria-label={action?.label}
-      class="relative block overflow-y-hidden w-full"
+      class="relative w-full overflow-hidden lg:pt-20 pt-14 pb-14 lg:pb-0"
     >
-      {action && (
-        <div
-          class={clx(
-            "absolute h-full w-full top-0 left-0",
-            "flex flex-col justify-center items-center",
-            "px-5 sm:px-0",
-            "sm:left-40 sm:items-start sm:max-w-96",
-          )}
-        >
-          <span class="text-7xl font-bold text-base-100">
-            {action.title}
-          </span>
-          <span class="font-normal text-base text-base-100 pt-4 pb-12">
-            {action.subTitle}
-          </span>
-          <button
-            type="button"
-            class="btn btn-primary btn-outline border-0 bg-base-100 min-w-[180px]"
-            aria-label={action.label}
-          >
-            {action.label}
-          </button>
-        </div>
-      )}
       <Picture preload={lcp} {...viewPromotionEvent}>
         <Source
           media="(max-width: 767px)"
@@ -108,91 +60,96 @@ function BannerItem(
           src={mobile}
           width={412}
           height={660}
-          setEarlyHint={device === "mobile" ? setEarlyHint : undefined}
         />
         <Source
           media="(min-width: 768px)"
           fetchPriority={lcp ? "high" : "auto"}
           src={desktop}
-          width={1440}
-          height={600}
-          setEarlyHint={device === "desktop" ? setEarlyHint : undefined}
-          sizes="100vw"
+          width={1920}
+          height={500}
         />
         <img
-          class="object-cover w-full h-full"
-          loading={lcp ? "eager" : "lazy"}
-          fetchpriority={lcp ? "high" : "auto"}
-          src={desktop}
-          alt={alt}
-        />
+  class="w-full mx-auto"
+  loading={lcp ? "eager" : "lazy"}
+  src={desktop}
+  alt={alt}
+  width={1920}
+  height={500}
+/>
       </Picture>
     </a>
   );
 }
 
-function Carousel({ images = [], preload, interval }: Props) {
-  const id = useId();
-
+function Buttons() {
   return (
-    <div
-      id={id}
-      class={clx(
-        "grid",
-        "grid-rows-[1fr_32px_1fr_64px]",
-        "grid-cols-[32px_1fr_32px] min-h-[660px]",
-        "sm:grid-cols-[112px_1fr_112px] sm:min-h-min",
-        "w-screen",
-      )}
-    >
-      <div class="col-span-full row-span-full">
-        <Slider class="carousel carousel-center w-full gap-6">
-          {images.map((image, index) => (
-            <Slider.Item index={index} class="carousel-item w-full">
-              <BannerItem image={image} lcp={index === 0 && preload} />
-            </Slider.Item>
-          ))}
-        </Slider>
-      </div>
-
+    <>
       <div class="hidden sm:flex items-center justify-center z-10 col-start-1 row-start-2">
         <Slider.PrevButton
-          class="btn btn-neutral btn-outline btn-circle no-animation btn-sm"
+          class="btn btn-neutral btn-outline btn-circle no-animation btn-sm border-none arrow-carousel"
           disabled={false}
         >
-          <Icon id="chevron-right" class="rotate-180" />
+          <Icon id="right-arrow-carousel" class="rotate-180" />
         </Slider.PrevButton>
       </div>
 
       <div class="hidden sm:flex items-center justify-center z-10 col-start-3 row-start-2">
         <Slider.NextButton
-          class="btn btn-neutral btn-outline btn-circle no-animation btn-sm"
+          class="btn btn-neutral btn-outline btn-circle no-animation btn-sm border-none arrow-carousel"
           disabled={false}
         >
-          <Icon id="chevron-right" />
+          <Icon id="right-arrow-carousel" />
         </Slider.NextButton>
       </div>
+    </>
+  );
+}
 
-      <ul
-        class={clx(
-          "col-span-full row-start-4 z-10",
-          "carousel justify-center gap-3",
-        )}
-      >
-        {images.map((_, index) => (
-          <li class="carousel-item">
+function Dots({ images }: { images?: Banner[] }) {
+  return (
+    <div class="absolute bottom-[20px] lg:bottom-[35px] left-1/2 flex justify-center mt-2 col-span-full row-start-3 -translate-x-1/2">
+      <ul class="flex gap-2">
+        {images?.map((_, index) => (
+          <li key={index} class="carousel-item">
             <Slider.Dot
               index={index}
               class={clx(
-                "bg-black opacity-20 h-3 w-3 no-animation rounded-full",
-                "disabled:w-8 disabled:bg-base-100 disabled:opacity-100 transition-[width]",
+                "w-2 h-2 rounded-full transition-all duration-300",
+                "bg-[#2D2D2C] opacity-50",
+                "disabled:!bg-black disabled:!opacity-100 disabled:ring-2 disabled:!ring-black disabled:ring-offset-2",
               )}
-            >
-            </Slider.Dot>
+            />
           </li>
         ))}
       </ul>
+    </div>
+  );
+}
 
+function Carousel(
+  { images = [], preload, interval, arrows = true, dots = true }: Props,
+) {
+  const id = useId();
+
+  return (
+    <div
+      id={id}
+      class="relative max-w-ft-1920 mx-auto w-full grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_auto_1fr] lg:min-h-[496px] md:min-height-[unset] lg:pb-14"
+    >
+      <h1 class="absolute z-0"> Easy Commerce </h1>
+      <Slider class="carousel carousel-center w-full col-span-full row-span-full">
+        {images.map((image, index) => (
+          <Slider.Item index={index} class="carousel-item w-full">
+            <BannerItem
+              image={image}
+              lcp={index === 0 && preload}
+              id={`${id}::${index}`}
+            />
+          </Slider.Item>
+        ))}
+      </Slider>
+      {arrows && <Buttons />}
+      {dots && <Dots images={images} />}
       <Slider.JS rootId={id} interval={interval && interval * 1e3} infinite />
     </div>
   );

@@ -10,6 +10,7 @@ export interface Props {
   width: number;
   height: number;
   images: ImageObject[];
+  currentImageIndex: number;
 }
 
 function ProductImageZoom({ images, width, height, id = useId() }: Props) {

@@ -1,20 +1,26 @@
-import { type ImageWidget } from "apps/admin/widgets.ts";
+import { type ImageWidget, RichText } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
-import PoweredByDeco from "apps/website/components/PoweredByDeco.tsx";
-import Section from "../../components/ui/Section.tsx";
+import Accordion from "../../components/ui/Accordion.tsx";
 
-/** @titleBy title */
-interface Item {
+interface LinkItem {
+  isLink: true;
   title: string;
   href: string;
 }
 
-/** @titleBy title */
-interface Link extends Item {
+interface RichTextItem {
+  isLink: false;
+  title: string;
+  content: RichText;
+}
+
+type Item = LinkItem | RichTextItem;
+
+interface Link {
+  title: string;
   children: Item[];
 }
 
-/** @titleBy alt */
 interface Social {
   alt?: string;
   href?: string;
@@ -22,50 +28,114 @@ interface Social {
 }
 
 interface Props {
+  /** @description Logo para mobile */
+  logo?: ImageWidget;
+  /** @description Largura do logo mobile (px) */
+  logoMobileWidth?: number;
+  /** @description Altura do logo mobile (px) */
+  logoMobileHeight?: number;
+
+  /** @description Logo para desktop */
+  logoDesktop?: ImageWidget;
+  /** @description Largura do logo desktop (px) */
+  logoDesktopWidth?: number;
+  /** @description Altura do logo desktop (px) */
+  logoDesktopHeight?: number;
+
   links?: Link[];
   social?: Social[];
   paymentMethods?: Social[];
-  policies?: Item[];
-  logo?: ImageWidget;
   trademark?: string;
+  managedImg?: ImageWidget;
+  managedLink?: string;
+  platformImg?: ImageWidget;
+  platformLink?: string;
+  textFooter?: string;
 }
 
 function Footer({
   links = [],
   social = [],
-  policies = [],
   paymentMethods = [],
   logo,
-  trademark,
+  logoMobileWidth,
+  logoMobileHeight,
+  logoDesktop,
+  logoDesktopWidth,
+  logoDesktopHeight,
+  managedImg,
+  managedLink,
+  platformImg,
+  platformLink,
+  textFooter,
 }: Props) {
   return (
-    <footer
-      class="px-5 sm:px-0 mt-5 sm:mt-10"
-      style={{ backgroundColor: "#EFF0F0" }}
-    >
-      <div class="container flex flex-col gap-5 sm:gap-10 py-10">
-        <ul class="grid grid-flow-row sm:grid-flow-col gap-6 ">
-          {links.map(({ title, href, children }) => (
-            <li class="flex flex-col gap-4">
-              <a class="text-base font-semibold" href={href}>{title}</a>
-              <ul class="flex flex-col gap-2">
-                {children.map(({ title, href }) => (
-                  <li>
-                    <a class="text-sm font-medium text-base-400" href={href}>
-                      {title}
-                    </a>
-                  </li>
-                ))}
+    <footer class="w-full flex flex-col gap-9 bg-white mt-8 px-4">
+      <div data-cy="logo-mobile" class="flex flex-col items-center pt-6 max-w-ft-223 mx-auto xl:hidden w-full">
+        {logo && (
+          <Image
+            src={logo}
+            alt="logo mobile"
+            width={logoMobileWidth ?? undefined}
+            height={logoMobileHeight ?? undefined}
+            class={logoMobileWidth && logoMobileHeight
+              ? ""
+              : "h-10 object-contain"}
+          />
+        )}
+      </div>
+      <div class="w-full md:max-w-none max-w-ft-350 mx-auto xl:hidden">
+        <Accordion
+          children={links.map(({ title, children }) => ({
+            title,
+            subtitle: (
+              <ul data-cy="options-mobile" class="flex flex-col gap-2">
+                {children.map((child) =>
+                  child.isLink ? (
+                    <li>
+                      <a
+                        href={child.href}
+                        class="text-sm text-gray-500 hover:underline"
+                        data-cy="sublink-footer"
+                      >
+                        {child.title}
+                      </a>
+                    </li>
+                  ) : (
+                    <li>
+                      <div
+                        id="text-footer"
+                        data-cy="text-footer"
+                        class="text-sm text-gray-500"
+                        dangerouslySetInnerHTML={{
+                          __html: child.content ?? "",
+                        }}
+                      />
+                    </li>
+                  )
+                )}
               </ul>
-            </li>
-          ))}
-        </ul>
-
-        <div class="flex flex-col sm:flex-row gap-12 justify-between items-start sm:items-center">
-          <ul class="flex gap-4">
+            ) as unknown as string,
+          }))}
+        />
+      </div>
+      <div class="grid grid-cols-2 gap-4 mx-auto xl:hidden">
+        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-w-ft-150 md:w-w-ft-300 xl:w-w-ft-150 py-1">
+          <span class="text-xs text-black font-Poppins">Pagamento</span>
+          <ul class="flex flex-wrap gap-g-ft-2 justify-center">
+            {paymentMethods.map(({ image, alt }) => (
+              <li data-cy="payments-mobile" class="border border-base-100 rounded flex justify-center items-center">
+                <Image src={image} alt={alt} loading="lazy" />
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-w-ft-150 md:w-w-ft-300 xl:w-w-ft-150 py-1">
+          <span class="text-xs text-black font-Poppins">Redes Sociais</span>
+          <ul class="flex gap-3">
             {social.map(({ image, href, alt }) => (
               <li>
-                <a href={href}>
+                <a data-cy="social-mobile" href={href}>
                   <Image
                     src={image}
                     alt={alt}
@@ -77,51 +147,133 @@ function Footer({
               </li>
             ))}
           </ul>
-          <ul class="flex flex-wrap gap-2">
-            {paymentMethods.map(({ image, alt }) => (
-              <li class="h-8 w-10 border border-base-100 rounded flex justify-center items-center">
-                <Image
-                  src={image}
-                  alt={alt}
-                  width={20}
-                  height={20}
-                  loading="lazy"
-                />
-              </li>
-            ))}
-          </ul>
         </div>
-
-        <hr class="w-full text-base-400" />
-
-        <div class="grid grid-flow-row sm:grid-flow-col gap-8">
-          <ul class="flex flex-col sm:flex-row gap-2 sm:gap-4 sm:items-center">
-            {policies.map(({ title, href }) => (
-              <li>
-                <a class="text-xs font-medium" href={href}>
-                  {title}
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          <div class="flex flex-nowrap items-center justify-between sm:justify-center gap-4">
-            <div>
-              <img loading="lazy" src={logo} />
-            </div>
-            <span class="text-xs font-normal text-base-400">{trademark}</span>
+        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-w-ft-150 md:w-w-ft-300 xl:w-w-ft-150 py-1">
+          <span class="text-xs text-black font-Poppins">Plataforma</span>
+          <a href={platformLink ?? "#"} target="_blank" data-cy="platform-mobile">
+            {platformImg && (
+              <Image src={platformImg} alt="platform" loading="lazy" />
+            )}
+          </a>
+        </div>
+        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-w-ft-150 md:w-w-ft-300 xl:w-w-ft-150 py-1">
+          <span class="text-xs text-black font-Poppins">Managed by</span>
+          <a href={managedLink ?? "#"} target="_blank" data-cy="managed-mobile">
+            {managedImg && (
+              <Image src={managedImg} alt="managed" loading="lazy" />
+            )}
+          </a>
+        </div>
+      </div>
+      <div class="hidden xl:flex flex-col gap-8 bg-white pt-10 max-w-ft-1452 w-full mx-auto">
+        <div class="w-full max-w-ft-1344 mx-auto flex flex-row gap-g-ft-105 items-start justify-between">
+          <div data-cy="logo">
+            {(logoDesktop || logo) && (
+              <Image
+                src={logoDesktop ?? logo}
+                alt="logo desktop"
+                width={logoDesktopWidth ?? 205}
+                height={logoDesktopHeight ?? 46}
+                class="object-contain"
+              />
+            )}
           </div>
-
-          <div class="flex flex-nowrap items-center justify-center gap-4">
-            <span class="text-sm font-normal text-base-400">Powered by</span>
-            <PoweredByDeco />
+          <div class="flex-1 grid grid-cols-3 gap-3 pt-p-ft-10">
+            {links.map(({ title, children }) => (
+              <div class="flex flex-col gap-g-ft-10 max-w-ft-350 w-full mx-auto">
+                <h4 data-cy="title-footer" class="font-medium text-base text-black font-Poppins">
+                  {title}
+                </h4>
+                <ul class="flex flex-col gap-2">
+                  {children.map((child) =>
+                    child.isLink ? (
+                      <li>
+                        <a data-cy="footer-options" href={child.href}>
+                          <div class="text-[13px] text-black font-light font-Poppins">
+                            {child.title}
+                          </div>
+                        </a>
+                      </li>
+                    ) : (
+                      <li>
+                        <div
+                          id="text-footer"
+                          data-cy="text-footer"
+                          class="text-[13px] text-black font-light font-Poppins"
+                          dangerouslySetInnerHTML={{
+                            __html: child.content ?? "",
+                          }}
+                        />
+                      </li>
+                    )
+                  )}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="pt-6">
+          <div class="w-full max-w-ft-1452 mx-auto grid grid-cols-4 gap-4 items-center">
+            <div class="flex flex-col gap-1 max-w-ft-348 w-full items-center border py-1 min-h-ft-51">
+              <span class="font-Poppins text-black text-xs">
+                Plataforma
+              </span>
+              <a href={platformLink ?? "#"} target="_blank" data-cy="platform">
+                {platformImg && (
+                  <Image src={platformImg} alt="platform" loading="lazy" />
+                )}
+              </a>
+            </div>
+            <div class="flex flex-col gap-1 max-w-ft-348 w-full items-center border py-1 min-h-ft-51">
+              <span class="font-Poppins text-black text-xs">
+                Managed by:
+              </span>
+              <a href={managedLink ?? "#"} target="_blank" data-cy="managed">
+                {managedImg && (
+                  <Image src={managedImg} alt="managed" loading="lazy" />
+                )}
+              </a>
+            </div>
+            <div class="flex flex-col gap-1 max-w-ft-348 w-full items-center border py-1 min-h-ft-51">
+              <span class="font-Poppins text-black text-xs">Pagamento</span>
+              <ul class="flex flex-wrap gap-2">
+                {paymentMethods.map(({ image, alt }) => (
+                  <li data-cy="payment-footer" class="payment-footer border border-base-100 rounded flex justify-center items-center">
+                    <Image src={image} alt={alt} loading="lazy" />
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="flex flex-col gap-1 max-w-ft-348 w-full items-center border py-1 min-h-ft-51">
+              <span class="font-Poppins text-black text-xs">
+                Redes Sociais
+              </span>
+              <ul class="flex gap-3">
+                {social.map(({ image, href, alt }) => (
+                  <li>
+                    <a href={href} data-cy="social">
+                      <Image
+                        src={image}
+                        alt={alt}
+                        loading="lazy"
+                        width={24}
+                        height={24}
+                      />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
+      <div
+        data-cy="text-footer-desk"
+        class="text-footer-desk text-center text-ft-10 max-w-ft-350 xl:text-xs text-black font-light pb-9 lg:max-w-[1052px] w-full mx-auto font-Poppins "
+        dangerouslySetInnerHTML={{ __html: textFooter ?? "" }}
+      />
     </footer>
   );
 }
-
-export const LoadingFallback = () => <Section.Placeholder height="1145px" />;
 
 export default Footer;
