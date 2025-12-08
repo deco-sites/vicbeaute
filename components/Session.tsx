@@ -8,6 +8,8 @@ import CartProvider, { type Minicart } from "./minicart/Minicart.tsx";
 import Drawer from "./ui/Drawer.tsx";
 import UserProvider from "./user/Provider.tsx";
 import WishlistProvider, { type Wishlist } from "./wishlist/Provider.tsx";
+import { Signal, useSignal } from "@preact/signals";
+import { useEffect } from "preact/hooks";
 import { useScript } from "@deco/deco/hooks";
 declare global {
   interface Window {
@@ -264,6 +266,7 @@ interface Props {
 export default function Session(
   { minicart, wishlist, user, mode = "lazy" }: Props,
 ) {
+
   if (mode === "lazy") {
     return (
       <>
@@ -277,20 +280,19 @@ export default function Session(
       </>
     );
   }
+
   return (
     <>
-      {/* Minicart Drawer */}
       <Drawer
         id={MINICART_DRAWER_ID}
         class="drawer-end z-50"
         aside={
-          <Drawer.Aside title="My Bag" drawer={MINICART_DRAWER_ID}>
+          <Drawer.Aside
+            title={`Minha Sacola`}
+            drawer={MINICART_DRAWER_ID}
+          >
             <div
-              class="h-full flex flex-col bg-base-100 items-center justify-center overflow-auto"
-              style={{
-                minWidth: "calc(min(100vw, 425px))",
-                maxWidth: "425px",
-              }}
+              class="h-full w-full flex flex-col bg-base-100 items-center justify-center overflow-auto max-w-[425px] md:max-w-[570px] xl:max-[w-425px]"
             >
               <CartProvider cart={minicart!} />
             </div>

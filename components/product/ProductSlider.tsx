@@ -4,61 +4,76 @@ import Icon from "../ui/Icon.tsx";
 import Slider from "../ui/Slider.tsx";
 import ProductCard from "./ProductCard.tsx";
 import { useId } from "../../sdk/useId.ts";
+import { useDevice as useDevice } from "@deco/deco/hooks";
 
-interface Props {
+export interface ProductSliderProps {
   products: Product[];
   itemListName?: string;
+  arrows?: boolean;
+  dots?: boolean;
 }
-
-function ProductSlider({ products, itemListName }: Props) {
+function ProductSlider(
+  { products, itemListName, arrows = true, dots = true }: ProductSliderProps,
+) {
   const id = useId();
+  const device = useDevice()
+  const itemsPerPage = device === "mobile" ? 2 : 5;
+  const totalPages = Math.ceil(products.length / itemsPerPage);
 
   return (
     <>
-      <div
-        id={id}
-        class="grid grid-rows-1"
-        style={{
-          gridTemplateColumns: "min-content 1fr min-content",
-        }}
-      >
-        <div class="col-start-1 col-span-3 row-start-1 row-span-1">
-          <Slider class="carousel carousel-center sm:carousel-end gap-5 sm:gap-10 w-full">
-            {products?.map((product, index) => (
-              <Slider.Item
+      <div id={id} class="relative w-full lg:px-0 px-4 pt-2">
+        <Slider id="shelf-slider">
+          {products?.map((product, index) => (
+            <Slider.Item index={index}>
+              <ProductCard
+                class="product-slider"
                 index={index}
-                class={clx(
-                  "carousel-item",
-                  "first:pl-5 first:sm:pl-0",
-                  "last:pr-5 last:sm:pr-0",
-                )}
-              >
-                <ProductCard
-                  index={index}
-                  product={product}
-                  itemListName={itemListName}
-                  class="w-[287px] sm:w-[300px]"
+                product={product}
+                itemListName={itemListName}
+              />
+            </Slider.Item>
+          ))}
+        </Slider>{" "}
+        {arrows && (
+          <>
+            <div class="hidden xl:flex absolute inset-y-0 left-[-40px] items-center">
+              <Slider.PrevButton>
+                <Icon
+                  class="text-base-100"
+                  size={24}
+                  id="arrow-left-shelf"
+                  strokeWidth={3}
                 />
-              </Slider.Item>
-            ))}
-          </Slider>
-        </div>
-
-        <div class="col-start-1 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 relative bottom-[15%]">
-          <Slider.PrevButton class="hidden sm:flex disabled:invisible btn btn-outline btn-sm btn-circle no-animation">
-            <Icon id="chevron-right" class="rotate-180" />
-          </Slider.PrevButton>
-        </div>
-
-        <div class="col-start-3 col-span-1 row-start-1 row-span-1 z-10 self-center p-2 relative bottom-[15%]">
-          <Slider.NextButton class="hidden sm:flex disabled:invisible btn btn-outline btn-sm btn-circle no-animation">
-            <Icon id="chevron-right" />
-          </Slider.NextButton>
-        </div>
+              </Slider.PrevButton>
+            </div>{" "}
+            <div class="hidden xl:flex absolute inset-y-0 right-[-40px] items-center">
+              <Slider.NextButton>
+                <Icon
+                  class="text-base-100"
+                  size={24}
+                  id="arrow-right-shelf"
+                  strokeWidth={3}
+                />
+              </Slider.NextButton>
+            </div>
+          </>
+        )}{" "}
+        {dots && (
+          <div class="flex gap-4 justify-center mt-4 pb-6">
+            {Array.from(
+              { length: totalPages },
+              (_, index) => (
+                <Slider.Dot
+                  index={index}
+                  class="focus:outline-none group disabled:!bg-black disabled:!opacity-100 disabled:ring-2 disabled:ring-offset-2 bg-black-15 opacity-50 w-2 h-2 rounded-full transition-all duration-300 ring-custom"
+                />
+              ),
+            )}
+          </div>
+        )} <Slider.JS rootId={id} arrows={arrows} dots={dots} />
       </div>
-      <Slider.JS rootId={id} />
     </>
   );
 }
-
 export default ProductSlider;

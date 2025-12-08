@@ -1,6 +1,6 @@
 {
   "name": "Product Page",
-  "path": "/products/:slug",
+  "path": "/:slug/p",
   "default": {
     "possiblePaths": []
   },
@@ -10,7 +10,16 @@
       "section": {
         "__resolveType": "commerce/sections/Seo/SeoPDPV2.tsx",
         "jsonLD": {
-          "__resolveType": "PDP Loader"
+          "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+          "advancedConfigs": {
+            "includeOriginalAttributes": []
+          },
+          "slug": {
+            "__resolveType": "website/functions/requestToParam.ts",
+            "param": "slug"
+          },
+          "similars": true,
+          "indexingSkus": true
         },
         "jsonLDs": [
           {}
@@ -28,36 +37,28 @@
       "section": {
         "__resolveType": "site/sections/Product/ProductDetails.tsx",
         "page": {
-          "__resolveType": "PDP Loader"
-        }
-      }
-    },
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/Product/ProductShelf.tsx",
-        "title": "You may also like",
-        "products": {
-          "__resolveType": "shopify/loaders/ProductList.ts",
-          "props": {
-            "sort": "",
-            "query": "a",
-            "count": 9
+          "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+          "advancedConfigs": {
+            "includeOriginalAttributes": []
           },
-          "filters": {
-            "tags": [],
-            "productTypes": [],
-            "productVendors": [],
-            "variantOptions": []
+          "slug": {
+            "__resolveType": "website/functions/requestToParam.ts",
+            "param": "slug"
           }
         }
       }
     },
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/Newsletter/Newsletter.tsx"
-      }
+      "__resolveType": "site/sections/Product/ProductShelf.tsx",
+      "products": {
+        "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+        "props": {
+          "sort": "price:desc",
+          "collection": "137",
+          "count": 8
+        }
+      },
+      "title": "Mais vendidos"
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
