@@ -12,6 +12,26 @@
       {
         "variations": [
           {
+            "weight": "300"
+          },
+          {
+            "weight": "400"
+          },
+          {
+            "weight": "500"
+          },
+          {
+            "weight": "600"
+          },
+          {
+            "weight": "700"
+          }
+        ],
+        "family": "Figtree"
+      },
+      {
+        "variations": [
+          {
             "weight": "400"
           },
           {
@@ -25,6 +45,26 @@
           }
         ],
         "family": "Inter"
+      },
+      {
+        "variations": [
+          {
+            "weight": "300"
+          },
+          {
+            "weight": "400"
+          },
+          {
+            "weight": "500"
+          },
+          {
+            "weight": "600"
+          },
+          {
+            "weight": "700"
+          }
+        ],
+        "family": "Poppins"
       }
     ]
   },

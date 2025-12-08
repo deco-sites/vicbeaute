@@ -5,6 +5,7 @@ import Icon from "../ui/Icon.tsx";
 import Slider from "../ui/Slider.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
+import { useState } from "preact/hooks";
 
 export interface Props {
   /** @title Integration */
@@ -15,12 +16,6 @@ const WIDTH = 820;
 const HEIGHT = 615;
 const ASPECT_RATIO = `${WIDTH} / ${HEIGHT}`;
 
-/**
- * @title Product Image Slider
- * @description Creates a three columned grid on destkop, one for the dots preview, one for the image slider and the other for product info
- * On mobile, there's one single column with 3 rows. Note that the orders are different from desktop to mobile, that's why
- * we rearrange each cell with col-start- directives
- */
 export default function GallerySlider(props: Props) {
   const id = useId();
   const zoomId = `${id}-zoom`;
@@ -31,13 +26,13 @@ export default function GallerySlider(props: Props) {
 
   const { page: { product: { name, isVariantOf, image: pImages } } } = props;
 
-  // Filter images when image's alt text matches product name
-  // More info at: https://community.shopify.com/c/shopify-discussions/i-can-not-add-multiple-pictures-for-my-variants/m-p/2416533
   const groupImages = isVariantOf?.image ?? pImages ?? [];
   const filtered = groupImages.filter((img) =>
     name?.includes(img.alternateName || "")
   );
   const images = filtered.length > 0 ? filtered : groupImages;
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   return (
     <>
@@ -45,41 +40,30 @@ export default function GallerySlider(props: Props) {
         id={id}
         class="grid grid-flow-row sm:grid-flow-col grid-cols-1 sm:grid-cols-[min-content_1fr] gap-5"
       >
-        {/* Image Slider */}
         <div class="col-start-1 col-span-1 sm:col-start-2">
           <div class="relative h-min flex-grow">
-            <Slider class="carousel carousel-center gap-6 w-full">
-              {images.map((img, index) => (
-                <Slider.Item
-                  index={index}
-                  class="carousel-item w-full"
-                >
-                  <Image
-                    class="w-full"
-                    sizes="(max-width: 640px) 100vw, 40vw"
-                    style={{ aspectRatio: ASPECT_RATIO }}
-                    src={img.url!}
-                    alt={img.alternateName}
-                    width={WIDTH}
-                    height={HEIGHT}
-                    // Preload LCP image for better web vitals
-                    preload={index === 0}
-                    loading={index === 0 ? "eager" : "lazy"}
-                  />
-                </Slider.Item>
-              ))}
-            </Slider>
+            <Image
+              class="w-full"
+              sizes="(max-width: 640px) 100vw, 40vw"
+              style={{ aspectRatio: ASPECT_RATIO }}
+              src={images[currentImageIndex]?.url!}
+              alt={images[currentImageIndex]?.alternateName}
+              width={WIDTH}
+              height={HEIGHT}
+            />
 
             <Slider.PrevButton
               class="no-animation absolute left-2 top-1/2 btn btn-circle btn-outline disabled:invisible"
-              disabled
+              onClick={() => setCurrentImageIndex(Math.max(0, currentImageIndex - 1))}
+              disabled={currentImageIndex === 0}
             >
               <Icon id="chevron-right" class="rotate-180" />
             </Slider.PrevButton>
 
             <Slider.NextButton
               class="no-animation absolute right-2 top-1/2 btn btn-circle btn-outline disabled:invisible"
-              disabled={images.length < 2}
+              onClick={() => setCurrentImageIndex(Math.min(images.length - 1, currentImageIndex + 1))}
+              disabled={currentImageIndex === images.length - 1}
             >
               <Icon id="chevron-right" />
             </Slider.NextButton>
@@ -92,7 +76,6 @@ export default function GallerySlider(props: Props) {
           </div>
         </div>
 
-        {/* Dots */}
         <div class="col-start-1 col-span-1">
           <ul
             class={clx(
@@ -106,27 +89,32 @@ export default function GallerySlider(props: Props) {
             style={{ maxHeight: "600px" }}
           >
             {images.map((img, index) => (
-              <li class="carousel-item w-16 h-16">
-                <Slider.Dot index={index}>
+              <li class="carousel-item w-16 h-16" key={index}>
+                <button
+                  onClick={() => setCurrentImageIndex(index)}
+                  class={clx(
+                    "group-disabled:border-base-400 border rounded object-cover w-full h-full",
+                    index === currentImageIndex ? "border-primary" : "border-transparent"
+                  )}
+                  style={{ aspectRatio: "1 / 1" }}
+                >
                   <Image
-                    style={{ aspectRatio: "1 / 1" }}
-                    class="group-disabled:border-base-400 border rounded object-cover w-full h-full"
+                    class="object-cover w-full h-full"
                     width={64}
                     height={64}
                     src={img.url!}
                     alt={img.alternateName}
                   />
-                </Slider.Dot>
+                </button>
               </li>
             ))}
           </ul>
         </div>
-
-        <Slider.JS rootId={id} />
       </div>
       <ProductImageZoom
         id={zoomId}
         images={images}
+        currentImageIndex={currentImageIndex}
         width={700}
         height={Math.trunc(700 * HEIGHT / WIDTH)}
       />

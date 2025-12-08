@@ -1,4 +1,4 @@
-# Storefront — deco.cx template 
+# Storefront — deco.cx template
 
 Welcome to your [deco.cx](https://deco.cx) site!
 
@@ -49,22 +49,3 @@ Take a look on this ones:
 - [apps](https://github.com/deco-cx/apps/)
 
 
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.
-.

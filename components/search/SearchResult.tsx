@@ -1,7 +1,7 @@
 import type { ProductListingPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import ProductCard from "../../components/product/ProductCard.tsx";
-import Filters from "../../components/search/Filters.tsx";
+import Filters from "../../islands/Filters.tsx";
 import Icon from "../../components/ui/Icon.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
@@ -12,6 +12,9 @@ import Drawer from "../ui/Drawer.tsx";
 import Sort from "./Sort.tsx";
 import { useDevice, useScript, useSection } from "@deco/deco/hooks";
 import { type SectionProps } from "@deco/deco";
+import SeoText from "../ui/SEOText.tsx";
+import NotFoundSearch from "../../islands/SearchError.tsx";
+import ErrorBreadcrumbs from "./searchError/searchErrorBreadcrumb.tsx";
 export interface Layout {
   /**
    * @title Pagination
@@ -27,7 +30,29 @@ export interface Props {
   startingPage?: 0 | 1;
   /** @hidden */
   partial?: "hideMore" | "hideLess";
+
+  /**
+   * @title Texto SEO
+   * @default
+   */
+  textSeo?: {
+    /** 
+     * @title Título H1 
+     */
+    h1title?: string;
+    /** 
+     * @title Subtítulo H2 
+     */
+    h2subTitle?: string;
+    /** 
+     * @title Texto
+     * @format textarea
+     */
+    text?: string;
+  }
+  // textSeo?: RichText;
 }
+
 function NotFound() {
   return (
     <div class="w-full flex justify-center items-center py-10">
@@ -91,8 +116,8 @@ function PageResult(props: SectionProps<typeof loader>) {
         data-product-list
         class={clx(
           "grid items-center",
-          "grid-cols-2 gap-2",
-          "sm:grid-cols-4 sm:gap-10",
+          "grid-cols-2 gap-[18px]",
+          "lg:grid-cols-4 lg:gap-10",
           "w-full",
         )}
       >
@@ -209,8 +234,8 @@ function Result(props: SectionProps<typeof loader>) {
     },
   });
   const results = (
-    <span class="text-sm font-normal">
-      {page.pageInfo.recordPerPage} of {page.pageInfo.records} results
+    <span class="text-gray-45 text-xs lg:text-base pb-[14px] lg:pb-0">
+      {page.pageInfo.records} produtos encontrados
     </span>
   );
   const sortBy = sortOptions.length > 0 && (
@@ -222,61 +247,84 @@ function Result(props: SectionProps<typeof loader>) {
         {partial
           ? <PageResult {...props} />
           : (
-            <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0">
+            <div class="container flex flex-col w-full py-4 sm:py-5 px-4 sm:px-0 lg:max-w-[1280px] container-search">
               <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
+              <SeoText textSeo={props.textSeo} />
 
-              {device === "mobile" && (
-                <Drawer
-                  id={controls}
-                  aside={
-                    <div class="bg-base-100 flex flex-col h-full divide-y overflow-y-hidden">
-                      <div class="flex justify-between items-center">
-                        <h1 class="px-4 py-3">
-                          <span class="font-medium text-2xl">Filters</span>
-                        </h1>
-                        <label class="btn btn-ghost" for={controls}>
-                          <Icon id="close" />
-                        </label>
+              <Drawer
+                class="lg:hidden block"
+                id={controls}
+                aside={
+                  <div class="bg-[#F8F8F8] flex flex-col h-full divide-y overflow-y-hidden">
+                    <div class=" bg-[#F8F8F8] flex justify-between items-center">
+                      <div class="px-5 pt-5 flex flex-col-reverse">
+                        <span>{results}</span>
+                        <span class="font-semibold text-black-10 text-[22px]">
+                          Filtrar por
+                        </span>
                       </div>
-                      <div class="flex-grow overflow-auto">
-                        <Filters filters={filters} />
+                      <label class="btn btn-ghost" for={controls}>
+                        <Icon id="close" />
+                      </label>
+                    </div>
+                    <div class="flex-grow overflow-auto border-t-transparent">
+                      <Filters
+                        filters={filters}
+                        sortOptions={sortOptions}
+                        url={url}
+                      />
+                    </div>
+                  </div>
+                }
+              >
+                <div class="lg:bg-[#F8F8F8] flex flex-col sm:hidden justify-between items-start gap-[14px]">
+                  <div class="flex w-full gap-7 flex-row-reverse justify-between">
+                    <label
+                      class="select items-center w-full rounded-lg max-w-ft-160 border border-gray-40 min-h-[unset] h-8 px-4 text-sm text-black-15 bg-[url(/image/filter.png)] bg-auto bg-[position:calc(100%_-_41px)_calc(1px_+_46%),calc(100%_-_16.1px)_calc(1px_+_50%)] pl-14 font-Poppins"
+                      for={controls}
+                    >
+                      Filtros
+                    </label>
+                    {sortBy}
+                  </div>
+                  {results}
+                </div>
+              </Drawer>
+
+              <div class="grid grid-cols-1 md:grid-cols-[260px_1fr] md:gap-5 lg:grid-cols-[280px_1fr] lg:gap-10">
+                <aside class="hidden md:flex place-self-start flex-col gap-9 max-w-[280px] w-full">
+                  <div class="bg-[#F8F8F8] flex flex-col h-full divide-y overflow-y-hidden">
+                    <div class=" bg-[#F8F8F8] flex justify-between items-center">
+                      <div class="px-5 py-2 flex flex-col gap-2">
+                        <span>{results}</span>
+                        <span class="font-semibold text-black-10 text-[22px]">
+                          Filtrar por
+                        </span>
                       </div>
                     </div>
-                  }
-                >
-                  <div class="flex sm:hidden justify-between items-end">
-                    <div class="flex flex-col">
-                      {results}
+                    <div class="flex-grow overflow-auto border-t-transparent">
+                      <Filters
+                        filters={filters}
+                        sortOptions={sortOptions}
+                        url={url}
+                      />
+                    </div>
+                  </div>
+                  <div class="bg-[#F8F8F8] flex flex-col sm:hidden justify-between items-start gap-[14px]">
+                    <div class="flex w-full gap-7 flex-row-reverse justify-between">
+                      <label
+                        class="select items-center w-full rounded-lg max-w-ft-160 border border-gray-40 min-h-[unset] h-8 px-4 text-sm text-black-15 bg-[url(/image/filter.png)] bg-auto bg-[position:calc(100%_-_41px)_calc(1px_+_46%),calc(100%_-_16.1px)_calc(1px_+_50%)] pl-14 font-Poppins"
+                        for={controls}
+                      >
+                        Filtros
+                      </label>
                       {sortBy}
                     </div>
-
-                    <label class="btn btn-ghost" for={controls}>
-                      Filters
-                    </label>
+                    {results}
                   </div>
-                </Drawer>
-              )}
+                </aside>
 
-              <div class="grid grid-cols-1 sm:grid-cols-[250px_1fr]">
-                {device === "desktop" && (
-                  <aside class="place-self-start flex flex-col gap-9">
-                    <span class="text-base font-semibold h-12 flex items-center">
-                      Filters
-                    </span>
-
-                    <Filters filters={filters} />
-                  </aside>
-                )}
-
-                <div class="flex flex-col gap-9">
-                  {device === "desktop" && (
-                    <div class="flex justify-between items-center">
-                      {results}
-                      <div>
-                        {sortBy}
-                      </div>
-                    </div>
-                  )}
+                <div class="flex flex-col gap-9 lg:gap-0">
                   <PageResult {...props} />
                 </div>
               </div>
@@ -297,16 +345,28 @@ function Result(props: SectionProps<typeof loader>) {
     </>
   );
 }
-function SearchResult({ page, ...props }: SectionProps<typeof loader>) {
-  if (!page) {
-    return <NotFound />;
-  }
-  return <Result {...props} page={page} />;
-}
+
 export const loader = (props: Props, req: Request) => {
   return {
     ...props,
     url: req.url,
   };
 };
+
+function SearchResult({ page, url, ...props }: SectionProps<typeof loader>) {
+  const searchParams = new URL(url).searchParams;
+  const q = searchParams.get("q")?.trim();
+
+  if (!page) {
+    return (
+      <>
+        <ErrorBreadcrumbs titleBreadcrumb="Erro 404" />
+        <NotFoundSearch />
+      </>
+    );
+  }
+
+  return <Result {...props} page={page} url={url} />;
+}
+
 export default SearchResult;

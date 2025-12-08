@@ -1,1 +1,11 @@
-{}
+{
+  "__resolveType": "site/apps/deco/vtex.ts",
+  "setRefreshToken": false,
+  "defaultSegment": {
+    "channelPrivacy": "public"
+  },
+  "platform": "vtex",
+  "account": "socialsahomolog",
+  "publicUrl": "https://socialsahomolog.myvtex.com/",
+  "salesChannel": "1"
+}

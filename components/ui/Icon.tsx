@@ -17,8 +17,31 @@ export type AvailableIcons =
   | "sell"
   | "check-circle"
   | "error"
-  | "trash";
-
+  | "trash"
+  | "wishlist"
+  | "profile"
+  | "orders"
+  | "search"
+  | "menu_mobile"
+  | "minicart"
+  | "search_desk"
+  | "trashnew"
+  | "closeminicartbutton"
+  | "arrow_footer"
+  | "add_to_cart"
+  | "arrow-left-shelf"
+  | "arrow-right-shelf"
+  | "left-arrow-carousel"
+  | "right-arrow-carousel"
+  | "right-arrow-category"
+  | "right-arrow-category"
+  | "arrowup"
+  | "arrowdown"
+  | "ArrowMenuInstitutional"
+  | "lupa-busca-vazia"
+  | "lupa"
+  | "arrow-back-search-error"
+  | "user";
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**
    * Symbol id from element to render. Take a look at `/static/icons.svg`.

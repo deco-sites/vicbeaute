@@ -3,14 +3,33 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import * as $_app from "./routes/_app.tsx";
-
+import * as $FilterRangePrice from "./islands/FilterRangePrice.tsx";
+import * as $Filters from "./islands/Filters.tsx";
+import * as $Gallery from "./islands/Gallery.tsx";
+import * as $InstitutionalMobileMenu from "./islands/InstitutionalMobileMenu.tsx";
+import * as $Newsletter from "./islands/Newsletter.tsx";
+import * as $QuantitySelectorInteractive from "./islands/QuantitySelectorInteractive.tsx";
+import * as $QuantitySelectorMinicartInteractive from "./islands/QuantitySelectorMinicartInteractive.tsx";
+import * as $SearchError from "./islands/SearchError.tsx";
+import * as $SliderJS from "./islands/SliderJS.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
     "./routes/_app.tsx": $_app,
   },
-  islands: {},
+  islands: {
+    "./islands/FilterRangePrice.tsx": $FilterRangePrice,
+    "./islands/Filters.tsx": $Filters,
+    "./islands/Gallery.tsx": $Gallery,
+    "./islands/InstitutionalMobileMenu.tsx": $InstitutionalMobileMenu,
+    "./islands/Newsletter.tsx": $Newsletter,
+    "./islands/QuantitySelectorInteractive.tsx": $QuantitySelectorInteractive,
+    "./islands/QuantitySelectorMinicartInteractive.tsx":
+      $QuantitySelectorMinicartInteractive,
+    "./islands/SearchError.tsx": $SearchError,
+    "./islands/SliderJS.tsx": $SliderJS,
+  },
   baseUrl: import.meta.url,
 } satisfies Manifest;
 

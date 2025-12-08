@@ -1,9 +1,10 @@
 import { ProductDetailsPage } from "apps/commerce/types.ts";
-import ImageGallerySlider from "../../components/product/Gallery.tsx";
+import ImageGallerySlider from "../../islands/Gallery.tsx";
 import ProductInfo from "../../components/product/ProductInfo.tsx";
 import Breadcrumb from "../../components/ui/Breadcrumb.tsx";
 import Section from "../../components/ui/Section.tsx";
 import { clx } from "../../sdk/clx.ts";
+import ProductAccordion from "../../components/product/ProductAccordion.tsx";
 
 export interface Props {
   /** @title Integration */
@@ -28,14 +29,14 @@ export default function ProductDetails({ page }: Props) {
   }
 
   return (
-    <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 px-5 sm:px-0">
+    <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 sm:px-0 max-w-[1130px] lg:pb-16 product-details">
       <Breadcrumb itemListElement={page.breadcrumbList.itemListElement} />
 
       <div
         class={clx(
-          "container grid",
+          "container grid lg:pb-5",
           "grid-cols-1 gap-2 py-0",
-          "sm:grid-cols-5 sm:gap-6",
+          "sm:grid-cols-5 sm:gap-6 max-w-[1044px] lg:m-[0px]",
         )}
       >
         <div class="sm:col-span-3">
@@ -44,6 +45,9 @@ export default function ProductDetails({ page }: Props) {
         <div class="sm:col-span-2">
           <ProductInfo page={page} />
         </div>
+      </div>
+      <div class="hidden lg:block w-full lg:max-w-[1130px] max-w-[1536px] lg:border-t">
+        <ProductAccordion page={page}/>
       </div>
     </div>
   );

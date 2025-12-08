@@ -1,0 +1,15 @@
+{
+  "__resolveType": "site/sections/Footer/Newsletter.tsx",
+  "content": {
+    "form": {
+      "buttonColor": "bg-gold-0 text-white-0",
+      "helpText": "<p>Concordo que a <strong>Empresa</strong> pode usar meus dados de contato e interações.<a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"/politica-de-privacidade\"><u> Política de privacidade.</u></a></p>"
+    },
+    "title": "Assine nossa newsletter!",
+    "description": "Seja o primeiro a receber promoções, tendências e mais!"
+  },
+  "layout": {
+    "tiled": true
+  },
+  "device": "mobile"
+}

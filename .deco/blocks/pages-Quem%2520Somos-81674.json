@@ -1,0 +1,69 @@
+{
+  "name": "Quem Somos",
+  "path": "/quem-somos",
+  "sections": [
+    {
+      "__resolveType": "Header"
+    },
+    {
+      "__resolveType": "site/sections/Content/BannerInstitutional.tsx",
+      "mobile": {
+        "image": "https://assets.decocache.com/easycommerce/79b8eb9f-4737-4459-8d66-d30661d91e3b/Group-6423.png",
+        "href": "/",
+        "alt": "Banner Institucional",
+        "height": 500,
+        "width": 375
+      },
+      "tablet": {
+        "image": "https://assets.decocache.com/easycommerce/b879f6e2-27c1-4f31-9237-0567cf5948b0/Rectangle-3706.png",
+        "href": "/",
+        "alt": "Banner Institucional",
+        "width": 1920,
+        "height": 496
+      },
+      "desktop": {
+        "image": "https://assets.decocache.com/easycommerce/b879f6e2-27c1-4f31-9237-0567cf5948b0/Rectangle-3706.png",
+        "href": "/",
+        "alt": "Banner Institucional",
+        "width": 1920,
+        "height": 500
+      }
+    },
+    {
+      "__resolveType": "site/sections/Content/InstitutionalMain.tsx",
+      "pageTitle": "Quem Somos",
+      "institutionalMenu": [
+        {
+          "menuItem": "Política de Privacidade",
+          "menuLink": "/politica-de-privacidade"
+        },
+        {
+          "menuItem": "Trocas e Devoluções",
+          "menuLink": "/trocas-e-devolucoes"
+        },
+        {
+          "menuItem": "Política de Frete",
+          "menuLink": "/politica-de-frete"
+        },
+        {
+          "menuItem": "Quem Somos",
+          "menuLink": "/quem-somos"
+        }
+      ],
+      "institutionalText": "<p><span>Sit purus eu sollicitudin dolor ultrices massa. At sapien euismod nunc bibendum aliquam ornare. Netus suspendisse eget malesuada diam </span><br><span>eget amet massa. Pellentesque viverra accumsan viverra congue ut facilisis suspendisse ac dui. Elementum duis magna sit sit. Lacus parturient amet </span><br><span>nulla sed eu. </span><br><br><span>Ac sed vehicula tincidunt diam et nibh sagittis rhoncus eleifend. Odio felis blandit vel tristique adipiscing tellus dignissim. Tellus eget tempor sagittis lorem eleifend placerat urna. Dolor turpis egestas iaculis amet cursus phasellus auctor feugiat. Amet adipiscing cras dui diam. Dictumst eget pulvinar ultrices </span><br><span>non mi dui tempus.</span><br><br><span>Quis suspendisse euismod sagittis magna viverra proin ac odio. Neque egestas tortor eget non aliquam elementum. Arcu purus auctor porta ultricies neque interdum. Viverra ultricies cras interdum risus amet congue integer in risus. Etiam mi eget nulla id blandit luctus. Ipsum ornare ipsum nulla habitant placerat. Cursus vitae velit lacinia lacus aliquet pellentesque. In donec nec ullamcorper ullamcorper</span><br><span>urna mauris mi lobortis.</span><br><br><span> Tristique pellentesque ut sit et purus facilisis. Massa tincidunt tincidunt dignissim hendrerit interdum.</span></p>"
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "newsletter"
+      }
+    },
+    {
+      "__resolveType": "Footer"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}

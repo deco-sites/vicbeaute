@@ -3,12 +3,17 @@
   "path": "/s",
   "sections": [
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "commerce/sections/Seo/SeoPLPV2.tsx",
-        "jsonLD": {
-          "__resolveType": "PLP Loader"
-        }
+      "__resolveType": "commerce/sections/Seo/SeoPLPV2.tsx",
+      "jsonLD": {
+        "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
+        "count": 24,
+        "sort": "price:desc",
+        "fuzzy": "automatic",
+        "selectedFacets": [],
+        "advancedConfigs": {
+          "includeOriginalAttributes": []
+        },
+        "simulationBehavior": "default"
       }
     },
     {
@@ -22,7 +27,15 @@
       "section": {
         "__resolveType": "site/sections/Product/SearchResult.tsx",
         "page": {
-          "__resolveType": "PLP Loader"
+          "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
+          "sort": "price:desc",
+          "fuzzy": "automatic",
+          "selectedFacets": [],
+          "advancedConfigs": {
+            "includeOriginalAttributes": []
+          },
+          "simulationBehavior": "default",
+          "count": 24
         },
         "layout": {
           "columns": {
