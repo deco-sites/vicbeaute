@@ -5,7 +5,14 @@
     "channelPrivacy": "public"
   },
   "platform": "vtex",
-  "account": "socialsahomolog",
-  "publicUrl": "https://socialsahomolog.myvtex.com/",
-  "salesChannel": "1"
+  "account": "vicbeaute",
+  "publicUrl": "https://vicbeaute.myvtex.com/",
+  "salesChannel": "1",
+  "cachedSearchTerms": {
+    "terms": {
+      "searches": [],
+      "products": null
+    },
+    "extraTerms": []
+  }
 }
