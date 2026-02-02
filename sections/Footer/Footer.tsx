@@ -58,8 +58,6 @@ function Footer({
   social = [],
   paymentMethods = [],
   logo,
-  logoMobileWidth,
-  logoMobileHeight,
   logoDesktop,
   logoDesktopWidth,
   logoDesktopHeight,
@@ -71,20 +69,7 @@ function Footer({
 }: Props) {
   return (
     <footer class="w-full flex flex-col gap-9 bg-white mt-8 px-4">
-      <div data-cy="logo-mobile" class="flex flex-col items-center pt-6 max-w-ft-223 mx-auto xl:hidden w-full">
-        {logo && (
-          <Image
-            src={logo}
-            alt="logo mobile"
-            width={logoMobileWidth ?? undefined}
-            height={logoMobileHeight ?? undefined}
-            class={logoMobileWidth && logoMobileHeight
-              ? ""
-              : "h-10 object-contain"}
-          />
-        )}
-      </div>
-      <div class="w-full md:max-w-none max-w-ft-350 mx-auto xl:hidden">
+      <div class="w-full md:max-w-none max-w-vc-350 mx-auto xl:hidden">
         <Accordion
           children={links.map(({ title, children }) => ({
             title,
@@ -120,9 +105,9 @@ function Footer({
         />
       </div>
       <div class="grid grid-cols-2 gap-4 mx-auto xl:hidden">
-        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-w-ft-150 md:w-w-ft-300 xl:w-w-ft-150 py-1">
+        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-w-vc-150 md:w-w-vc-300 xl:w-w-vc-150 py-1">
           <span class="text-xs text-black font-Poppins">Pagamento</span>
-          <ul class="flex flex-wrap gap-g-ft-2 justify-center">
+          <ul class="flex flex-wrap gap-g-vc-2 justify-center">
             {paymentMethods.map(({ image, alt }) => (
               <li data-cy="payments-mobile" class="border border-base-100 rounded flex justify-center items-center">
                 <Image src={image} alt={alt} loading="lazy" />
@@ -130,7 +115,7 @@ function Footer({
             ))}
           </ul>
         </div>
-        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-w-ft-150 md:w-w-ft-300 xl:w-w-ft-150 py-1">
+        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-w-vc-150 md:w-w-vc-300 xl:w-w-vc-150 py-1">
           <span class="text-xs text-black font-Poppins">Redes Sociais</span>
           <ul class="flex gap-3">
             {social.map(({ image, href, alt }) => (
@@ -148,7 +133,7 @@ function Footer({
             ))}
           </ul>
         </div>
-        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-w-ft-150 md:w-w-ft-300 xl:w-w-ft-150 py-1">
+        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-w-vc-150 md:w-w-vc-300 xl:w-w-vc-150 py-1">
           <span class="text-xs text-black font-Poppins">Plataforma</span>
           <a href={platformLink ?? "#"} target="_blank" data-cy="platform-mobile">
             {platformImg && (
@@ -156,7 +141,7 @@ function Footer({
             )}
           </a>
         </div>
-        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-w-ft-150 md:w-w-ft-300 xl:w-w-ft-150 py-1">
+        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-w-vc-150 md:w-w-vc-300 xl:w-w-vc-150 py-1">
           <span class="text-xs text-black font-Poppins">Managed by</span>
           <a href={managedLink ?? "#"} target="_blank" data-cy="managed-mobile">
             {managedImg && (
@@ -165,8 +150,8 @@ function Footer({
           </a>
         </div>
       </div>
-      <div class="hidden xl:flex flex-col gap-8 bg-white pt-10 max-w-ft-1452 w-full mx-auto">
-        <div class="w-full max-w-ft-1344 mx-auto flex flex-row gap-g-ft-105 items-start justify-between">
+      <div class="hidden xl:flex flex-col gap-8 bg-white pt-10 max-w-vc-1452 w-full mx-auto">
+        <div class="w-full max-w-vc-1344 mx-auto flex flex-row gap-g-vc-105 items-start justify-between">
           <div data-cy="logo">
             {(logoDesktop || logo) && (
               <Image
@@ -178,9 +163,9 @@ function Footer({
               />
             )}
           </div>
-          <div class="flex-1 grid grid-cols-3 gap-3 pt-p-ft-10">
+          <div class="flex-1 grid grid-cols-3 gap-3 pt-p-vc-10">
             {links.map(({ title, children }) => (
-              <div class="flex flex-col gap-g-ft-10 max-w-ft-350 w-full mx-auto">
+              <div class="flex flex-col gap-g-vc-10 max-w-vc-350 w-full mx-auto">
                 <h4 data-cy="title-footer" class="font-medium text-base text-black font-Poppins">
                   {title}
                 </h4>
@@ -213,8 +198,8 @@ function Footer({
           </div>
         </div>
         <div class="pt-6">
-          <div class="w-full max-w-ft-1452 mx-auto grid grid-cols-4 gap-4 items-center">
-            <div class="flex flex-col gap-1 max-w-ft-348 w-full items-center border py-1 min-h-ft-51">
+          <div class="w-full max-w-vc-1452 mx-auto grid grid-cols-4 gap-4 items-center">
+            <div class="flex flex-col gap-1 max-w-vc-348 w-full items-center border py-1 min-h-vc-51">
               <span class="font-Poppins text-black text-xs">
                 Plataforma
               </span>
@@ -224,7 +209,7 @@ function Footer({
                 )}
               </a>
             </div>
-            <div class="flex flex-col gap-1 max-w-ft-348 w-full items-center border py-1 min-h-ft-51">
+            <div class="flex flex-col gap-1 max-w-vc-348 w-full items-center border py-1 min-h-vc-51">
               <span class="font-Poppins text-black text-xs">
                 Managed by:
               </span>
@@ -234,7 +219,7 @@ function Footer({
                 )}
               </a>
             </div>
-            <div class="flex flex-col gap-1 max-w-ft-348 w-full items-center border py-1 min-h-ft-51">
+            <div class="flex flex-col gap-1 max-w-vc-348 w-full items-center border py-1 min-h-vc-51">
               <span class="font-Poppins text-black text-xs">Pagamento</span>
               <ul class="flex flex-wrap gap-2">
                 {paymentMethods.map(({ image, alt }) => (
@@ -244,7 +229,7 @@ function Footer({
                 ))}
               </ul>
             </div>
-            <div class="flex flex-col gap-1 max-w-ft-348 w-full items-center border py-1 min-h-ft-51">
+            <div class="flex flex-col gap-1 max-w-vc-348 w-full items-center border py-1 min-h-vc-51">
               <span class="font-Poppins text-black text-xs">
                 Redes Sociais
               </span>
@@ -269,7 +254,7 @@ function Footer({
       </div>
       <div
         data-cy="text-footer-desk"
-        class="text-footer-desk text-center text-ft-10 max-w-ft-350 xl:text-xs text-black font-light pb-9 lg:max-w-[1052px] w-full mx-auto font-Poppins "
+        class="text-footer-desk text-center text-vc-10 max-w-vc-350 xl:text-xs text-black font-light pb-9 lg:max-w-[1052px] w-full mx-auto font-Poppins "
         dangerouslySetInnerHTML={{ __html: textFooter ?? "" }}
       />
     </footer>

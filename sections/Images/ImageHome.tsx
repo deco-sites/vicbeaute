@@ -16,7 +16,7 @@ export default function ImageHome({ desktopImage, mobileImage, Link }: DecoCXPro
           src={desktopImage}
           width={1130}
           height={350}
-          className="md:hidden lg:flex max-w-ft-1130 h-[350px] object-cover"
+          className="md:hidden lg:flex max-w-vc-1130 h-[350px] object-cover"
         />
         </a>
       </div>
@@ -27,7 +27,7 @@ export default function ImageHome({ desktopImage, mobileImage, Link }: DecoCXPro
           src={mobileImage}
           width={351}
           height={350}
-          className="lg:max-w-ft-351 w-full md:px-12 lg:px-3 px-3"
+          className="lg:max-w-vc-351 w-full md:px-12 lg:px-3 px-3"
         />
         </a>
       </div>

@@ -65,8 +65,8 @@ const Desktop = ({ navItems, logo, searchbar, loading }: Props) => {
   }, []);
 
   return (
-    <div class="container lg:max-w-[1440px] lg:h-ft-20">
-      <div class="flex items-center justify-between h-ft-19">
+    <div class="container lg:max-w-[1440px] lg:h-vc-20">
+      <div class="flex items-center justify-between h-vc-19">
         <div data-cy="logo-desktop" class="flex-shrink-0 max-w-[223px] w-full mx-auto">
           <a href="/" aria-label="Store logo">
             <Image
