@@ -35,7 +35,7 @@ export default {
           15: "#EBEDE2",
           20: "#5E6C5B",
           25: "#0A3F40",
-          30: "#E2E5D5 ",
+          30: "#E2E5D5",
           35: "#353930",
         },
         red: {
@@ -109,7 +109,7 @@ export default {
         "Figtree": ["Figtree", "sans-serif"],
         "Inter": ["Inter", "sans-serif"],
         "Poppins": ["Poppins", "sans-serif"],
-        "Hanken-Grotesk": {"Hanken Grotesk": "sans-serif"},
+        "Hanken-Grotesk": ["Hanken Grotesk", "sans-serif"],
         "Queens": ["Queens", "serif"],
         "Manrope": ["Manrope", "sans-serif"],
         "Roboto": ["Roboto", "sans-serif"],
