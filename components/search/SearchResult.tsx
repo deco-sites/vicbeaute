@@ -280,7 +280,7 @@ function Result(props: SectionProps<typeof loader>) {
                 <div class="lg:bg-[#F8F8F8] flex flex-col sm:hidden justify-between items-start gap-[14px]">
                   <div class="flex w-full gap-7 flex-row-reverse justify-between">
                     <label
-                      class="select items-center w-full rounded-lg max-w-ft-160 border border-gray-40 min-h-[unset] h-8 px-4 text-sm text-black-15 bg-[url(/image/filter.png)] bg-auto bg-[position:calc(100%_-_41px)_calc(1px_+_46%),calc(100%_-_16.1px)_calc(1px_+_50%)] pl-14 font-Poppins"
+                      class="select items-center w-full rounded-lg max-w-vc-160 border border-gray-40 min-h-[unset] h-8 px-4 text-sm text-black-15 bg-[url(/image/filter.png)] bg-auto bg-[position:calc(100%_-_41px)_calc(1px_+_46%),calc(100%_-_16.1px)_calc(1px_+_50%)] pl-14 font-Poppins"
                       for={controls}
                     >
                       Filtros
@@ -313,7 +313,7 @@ function Result(props: SectionProps<typeof loader>) {
                   <div class="bg-[#F8F8F8] flex flex-col sm:hidden justify-between items-start gap-[14px]">
                     <div class="flex w-full gap-7 flex-row-reverse justify-between">
                       <label
-                        class="select items-center w-full rounded-lg max-w-ft-160 border border-gray-40 min-h-[unset] h-8 px-4 text-sm text-black-15 bg-[url(/image/filter.png)] bg-auto bg-[position:calc(100%_-_41px)_calc(1px_+_46%),calc(100%_-_16.1px)_calc(1px_+_50%)] pl-14 font-Poppins"
+                        class="select items-center w-full rounded-lg max-w-vc-160 border border-gray-40 min-h-[unset] h-8 px-4 text-sm text-black-15 bg-[url(/image/filter.png)] bg-auto bg-[position:calc(100%_-_41px)_calc(1px_+_46%),calc(100%_-_16.1px)_calc(1px_+_50%)] pl-14 font-Poppins"
                         for={controls}
                       >
                         Filtros

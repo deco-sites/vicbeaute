@@ -79,7 +79,7 @@ function ProductCard({
     <div
       {...event}
       class={clx(
-        "card card-compact group text-sm lg:max-w-ft-210 border border-gray-15 rounded-lg",
+        "card card-compact group text-sm lg:max-w-vc-210 border border-gray-15 rounded-lg",
         _class,
       )}
       data-cy={`product-card-${title?.replace(/\s+/g, "-").toLowerCase()}`}
@@ -102,7 +102,7 @@ function ProductCard({
           )}
         >
           {collectionTag?.[0]?.value && (
-            <div class="hidden absolute top-0 bg-red-400 w-full items-center justify-center p-1 max-w-ft-106 h-6 rounded">
+            <div class="hidden absolute top-0 bg-red-400 w-full items-center justify-center p-1 max-w-vc-106 h-6 rounded">
               {collectionTag?.[0]?.value}
             </div>
           )}
@@ -145,7 +145,7 @@ function ProductCard({
         </div>
       </figure>
 
-      <a href={relativeUrl} class="pt-3 px-ft-6">
+      <a href={relativeUrl} class="pt-3 px-vc-6">
         <h3 class="text-base line-clamp-2 min-h-12">
           {title}
         </h3>
@@ -211,7 +211,7 @@ function ProductCard({
                 "border-none text-sm no-animation w-full",
                 "disabled:!bg-transparent",
                 "hover:!text-error disabled:!text-error",
-                "flex w-full max-w-ft-152 justify-center rounded-lg mx-auto bg-gray-30 font-Inter text-black-15 font-medium text-base px-0 lg:text-base",
+                "flex w-full max-w-vc-152 justify-center rounded-lg mx-auto bg-gray-30 font-Inter text-black-15 font-medium text-base px-0 lg:text-base",
               )}
             >
               Produto Indisponível
