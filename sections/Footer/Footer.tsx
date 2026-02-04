@@ -1,6 +1,7 @@
 import { type ImageWidget, RichText } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import Accordion from "../../components/ui/Accordion.tsx";
+import { TextArea } from "apps/admin/widgets.ts";
 
 interface LinkItem {
   isLink: true;
@@ -50,7 +51,9 @@ interface Props {
   managedLink?: string;
   platformImg?: ImageWidget;
   platformLink?: string;
-  textFooter?: string;
+  textFooter?: TextArea;
+  textPrivacity?: string;
+  linkPrivacity?: string;
 }
 
 function Footer({
@@ -66,83 +69,81 @@ function Footer({
   platformImg,
   platformLink,
   textFooter,
+  textPrivacity,
+  linkPrivacity,
 }: Props) {
   return (
-    <footer class="w-full flex flex-col gap-9 bg-white mt-8 px-4">
-      <div class="w-full md:max-w-none max-w-vc-350 mx-auto xl:hidden">
+    <footer class="w-full flex flex-col gap-10 bg-white px-3 bg-green-5 pb-4">
+      <div class="w-full md:max-w-none xl:hidden">
         <Accordion
           children={links.map(({ title, children }) => ({
             title,
             subtitle: (
               <ul data-cy="options-mobile" class="flex flex-col gap-2">
                 {children.map((child) =>
-                  child.isLink ? (
-                    <li>
-                      <a
-                        href={child.href}
-                        class="text-sm text-gray-500 hover:underline"
-                        data-cy="sublink-footer"
-                      >
-                        {child.title}
-                      </a>
-                    </li>
-                  ) : (
-                    <li>
-                      <div
-                        id="text-footer"
-                        data-cy="text-footer"
-                        class="text-sm text-gray-500"
-                        dangerouslySetInnerHTML={{
-                          __html: child.content ?? "",
-                        }}
-                      />
-                    </li>
-                  )
+                  child.isLink
+                    ? (
+                      <li>
+                        <a
+                          href={child.href}
+                          class="text-sm text-gray-500 hover:underline"
+                          data-cy="sublink-footer"
+                        >
+                          {child.title}
+                        </a>
+                      </li>
+                    )
+                    : (
+                      <li>
+                        <div
+                          id="text-footer"
+                          data-cy="text-footer"
+                          class="text-sm text-gray-500"
+                          dangerouslySetInnerHTML={{
+                            __html: child.content ?? "",
+                          }}
+                        />
+                      </li>
+                    )
                 )}
               </ul>
             ) as unknown as string,
           }))}
         />
       </div>
+      <div class="flex items-center gap-5 md:w-w-vc-300 xl:w-w-vc-150 py-1">
+        <span class="text-black-35 font-Manrope">Redes sociais</span>
+        <ul class="flex gap-5">
+          {social.map(({ image, href, alt }) => (
+            <li>
+              <a data-cy="social-mobile" href={href}>
+                <Image
+                  src={image}
+                  alt={alt}
+                  loading="lazy"
+                  width={24}
+                  height={24}
+                />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
       <div class="grid grid-cols-2 gap-4 mx-auto xl:hidden">
         <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-w-vc-150 md:w-w-vc-300 xl:w-w-vc-150 py-1">
-          <span class="text-xs text-black font-Poppins">Pagamento</span>
-          <ul class="flex flex-wrap gap-g-vc-2 justify-center">
-            {paymentMethods.map(({ image, alt }) => (
-              <li data-cy="payments-mobile" class="border border-base-100 rounded flex justify-center items-center">
-                <Image src={image} alt={alt} loading="lazy" />
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-w-vc-150 md:w-w-vc-300 xl:w-w-vc-150 py-1">
-          <span class="text-xs text-black font-Poppins">Redes Sociais</span>
-          <ul class="flex gap-3">
-            {social.map(({ image, href, alt }) => (
-              <li>
-                <a data-cy="social-mobile" href={href}>
-                  <Image
-                    src={image}
-                    alt={alt}
-                    loading="lazy"
-                    width={24}
-                    height={24}
-                  />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-w-vc-150 md:w-w-vc-300 xl:w-w-vc-150 py-1">
-          <span class="text-xs text-black font-Poppins">Plataforma</span>
-          <a href={platformLink ?? "#"} target="_blank" data-cy="platform-mobile">
+          <span class="text-sm text-black-25 font-Manrope">Plataforma:</span>
+          <a
+            href={platformLink ?? "#"}
+            target="_blank"
+            data-cy="platform-mobile"
+          >
             {platformImg && (
               <Image src={platformImg} alt="platform" loading="lazy" />
             )}
           </a>
         </div>
         <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-w-vc-150 md:w-w-vc-300 xl:w-w-vc-150 py-1">
-          <span class="text-xs text-black font-Poppins">Managed by</span>
+          <span class="text-sm text-black-25 font-Manrope">Managed by:</span>
           <a href={managedLink ?? "#"} target="_blank" data-cy="managed-mobile">
             {managedImg && (
               <Image src={managedImg} alt="managed" loading="lazy" />
@@ -166,31 +167,36 @@ function Footer({
           <div class="flex-1 grid grid-cols-3 gap-3 pt-p-vc-10">
             {links.map(({ title, children }) => (
               <div class="flex flex-col gap-g-vc-10 max-w-vc-350 w-full mx-auto">
-                <h4 data-cy="title-footer" class="font-medium text-base text-black font-Poppins">
+                <h4
+                  data-cy="title-footer"
+                  class="font-medium text-base text-black font-Poppins"
+                >
                   {title}
                 </h4>
                 <ul class="flex flex-col gap-2">
                   {children.map((child) =>
-                    child.isLink ? (
-                      <li>
-                        <a data-cy="footer-options" href={child.href}>
-                          <div class="text-[13px] text-black font-light font-Poppins">
-                            {child.title}
-                          </div>
-                        </a>
-                      </li>
-                    ) : (
-                      <li>
-                        <div
-                          id="text-footer"
-                          data-cy="text-footer"
-                          class="text-[13px] text-black font-light font-Poppins"
-                          dangerouslySetInnerHTML={{
-                            __html: child.content ?? "",
-                          }}
-                        />
-                      </li>
-                    )
+                    child.isLink
+                      ? (
+                        <li>
+                          <a data-cy="footer-options" href={child.href}>
+                            <div class="text-[13px] text-black font-light font-Poppins">
+                              {child.title}
+                            </div>
+                          </a>
+                        </li>
+                      )
+                      : (
+                        <li>
+                          <div
+                            id="text-footer"
+                            data-cy="text-footer"
+                            class="text-[13px] text-black font-light font-Poppins"
+                            dangerouslySetInnerHTML={{
+                              __html: child.content ?? "",
+                            }}
+                          />
+                        </li>
+                      )
                   )}
                 </ul>
               </div>
@@ -223,7 +229,10 @@ function Footer({
               <span class="font-Poppins text-black text-xs">Pagamento</span>
               <ul class="flex flex-wrap gap-2">
                 {paymentMethods.map(({ image, alt }) => (
-                  <li data-cy="payment-footer" class="payment-footer border border-base-100 rounded flex justify-center items-center">
+                  <li
+                    data-cy="payment-footer"
+                    class="payment-footer border border-base-100 rounded flex justify-center items-center"
+                  >
                     <Image src={image} alt={alt} loading="lazy" />
                   </li>
                 ))}
@@ -252,11 +261,19 @@ function Footer({
           </div>
         </div>
       </div>
-      <div
-        data-cy="text-footer-desk"
-        class="text-footer-desk text-center text-vc-10 max-w-vc-350 xl:text-xs text-black font-light pb-9 lg:max-w-[1052px] w-full mx-auto font-Poppins "
-        dangerouslySetInnerHTML={{ __html: textFooter ?? "" }}
-      />
+      <div class="gap-1">
+        <div
+          data-cy="text-footer-desk"
+          class="text-footer-desk leading-normal text-center tracking-wider text-black-35 text-xs text-black font-medium lg:max-w-[1052px] w-full mx-auto font-Manrope"
+          dangerouslySetInnerHTML={{ __html: textFooter ?? "" }}
+        />
+        <a href={linkPrivacity ?? ""} target="_blank">
+          <div
+            class="text-footer-desk underline leading-normal text-center tracking-wider text-black-35 text-xs text-black font-medium lg:max-w-[1052px] w-full mx-auto font-Manrope"
+            dangerouslySetInnerHTML={{ __html: textPrivacity ?? "" }}
+          />
+        </a>
+      </div>
     </footer>
   );
 }

@@ -3,9 +3,10 @@
   "content": {
     "form": {
       "buttonColor": "bg-gold-0 text-white-0",
-      "helpText": "<p>Concordo que a <strong>Empresa</strong> pode usar meus dados de contato e interações.<a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"/politica-de-privacidade\"><u> Política de privacidade.</u></a></p>"
+      "helpText": "<p><span>Ao se inscrever você aceita a</span><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"/politica-de-privacidade\"><span> </span><u><span>Política de Privacidade</span></u></a><span> e </span><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"/termos-de-uso\"><u><span>Termos de Uso</span></u></a><span>.</span></p>",
+      "buttonText": "JUNTE-SE A NÓS"
     },
-    "title": "Assine nossa newsletter!",
+    "title": "Inscreva-se e fique por dentro das novidades",
     "description": "Seja o primeiro a receber promoções, tendências e mais!"
   },
   "layout": {
