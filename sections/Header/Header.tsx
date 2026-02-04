@@ -153,22 +153,24 @@ const Mobile = ({ logo, searchbar, navItems, loading }: Props) => {
           <Icon id="menu_mobile" />
         </label>
 
-        <div data-cy="searchbar-mobile">
-          <input type="checkbox" id="search-toggle" class="hidden peer" />
-          <label
-            for="search-toggle"
-            class="btn btn-square btn-sm btn-ghost"
-            aria-label="search icon button"
-          >
-            <Icon id="search" />
-          </label>
-          <div class="absolute top-0 left-0 w-screen bg-base-100 border-t border-gray-300 shadow-md max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-[565px] peer-checked:min-h-[70px] peer-checked:overflow-auto z-10 flex items-center">
-            {loading === "lazy" ? (
-              <div class="flex justify-center items-center p-4">
-                <span class="loading loading-spinner" />
-              </div>
-            ) : <Searchbar {...searchbar} />}
-          </div>
+        <div class="relative">
+          {isLoggedIn.value ? (
+            <>
+              <button
+                data-cy="user-mobile"
+                aria-label="login"
+                onClick={() => open.value = !open.value}
+                class="p-2"
+              >
+                <Icon id="user" width={17} height={20} />
+              </button>
+              {open.value && <AccountDropdown />}
+            </>
+          ) : (
+            <a href="/login" aria-label="login">
+              <Icon id="user" width={17} height={20} />
+            </a>
+          )}
         </div>
 
         {logo && (
@@ -188,24 +190,22 @@ const Mobile = ({ logo, searchbar, navItems, loading }: Props) => {
           </a>
         )}
 
-        <div class="relative">
-          {isLoggedIn.value ? (
-            <>
-              <button
-                data-cy="user-mobile"
-                aria-label="login"
-                onClick={() => open.value = !open.value}
-                class="p-2"
-              >
-                <Icon id="user" width={17} height={20} />
-              </button>
-              {open.value && <AccountDropdown />}
-            </>
-          ) : (
-            <a href="/login" aria-label="login">
-              <Icon id="user" width={17} height={20} />
-            </a>
-          )}
+        <div data-cy="searchbar-mobile">
+          <input type="checkbox" id="search-toggle" class="hidden peer" />
+          <label
+            for="search-toggle"
+            class="btn btn-square btn-sm btn-ghost"
+            aria-label="search icon button"
+          >
+            <Icon id="search" />
+          </label>
+          <div class="absolute top-0 left-0 w-screen bg-base-100 border-t border-gray-300 shadow-md max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-[565px] peer-checked:min-h-[70px] peer-checked:overflow-auto z-10 flex items-center">
+            {loading === "lazy" ? (
+              <div class="flex justify-center items-center p-4">
+                <span class="loading loading-spinner" />
+              </div>
+            ) : <Searchbar {...searchbar} />}
+          </div>
         </div>
 
         <Bag data-cy="minicart-button-mobile" />
