@@ -3,6 +3,7 @@ import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
 import Icon from "./Icon.tsx";
 import { useScript } from "@deco/deco/hooks";
+import type { Section } from "@deco/deco/blocks"; // Importe o tipo Section
 
 export interface Props {
   open?: boolean;
@@ -17,8 +18,9 @@ const script = (id: string) => {
       return;
     }
     const input = document.getElementById(id) as HTMLInputElement | null;
-    if (!input) 
+    if (!input) {
       return;
+    }
     input.checked = false;
   };
   addEventListener("keydown", handler);
@@ -29,7 +31,7 @@ const script = (id: string) => {
   const updateCartCount = () => {
     const cart = window.STOREFRONT.CART.getCart();
     const count = cart?.items.length ?? 0;
-    itemsNumber.innerHTML = `(${count} Itens)`;
+    itemsNumber.innerHTML = `${count}`;
   };
 
   updateCartCount();
@@ -41,7 +43,6 @@ const script = (id: string) => {
 function Drawer(
   { children, aside, open, class: _class = "", id = useId() }: Props,
 ) {
-
   return (
     <>
       <div class={clx("drawer", _class)}>
@@ -81,6 +82,7 @@ function Aside({
   title,
   drawer,
   children,
+  footer,
 }: {
   title: string;
   drawer: string;
@@ -91,16 +93,17 @@ function Aside({
     width?: number;
     height?: number;
   };
+  footer?: Section;
 }) {
-
   return (
     <div
       data-aside
       id={drawer === "minicart-drawer" ? "minicartdrawer" : undefined}
-      class="bg-base-100 grid grid-rows-[auto_1fr] h-[100vh] w-full"
+      class="bg-base-100 flex flex-col h-[100vh] w-full"
       style={{ maxWidth: "100vw" }}
     >
-      <div class="flex justify-between items-center h-14 ml-2 w-full">
+      <div
+        class= {drawer === "search-drawer" ? "flex justify-between items-center h-14 ml-2 w-full absolute" : "flex justify-between items-center h-14 ml-2 w-full"}>
         <span class="order-3">
           <span
             class="font-bold text-2xl"
@@ -109,15 +112,21 @@ function Aside({
             {drawer === "minicart-drawer"
               ? (
                 <div class="flex items-center gap-2">
-                  <span class="font-bold text-2xl">
+                  <span class="font-Queens text-vc-32 leading-none text-green-10 font-normal">
                     Minha Sacola
                   </span>
-                  <span class="items-number font-normal text-sm">
-                    {/* inserted by script */}
-                  </span>
+
+                  <div class="relative">
+                    <Icon id="minicartbag" width={19} height={21} />
+
+                    <span class="items-number indicator-item badge badge-primary badge-sm font-thin absolute -right-vc-5 pr-1 pl-1 top-vc-5 bg-white-15 border-green-20 text-green-20 w-[16px] h-[16px]">
+                      {/* inserted by script */}
+                    </span>
+                  </div>
                 </div>
               )
-              : title}
+              : 
+              <div class="hidden"></div>}
           </span>
         </span>
         {logo && (
@@ -138,17 +147,23 @@ function Aside({
           for={drawer}
           aria-label="X"
           id={drawer === "minicart-drawer" ? "closeminicart" : undefined}
-          class="btn btn-ghost order-1 absolute left-7 p-0 max-h-5 hover:bg-transparent top-1"
+          class= {drawer === "search-drawer" ? "btn btn-ghost order-1 absolute right-vc-26 p-0 max-h-5 hover:bg-transparent top-vc-11" : "btn btn-ghost order-1 absolute left-7 p-0 max-h-5 hover:bg-transparent top-1"}
         >
           <Icon
             id={drawer === "minicart-drawer" ? "closeminicartbutton" : "close"}
-            width={drawer === "minicart-drawer" ? 13 : 20}
-            height={drawer === "minicart-drawer" ? 13 : 20}
+            width={drawer === "minicart-drawer" ? 16 : 20}
+            height={drawer === "minicart-drawer" ? 16 : 20}
           />
         </label>
       </div>
       {children}
+      {footer && (
+        <div class="border-t border-gray-100">
+          <footer.Component {...footer.props} />
+        </div>
+      )}
     </div>
+    
   );
 }
 Drawer.Aside = Aside;

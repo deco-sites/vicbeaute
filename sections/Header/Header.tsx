@@ -13,21 +13,43 @@ import { useDevice } from "@deco/deco/hooks";
 import { type LoadingFallbackProps } from "@deco/deco";
 import { useSignal } from "@preact/signals";
 import { useEffect } from "preact/hooks";
+import { Section } from "@deco/deco/blocks";
 
 export interface Logo {
   desktop: { src: ImageWidget; alt: string; width?: number; height?: number };
   mobile: { src: ImageWidget; alt: string; width?: number; height?: number };
 }
 
+export interface AlertItem {
+  text: string;
+  imageSrc?: {
+    src: ImageWidget;
+    alt?: string;
+  };
+}
+
 export interface SectionProps {
-  alerts?: HTMLWidget[];
+  alerts?: AlertItem[];
+
+  /**
+   * @title Autoplay do alerta
+   * @description Tempo em segundos entre os alertas (0 desativa)
+   */
+  alertInterval?: number;
+
   navItems?: SiteNavigationElement[] | null;
   searchbar: SearchbarProps;
   logo: Logo;
+  /** @title Vitrine do Drawer */
+  /** @description Esta vitrine aparecerá no rodapé da busca e do minicart */
+  drawerShelf?: Section;
   loading?: "eager" | "lazy";
 }
 
+
 type Props = Omit<SectionProps, "alert">;
+
+const SEARCH_DRAWER_ID = "search-drawer";
 
 const AccountDropdown = () => (
   <div class="absolute top-full right-0 mt-2 bg-white border shadow-lg rounded-md w-48 z-50">
@@ -85,6 +107,7 @@ const Desktop = ({ navItems, logo, searchbar, loading }: Props) => {
         </nav>
         <Searchbar data-cy="searchbar-desktop" {...searchbar} />
 
+
         <div class="flex items-center gap-8 relative max-w-[102px] w-full mx-auto">
           {isLoggedIn.value ? (
             <div class="relative">
@@ -94,7 +117,7 @@ const Desktop = ({ navItems, logo, searchbar, loading }: Props) => {
                 onClick={() => open.value = !open.value}
                 class="p-2"
               >
-                <Icon id="user" width={17} height={20} />
+                <Icon id="user" size= {24} />
               </button>
               {open.value && <AccountDropdown />}
             </div>
@@ -110,7 +133,7 @@ const Desktop = ({ navItems, logo, searchbar, loading }: Props) => {
   );
 };
 
-const Mobile = ({ logo, searchbar, navItems, loading }: Props) => {
+const Mobile = ({ logo, searchbar, navItems, loading, drawerShelf }: Props) => {
   const open = useSignal(false);
   const isLoggedIn = useSignal(false);
 
@@ -120,17 +143,13 @@ const Mobile = ({ logo, searchbar, navItems, loading }: Props) => {
 
   return (
     <>
+      {/* 1. Drawer do Menu Lateral */}
       <Drawer
-        data-cy="drawer-menu"
         id={SIDEMENU_DRAWER_ID}
         aside={
           <Drawer.Aside title="" logo={logo} drawer={SIDEMENU_DRAWER_ID}>
             {loading === "lazy" ? (
-              <div
-                id={SIDEMENU_CONTAINER_ID}
-                class="h-full flex items-center justify-center"
-                style={{ minWidth: "100vw" }}
-              >
+              <div id={SIDEMENU_CONTAINER_ID} class="h-full flex items-center justify-center w-screen">
                 <span class="loading loading-spinner" />
               </div>
             ) : <Menu navItems={navItems ?? []} />}
@@ -138,21 +157,34 @@ const Mobile = ({ logo, searchbar, navItems, loading }: Props) => {
         }
       />
 
+      {/* 2. NOVO: Drawer da Busca (Full Screen) */}
+      <Drawer
+        id="search-drawer"
+        aside={
+          <Drawer.Aside 
+            title="Buscar" 
+            drawer="search-drawer"
+            footer={drawerShelf} // Passa a vitrine aqui!
+          >
+            <Searchbar {...searchbar} />
+          </Drawer.Aside>
+        }
+      />
+
+      {/* 3. Header Visível */}
       <div
-        class="grid place-items-center w-screen px-5 gap-4"
+        class="grid place-items-center w-screen px-5 gap-3 bg-white"
         style={{
           height: NAVBAR_HEIGHT_MOBILE,
           gridTemplateColumns: "min-content min-content auto min-content min-content",
         }}
       >
-        <label
-          for={SIDEMENU_DRAWER_ID}
-          class="btn btn-square btn-sm btn-ghost"
-          aria-label="open menu"
-        >
+        {/* Ícone Menu */}
+        <label for={SIDEMENU_DRAWER_ID} class="btn btn-square btn-sm btn-ghost" aria-label="open menu">
           <Icon id="menu_mobile" />
         </label>
 
+        {/* Bonequinho de Login (Restaurado) */}
         <div class="relative">
           {isLoggedIn.value ? (
             <>
@@ -162,17 +194,18 @@ const Mobile = ({ logo, searchbar, navItems, loading }: Props) => {
                 onClick={() => open.value = !open.value}
                 class="p-2"
               >
-                <Icon id="user" width={17} height={20} />
+                <Icon id="user" size={24} />
               </button>
               {open.value && <AccountDropdown />}
             </>
           ) : (
             <a href="/login" aria-label="login">
-              <Icon id="user" width={17} height={20} />
+              <Icon id="user" size={24} />
             </a>
           )}
         </div>
 
+        {/* Logo Central (Restaurado) */}
         {logo && (
           <a
             data-cy="logo-mobile"
@@ -190,35 +223,40 @@ const Mobile = ({ logo, searchbar, navItems, loading }: Props) => {
           </a>
         )}
 
+        {/* Ícone de Busca (Abre o Drawer) */}
         <div data-cy="searchbar-mobile">
-          <input type="checkbox" id="search-toggle" class="hidden peer" />
           <label
-            for="search-toggle"
-            class="btn btn-square btn-sm btn-ghost"
+            for="search-drawer"
+            class="btn btn-square btn-sm btn-ghost h-8"
             aria-label="search icon button"
           >
-            <Icon id="search" />
+            <Icon id="search" size={24} />
           </label>
-          <div class="absolute top-0 left-0 w-screen bg-base-100 border-t border-gray-300 shadow-md max-h-0 overflow-hidden transition-all duration-300 peer-checked:max-h-[565px] peer-checked:min-h-[70px] peer-checked:overflow-auto z-10 flex items-center">
-            {loading === "lazy" ? (
-              <div class="flex justify-center items-center p-4">
-                <span class="loading loading-spinner" />
-              </div>
-            ) : <Searchbar {...searchbar} />}
-          </div>
         </div>
 
+        {/* Sacola/Bag */}
         <Bag data-cy="minicart-button-mobile" />
       </div>
     </>
   );
 };
 
-function Header({ alerts = [], logo, ...props }: Props) {
+function Header({ 
+  alerts = [], 
+  alertInterval = 5, // Valor default aqui
+  logo, 
+  ...props 
+}: Props) {
   return (
     <header class="border-none">
-      <div class="bg-base-100 fixed w-full z-40 xl:left-0 drop-shadow-lg">
-        {alerts.length > 0 && <Alert alerts={alerts} />}
+      <div class="bg-transparent fixed w-full z-40 xl:left-0 drop-shadow-lg">
+        {alerts.length > 0 && (
+          <Alert 
+            alerts={alerts} 
+            interval={alertInterval > 0 ? alertInterval : 5} 
+          />
+        )}
+
         <div class="hidden xl:block">
           <Desktop logo={logo} {...props} />
         </div>
@@ -229,6 +267,7 @@ function Header({ alerts = [], logo, ...props }: Props) {
     </header>
   );
 }
+
 
 export const LoadingFallback = (props: LoadingFallbackProps<Props>) => (
   <Header {...(props as any)} loading="lazy" />

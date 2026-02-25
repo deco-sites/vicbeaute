@@ -8,20 +8,12 @@
       "__resolveType": "site/sections/Images/Carousel.tsx",
       "images": [
         {
-          "desktop": "https://assets.decocache.com/easycommerce/b879f6e2-27c1-4f31-9237-0567cf5948b0/Rectangle-3706.png",
-          "mobile": "https://assets.decocache.com/easycommerce/79b8eb9f-4737-4459-8d66-d30661d91e3b/Group-6423.png",
+          "desktop": "https://assets.decocache.com/vicbeaute/d4160a7f-4598-40bf-a704-8175026b6838/Rectangle-3.png",
+          "mobile": "https://assets.decocache.com/vicbeaute/d4160a7f-4598-40bf-a704-8175026b6838/Rectangle-3.png",
           "alt": "Home Banner",
           "action": {
-            "title": "Skate into Adventure!!!!",
-            "subTitle": "Top-quality roller skate shoes for all levels. ",
-            "href": "/",
-            "label": "Grab Yours Now!"
+            "href": "#"
           }
-        },
-        {
-          "desktop": "https://assets.decocache.com/easycommerce/b879f6e2-27c1-4f31-9237-0567cf5948b0/Rectangle-3706.png",
-          "mobile": "https://assets.decocache.com/easycommerce/79b8eb9f-4737-4459-8d66-d30661d91e3b/Group-6423.png",
-          "alt": "aaa"
         }
       ],
       "preload": true,
@@ -251,7 +243,10 @@
       "__resolveType": "newsletter"
     },
     {
-      "__resolveType": "Footer"
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Footer"
+      }
     }
   ],
   "__resolveType": "website/pages/Page.tsx",

@@ -40,16 +40,14 @@ const script = (
   });
 
   document.addEventListener("click", (e) => {
-    if (!form?.contains(e.target as Node) && !slot?.contains(e.target as Node)) {
+    if (
+      !form?.contains(e.target as Node) && !slot?.contains(e.target as Node)
+    ) {
       if (slot) slot.innerHTML = "";
     }
   });
 
-  input?.addEventListener("input", () => {
-    if (input.value.trim() === "" && slot) {
-      slot.innerHTML = "";
-    }
-  });
+  
 
   addEventListener("keydown", (e: KeyboardEvent) => {
     const isK = e.key === "k" || e.key === "K" || e.keyCode === 75;
@@ -72,28 +70,33 @@ export default function Searchbar(
   return (
     <div
       data-cy="searchbar"
-      class="w-full grid lg:max-w-[240px] lg:relative lg:mx-auto"
+      class="w-full grid lg:max-w-[240px] lg:relative lg:mx-auto pt-vc-10 px-3"
       style={{ gridTemplateRows: "min-content auto" }}
     >
       <form
         id={SEARCHBAR_INPUT_FORM_ID}
         action={ACTION}
-        class="join border-b border-[#CCCCCC] rounded-none lg:max-w-[240px] mx-5 lg:mx-[0px] lg:gap-3"
+        class="join border border-[#CCCCCC] rounded-none lg:max-w-[240px] lg:gap-3 h-vc-54"
       >
         <button
           data-cy="submit-search"
           type="submit"
-          class="btn join-item btn-square no-animation lg:hover:bg-transparent lg:border-none lg:max-w-[14px] bg-transparent"
+          class="btn join-item btn-square no-animation lg:hover:bg-transparent lg:border-none lg:max-w-[14px] bg-transparent w-6 ml-vc-15"
           aria-label="Search"
           for={SEARCHBAR_INPUT_FORM_ID}
           tabIndex={-1}
         >
           <span class="loading loading-spinner loading-xs hidden [.htmx-request_&]:inline" />
-          <Icon width={14} height={14} id="search" class="inline [.htmx-request_&]:hidden" />
+          <Icon
+            width={24}
+            height={24}
+            id="search-drawer"
+            class="inline [.htmx-request_&]:hidden"
+          />
         </button>
         <input
           tabIndex={0}
-          class="input input-bordered join-item flex-grow border-none focus:outline-none focus:ring-0 focus:border-none lg:px-0"
+          class="input px-vc-10 input-bordered join-item flex-grow border-none focus:outline-none focus:ring-0 focus:border-none lg:px-0 placeholder:font-Manrope placeholder:font-medium placeholder:text-sm placeholder:text-black-5"
           name={NAME}
           placeholder={placeholder}
           autocomplete="off"
@@ -101,7 +104,7 @@ export default function Searchbar(
           hx-post={loader && useComponent<SuggestionProps>(Suggestions, {
             loader: asResolved(loader),
           })}
-          hx-trigger="input changed delay:300ms"
+         hx-trigger="input changed delay:300ms, focus, intersect"
           hx-indicator={`#${SEARCHBAR_INPUT_FORM_ID}`}
           hx-swap="innerHTML"
         />
@@ -112,19 +115,12 @@ export default function Searchbar(
           aria-label="Toggle searchbar"
         >
         </label>
-        <label
-          for="search-toggle"
-          class="cursor-pointer flex items-center lg:hidden"
-          aria-label="fechar busca"
-        >
-          <Icon id="close" width={20} height={20} />
-        </label>
       </form>
 
       <div
-        id={slot}
-        class="lg:absolute lg:top-full lg:left-[-25px] lg:z-50 lg:bg-white lg:shadow-md lg:w-[295px]"
-      />
+  id={slot}
+  class="flex-grow overflow-y-auto" // Ocupa o resto da tela e permite scroll
+/>
 
       <script
         type="module"

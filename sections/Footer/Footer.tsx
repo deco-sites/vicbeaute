@@ -111,7 +111,7 @@ function Footer({
           }))}
         />
       </div>
-      <div class="flex items-center gap-5 md:w-w-vc-300 xl:w-w-vc-150 py-1">
+      <div class="flex items-center gap-5 md:w-w-vc-300 xl:w-vc-150 py-1">
         <span class="text-black-35 font-Manrope">Redes sociais</span>
         <ul class="flex gap-5">
           {social.map(({ image, href, alt }) => (
@@ -130,7 +130,7 @@ function Footer({
         </ul>
       </div>
       <div class="grid grid-cols-2 gap-4 mx-auto xl:hidden">
-        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-w-vc-150 md:w-w-vc-300 xl:w-w-vc-150 py-1">
+        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-vc-150 md:w-w-vc-300 xl:w-vc-150 py-1">
           <span class="text-sm text-black-25 font-Manrope">Plataforma:</span>
           <a
             href={platformLink ?? "#"}
@@ -142,7 +142,7 @@ function Footer({
             )}
           </a>
         </div>
-        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-w-vc-150 md:w-w-vc-300 xl:w-w-vc-150 py-1">
+        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-vc-150 md:w-w-vc-300 xl:w-vc-150 py-1">
           <span class="text-sm text-black-25 font-Manrope">Managed by:</span>
           <a href={managedLink ?? "#"} target="_blank" data-cy="managed-mobile">
             {managedImg && (

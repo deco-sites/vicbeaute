@@ -151,27 +151,37 @@ export default function Cart(
 
         <div
           class={clx(
-            "flex flex-col flex-grow justify-center items-center overflow-hidden w-full",
+            "flex flex-col flex-grow overflow-hidden w-full justify-start items-start ",
             "[.htmx-request_&]:pointer-events-none [.htmx-request_&]:opacity-60 [.htmx-request_&]:cursor-wait transition-opacity duration-300",
           )}
         >
           {count === 0
             ? (
-              <div class="flex flex-col gap-6">
-                <span class="font-bold text-2xl">Seu carrinho está vazio.</span>
+              <div class="flex flex-col pb-10 w-full">
+                {/* Free Shipping Bar */}
+                <div class="px-2 py-4 w-full">
+                  <FreeShippingProgressBar
+                    total={total}
+                    locale={locale}
+                    currency={currency}
+                    target={freeShippingTarget}
+                  />
+                </div>
+                <span class="font-Roboto font-medium text-vc-22 text-center text-green-10 pb-1">Sua sacola está vazia.</span>
+                <span class="font-Roboto text-green-10 text-center">Para continuar comprando, navegue pelas categorias ou faça uma busca por produtos.</span>
                 <label
                   data-cy="add-products"
                   for={MINICART_DRAWER_ID}
-                  class="btn btn-outline no-animation"
+                  class="btn btn-outline no-animation mt-6"
                 >
-                  Adicionar produtos
+                  Voltar a loja
                 </label>
               </div>
             )
             : (
               <>
                 {/* Free Shipping Bar */}
-                <div class="px-2 py-4 w-full hidden">
+                <div class="px-2 py-4 w-full">
                   <FreeShippingProgressBar
                     total={total}
                     locale={locale}

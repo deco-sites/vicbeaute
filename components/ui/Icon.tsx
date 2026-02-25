@@ -41,6 +41,8 @@ export type AvailableIcons =
   | "lupa-busca-vazia"
   | "lupa"
   | "arrow-back-search-error"
+  | "minicartbag"
+  | "search-drawer"
   | "user";
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**

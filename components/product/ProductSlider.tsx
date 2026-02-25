@@ -22,7 +22,7 @@ function ProductSlider(
 
   return (
     <>
-      <div id={id} class="relative w-full lg:px-0 px-4 pt-2">
+      <div id={id} class="relative w-full lg:px-0 pl-3 pt-2">
         <Slider id="shelf-slider">
           {products?.map((product, index) => (
             <Slider.Item index={index}>

@@ -24,11 +24,11 @@ function Bag() {
       <label class="indicator" for={MINICART_DRAWER_ID} aria-label="open cart">
         <span
           id={id}
-          class="hidden indicator-item badge badge-primary badge-sm font-thin right-1 pr-1 pl-1 top-[26px] bg-[#2D2D2C] border-none"
+          class="hidden indicator-item badge badge-primary badge-sm font-thin right-2 pr-1 pl-1 top-5 bg-white-15 border-green-20 text-green-20 w-[16px] h-[16px]"
         />
 
         <span class="btn btn-square btn-sm btn-ghost no-animation hover:bg-transparent">
-          <Icon id="minicart" />
+          <Icon id="minicart" width={19} height={21} />
         </span>
       </label>
       <script

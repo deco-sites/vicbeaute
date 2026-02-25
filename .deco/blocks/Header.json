@@ -13,7 +13,82 @@
       }
     }
   },
-  "alerts": [],
+  "alerts": [
+    {
+      "0": "F",
+      "1": "r",
+      "2": "e",
+      "3": "t",
+      "4": "e",
+      "5": " ",
+      "6": "g",
+      "7": "r",
+      "8": "á",
+      "9": "t",
+      "10": "i",
+      "11": "s",
+      "12": " ",
+      "13": "a",
+      "14": " ",
+      "15": "p",
+      "16": "a",
+      "17": "r",
+      "18": "t",
+      "19": "i",
+      "20": "r",
+      "21": " ",
+      "22": "d",
+      "23": "e",
+      "24": " ",
+      "25": "R",
+      "26": "$",
+      "27": "1",
+      "28": "9",
+      "29": "0",
+      "text": "Frete grátis a partir de R$ 190",
+      "imageSrc": {
+        "src": "https://assets.decocache.com/vicbeaute/7473ee32-d7cf-4033-94b1-9ccaa55ac6c5/Icones.png",
+        "alt": "Topbar message"
+      }
+    },
+    {
+      "0": "F",
+      "1": "r",
+      "2": "e",
+      "3": "t",
+      "4": "e",
+      "5": " ",
+      "6": "g",
+      "7": "r",
+      "8": "á",
+      "9": "t",
+      "10": "i",
+      "11": "s",
+      "12": " ",
+      "13": "a",
+      "14": " ",
+      "15": "p",
+      "16": "a",
+      "17": "r",
+      "18": "t",
+      "19": "i",
+      "20": "r",
+      "21": " ",
+      "22": "d",
+      "23": "e",
+      "24": " ",
+      "25": "R",
+      "26": "$",
+      "27": "1",
+      "28": "9",
+      "29": "0",
+      "text": "Frete grátis a partir de R$ 190",
+      "imageSrc": {
+        "src": "https://assets.decocache.com/vicbeaute/7473ee32-d7cf-4033-94b1-9ccaa55ac6c5/Icones.png",
+        "alt": "Topbar message"
+      }
+    }
+  ],
   "logo": {
     "src": "https://assets.decocache.com/easycommerce/0aeb15fe-1017-425c-842a-0f975177a3c7/Logo---Mercado.png",
     "alt": "Deco Storefront",
@@ -26,10 +101,10 @@
       "height": 50
     },
     "mobile": {
-      "src": "https://assets.decocache.com/easycommerce/0aeb15fe-1017-425c-842a-0f975177a3c7/Logo---Mercado.png",
+      "src": "https://assets.decocache.com/vicbeaute/79701bbe-9b68-4901-a8e3-3d6261e966a2/Logo.png",
       "alt": "Logo Mobile",
-      "width": 134,
-      "height": 30
+      "width": 152,
+      "height": 22
     }
   },
   "navItems": [
@@ -102,5 +177,106 @@
       "identifier": "highlight"
     }
   ],
-  "loading": "eager"
+  "loading": "eager",
+  "alertInterval": 3,
+  "miniBanners": {
+    "images": [
+      {
+        "desktop": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "desktopWidth": 100,
+        "desktopHeight": 100,
+        "mobile": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "mobileWidth": 100,
+        "mobileHeight": 100,
+        "alt": "Iluminador Image",
+        "href": "#",
+        "caption": "Iluminador"
+      },
+      {
+        "desktop": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "desktopWidth": 100,
+        "desktopHeight": 100,
+        "mobile": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "mobileWidth": 100,
+        "mobileHeight": 100,
+        "alt": "Iluminador Image",
+        "href": "#",
+        "caption": "Iluminador"
+      },
+      {
+        "desktop": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "desktopWidth": 100,
+        "desktopHeight": 100,
+        "mobile": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "mobileWidth": 100,
+        "mobileHeight": 100,
+        "alt": "Iluminador Image",
+        "href": "#",
+        "caption": "Iluminador"
+      },
+      {
+        "desktop": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "desktopWidth": 100,
+        "desktopHeight": 100,
+        "mobile": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "mobileWidth": 100,
+        "mobileHeight": 100,
+        "alt": "Iluminador Image",
+        "href": "#",
+        "caption": "Iluminador"
+      },
+      {
+        "desktop": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "desktopWidth": 100,
+        "desktopHeight": 100,
+        "mobile": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "mobileWidth": 100,
+        "mobileHeight": 100,
+        "alt": "Iluminador Image",
+        "href": "#",
+        "caption": "Iluminador"
+      },
+      {
+        "desktop": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "desktopWidth": 100,
+        "desktopHeight": 100,
+        "mobile": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "mobileWidth": 100,
+        "mobileHeight": 100,
+        "alt": "Iluminador Image",
+        "href": "#",
+        "caption": "Iluminador"
+      },
+      {
+        "desktop": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "desktopWidth": 100,
+        "desktopHeight": 100,
+        "mobile": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "mobileWidth": 100,
+        "mobileHeight": 100,
+        "alt": "Iluminador Image",
+        "href": "#",
+        "caption": "Iluminador"
+      }
+    ],
+    "slider": {
+      "mobile": {
+        "dots": true
+      }
+    }
+  },
+  "drawerShelf": {
+    "__resolveType": "site/sections/Product/ProductShelf.tsx",
+    "arrows": false,
+    "dots": true,
+    "products": {
+      "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+      "props": {
+        "sort": "price:desc",
+        "collection": "141",
+        "count": 8
+      }
+    },
+    "title": "Os mais queridos"
+  }
 }
