@@ -13,6 +13,7 @@ import { useDevice } from "@deco/deco/hooks";
 import { type LoadingFallbackProps } from "@deco/deco";
 import { useSignal } from "@preact/signals";
 import { useEffect } from "preact/hooks";
+import ScrollHeader from "../../islands/ScrollHeader.tsx";
 import { Section } from "@deco/deco/blocks";
 
 export interface Logo {
@@ -243,20 +244,35 @@ const Mobile = ({ logo, searchbar, navItems, loading, drawerShelf }: Props) => {
 
 function Header({ 
   alerts = [], 
-  alertInterval = 5, // Valor default aqui
+  alertInterval = 5, 
   logo, 
   ...props 
 }: Props) {
+  const device = useDevice();
+
   return (
-    <header class="border-none">
-      <div class="bg-transparent fixed w-full z-40 xl:left-0 drop-shadow-lg">
+    <header class="relative w-full">
+      {/* 1. HEADER ESTÁTICO (O que sobe com a página) */}
+      <div class="w-full bg-white">
         {alerts.length > 0 && (
           <Alert 
             alerts={alerts} 
             interval={alertInterval > 0 ? alertInterval : 5} 
           />
         )}
+        <div class="hidden xl:block bg-white">
+          <Desktop logo={logo} {...props} />
+        </div>
+        <div class="xl:hidden bg-white">
+          <Mobile logo={logo} {...props} />
+        </div>
+      </div>
 
+      {/* 2. HEADER FLUTUANTE (O que "nasce" fixo após o scroll) */}
+      {/* Note as classes que o ScrollHeader.tsx procura */}
+      <div 
+        class="floating-desktop-header-container floating-mobile-header-container fixed top-0 left-0 w-full z-50 shadow-lg opacity-0 -z-10 transition-opacity duration-300 pointer-events-none [&.opacity-100]:pointer-events-auto"
+      >
         <div class="hidden xl:block">
           <Desktop logo={logo} {...props} />
         </div>
@@ -264,6 +280,9 @@ function Header({
           <Mobile logo={logo} {...props} />
         </div>
       </div>
+
+      {/* 3. O ISLAND QUE CONTROLA A LÓGICA */}
+      <ScrollHeader />
     </header>
   );
 }

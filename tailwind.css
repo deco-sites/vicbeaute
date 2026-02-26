@@ -380,3 +380,14 @@ ul.closed {
     --tw-bg-opacity: 1;
     background-color: #4D5D49;
 }
+
+.overcontent {
+    background-color: white !important;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); /* Um sombreado leve para destacar */
+    transition: background-color 0.3s ease;
+    z-index: 999
+  }
+
+  .icon-header {
+    color: red !important;
+  }
