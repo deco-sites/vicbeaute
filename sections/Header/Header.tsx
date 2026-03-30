@@ -42,8 +42,14 @@ export interface SectionProps {
   searchbar: SearchbarProps;
   logo: Logo;
   /** @title Vitrine do Drawer */
-  /** @description Esta vitrine aparecerá no rodapé da busca e do minicart */
+  /** @description Esta vitrine aparecerá no rodapé da busca */
   drawerShelf?: Section;
+  /** @title Categorias do Minicart (Vazio) */
+  /** @description Slider de categorias que aparece no minicart quando vazio */
+  minicartCategories?: Section;
+  /** @title Vitrine do Minicart (Vazio) */
+  /** @description Esta vitrine aparecerá no minicart caso esteja vazio */
+  minicartShelf?: Section;
   loading?: "eager" | "lazy";
 }
 
@@ -134,7 +140,7 @@ const Desktop = ({ navItems, logo, searchbar, loading }: Props) => {
   );
 };
 
-const Mobile = ({ logo, searchbar, navItems, loading, drawerShelf }: Props) => {
+const Mobile = ({ logo, searchbar, navItems, loading, drawerShelf, minicartShelf }: Props) => {
   const open = useSignal(false);
   const isLoggedIn = useSignal(false);
 
@@ -174,7 +180,7 @@ const Mobile = ({ logo, searchbar, navItems, loading, drawerShelf }: Props) => {
 
       {/* 3. Header Visível */}
       <div
-        class="grid place-items-center w-screen px-5 gap-3 bg-white"
+        class="grid place-items-center w-screen px-5 gap-3 bg-red-500"
         style={{
           height: NAVBAR_HEIGHT_MOBILE,
           gridTemplateColumns: "min-content min-content auto min-content min-content",
@@ -246,6 +252,8 @@ function Header({
   alerts = [], 
   alertInterval = 5, 
   logo, 
+  minicartCategories,
+  minicartShelf,
   ...props 
 }: Props) {
   const device = useDevice();
@@ -283,6 +291,12 @@ function Header({
 
       {/* 3. O ISLAND QUE CONTROLA A LÓGICA */}
       <ScrollHeader />
+
+      {/* 4. Portal DOM para o Minicart Shelf */}
+      <div id="minicart-shelf-source" class="hidden">
+        {minicartCategories && <minicartCategories.Component {...minicartCategories.props} />}
+        {minicartShelf && <minicartShelf.Component {...minicartShelf.props} />}
+      </div>
     </header>
   );
 }

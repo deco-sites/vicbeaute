@@ -36,6 +36,9 @@ export interface Banner {
   };
 }
 
+const FALLBACK_DESKTOP = "/static/image/1440x602.png";
+const FALLBACK_MOBILE = "/static/image/Rectangle 3.png";
+
 export interface Props {
   images?: Banner[];
   preload?: boolean;
@@ -73,8 +76,16 @@ function BannerItem(
       class="relative w-full overflow-hidden lg:pt-20 pb-14 lg:pb-0"
     >
       <Picture preload={lcp} {...viewPromotionEvent}>
-        ...
-      </Picture>
+  <Source
+    media="(max-width: 767px)"
+    src={mobile || FALLBACK_MOBILE}
+  />
+  <img
+    src={desktop || FALLBACK_DESKTOP}
+    alt={alt}
+    class="w-full h-full object-cover"
+  />
+</Picture>
 
       {/* Conteúdo do Banner */}
       {showContent && (
@@ -87,7 +98,7 @@ function BannerItem(
 
           {text && (
             <p class="text-white text-sm leading-snug">
-              {text}
+              aaaaaaaaaa
             </p>
           )}
 
@@ -162,9 +173,8 @@ function Carousel(
   return (
     <div
       id={id}
-      class="relative max-w-vc-1920 mx-auto w-full grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_auto_1fr] lg:min-h-[496px] md:min-height-[unset] lg:pb-14 pt-vc-38"
+      class="relative max-w-vc-1920 mx-auto w-full grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_auto_1fr] lg:min-h-[496px] md:min-height-[unset] lg:pb-14"
     >
-      <h1 class="absolute z-0">Easy Commerce</h1>
       <Slider class="carousel carousel-center w-full col-span-full row-span-full">
         {images.map((image, index) => (
           <Slider.Item index={index} class="carousel-item w-full">
