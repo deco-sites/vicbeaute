@@ -17,7 +17,7 @@ const onLoad = (id: string) =>
     }
     counter.innerText = count > 9 ? "9+" : count.toString();
   });
-function Bag() {
+function Bag({ transparent }: { transparent?: boolean }) {
   const id = useId();
   return (
     <>
@@ -28,7 +28,7 @@ function Bag() {
         />
 
         <span class="btn btn-square btn-sm btn-ghost no-animation hover:bg-transparent">
-          <Icon id="minicart" width={19} height={21} />
+          <Icon id={transparent ? "minicart" : "minicartbagdark"} width={19} height={21} />
         </span>
       </label>
       <script

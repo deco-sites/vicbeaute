@@ -105,6 +105,9 @@
       "alt": "Logo Mobile",
       "width": 152,
       "height": 22
+    },
+    "mobileDark": {
+      "src": "https://assets.decocache.com/vicbeaute/0dd9bb1a-4197-49d6-bfbc-1d6a987f4777/Logo.png"
     }
   },
   "navItems": [
@@ -315,5 +318,47 @@
       }
     ],
     "dots": true
+  },
+  "mobileMenuCategories": {
+    "__resolveType": "site/sections/Category/MinicartCategories.tsx",
+    "dots": true,
+    "items": [
+      {
+        "image": "https://assets.decocache.com/vicbeaute/c637f29d-d92a-4729-876e-1e4d0819cf0d/Rectangle-4.png",
+        "href": "/iluminador",
+        "label": "Iluminador"
+      },
+      {
+        "image": "https://assets.decocache.com/vicbeaute/c637f29d-d92a-4729-876e-1e4d0819cf0d/Rectangle-4.png",
+        "href": "/iluminador",
+        "label": "Iluminador"
+      },
+      {
+        "image": "https://assets.decocache.com/vicbeaute/c637f29d-d92a-4729-876e-1e4d0819cf0d/Rectangle-4.png",
+        "href": "/iluminador",
+        "label": "Iluminador"
+      },
+      {
+        "image": "https://assets.decocache.com/vicbeaute/c637f29d-d92a-4729-876e-1e4d0819cf0d/Rectangle-4.png",
+        "href": "/iluminador",
+        "label": "Iluminador"
+      },
+      {
+        "image": "https://assets.decocache.com/vicbeaute/c637f29d-d92a-4729-876e-1e4d0819cf0d/Rectangle-4.png",
+        "href": "/iluminador",
+        "label": "Iluminador"
+      },
+      {
+        "image": "https://assets.decocache.com/vicbeaute/c637f29d-d92a-4729-876e-1e4d0819cf0d/Rectangle-4.png",
+        "href": "/iluminador",
+        "label": "Iluminador"
+      }
+    ]
+  },
+  "mobileMenuBanner": {
+    "src": "https://assets.decocache.com/vicbeaute/7ef651c2-9aba-41af-8843-191d3403d596/Frame-1984078329.png",
+    "alt": "Brinde",
+    "width": 335,
+    "height": 70
   }
 }

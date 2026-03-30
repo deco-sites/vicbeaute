@@ -102,60 +102,62 @@ function Aside({
       class="bg-base-100 flex flex-col h-[100vh] w-full"
       style={{ maxWidth: "100vw" }}
     >
-      <div
-        class= {drawer === "search-drawer" ? "flex justify-between items-center h-14 ml-2 w-full absolute" : "flex justify-between items-center h-14 ml-2 w-full"}>
-        <span class="order-3">
-          <span
-            class="font-bold text-2xl"
-            id={drawer === "minicart-drawer" ? "minicarttitle" : undefined}
-          >
-            {drawer === "minicart-drawer"
-              ? (
-                <div class="flex items-center gap-2">
-                  <span class="font-Queens text-vc-32 leading-none text-green-10 font-normal">
-                    Minha Sacola
-                  </span>
-
-                  <div class="relative">
-                    <Icon id="minicartbag" width={19} height={21} />
-
-                    <span class="items-number indicator-item badge badge-primary badge-sm font-thin absolute -right-vc-5 pr-1 pl-1 top-vc-5 bg-white-15 border-green-20 text-green-20 w-[16px] h-[16px]">
-                      {/* inserted by script */}
+      {drawer !== "sidemenu-drawer" && (
+        <div
+          class= {drawer === "search-drawer" ? "drawer-fake-header flex justify-between items-center h-14 ml-2 w-full absolute" : "drawer-fake-header flex justify-between items-center h-14 ml-2 w-full"}>
+          <span class="order-3">
+            <span
+              class="font-bold text-2xl"
+              id={drawer === "minicart-drawer" ? "minicarttitle" : undefined}
+            >
+              {drawer === "minicart-drawer"
+                ? (
+                  <div class="flex items-center gap-2">
+                    <span class="font-Queens text-vc-32 leading-none text-green-10 font-normal">
+                      Minha Sacola
                     </span>
+
+                    <div class="relative">
+                      <Icon id="minicartbag" width={19} height={21} />
+
+                      <span class="items-number indicator-item badge badge-primary badge-sm font-thin absolute -right-vc-5 pr-1 pl-1 top-vc-5 bg-white-15 border-green-20 text-green-20 w-[16px] h-[16px]">
+                        {/* inserted by script */}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              )
-              : 
-              <div class="hidden"></div>}
+                )
+                : 
+                <div class="hidden"></div>}
+            </span>
           </span>
-        </span>
-        {logo && (
-          <a
-            href="/"
-            aria-label="Store logo"
-            class="mx-auto max-w-[134px] order-2"
+          {logo && (
+            <a
+              href="/"
+              aria-label="Store logo"
+              class="mx-auto max-w-[134px] order-2"
+            >
+              <img
+                src={logo.src}
+                alt={logo.alt}
+                width={logo.width || 100}
+                height={logo.height || 23}
+              />
+            </a>
+          )}
+          <label
+            for={drawer}
+            aria-label="X"
+            id={drawer === "minicart-drawer" ? "closeminicart" : undefined}
+            class= {drawer === "search-drawer" ? "btn btn-ghost order-1 absolute right-vc-26 p-0 max-h-5 hover:bg-transparent top-vc-11" : "btn btn-ghost order-1 absolute left-7 p-0 max-h-5 hover:bg-transparent top-1"}
           >
-            <img
-              src={logo.src}
-              alt={logo.alt}
-              width={logo.width || 100}
-              height={logo.height || 23}
+            <Icon
+              id={drawer === "minicart-drawer" ? "closeminicartbutton" : "close"}
+              width={drawer === "minicart-drawer" ? 16 : 20}
+              height={drawer === "minicart-drawer" ? 16 : 20}
             />
-          </a>
-        )}
-        <label
-          for={drawer}
-          aria-label="X"
-          id={drawer === "minicart-drawer" ? "closeminicart" : undefined}
-          class= {drawer === "search-drawer" ? "btn btn-ghost order-1 absolute right-vc-26 p-0 max-h-5 hover:bg-transparent top-vc-11" : "btn btn-ghost order-1 absolute left-7 p-0 max-h-5 hover:bg-transparent top-1"}
-        >
-          <Icon
-            id={drawer === "minicart-drawer" ? "closeminicartbutton" : "close"}
-            width={drawer === "minicart-drawer" ? 16 : 20}
-            height={drawer === "minicart-drawer" ? 16 : 20}
-          />
-        </label>
-      </div>
+          </label>
+        </div>
+      )}
       {children}
       {footer && (
         <div class="border-t border-gray-100">

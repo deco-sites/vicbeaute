@@ -43,7 +43,12 @@ export type AvailableIcons =
   | "arrow-back-search-error"
   | "minicartbag"
   | "search-drawer"
-  | "user";
+  | "user"
+  | "menu-mobile-dark"
+  | "user-dark"
+  | "minicartbagdark"
+  | "lupa-dark";
+
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**
    * Symbol id from element to render. Take a look at `/static/icons.svg`.
