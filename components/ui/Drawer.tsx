@@ -62,7 +62,7 @@ function Drawer(
         <aside
           data-aside
           class={clx(
-            "drawer-side h-[100vh] z-40 overflow-hidden",
+            "drawer-side h-[100vh] z-40",
             "[[data-aside]&_section]:contents",
           )}
         >
@@ -104,7 +104,10 @@ function Aside({
     >
       {drawer !== "sidemenu-drawer" && (
         <div
-          class= {drawer === "search-drawer" ? "drawer-fake-header flex justify-between items-center h-14 ml-2 w-full absolute" : "drawer-fake-header flex justify-between items-center h-14 ml-2 w-full"}>
+          class={drawer === "search-drawer"
+            ? "drawer-fake-header flex justify-between items-center h-14 ml-2 w-full absolute"
+            : "drawer-fake-header flex justify-between items-center h-14 ml-2 w-full"}
+        >
           <span class="order-3">
             <span
               class="font-bold text-2xl"
@@ -126,8 +129,7 @@ function Aside({
                     </div>
                   </div>
                 )
-                : 
-                <div class="hidden"></div>}
+                : <div class="hidden"></div>}
             </span>
           </span>
           {logo && (
@@ -148,10 +150,14 @@ function Aside({
             for={drawer}
             aria-label="X"
             id={drawer === "minicart-drawer" ? "closeminicart" : undefined}
-            class= {drawer === "search-drawer" ? "btn btn-ghost order-1 absolute right-vc-26 p-0 max-h-5 hover:bg-transparent top-vc-11" : "btn btn-ghost order-1 absolute left-7 p-0 max-h-5 hover:bg-transparent top-1"}
+            class={drawer === "search-drawer"
+              ? "btn btn-ghost order-1 absolute right-vc-26 p-0 max-h-5 hover:bg-transparent top-vc-11"
+              : "btn btn-ghost order-1 absolute left-7 p-0 max-h-5 hover:bg-transparent top-1"}
           >
             <Icon
-              id={drawer === "minicart-drawer" ? "closeminicartbutton" : "close"}
+              id={drawer === "minicart-drawer"
+                ? "closeminicartbutton"
+                : "close"}
               width={drawer === "minicart-drawer" ? 16 : 20}
               height={drawer === "minicart-drawer" ? 16 : 20}
             />
@@ -165,7 +171,6 @@ function Aside({
         </div>
       )}
     </div>
-    
   );
 }
 Drawer.Aside = Aside;

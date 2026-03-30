@@ -95,10 +95,10 @@
     "width": 160,
     "height": 40,
     "desktop": {
-      "src": "https://assets.decocache.com/easycommerce/877dad73-d42c-40e1-8536-2560adc710fc/Logo-(2).png",
+      "src": "https://assets.decocache.com/vicbeaute/be6d384f-df1c-4029-a5c6-3d92f29b9905/Vector.png",
       "alt": "Logo",
-      "width": 223,
-      "height": 50
+      "width": 168,
+      "height": 24
     },
     "mobile": {
       "src": "https://assets.decocache.com/vicbeaute/79701bbe-9b68-4901-a8e3-3d6261e966a2/Logo.png",
@@ -108,6 +108,12 @@
     },
     "mobileDark": {
       "src": "https://assets.decocache.com/vicbeaute/0dd9bb1a-4197-49d6-bfbc-1d6a987f4777/Logo.png"
+    },
+    "desktopDark": {
+      "src": "https://assets.decocache.com/vicbeaute/152e31d3-3f84-4e64-8251-d9c38a91a428/Vector.png",
+      "alt": "Logo Vic",
+      "width": 168,
+      "height": 24
     }
   },
   "navItems": [
@@ -143,33 +149,36 @@
         }
       ],
       "@type": "SiteNavigationElement",
-      "url": "/azeites-e-vinagres",
-      "name": "Azeites e Vinagres"
+      "url": "/novos",
+      "name": "Novos"
     },
     {
       "@type": "SiteNavigationElement",
-      "url": "/doces-e-chocolates",
-      "name": "Doces e Chocolates",
+      "url": "/boca",
+      "name": "Boca",
       "children": []
     },
     {
       "@type": "SiteNavigationElement",
-      "url": "/mercearia",
-      "name": "Mercearia",
+      "url": "/olhos",
+      "name": "Olhos",
       "children": []
     },
     {
       "@type": "SiteNavigationElement",
-      "url": "/enlatados",
-      "name": "Enlatados",
+      "url": "/faces",
+      "name": "Faces",
       "children": []
     },
     {
       "@type": "SiteNavigationElement",
-      "url": "/ofertas",
-      "name": "Ofertas",
+      "url": "/kits",
+      "name": "Kits",
+      "children": []
+    },
+    {
       "children": [],
-      "identifier": "highlight"
+      "name": "Mais"
     }
   ],
   "loading": "eager",

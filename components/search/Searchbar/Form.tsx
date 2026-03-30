@@ -17,6 +17,8 @@ export const NAME = "q";
 export interface SearchbarProps {
   placeholder?: string;
   loader: Resolved<Suggestion | null>;
+  /** @ignore */
+  drawerShelf?: import("@deco/deco/blocks").Section;
 }
 
 const script = (
@@ -47,8 +49,6 @@ const script = (
     }
   });
 
-  
-
   addEventListener("keydown", (e: KeyboardEvent) => {
     const isK = e.key === "k" || e.key === "K" || e.keyCode === 75;
     if (e.metaKey === true && isK) {
@@ -64,19 +64,20 @@ const script = (
 const Suggestions = import.meta.resolve("./Suggestions.tsx");
 
 export default function Searchbar(
-  { placeholder = "What are you looking for?", loader }: SearchbarProps,
+  { placeholder = "What are you looking for?", loader, drawerShelf }:
+    SearchbarProps,
 ) {
   const slot = useId();
   return (
     <div
       data-cy="searchbar"
-      class="w-full grid lg:max-w-[240px] lg:relative lg:mx-auto pt-vc-10 px-3"
+      class="w-full grid lg:relative lg:mx-auto pt-vc-10 px-3 lg:px-20"
       style={{ gridTemplateRows: "min-content auto" }}
     >
       <form
         id={SEARCHBAR_INPUT_FORM_ID}
         action={ACTION}
-        class="join border border-[#CCCCCC] rounded-none lg:max-w-[240px] lg:gap-3 h-vc-54"
+        class="join border border-[#CCCCCC] rounded-none lg:gap-3 h-vc-54"
       >
         <button
           data-cy="submit-search"
@@ -104,7 +105,7 @@ export default function Searchbar(
           hx-post={loader && useComponent<SuggestionProps>(Suggestions, {
             loader: asResolved(loader),
           })}
-         hx-trigger="input changed delay:300ms, focus, intersect"
+          hx-trigger="input changed delay:300ms, focus, intersect"
           hx-indicator={`#${SEARCHBAR_INPUT_FORM_ID}`}
           hx-swap="innerHTML"
         />
@@ -117,10 +118,18 @@ export default function Searchbar(
         </label>
       </form>
 
-      <div
-  id={slot}
-  class="flex-grow overflow-y-auto" // Ocupa o resto da tela e permite scroll
-/>
+      <div class="flex flex-col lg:flex-row w-full flex-grow overflow-hidden lg:pt-10 pt-6">
+        <div
+          id={slot}
+          class="flex-grow lg:flex-shrink-0 lg:flex-grow-0 lg:w-[350px] overflow-y-auto" // Suggestions renderiza com lg:max-w-[264px]
+        />
+
+        {drawerShelf && (
+          <div class="hidden lg:block flex-grow overflow-y-auto lg:pl-10">
+            <drawerShelf.Component {...drawerShelf.props} />
+          </div>
+        )}
+      </div>
 
       <script
         type="module"

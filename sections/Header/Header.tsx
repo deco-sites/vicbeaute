@@ -28,11 +28,21 @@ export interface Logo {
   /** @title Logo Desktop (Versão Transparente) */
   desktop: { src: ImageWidget; alt: string; width?: number; height?: number };
   /** @title Logo Desktop (Versão Branca) */
-  desktopDark?: { src: ImageWidget; alt: string; width?: number; height?: number };
+  desktopDark?: {
+    src: ImageWidget;
+    alt: string;
+    width?: number;
+    height?: number;
+  };
   /** @title Logo Mobile (Versão Transparente) */
   mobile: { src: ImageWidget; alt: string; width?: number; height?: number };
   /** @title Logo Mobile (Versão Branca) */
-  mobileDark?: { src: ImageWidget; alt: string; width?: number; height?: number };
+  mobileDark?: {
+    src: ImageWidget;
+    alt: string;
+    width?: number;
+    height?: number;
+  };
 }
 
 export interface AlertItem {
@@ -111,7 +121,11 @@ const AccountDropdown = () => (
   </div>
 );
 
-const Desktop = ({ navItems, logo, searchbar, loading, transparent }: Props & { transparent?: boolean }) => {
+const Desktop = (
+  { navItems, logo, searchbar, loading, transparent }: Props & {
+    transparent?: boolean;
+  },
+) => {
   const open = useSignal(false);
   const isLoggedIn = useSignal(false);
 
@@ -120,30 +134,46 @@ const Desktop = ({ navItems, logo, searchbar, loading, transparent }: Props & { 
   }, []);
 
   return (
-    <div class="container lg:max-w-[1440px] lg:h-vc-20">
-      <div class="flex items-center justify-between h-vc-19">
+    <div class="lg:h-[50px] items-center justify-center flex">
+      <div class="flex items-center justify-between h-7 w-full px-20">
         <div
           data-cy="logo-desktop"
-          class="flex-shrink-0 max-w-[223px] w-full mx-auto"
+          class="flex-shrink-0 max-w-[168px] w-full"
         >
           <a href="/" aria-label="Store logo">
             <Image
-              src={transparent ? logo.desktop.src : (logo.desktopDark?.src || logo.desktop.src)}
-              alt={transparent ? logo.desktop.alt : (logo.desktopDark?.alt || logo.desktop.alt)}
-              width={transparent ? (logo.desktop.width || 100) : (logo.desktopDark?.width || logo.desktop.width || 100)}
-              height={transparent ? (logo.desktop.height || 23) : (logo.desktopDark?.height || logo.desktop.height || 23)}
+              src={transparent
+                ? logo.desktop.src
+                : (logo.desktopDark?.src || logo.desktop.src)}
+              alt={transparent
+                ? logo.desktop.alt
+                : (logo.desktopDark?.alt || logo.desktop.alt)}
+              width={transparent
+                ? (logo.desktop.width || 100)
+                : (logo.desktopDark?.width || logo.desktop.width || 100)}
+              height={transparent
+                ? (logo.desktop.height || 23)
+                : (logo.desktopDark?.height || logo.desktop.height || 23)}
             />
           </a>
         </div>
 
-        <nav class="flex justify-center max-w-[697px] w-full mx-auto">
-          <ul class="flex gap-6">
+        <nav class="flex justify-center w-full">
+          <ul class="flex gap-10">
             {navItems?.slice(0, 10).map((item) => <NavItem item={item} />)}
           </ul>
         </nav>
-        <Searchbar data-cy="searchbar-desktop" {...searchbar} />
+        {/* Botões do Lado Direito: Busca, Usuário, Carrinho */}
+        <div class="flex items-center gap-6 relative w-auto justify-end ml-auto">
+          {/* FAKE SEARCH BUTTON */}
+          <label
+            for="search-drawer"
+            class="cursor-pointer"
+            aria-label="search icon button"
+          >
+            <Icon id={transparent ? "search" : "lupa-dark"} size={22} />
+          </label>
 
-        <div class="flex items-center gap-8 relative max-w-[102px] w-full mx-auto">
           {isLoggedIn.value
             ? (
               <div class="relative">
@@ -171,7 +201,16 @@ const Desktop = ({ navItems, logo, searchbar, loading, transparent }: Props & { 
 };
 
 const Mobile = (
-  { logo, searchbar, navItems, loading, drawerShelf, mobileMenuCategories, mobileMenuBanner, transparent }: Props & { transparent?: boolean },
+  {
+    logo,
+    searchbar,
+    navItems,
+    loading,
+    drawerShelf,
+    mobileMenuCategories,
+    mobileMenuBanner,
+    transparent,
+  }: Props & { transparent?: boolean },
 ) => {
   const open = useSignal(false);
   const isLoggedIn = useSignal(false);
@@ -196,28 +235,24 @@ const Mobile = (
                   <span class="loading loading-spinner" />
                 </div>
               )
-              : <Menu navItems={navItems ?? []} mobileMenuCategories={mobileMenuCategories} mobileMenuBanner={mobileMenuBanner} />}
+              : (
+                <Menu
+                  navItems={navItems ?? []}
+                  mobileMenuCategories={mobileMenuCategories}
+                  mobileMenuBanner={mobileMenuBanner}
+                />
+              )}
           </Drawer.Aside>
         }
       />
 
-      {/* 2. NOVO: Drawer da Busca (Full Screen) */}
-      <Drawer
-        id="search-drawer"
-        aside={
-          <Drawer.Aside
-            title="Buscar"
-            drawer="search-drawer"
-            footer={drawerShelf} // Passa a vitrine aqui!
-          >
-            <Searchbar {...searchbar} />
-          </Drawer.Aside>
-        }
-      />
+      {/* 2. AREA RESERVADA (Search Drawer foi transposto para o root) */}
 
       {/* 3. Header Visível */}
       <div
-        class={`grid place-items-center w-screen px-5 gap-3 header-mobile-visible ${transparent ? "bg-transparent text-white" : "bg-white text-black"}`}
+        class={`grid place-items-center w-screen px-5 gap-3 header-mobile-visible ${
+          transparent ? "bg-transparent text-white" : "bg-white text-black"
+        }`}
         style={{
           height: NAVBAR_HEIGHT_MOBILE,
           gridTemplateColumns:
@@ -230,7 +265,20 @@ const Mobile = (
           class="btn btn-square btn-sm btn-ghost"
           aria-label="open menu"
         >
-          <Icon id={transparent ? "menu_mobile" : "menu-mobile-dark"} class="menu-icon-hamburger" />
+          {transparent
+            ? (
+              <>
+                <Icon
+                  id="menu_mobile"
+                  class="menu-icon-hamburger header-icon-light"
+                />
+                <Icon
+                  id="menu-mobile-dark"
+                  class="menu-icon-hamburger header-icon-dark hidden"
+                />
+              </>
+            )
+            : <Icon id="menu-mobile-dark" class="menu-icon-hamburger" />}
           <Icon id="close" size={20} class="menu-icon-close" />
         </label>
 
@@ -266,34 +314,78 @@ const Mobile = (
             style={{ minHeight: NAVBAR_HEIGHT_MOBILE }}
             aria-label="Store logo"
           >
-            <Image
-              src={transparent ? logo.mobile.src : (logo.mobileDark?.src || logo.mobile.src)}
-              alt={transparent ? logo.mobile.alt : (logo.mobileDark?.alt || logo.mobile.alt)}
-              width={transparent ? (logo.mobile.width || 100) : (logo.mobileDark?.width || logo.mobile.width || 100)}
-              height={transparent ? (logo.mobile.height || 13) : (logo.mobileDark?.height || logo.mobile.height || 13)}
-            />
+            {transparent
+              ? (
+                <>
+                  <Image
+                    src={logo.mobile.src}
+                    alt={logo.mobile.alt}
+                    width={logo.mobile.width || 100}
+                    height={logo.mobile.height || 13}
+                    class="header-logo-light"
+                  />
+                  <Image
+                    src={logo.mobileDark?.src || logo.mobile.src}
+                    alt={logo.mobileDark?.alt || logo.mobile.alt}
+                    width={logo.mobileDark?.width || logo.mobile.width || 100}
+                    height={logo.mobileDark?.height || logo.mobile.height || 13}
+                    class="header-logo-dark hidden"
+                  />
+                </>
+              )
+              : (
+                <Image
+                  src={logo.mobileDark?.src || logo.mobile.src}
+                  alt={logo.mobileDark?.alt || logo.mobile.alt}
+                  width={logo.mobileDark?.width || logo.mobile.width || 100}
+                  height={logo.mobileDark?.height || logo.mobile.height || 13}
+                />
+              )}
           </a>
         )}
 
-        {/* Ícone de Busca (Abre o Drawer) */}
         <div data-cy="searchbar-mobile" class="transition-opacity">
           <style
             dangerouslySetInnerHTML={{
               __html: `
                .header-mobile-visible { position: relative; z-index: 50; }
-               body:has(#search-drawer:checked) .header-mobile-visible,
-               body:has(#minicart-drawer:checked) .header-mobile-visible { z-index: 30 !important; }
+               
+               /* Oculta o header estático (incluindo Alert) e floating quando o minicart ou a busca estiverem abertos */
+               body:has(#minicart-drawer:checked) .header-static-container,
+               body:has(#minicart-drawer:checked) .floating-mobile-header-container,
+               body:has(#search-drawer:checked) .header-static-container,
+               body:has(#search-drawer:checked) .floating-mobile-header-container { 
+                 opacity: 0 !important; 
+                 pointer-events: none !important; 
+                 z-index: 10 !important;
+               }
                
                body:has(#${SIDEMENU_DRAWER_ID}:checked) [data-cy="searchbar-mobile"],
                body:has(#${SIDEMENU_DRAWER_ID}:checked) [data-cy="account-mobile"] { opacity: 0; pointer-events: none; }
                body:has(#${SIDEMENU_DRAWER_ID}:checked) .menu-icon-hamburger { display: none !important; }
                body:not(:has(#${SIDEMENU_DRAWER_ID}:checked)) .menu-icon-close { display: none !important; }
                
-               #${SIDEMENU_DRAWER_ID} ~ .drawer-side { top: 93px !important; height: calc(100% - ${NAVBAR_HEIGHT_MOBILE}) !important; }
+               /* MENU ABERTO: Força header estático a ficar branco, fixo no topo, exibindo a topbar e trocando para logos escuros */
+               body:has(#${SIDEMENU_DRAWER_ID}:checked) .header-static-container { 
+                   background-color: white !important; 
+                   position: fixed !important; 
+                   top: 0 !important; 
+                   left: 0 !important; 
+                   width: 100% !important; 
+                   z-index: 60 !important; 
+               }
+               body:has(#${SIDEMENU_DRAWER_ID}:checked) .floating-mobile-header-container { display: none !important; }
+               body:has(#${SIDEMENU_DRAWER_ID}:checked) .header-icon-light { display: none !important; }
+               body:has(#${SIDEMENU_DRAWER_ID}:checked) .header-icon-dark { display: block !important; }
+               body:has(#${SIDEMENU_DRAWER_ID}:checked) .header-logo-light { display: none !important; }
+               body:has(#${SIDEMENU_DRAWER_ID}:checked) .header-logo-dark { display: flex !important; }
+
+               #${SIDEMENU_DRAWER_ID} ~ .drawer-side { top: ${HEADER_HEIGHT_MOBILE} !important; height: calc(100% - ${HEADER_HEIGHT_MOBILE}) !important; }
                #${SIDEMENU_DRAWER_ID} ~ .drawer-side .drawer-fake-header { display: none !important; }
              `,
             }}
           />
+          <style dangerouslySetInnerHTML={{ __html: "@media (min-width: 1024px) { #search-drawer ~ .drawer-side [data-aside] > .border-t { display: none !important; } }" }} />
           <label
             for="search-drawer"
             class="btn btn-square btn-sm btn-ghost h-8"
@@ -321,9 +413,25 @@ function Header({
   const device = useDevice();
 
   return (
-    <header class="relative w-full">
-      {/* 1. HEADER ESTÁTICO (O que sobe com a página) */}
-      <div class="w-full bg-transparent absolute top-0 lg:static z-50">
+    <header class="relative w-full h-0 lg:h-auto z-50">
+      {/* 1. Drawer da Busca Global (Acessível via Mobile & Desktop) */}
+      <Drawer
+        id="search-drawer"
+        aside={
+          <Drawer.Aside
+            title="Buscar"
+            drawer="search-drawer"
+            footer={props.drawerShelf}
+          >
+            <div class="w-screen overflow-y-auto overflow-x-hidden">
+              <Searchbar {...props.searchbar} drawerShelf={props.drawerShelf} />
+            </div>
+          </Drawer.Aside>
+        }
+      />
+
+      {/* 2. HEADER ESTÁTICO (O que sobe com a página) */}
+      <div class="header-static-container w-full bg-transparent absolute top-0 z-50">
         {alerts.length > 0 && (
           <Alert
             alerts={alerts}

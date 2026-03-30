@@ -8,10 +8,13 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
   const highlight = identifier === "highlight";
 
   return (
-    <li class="relative group flex items-center lg:pr-0 pr-5" data-cy={`menu-${name}`}>
+    <li
+      class="relative group flex items-center lg:pr-0 pr-5"
+      data-cy={`menu-${name}`}
+    >
       <a
         href={url}
-        class={`group-hover:underline text-sm font-medium lg:text-base ${
+        class={`group-hover:underline font-medium lg:text-base font-HankenGrotesk text-lg leading-tight text-[#FFFFFF] ${
           highlight ? "bg-[#EF781C] text-white px-2 rounded" : ""
         }`}
       >

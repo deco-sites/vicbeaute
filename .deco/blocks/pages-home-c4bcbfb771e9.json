@@ -8,12 +8,16 @@
       "__resolveType": "site/sections/Images/Carousel.tsx",
       "images": [
         {
-          "desktop": "https://assets.decocache.com/vicbeaute/d4160a7f-4598-40bf-a704-8175026b6838/Rectangle-3.png",
+          "desktop": "https://assets.decocache.com/vicbeaute/f85502be-70f8-43f7-a50f-78b027a3b84a/VIC_ECOMM_CASTING-63-ETEREO-1.png",
           "mobile": "https://assets.decocache.com/vicbeaute/d4160a7f-4598-40bf-a704-8175026b6838/Rectangle-3.png",
           "alt": "Home Banner",
           "action": {
             "href": "#"
-          }
+          },
+          "widthDesktop": 1920,
+          "heightDesktop": 602,
+          "widthMobile": 375,
+          "heightMobile": 550
         }
       ],
       "preload": true,

@@ -12,6 +12,8 @@ import { useSendEvent } from "../../sdk/useSendEvent.ts";
 export interface Banner {
   /** @description desktop otimized image */
   desktop: ImageWidget;
+  widthDesktop?: number;
+  heightDesktop?: number;
   /*
    * @description Título do banner
    * @format textarea
@@ -28,6 +30,8 @@ export interface Banner {
   cto?: string;
   /** @description mobile otimized image */
   mobile: ImageWidget;
+  widthMobile?: number;
+  heightMobile?: number;
   /** @description Image's alt text */
   alt: string;
   action?: {
@@ -55,7 +59,19 @@ function BannerItem(
     showContent?: boolean;
   },
 ) {
-  const { alt, mobile, desktop, action, title, text, cto } = image;
+  const {
+    alt,
+    mobile,
+    desktop,
+    action,
+    title,
+    text,
+    cto,
+    widthDesktop,
+    heightDesktop,
+    widthMobile,
+    heightMobile,
+  } = image;
   const params = { promotion_name: image.alt };
 
   const selectPromotionEvent = useSendEvent({
@@ -73,19 +89,23 @@ function BannerItem(
       id={id}
       {...selectPromotionEvent}
       href={action?.href ?? "#"}
-      class="relative w-full overflow-hidden lg:pt-20 pb-14 lg:pb-0"
+      class="relative w-full overflow-hidden pb-14 lg:pb-0"
     >
       <Picture preload={lcp} {...viewPromotionEvent}>
-  <Source
-    media="(max-width: 767px)"
-    src={mobile || FALLBACK_MOBILE}
-  />
-  <img
-    src={desktop || FALLBACK_DESKTOP}
-    alt={alt}
-    class="w-full h-full object-cover"
-  />
-</Picture>
+        <img
+          class="md:hidden w-full"
+          src={mobile || FALLBACK_MOBILE}
+          width={widthMobile}
+          height={heightMobile}
+        />
+        <img
+          class="hidden md:block"
+          src={desktop || FALLBACK_DESKTOP}
+          alt={alt}
+          width={widthDesktop}
+          height={heightDesktop}
+        />
+      </Picture>
 
       {/* Conteúdo do Banner */}
       {showContent && (

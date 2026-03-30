@@ -50,7 +50,7 @@ function Suggestions(
   }
 
   return (
-    <div class={clx("overflow-y-scroll lg:overflow-visible")}>
+    <div class={clx("overflow-y-scroll lg:overflow-visible lg:max-w-[264px]")}>
       <div class="flex flex-col gap-vc-14 lg:bg-white">
         {hasTerms && (
           <>
@@ -67,7 +67,10 @@ function Suggestions(
                     <span class="font-Manrope font-medium text-sm text-black-5 opacity-50">
                       {index + 1}º
                     </span>
-                    <span class="font-Manrope font-medium text-sm text-black-5" dangerouslySetInnerHTML={{ __html: term }} />
+                    <span
+                      class="font-Manrope font-medium text-sm text-black-5"
+                      dangerouslySetInnerHTML={{ __html: term }}
+                    />
                   </a>
                 </li>
               ))}
