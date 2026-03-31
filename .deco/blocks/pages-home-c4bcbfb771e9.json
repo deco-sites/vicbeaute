@@ -9,7 +9,31 @@
       "images": [
         {
           "desktop": "https://assets.decocache.com/vicbeaute/f85502be-70f8-43f7-a50f-78b027a3b84a/VIC_ECOMM_CASTING-63-ETEREO-1.png",
-          "mobile": "https://assets.decocache.com/vicbeaute/d4160a7f-4598-40bf-a704-8175026b6838/Rectangle-3.png",
+          "mobile": "https://assets.decocache.com/vicbeaute/91ce20f4-f840-40ac-966f-34e6023af7a5/Banner-Hero.png",
+          "alt": "Home Banner",
+          "action": {
+            "href": "#"
+          },
+          "widthDesktop": 1920,
+          "heightDesktop": 602,
+          "widthMobile": 375,
+          "heightMobile": 550
+        },
+        {
+          "desktop": "https://assets.decocache.com/vicbeaute/f85502be-70f8-43f7-a50f-78b027a3b84a/VIC_ECOMM_CASTING-63-ETEREO-1.png",
+          "mobile": "https://assets.decocache.com/vicbeaute/91ce20f4-f840-40ac-966f-34e6023af7a5/Banner-Hero.png",
+          "alt": "Home Banner",
+          "action": {
+            "href": "#"
+          },
+          "widthDesktop": 1920,
+          "heightDesktop": 602,
+          "widthMobile": 375,
+          "heightMobile": 550
+        },
+        {
+          "desktop": "https://assets.decocache.com/vicbeaute/f85502be-70f8-43f7-a50f-78b027a3b84a/VIC_ECOMM_CASTING-63-ETEREO-1.png",
+          "mobile": "https://assets.decocache.com/vicbeaute/91ce20f4-f840-40ac-966f-34e6023af7a5/Banner-Hero.png",
           "alt": "Home Banner",
           "action": {
             "href": "#"
@@ -22,50 +46,54 @@
       ],
       "preload": true,
       "dots": true,
-      "arrows": true
+      "arrows": true,
+      "arrowsDesktop": true,
+      "arrowsMobile": true,
+      "dotsDesktop": true,
+      "dotsMobile": true
     },
     {
       "__resolveType": "site/sections/Miscellaneous/Benefits.tsx",
       "benefits": [
         {
           "label": "FRETE GRÁTIS para compras acima de R$150",
-          "image": "https://assets.decocache.com/easycommerce/985d9583-d7b1-4b5f-98b4-9143b23a98e3/Vector-(8).svg",
+          "image": "https://assets.decocache.com/vicbeaute/59963091-8847-4951-a817-b3d783bdc12a/Rectangle-1.png",
           "imageWidth": 32,
-          "imageHeight": 28,
-          "line1": "FRETE GRÁTIS",
-          "line2": "para compras acima de R$150",
-          "mobileLine1": "FRETE GRÁTIS",
-          "mobileLine2": "acima de R$150"
+          "imageHeight": 32,
+          "line1": "Ganhe a nécessaire  nas",
+          "line2": "compras acima de R$329",
+          "mobileLine1": "Ganhe a nécessaire  nas",
+          "mobileLine2": "compras acima de R$329"
         },
         {
           "label": "PARCELE SUAS COMPRAS Parcele em até 5 vezes sem juros",
-          "image": "https://assets.decocache.com/easycommerce/5e695d39-05fe-43b5-b6d1-ed13eda76c82/Vector-(9).svg",
-          "imageWidth": 32,
-          "imageHeight": 28,
-          "line1": "PARCELE SUAS COMPRAS",
-          "line2": "Parcele em até 5 vezes sem juros",
-          "mobileLine1": "FACILITADO",
-          "mobileLine2": "em até 5x"
+          "image": "https://assets.decocache.com/vicbeaute/7fa78720-0227-4373-8a19-72b6bcf38dc5/Frame-1000004076.png",
+          "imageWidth": 37,
+          "imageHeight": 32,
+          "line1": "Frete grátis nas compras ",
+          "line2": "acima de R$190",
+          "mobileLine1": "Frete grátis nas compras",
+          "mobileLine2": "acima de R$190"
         },
         {
           "label": "LOJA SEGURA Loja com SSL e proteção de dados",
-          "image": "https://assets.decocache.com/easycommerce/4416b192-9570-4032-98bd-137db24274b0/Vector-(10).svg",
-          "imageWidth": 32,
-          "imageHeight": 28,
-          "line1": "LOJA SEGURA",
-          "line2": "com SSL e proteção de dados",
-          "mobileLine2": "com SSL",
-          "mobileLine1": "LOJA SEGURA"
+          "image": "https://assets.decocache.com/vicbeaute/fa185941-ad55-47c9-9a9f-5459e0f41209/Message_light.png",
+          "imageWidth": 36,
+          "imageHeight": 36,
+          "line1": "Natal Vic Beauté | A beleza de",
+          "line2": "celebrar e presentear",
+          "mobileLine2": "celebrar e presentear",
+          "mobileLine1": "Natal Vic Beauté | A beleza de"
         },
         {
           "label": "MAIS ECONOMIA Compre os nossos kits",
           "image": "https://assets.decocache.com/easycommerce/7fa8dabb-bf9a-461b-a458-a7a82dba969f/Vector-(11).svg",
-          "imageWidth": 32,
-          "imageHeight": 28,
-          "line1": "MAIS ECONOMIA",
-          "line2": "Compre os nossos kits",
-          "mobileLine1": "ECONOMIA",
-          "mobileLine2": "Com os kits"
+          "imageWidth": 36,
+          "imageHeight": 36,
+          "line1": "Pague com cartão de crédito ou",
+          "line2": "Paypal em segurança",
+          "mobileLine1": "Pague com cartão de crédito ou",
+          "mobileLine2": "Paypal em segurança"
         }
       ],
       "title": "aa",
@@ -84,92 +112,84 @@
             "imageWidth": 126,
             "imageHeight": 126,
             "href": "/",
-            "caption": "Ofertas",
+            "caption": "Iluminador",
             "desktop": "https://assets.decocache.com/easycommerce/f87c5865-8337-4730-bdbf-53660be827e4/Group-6435.svg",
             "desktopWidth": 126,
             "desktopHeight": 126,
-            "mobile": "https://assets.decocache.com/easycommerce/f87c5865-8337-4730-bdbf-53660be827e4/Group-6435.svg",
-            "mobileWidth": 90,
-            "mobileHeight": 90,
-            "alt": "Categoria de ofertas"
+            "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+            "mobileWidth": 120,
+            "mobileHeight": 120,
+            "alt": "Iluminador"
           },
           {
             "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
-            "desktop": "https://assets.decocache.com/easycommerce/cd818f13-45e9-4256-8501-8ba86162b9ae/Group-6435-(7).svg",
+            "imageWidth": 126,
+            "imageHeight": 126,
+            "href": "/",
+            "caption": "Iluminador",
+            "desktop": "https://assets.decocache.com/easycommerce/f87c5865-8337-4730-bdbf-53660be827e4/Group-6435.svg",
             "desktopWidth": 126,
             "desktopHeight": 126,
-            "mobile": "https://assets.decocache.com/easycommerce/cd818f13-45e9-4256-8501-8ba86162b9ae/Group-6435-(7).svg",
-            "mobileWidth": 90,
-            "mobileHeight": 90,
-            "alt": "Categoria de Doces e Chocolates",
-            "href": "/",
-            "caption": "Doces e Chocolates"
+            "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+            "mobileWidth": 120,
+            "mobileHeight": 120,
+            "alt": "Iluminador"
           },
           {
-            "desktop": "https://assets.decocache.com/easycommerce/9ee2e867-5c2b-45c9-b3fc-a077a6a58e19/Group-6435-(6).svg",
+            "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
+            "imageWidth": 126,
+            "imageHeight": 126,
+            "href": "/",
+            "caption": "Iluminador",
+            "desktop": "https://assets.decocache.com/easycommerce/f87c5865-8337-4730-bdbf-53660be827e4/Group-6435.svg",
             "desktopWidth": 126,
             "desktopHeight": 126,
-            "mobile": "https://assets.decocache.com/easycommerce/9ee2e867-5c2b-45c9-b3fc-a077a6a58e19/Group-6435-(6).svg",
-            "mobileWidth": 90,
-            "mobileHeight": 90,
-            "alt": "Categoria de Mercearia",
-            "href": "/",
-            "caption": "Mercearia"
+            "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+            "mobileWidth": 120,
+            "mobileHeight": 120,
+            "alt": "Iluminador"
           },
           {
-            "desktop": "https://assets.decocache.com/easycommerce/8f519e00-7113-4589-a4e7-3a85adadd3e2/Group-6435-(2).svg",
+            "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
+            "imageWidth": 126,
+            "imageHeight": 126,
+            "href": "/",
+            "caption": "Iluminador",
+            "desktop": "https://assets.decocache.com/easycommerce/f87c5865-8337-4730-bdbf-53660be827e4/Group-6435.svg",
             "desktopWidth": 126,
             "desktopHeight": 126,
-            "mobile": "https://assets.decocache.com/easycommerce/8f519e00-7113-4589-a4e7-3a85adadd3e2/Group-6435-(2).svg",
-            "mobileWidth": 90,
-            "mobileHeight": 90,
-            "alt": "Categoria de enlatados",
-            "href": "/",
-            "caption": "Enlatados"
+            "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+            "mobileWidth": 120,
+            "mobileHeight": 120,
+            "alt": "Iluminador"
           },
           {
-            "desktop": "https://assets.decocache.com/easycommerce/c87ea69f-0280-436b-b441-fc11638c6aeb/Group-6435-(8).svg",
+            "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
+            "imageWidth": 126,
+            "imageHeight": 126,
+            "href": "/",
+            "caption": "Iluminador",
+            "desktop": "https://assets.decocache.com/easycommerce/f87c5865-8337-4730-bdbf-53660be827e4/Group-6435.svg",
             "desktopWidth": 126,
             "desktopHeight": 126,
-            "mobile": "https://assets.decocache.com/easycommerce/c87ea69f-0280-436b-b441-fc11638c6aeb/Group-6435-(8).svg",
-            "mobileWidth": 90,
-            "mobileHeight": 90,
-            "alt": "Categoria de Azeites e Vinagres",
-            "href": "/",
-            "caption": "Sopas, massas e purês"
+            "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+            "mobileWidth": 120,
+            "mobileHeight": 120,
+            "alt": "Iluminador"
           },
           {
-            "desktop": "https://assets.decocache.com/easycommerce/8e6870dc-c29b-4cf4-aca9-c1c8dbb77d9f/Group-6435-(9).svg",
+            "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
+            "imageWidth": 126,
+            "imageHeight": 126,
+            "href": "/",
+            "caption": "Iluminador",
+            "desktop": "https://assets.decocache.com/easycommerce/f87c5865-8337-4730-bdbf-53660be827e4/Group-6435.svg",
             "desktopWidth": 126,
             "desktopHeight": 126,
-            "mobile": "https://assets.decocache.com/easycommerce/8e6870dc-c29b-4cf4-aca9-c1c8dbb77d9f/Group-6435-(9).svg",
-            "mobileWidth": 90,
-            "mobileHeight": 90,
-            "alt": "Categoria de Azeites e Vinagres",
-            "href": "/",
-            "caption": "Azeites e Vinagres"
-          },
-          {
-            "desktop": "https://assets.decocache.com/easycommerce/196388cb-e83c-423e-ae0c-eaa1cd5db5a2/Group-6435-(10).svg",
-            "desktopWidth": 126,
-            "desktopHeight": 126,
-            "mobile": "https://assets.decocache.com/easycommerce/196388cb-e83c-423e-ae0c-eaa1cd5db5a2/Group-6435-(10).svg",
-            "mobileWidth": 90,
-            "mobileHeight": 90,
-            "alt": "Categoria de Padaria",
-            "href": "/",
-            "caption": "Padaria"
-          },
-          {
-            "desktop": "https://assets.decocache.com/easycommerce/8e6870dc-c29b-4cf4-aca9-c1c8dbb77d9f/Group-6435-(9).svg",
-            "desktopWidth": 126,
-            "desktopHeight": 126,
-            "mobile": "https://assets.decocache.com/easycommerce/8e6870dc-c29b-4cf4-aca9-c1c8dbb77d9f/Group-6435-(9).svg",
-            "mobileWidth": 90,
-            "mobileHeight": 90,
-            "alt": "Categoria de Doces",
-            "href": "/",
-            "caption": "Descontos"
+            "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+            "mobileWidth": 120,
+            "mobileHeight": 120,
+            "alt": "Iluminador"
           }
         ],
         "slider": {

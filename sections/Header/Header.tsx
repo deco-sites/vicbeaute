@@ -1,5 +1,5 @@
-import type { HTMLWidget, ImageWidget } from "apps/admin/widgets.ts";
-import type { SiteNavigationElement } from "apps/commerce/types.ts";
+import type { ImageWidget } from "apps/admin/widgets.ts";
+import type { CustomNavItem } from "../../components/header/NavItem.tsx";
 import Image from "apps/website/components/Image.tsx";
 import Alert from "../../components/header/Alert.tsx";
 import Bag from "../../components/header/Bag.tsx";
@@ -62,7 +62,7 @@ export interface SectionProps {
    */
   alertInterval?: number;
 
-  navItems?: SiteNavigationElement[] | null;
+  navItems?: CustomNavItem[] | null;
   searchbar: SearchbarProps;
   logo: Logo;
   /** @title Vitrine do Drawer */
@@ -385,7 +385,12 @@ const Mobile = (
              `,
             }}
           />
-          <style dangerouslySetInnerHTML={{ __html: "@media (min-width: 1024px) { #search-drawer ~ .drawer-side [data-aside] > .border-t { display: none !important; } }" }} />
+          <style
+            dangerouslySetInnerHTML={{
+              __html:
+                "@media (min-width: 1024px) { #search-drawer ~ .drawer-side [data-aside] > .border-t { display: none !important; } }",
+            }}
+          />
           <label
             for="search-drawer"
             class="btn btn-square btn-sm btn-ghost h-8"
@@ -438,8 +443,17 @@ function Header({
             interval={alertInterval > 0 ? alertInterval : 5}
           />
         )}
-        <div class="hidden xl:block bg-transparent">
-          <Desktop logo={logo} {...props} transparent={true} />
+        <div class="hidden xl:block bg-transparent relative z-10 w-full">
+          <div
+            class="absolute inset-x-0 top-0 h-[50px] pointer-events-none -z-10"
+            style={{
+              backgroundImage:
+                "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)",
+            }}
+          />
+          <div class="relative z-10">
+            <Desktop logo={logo} {...props} transparent={true} />
+          </div>
         </div>
         <div class="xl:hidden bg-transparent">
           <Mobile logo={logo} {...props} transparent={true} />

@@ -45,6 +45,7 @@ export type AvailableIcons =
   | "search-drawer"
   | "user"
   | "menu-mobile-dark"
+  | "arrow-down-white"
   | "user-dark"
   | "minicartbagdark"
   | "lupa-dark";

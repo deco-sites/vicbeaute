@@ -47,8 +47,16 @@ export interface Props {
   images?: Banner[];
   preload?: boolean;
   interval?: number;
-  arrows?: boolean;
-  dots?: boolean;
+  /** @title Exibir Setas (Desktop) */
+  arrowsDesktop?: boolean;
+  /** @title Exibir Setas (Mobile) */
+  arrowsMobile?: boolean;
+  /** @title Exibir Indicadores / Dots (Desktop) */
+  dotsDesktop?: boolean;
+  /** @title Exibir Indicadores / Dots (Mobile) */
+  dotsMobile?: boolean;
+  /** @title Exibir Conteúdo (Texto e Botão) */
+  showContent?: boolean;
 }
 
 function BannerItem(
@@ -89,21 +97,28 @@ function BannerItem(
       id={id}
       {...selectPromotionEvent}
       href={action?.href ?? "#"}
-      class="relative w-full overflow-hidden pb-14 lg:pb-0"
+      class="relative w-full overflow-hidden pb-14 lg:pb-0 block"
     >
       <Picture preload={lcp} {...viewPromotionEvent}>
-        <img
-          class="md:hidden w-full"
+        <Source
+          media="(max-width: 767px)"
+          fetchPriority={lcp ? "high" : "auto"}
           src={mobile || FALLBACK_MOBILE}
-          width={widthMobile}
-          height={heightMobile}
+          width={widthMobile || 360}
+          height={heightMobile || 600}
+        />
+        <Source
+          media="(min-width: 768px)"
+          fetchPriority={lcp ? "high" : "auto"}
+          src={desktop || FALLBACK_DESKTOP}
+          width={widthDesktop || 1440}
+          height={heightDesktop || 600}
         />
         <img
-          class="hidden md:block"
+          class="object-cover w-full h-full"
+          loading={lcp ? "eager" : "lazy"}
           src={desktop || FALLBACK_DESKTOP}
           alt={alt}
-          width={widthDesktop}
-          height={heightDesktop}
         />
       </Picture>
 
@@ -118,12 +133,12 @@ function BannerItem(
 
           {text && (
             <p class="text-white text-sm leading-snug">
-              aaaaaaaaaa
+              {text}
             </p>
           )}
 
           {cto && (
-            <span class="mt-2 inline-block bg-white text-black px-4 py-2 text-sm font-medium">
+            <span class="mt-2 inline-block bg-white text-black px-4 py-2 text-sm font-medium w-max">
               {cto}
             </span>
           )}
@@ -133,21 +148,36 @@ function BannerItem(
   );
 }
 
-function Buttons() {
+function Buttons({ desktop, mobile }: { desktop: boolean; mobile: boolean }) {
+  const displayClass = clx(
+    desktop ? "sm:flex" : "sm:hidden",
+    mobile ? "flex" : "hidden",
+  );
+
   return (
     <>
-      <div class="hidden sm:flex items-center justify-center z-10 col-start-1 row-start-2">
+      <div
+        class={clx(
+          "items-center justify-center z-10 col-start-1 row-start-2 ml-4",
+          displayClass,
+        )}
+      >
         <Slider.PrevButton
-          class="btn btn-neutral btn-outline btn-circle no-animation btn-sm border-none arrow-carousel"
+          class="btn btn-neutral btn-outline btn-circle no-animation btn-sm border-none arrow-carousel bg-white/50 hover:bg-white text-black"
           disabled={false}
         >
           <Icon id="right-arrow-carousel" class="rotate-180" />
         </Slider.PrevButton>
       </div>
 
-      <div class="hidden sm:flex items-center justify-center z-10 col-start-3 row-start-2">
+      <div
+        class={clx(
+          "items-center justify-center z-10 col-start-3 row-start-2 mr-4",
+          displayClass,
+        )}
+      >
         <Slider.NextButton
-          class="btn btn-neutral btn-outline btn-circle no-animation btn-sm border-none arrow-carousel"
+          class="btn btn-neutral btn-outline btn-circle no-animation btn-sm border-none arrow-carousel bg-white/50 hover:bg-white text-black"
           disabled={false}
         >
           <Icon id="right-arrow-carousel" />
@@ -157,24 +187,55 @@ function Buttons() {
   );
 }
 
-function Dots({ images }: { images?: Banner[] }) {
+function Dots(
+  { images, desktop, mobile }: {
+    images?: Banner[];
+    desktop: boolean;
+    mobile: boolean;
+  },
+) {
+  const displayClass = clx(
+    desktop ? "sm:flex" : "sm:hidden",
+    mobile ? "flex" : "hidden",
+  );
+
   return (
-    <div class="absolute bottom-[20px] lg:bottom-[35px] left-1/2 flex justify-center mt-2 col-span-full row-start-3 -translate-x-1/2">
-      <ul class="flex gap-2">
-        {images?.map((_, index) => (
-          <li key={index} class="carousel-item">
-            <Slider.Dot
-              index={index}
-              class={clx(
-                "w-2 h-2 rounded-full transition-all duration-300",
-                "bg-[#2D2D2C] opacity-50",
-                "disabled:!bg-black disabled:!opacity-100 disabled:ring-2 disabled:!ring-black disabled:ring-offset-2",
-              )}
-            />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+          .carousel-dots-tracker [data-dot] {
+            background-color: rgba(255,255,255,0.4) !important;
+            width: 100% !important;
+            height: 3px !important;
+            border-radius: 0 !important;
+            opacity: 1 !important;
+            box-shadow: none !important;
+            border: none !important;
+            outline: none !important;
+            transition: background-color 0.3s ease !important;
+          }
+          .carousel-dots-tracker [data-dot]:disabled {
+            background-color: white !important;
+          }
+        `,
+        }}
+      />
+      <div
+        class={clx(
+          "absolute bottom-[70px] lg:bottom-[30px] left-0 w-full px-5 lg:px-20 justify-center col-span-full row-start-3 z-10",
+          displayClass,
+        )}
+      >
+        <ul class="flex w-full max-w-[1440px] gap-0 carousel-dots-tracker">
+          {images?.map((_, index) => (
+            <li key={index} class="carousel-item flex-1">
+              <Slider.Dot index={index} class="" />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 }
 
@@ -183,8 +244,10 @@ function Carousel(
     images = [],
     preload,
     interval,
-    arrows = true,
-    dots = true,
+    arrowsDesktop = true,
+    arrowsMobile = false,
+    dotsDesktop = true,
+    dotsMobile = true,
     showContent = true,
   }: Props,
 ) {
@@ -207,8 +270,14 @@ function Carousel(
           </Slider.Item>
         ))}
       </Slider>
-      {arrows && <Buttons />}
-      {dots && <Dots images={images} />}
+
+      {(arrowsDesktop || arrowsMobile) && (
+        <Buttons desktop={arrowsDesktop} mobile={arrowsMobile} />
+      )}
+      {(dotsDesktop || dotsMobile) && (
+        <Dots images={images} desktop={dotsDesktop} mobile={dotsMobile} />
+      )}
+
       <Slider.JS rootId={id} interval={interval && interval * 1e3} infinite />
     </div>
   );

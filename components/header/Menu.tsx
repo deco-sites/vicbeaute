@@ -1,4 +1,4 @@
-import type { SiteNavigationElement } from "apps/commerce/types.ts";
+import type { CustomNavItem } from "./NavItem.tsx";
 import Icon from "../../components/ui/Icon.tsx";
 import { Section } from "@deco/deco/blocks";
 import type { ImageWidget } from "apps/admin/widgets.ts";
@@ -12,27 +12,48 @@ export interface MobileMenuBanner {
 }
 
 export interface Props {
-  navItems?: SiteNavigationElement[];
+  navItems?: CustomNavItem[];
   mobileMenuCategories?: Section;
   mobileMenuBanner?: MobileMenuBanner;
 }
 
-function MenuItem({ item }: { item: SiteNavigationElement }) {
-  const hasChildren = !!(item.children && item.children.length > 0);
+function MenuItem({ item }: { item: CustomNavItem }) {
+  const hasColumns = item.columns && item.columns.length > 0;
 
   return (
-    <div class={`collapse ${hasChildren ? "collapse-plus" : ""}`}>
-      {hasChildren && <input type="checkbox" />}
-      <div class="collapse-title">{item.name}</div>
-      {hasChildren && (
+    <div class={`collapse ${hasColumns ? "collapse-plus" : ""}`}>
+      {hasColumns && <input type="checkbox" />}
+
+      {hasColumns ? (
+        <div class="collapse-title">{item.name}</div>
+      ) : (
+        <a href={item.url} class="collapse-title block w-full">{item.name}</a>
+      )}
+
+      {hasColumns && (
         <div class="collapse-content">
-          <ul data-cy="menu-mobile-list">
-            {item.children?.map((node) => (
-              <li>
-                <MenuItem data-cy="menu-item-mobile" item={node} />
-              </li>
+          <div class="flex flex-col gap-6 pt-2 pb-4">
+            {item.columns!.map((col, idx) => (
+              <div key={idx} class="flex flex-col gap-2">
+                {col.title && col.title.trim() !== "" && (
+                  <span class="font-bold text-[#2d2d2c] uppercase text-[15px] font-HankenGrotesk">
+                    {col.title}
+                  </span>
+                )}
+                {col.links && col.links.length > 0 && (
+                  <ul class="flex flex-col gap-3 ml-2">
+                    {col.links.map((link, subIdx) => (
+                      <li key={subIdx}>
+                        <a href={link.url} class={`text-[#2d2d2c] text-[15px] ${link.bold ? 'font-bold underline' : ''}`}>
+                          {link.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       )}
     </div>

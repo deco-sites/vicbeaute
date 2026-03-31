@@ -121,36 +121,99 @@
       "children": [
         {
           "image": [],
-          "children": [],
+          "children": [
+            {
+              "children": [],
+              "name": "Subcategoria 1",
+              "url": "aa"
+            },
+            {
+              "children": [],
+              "name": "aaaaaa"
+            }
+          ],
           "name": "Lorem Ipsum",
           "url": "/lorem-ipsum"
         },
         {
           "image": [],
-          "children": [],
-          "name": "Lorem Ipsum",
+          "children": [
+            {
+              "children": [],
+              "name": "aaaaaaaaaaa"
+            }
+          ],
           "url": "/lorem-ipsum"
         },
         {
           "children": [],
           "name": "Lorem Ipsum",
           "url": "/lorem-ipsum"
-        },
-        {
-          "children": [],
-          "name": "Lorem Ipsum",
-          "url": "/lorem-ipsum"
-        },
-        {
-          "children": [],
-          "name": "Lorem Ipsum",
-          "url": "/lorem-ipsum",
-          "identifier": "highlight"
         }
       ],
       "@type": "SiteNavigationElement",
       "url": "/novos",
-      "name": "Novos"
+      "name": "Novos",
+      "columns": [
+        {
+          "links": [
+            {
+              "label": "Mais vendidos",
+              "url": "/mais-vendidos"
+            },
+            {
+              "label": "Lançamentos",
+              "url": "/lancamentos"
+            },
+            {
+              "label": "Coleções",
+              "url": "/colecoes"
+            }
+          ]
+        },
+        {
+          "links": [
+            {
+              "label": "Batom",
+              "url": "/batom"
+            },
+            {
+              "label": "Gloss",
+              "url": "/gloss"
+            }
+          ],
+          "title": "Produtos"
+        },
+        {
+          "links": [
+            {
+              "label": "Batom",
+              "url": "/batom"
+            },
+            {
+              "label": "Gloss",
+              "url": "/gloss"
+            }
+          ],
+          "title": "Produtos"
+        }
+      ],
+      "cards": [
+        {
+          "image": "https://assets.decocache.com/vicbeaute/832e38a3-0b54-44b4-b6a7-a23b69835942/Small_Banner_Desktop_ad6c282e-dd07-437a-bd25-581cd15579a9.jpg.png",
+          "title": "Skulls no are",
+          "description": "Production feature too email keep pushback skulls diligence our let's. Speed blue dear leverage can't teams. Old submit on circle.",
+          "buttonText": "Explorar",
+          "url": "/explorar"
+        },
+        {
+          "image": "https://assets.decocache.com/vicbeaute/832e38a3-0b54-44b4-b6a7-a23b69835942/Small_Banner_Desktop_ad6c282e-dd07-437a-bd25-581cd15579a9.jpg.png",
+          "title": "Skulls no are",
+          "description": "Production feature too email keep pushback skulls diligence our let's. Speed blue dear leverage can't teams. Old submit on circle.",
+          "buttonText": "Explorar",
+          "url": "/explorar"
+        }
+      ]
     },
     {
       "@type": "SiteNavigationElement",
