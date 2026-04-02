@@ -23,7 +23,181 @@
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
-        "__resolveType": "site/sections/Content/InstitutionalMain.tsx"
+        "__resolveType": "site/sections/Institutional/quiosquesinstitutional.tsx",
+        "pageTitle": "Nossos Quiosques",
+        "secondTitle": "Shopping Iguatemi - São Paulo",
+        "institutionalText": "<p><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Av. Brig. Faria Lima, 2232 - Piso Térreo - Jardim Paulistano, São Paulo/ SP</span><br><span style=\"font-size: 16px\">Piso Térreo</span></p><p><strong><span style=\"font-size: 16px\"> Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">De Segunda à sexta: 9h às 18h</span><br><span style=\"font-size: 16px\">Sábados, domingos e feriados fechado.</span></p><p><span style=\"font-size: 16px\">(11) 99354-8590</span></p>",
+        "titleIcon": {
+          "mobile": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
+        },
+        "linkIcon": {
+          "mobile": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png"
+        },
+        "linkLabel": "Como chegar",
+        "showDivider": true
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Institutional/quiosquesinstitutional.tsx",
+        "secondTitle": "Shopping Pátio Higienópolis",
+        "institutionalText": "<p><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Av. Higienópolis, 618 - Piso Vilaboim - Higienópolis, São Paulo/SP</span><br><span style=\"font-size: 16px\">Piso Vilaboim</span></p><p><strong><span style=\"font-size: 16px\">Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">De Segunda à sexta: 9h às 18h</span><br><span style=\"font-size: 16px\">Sábados, domingos e feriados fechado.</span></p><p></p><p><span style=\"font-size: 16px\">(11) 99354-8590</span></p>",
+        "titleIcon": {
+          "mobile": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
+        },
+        "linkIcon": {
+          "mobile": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png"
+        },
+        "linkLabel": "Como chegar",
+        "showDivider": false
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Institutional/quiosquesinstitutional.tsx",
+        "pageTitle": "Aplicativos",
+        "secondTitle": "Estamos no Ifood",
+        "institutionalText": "<p><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Entrega em menos de 2h. O raio de entrega do iFood é de 7km a partir de um dos nossos quiosques. É só buscar por Vic Beauté.</span><br><br><strong><span style=\"font-size: 16px\">Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">Segunda a sábado: 11h às 21h </span><br><span style=\"font-size: 16px\">Domingo: 15h às 19h</span><br></p><p></p>",
+        "titleIcon": {
+          "mobile": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
+        },
+        "linkIcon": {
+          "mobile": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png"
+        },
+        "linkLabel": "Como chegar",
+        "showDivider": false
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Institutional/quiosquesinstitutional.tsx",
+        "secondTitle": "Estamos na Rappi",
+        "institutionalText": "<p><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Entrega em menos de 1h. O raio de entrega do Rappi é de 7km a partir de um dos nossos quiosques. É só buscar por Vic Beauté.</span></p><p></p><p><strong><span style=\"font-size: 16px\">Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">Segunda a sábado: 11h às 21h </span><br><span style=\"font-size: 16px\">Domingo: 15h às 19h</span><br></p>",
+        "titleIcon": {
+          "mobile": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
+        },
+        "linkIcon": {
+          "mobile": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png"
+        },
+        "linkLabel": "Como chegar",
+        "showDivider": true
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Institutional/quiosquesinstitutional.tsx",
+        "secondTitle": "Gallerist - Curitiba",
+        "institutionalText": "<p><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Shopping Pátio Batel | Piso L2 - Av. do Batel, 1868 - Curitiba/PR</span><br><span style=\"font-size: 16px\">Piso L2</span></p><p><strong><span style=\"font-size: 16px\">Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">De Segunda à sexta: 9h às 18h</span><br><span style=\"font-size: 16px\">Sábados, domingos e feriados fechado.</span></p>",
+        "titleIcon": {
+          "mobile": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
+        },
+        "linkIcon": {
+          "mobile": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png"
+        },
+        "linkLabel": "Como chegar",
+        "showDivider": true,
+        "pageTitle": "Parceiros"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Institutional/quiosquesinstitutional.tsx",
+        "secondTitle": "Gallerist - São Paulo, Pinheiros",
+        "institutionalText": "<p><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Rua Joaquim Antunes, 187 - Pinheiros, São Paulo/SP</span></p><p></p><p><strong><span style=\"font-size: 16px\">Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">De Segunda à sexta: 9h às 18h</span><br><span style=\"font-size: 16px\">Sábados, domingos e feriados fechado.</span></p>",
+        "titleIcon": {
+          "mobile": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
+        },
+        "linkIcon": {
+          "mobile": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png"
+        },
+        "linkLabel": "Como chegar",
+        "showDivider": true
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Institutional/quiosquesinstitutional.tsx",
+        "secondTitle": "Marcos Proença - São Paulo, Vila Nova Conceição",
+        "institutionalText": "<p><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">R. João Lourenço, 250 - Vila Nova Conceição, São Paulo/SP</span><br></p><p><strong><span style=\"font-size: 16px\">Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">De Segunda à sexta: 9h às 18h</span><br><span style=\"font-size: 16px\">Sábados, domingos e feriados fechado.</span></p>",
+        "titleIcon": {
+          "mobile": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
+        },
+        "linkIcon": {
+          "mobile": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png"
+        },
+        "linkLabel": "Como chegar",
+        "showDivider": true
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Institutional/quiosquesinstitutional.tsx",
+        "secondTitle": "Gallerist - São Paulo, Cidade Jardim",
+        "institutionalText": "<p><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Shopping Cidade Jardim | Piso 1 - Av. Magalhães de Castro, 12.000 - São Paulo/SP</span><br><span style=\"font-size: 16px\">Piso 1</span></p><p><strong><span style=\"font-size: 16px\">Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">De Segunda à sexta: 9h às 18h</span><br><span style=\"font-size: 16px\">Sábados, domingos e feriados fechado.</span></p>",
+        "titleIcon": {
+          "mobile": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
+        },
+        "linkIcon": {
+          "mobile": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png"
+        },
+        "linkLabel": "Como chegar",
+        "showDivider": true
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Institutional/quiosquesinstitutional.tsx",
+        "secondTitle": "Studio Lorena - São Paulo, Jardins",
+        "institutionalText": "<p><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Rua Oscar Freire, 439 - Jardins, São Paulo/SP</span><br></p><p><strong><span style=\"font-size: 16px\">Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">De Segunda à sexta: 9h às 18h</span><br><span style=\"font-size: 16px\">Sábados, domingos e feriados fechado.</span></p>",
+        "titleIcon": {
+          "mobile": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
+        },
+        "linkIcon": {
+          "mobile": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png"
+        },
+        "linkLabel": "Como chegar",
+        "showDivider": true
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Institutional/quiosquesinstitutional.tsx",
+        "secondTitle": "Gallerist - São Paulo, Jardim Paulistano",
+        "institutionalText": "<p><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Shopping Iguatemi | Piso 3 - Av. Brig. Faria Lima, 2232 - Jardim Paulistano, São Paulo/ SP</span><br><span style=\"font-size: 16px\">Piso 3</span></p><p><strong><span style=\"font-size: 16px\">Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">De Segunda à sexta: 9h às 18h</span><br><span style=\"font-size: 16px\">Sábados, domingos e feriados fechado.</span></p>",
+        "titleIcon": {
+          "mobile": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
+        },
+        "linkIcon": {
+          "mobile": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png"
+        },
+        "linkLabel": "Como chegar",
+        "showDivider": true
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Institutional/quiosquesinstitutional.tsx",
+        "secondTitle": "Marcos Proença - São Paulo, Jardim Europa",
+        "institutionalText": "<p><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Av. Europa, 592 - Jardim Europa, São Paulo/SP</span><br></p><p><strong><span style=\"font-size: 16px\">Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">De Segunda à sexta: 9h às 18h</span><br><span style=\"font-size: 16px\">Sábados, domingos e feriados fechado.</span></p>",
+        "titleIcon": {
+          "mobile": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
+        },
+        "linkIcon": {
+          "mobile": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png"
+        },
+        "linkLabel": "Como chegar",
+        "showDivider": false,
+        "isLastSection": true
       }
     },
     {
