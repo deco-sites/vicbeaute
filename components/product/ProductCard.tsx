@@ -42,6 +42,7 @@ function ProductCard({
   const { url, image: images, offers, isVariantOf } = product;
   const hasVariant = isVariantOf?.hasVariant ?? [];
   const title = isVariantOf?.name ?? product.name;
+  const variantName = product.name;
   const [front, back] = images ?? [];
 
   const { listPrice, price, seller = "1", availability } = useOffer(offers);
@@ -117,7 +118,7 @@ function ProductCard({
               "rounded w-full",
               "col-span-full row-span-full",
             )}
-            sizes="(max-width: 160px) 50vw, 20vw"
+            sizes="(max-width: 150px) 50vw, 20vw"
             preload={preload}
             loading={preload ? "eager" : "lazy"}
             decoding="async"
@@ -145,23 +146,26 @@ function ProductCard({
         </div>
       </figure>
 
-      <a href={relativeUrl} class="pt-3 px-vc-6">
-        <h3 class="text-base line-clamp-2 min-h-12">
+      <a href={relativeUrl} class="py-1 px-1">
+        <span class="font-Manrope text-vc-10 text-black-20">
+          {variantName }
+        </span>
+        <h3 class="font-Manrope font-medium text-xs text-black-35 line-clamp-2 min-h-8">
           {title}
         </h3>
 
         <div
           class={clx(
-            "flex gap-[2px] pt-3 flex-col min-h-[78px] pb-5 justify-end",
+            "flex gap-[2px] pt-1 min-h-[32px]",
             price === 0 ? "text-transparent" : "",
           )}
         >
           {listPrice && listPrice !== price && (
-            <span class="line-through font-normal text-gray-400 text-xs">
+            <span class="line-through font-Manrope text-gray-400 text-xs">
               {formatPrice(listPrice, offers?.priceCurrency)}
             </span>
           )}
-          <span class="font-bold text-lg text-black-5">
+          <span class="font-bold font-Manrope text-lg text-green-10">
             {formatPrice(price, offers?.priceCurrency)}
           </span>
         </div>
@@ -191,18 +195,15 @@ function ProductCard({
       <div class="p-1">
         {inStock
           ? (
-            <AddToCartButton
-              product={product}
-              seller={seller}
-              item={item}
+            <div
               class={clx(
                 "btn",
-                "btn-outline justify-start border-none !text-sm !font-medium px-0 no-animation w-full",
-                "hover:!bg-transparent",
-                "disabled:!bg-transparent disabled:!opacity-50",
-                "btn-primary hover:!text-primary disabled:!text-primary",
+                "border-none text-sm no-animation w-full",
+                "flex w-full justify-center rounded-lg mx-auto bg-green-10 font-Manrope font-medium text-xs text-green-5 px-0 lg:text-base",
               )}
-            />
+            >
+              Produto Indisponível
+            </div>
           )
           : (
             <div

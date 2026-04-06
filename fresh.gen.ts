@@ -10,8 +10,11 @@ import * as $InstitutionalMobileMenu from "./islands/InstitutionalMobileMenu.tsx
 import * as $Newsletter from "./islands/Newsletter.tsx";
 import * as $QuantitySelectorInteractive from "./islands/QuantitySelectorInteractive.tsx";
 import * as $QuantitySelectorMinicartInteractive from "./islands/QuantitySelectorMinicartInteractive.tsx";
+import * as $ScrollHeader from "./islands/ScrollHeader.tsx";
 import * as $SearchError from "./islands/SearchError.tsx";
+import * as $ShopTheLookModal from "./islands/ShopTheLookModal.tsx";
 import * as $SliderJS from "./islands/SliderJS.tsx";
+import * as $TabbedSliderJS from "./islands/TabbedSliderJS.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -27,8 +30,11 @@ const manifest = {
     "./islands/QuantitySelectorInteractive.tsx": $QuantitySelectorInteractive,
     "./islands/QuantitySelectorMinicartInteractive.tsx":
       $QuantitySelectorMinicartInteractive,
+    "./islands/ScrollHeader.tsx": $ScrollHeader,
     "./islands/SearchError.tsx": $SearchError,
+    "./islands/ShopTheLookModal.tsx": $ShopTheLookModal,
     "./islands/SliderJS.tsx": $SliderJS,
+    "./islands/TabbedSliderJS.tsx": $TabbedSliderJS,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

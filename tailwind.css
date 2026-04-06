@@ -11,6 +11,7 @@
   body {
     max-width: 1920px;
     margin: 0 auto;
+    background-color: #F4F4F4;
   }
 
   /** Remove default styles from input[type=number] */
@@ -82,7 +83,7 @@
 
 @media (max-width: 1024px) {
   #minicartdrawer {
-    padding: 20px 0;
+    padding: 20px 12px;
     justify-content: center;
   }
 }
@@ -218,7 +219,8 @@ html:has(.drawer-toggle:checked) {
 
 @media (max-width: 767px) {
   #shelf-slider .product-slider {
-    max-width: 160px;
+    max-width: 150px;
+    width: 100%;
   }
 }
 
@@ -363,6 +365,33 @@ ul.closed {
   }
 }
 
+.progress {
+    background-color: #D5D8C2;
+}
+
+  .progress-primary::-moz-progress-bar {
+    border-radius: var(--rounded-box, 1rem /* 16px */);
+    --tw-bg-opacity: 1;
+    background-color: #4D5D49;
+}
+.progress-primary:indeterminate {
+    --progress-color: #4D5D49;
+}
+.progress-primary::-webkit-progress-value {
+    --tw-bg-opacity: 1;
+    background-color: #4D5D49;
+}
+
+.overcontent {
+    background-color: white !important;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); /* Um sombreado leve para destacar */
+    transition: background-color 0.3s ease;
+    z-index: 999
+  }
+
+  .icon-header {
+    color: red !important;
+  }
 /* Restaura a formatação do HTML gerado pelo rich-text que sofre reset do Tailwind */
 .institutionalText h1 {
   font-size: 2.25em;

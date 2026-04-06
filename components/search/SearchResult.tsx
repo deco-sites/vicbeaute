@@ -32,24 +32,30 @@ export interface Props {
   partial?: "hideMore" | "hideLess";
 
   /**
+   * @title Ocultar Breadcrumb Padrão
+   * @description Ative isso se a página já possui um Category Banner (que injeta o próprio breadcrumb)
+   */
+  hideBreadcrumb?: boolean;
+
+  /**
    * @title Texto SEO
    * @default
    */
   textSeo?: {
-    /** 
-     * @title Título H1 
+    /**
+     * @title Título H1
      */
     h1title?: string;
-    /** 
-     * @title Subtítulo H2 
+    /**
+     * @title Subtítulo H2
      */
     h2subTitle?: string;
-    /** 
+    /**
      * @title Texto
      * @format textarea
      */
     text?: string;
-  }
+  };
   // textSeo?: RichText;
 }
 
@@ -248,9 +254,6 @@ function Result(props: SectionProps<typeof loader>) {
           ? <PageResult {...props} />
           : (
             <div class="container flex flex-col w-full py-4 sm:py-5 px-4 sm:px-0 lg:max-w-[1280px] container-search">
-              <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
-              <SeoText textSeo={props.textSeo} />
-
               <Drawer
                 class="lg:hidden block"
                 id={controls}

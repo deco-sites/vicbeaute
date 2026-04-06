@@ -22,7 +22,7 @@ function ProductSlider(
 
   return (
     <>
-      <div id={id} class="relative w-full lg:px-0 px-4 pt-2">
+      <div id={id} class="relative w-full lg:px-0 pl-3 pt-2">
         <Slider id="shelf-slider">
           {products?.map((product, index) => (
             <Slider.Item index={index}>
@@ -60,17 +60,41 @@ function ProductSlider(
           </>
         )}{" "}
         {dots && (
-          <div class="flex gap-4 justify-center mt-4 pb-6">
-            {Array.from(
-              { length: totalPages },
-              (_, index) => (
-                <Slider.Dot
-                  index={index}
-                  class="focus:outline-none group disabled:!bg-black disabled:!opacity-100 disabled:ring-2 disabled:ring-offset-2 bg-black-15 opacity-50 w-2 h-2 rounded-full transition-all duration-300 ring-custom"
-                />
-              ),
-            )}
-          </div>
+          <>
+            <style
+              dangerouslySetInnerHTML={{
+                __html: `
+                .productslider-dots-tracker [data-dot] {
+                  background-color: rgba(25, 28, 31, 0.2) !important;
+                  width: 100% !important;
+                  height: 3px !important;
+                  border-radius: 0 !important;
+                  opacity: 1 !important;
+                  box-shadow: none !important;
+                  border: none !important;
+                  outline: none !important;
+                  transition: background-color 0.3s ease !important;
+                }
+                .productslider-dots-tracker [data-dot]:disabled {
+                  background-color: #455C42 !important;
+                }
+              `,
+              }}
+            />
+            <div class="flex w-full lg:max-w-[351px] px-4 lg:px-0 gap-0 productslider-dots-tracker justify-center mx-auto mt-4 pb-6">
+              {Array.from(
+                { length: totalPages },
+                (_, index) => (
+                  <div key={index} class="carousel-item flex-1">
+                    <Slider.Dot
+                      index={index}
+                      class="w-full"
+                    />
+                  </div>
+                ),
+              )}
+            </div>
+          </>
         )} <Slider.JS rootId={id} arrows={arrows} dots={dots} />
       </div>
     </>
