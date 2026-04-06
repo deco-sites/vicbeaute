@@ -42,7 +42,7 @@ export interface CustomNavItem {
   cards?: NavItemCard[];
 }
 
-function NavItem({ item }: { item: CustomNavItem }) {
+function NavItem({ item, transparent }: { item: CustomNavItem; transparent?: boolean }) {
   const { url, name, columns, cards, highlight } = item;
 
   const hasColumns = columns && columns.length > 0;
@@ -56,12 +56,12 @@ function NavItem({ item }: { item: CustomNavItem }) {
     >
       <a
         href={url}
-        class={`flex items-center gap-1.5 group-hover:opacity-80 transition-opacity font-medium lg:text-[15px] font-HankenGrotesk leading-tight text-[#FFFFFF] tracking-wide uppercase ${
-          highlight ? "bg-[#EF781C] text-white px-2 py-1 rounded" : ""
-        }`}
+        class={`flex items-center gap-1.5 group-hover:opacity-80 transition-opacity font-medium lg:text-[15px] font-HankenGrotesk leading-tight tracking-wide uppercase ${
+          transparent ? "text-[#FFFFFF]" : "text-[#363931]"
+        } ${highlight ? "bg-[#EF781C] !text-white px-2 py-1 rounded" : ""}`}
       >
         {name}
-        {hasDropdown && <Icon id="arrow-down-white" width={20} height={20} />}
+        {hasDropdown && <Icon id={transparent ? "arrow-down-white" : "arrowdown"} width={20} height={20} />}
       </a>
 
       {hasDropdown && (

@@ -1,0 +1,230 @@
+import { useEffect, useState } from "preact/hooks";
+import { Product } from "apps/commerce/types.ts";
+import Icon from "../components/ui/Icon.tsx";
+import { formatPrice } from "../sdk/format.ts";
+
+export interface LookModalData {
+  imageDesk: string;
+  imageMobile?: string;
+  imageAlt?: string;
+  cardType?: string;
+  title: string;
+  subtitle: string;
+  products?: Product[] | null;
+}
+
+const useAddToCartProps = (product: Product, platform: string) => {
+  const { additionalProperty = [], isVariantOf, productID } = product;
+  const productGroupID = isVariantOf?.productGroupID;
+
+  // Emulando a captura de seller basico se VTEX
+  const seller = product.offers?.offers[0]?.seller || "1";
+
+  if (platform === "vtex") {
+    return {
+      allowedOutdatedData: ["paymentData"],
+      orderItems: [{ quantity: 1, seller: seller, id: productID }],
+    };
+  }
+  if (platform === "wake") {
+    return {
+      productVariantId: Number(productID),
+      quantity: 1,
+    };
+  }
+  // Default fallback similar a vnda/shopify...
+  return { quantity: 1, itemId: productID };
+};
+
+export default function ShopTheLookModal(
+  { looks, platform = "vtex" }: { looks?: LookModalData[]; platform?: string },
+) {
+  const [activeLook, setActiveLook] = useState<LookModalData | null>(null);
+  const [selectedProductIds, setSelectedProductIds] = useState<Set<string>>(
+    new Set(),
+  );
+
+  useEffect(() => {
+    const handleOpen = (e: CustomEvent<{ index: number }>) => {
+      if (!looks || !looks[e.detail.index]) return;
+      setActiveLook(looks[e.detail.index]);
+      setSelectedProductIds(new Set()); // zera a selecao e abre com eles vazios
+      document.body.style.overflow = "hidden"; // previne scroll da pagina traseira
+    };
+
+    window.addEventListener("open-look-modal", handleOpen as EventListener);
+
+    return () => {
+      window.removeEventListener(
+        "open-look-modal",
+        handleOpen as EventListener,
+      );
+    };
+  }, []);
+
+  const closeModal = () => {
+    setActiveLook(null);
+    document.body.style.overflow = "auto";
+  };
+
+  if (!activeLook) return null;
+
+  const toggleProduct = (productId: string) => {
+    const newSet = new Set(selectedProductIds);
+    if (newSet.has(productId)) newSet.delete(productId);
+    else newSet.add(productId);
+    setSelectedProductIds(newSet);
+  };
+
+  const handleAddToCart = () => {
+    if (selectedProductIds.size === 0) return;
+
+    const itemsToAdd = (activeLook.products || []).filter((p) =>
+      selectedProductIds.has(p.productID)
+    );
+
+    itemsToAdd.forEach((product) => {
+      const price = product.offers?.offers[0]?.price || 0;
+      const item = { item_id: product.productID, quantity: 1, price: price };
+      const platformProps = useAddToCartProps(product, platform);
+
+      // @ts-ignore - Chamada global ao Cart nativo da implementacao da Vtex/Wake do projeto
+      if (window.STOREFRONT?.CART?.addToCart) {
+        // @ts-ignore
+        window.STOREFRONT.CART.addToCart(item, platformProps);
+      }
+    });
+
+    closeModal();
+  };
+
+  return (
+    <div class="fixed inset-0 z-50 flex items-center justify-center p-4 lg:p-0">
+      {/* Backdrop */}
+      <div
+        class="absolute inset-0 bg-black/60 transition-opacity"
+        onClick={closeModal}
+      />
+
+      {/* Modal Container */}
+      <div class="bg-[#ffffff] w-full max-w-[850px] max-h-[90vh] overflow-hidden flex flex-col lg:flex-row relative z-10 rounded-sm shadow-2xl animate-fade-in">
+        <button
+          class="absolute top-5 right-5 z-20 text-[#191C1F] hover:opacity-70 transition-opacity bg-white/50 lg:bg-transparent rounded-full p-1"
+          onClick={closeModal}
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+
+        {/* Left Side: Header (Mobile) + Image */}
+        <div class="w-full lg:w-[45%] flex flex-col max-h-[40vh] lg:max-h-none overflow-hidden relative">
+          {/* Header visivel no topo da imagem no Desktop, em cima no Mobile? Fica melhor integrado no topo da img */}
+          <div class="bg-white px-6 pt-6 pb-4 lg:pb-6 z-10 flex flex-col shadow-sm lg:shadow-none">
+            <h2 class="text-[26px] lg:text-[32px] text-[#455C42] font-Queens leading-[1.1]">
+              {activeLook.title}
+            </h2>
+            <span class="text-[13px] text-gray-500 mt-1">
+              {activeLook.subtitle}
+            </span>
+          </div>
+
+          <div class="flex-grow overflow-hidden px-6 lg:px-6 pb-6 w-full">
+            <img
+              src={activeLook.imageDesk}
+              alt={activeLook.imageAlt || "Look"}
+              class="w-full h-full object-cover object-top rounded-sm"
+            />
+          </div>
+        </div>
+
+        {/* Right Side: Products List */}
+        <div class="w-full lg:w-[55%] flex flex-col border-t lg:border-t-0 lg:border-l border-gray-100 flex-grow relative bg-white">
+          <div class="overflow-y-auto px-6 py-6 pb-24 lg:pb-32 flex flex-col gap-6 custom-scrollbar h-full">
+            {(activeLook.products || []).map((product) => {
+              const price = product.offers?.offers[0]?.price || 0;
+              const colorAttr = product.additionalProperty?.find((attr) =>
+                attr.name?.toLowerCase() === "cor"
+              );
+              const corStr = colorAttr ? `Cor: ${colorAttr.value}` : "";
+
+              const isSelected = selectedProductIds.has(product.productID);
+
+              return (
+                <div
+                  key={product.productID}
+                  class="flex items-center gap-5 border-b border-gray-100 pb-5 last:border-0 last:pb-0"
+                >
+                  {/* Checkbox custom */}
+                  <button
+                    class={`w-[22px] h-[22px] rounded-sm flex items-center justify-center flex-shrink-0 transition-all ${
+                      isSelected
+                        ? "bg-[#EAE8E2] border-[#455C42] border border-opacity-30"
+                        : "bg-[#EAE8E2] border-transparent border hover:border-gray-300"
+                    }`}
+                    onClick={() => toggleProduct(product.productID)}
+                    aria-label="Selecionar produto"
+                  >
+                    {/* Como não sei se o design pede icon, vou usar um verde musgo ao preencher */}
+                    {isSelected && (
+                      <div class="w-3 h-3 bg-[#455C42] rounded-sm"></div>
+                    )}
+                  </button>
+
+                  <div class="w-[80px] h-[80px] bg-[#F4F4F4] rounded-sm overflow-hidden flex-shrink-0 flex items-center justify-center p-1">
+                    {product.image?.[0]?.url && (
+                      <img
+                        src={product.image[0].url}
+                        class="w-full h-full object-contain mix-blend-multiply"
+                        alt={product.name}
+                      />
+                    )}
+                  </div>
+
+                  <div class="flex flex-col gap-1 pr-2">
+                    <span class="text-[14px] text-[#8a8a8a] line-clamp-2 leading-snug">
+                      {product.name}
+                    </span>
+                    {corStr && (
+                      <span class="text-[13px] text-gray-500">{corStr}</span>
+                    )}
+                    <span class="text-[14px] text-[#8a8a8a] mt-1">
+                      R$ {formatPrice(price)}
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Fixed Bottom Action */}
+          <div class="absolute bottom-0 left-0 w-full bg-white border-t border-gray-100 px-6 py-5 z-20">
+            <button
+              class={`w-full py-[14px] text-[13px] font-bold tracking-widest uppercase transition-all rounded-sm flex items-center justify-center gap-3 shadow-md ${
+                selectedProductIds.size > 0
+                  ? "bg-[#556b50] text-[#EBE8E3] hover:bg-[#455C42]"
+                  : "bg-[#e5e5e5] text-gray-500 pointer-events-none"
+              }`}
+              onClick={handleAddToCart}
+            >
+              ADICIONAR PRODUTOS{" "}
+              {selectedProductIds.size > 0 && `(${selectedProductIds.size})`}
+              <Icon id="shopping_bag" size={18} />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

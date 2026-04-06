@@ -160,7 +160,9 @@ const Desktop = (
 
         <nav class="flex justify-center w-full">
           <ul class="flex gap-10">
-            {navItems?.slice(0, 10).map((item) => <NavItem item={item} />)}
+            {navItems?.slice(0, 10).map((item) => (
+              <NavItem item={item} transparent={transparent} />
+            ))}
           </ul>
         </nav>
         {/* Botões do Lado Direito: Busca, Usuário, Carrinho */}
@@ -183,14 +185,18 @@ const Desktop = (
                   onClick={() => open.value = !open.value}
                   class="p-2"
                 >
-                  <Icon id="user" size={24} />
+                  <Icon id={transparent ? "user" : "user-black"} size={24} />
                 </button>
                 {open.value && <AccountDropdown />}
               </div>
             )
             : (
               <a href="/login" aria-label="login">
-                <Icon id="user" width={17} height={20} />
+                <Icon
+                  id={transparent ? "user" : "user-black"}
+                  width={28}
+                  height={28}
+                />
               </a>
             )}
           <Bag data-cy="minicart-button-desktop" transparent={transparent} />
@@ -293,14 +299,14 @@ const Mobile = (
                   onClick={() => open.value = !open.value}
                   class="p-2"
                 >
-                  <Icon id={transparent ? "user" : "user-dark"} size={24} />
+                  <Icon id={transparent ? "user" : "user-black"} size={24} />
                 </button>
                 {open.value && <AccountDropdown />}
               </>
             )
             : (
               <a href="/login" aria-label="login">
-                <Icon id={transparent ? "user" : "user-dark"} size={24} />
+                <Icon id={transparent ? "user" : "user-black"} size={24} />
               </a>
             )}
         </div>
