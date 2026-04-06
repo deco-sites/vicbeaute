@@ -55,7 +55,7 @@ function Newsletter({ content = {}, device }: Props) {
   };
 
   return (
-    <div class="flex flex-col gap-y-3.5 bg-gray-9 w-full py-10 px-4 lg:h-[230px] bg-green-5">
+    <div class="flex flex-col gap-y-3.5 bg-gray-9 w-full py-10 px-4 lg:h-[230px] bg-green-5 lg:hidden">
       <div class="w-full max-w-[1130px] m-auto">
         <div class="flex flex-col max-w-vc-319 w-full lg:max-w-[unset] lg:mx-0 lg:w-auto items-center lg:items-start lg:text-start gap-2 lg:gap-0">
           {content?.title && (
@@ -63,7 +63,6 @@ function Newsletter({ content = {}, device }: Props) {
               {content?.title}
             </h4>
           )}
-          
         </div>
 
         <div class="flex flex-col gap-4 mt-8">
@@ -128,7 +127,9 @@ function Newsletter({ content = {}, device }: Props) {
                   <label
                     for="aceite"
                     class="text-sm cursor-pointer"
-                    dangerouslySetInnerHTML={{ __html: content?.form?.helpText }}
+                    dangerouslySetInnerHTML={{
+                      __html: content?.form?.helpText,
+                    }}
                   />
                 </div>
               )}

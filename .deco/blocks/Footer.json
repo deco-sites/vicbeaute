@@ -5,13 +5,25 @@
       "title": "Descubra",
       "children": [
         {
-          "title": "Contato",
-          "href": "/contato",
+          "title": "Novos",
+          "href": "#",
           "isLink": true
         },
         {
-          "isLink": false,
-          "content": "<p><span>Segunda a sexta-feira, das 8h às 20h<br>e aos sábados, das 9h às 18h.<br>Telefone: (11) 4637-3951</span></p>"
+          "isLink": true,
+          "content": "<p><span>Segunda a sexta-feira, das 8h às 20h<br>e aos sábados, das 9h às 18h.<br>Telefone: (11) 4637-3951</span></p>",
+          "title": "Destaques",
+          "href": "#"
+        },
+        {
+          "isLink": true,
+          "title": "Maquiagem",
+          "href": "#"
+        },
+        {
+          "isLink": true,
+          "title": "Acessórios",
+          "href": "#"
         }
       ]
     },
@@ -20,29 +32,29 @@
       "href": "#",
       "children": [
         {
-          "title": "Formas de Pagamento",
-          "href": "/formas-de-pagamento",
+          "title": "Faqs",
+          "href": "#",
           "isLink": true
         },
         {
-          "title": "Prazos de Entrega",
-          "href": "/prazos-de-entrega",
+          "title": "Entrega",
+          "href": "#",
           "isLink": true
         },
         {
-          "title": "Trocas e Devoluções",
-          "href": "/trocas-e-devolucoes",
+          "title": "Troca e Devolução",
+          "href": "#",
           "isLink": true
         },
         {
-          "title": "Política de Privacidade e Tratamento de Dados",
-          "href": "/politica-de-privacidade",
-          "isLink": true
+          "title": "Regulamentos",
+          "isLink": true,
+          "href": "#"
         },
         {
           "isLink": true,
-          "title": "Regulamento de Promoções",
-          "href": "/regulamento-de-promocoes"
+          "title": "Termo UGC",
+          "href": "#"
         }
       ]
     },
@@ -50,30 +62,46 @@
       "title": "Institucional",
       "children": [
         {
-          "title": "Quem Somos",
+          "title": "Sobre nós",
           "isLink": true,
-          "href": "/quem-somos"
+          "href": "#"
         },
         {
           "isLink": true,
-          "title": "Política de Privacidade",
-          "href": "/politica-de-privacidade"
+          "title": "Pilares da marca",
+          "href": "#"
         },
         {
           "isLink": true,
-          "title": "Trocas e Devoluções",
-          "href": "trocas-e-devolucoes"
+          "title": "Onde encontrar",
+          "href": "#"
         },
         {
           "isLink": true,
-          "title": "Política de Frete",
-          "href": "politica-de-frete"
+          "title": "Brinde da vez",
+          "href": "#"
         }
       ],
       "href": "#"
     },
     {
-      "children": [],
+      "children": [
+        {
+          "isLink": true,
+          "title": "Sobre nós",
+          "href": "#"
+        },
+        {
+          "isLink": true,
+          "title": "Pilares da marca",
+          "href": "#"
+        },
+        {
+          "isLink": true,
+          "title": "Onde encontrar",
+          "href": "#"
+        }
+      ],
       "title": "Beleza em foco"
     }
   ],
