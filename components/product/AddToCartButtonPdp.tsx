@@ -30,29 +30,28 @@ const onClick = () => {
   const currentQty = window.STOREFRONT.CART.getQuantity(productID) || 0;
 
   if (currentQty > 0) {
-  window.STOREFRONT.CART.setQuantity(productID, currentQty + qty);
-} else {
-  const itemToAdd = { 
-    ...item, 
-    quantity: qty // força sobrescrita correta
-  };
+    window.STOREFRONT.CART.setQuantity(productID, currentQty + qty);
+  } else {
+    const itemToAdd = {
+      ...item,
+      quantity: qty, // força sobrescrita correta
+    };
 
-  // também atualiza platformProps se precisar
-  const updatedPlatformProps = { ...platformProps };
-  
-  if ("orderItems" in updatedPlatformProps) {
-    updatedPlatformProps.orderItems[0].quantity = qty;
-  }
-  if ("quantity" in updatedPlatformProps) {
-    updatedPlatformProps.quantity = qty;
-  }
-  if ("lines" in updatedPlatformProps) {
-    updatedPlatformProps.lines.quantity = qty;
-  }
+    // também atualiza platformProps se precisar
+    const updatedPlatformProps = { ...platformProps };
 
-  window.STOREFRONT.CART.addToCart(itemToAdd, updatedPlatformProps);
-}
+    if ("orderItems" in updatedPlatformProps) {
+      updatedPlatformProps.orderItems[0].quantity = qty;
+    }
+    if ("quantity" in updatedPlatformProps) {
+      updatedPlatformProps.quantity = qty;
+    }
+    if ("lines" in updatedPlatformProps) {
+      updatedPlatformProps.lines.quantity = qty;
+    }
 
+    window.STOREFRONT.CART.addToCart(itemToAdd, updatedPlatformProps);
+  }
 };
 
 const onChange = () => {
@@ -62,7 +61,6 @@ const onChange = () => {
     input.value = "1";
   }
 };
-
 
 const onLoad = (id: string) => {
   window.STOREFRONT.CART.subscribe(() => {
@@ -126,7 +124,6 @@ const useAddToCart = ({ product, seller }: Props) => {
   return null;
 };
 
-
 function AddToCartButtonPdp(props: Props) {
   const { product, item, class: _class } = props;
   const platformProps = useAddToCart(props);
@@ -151,17 +148,6 @@ function AddToCartButtonPdp(props: Props) {
       >
         Adicionar a Sacola
       </button>
-
-      <div class="border flex-grow flex w-full justify-center bg-white ">
-      <div class="flex-grow flex md:justify-center max-w-[278px] w-full quantity-selector-second">
-        <QuantitySelector
-          disabled
-          min={0}
-          max={100}
-          hx-on:change={useScript(onChange)}
-        />
-      </div>
-      </div>
 
       <script
         type="module"
