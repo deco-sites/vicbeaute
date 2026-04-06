@@ -392,3 +392,80 @@ ul.closed {
   .icon-header {
     color: red !important;
   }
+/* Restaura a formatação do HTML gerado pelo rich-text que sofre reset do Tailwind */
+.institutionalText h1 {
+  font-size: 2.25em;
+  font-weight: 700;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  line-height: 1.2;
+}
+
+.institutionalText h2 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  line-height: 1.25;
+}
+
+.institutionalText h3 {
+  font-size: 1.17em;
+  font-weight: 700;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  line-height: 1.3;
+}
+
+.institutionalText h4, .institutionalText h5, .institutionalText h6 {
+  font-weight: 700;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.institutionalText p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.institutionalText ul {
+  list-style-type: disc;
+  padding-left: 40px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.institutionalText ol {
+  list-style-type: decimal;
+  padding-left: 40px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.institutionalText li {
+  display: list-item;
+}
+
+.institutionalText strong, .institutionalText b {
+  font-weight: 700;
+}
+
+.institutionalText i, .institutionalText em {
+  font-style: italic;
+}
+
+.institutionalText u {
+  text-decoration: underline;
+}
+
+.institutionalText a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.institutionalText blockquote {
+  margin: 1em 40px;
+  border-left: 4px solid #ccc;
+  padding-left: 1em;
+  color: #666;
+}
