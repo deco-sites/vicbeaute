@@ -12,6 +12,11 @@ export interface DynamicIcon {
 
 export interface Props {
   /**
+   * @title Nome no Painel
+   * @description O texto inserido aqui servirá de nome para essa seção na lista lateral do painel.
+   */
+  title?: string;
+  /**
    * @title Título da Página
    */
   pageTitle?: string;
