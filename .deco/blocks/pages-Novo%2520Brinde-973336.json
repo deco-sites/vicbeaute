@@ -31,7 +31,9 @@
         "banner": {
           "mobile": {
             "image": "https://assets.decocache.com/vicbeaute/aa5ace6c-9e63-4f8d-9659-60fcf2c37cb8/Rectangle-1293-(3).png",
-            "alt": "/"
+            "alt": "/",
+            "width": 375,
+            "height": 300
           }
         },
         "topPlainText": "<p><span>Conheça o</span></p>",

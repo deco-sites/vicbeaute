@@ -8,7 +8,7 @@
     {
       "__resolveType": "site/sections/Content/BannerInstitutional.tsx",
       "mobile": {
-        "image": "https://assets.decocache.com/vicbeaute/3c56cbe3-7e7e-42db-a18d-b70e3816637b/Rectangle-1293-(1).png",
+        "image": "https://assets.decocache.com/vicbeaute/8d66a8fd-f92d-4910-bff4-b033a70a22aa/Rectangle-1293-(4).png",
         "href": "/",
         "alt": "Banner Institucional",
         "height": 500,
@@ -25,8 +25,8 @@
         "image": "https://assets.decocache.com/vicbeaute/ba38caad-f2aa-4e48-b71c-733676f03e4d/Rectangle-1293.png",
         "href": "/",
         "alt": "Banner Institucional",
-        "width": 1920,
-        "height": 500
+        "width": 1440,
+        "height": 432
       }
     },
     {
@@ -174,11 +174,18 @@
             "width": 250,
             "height": 250
           },
-          "tablet": {}
+          "tablet": {},
+          "desktop": {
+            "href": "/",
+            "image": "https://assets.decocache.com/vicbeaute/735eb8d5-bb3d-450c-a92a-f62d202d3ce6/Rectangle-3776-(1).png",
+            "width": 1440,
+            "height": 432,
+            "alt": "/"
+          }
         },
         "secondImage": {
           "mobile": {
-            "image": "https://assets.decocache.com/vicbeaute/bd98bd3c-78e7-4ad3-b75b-668200052249/Rectangle-3778.png",
+            "image": "https://assets.decocache.com/vicbeaute/c67c5629-f4b9-49aa-9257-c8a6bd5d0b29/Rectangle-3778-slider-(1).png",
             "href": "/",
             "alt": "/",
             "width": 250,
@@ -187,7 +194,7 @@
         },
         "thirdImage": {
           "mobile": {
-            "image": "https://assets.decocache.com/vicbeaute/14a74ee4-e4c8-4754-adff-f098130feb0a/Rectangle-3777.png",
+            "image": "https://assets.decocache.com/vicbeaute/66d11d27-4de7-4c2f-b832-ea8e002a78dc/Rectangle-3777-slider-(1).png",
             "alt": "/"
           }
         },

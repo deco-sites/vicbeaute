@@ -80,28 +80,37 @@ function ImageCardInstitutional({ firstImage, secondImage, thirdImage, fourthIma
         </h2>
       )}
 
-      {/* MOBILE: Layout Masonry Original */}
-      <div class="flex md:hidden flex-col w-full gap-[10px]">
-        {/* Primeiras duas lado a lado */}
-        <div class="flex flex-row w-full gap-[10px] pl-4 lg:pl-[10%]">
-          {/* Imagem 1: Mais espaço (2/3) */}
-          <div class="flex-[2] overflow-hidden">
+      <style dangerouslySetInnerHTML={{
+        __html: `
+        .hide-scrollbar {
+          -ms-overflow-style: none !important;
+          scrollbar-width: none !important;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none !important;
+          width: 0 !important;
+          height: 0 !important;
+        }
+      `}} />
+
+      {/* MOBILE: Carrossel 2 Linhas Independentes */}
+      <div class="flex md:hidden flex-col w-full">
+        {/* Carrossel Linha 1 (Rola independente) */}
+        <div class="flex overflow-x-auto w-full gap-[8px] mt-[10px] pl-4 hide-scrollbar snap-x snap-mandatory">
+          <div class="flex-shrink-0 w-[260px] h-[260px] snap-center overflow-hidden aspect-square">
             {renderImageGroup(firstImage)}
           </div>
-          {/* Imagem 2: Menos espaço (1/3) */}
-          <div class="flex-[1] overflow-hidden">
+          <div class="flex-shrink-0 w-[260px] h-[260px] snap-center overflow-hidden aspect-square pr-4 box-content">
             {renderImageGroup(secondImage)}
           </div>
         </div>
 
-        {/* Outras duas abaixo, lado a lado */}
-        <div class="flex flex-row w-full gap-[10px] pr-4 lg:pr-[10%]">
-          {/* Imagem 3: Menos espaço (1/3) */}
-          <div class="flex-[1] overflow-hidden">
+        {/* Carrossel Linha 2 (Rola independente) */}
+        <div class="flex overflow-x-auto w-full gap-[8px] pl-4 mt-[8px] hide-scrollbar snap-x snap-mandatory pb-4">
+          <div class="flex-shrink-0 w-[260px] h-[260px] snap-center overflow-hidden aspect-square">
             {renderImageGroup(thirdImage)}
           </div>
-          {/* Imagem 4: Mais espaço (2/3) */}
-          <div class="flex-[2] overflow-hidden">
+          <div class="flex-shrink-0 w-[260px] h-[260px] snap-center overflow-hidden aspect-square pr-4 box-content">
             {renderImageGroup(fourthImage)}
           </div>
         </div>
