@@ -168,14 +168,14 @@ export default function Cart(
           class={clx(
             "flex flex-col flex-grow w-full justify-start items-start ",
             "[.htmx-request_&]:pointer-events-none [.htmx-request_&]:opacity-60 [.htmx-request_&]:cursor-wait transition-opacity duration-300",
-            count === 0 ? "overflow-y-auto" : "overflow-hidden"
+            count === 0 ? "overflow-y-auto" : "overflow-hidden",
           )}
         >
           {count === 0
             ? (
               <div class="flex flex-col pb-4 w-full">
                 {/* Free Shipping Bar */}
-                <div class="px-2 py-4 w-full">
+                <div class="px-2 pt-[10px] pb-[30px] w-full">
                   <FreeShippingProgressBar
                     total={total}
                     locale={locale}
@@ -184,15 +184,20 @@ export default function Cart(
                   />
                 </div>
                 <div class="flex flex-col items-center justify-center px-4">
-                  <span class="font-Roboto font-medium text-vc-22 text-center text-green-10 pb-1">Sua sacola está vazia.</span>
-                  <span class="font-Roboto text-green-10 text-center">Para continuar comprando, navegue pelas categorias ou faça uma busca por produtos.</span>
+                  <span class="font-Roboto font-medium text-vc-22 text-center text-green-10 pb-1">
+                    Sua sacola está vazia.
+                  </span>
+                  <span class="font-Roboto text-green-10 text-center">
+                    Para continuar comprando, navegue pelas categorias ou faça
+                    uma busca por produtos.
+                  </span>
                 </div>
               </div>
             )
             : (
               <>
                 {/* Free Shipping Bar */}
-                <div class="px-2 py-4 w-full">
+                <div class="pt-[10px] pb-[50px] w-full">
                   <FreeShippingProgressBar
                     total={total}
                     locale={locale}
@@ -228,9 +233,15 @@ export default function Cart(
                     </h3>
 
                     {/* Subtotal */}
-                    <div data-cy="subtotal" class="flex justify-between text-xl font-medium">
+                    <div
+                      data-cy="subtotal"
+                      class="flex justify-between text-xl font-medium"
+                    >
                       <span>Subtotal</span>
-                      <output form={MINICART_FORM_ID} class="font-bold text-2xl">
+                      <output
+                        form={MINICART_FORM_ID}
+                        class="font-bold text-2xl"
+                      >
                         {formatPrice(subtotal, currency, locale)}
                       </output>
                     </div>
@@ -258,10 +269,14 @@ export default function Cart(
                     </label>
 
                     {/* Texto final */}
-                    <p data-cy="text-minicart" class="text-xs text-[#BDBDBD] text-center font-light">
+                    <p
+                      data-cy="text-minicart"
+                      class="text-xs text-[#BDBDBD] text-center font-light"
+                    >
                       O preço exibido no{" "}
-                      <strong class="text-[#7A7A7A]">checkout</strong>{" "} é o {" "}
-                      <strong class="text-[#7A7A7A]">valor válido</strong>{" "} para a compra do produto.
+                      <strong class="text-[#7A7A7A]">checkout</strong>{"  "}é o
+                      {"  "}<strong class="text-[#7A7A7A]">valor válido</strong>
+                      {"  "}para a compra do produto.
                       <strong class="text-[#7A7A7A]">Taxas e frete</strong>{" "}
                       serão calculados no checkout.
                     </p>
@@ -277,13 +292,13 @@ export default function Cart(
             class="w-full pb-6"
             style={{ display: count === 0 ? "block" : "none" }}
           />
-          
+
           {count === 0 && (
-            <div class="w-full px-4 pb-10 flex justify-center mt-2">
+            <div class="w-full px-4 pb-5 flex justify-center">
               <label
                 data-cy="add-products"
                 for={MINICART_DRAWER_ID}
-                class="btn btn-outline no-animation w-full max-w-[340px] rounded-full"
+                class="btn btn-outline no-animation w-full max-w-[125px] rounded"
               >
                 Voltar a loja
               </label>
