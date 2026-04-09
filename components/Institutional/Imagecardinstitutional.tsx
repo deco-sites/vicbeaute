@@ -85,6 +85,22 @@ function ImageCardInstitutional({ firstImage, secondImage, thirdImage, fourthIma
           {renderImageGroup(fourthImage)}
         </div>
       </div>
+
+      {/* DESKTOP: Carrossel 1 Linha (Scroll) */}
+      <div class="hidden md:flex overflow-x-auto w-full gap-[20px] mt-[40px] px-[10vw] hide-scrollbar snap-x snap-mandatory">
+        {[firstImage, secondImage, thirdImage, fourthImage].map((imgProps, i, arr) => {
+          if (!imgProps) return null;
+          const isLast = i === arr.length - 1;
+          return (
+            <div 
+               key={i} 
+               class={`flex-shrink-0 w-[40vw] max-w-[450px] aspect-square snap-center overflow-hidden ${isLast ? 'pr-[10vw] box-content' : ''}`}
+            >
+              {renderImageGroup(imgProps)}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

@@ -87,51 +87,66 @@ const Wherefindinstitutional = (
         .vic-inst-text,
         .vic-inst-text * {
           font-family: 'Queens', serif !important;
-          text-align: center !important;
           display: block;
-          margin-left: auto !important;
-          margin-right: auto !important;
+        }
+        @media (max-width: 767px) {
+          .vic-inst-text, .vic-inst-text * {
+            text-align: center !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+          }
+        }
+        @media (min-width: 768px) {
+          .vic-inst-text, .vic-inst-text * {
+            text-align: left !important;
+            margin-left: 0 !important;
+          }
         }
       `}} />
 
-      {institutionalText && (
-        <div
-          class="vic-inst-text text-[#363931] w-full max-w-[800px] mobile-text mt-8"
-          dangerouslySetInnerHTML={{ __html: institutionalText }}
-        />
-      )}
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between w-full max-w-[1340px] gap-[40px] mt-8">
+        {/* Left Column (Texts and Button) */}
+        <div class="flex flex-col items-center md:items-start w-full md:w-1/2">
+          {institutionalText && (
+            <div
+              class="vic-inst-text text-[#363931] w-full max-w-[800px] mobile-text"
+              dangerouslySetInnerHTML={{ __html: institutionalText }}
+            />
+          )}
 
-      {secondInstitutionalText && (
-        <div
-          class="vic-inst-text text-[#CE9680] w-full max-w-[800px] h-fit mobile-text"
-          dangerouslySetInnerHTML={{ __html: secondInstitutionalText }}
-        />
-      )}
+          {secondInstitutionalText && (
+            <div
+              class="vic-inst-text text-[#CE9680] w-full max-w-[800px] h-fit mobile-text"
+              dangerouslySetInnerHTML={{ __html: secondInstitutionalText }}
+            />
+          )}
 
-      {/* Imagem Dinâmica Centralizada */}
-      {dynamicImage && (
-        <div class="w-full overflow-hidden mb-[8px]">
-          {renderImageGroup(dynamicImage)}
+          {/* Texto Final */}
+          {finalText && (
+            <div
+              class="text-black w-full max-w-[800px] text-left font-Queens md:text-left mt-4"
+              dangerouslySetInnerHTML={{ __html: finalText }}
+            />
+          )}
+
+          {/* Botão Dinâmico */}
+          {dynamicButton && (
+            <a
+              href={dynamicButton.link}
+              class="flex items-center justify-center text-[#fff] bg-[#5E6C5B] w-[251px] h-[42px] mt-[30px] rounded-md text-[12px]"
+            >
+              {dynamicButton.label}
+            </a>
+          )}
         </div>
-      )}
 
-      {/* Texto Final (Preto, não centralizado) */}
-      {finalText && (
-        <div
-          class="text-black w-full max-w-[800px] text-left font-Queens"
-          dangerouslySetInnerHTML={{ __html: finalText }}
-        />
-      )}
-
-      {/* Botão Dinâmico */}
-      {dynamicButton && (
-        <a
-          href={dynamicButton.link}
-          class="flex items-center justify-center text-[#fff] bg-[#5E6C5B] w-[251px] h-[42px] mt-[10px] rounded-md text-[12px]"
-        >
-          {dynamicButton.label}
-        </a>
-      )}
+        {/* Right Column (Image) */}
+        {dynamicImage && (
+          <div class="w-full md:w-1/2 overflow-hidden mb-[8px] md:mb-0 rounded-lg">
+            {renderImageGroup(dynamicImage)}
+          </div>
+        )}
+      </div>
       </div>
     </div>
   );
