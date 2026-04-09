@@ -9,6 +9,7 @@ import AddToCartButtonPdp from "./AddToCartButtonPdp.tsx";
 import OutOfStock from "./OutOfStock.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 import ProductAccordion from "./ProductAccordion.tsx";
+import Breadcrumb from "../../components/ui/Breadcrumb.tsx";
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -20,7 +21,9 @@ function formatPriceWithStyledSymbol(value: number, currency?: string) {
   if (!match) return fullPrice;
   return (
     <>
-      <span class="text-[20px] text-xl text-blue-5 lg:font-bold">{match[1]}</span>
+      <span class="text-[20px] text-xl text-blue-5 lg:font-bold">
+        {match[1]}
+      </span>
       <span class="items-start flex font-bold text-[26px] text-blue-5">
         {match[2]}
       </span>
@@ -80,47 +83,67 @@ function ProductInfo({ page }: Props) {
 
   return (
     <div>
-      <div {...viewItemEvent} class="lg:flex hidden flex-col product-info" id={id}>
-        {product.gtin && (
-  <>
-    <span class="text-sm text-gray-60">
-      Ref.: {product.gtin}
-    </span>
-
-    {/* NOVA DIV envolvendo título + preços */}
-    <div>
-      <h1
-        class={clx(
-          "text-3xl font-semibold lg:font-normal lg:font-Poppins",
-          "pt-4 lg:pt-1",
-        )}
+      <div
+        {...viewItemEvent}
+        class="lg:flex hidden flex-col product-info"
+        id={id}
       >
-        {title}
-      </h1>
+        <div class="hidden lg:block mb-4 -mt-2 [&_.breadcrumbs]:lg:!pt-0">
+          <Breadcrumb itemListElement={breadcrumbList?.itemListElement} />
+        </div>
+        {product.gtin && (
+          <>
+            <span class="text-sm text-gray-60">
+              Ref.: {product.gtin}
+            </span>
 
-      <div class="flex gap-1 pt-1 lg:pt-[6px] flex-col-reverse min-h-[62px]">
-        <span class="text-3xl font-semibold text-base-400 lg:flex items-center">
-          {formatPriceWithStyledSymbol(price, offers?.priceCurrency)}
-          <span
-            class={clx(
-              "text-sm font-semibold text-white bg-orange-5 text-center rounded px-1 no-underline h-[17px] ml-4",
-              percent < 1 && "opacity-0",
-            )}
-          >
-            -{percent}%
-          </span>
-        </span>
-        {listPrice > price && (
-          <span class="line-through text-xs text-gray-35">
-            {formatPrice(listPrice, offers?.priceCurrency)}
-          </span>
+            {/* NOVA DIV envolvendo título + preços */}
+            <div>
+              <h1
+                class={clx(
+                  "text-3xl font-semibold lg:font-normal lg:font-Poppins",
+                  "pt-4 lg:pt-1",
+                )}
+              >
+                {title}
+              </h1>
+
+              {product.description && (
+                <div class="mt-2 flex flex-col font-Hanken-Grotesk">
+                  <div
+                    class="text-[#4C4C4C] text-[15px] leading-[22px]"
+                    dangerouslySetInnerHTML={{ __html: product.description }}
+                  />
+                  <div class="text-right mt-1">
+                    <a href="#" class="underline text-[#4C4C4C] text-[14px]">
+                      Saiba mais
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              <div class="flex gap-1 pt-1 lg:pt-[6px] flex-col-reverse min-h-[62px]">
+                <span class="text-3xl font-semibold text-base-400 lg:flex items-center">
+                  {formatPriceWithStyledSymbol(price, offers?.priceCurrency)}
+                  <span
+                    class={clx(
+                      "text-sm font-semibold text-white bg-orange-5 text-center rounded px-1 no-underline h-[17px] ml-4",
+                      percent < 1 && "opacity-0",
+                    )}
+                  >
+                    -{percent}%
+                  </span>
+                </span>
+                {listPrice > price && (
+                  <span class="line-through text-xs text-gray-35">
+                    {formatPrice(listPrice, offers?.priceCurrency)}
+                  </span>
+                )}
+              </div>
+            </div>
+            {/* FIM NOVA DIV */}
+          </>
         )}
-      </div>
-    </div>
-    {/* FIM NOVA DIV */}
-  </>
-)}
-
 
         {hasValidVariants && (
           <div className="mt-4 sm:mt-8 lg:hidden">
@@ -143,10 +166,28 @@ function ProductInfo({ page }: Props) {
         </div>
       </div>
 
-      <div {...viewItemEvent} class="lg:hidden flex flex-col px-3 product-info-mobile" id={id}>
+      <div
+        {...viewItemEvent}
+        class="lg:hidden flex flex-col px-3 product-info-mobile"
+        id={id}
+      >
         <span class="text-base font-medium text-black-5 pb-2">
           {title}
         </span>
+
+        {product.description && (
+          <div class="mt-0 mb-2 flex flex-col font-Hanken-Grotesk">
+            <div
+              class="text-[#4C4C4C] text-sm leading-[20px]"
+              dangerouslySetInnerHTML={{ __html: product.description }}
+            />
+            <div class="text-right mt-1">
+              <a href="#" class="underline text-[#4C4C4C] text-sm">
+                Saiba mais
+              </a>
+            </div>
+          </div>
+        )}
 
         {product.gtin && (
           <span class="text-xs text-gray-35 pb-2">
@@ -158,13 +199,13 @@ function ProductInfo({ page }: Props) {
           <span class="text-[26px] font-bold text-blue-5 align-top justify-start flex items-center">
             {formatPriceWithStyledSymbol(price, offers?.priceCurrency)}
             <span
-                class={clx(
-                  "text-sm font-semibold text-white bg-orange-5 text-center rounded px-1 no-underline h-[17px] ml-4",
-                  percent < 1 && "opacity-0",
-                )}
-              >
-                -{percent}%
-              </span>
+              class={clx(
+                "text-sm font-semibold text-white bg-orange-5 text-center rounded px-1 no-underline h-[17px] ml-4",
+                percent < 1 && "opacity-0",
+              )}
+            >
+              -{percent}%
+            </span>
           </span>
           {listPrice > price && (
             <span class="line-through text-xs text-gray-35">

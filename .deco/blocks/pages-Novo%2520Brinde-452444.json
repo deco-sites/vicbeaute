@@ -1,0 +1,77 @@
+{
+  "name": "Novo Brinde",
+  "path": "/novo-brinde",
+  "sections": [
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Header"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Institutional/Newgiftinstitutional.tsx",
+        "banner": {
+          "mobile": {
+            "image": "https://assets.decocache.com/vicbeaute/aa5ace6c-9e63-4f8d-9659-60fcf2c37cb8/Rectangle-1293-(3).png"
+          }
+        },
+        "htmlText1": "<p><span style=\"font-size: 24px\">Dos mesmos criadores do Copinho</span></p>",
+        "topPlainText": "<p><span style=\"font-size: 11pt\">Conheça o</span></p>",
+        "plainText": "Brinde",
+        "plainText2": "O Copinho é o mimo queridinho desde o lançamento da marca, e agora o Pratinho chega para aumentar a coleção.",
+        "htmlText2": "<p><span style=\"font-size: 24px\">É Pedra Ateliê</span></p>",
+        "plainText3": "<p>Ele é feito em impressão 3D no material PLA, bioplástico à base de milho e outros vegetais.</p>",
+        "htmlText3": "<p><span style=\"font-size: 24px\">Modelo surpresa</span></p>",
+        "plainText4": "As cores verde claro e verde escuro são enviadas de forma sortida. Não é possível escolher.  Perfeito para colecionar!",
+        "button": {
+          "label": "Quero ganhar"
+        },
+        "image1": {
+          "image": "https://assets.decocache.com/vicbeaute/082cdca3-08ef-498c-8d47-ce7aa1eb754f/Rectangle-1296.png"
+        },
+        "gift1": {
+          "logo": "https://assets.decocache.com/vicbeaute/a133352e-0d49-4764-b683-c47bdde3672b/Rectangle-3802.png",
+          "text": "<p><strong><span style=\"font-size: 11pt\">Ganhe o seu em compras a partir de </span></strong><span style=\"font-size: 11pt\"><br></span><strong><span style=\"font-size: 11pt\">R$ 249 no site.</span></strong><span style=\"font-size: 11pt\"> Aproveite enquanto durarem os estoques! É por tempo limitado</span></p>"
+        },
+        "gift2": {
+          "logo": "https://assets.decocache.com/vicbeaute/ab62e42e-e90e-4586-b55a-dc704165ca48/Rectangle-3802-(1).png",
+          "text": "<p><strong><span style=\"font-size: 11pt\">Selecione os produtos que deseja comprar normalmente.</span></strong><span style=\"font-size: 11pt\"> O brinde vai aparecer somente na hora de finalizar o pedido.</span></p>"
+        },
+        "gift3": {
+          "text": "<p><span style=\"font-size: 11pt\">Finalize com os dados da entrega, pagamento e aguarde a&nbsp;</span><strong><span style=\"font-size: 11pt\">chegada do seu brinde</span></strong><span style=\"font-size: 11pt\">. Lembrando que o envio é sortido.</span></p>",
+          "logo": "https://assets.decocache.com/vicbeaute/af089c03-9f46-4433-8406-da7e568c9ad3/Rectangle-3802-(2).png"
+        },
+        "gift4": {
+          "logo": "https://assets.decocache.com/vicbeaute/478f3009-599b-467f-882a-092720768a49/Rectangle-3802-(3).png",
+          "text": "<p><span style=\"font-size: 11pt\">Brinde disponível enquanto durar o estoque.</span></p>"
+        },
+        "bottomTitle": "<p><span style=\"font-size: 14pt\">Como ganhar o</span></p>",
+        "bottomSubtitle": "<p><span style=\"font-size: 36px\">Seu brinde</span></p>",
+        "button2": {
+          "label": "Quero ganhar"
+        },
+        "image2": {
+          "image": "https://assets.decocache.com/vicbeaute/df57a158-528a-4d3a-b3e7-5874febbd9fb/Rectangle-1294.png"
+        }
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "newsletter"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Footer"
+      }
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}

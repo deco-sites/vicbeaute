@@ -30,89 +30,59 @@ function ImageCardInstitutional({ firstImage, secondImage, thirdImage, fourthIma
   const renderImageGroup = (imgGroup: ImageGroup) => {
     if (!imgGroup) return null;
     
-    if (device === "desktop") {
-      return (
-        <a href={imgGroup.desktop.href || "#"} class="block w-full h-full">
-          <img
-            alt={imgGroup.desktop.alt}
-            src={imgGroup.desktop.image}
-            width={imgGroup.desktop.width}
-            height={imgGroup.desktop.height}
-            class="w-full h-full object-cover"
-          />
-        </a>
-      );
-    }
-    if (device === "tablet") {
-      return (
-        <a href={imgGroup.tablet.href || "#"} class="block w-full h-full">
-          <img
-            alt={imgGroup.tablet.alt}
-            src={imgGroup.tablet.image}
-            width={imgGroup.tablet.width}
-            height={imgGroup.tablet.height}
-            class="w-full h-full object-cover"
-          />
-        </a>
-      );
-    }
-    if (device === "mobile") {
-      return (
-        <a href={imgGroup.mobile.href || "#"} class="block w-full h-full">
-          <img
-            alt={imgGroup.mobile.alt}
-            src={imgGroup.mobile.image}
-            width={imgGroup.mobile.width}
-            height={imgGroup.mobile.height}
-            class="w-full h-full object-cover"
-          />
-        </a>
-      );
-    }
-    return null;
+    // Auto-fallback: escolhe a melhor imagem disponível se a requirida estiver vazia
+    let activeProps = imgGroup.mobile;
+    if (device === "desktop" && imgGroup.desktop?.image) activeProps = imgGroup.desktop;
+    else if (device === "tablet" && imgGroup.tablet?.image) activeProps = imgGroup.tablet;
+    else if (imgGroup.mobile?.image) activeProps = imgGroup.mobile;
+    else if (imgGroup.desktop?.image) activeProps = imgGroup.desktop;
+    else activeProps = imgGroup.tablet;
+
+    if (!activeProps?.image) return null;
+
+    return (
+      <a href={activeProps.href || "#"} class="block w-full h-full">
+        <img
+          alt={activeProps.alt}
+          src={activeProps.image}
+          width={activeProps.width || 260}
+          height={activeProps.height || 260}
+          class="w-full h-full object-cover"
+        />
+      </a>
+    );
   };
 
   return (
-    <div class="flex flex-col items-center justify-center w-full mb-[30px] gap-[10px]">
+    <div class="flex flex-col items-center justify-center w-full mb-[30px] gap-[10px] overflow-hidden">
+      <style dangerouslySetInnerHTML={{ __html: `
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      `}} />
+
       {text && (
         <h2 class="my-[10px] max-w-[381px] h-fit leading-[32px] text-[32px] text-[#CE9680] text-10 font-Queens text-center px-3">
           {text}
         </h2>
       )}
 
-      <style dangerouslySetInnerHTML={{
-        __html: `
-        .hide-scrollbar {
-          -ms-overflow-style: none !important;
-          scrollbar-width: none !important;
-        }
-        .hide-scrollbar::-webkit-scrollbar {
-          display: none !important;
-          width: 0 !important;
-          height: 0 !important;
-        }
-      `}} />
-
-      {/* MOBILE: Carrossel 2 Linhas Independentes */}
-      <div class="flex md:hidden flex-col w-full">
-        {/* Carrossel Linha 1 (Rola independente) */}
-        <div class="flex overflow-x-auto w-full gap-[8px] mt-[10px] pl-4 hide-scrollbar snap-x snap-mandatory">
-          <div class="flex-shrink-0 w-[260px] h-[260px] snap-center overflow-hidden aspect-square">
-            {renderImageGroup(firstImage)}
-          </div>
-          <div class="flex-shrink-0 w-[260px] h-[260px] snap-center overflow-hidden aspect-square pr-4 box-content">
-            {renderImageGroup(secondImage)}
-          </div>
+      {/* Carrossel Linha 1 (Rola independente) */}
+      <div class="flex overflow-x-auto w-full gap-[8px] mt-[10px] pl-4 md:pl-0 md:justify-center hide-scrollbar snap-x snap-mandatory">
+        <div class="flex-shrink-0 w-[260px] h-[260px] snap-center overflow-hidden aspect-square">
+          {renderImageGroup(firstImage)}
         </div>
+        <div class="flex-shrink-0 w-[260px] h-[260px] snap-center overflow-hidden aspect-square pr-4 md:pr-0 box-content">
+          {renderImageGroup(secondImage)}
+        </div>
+      </div>
 
-        {/* Carrossel Linha 2 (Rola independente) */}
-        <div class="flex overflow-x-auto w-full gap-[8px] pl-4 mt-[8px] hide-scrollbar snap-x snap-mandatory pb-4">
-          <div class="flex-shrink-0 w-[260px] h-[260px] snap-center overflow-hidden aspect-square">
-            {renderImageGroup(thirdImage)}
-          </div>
-          <div class="flex-shrink-0 w-[260px] h-[260px] snap-center overflow-hidden aspect-square pr-4 box-content">
-            {renderImageGroup(fourthImage)}
-          </div>
+      {/* Carrossel Linha 2 (Rola independente) */}
+      <div class="flex overflow-x-auto w-full gap-[8px] pl-4 md:pl-0 md:justify-center hide-scrollbar snap-x snap-mandatory pb-4">
+        <div class="flex-shrink-0 w-[260px] h-[260px] snap-center overflow-hidden aspect-square">
+          {renderImageGroup(thirdImage)}
+        </div>
+        <div class="flex-shrink-0 w-[260px] h-[260px] snap-center overflow-hidden aspect-square pr-4 md:pr-0 box-content">
+          {renderImageGroup(fourthImage)}
         </div>
       </div>
 

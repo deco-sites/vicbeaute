@@ -11,6 +11,7 @@
   body {
     max-width: 1920px;
     margin: 0 auto;
+    background-color: #f4f4f4;
   }
 
   /** Remove default styles from input[type=number] */
@@ -47,34 +48,6 @@
   border-color: #efeff4;
 }
 
-.collapse-plus > .collapse-title:after {
-  content: url("data:image/svg+xml;charset=UTF-8,%3csvg width='18' height='10' viewBox='0 0 18 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.832932 0.343312C0.389021 0.799496 0.389021 1.53498 0.832932 1.99116L8.36131 9.72769C8.71463 10.0908 9.28537 10.0908 9.63869 9.72769L17.1671 1.99116C17.611 1.53498 17.611 0.799496 17.1671 0.343312C16.7232 -0.112873 16.0075 -0.112873 15.5635 0.343312L8.99547 7.08368L2.42739 0.334001C1.99254 -0.112874 1.26778 -0.112873 0.832932 0.343312Z' fill='%232D2D2C'/%3e%3c/svg%3e ");
-  width: 18px;
-  height: 18px;
-  display: inline-block;
-  transition: 0.35s;
-  top: auto;
-  inset-inline-end: 1.4rem;
-  pointer-events: none;
-}
-
-.collapse-open.collapse-plus > .collapse-title:after,
-.collapse-plus:focus:not(.collapse-close) > .collapse-title:after,
-.collapse-plus:not(.collapse-close)
-  > input[type="checkbox"]:checked
-  ~ .collapse-title:after,
-.collapse-plus:not(.collapse-close)
-  > input[type="radio"]:checked
-  ~ .collapse-title:after,
-.collapse[open].collapse-plus > .collapse-title:after {
-  content: url("data:image/svg+xml;charset=UTF-8,%3csvg width='18' height='10' viewBox='0 0 18 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.832932 0.343312C0.389021 0.799496 0.389021 1.53498 0.832932 1.99116L8.36131 9.72769C8.71463 10.0908 9.28537 10.0908 9.63869 9.72769L17.1671 1.99116C17.611 1.53498 17.611 0.799496 17.1671 0.343312C16.7232 -0.112873 16.0075 -0.112873 15.5635 0.343312L8.99547 7.08368L2.42739 0.334001C1.99254 -0.112874 1.26778 -0.112873 0.832932 0.343312Z' fill='%232D2D2C'/%3e%3c/svg%3e ");
-  width: 18px;
-  height: 18px;
-  display: inline-block;
-  transition: 0.35s;
-  transform: rotate(180deg);
-  position: absolute;
-}
 
 .shadow-minicart {
   box-shadow: 0px -5px 13px #e4e4e4;
@@ -82,7 +55,7 @@
 
 @media (max-width: 1024px) {
   #minicartdrawer {
-    padding: 20px 0;
+    padding: 20px 0 20px 12px;
     justify-content: center;
   }
 }
@@ -218,7 +191,8 @@ html:has(.drawer-toggle:checked) {
 
 @media (max-width: 767px) {
   #shelf-slider .product-slider {
-    max-width: 160px;
+    max-width: 150px;
+    width: 100%;
   }
 }
 
@@ -356,13 +330,41 @@ ul.closed {
   padding-left: 12px;
 }
 
-@media (min-width:768px) and (max-width: 799px) {
+@media (min-width: 768px) and (max-width: 799px) {
   .container-search {
-    padding-left: 12px!important;
-    padding-right: 12px!important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
   }
 }
 
+.progress {
+  background-color: #d5d8c2;
+}
+
+.progress-primary::-moz-progress-bar {
+  border-radius: var(--rounded-box, 1rem /* 16px */);
+  --tw-bg-opacity: 1;
+  background-color: #4d5d49;
+}
+.progress-primary:indeterminate {
+  --progress-color: #4d5d49;
+}
+.progress-primary::-webkit-progress-value {
+  --tw-bg-opacity: 1;
+  background-color: #4d5d49;
+}
+
+.overcontent {
+  background-color: white !important;
+  box-shadow: 0 4px 6px -1px
+    rgb(0 0 0 / 0.1); /* Um sombreado leve para destacar */
+  transition: background-color 0.3s ease;
+  z-index: 999;
+}
+
+.icon-header {
+  color: red !important;
+}
 /* Restaura a formatação do HTML gerado pelo rich-text que sofre reset do Tailwind */
 .institutionalText h1 {
   font-size: 2.25em;

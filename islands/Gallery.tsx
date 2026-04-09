@@ -36,88 +36,77 @@ export default function GallerySlider(props: Props) {
 
   return (
     <>
-      <div
-        id={id}
-        class={clx(
-          "flex flex-col gap-5 relative",
-          "lg:flex-row-reverse",
-        )}
-      >
-        <div
-          class={clx(
-            "col-start-1 col-span-1 mx-auto",
-            "sm:col-start-2 lg:border rounded",
-          )}
-        >
-          <div class={clx("relative h-min flex-grow rounded-lg")}>
-            <Slider class="carousel carousel-center gap-6 w-full">
-              {images.map((img, index) => (
-                <Slider.Item
-                  index={index}
-                  class="carousel-item w-full relative"
-                >
-                  <div class="absolute z-20 lg:bottom-3 bottom-5 left-3 text-sm/4 px-2 py-0.5 bg-white-200 rounded-2xl">
-                    {index + 1} / {images.length}
-                  </div>
-                  <Image
-                    class="w-full h-full mx-auto transition-3s lg:hover:scale-150 lg:hover:cursor-crosshair"
-                    sizes="(max-width: 640px) 100vw, 40vw"
-                    style={{ aspectRatio: ASPECT_RATIO }}
-                    src={(img.url!).replace("w=420&h=420", "w=1000&h=1000")}
-                    alt={img.alternateName}
-                    width={WIDTH}
-                    height={HEIGHT}
-                    preload={index === 0}
-                    loading={index === 0 ? "eager" : "lazy"}
-                  />
-                </Slider.Item>
-              ))}
-            </Slider>
-
-            <Slider.PrevButton
-              class="absolute left-4 top-1/2 disabled:opacity-50 hidden"
-              disabled
-            >
-              <Icon
-                id="chevron-right"
-                width={9}
-                height={18}
-                class="rotate-180"
+      <div id={id} class="relative flex flex-col w-full">
+        {/* === VERSÃO DESKTOP: Grid de 2 Colunas Sem Slider === */}
+        <div class="hidden lg:grid grid-cols-2 gap-[2px] w-full">
+          {images.map((img, index) => (
+            <div key={index} class="relative w-full aspect-square overflow-hidden bg-[#F8F8F8]">
+              {/* Ajuste de Image Source pra alta resolução */}
+              {index === 0 && (
+                 <div class="absolute top-4 left-4 z-10 flex flex-col gap-2">
+                   <span class="bg-[#e4e2cd] text-[#191C1F] text-[9px] font-bold px-2 py-1 uppercase tracking-wider">Hit no TikTok</span>
+                   <span class="bg-[#3e3e3b] text-white text-[9px] font-bold px-2 py-1 uppercase tracking-wider">Mais Vendidos</span>
+                 </div>
+              )}
+              <Image
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.03]"
+                sizes="(min-width: 1024px) 50vw"
+                style={{ aspectRatio: ASPECT_RATIO }}
+                src={(img.url!).replace("w=420&h=420", "w=1000&h=1000")}
+                alt={img.alternateName}
+                width={WIDTH}
+                height={HEIGHT}
+                preload={index < 4}
+                loading={index < 4 ? "eager" : "lazy"}
               />
-            </Slider.PrevButton>
-
-            <Slider.NextButton
-              class="absolute right-4 top-1/2 disabled:opacity-50 hidden"
-              disabled={images.length < 2}
-            >
-              <Icon id="chevron-right" width={9} height={18} />
-            </Slider.NextButton>
-          </div>
+            </div>
+          ))}
         </div>
 
-        <div class={clx("lg:col-start-1 lg:col-span-1 lg:flex")}>
-          <ul
-            class={clx(
-              "xl:carousel carousel-center w-full lg:h-[500px]",
-              "sm:carousel-vertical md:flex md:justify-start flex justify-center gap-0 md:items-center md:flex-row lg:flex-col lg:justify-start",
-              "lg:gap-2 max-w-full overflow-x-auto sm:overflow-y-auto md:justify-center",
-            )}
-          >
+        {/* === VERSÃO MOBILE: Slider com Setas e Indicador === */}
+        <div class="lg:hidden relative w-full flex-grow">
+          <Slider class="carousel carousel-center gap-0 w-full">
             {images.map((img, index) => (
-              <li class="carousel-item lg:w-24 lg:h-24 h-1 w-[50px]">
-                <Slider.Dot disabled={index===0} class="bg-gray-30 h-1 w-[50px] no-animation disabled:w-[50px] disabled:bg-black-5 transition-[width] disabled:rounded-full lg:bg-transparent lg:h-[unset] lg:w-[unset] lg:disabled:w-[unset] lg:disabled:bg-transparent lg:disabled:rounded-none " index={index}>
-                  <Image
-                    style={{ aspectRatio: "1 / 1" }}
-                    class="hidden lg:block group-disabled:border-gray-150 border border-solid object-cover w-full h-full"
-                    width={96}
-                    height={96}
-                    src={img.url!}
-                    alt={img.alternateName}
-                  />
-                </Slider.Dot>
-              </li>
+              <Slider.Item
+                index={index}
+                class="carousel-item w-full relative aspect-[4/5] bg-[#F8F8F8]"
+              >
+                <Image
+                  class="w-full h-full object-cover"
+                  sizes="(max-width: 1023px) 100vw"
+                  style={{ aspectRatio: "4/5" }}
+                  src={(img.url!).replace("w=420&h=420", "w=800&h=1000")}
+                  alt={img.alternateName}
+                  width={400}
+                  height={500}
+                  preload={index === 0}
+                  loading={index === 0 ? "eager" : "lazy"}
+                />
+              </Slider.Item>
             ))}
-          </ul>
+          </Slider>
+
+          {/* Seta Voltar Mobile */}
+          <Slider.PrevButton
+            class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 w-10 h-10 flex items-center justify-center rounded-full shadow-sm hover:bg-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed z-10"
+          >
+            <Icon id="chevron-right" width={9} height={18} class="rotate-180 text-black" strokeWidth={2} />
+          </Slider.PrevButton>
+
+          {/* Seta Avançar Mobile */}
+          <Slider.NextButton
+            class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 w-10 h-10 flex items-center justify-center rounded-full shadow-sm hover:bg-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed z-10"
+            disabled={images.length < 2}
+          >
+            <Icon id="chevron-right" width={9} height={18} class="text-black" strokeWidth={2} />
+          </Slider.NextButton>
+
+          {/* Paging Indicators Customizados do Slider (Necessita do Javascript Ativo) */}
+          <div class="absolute bottom-5 left-5 z-10 text-[12px] bg-white rounded-full px-3 py-[6px] font-semibold text-[#191C1F] shadow-sm tracking-wide">
+             1 / {images.length}
+             {/* No futuro: Atualizar indicador dinamicamente. O Slider do Deco nativamente usa bullets. 
+                 Se quiser números que mudem: Requer interceptar o Index ativo do Carrossel via Signal ou Action */}
+          </div>
         </div>
 
         <Slider.JS rootId={id} />
