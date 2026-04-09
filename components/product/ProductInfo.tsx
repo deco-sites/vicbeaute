@@ -9,6 +9,7 @@ import AddToCartButtonPdp from "./AddToCartButtonPdp.tsx";
 import OutOfStock from "./OutOfStock.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 import ProductAccordion from "./ProductAccordion.tsx";
+import Breadcrumb from "../../components/ui/Breadcrumb.tsx";
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -87,6 +88,9 @@ function ProductInfo({ page }: Props) {
         class="lg:flex hidden flex-col product-info"
         id={id}
       >
+        <div class="hidden lg:block mb-4 -mt-2 [&_.breadcrumbs]:lg:!pt-0">
+          <Breadcrumb itemListElement={breadcrumbList?.itemListElement} />
+        </div>
         {product.gtin && (
           <>
             <span class="text-sm text-gray-60">
@@ -103,6 +107,20 @@ function ProductInfo({ page }: Props) {
               >
                 {title}
               </h1>
+
+              {product.description && (
+                <div class="mt-2 flex flex-col font-Hanken-Grotesk">
+                  <div
+                    class="text-[#4C4C4C] text-[15px] leading-[22px]"
+                    dangerouslySetInnerHTML={{ __html: product.description }}
+                  />
+                  <div class="text-right mt-1">
+                    <a href="#" class="underline text-[#4C4C4C] text-[14px]">
+                      Saiba mais
+                    </a>
+                  </div>
+                </div>
+              )}
 
               <div class="flex gap-1 pt-1 lg:pt-[6px] flex-col-reverse min-h-[62px]">
                 <span class="text-3xl font-semibold text-base-400 lg:flex items-center">
@@ -156,6 +174,20 @@ function ProductInfo({ page }: Props) {
         <span class="text-base font-medium text-black-5 pb-2">
           {title}
         </span>
+
+        {product.description && (
+          <div class="mt-0 mb-2 flex flex-col font-Hanken-Grotesk">
+            <div
+              class="text-[#4C4C4C] text-sm leading-[20px]"
+              dangerouslySetInnerHTML={{ __html: product.description }}
+            />
+            <div class="text-right mt-1">
+              <a href="#" class="underline text-[#4C4C4C] text-sm">
+                Saiba mais
+              </a>
+            </div>
+          </div>
+        )}
 
         {product.gtin && (
           <span class="text-xs text-gray-35 pb-2">

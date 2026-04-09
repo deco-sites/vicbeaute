@@ -19,10 +19,10 @@ export interface Props {
   categories?: CategoryCard[];
 }
 
-export default function ProductCategories({ 
-  title = "Categoria de produtos", 
+export default function ProductCategories({
+  title = "Categoria de produtos",
   backgroundColor = "transparent",
-  categories = [] 
+  categories = [],
 }: Props) {
   if (!categories || categories.length === 0) return null;
 
@@ -31,7 +31,7 @@ export default function ProductCategories({
       <div class="max-w-[1280px] mx-auto lg:px-[80px]">
         <div class="px-[12px] lg:px-0">
           {title && (
-            <h2 class="text-[#363931] font-HankenGrotesk font-medium text-[17px] lg:text-[22px] mb-4 lg:mb-6">
+            <h2 class="text-[#363931] font-Hanken-Grotesk font-medium text-[17px] lg:text-[22px] mb-4 lg:mb-6">
               {title}
             </h2>
           )}
@@ -40,16 +40,18 @@ export default function ProductCategories({
         {/* Native Horizontal Scroll Container - No Arrows / No Dots */}
         <div class="flex overflow-x-auto snap-x snap-mandatory gap-[8px] lg:gap-[11px] px-[12px] lg:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pb-4">
           {categories.map((category, index) => (
-            <a 
-              key={index} 
-              href={category.url} 
+            <a
+              key={index}
+              href={category.url}
               class="flex flex-col gap-[10px] relative snap-start shrink-0 group transition-all"
             >
               <div class="w-[80px] h-[80px] lg:w-[150px] lg:h-[150px] rounded-lg overflow-hidden shrink-0 border border-transparent transition-colors relative">
-                {/* 
+                {
+                  /*
                    A largura base p/ carregar otimizado pelo Deno Fresh.
                    Vai ser 150x150 no Desk e em mobile ajustamos via CSS w-[80px].
-                */}
+                */
+                }
                 <Image
                   src={category.image}
                   alt={category.label}
@@ -59,7 +61,7 @@ export default function ProductCategories({
                   loading="lazy"
                 />
               </div>
-              <span class="text-center font-HankenGrotesk text-[13px] lg:text-[15px] text-[#363931] leading-tight transition-colors px-1 whitespace-nowrap overflow-hidden text-ellipsis lg:max-w-[150px] max-w-[80px]">
+              <span class="text-center font-Hanken-Grotesk text-[13px] lg:text-[15px] text-[#363931] leading-tight transition-colors px-1 whitespace-nowrap overflow-hidden text-ellipsis lg:max-w-[150px] max-w-[80px]">
                 {category.label}
               </span>
             </a>

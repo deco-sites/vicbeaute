@@ -44,6 +44,7 @@ export type AvailableIcons =
   | "minicartbag"
   | "search-drawer"
   | "user"
+  | "user-orange"
   | "menu-mobile-dark"
   | "arrow-down-white"
   | "user-black"

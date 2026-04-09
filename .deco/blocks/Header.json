@@ -107,7 +107,8 @@
       "height": 22
     },
     "mobileDark": {
-      "src": "https://assets.decocache.com/vicbeaute/0dd9bb1a-4197-49d6-bfbc-1d6a987f4777/Logo.png"
+      "src": "https://assets.decocache.com/vicbeaute/0dd9bb1a-4197-49d6-bfbc-1d6a987f4777/Logo.png",
+      "alt": "logo"
     },
     "desktopDark": {
       "src": "https://assets.decocache.com/vicbeaute/152e31d3-3f84-4e64-8251-d9c38a91a428/Vector.png",
@@ -168,18 +169,47 @@
             {
               "label": "Coleções",
               "url": "/colecoes"
+            },
+            {
+              "label": "Kits",
+              "url": "#"
+            },
+            {
+              "label": "Ver Todos",
+              "url": "#",
+              "bold": true
             }
           ]
         },
         {
           "links": [
             {
-              "label": "Batom",
-              "url": "/batom"
+              "label": "Corretivo",
+              "url": "#"
             },
             {
-              "label": "Gloss",
-              "url": "/gloss"
+              "label": "Delineador",
+              "url": "#"
+            },
+            {
+              "label": "Lapiseira",
+              "url": "#"
+            },
+            {
+              "label": "Máscara de Cílios",
+              "url": "#"
+            },
+            {
+              "label": "Máscara de Sobrancelha",
+              "url": "#"
+            },
+            {
+              "label": "Stick Brilhoso",
+              "url": "Stick Tudo"
+            },
+            {
+              "label": "Stick Tudo",
+              "url": "#"
             }
           ],
           "title": "Produtos"
@@ -369,23 +399,28 @@
         "label": "Iluminador"
       },
       {
-        "image": "https://assets.decocache.com/vicbeaute/c637f29d-d92a-4729-876e-1e4d0819cf0d/Rectangle-4.png",
-        "href": "/iluminador",
-        "label": "Iluminador"
+        "image": "https://assets.decocache.com/vicbeaute/ed711ba8-102b-41f3-989f-1253f6e49753/Rectangle-4.png",
+        "href": "#",
+        "label": "Lip Balm"
       },
       {
-        "image": "https://assets.decocache.com/vicbeaute/c637f29d-d92a-4729-876e-1e4d0819cf0d/Rectangle-4.png",
-        "href": "/iluminador",
-        "label": "Iluminador"
+        "image": "https://assets.decocache.com/vicbeaute/9274f308-ec7a-4b39-86f6-fc1cf01ec111/Rectangle-4.png",
+        "href": "#",
+        "label": "Blush"
       },
       {
-        "image": "https://assets.decocache.com/vicbeaute/c637f29d-d92a-4729-876e-1e4d0819cf0d/Rectangle-4.png",
-        "href": "/iluminador",
-        "label": "Iluminador"
+        "image": "https://assets.decocache.com/vicbeaute/1c3abc14-3f72-4424-854d-429503575291/Rectangle-4.png",
+        "href": "#",
+        "label": "Base"
       },
       {
-        "image": "https://assets.decocache.com/vicbeaute/c637f29d-d92a-4729-876e-1e4d0819cf0d/Rectangle-4.png",
-        "href": "/iluminador",
+        "image": "https://assets.decocache.com/vicbeaute/78392796-3ce5-4294-bebf-5338a712a25d/Rectangle-4.png",
+        "href": "#",
+        "label": "Corretivo"
+      },
+      {
+        "image": "https://assets.decocache.com/vicbeaute/c33f160d-fcc7-4b4e-9332-3ceff82ee0f8/Rectangle-4.png",
+        "href": "#",
         "label": "Iluminador"
       }
     ],
@@ -401,27 +436,27 @@
         "label": "Iluminador"
       },
       {
-        "image": "https://assets.decocache.com/vicbeaute/c637f29d-d92a-4729-876e-1e4d0819cf0d/Rectangle-4.png",
-        "href": "/iluminador",
-        "label": "Iluminador"
+        "image": "https://assets.decocache.com/vicbeaute/ed711ba8-102b-41f3-989f-1253f6e49753/Rectangle-4.png",
+        "href": "#",
+        "label": "Lip Balm"
       },
       {
-        "image": "https://assets.decocache.com/vicbeaute/c637f29d-d92a-4729-876e-1e4d0819cf0d/Rectangle-4.png",
-        "href": "/iluminador",
-        "label": "Iluminador"
+        "image": "https://assets.decocache.com/vicbeaute/9274f308-ec7a-4b39-86f6-fc1cf01ec111/Rectangle-4.png",
+        "href": "#",
+        "label": "Blush"
       },
       {
-        "image": "https://assets.decocache.com/vicbeaute/c637f29d-d92a-4729-876e-1e4d0819cf0d/Rectangle-4.png",
-        "href": "/iluminador",
-        "label": "Iluminador"
+        "image": "https://assets.decocache.com/vicbeaute/1c3abc14-3f72-4424-854d-429503575291/Rectangle-4.png",
+        "label": "Base",
+        "href": "#"
       },
       {
-        "image": "https://assets.decocache.com/vicbeaute/c637f29d-d92a-4729-876e-1e4d0819cf0d/Rectangle-4.png",
-        "href": "/iluminador",
-        "label": "Iluminador"
+        "image": "https://assets.decocache.com/vicbeaute/78392796-3ce5-4294-bebf-5338a712a25d/Rectangle-4.png",
+        "label": "Corretivo",
+        "href": "#"
       },
       {
-        "image": "https://assets.decocache.com/vicbeaute/c637f29d-d92a-4729-876e-1e4d0819cf0d/Rectangle-4.png",
+        "image": "https://assets.decocache.com/vicbeaute/c33f160d-fcc7-4b4e-9332-3ceff82ee0f8/Rectangle-4.png",
         "href": "/iluminador",
         "label": "Iluminador"
       }

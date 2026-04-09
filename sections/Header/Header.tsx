@@ -273,16 +273,10 @@ const Mobile = (
         >
           {transparent
             ? (
-              <>
-                <Icon
-                  id="menu_mobile"
-                  class="menu-icon-hamburger header-icon-light"
-                />
-                <Icon
-                  id="menu-mobile-dark"
-                  class="menu-icon-hamburger header-icon-dark hidden"
-                />
-              </>
+              <Icon
+                id="menu_mobile"
+                class="menu-icon-hamburger"
+              />
             )
             : <Icon id="menu-mobile-dark" class="menu-icon-hamburger" />}
           <Icon id="close" size={20} class="menu-icon-close" />
@@ -369,11 +363,13 @@ const Mobile = (
                body:has(#${SIDEMENU_DRAWER_ID}:checked) [data-cy="searchbar-mobile"],
                body:has(#${SIDEMENU_DRAWER_ID}:checked) [data-cy="account-mobile"] { opacity: 0; pointer-events: none; }
                body:has(#${SIDEMENU_DRAWER_ID}:checked) .menu-icon-hamburger { display: none !important; }
+               body:has(#${SIDEMENU_DRAWER_ID}:checked) .menu-icon-close { color: black !important; display: block !important; }
                body:not(:has(#${SIDEMENU_DRAWER_ID}:checked)) .menu-icon-close { display: none !important; }
                
                /* MENU ABERTO: Força header estático a ficar branco, fixo no topo, exibindo a topbar e trocando para logos escuros */
                body:has(#${SIDEMENU_DRAWER_ID}:checked) .header-static-container { 
                    background-color: white !important; 
+                   color: black !important;
                    position: fixed !important; 
                    top: 0 !important; 
                    left: 0 !important; 
@@ -386,7 +382,7 @@ const Mobile = (
                body:has(#${SIDEMENU_DRAWER_ID}:checked) .header-logo-light { display: none !important; }
                body:has(#${SIDEMENU_DRAWER_ID}:checked) .header-logo-dark { display: flex !important; }
 
-               #${SIDEMENU_DRAWER_ID} ~ .drawer-side { top: ${HEADER_HEIGHT_MOBILE} !important; height: calc(100% - ${HEADER_HEIGHT_MOBILE}) !important; }
+               #${SIDEMENU_DRAWER_ID} ~ .drawer-side { top: 94px !important; height: calc(100% - 60px) !important; }
                #${SIDEMENU_DRAWER_ID} ~ .drawer-side .drawer-fake-header { display: none !important; }
              `,
             }}

@@ -17,14 +17,17 @@ function Header({ title, cta }: Props) {
   return (
     <div
       class={clx(
-        "flex items-center gap-2",
-        "px-5 lg:px-0 pt-6 lg:pt-0",
+        "flex items-center gap-2 px-5 lg:px-0",
         title === "Mais vendidos"
-          ? "justify-center lg:justify-start"
-          : "justify-between lg:justify-center",
+          ? "justify-center lg:justify-start pt-6 lg:pt-0"
+          : title === "Preferidos da semana"
+          ? "justify-center lg:justify-center pt-0"
+          : "justify-between lg:justify-center pt-6 lg:pt-0",
       )}
     >
-      <h2 class="text-[28px] lg:text-2x1 sm:text-3xl font-semibold">{title}</h2>
+      <h2 class="font-Queens text-2xl text-pink-5">
+        {title}
+      </h2>
     </div>
   );
 }

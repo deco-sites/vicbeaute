@@ -42,7 +42,9 @@ export interface CustomNavItem {
   cards?: NavItemCard[];
 }
 
-function NavItem({ item, transparent }: { item: CustomNavItem; transparent?: boolean }) {
+function NavItem(
+  { item, transparent }: { item: CustomNavItem; transparent?: boolean },
+) {
   const { url, name, columns, cards, highlight } = item;
 
   const hasColumns = columns && columns.length > 0;
@@ -56,35 +58,44 @@ function NavItem({ item, transparent }: { item: CustomNavItem; transparent?: boo
     >
       <a
         href={url}
-        class={`flex items-center gap-1.5 group-hover:opacity-80 transition-opacity font-medium lg:text-[15px] font-HankenGrotesk leading-tight tracking-wide uppercase ${
+        class={`flex items-center gap-1.5 group-hover:opacity-80 transition-opacity font-medium lg:text-[15px] font-Hanken-Grotesk leading-tight tracking-wide uppercase ${
           transparent ? "text-[#FFFFFF]" : "text-[#363931]"
         } ${highlight ? "bg-[#EF781C] !text-white px-2 py-1 rounded" : ""}`}
       >
         {name}
-        {hasDropdown && <Icon id={transparent ? "arrow-down-white" : "arrowdown"} width={20} height={20} />}
+        {hasDropdown && (
+          <Icon
+            id={transparent ? "arrow-down-white" : "arrowdown"}
+            width={20}
+            height={20}
+          />
+        )}
       </a>
 
       {hasDropdown && (
         <div class="absolute left-0 top-[100%] w-full bg-[#FFFFFF] hidden group-hover:flex justify-center border-t border-gray-100 z-50 shadow-[0_15px_30px_rgba(0,0,0,0.05)] cursor-default before:content-[''] before:absolute before:-top-5 before:left-0 before:w-full before:h-5 pb-12 pt-8">
-          <div class="w-full max-w-[1440px] px-20 flex gap-12 xl:gap-20 justify-start">
+          <div class="w-full px-20 flex gap-12 xl:gap-[30px] justify-between">
             {/* Colunas */}
             {columns &&
               columns.map((col, idx) => (
-                <div key={idx} class="flex flex-col gap-5 min-w-[150px]">
+                <div
+                  key={idx}
+                  class="flex flex-col gap-5 xl:gap-[30px] min-w-[150px] xl:min-w-[200px]"
+                >
                   {/* Título da Coluna */}
                   {col.title && col.title.trim() !== "" && (
-                    <span class="block text-[15px] font-medium uppercase tracking-widest text-[#2D2D2C] mb-1 font-HankenGrotesk">
+                    <span class="block text-[15px] font-medium uppercase tracking-widest mb-1 font-Hanken-Grotesk xl:font-light xl:text-xl text-black-5 xl:tracking-normal">
                       {col.title}
                     </span>
                   )}
 
                   {col.links && col.links.length > 0 && (
-                    <ul class="flex flex-col gap-4">
+                    <ul class="flex flex-col gap-4 xl:gap-[30px]">
                       {col.links.map((link, subIdx) => (
                         <li key={subIdx}>
                           <a
                             href={link.url}
-                            class={`block text-[15px] text-[#2D2D2C] hover:text-[#c17f67] hover:underline transition-colors w-max font-HankenGrotesk ${
+                            class={`block xl:text-base text-[15px] text-black-10 hover:text-[#c17f67] hover:underline transition-colors w-max font-Hanken-Grotesk ${
                               link.bold ? "font-semibold underline" : ""
                             }`}
                           >
@@ -103,7 +114,7 @@ function NavItem({ item, transparent }: { item: CustomNavItem; transparent?: boo
                 <div key={idx} class="flex flex-col gap-5 min-w-[150px]">
                   <a
                     href={card.url}
-                    class="flex flex-col gap-3 group/banner max-w-[280px]"
+                    class="flex flex-col gap-[10px] group/banner max-w-[280px]"
                   >
                     {card.image && (
                       <Image
@@ -114,18 +125,18 @@ function NavItem({ item, transparent }: { item: CustomNavItem; transparent?: boo
                         class="w-full h-[200px] object-cover rounded shadow-sm"
                       />
                     )}
-                    <div class="flex flex-col gap-1 mt-2">
-                      <span class="text-[#c17f67] text-[22px] font-Queens font-normal leading-none mb-1">
+                    <div class="flex flex-col gap-[10px]">
+                      <span class="text-pink-5 text-[22px] xl:text-xl font-Hanken-Grotesk font-normal leading-none">
                         {card.title}
                       </span>
 
                       {card.description && (
-                        <span class="text-[14px] text-[#2D2D2C] line-clamp-3 leading-snug font-HankenGrotesk opacity-80 mb-2">
+                        <span class="text-sm text-black-10 line-clamp-3 leading-snug font-Hanken-Grotesk">
                           {card.description}
                         </span>
                       )}
 
-                      <span class="bg-[#5c6b56] text-white px-6 py-2 w-max text-sm hover:bg-[#434e3e] transition-colors font-HankenGrotesk rounded-[2px]">
+                      <span class="bg-green-10 text-[#ffffff] px-5 py-[6px] w-max text-sm font-Hanken-Grotesk rounded-[3px]">
                         {card.buttonText || "Explorar"}
                       </span>
                     </div>
