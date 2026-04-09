@@ -15,11 +15,11 @@ export interface Props {
 
 const Cardinstitucional = ({ title, text }: Props) => {
   return (
-    <div class="max-w-[1340px] xl:mr-[350px] xl:ml-[250px] institutional-wrapper mt-5">
-      <div class="flex items-start justify-between flex-col lg:flex-row pb-[10px]">
-        <div class="institutional-text flex justify-center flex-col px-3">
+    <div class="w-full max-w-[1340px] md:mx-auto institutional-wrapper mt-5 flex flex-col md:items-center">
+      <div class="flex items-start md:items-center justify-between md:justify-center flex-col lg:flex-row pb-[10px] w-full md:max-w-[800px]">
+        <div class="institutional-text flex justify-center md:items-center flex-col px-3 w-full">
           {title && (
-            <h2 class="text-[#CE9680] px-3 max-w-[351px] h-fit text-[32px] leading-[32px] font-Queens mobile-text institutional-main-title mb-4">
+            <h2 class="text-[#CE9680] px-3 max-w-[351px] md:max-w-none h-fit text-[32px] leading-[32px] font-Queens mobile-text institutional-main-title mb-4 md:text-center w-full">
               {title}
             </h2>
           )}
