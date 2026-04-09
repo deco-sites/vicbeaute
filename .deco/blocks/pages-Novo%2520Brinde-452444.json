@@ -51,6 +51,9 @@
         "bottomSubtitle": "<p><span style=\"font-size: 36px\">Seu brinde</span></p>",
         "button2": {
           "label": "Quero ganhar"
+        },
+        "image2": {
+          "image": "https://assets.decocache.com/vicbeaute/df57a158-528a-4d3a-b3e7-5874febbd9fb/Rectangle-1294.png"
         }
       }
     },

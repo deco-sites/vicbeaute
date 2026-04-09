@@ -1,6 +1,6 @@
 {
   "name": "Onde encontrar",
-  "path": "/ondeencontrar",
+  "path": "/onde-encontrar",
   "sections": [
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
