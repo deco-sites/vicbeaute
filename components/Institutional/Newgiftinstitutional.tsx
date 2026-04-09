@@ -144,10 +144,12 @@ export default function Newgiftinstitutional({
         )}
       </div>
 
-      {/* Estilos forçados para sobrepor tags ricas do CMS */}
+      {/* Estilos forçados para sobrepor tags ricas do CMS e remover scrollbar */}
       <style dangerouslySetInnerHTML={{ __html: `
         .queens-text, .queens-text * { font-family: "Queens", serif !important; }
         .font-Hanken-Grotesk, .font-Hanken-Grotesk * { font-family: "Hanken Grotesk", sans-serif !important; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
       `}} />
 
       {/* Dynamic Text Fields */}
