@@ -2,47 +2,59 @@
   "__resolveType": "site/sections/Footer/Footer.tsx",
   "links": [
     {
-      "title": "Atendimento",
+      "title": "Descubra",
       "children": [
         {
-          "title": "Contato",
-          "href": "/contato",
-          "isLink": true
-        },
-        {
-          "isLink": false,
-          "content": "<p><span>Segunda a sexta-feira, das 8h às 20h<br>e aos sábados, das 9h às 18h.<br>Telefone: (11) 4637-3951</span></p>"
-        }
-      ]
-    },
-    {
-      "title": "Informações Úteis",
-      "href": "#",
-      "children": [
-        {
-          "title": "Formas de Pagamento",
-          "href": "/formas-de-pagamento",
-          "isLink": true
-        },
-        {
-          "title": "Prazos de Entrega",
-          "href": "/prazos-de-entrega",
-          "isLink": true
-        },
-        {
-          "title": "Trocas e Devoluções",
-          "href": "/trocas-e-devolucoes",
-          "isLink": true
-        },
-        {
-          "title": "Política de Privacidade e Tratamento de Dados",
-          "href": "/politica-de-privacidade",
+          "title": "Novos",
+          "href": "#",
           "isLink": true
         },
         {
           "isLink": true,
-          "title": "Regulamento de Promoções",
-          "href": "/regulamento-de-promocoes"
+          "content": "<p><span>Segunda a sexta-feira, das 8h às 20h<br>e aos sábados, das 9h às 18h.<br>Telefone: (11) 4637-3951</span></p>",
+          "title": "Destaques",
+          "href": "#"
+        },
+        {
+          "isLink": true,
+          "title": "Maquiagem",
+          "href": "#"
+        },
+        {
+          "isLink": true,
+          "title": "Acessórios",
+          "href": "#"
+        }
+      ]
+    },
+    {
+      "title": "Ajuda",
+      "href": "#",
+      "children": [
+        {
+          "title": "Faqs",
+          "href": "#",
+          "isLink": true
+        },
+        {
+          "title": "Entrega",
+          "href": "#",
+          "isLink": true
+        },
+        {
+          "title": "Troca e Devolução",
+          "href": "#",
+          "isLink": true
+        },
+        {
+          "title": "Regulamentos",
+          "isLink": true,
+          "href": "#"
+        },
+        {
+          "isLink": true,
+          "title": "Termo UGC",
+          "href": "#"
         }
       ]
     },
@@ -50,44 +62,69 @@
       "title": "Institucional",
       "children": [
         {
-          "title": "Quem Somos",
+          "title": "Sobre nós",
           "isLink": true,
-          "href": "/quem-somos"
+          "href": "#"
         },
         {
           "isLink": true,
-          "title": "Política de Privacidade",
-          "href": "/politica-de-privacidade"
+          "title": "Pilares da marca",
+          "href": "#"
         },
         {
           "isLink": true,
-          "title": "Trocas e Devoluções",
-          "href": "trocas-e-devolucoes"
+          "title": "Onde encontrar",
+          "href": "#"
         },
         {
           "isLink": true,
-          "title": "Política de Frete",
-          "href": "politica-de-frete"
+          "title": "Brinde da vez",
+          "href": "#"
         }
       ],
       "href": "#"
+    },
+    {
+      "children": [
+        {
+          "isLink": true,
+          "title": "Sobre nós",
+          "href": "#"
+        },
+        {
+          "isLink": true,
+          "title": "Pilares da marca",
+          "href": "#"
+        },
+        {
+          "isLink": true,
+          "title": "Onde encontrar",
+          "href": "#"
+        }
+      ],
+      "title": "Beleza em foco"
     }
   ],
   "social": [
     {
+      "alt": "instagram",
+      "href": "#",
+      "image": "https://assets.decocache.com/vicbeaute/61112a7a-a763-4306-a42e-af981c6485cf/icon-social-insta-1.svg"
+    },
+    {
+      "alt": "youtube",
+      "href": "#",
+      "image": "https://assets.decocache.com/vicbeaute/ad166226-4816-4ebf-b2dc-0de973049187/Group-(1).svg"
+    },
+    {
       "alt": "facebook",
       "href": "#",
-      "image": "https://assets.decocache.com/easycommerce/04b79e41-4323-4286-816c-27ca4e0cf5e4/instagram___f0cf66e219de4f0e117d137e818e214b-1.svg"
+      "image": "https://assets.decocache.com/vicbeaute/11e83fe3-4fac-47ce-8ff6-924772e054d0/Group.svg"
     },
     {
-      "alt": "Instagram",
+      "alt": "tiktok",
       "href": "#",
-      "image": "https://assets.decocache.com/easycommerce/e3ef30ee-2222-4d40-98af-167a45e3a87a/facebook___333424843cb1b6bc3bd8e64ac57a2da8-1.svg"
-    },
-    {
-      "alt": "Pinterest",
-      "href": "#",
-      "image": "https://assets.decocache.com/easycommerce/19a3459e-580e-4391-a536-59ac48198456/youtube___1115965a9c1d1344ee09fbb51181bba3-1.svg"
+      "image": "https://assets.decocache.com/vicbeaute/efc84f99-ed95-4f16-bf9e-78ac78ebe88a/footer.svg"
     }
   ],
   "paymentMethods": [
@@ -130,13 +167,15 @@
   ],
   "logo": "https://assets.decocache.com/easycommerce/d71341b6-2654-4e11-88be-ddca8fb2c968/Logo---Mercado.svg",
   "trademark": "TM & © 2023 Deco Storefront, Inc.",
-  "managedImg": "https://assets.decocache.com/easycommerce/e0460071-fb39-4860-8c9d-9286e1629402/Camada_1.svg",
-  "platformImg": "https://assets.decocache.com/easycommerce/f8e8342c-7683-4dbf-8ff3-dc567ac02e50/Vector-(2).svg",
-  "textFooter": "A loja online <span style=\"font-weight: 500\">  Empresa </span> é operada pela Social Digital Commerce CNPJ: 28.511.223/0001-32 / Endereço: R. Fernando Falcão, 1111 - Vila Claudia, São Paulo - SP2023 © Copyright <span style=\"font-weight: 500\">  Empresa </span> . <br/> Todos os direitos reservados.",
+  "managedImg": "https://assets.decocache.com/vicbeaute/1e571caa-b80b-4cd8-95da-e597bc06b87a/Vector.png",
+  "platformImg": "https://assets.decocache.com/vicbeaute/fa434021-a30c-4be7-9b11-56534c6d68bd/1655873405shopify-logo-white-png-1.png",
+  "textFooter": "A loja Vic Beauté é operada pela Social S.A. CNPJ: 28.511.223/0004-85 - Endereço: Av. Caio Cotrim, 46, Galpão 01, 02 e 03 Setor CLI 2 - Itapevi - SP, CEP: <br/> 06696-060- 2024 Copyright Inoar. Todos os direitos reservados.",
   "logoDesktop": "https://assets.decocache.com/easycommerce/4fc1faef-3f84-4ab0-8b3e-3180e73e6710/Logo---Mercado.png",
   "firstColTitle": "Atendimento",
   "firstColSubtitle": "Contato",
   "firstColText": "Segunda a sexta-feira, das 8h às 20h e aos sábados, das 9h às 18h. Telefone: (11) 4637-3951",
   "logoMobileWidth": 223,
-  "logoMobileHeight": 50
+  "logoMobileHeight": 50,
+  "textPrivacity": "Política de privacidade",
+  "linkPrivacity": "#"
 }

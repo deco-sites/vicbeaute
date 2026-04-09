@@ -42,6 +42,7 @@ function ProductCard({
   const { url, image: images, offers, isVariantOf } = product;
   const hasVariant = isVariantOf?.hasVariant ?? [];
   const title = isVariantOf?.name ?? product.name;
+  const variantName = product.name;
   const [front, back] = images ?? [];
 
   const { listPrice, price, seller = "1", availability } = useOffer(offers);
@@ -79,7 +80,7 @@ function ProductCard({
     <div
       {...event}
       class={clx(
-        "card card-compact group text-sm lg:max-w-ft-210 border border-gray-15 rounded-lg",
+        "card card-compact group text-sm lg:max-w-vc-210 border border-gray-15 rounded-lg",
         _class,
       )}
       data-cy={`product-card-${title?.replace(/\s+/g, "-").toLowerCase()}`}
@@ -102,7 +103,7 @@ function ProductCard({
           )}
         >
           {collectionTag?.[0]?.value && (
-            <div class="hidden absolute top-0 bg-red-400 w-full items-center justify-center p-1 max-w-ft-106 h-6 rounded">
+            <div class="hidden absolute top-0 bg-red-400 w-full items-center justify-center p-1 max-w-vc-106 h-6 rounded">
               {collectionTag?.[0]?.value}
             </div>
           )}
@@ -117,7 +118,7 @@ function ProductCard({
               "rounded w-full",
               "col-span-full row-span-full",
             )}
-            sizes="(max-width: 160px) 50vw, 20vw"
+            sizes="(max-width: 150px) 50vw, 20vw"
             preload={preload}
             loading={preload ? "eager" : "lazy"}
             decoding="async"
@@ -145,23 +146,26 @@ function ProductCard({
         </div>
       </figure>
 
-      <a href={relativeUrl} class="pt-3 px-ft-6">
-        <h3 class="text-base line-clamp-2 min-h-12">
+      <a href={relativeUrl} class="py-1 px-1">
+        <span class="font-Manrope text-vc-10 text-black-20">
+          {variantName }
+        </span>
+        <h3 class="font-Manrope font-medium text-xs text-black-35 line-clamp-2 min-h-8">
           {title}
         </h3>
 
         <div
           class={clx(
-            "flex gap-[2px] pt-3 flex-col min-h-[78px] pb-5 justify-end",
+            "flex gap-[2px] pt-1 min-h-[32px]",
             price === 0 ? "text-transparent" : "",
           )}
         >
           {listPrice && listPrice !== price && (
-            <span class="line-through font-normal text-gray-400 text-xs">
+            <span class="line-through font-Manrope text-gray-400 text-xs">
               {formatPrice(listPrice, offers?.priceCurrency)}
             </span>
           )}
-          <span class="font-bold text-lg text-black-5">
+          <span class="font-bold font-Manrope text-lg text-green-10">
             {formatPrice(price, offers?.priceCurrency)}
           </span>
         </div>
@@ -191,18 +195,15 @@ function ProductCard({
       <div class="p-1">
         {inStock
           ? (
-            <AddToCartButton
-              product={product}
-              seller={seller}
-              item={item}
+            <div
               class={clx(
                 "btn",
-                "btn-outline justify-start border-none !text-sm !font-medium px-0 no-animation w-full",
-                "hover:!bg-transparent",
-                "disabled:!bg-transparent disabled:!opacity-50",
-                "btn-primary hover:!text-primary disabled:!text-primary",
+                "border-none text-sm no-animation w-full",
+                "flex w-full justify-center rounded-lg mx-auto bg-green-10 font-Manrope font-medium text-xs text-green-5 px-0 lg:text-base",
               )}
-            />
+            >
+              Produto Indisponível
+            </div>
           )
           : (
             <div
@@ -211,7 +212,7 @@ function ProductCard({
                 "border-none text-sm no-animation w-full",
                 "disabled:!bg-transparent",
                 "hover:!text-error disabled:!text-error",
-                "flex w-full max-w-ft-152 justify-center rounded-lg mx-auto bg-gray-30 font-Inter text-black-15 font-medium text-base px-0 lg:text-base",
+                "flex w-full max-w-vc-152 justify-center rounded-lg mx-auto bg-gray-30 font-Inter text-black-15 font-medium text-base px-0 lg:text-base",
               )}
             >
               Produto Indisponível

@@ -29,8 +29,10 @@ export default function ProductDetails({ page }: Props) {
   }
 
   return (
-    <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 sm:py-5 sm:px-0 max-w-[1130px] lg:pb-16 product-details">
-      <Breadcrumb itemListElement={page.breadcrumbList.itemListElement} />
+    <div class="container flex flex-col gap-4 sm:gap-5 w-full py-4 lg:pt-[114px] sm:px-0 max-w-[1130px] lg:pb-16 product-details">
+      <div class="lg:hidden w-full px-5">
+        <Breadcrumb itemListElement={page.breadcrumbList.itemListElement} />
+      </div>
 
       <div
         class={clx(
@@ -47,7 +49,7 @@ export default function ProductDetails({ page }: Props) {
         </div>
       </div>
       <div class="hidden lg:block w-full lg:max-w-[1130px] max-w-[1536px] lg:border-t">
-        <ProductAccordion page={page}/>
+        <ProductAccordion page={page} />
       </div>
     </div>
   );

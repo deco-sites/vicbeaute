@@ -144,7 +144,7 @@ function AddToCartButton(props: Props) {
         aria-label="Adicionar ao carrinho"
         disabled
         class={clx(
-          "flex-grow flex-shrink-0 max-w-ft-40 h-10",
+          "flex-grow flex-shrink-0 max-w-vc-40 h-10",
           _class?.toString(),
         )}
         hx-on:click={useScript(onClick)}

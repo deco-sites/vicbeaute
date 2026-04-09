@@ -41,7 +41,17 @@ export type AvailableIcons =
   | "lupa-busca-vazia"
   | "lupa"
   | "arrow-back-search-error"
-  | "user";
+  | "minicartbag"
+  | "search-drawer"
+  | "user"
+  | "user-orange"
+  | "menu-mobile-dark"
+  | "arrow-down-white"
+  | "user-black"
+  | "user-dark"
+  | "minicartbagdark"
+  | "lupa-dark";
+
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**
    * Symbol id from element to render. Take a look at `/static/icons.svg`.

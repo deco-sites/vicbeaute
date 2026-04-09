@@ -24,8 +24,23 @@ export interface Minicart {
     checkoutHref: string;
   };
 }
-const onLoad = (formID: string) => {
+const onLoad = (formID: string, empty: boolean) => {
   const form = document.getElementById(formID) as HTMLFormElement;
+
+  // Move minicart shelf from Header if it exists
+  const shelfSource = document.getElementById("minicart-shelf-source");
+  const shelfTarget = document.getElementById("minicart-shelf-target");
+  if (shelfSource && shelfTarget && shelfTarget.children.length === 0) {
+    while (shelfSource.firstChild) {
+      shelfTarget.appendChild(shelfSource.firstChild);
+    }
+  }
+
+  // Toggle shelf visibility
+  if (shelfTarget) {
+    shelfTarget.style.display = empty ? "block" : "none";
+  }
+
   window.STOREFRONT.CART.dispatch(form);
   // view_cart event
   if (typeof IntersectionObserver !== "undefined") {
@@ -151,27 +166,38 @@ export default function Cart(
 
         <div
           class={clx(
-            "flex flex-col flex-grow justify-center items-center overflow-hidden w-full",
+            "flex flex-col flex-grow w-full justify-start items-start ",
             "[.htmx-request_&]:pointer-events-none [.htmx-request_&]:opacity-60 [.htmx-request_&]:cursor-wait transition-opacity duration-300",
+            count === 0 ? "overflow-y-auto" : "overflow-hidden",
           )}
         >
           {count === 0
             ? (
-              <div class="flex flex-col gap-6">
-                <span class="font-bold text-2xl">Seu carrinho está vazio.</span>
-                <label
-                  data-cy="add-products"
-                  for={MINICART_DRAWER_ID}
-                  class="btn btn-outline no-animation"
-                >
-                  Adicionar produtos
-                </label>
+              <div class="flex flex-col pb-4 w-full">
+                {/* Free Shipping Bar */}
+                <div class="px-2 pt-[10px] pb-[30px] w-full">
+                  <FreeShippingProgressBar
+                    total={total}
+                    locale={locale}
+                    currency={currency}
+                    target={freeShippingTarget}
+                  />
+                </div>
+                <div class="flex flex-col items-center justify-center px-4">
+                  <span class="font-Roboto font-medium text-vc-22 text-center text-green-10 pb-1">
+                    Sua sacola está vazia.
+                  </span>
+                  <span class="font-Roboto text-green-10 text-center">
+                    Para continuar comprando, navegue pelas categorias ou faça
+                    uma busca por produtos.
+                  </span>
+                </div>
               </div>
             )
             : (
               <>
                 {/* Free Shipping Bar */}
-                <div class="px-2 py-4 w-full hidden">
+                <div class="pt-[10px] pb-[50px] w-full">
                   <FreeShippingProgressBar
                     total={total}
                     locale={locale}
@@ -207,9 +233,15 @@ export default function Cart(
                     </h3>
 
                     {/* Subtotal */}
-                    <div data-cy="subtotal" class="flex justify-between text-xl font-medium">
+                    <div
+                      data-cy="subtotal"
+                      class="flex justify-between text-xl font-medium"
+                    >
                       <span>Subtotal</span>
-                      <output form={MINICART_FORM_ID} class="font-bold text-2xl">
+                      <output
+                        form={MINICART_FORM_ID}
+                        class="font-bold text-2xl"
+                      >
                         {formatPrice(subtotal, currency, locale)}
                       </output>
                     </div>
@@ -237,10 +269,14 @@ export default function Cart(
                     </label>
 
                     {/* Texto final */}
-                    <p data-cy="text-minicart" class="text-xs text-[#BDBDBD] text-center font-light">
+                    <p
+                      data-cy="text-minicart"
+                      class="text-xs text-[#BDBDBD] text-center font-light"
+                    >
                       O preço exibido no{" "}
-                      <strong class="text-[#7A7A7A]">checkout</strong>{" "} é o {" "}
-                      <strong class="text-[#7A7A7A]">valor válido</strong>{" "} para a compra do produto.
+                      <strong class="text-[#7A7A7A]">checkout</strong>{"  "}é o
+                      {"  "}<strong class="text-[#7A7A7A]">valor válido</strong>
+                      {"  "}para a compra do produto.
                       <strong class="text-[#7A7A7A]">Taxas e frete</strong>{" "}
                       serão calculados no checkout.
                     </p>
@@ -248,12 +284,32 @@ export default function Cart(
                 </footer>
               </>
             )}
+
+          {/* Minicart Shelf Target ALWAYS exists so HTMX preserves it */}
+          <div
+            id="minicart-shelf-target"
+            hx-preserve="true"
+            class="w-full pb-6"
+            style={{ display: count === 0 ? "block" : "none" }}
+          />
+
+          {count === 0 && (
+            <div class="w-full px-4 pb-5 flex justify-center">
+              <label
+                data-cy="add-products"
+                for={MINICART_DRAWER_ID}
+                class="btn btn-outline no-animation w-full max-w-[125px] rounded"
+              >
+                Voltar a loja
+              </label>
+            </div>
+          )}
         </div>
       </form>
       <script
         type="module"
         dangerouslySetInnerHTML={{
-          __html: useScript(onLoad, MINICART_FORM_ID),
+          __html: useScript(onLoad, MINICART_FORM_ID, count === 0),
         }}
       />
     </>

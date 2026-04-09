@@ -8,68 +8,92 @@
       "__resolveType": "site/sections/Images/Carousel.tsx",
       "images": [
         {
-          "desktop": "https://assets.decocache.com/easycommerce/b879f6e2-27c1-4f31-9237-0567cf5948b0/Rectangle-3706.png",
-          "mobile": "https://assets.decocache.com/easycommerce/79b8eb9f-4737-4459-8d66-d30661d91e3b/Group-6423.png",
+          "desktop": "https://assets.decocache.com/vicbeaute/f85502be-70f8-43f7-a50f-78b027a3b84a/VIC_ECOMM_CASTING-63-ETEREO-1.png",
+          "mobile": "https://assets.decocache.com/vicbeaute/91ce20f4-f840-40ac-966f-34e6023af7a5/Banner-Hero.png",
           "alt": "Home Banner",
           "action": {
-            "title": "Skate into Adventure!!!!",
-            "subTitle": "Top-quality roller skate shoes for all levels. ",
-            "href": "/",
-            "label": "Grab Yours Now!"
-          }
+            "href": "#"
+          },
+          "widthDesktop": 1920,
+          "heightDesktop": 602,
+          "widthMobile": 375,
+          "heightMobile": 550
         },
         {
-          "desktop": "https://assets.decocache.com/easycommerce/b879f6e2-27c1-4f31-9237-0567cf5948b0/Rectangle-3706.png",
-          "mobile": "https://assets.decocache.com/easycommerce/79b8eb9f-4737-4459-8d66-d30661d91e3b/Group-6423.png",
-          "alt": "aaa"
+          "desktop": "https://assets.decocache.com/vicbeaute/f85502be-70f8-43f7-a50f-78b027a3b84a/VIC_ECOMM_CASTING-63-ETEREO-1.png",
+          "mobile": "https://assets.decocache.com/vicbeaute/91ce20f4-f840-40ac-966f-34e6023af7a5/Banner-Hero.png",
+          "alt": "Home Banner",
+          "action": {
+            "href": "#"
+          },
+          "widthDesktop": 1920,
+          "heightDesktop": 602,
+          "widthMobile": 375,
+          "heightMobile": 550
+        },
+        {
+          "desktop": "https://assets.decocache.com/vicbeaute/f85502be-70f8-43f7-a50f-78b027a3b84a/VIC_ECOMM_CASTING-63-ETEREO-1.png",
+          "mobile": "https://assets.decocache.com/vicbeaute/91ce20f4-f840-40ac-966f-34e6023af7a5/Banner-Hero.png",
+          "alt": "Home Banner",
+          "action": {
+            "href": "#"
+          },
+          "widthDesktop": 1920,
+          "heightDesktop": 602,
+          "widthMobile": 375,
+          "heightMobile": 550
         }
       ],
       "preload": true,
       "dots": true,
-      "arrows": true
+      "arrows": true,
+      "arrowsDesktop": true,
+      "arrowsMobile": true,
+      "dotsDesktop": true,
+      "dotsMobile": true
     },
     {
       "__resolveType": "site/sections/Miscellaneous/Benefits.tsx",
       "benefits": [
         {
           "label": "FRETE GRÁTIS para compras acima de R$150",
-          "image": "https://assets.decocache.com/easycommerce/985d9583-d7b1-4b5f-98b4-9143b23a98e3/Vector-(8).svg",
+          "image": "https://assets.decocache.com/vicbeaute/59963091-8847-4951-a817-b3d783bdc12a/Rectangle-1.png",
           "imageWidth": 32,
-          "imageHeight": 28,
-          "line1": "FRETE GRÁTIS",
-          "line2": "para compras acima de R$150",
-          "mobileLine1": "FRETE GRÁTIS",
-          "mobileLine2": "acima de R$150"
+          "imageHeight": 32,
+          "line1": "Ganhe a nécessaire  nas",
+          "line2": "compras acima de R$329",
+          "mobileLine1": "Ganhe a nécessaire  nas",
+          "mobileLine2": "compras acima de R$329"
         },
         {
           "label": "PARCELE SUAS COMPRAS Parcele em até 5 vezes sem juros",
-          "image": "https://assets.decocache.com/easycommerce/5e695d39-05fe-43b5-b6d1-ed13eda76c82/Vector-(9).svg",
-          "imageWidth": 32,
-          "imageHeight": 28,
-          "line1": "PARCELE SUAS COMPRAS",
-          "line2": "Parcele em até 5 vezes sem juros",
-          "mobileLine1": "FACILITADO",
-          "mobileLine2": "em até 5x"
+          "image": "https://assets.decocache.com/vicbeaute/7fa78720-0227-4373-8a19-72b6bcf38dc5/Frame-1000004076.png",
+          "imageWidth": 37,
+          "imageHeight": 32,
+          "line1": "Frete grátis nas compras ",
+          "line2": "acima de R$190",
+          "mobileLine1": "Frete grátis nas compras",
+          "mobileLine2": "acima de R$190"
         },
         {
           "label": "LOJA SEGURA Loja com SSL e proteção de dados",
-          "image": "https://assets.decocache.com/easycommerce/4416b192-9570-4032-98bd-137db24274b0/Vector-(10).svg",
-          "imageWidth": 32,
-          "imageHeight": 28,
-          "line1": "LOJA SEGURA",
-          "line2": "com SSL e proteção de dados",
-          "mobileLine2": "com SSL",
-          "mobileLine1": "LOJA SEGURA"
+          "image": "https://assets.decocache.com/vicbeaute/fa185941-ad55-47c9-9a9f-5459e0f41209/Message_light.png",
+          "imageWidth": 36,
+          "imageHeight": 36,
+          "line1": "Natal Vic Beauté | A beleza de",
+          "line2": "celebrar e presentear",
+          "mobileLine2": "celebrar e presentear",
+          "mobileLine1": "Natal Vic Beauté | A beleza de"
         },
         {
           "label": "MAIS ECONOMIA Compre os nossos kits",
-          "image": "https://assets.decocache.com/easycommerce/7fa8dabb-bf9a-461b-a458-a7a82dba969f/Vector-(11).svg",
-          "imageWidth": 32,
-          "imageHeight": 28,
-          "line1": "MAIS ECONOMIA",
-          "line2": "Compre os nossos kits",
-          "mobileLine1": "ECONOMIA",
-          "mobileLine2": "Com os kits"
+          "image": "https://assets.decocache.com/vicbeaute/f279dc50-85b5-438c-9a63-270cedacf832/Chield_check_light.png",
+          "imageWidth": 36,
+          "imageHeight": 36,
+          "line1": "Pague com cartão de crédito ou",
+          "line2": "Paypal em segurança",
+          "mobileLine1": "Pague com cartão de crédito ou",
+          "mobileLine2": "Paypal em segurança"
         }
       ],
       "title": "aa",
@@ -88,92 +112,84 @@
             "imageWidth": 126,
             "imageHeight": 126,
             "href": "/",
-            "caption": "Ofertas",
-            "desktop": "https://assets.decocache.com/easycommerce/f87c5865-8337-4730-bdbf-53660be827e4/Group-6435.svg",
-            "desktopWidth": 126,
-            "desktopHeight": 126,
-            "mobile": "https://assets.decocache.com/easycommerce/f87c5865-8337-4730-bdbf-53660be827e4/Group-6435.svg",
-            "mobileWidth": 90,
-            "mobileHeight": 90,
-            "alt": "Categoria de ofertas"
+            "caption": "Iluminador",
+            "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+            "desktopHeight": 200,
+            "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+            "mobileWidth": 120,
+            "mobileHeight": 120,
+            "alt": "Iluminador",
+            "desktopWidth": 200
           },
           {
             "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
-            "desktop": "https://assets.decocache.com/easycommerce/cd818f13-45e9-4256-8501-8ba86162b9ae/Group-6435-(7).svg",
-            "desktopWidth": 126,
-            "desktopHeight": 126,
-            "mobile": "https://assets.decocache.com/easycommerce/cd818f13-45e9-4256-8501-8ba86162b9ae/Group-6435-(7).svg",
-            "mobileWidth": 90,
-            "mobileHeight": 90,
-            "alt": "Categoria de Doces e Chocolates",
+            "imageWidth": 126,
+            "imageHeight": 126,
             "href": "/",
-            "caption": "Doces e Chocolates"
+            "caption": "Iluminador",
+            "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+            "desktopWidth": 200,
+            "desktopHeight": 200,
+            "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+            "mobileWidth": 120,
+            "mobileHeight": 120,
+            "alt": "Iluminador"
           },
           {
-            "desktop": "https://assets.decocache.com/easycommerce/9ee2e867-5c2b-45c9-b3fc-a077a6a58e19/Group-6435-(6).svg",
-            "desktopWidth": 126,
-            "desktopHeight": 126,
-            "mobile": "https://assets.decocache.com/easycommerce/9ee2e867-5c2b-45c9-b3fc-a077a6a58e19/Group-6435-(6).svg",
-            "mobileWidth": 90,
-            "mobileHeight": 90,
-            "alt": "Categoria de Mercearia",
+            "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
+            "imageWidth": 126,
+            "imageHeight": 126,
             "href": "/",
-            "caption": "Mercearia"
+            "caption": "Iluminador",
+            "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+            "desktopWidth": 200,
+            "desktopHeight": 200,
+            "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+            "mobileWidth": 120,
+            "mobileHeight": 120,
+            "alt": "Iluminador"
           },
           {
-            "desktop": "https://assets.decocache.com/easycommerce/8f519e00-7113-4589-a4e7-3a85adadd3e2/Group-6435-(2).svg",
-            "desktopWidth": 126,
-            "desktopHeight": 126,
-            "mobile": "https://assets.decocache.com/easycommerce/8f519e00-7113-4589-a4e7-3a85adadd3e2/Group-6435-(2).svg",
-            "mobileWidth": 90,
-            "mobileHeight": 90,
-            "alt": "Categoria de enlatados",
+            "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
+            "imageWidth": 126,
+            "imageHeight": 126,
             "href": "/",
-            "caption": "Enlatados"
+            "caption": "Iluminador",
+            "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+            "desktopWidth": 200,
+            "desktopHeight": 200,
+            "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+            "mobileWidth": 120,
+            "mobileHeight": 120,
+            "alt": "Iluminador"
           },
           {
-            "desktop": "https://assets.decocache.com/easycommerce/c87ea69f-0280-436b-b441-fc11638c6aeb/Group-6435-(8).svg",
-            "desktopWidth": 126,
-            "desktopHeight": 126,
-            "mobile": "https://assets.decocache.com/easycommerce/c87ea69f-0280-436b-b441-fc11638c6aeb/Group-6435-(8).svg",
-            "mobileWidth": 90,
-            "mobileHeight": 90,
-            "alt": "Categoria de Azeites e Vinagres",
+            "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
+            "imageWidth": 126,
+            "imageHeight": 126,
             "href": "/",
-            "caption": "Sopas, massas e purês"
+            "caption": "Iluminador",
+            "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+            "desktopWidth": 200,
+            "desktopHeight": 200,
+            "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+            "mobileWidth": 120,
+            "mobileHeight": 120,
+            "alt": "Iluminador"
           },
           {
-            "desktop": "https://assets.decocache.com/easycommerce/8e6870dc-c29b-4cf4-aca9-c1c8dbb77d9f/Group-6435-(9).svg",
-            "desktopWidth": 126,
-            "desktopHeight": 126,
-            "mobile": "https://assets.decocache.com/easycommerce/8e6870dc-c29b-4cf4-aca9-c1c8dbb77d9f/Group-6435-(9).svg",
-            "mobileWidth": 90,
-            "mobileHeight": 90,
-            "alt": "Categoria de Azeites e Vinagres",
+            "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
+            "imageWidth": 126,
+            "imageHeight": 126,
             "href": "/",
-            "caption": "Azeites e Vinagres"
-          },
-          {
-            "desktop": "https://assets.decocache.com/easycommerce/196388cb-e83c-423e-ae0c-eaa1cd5db5a2/Group-6435-(10).svg",
-            "desktopWidth": 126,
-            "desktopHeight": 126,
-            "mobile": "https://assets.decocache.com/easycommerce/196388cb-e83c-423e-ae0c-eaa1cd5db5a2/Group-6435-(10).svg",
-            "mobileWidth": 90,
-            "mobileHeight": 90,
-            "alt": "Categoria de Padaria",
-            "href": "/",
-            "caption": "Padaria"
-          },
-          {
-            "desktop": "https://assets.decocache.com/easycommerce/8e6870dc-c29b-4cf4-aca9-c1c8dbb77d9f/Group-6435-(9).svg",
-            "desktopWidth": 126,
-            "desktopHeight": 126,
-            "mobile": "https://assets.decocache.com/easycommerce/8e6870dc-c29b-4cf4-aca9-c1c8dbb77d9f/Group-6435-(9).svg",
-            "mobileWidth": 90,
-            "mobileHeight": 90,
-            "alt": "Categoria de Doces",
-            "href": "/",
-            "caption": "Descontos"
+            "caption": "Iluminador",
+            "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+            "desktopWidth": 200,
+            "desktopHeight": 200,
+            "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+            "mobileWidth": 120,
+            "mobileHeight": 120,
+            "alt": "Iluminador"
           }
         ],
         "slider": {
@@ -206,13 +222,58 @@
       }
     },
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/Images/ImageHome.tsx",
-        "desktopImage": "https://assets.decocache.com/easycommerce/4774e3cb-b401-4b2c-b604-58436e7853ee/Group-6424.png",
-        "mobileImage": "https://assets.decocache.com/easycommerce/e6b22fb2-e3eb-45cf-8b8b-9a28dc895cf1/Group-6424-(1).png",
-        "Link": "/"
-      }
+      "__resolveType": "site/sections/Images/BannerSlider.tsx",
+      "banners": [
+        {
+          "desktopImage": "https://assets.decocache.com/vicbeaute/97e6a6ea-eaee-47e1-949e-6b038355b9a9/VIC_ECOMM_CASTING-63-ETEREO-2.png",
+          "mobileImage": "https://assets.decocache.com/vicbeaute/f423b40d-c409-48ac-8e50-e906e6c182bf/Picture--Image_Banner_Mobile_ae6004eb-226f-4ec3-a4cb-685fc102c604.jpg.png",
+          "alt": "Banner",
+          "subtitle": "Landing Page Stick tudo",
+          "title": "Radiant essentials for every party this season",
+          "buttonText": "Compre agora",
+          "buttonLink": "#"
+        },
+        {
+          "desktopImage": "https://assets.decocache.com/vicbeaute/97e6a6ea-eaee-47e1-949e-6b038355b9a9/VIC_ECOMM_CASTING-63-ETEREO-2.png",
+          "mobileImage": "https://assets.decocache.com/vicbeaute/f423b40d-c409-48ac-8e50-e906e6c182bf/Picture--Image_Banner_Mobile_ae6004eb-226f-4ec3-a4cb-685fc102c604.jpg.png",
+          "alt": "Banner",
+          "subtitle": "Landing Page Stick tudo",
+          "title": "Radiant essentials for every party this season",
+          "buttonText": "Compre agora",
+          "buttonLink": "#"
+        },
+        {
+          "desktopImage": "https://assets.decocache.com/vicbeaute/97e6a6ea-eaee-47e1-949e-6b038355b9a9/VIC_ECOMM_CASTING-63-ETEREO-2.png",
+          "mobileImage": "https://assets.decocache.com/vicbeaute/f423b40d-c409-48ac-8e50-e906e6c182bf/Picture--Image_Banner_Mobile_ae6004eb-226f-4ec3-a4cb-685fc102c604.jpg.png",
+          "alt": "Banner",
+          "subtitle": "Landing Page Stick tudo",
+          "title": "Radiant essentials for every party this season",
+          "buttonText": "Compre agora",
+          "buttonLink": "#"
+        },
+        {
+          "desktopImage": "https://assets.decocache.com/vicbeaute/97e6a6ea-eaee-47e1-949e-6b038355b9a9/VIC_ECOMM_CASTING-63-ETEREO-2.png",
+          "mobileImage": "https://assets.decocache.com/vicbeaute/f423b40d-c409-48ac-8e50-e906e6c182bf/Picture--Image_Banner_Mobile_ae6004eb-226f-4ec3-a4cb-685fc102c604.jpg.png",
+          "alt": "Banner",
+          "subtitle": "Landing Page Stick tudo",
+          "title": "Radiant essentials for every party this season",
+          "buttonText": "Compre agora",
+          "buttonLink": "#"
+        },
+        {
+          "desktopImage": "https://assets.decocache.com/vicbeaute/97e6a6ea-eaee-47e1-949e-6b038355b9a9/VIC_ECOMM_CASTING-63-ETEREO-2.png",
+          "mobileImage": "https://assets.decocache.com/vicbeaute/f423b40d-c409-48ac-8e50-e906e6c182bf/Picture--Image_Banner_Mobile_ae6004eb-226f-4ec3-a4cb-685fc102c604.jpg.png",
+          "alt": "Banner",
+          "subtitle": "Landing Page Stick tudo",
+          "title": "Radiant essentials for every party this season",
+          "buttonText": "Compre agora",
+          "buttonLink": "#"
+        }
+      ],
+      "arrowsDesktop": true,
+      "arrowsMobile": true,
+      "dotsDesktop": true,
+      "dotsMobile": true
     },
     {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
@@ -227,25 +288,289 @@
       }
     },
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/Images/ImageHome.tsx",
-        "desktopImage": "https://assets.decocache.com/easycommerce/53f320fa-1def-42a7-8bc7-50e3d09533d4/Group-6428.png",
-        "mobileImage": "https://assets.decocache.com/easycommerce/aee4b22f-24b6-4f2e-838f-2b81b20dfff3/Group-6426.png",
-        "Link": "/"
-      }
+      "__resolveType": "site/sections/Product/TabbedProductSlider.tsx",
+      "title": "Novidades",
+      "tabs": [
+        {
+          "products": {
+            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+            "props": {
+              "sort": "price:desc",
+              "collection": "141",
+              "count": 12
+            }
+          },
+          "label": "Stick Tudo"
+        },
+        {
+          "products": {
+            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+            "props": {
+              "sort": "price:desc",
+              "collection": "195",
+              "count": 12
+            }
+          },
+          "label": "Corretivo"
+        },
+        {
+          "products": {
+            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+            "props": {
+              "sort": "price:desc",
+              "collection": "141",
+              "count": 12
+            }
+          },
+          "label": "Corretivo"
+        },
+        {
+          "products": {
+            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+            "props": {
+              "sort": "price:desc",
+              "collection": "141",
+              "count": 12
+            }
+          },
+          "label": "Corretivo"
+        },
+        {
+          "products": {
+            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+            "props": {
+              "sort": "price:desc",
+              "collection": "141",
+              "count": 12
+            }
+          },
+          "label": "Corretivo"
+        },
+        {
+          "products": {
+            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+            "props": {
+              "sort": "price:desc",
+              "collection": "141",
+              "count": 12
+            }
+          },
+          "label": "Corretivo"
+        }
+      ]
     },
     {
-      "__resolveType": "site/sections/Product/ProductShelf.tsx",
-      "title": "Super Oferta",
-      "products": {
-        "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
-        "props": {
-          "sort": "price:desc",
-          "collection": "141",
-          "count": 8
+      "__resolveType": "site/sections/Images/CardSlider.tsx",
+      "dotsDesktop": true,
+      "dotsMobile": true,
+      "cards": [
+        {
+          "desktopImage": "https://assets.decocache.com/vicbeaute/3e86cc1d-7a60-4415-b10c-460a81225bb0/Frame-1984078385.png",
+          "mobileImage": "https://assets.decocache.com/vicbeaute/a90ab6ee-50cb-49e6-a615-0099f8070868/Small_Banner_Desktop_ad6c282e-dd07-437a-bd25-581cd15579a9.jpg.png",
+          "title": "Is marketing join driver's attached three.",
+          "text": "Without submit bandwagon way revision. Support businesses box.",
+          "buttonText": "Compre agora",
+          "buttonLink": "#"
+        },
+        {
+          "desktopImage": "https://assets.decocache.com/vicbeaute/3e86cc1d-7a60-4415-b10c-460a81225bb0/Frame-1984078385.png",
+          "mobileImage": "https://assets.decocache.com/vicbeaute/a90ab6ee-50cb-49e6-a615-0099f8070868/Small_Banner_Desktop_ad6c282e-dd07-437a-bd25-581cd15579a9.jpg.png",
+          "title": "Is marketing join driver's attached three.",
+          "text": "Without submit bandwagon way revision. Support businesses box.",
+          "buttonText": "Compre agora",
+          "buttonLink": "#"
+        },
+        {
+          "desktopImage": "https://assets.decocache.com/vicbeaute/3e86cc1d-7a60-4415-b10c-460a81225bb0/Frame-1984078385.png",
+          "mobileImage": "https://assets.decocache.com/vicbeaute/a90ab6ee-50cb-49e6-a615-0099f8070868/Small_Banner_Desktop_ad6c282e-dd07-437a-bd25-581cd15579a9.jpg.png",
+          "title": "Is marketing join driver's attached three.",
+          "text": "Without submit bandwagon way revision. Support businesses box.",
+          "buttonText": "Compre agora",
+          "buttonLink": "#"
+        },
+        {
+          "desktopImage": "https://assets.decocache.com/vicbeaute/3e86cc1d-7a60-4415-b10c-460a81225bb0/Frame-1984078385.png",
+          "mobileImage": "https://assets.decocache.com/vicbeaute/a90ab6ee-50cb-49e6-a615-0099f8070868/Small_Banner_Desktop_ad6c282e-dd07-437a-bd25-581cd15579a9.jpg.png",
+          "title": "Is marketing join driver's attached three.",
+          "text": "Without submit bandwagon way revision. Support businesses box.",
+          "buttonText": "Compre agora",
+          "buttonLink": "#"
+        },
+        {
+          "desktopImage": "https://assets.decocache.com/vicbeaute/3e86cc1d-7a60-4415-b10c-460a81225bb0/Frame-1984078385.png",
+          "mobileImage": "https://assets.decocache.com/vicbeaute/a90ab6ee-50cb-49e6-a615-0099f8070868/Small_Banner_Desktop_ad6c282e-dd07-437a-bd25-581cd15579a9.jpg.png",
+          "title": "Is marketing join driver's attached three.",
+          "text": "Without submit bandwagon way revision. Support businesses box.",
+          "buttonText": "Compre agora",
+          "buttonLink": "#"
+        },
+        {
+          "desktopImage": "https://assets.decocache.com/vicbeaute/3e86cc1d-7a60-4415-b10c-460a81225bb0/Frame-1984078385.png",
+          "mobileImage": "https://assets.decocache.com/vicbeaute/a90ab6ee-50cb-49e6-a615-0099f8070868/Small_Banner_Desktop_ad6c282e-dd07-437a-bd25-581cd15579a9.jpg.png",
+          "title": "Is marketing join driver's attached three.",
+          "text": "Without submit bandwagon way revision. Support businesses box.",
+          "buttonText": "Compre agora",
+          "buttonLink": "#"
         }
-      }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/Images/ShopTheLook.tsx",
+      "title": "Shop the look",
+      "highlightTitle": "Inspire-se",
+      "description": "Descubra os produtos práticos e multifuncionais para recriar desde clássicos do dia a dia até looks icônicos!",
+      "initialCountMobile": 3,
+      "initialCountDesktop": 6,
+      "looks": [
+        {
+          "cardType": "Vertical",
+          "imageDesk": "https://assets.decocache.com/vicbeaute/b5689eb7-f2f0-4520-8d88-2ae02358e662/Frame-1000004117.png",
+          "imageMobile": "https://assets.decocache.com/vicbeaute/a827d85f-ee19-49d0-b488-041a4eee42ec/Frame-100000411-mobile7.png",
+          "title": "O clássico do dia",
+          "subtitle": "@vicceridono",
+          "products": {
+            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+            "props": {
+              "sort": "price:desc",
+              "collection": "141",
+              "count": 3
+            }
+          }
+        },
+        {
+          "cardType": "Quadrado",
+          "imageDesk": "https://assets.decocache.com/vicbeaute/d2dc1f85-1a36-4ad7-8815-fe1b6b1a0811/Frame-1984078389.png",
+          "imageMobile": "https://assets.decocache.com/vicbeaute/c7c985a2-ed93-464a-9c2d-b0f1f2eca47f/Frame-1000004119mobile.png",
+          "title": "O clássico do dia",
+          "subtitle": "@vicceridono",
+          "products": {
+            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+            "props": {
+              "sort": "price:desc",
+              "collection": "141",
+              "count": 3
+            }
+          }
+        },
+        {
+          "cardType": "Quadrado",
+          "imageDesk": "https://assets.decocache.com/vicbeaute/d2dc1f85-1a36-4ad7-8815-fe1b6b1a0811/Frame-1984078389.png",
+          "imageMobile": "https://assets.decocache.com/vicbeaute/c7c985a2-ed93-464a-9c2d-b0f1f2eca47f/Frame-1000004119mobile.png",
+          "title": "O clássico do dia",
+          "subtitle": "@vicceridono",
+          "products": {
+            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+            "props": {
+              "sort": "price:desc",
+              "collection": "141",
+              "count": 3
+            }
+          }
+        },
+        {
+          "cardType": "Quadrado",
+          "imageDesk": "https://assets.decocache.com/vicbeaute/d2dc1f85-1a36-4ad7-8815-fe1b6b1a0811/Frame-1984078389.png",
+          "imageMobile": "https://assets.decocache.com/vicbeaute/c7c985a2-ed93-464a-9c2d-b0f1f2eca47f/Frame-1000004119mobile.png",
+          "title": "O clássico do dia",
+          "subtitle": "@vicceridono",
+          "products": {
+            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+            "props": {
+              "sort": "price:desc",
+              "collection": "141",
+              "count": 3
+            }
+          }
+        },
+        {
+          "cardType": "Quadrado",
+          "imageDesk": "https://assets.decocache.com/vicbeaute/d2dc1f85-1a36-4ad7-8815-fe1b6b1a0811/Frame-1984078389.png",
+          "imageMobile": "https://assets.decocache.com/vicbeaute/c7c985a2-ed93-464a-9c2d-b0f1f2eca47f/Frame-1000004119mobile.png",
+          "title": "O clássico do dia",
+          "subtitle": "@vicceridono",
+          "products": {
+            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+            "props": {
+              "sort": "price:desc",
+              "collection": "141",
+              "count": 3
+            }
+          }
+        },
+        {
+          "cardType": "Vertical",
+          "imageDesk": "https://assets.decocache.com/vicbeaute/b5689eb7-f2f0-4520-8d88-2ae02358e662/Frame-1000004117.png",
+          "imageMobile": "https://assets.decocache.com/vicbeaute/a827d85f-ee19-49d0-b488-041a4eee42ec/Frame-100000411-mobile7.png",
+          "title": "O clássico do dia",
+          "subtitle": "@vicceridono",
+          "products": {
+            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+            "props": {
+              "sort": "price:desc",
+              "collection": "141",
+              "count": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/Images/BannerSlider.tsx",
+      "banners": [
+        {
+          "desktopImage": "https://assets.decocache.com/vicbeaute/97e6a6ea-eaee-47e1-949e-6b038355b9a9/VIC_ECOMM_CASTING-63-ETEREO-2.png",
+          "mobileImage": "https://assets.decocache.com/vicbeaute/f423b40d-c409-48ac-8e50-e906e6c182bf/Picture--Image_Banner_Mobile_ae6004eb-226f-4ec3-a4cb-685fc102c604.jpg.png",
+          "alt": "Banner",
+          "subtitle": "Landing Page Stick tudo",
+          "title": "Radiant essentials for every party this season",
+          "buttonText": "Compre agora",
+          "buttonLink": "#"
+        },
+        {
+          "desktopImage": "https://assets.decocache.com/vicbeaute/97e6a6ea-eaee-47e1-949e-6b038355b9a9/VIC_ECOMM_CASTING-63-ETEREO-2.png",
+          "mobileImage": "https://assets.decocache.com/vicbeaute/f423b40d-c409-48ac-8e50-e906e6c182bf/Picture--Image_Banner_Mobile_ae6004eb-226f-4ec3-a4cb-685fc102c604.jpg.png",
+          "alt": "Banner",
+          "subtitle": "Landing Page Stick tudo",
+          "title": "Radiant essentials for every party this season",
+          "buttonText": "Compre agora",
+          "buttonLink": "#"
+        },
+        {
+          "desktopImage": "https://assets.decocache.com/vicbeaute/97e6a6ea-eaee-47e1-949e-6b038355b9a9/VIC_ECOMM_CASTING-63-ETEREO-2.png",
+          "mobileImage": "https://assets.decocache.com/vicbeaute/f423b40d-c409-48ac-8e50-e906e6c182bf/Picture--Image_Banner_Mobile_ae6004eb-226f-4ec3-a4cb-685fc102c604.jpg.png",
+          "alt": "Banner",
+          "subtitle": "Landing Page Stick tudo",
+          "title": "Radiant essentials for every party this season",
+          "buttonText": "Compre agora",
+          "buttonLink": "#"
+        },
+        {
+          "desktopImage": "https://assets.decocache.com/vicbeaute/97e6a6ea-eaee-47e1-949e-6b038355b9a9/VIC_ECOMM_CASTING-63-ETEREO-2.png",
+          "mobileImage": "https://assets.decocache.com/vicbeaute/f423b40d-c409-48ac-8e50-e906e6c182bf/Picture--Image_Banner_Mobile_ae6004eb-226f-4ec3-a4cb-685fc102c604.jpg.png",
+          "alt": "Banner",
+          "subtitle": "Landing Page Stick tudo",
+          "title": "Radiant essentials for every party this season",
+          "buttonText": "Compre agora",
+          "buttonLink": "#"
+        },
+        {
+          "desktopImage": "https://assets.decocache.com/vicbeaute/97e6a6ea-eaee-47e1-949e-6b038355b9a9/VIC_ECOMM_CASTING-63-ETEREO-2.png",
+          "mobileImage": "https://assets.decocache.com/vicbeaute/f423b40d-c409-48ac-8e50-e906e6c182bf/Picture--Image_Banner_Mobile_ae6004eb-226f-4ec3-a4cb-685fc102c604.jpg.png",
+          "alt": "Banner",
+          "subtitle": "Landing Page Stick tudo",
+          "title": "Radiant essentials for every party this season",
+          "buttonText": "Compre agora",
+          "buttonLink": "#"
+        }
+      ],
+      "arrowsDesktop": true,
+      "arrowsMobile": true,
+      "dotsDesktop": true,
+      "dotsMobile": true
+    },
+    {
+      "__resolveType": "site/sections/Social/InstagramFeed.tsx",
+      "title": "Posts"
     },
     {
       "__resolveType": "newsletter"

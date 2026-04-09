@@ -1,6 +1,7 @@
 import { type ImageWidget, RichText } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import Accordion from "../../components/ui/Accordion.tsx";
+import { TextArea } from "apps/admin/widgets.ts";
 
 interface LinkItem {
   isLink: true;
@@ -50,7 +51,9 @@ interface Props {
   managedLink?: string;
   platformImg?: ImageWidget;
   platformLink?: string;
-  textFooter?: string;
+  textFooter?: TextArea;
+  textPrivacity?: string;
+  linkPrivacity?: string;
 }
 
 function Footer({
@@ -58,8 +61,6 @@ function Footer({
   social = [],
   paymentMethods = [],
   logo,
-  logoMobileWidth,
-  logoMobileHeight,
   logoDesktop,
   logoDesktopWidth,
   logoDesktopHeight,
@@ -68,96 +69,81 @@ function Footer({
   platformImg,
   platformLink,
   textFooter,
+  textPrivacity,
+  linkPrivacity,
 }: Props) {
   return (
-    <footer class="w-full flex flex-col gap-9 bg-white mt-8 px-4">
-      <div data-cy="logo-mobile" class="flex flex-col items-center pt-6 max-w-ft-223 mx-auto xl:hidden w-full">
-        {logo && (
-          <Image
-            src={logo}
-            alt="logo mobile"
-            width={logoMobileWidth ?? undefined}
-            height={logoMobileHeight ?? undefined}
-            class={logoMobileWidth && logoMobileHeight
-              ? ""
-              : "h-10 object-contain"}
-          />
-        )}
-      </div>
-      <div class="w-full md:max-w-none max-w-ft-350 mx-auto xl:hidden">
+    <footer class="w-full flex flex-col xl:gap-0 bg-green-5 xl:pb-4 pb-4">
+      <div class="w-full md:max-w-none xl:hidden px-3 bg-white">
         <Accordion
           children={links.map(({ title, children }) => ({
             title,
             subtitle: (
               <ul data-cy="options-mobile" class="flex flex-col gap-2">
                 {children.map((child) =>
-                  child.isLink ? (
-                    <li>
-                      <a
-                        href={child.href}
-                        class="text-sm text-gray-500 hover:underline"
-                        data-cy="sublink-footer"
-                      >
-                        {child.title}
-                      </a>
-                    </li>
-                  ) : (
-                    <li>
-                      <div
-                        id="text-footer"
-                        data-cy="text-footer"
-                        class="text-sm text-gray-500"
-                        dangerouslySetInnerHTML={{
-                          __html: child.content ?? "",
-                        }}
-                      />
-                    </li>
-                  )
+                  child.isLink
+                    ? (
+                      <li>
+                        <a
+                          href={child.href}
+                          class="text-sm text-gray-500 hover:underline"
+                          data-cy="sublink-footer"
+                        >
+                          {child.title}
+                        </a>
+                      </li>
+                    )
+                    : (
+                      <li>
+                        <div
+                          id="text-footer"
+                          data-cy="text-footer"
+                          class="text-sm text-gray-500"
+                          dangerouslySetInnerHTML={{
+                            __html: child.content ?? "",
+                          }}
+                        />
+                      </li>
+                    )
                 )}
               </ul>
             ) as unknown as string,
           }))}
         />
       </div>
+      <div class="flex items-center gap-5 md:w-w-vc-300 xl:w-vc-150 lg:hidden pl-3 pt-10 pb-[30px]">
+        <span class="text-black-35 font-Manrope">Redes sociais</span>
+        <ul class="flex gap-5">
+          {social.map(({ image, href, alt }) => (
+            <li>
+              <a data-cy="social-mobile" href={href}>
+                <Image
+                  src={image}
+                  alt={alt}
+                  loading="lazy"
+                  width={24}
+                  height={24}
+                />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
       <div class="grid grid-cols-2 gap-4 mx-auto xl:hidden">
-        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-w-ft-150 md:w-w-ft-300 xl:w-w-ft-150 py-1">
-          <span class="text-xs text-black font-Poppins">Pagamento</span>
-          <ul class="flex flex-wrap gap-g-ft-2 justify-center">
-            {paymentMethods.map(({ image, alt }) => (
-              <li data-cy="payments-mobile" class="border border-base-100 rounded flex justify-center items-center">
-                <Image src={image} alt={alt} loading="lazy" />
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-w-ft-150 md:w-w-ft-300 xl:w-w-ft-150 py-1">
-          <span class="text-xs text-black font-Poppins">Redes Sociais</span>
-          <ul class="flex gap-3">
-            {social.map(({ image, href, alt }) => (
-              <li>
-                <a data-cy="social-mobile" href={href}>
-                  <Image
-                    src={image}
-                    alt={alt}
-                    loading="lazy"
-                    width={24}
-                    height={24}
-                  />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-w-ft-150 md:w-w-ft-300 xl:w-w-ft-150 py-1">
-          <span class="text-xs text-black font-Poppins">Plataforma</span>
-          <a href={platformLink ?? "#"} target="_blank" data-cy="platform-mobile">
+        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-vc-150 md:w-w-vc-300 xl:w-vc-150 py-1">
+          <span class="text-sm text-black-25 font-Manrope">Plataforma:</span>
+          <a
+            href={platformLink ?? "#"}
+            target="_blank"
+            data-cy="platform-mobile"
+          >
             {platformImg && (
               <Image src={platformImg} alt="platform" loading="lazy" />
             )}
           </a>
         </div>
-        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-w-ft-150 md:w-w-ft-300 xl:w-w-ft-150 py-1">
-          <span class="text-xs text-black font-Poppins">Managed by</span>
+        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-vc-150 md:w-w-vc-300 xl:w-vc-150 py-1">
+          <span class="text-sm text-black-25 font-Manrope">Managed by:</span>
           <a href={managedLink ?? "#"} target="_blank" data-cy="managed-mobile">
             {managedImg && (
               <Image src={managedImg} alt="managed" loading="lazy" />
@@ -165,113 +151,222 @@ function Footer({
           </a>
         </div>
       </div>
-      <div class="hidden xl:flex flex-col gap-8 bg-white pt-10 max-w-ft-1452 w-full mx-auto">
-        <div class="w-full max-w-ft-1344 mx-auto flex flex-row gap-g-ft-105 items-start justify-between">
-          <div data-cy="logo">
-            {(logoDesktop || logo) && (
-              <Image
-                src={logoDesktop ?? logo}
-                alt="logo desktop"
-                width={logoDesktopWidth ?? 205}
-                height={logoDesktopHeight ?? 46}
-                class="object-contain"
-              />
-            )}
-          </div>
-          <div class="flex-1 grid grid-cols-3 gap-3 pt-p-ft-10">
-            {links.map(({ title, children }) => (
-              <div class="flex flex-col gap-g-ft-10 max-w-ft-350 w-full mx-auto">
-                <h4 data-cy="title-footer" class="font-medium text-base text-black font-Poppins">
-                  {title}
-                </h4>
-                <ul class="flex flex-col gap-2">
-                  {children.map((child) =>
-                    child.isLink ? (
-                      <li>
-                        <a data-cy="footer-options" href={child.href}>
-                          <div class="text-[13px] text-black font-light font-Poppins">
-                            {child.title}
-                          </div>
-                        </a>
-                      </li>
-                    ) : (
-                      <li>
-                        <div
-                          id="text-footer"
-                          data-cy="text-footer"
-                          class="text-[13px] text-black font-light font-Poppins"
-                          dangerouslySetInnerHTML={{
-                            __html: child.content ?? "",
-                          }}
-                        />
-                      </li>
-                    )
+      {/* VISTA DESKTOP NOVA */}
+      <div class="hidden xl:flex flex-col gap-8 pt-16 max-w-[1452px] w-full mx-auto px-4 lg:px-8 bg-transparent">
+        <div class="w-full flex flex-row gap-12 items-start justify-between">
+          {/* COLUNA 1: NEWSLETTER E LOGOS */}
+          <div class="flex flex-col max-w-[360px] w-full gap-8">
+            <div class="flex flex-col gap-4">
+              <h3 class="font-Queens text-[36px] leading-[1.1] text-black">
+                Inscreva-se e fique por dentro das novidades
+              </h3>
+
+              <form class="flex flex-col gap-3 mt-4">
+                <input
+                  type="email"
+                  placeholder="Digite seu e-mail"
+                  class="w-full bg-transparent border-0 border-b border-[#191C1F] pb-2 text-[14px] text-black outline-none placeholder:text-[#4a4a4a]"
+                />
+                <button
+                  type="submit"
+                  class="w-full bg-[#556B50] text-white py-3 rounded-sm text-[14px] uppercase tracking-widest font-semibold hover:bg-[#455C42] transition-colors mt-2"
+                >
+                  Cadastrar
+                </button>
+                <label class="flex items-start gap-2 mt-2 cursor-pointer group">
+                  <input
+                    type="checkbox"
+                    class="mt-1 w-4 h-4 rounded-sm border-gray-400 text-[#556B50] focus:ring-[#556B50]"
+                  />
+                  <span class="text-[11px] leading-tight text-[#4a4a4a]">
+                    Ao se inscrever você aceita a{" "}
+                    <a
+                      href="/politica-de-privacidade"
+                      class="underline hover:text-black"
+                    >
+                      Política de Privacidade
+                    </a>{" "}
+                    e{" "}
+                    <a href="/termos-de-uso" class="underline hover:text-black">
+                      Termos de Uso
+                    </a>.
+                  </span>
+                </label>
+              </form>
+            </div>
+
+            <div class="flex items-center gap-6 mt-6">
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] text-[#4a4a4a] font-medium tracking-wide">
+                  Plataforma:
+                </span>
+                <a
+                  href={platformLink ?? "#"}
+                  target="_blank"
+                  data-cy="platform"
+                  class="opacity-80 hover:opacity-100 transition-opacity"
+                >
+                  {platformImg && (
+                    <Image
+                      src={platformImg}
+                      alt="platform"
+                      loading="lazy"
+                      height={16}
+                      width={60}
+                      class="object-contain"
+                    />
                   )}
-                </ul>
+                </a>
               </div>
-            ))}
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] text-[#4a4a4a] font-medium tracking-wide">
+                  Managed by:
+                </span>
+                <a
+                  href={managedLink ?? "#"}
+                  target="_blank"
+                  data-cy="managed"
+                  class="opacity-80 hover:opacity-100 transition-opacity"
+                >
+                  {managedImg && (
+                    <Image
+                      src={managedImg}
+                      alt="managed"
+                      loading="lazy"
+                      height={16}
+                      width={60}
+                      class="object-contain"
+                    />
+                  )}
+                </a>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="pt-6">
-          <div class="w-full max-w-ft-1452 mx-auto grid grid-cols-4 gap-4 items-center">
-            <div class="flex flex-col gap-1 max-w-ft-348 w-full items-center border py-1 min-h-ft-51">
-              <span class="font-Poppins text-black text-xs">
-                Plataforma
-              </span>
-              <a href={platformLink ?? "#"} target="_blank" data-cy="platform">
-                {platformImg && (
-                  <Image src={platformImg} alt="platform" loading="lazy" />
-                )}
-              </a>
-            </div>
-            <div class="flex flex-col gap-1 max-w-ft-348 w-full items-center border py-1 min-h-ft-51">
-              <span class="font-Poppins text-black text-xs">
-                Managed by:
-              </span>
-              <a href={managedLink ?? "#"} target="_blank" data-cy="managed">
-                {managedImg && (
-                  <Image src={managedImg} alt="managed" loading="lazy" />
-                )}
-              </a>
-            </div>
-            <div class="flex flex-col gap-1 max-w-ft-348 w-full items-center border py-1 min-h-ft-51">
-              <span class="font-Poppins text-black text-xs">Pagamento</span>
-              <ul class="flex flex-wrap gap-2">
-                {paymentMethods.map(({ image, alt }) => (
-                  <li data-cy="payment-footer" class="payment-footer border border-base-100 rounded flex justify-center items-center">
-                    <Image src={image} alt={alt} loading="lazy" />
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div class="flex flex-col gap-1 max-w-ft-348 w-full items-center border py-1 min-h-ft-51">
-              <span class="font-Poppins text-black text-xs">
-                Redes Sociais
-              </span>
-              <ul class="flex gap-3">
-                {social.map(({ image, href, alt }) => (
-                  <li>
-                    <a href={href} data-cy="social">
-                      <Image
-                        src={image}
-                        alt={alt}
-                        loading="lazy"
-                        width={24}
-                        height={24}
-                      />
-                    </a>
-                  </li>
-                ))}
-              </ul>
+
+          {/* COLUNAS MENUS E NAVEGAÇÃO + SOCIAIS NA ÚLTIMA COLUNA */}
+          <div class="flex-1 flex justify-end w-full">
+            <div class="grid grid-cols-4 w-full max-w-[800px] gap-8">
+              {links.map(({ title, children }, index) => (
+                <div class="flex flex-col gap-4 w-full h-full">
+                  <div>
+                    <h4
+                      data-cy="title-footer"
+                      class="font-bold text-[12px] uppercase text-[#191C1F] tracking-wide mb-1"
+                    >
+                      {title}
+                    </h4>
+                    <ul class="flex flex-col gap-3">
+                      {children.map((child) =>
+                        child.isLink
+                          ? (
+                            <li>
+                              <a
+                                data-cy="footer-options"
+                                href={child.href}
+                                class="text-[13px] text-[#191C1F] hover:opacity-70 transition-opacity"
+                              >
+                                {child.title}
+                              </a>
+                            </li>
+                          )
+                          : (
+                            <li>
+                              <div
+                                id="text-footer"
+                                data-cy="text-footer"
+                                class="text-[13px] text-[#191C1F]"
+                                dangerouslySetInnerHTML={{
+                                  __html: child.content ?? "",
+                                }}
+                              />
+                            </li>
+                          )
+                      )}
+                    </ul>
+                  </div>
+
+                  {/* REDES SOCIAIS E CONTATO ALINHADOS ABAIXO DA ÚLTIMA COLUNA */}
+                  {index === links.length - 1 && (
+                    <div class="flex flex-col gap-4 w-full mt-[72px]">
+                      <h4 class="font-bold text-[12px] uppercase text-[#191C1F] tracking-wide mb-1">
+                        Redes Sociais
+                      </h4>
+                      <ul class="flex gap-3 mb-2">
+                        {social.map(({ image, href, alt }) => (
+                          <li>
+                            <a
+                              href={href}
+                              data-cy="social"
+                              class="hover:opacity-70 transition-opacity"
+                            >
+                              <Image
+                                src={image}
+                                alt={alt}
+                                loading="lazy"
+                                width={22}
+                                height={22}
+                                class="object-contain"
+                              />
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                      <div class="flex flex-col gap-2 mt-4 text-[13px] text-[#191C1F]">
+                        <a
+                          href="tel:1149352378"
+                          class="hover:opacity-70 transition-opacity"
+                        >
+                          (11) 4935-2378
+                        </a>
+                        <a
+                          href="mailto:sac@vicbeaute.com.br"
+                          class="hover:opacity-70 transition-opacity"
+                        >
+                          sac@vicbeaute.com.br
+                        </a>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </div>
-      <div
-        data-cy="text-footer-desk"
-        class="text-footer-desk text-center text-ft-10 max-w-ft-350 xl:text-xs text-black font-light pb-9 lg:max-w-[1052px] w-full mx-auto font-Poppins "
-        dangerouslySetInnerHTML={{ __html: textFooter ?? "" }}
-      />
+      <div class="hidden xl:flex w-full pt-10">
+        <div class="max-w-[1452px] w-full mx-auto px-4 lg:px-8 border-t border-[#cecece] pt-6 flex justify-between items-center pb-4">
+          <div
+            data-cy="text-footer-desk"
+            class="text-[12px] text-[#191C1F] tracking-wide opacity-80"
+            dangerouslySetInnerHTML={{ __html: textFooter ?? "" }}
+          />
+          <a
+            href={linkPrivacity ?? ""}
+            target="_blank"
+            class="hover:opacity-100 hover:underline"
+          >
+            <div
+              class="text-[12px] text-[#191C1F] tracking-wide opacity-80"
+              dangerouslySetInnerHTML={{ __html: textPrivacity ?? "" }}
+            />
+          </a>
+        </div>
+      </div>
+
+      {/* VISTA MOBILE DO COPYRIGHT (Inalterada mas escondida no desk) */}
+      <div class="xl:hidden flex flex-col gap-1 mt-4">
+        <div
+          data-cy="text-footer-desk"
+          class="text-footer-desk leading-normal text-center tracking-wider text-black-35 text-xs text-black font-medium lg:max-w-[1052px] w-full mx-auto font-Manrope"
+          dangerouslySetInnerHTML={{ __html: textFooter ?? "" }}
+        />
+        <a href={linkPrivacity ?? ""} target="_blank">
+          <div
+            class="text-footer-desk underline leading-normal text-center tracking-wider text-black-35 text-xs text-black font-medium lg:max-w-[1052px] w-full mx-auto font-Manrope"
+            dangerouslySetInnerHTML={{ __html: textPrivacity ?? "" }}
+          />
+        </a>
+      </div>
     </footer>
   );
 }

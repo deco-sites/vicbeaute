@@ -27,6 +27,9 @@ export default defineApp(async (_req, ctx) => {
 
         {/* Web Manifest */}
         <link rel="manifest" href={asset("/site.webmanifest")} />
+
+        {/* Widde Video Widget */}
+        <script type="text/javascript" async src="https://cdn.widde.io/widde.1.1.0.js?v=1.0"></script>
       </Head>
 
       {/* Rest of Preact tree */}

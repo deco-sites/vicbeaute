@@ -51,14 +51,14 @@ function ValueItem({ url, selected, label, quantity }: FilterToggleValue) {
       data-cy={label}
       href={url}
       rel="nofollow"
-      class="flex items-center bg-white h-8 border border-white rounded"
+      class="flex items-center group py-2"
     >
-      <div class="w-[10px]"></div>
-      <div class="flex items-center gap-[10px]">
-        <div aria-checked={selected} class="checkbox w-5 h-5" />
-        <span class="text-sm text-black-15">{label}</span>
-        {quantity > 0 && <span class="text-sm text-base-400">({quantity})
-        </span>}
+      <div class="flex items-center gap-[12px]">
+        {/* Nova Checkbox UI conforme Print */}
+        <div class={`w-5 h-5 flex flex-shrink-0 items-center justify-center rounded-[3px] border border-[#d4d4d4] transition-colors ${selected ? "bg-[#556B50] border-[#556B50]" : "bg-white group-hover:border-[#8a8a8a]"}`}>
+           {selected && <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>}
+        </div>
+        <span class={`text-[15px] tracking-wide ${selected ? "text-[#191C1F] font-medium" : "text-[#4a4a4a]"}`}>{label}</span>
       </div>
     </a>
   );
@@ -108,8 +108,8 @@ function FilterValues({ key, values, label }: FilterToggle) {
   const visibleValues = expanded ? values : values.slice(0, 4);
 
   return (
-    <div class="flex flex-col gap-2">
-      <ul class={clx("flex flex-wrap gap-[10px]", flexDirection)}>
+    <div class="flex flex-col gap-1 pb-4">
+      <ul class={clx("flex flex-wrap flex-col", flexDirection)}>
         {visibleValues.map((item) => {
           if (avatars) {
             return (
@@ -139,37 +139,10 @@ function FilterValues({ key, values, label }: FilterToggle) {
 }
 
 function Filters({ filters, sortOptions, url }: Props) {
-  const order = ["price", "sort", "brand", "category-2"];
-
-  const sortFilter: FilterToggle | undefined = sortOptions?.length
-    ? {
-      "@type": "FilterToggle",
-      key: "sort",
-      label: "Ordenar por",
-      quantity: 0,
-      values: sortOptions
-        .map(({ value, label }): FilterToggleValue => {
-          const currentSort = new URL(url).searchParams.get(SORT_QUERY_PARAM) ??
-            "";
-          const href = getUrl(url, value);
-          return {
-            value,
-            label: labels[label] ?? label,
-            selected: value === currentSort,
-            quantity: 0,
-            url: href,
-          };
-        })
-        .sort((a, b) => (b.selected ? 1 : 0) - (a.selected ? 1 : 0)),
-    }
-    : undefined;
-
-  const allFilters = [
-    ...filters.filter(isToggle),
-    ...(sortFilter ? [sortFilter] : []),
-  ]
-    .filter((f) => order.includes(f.key))
-    .sort((a, b) => order.indexOf(a.key) - order.indexOf(b.key));
+  // Ignoramos price (Range customizado) e sort (dropdown na tela) no novo mockup
+  const allFilters = filters
+    .filter(isToggle)
+    .filter((f) => f.key !== "price");
 
   const [openFilters, setOpenFilters] = useState<Record<string, boolean>>({});
 
@@ -181,31 +154,24 @@ function Filters({ filters, sortOptions, url }: Props) {
   };
 
   return (
-    <ul class="flex flex-col gap-6 px-5 pb-5 pt-[10px] sm:px-5">
+    <ul class="flex flex-col w-full">
       {allFilters.map((filter) => {
         const isOpen = openFilters[filter.key] !== undefined
           ? openFilters[filter.key]
-          : true;
+          : false; // O print mostra itens recolhidos por padrão na maioria
         return (
-          <li key={filter.key} class="flex flex-col gap-4">
+          <li key={filter.key} class="flex flex-col border-b border-[#E1E1E1] last:border-none">
             <button
               type="button"
               onClick={() => toggleFilter(filter.key)}
-              class="flex items-center justify-between"
+              class="flex items-center justify-between w-full py-[18px]"
             >
-              <span class="font-semibold text-xl text-black-15">
+              <span class="font-medium text-[19px] text-[#191C1F] tracking-wide">
                 {filter.label}
               </span>
-              <Icon
-                id="arrowdown"
-                width={17}
-                height={10}
-                class={clx(
-                  "transition-transform duration-200",
-                  isOpen ? "rotate-180" : "rotate-0",
-                )}
-                alt="abrir/fechar"
-              />
+              <span class="text-[#8a8a8a] text-[24px] font-light leading-none flex items-center justify-center w-6 h-6">
+                {isOpen ? "−" : "+"}
+              </span>
             </button>
 
             {isOpen && <FilterValues {...filter} />}

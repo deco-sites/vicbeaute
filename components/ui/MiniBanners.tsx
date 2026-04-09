@@ -64,11 +64,11 @@ export default function MiniBanners({ images, slider, header }: Props) {
   return (
     <div
       id={id}
-      class="flex flex-col relative container mx-auto lg:pb-14 mb-7 lg:mb-0 mt-5 lg:mt-9 gap-ft-10 xl:max-w-ft-1130"
+      class="flex flex-col relative container mx-auto lg:pb-14 mb-7 lg:mb-0 mt-5 lg:mt-9 gap-vc-10 xl:max-w-vc-1130"
     >
-      <div class="flex justify-between items-start pl-ft-15 xl:pl-[0px]">
+      <div class="flex justify-between items-start pl-vc-15 xl:pl-[0px]">
         <div class="flex flex-col w-full sm:mb-3 lg:mb-2">
-          <h2 class="text-[28px] font-bold flex lg:justify-center lg:align-center">
+          <h2 class="flex lg:justify-center lg:align-center font-Queens text-[32px] text-[#CE9680]">
             {header?.title}
           </h2>
           {header?.description && (
@@ -85,7 +85,7 @@ export default function MiniBanners({ images, slider, header }: Props) {
         )}
       </div>
 
-      <Slider class="carousel carousel-end w-full justify-between max-sm:px-4 max-lg:px-6 lg:ml-0 gap-5 xl:gap-9 px-4">
+      <Slider class="carousel carousel-end w-full justify-between max-sm:px-4 max-lg:px-6 lg:ml-0 gap-2 xl:gap-9 px-4">
         {images &&
           images.map((image, index) => (
             <Slider.Item
@@ -115,7 +115,7 @@ export default function MiniBanners({ images, slider, header }: Props) {
                   {image.caption && (
                     <figcaption
                       data-cy={`categoria-caption-${index + 1}`}
-                      class="mt-2 text-sm text-black underline"
+                      class="mt-2 text-sm text-black font-Hanken-Grotesk"
                     >
                       {image.caption}
                     </figcaption>
@@ -177,30 +177,35 @@ export default function MiniBanners({ images, slider, header }: Props) {
       )}
 
       <div
-        className={`relative flex justify-center -bottom-3 z-10 xl:flex ${
+        className={`relative flex w-full max-w-[1440px] px-5 lg:px-0 mx-auto justify-center z-10 mt-6 ${
           slider?.mobile?.dots ? "block" : "hidden"
-        } ${slider?.desktop?.dots ? "lg:block" : "lg:hidden"}`}
+        } ${slider?.desktop?.dots ? "lg:flex" : "lg:hidden"}`}
       >
         <style
           dangerouslySetInnerHTML={{
             __html: `
-              @property --dot-progress {
-                syntax: '<percentage>';
-                inherits: false;
-                initial-value: 0%;
+              .minibanners-dots-tracker [data-dot] {
+                background-color: rgba(25, 28, 31, 0.2) !important;
+                width: 100% !important;
+                height: 3px !important;
+                border-radius: 0 !important;
+                opacity: 1 !important;
+                box-shadow: none !important;
+                border: none !important;
+                outline: none !important;
+                transition: background-color 0.3s ease !important;
+              }
+              .minibanners-dots-tracker [data-dot]:disabled {
+                background-color: #455C42 !important;
               }
             `,
           }}
         />
-        <ul class="carousel justify-center items-end gap-4 z-10 overflow-visible">
+        <ul class="flex w-full gap-0 minibanners-dots-tracker">
           {images &&
             images.map((_, index) => (
-              <li class="carousel-item">
-                <Slider.Dot index={index}>
-                  <div class="w-3 h-3 rounded-full flex items-center justify-center">
-                    <div class="w-2 h-2 rounded-full" />
-                  </div>
-                </Slider.Dot>
+              <li key={index} class="carousel-item flex-1">
+                <Slider.Dot index={index} class="" />
               </li>
             ))}
         </ul>

@@ -12,7 +12,6 @@ export interface Props {
   content: {
     title?: string;
     /** @format textarea */
-    description?: string;
     form?: Form;
   };
   layout?: {
@@ -56,22 +55,17 @@ function Newsletter({ content = {}, device }: Props) {
   };
 
   return (
-    <div class="flex flex-col gap-y-3.5 bg-gray-9 w-full py-8 px-4 bg-gray-15 lg:h-[230px]">
+    <div class="flex flex-col gap-y-3.5 bg-gray-9 w-full py-10 px-4 lg:h-[230px] bg-green-5 lg:hidden">
       <div class="w-full max-w-[1130px] m-auto">
-        <div class="flex flex-col max-w-ft-337 w-full mx-auto lg:max-w-[unset] lg:mx-0 lg:w-auto items-center lg:items-start text-center lg:text-start gap-2 lg:gap-0">
+        <div class="flex flex-col max-w-vc-319 w-full lg:max-w-[unset] lg:mx-0 lg:w-auto items-center lg:items-start lg:text-start gap-2 lg:gap-0">
           {content?.title && (
-            <h4 class="flex flex-row items-center gap-x-1 lg:text-2xl text-[28px] text-gray-0 font-medium font-Poppins ">
+            <h4 class="flex flex-row items-start gap-x-1 lg:text-2xl text-[28px] text-black-25 font-medium font-Queens leading-none text-vc-32 tracking-normal">
               {content?.title}
             </h4>
           )}
-          {content?.description && (
-            <div class="text-gray-20 lg:text-sm font-normal font-Poppins text-center lg:text-start text-lg">
-              {content?.description}
-            </div>
-          )}
         </div>
 
-        <div class="flex flex-col gap-4 mt-3">
+        <div class="flex flex-col gap-4 mt-8">
           <form
             id="form-newsletter"
             class="flex flex-col gap-4 form-control relative"
@@ -79,25 +73,19 @@ function Newsletter({ content = {}, device }: Props) {
           >
             <div class="lg:grid justify-between gap-4 grid-cols-[37%_37%_23%] full-phone:grid-cols-1 lg:items-end flex flex-col">
               <div class="form-group relative">
-                <label class="font-Poppins text-xs text-black-10 absolute top-[-8px] left-3 bg-gray-15 w-[115px] justify-center flex">
-                  {content?.form?.placeholder || "Digite seu nome"}
-                </label>
                 <input
                   name="name"
-                  placeholder="Ex: Maria Silveira"
-                  class="w-full h-[38px] text-base-content outline-none px-3 placeholder:text-gray-20 bg-transparent border border-black-10 border-opacity-50 placeholder:text-xs font-black-10 placeholder:font-Poppins"
+                  placeholder="Digite seu nome"
+                  class="w-full h-vc-45 text-base-content outline-none placeholder:text-black-25 bg-transparent border-b border-black-35 placeholder:text-sm font-black-10 placeholder:font-Manrope placeholder:font-medium"
                   required
                 />
               </div>
 
               <div class="form-group peer relative">
-                <label class="font-Poppins text-xs text-black-10 absolute top-[-8px] left-3 bg-gray-15 w-[115px] justify-center flex">
-                  {content?.form?.placeholder || "Digite seu e-mail"}
-                </label>
                 <input
                   name="email"
-                  placeholder="Ex: maria@mail.com"
-                  class="w-full h-[38px] text-base-content outline-none px-3 placeholder:text-gray-20 bg-transparent border border-black-10 border-opacity-50 placeholder:text-xs font-black-10 placeholder:font-Poppins"
+                  placeholder="Digite seu e-mail"
+                  class="w-full h-vc-45 text-base-content outline-none placeholder:text-black-25 bg-transparent border-b border-black-35 placeholder:text-sm font-black-10 placeholder:font-Manrope placeholder:font-medium"
                   type="email"
                   required
                 />
@@ -115,7 +103,7 @@ function Newsletter({ content = {}, device }: Props) {
                     </label>
                     <label
                       for="aceite-mobile"
-                      class="text-sm cursor-pointer"
+                      class="font-Manrope text-xs leading-normal tracking-wider  cursor-pointer text-black-25 font-medium"
                       dangerouslySetInnerHTML={{
                         __html: content?.form?.helpText,
                       }}
@@ -139,19 +127,21 @@ function Newsletter({ content = {}, device }: Props) {
                   <label
                     for="aceite"
                     class="text-sm cursor-pointer"
-                    dangerouslySetInnerHTML={{ __html: content?.form?.helpText }}
+                    dangerouslySetInnerHTML={{
+                      __html: content?.form?.helpText,
+                    }}
                   />
                 </div>
               )}
 
               <button
                 type="submit"
-                class={`disabled:loading h-10 min-h-10 font-normal text-xs rounded w-full bg-gray-25 text-white font-Poppins lg:max-w-ft-200 ${
+                class={`disabled:loading min-h-10 text-sm w-full bg-gray-25 text-white lg:max-w-vc-200 flex max-w-vc-169 h-vc-45 bg-green-20 text-white-5 justify-center items-center rounded-full font-Manrope font-bold mt-6 tracking-wider ${
                   content?.form?.buttonColor ?? "btn"
                 }`}
                 disabled={loading}
               >
-                {content?.form?.buttonText || "Cadastrar"}
+                {content?.form?.buttonText || "JUNTE-SE A NÓS"}
               </button>
             </div>
 

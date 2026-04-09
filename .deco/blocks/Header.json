@@ -13,23 +13,108 @@
       }
     }
   },
-  "alerts": [],
+  "alerts": [
+    {
+      "0": "F",
+      "1": "r",
+      "2": "e",
+      "3": "t",
+      "4": "e",
+      "5": " ",
+      "6": "g",
+      "7": "r",
+      "8": "á",
+      "9": "t",
+      "10": "i",
+      "11": "s",
+      "12": " ",
+      "13": "a",
+      "14": " ",
+      "15": "p",
+      "16": "a",
+      "17": "r",
+      "18": "t",
+      "19": "i",
+      "20": "r",
+      "21": " ",
+      "22": "d",
+      "23": "e",
+      "24": " ",
+      "25": "R",
+      "26": "$",
+      "27": "1",
+      "28": "9",
+      "29": "0",
+      "text": "Frete grátis a partir de R$ 190",
+      "imageSrc": {
+        "src": "https://assets.decocache.com/vicbeaute/7473ee32-d7cf-4033-94b1-9ccaa55ac6c5/Icones.png",
+        "alt": "Topbar message"
+      }
+    },
+    {
+      "0": "F",
+      "1": "r",
+      "2": "e",
+      "3": "t",
+      "4": "e",
+      "5": " ",
+      "6": "g",
+      "7": "r",
+      "8": "á",
+      "9": "t",
+      "10": "i",
+      "11": "s",
+      "12": " ",
+      "13": "a",
+      "14": " ",
+      "15": "p",
+      "16": "a",
+      "17": "r",
+      "18": "t",
+      "19": "i",
+      "20": "r",
+      "21": " ",
+      "22": "d",
+      "23": "e",
+      "24": " ",
+      "25": "R",
+      "26": "$",
+      "27": "1",
+      "28": "9",
+      "29": "0",
+      "text": "Frete grátis a partir de R$ 190",
+      "imageSrc": {
+        "src": "https://assets.decocache.com/vicbeaute/7473ee32-d7cf-4033-94b1-9ccaa55ac6c5/Icones.png",
+        "alt": "Topbar message"
+      }
+    }
+  ],
   "logo": {
     "src": "https://assets.decocache.com/easycommerce/0aeb15fe-1017-425c-842a-0f975177a3c7/Logo---Mercado.png",
     "alt": "Deco Storefront",
     "width": 160,
     "height": 40,
     "desktop": {
-      "src": "https://assets.decocache.com/easycommerce/877dad73-d42c-40e1-8536-2560adc710fc/Logo-(2).png",
+      "src": "https://assets.decocache.com/vicbeaute/be6d384f-df1c-4029-a5c6-3d92f29b9905/Vector.png",
       "alt": "Logo",
-      "width": 223,
-      "height": 50
+      "width": 168,
+      "height": 24
     },
     "mobile": {
-      "src": "https://assets.decocache.com/easycommerce/0aeb15fe-1017-425c-842a-0f975177a3c7/Logo---Mercado.png",
+      "src": "https://assets.decocache.com/vicbeaute/79701bbe-9b68-4901-a8e3-3d6261e966a2/Logo.png",
       "alt": "Logo Mobile",
-      "width": 134,
-      "height": 30
+      "width": 152,
+      "height": 22
+    },
+    "mobileDark": {
+      "src": "https://assets.decocache.com/vicbeaute/0dd9bb1a-4197-49d6-bfbc-1d6a987f4777/Logo.png",
+      "alt": "logo"
+    },
+    "desktopDark": {
+      "src": "https://assets.decocache.com/vicbeaute/152e31d3-3f84-4e64-8251-d9c38a91a428/Vector.png",
+      "alt": "Logo Vic",
+      "width": 168,
+      "height": 24
     }
   },
   "navItems": [
@@ -37,70 +122,350 @@
       "children": [
         {
           "image": [],
-          "children": [],
+          "children": [
+            {
+              "children": [],
+              "name": "Subcategoria 1",
+              "url": "aa"
+            },
+            {
+              "children": [],
+              "name": "aaaaaa"
+            }
+          ],
           "name": "Lorem Ipsum",
           "url": "/lorem-ipsum"
         },
         {
           "image": [],
-          "children": [],
-          "name": "Lorem Ipsum",
+          "children": [
+            {
+              "children": [],
+              "name": "aaaaaaaaaaa"
+            }
+          ],
           "url": "/lorem-ipsum"
         },
         {
           "children": [],
-          "image": null,
           "name": "Lorem Ipsum",
           "url": "/lorem-ipsum"
-        },
-        {
-          "children": [],
-          "image": null,
-          "name": "Lorem Ipsum",
-          "url": "/lorem-ipsum"
-        },
-        {
-          "children": [],
-          "image": null,
-          "name": "Lorem Ipsum",
-          "url": "/lorem-ipsum",
-          "identifier": "highlight"
         }
       ],
       "@type": "SiteNavigationElement",
-      "url": "/azeites-e-vinagres",
-      "name": "Azeites e Vinagres",
-      "image": null
+      "url": "/novos",
+      "name": "Novos",
+      "columns": [
+        {
+          "links": [
+            {
+              "label": "Mais vendidos",
+              "url": "/mais-vendidos"
+            },
+            {
+              "label": "Lançamentos",
+              "url": "/lancamentos"
+            },
+            {
+              "label": "Coleções",
+              "url": "/colecoes"
+            },
+            {
+              "label": "Kits",
+              "url": "#"
+            },
+            {
+              "label": "Ver Todos",
+              "url": "#",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "links": [
+            {
+              "label": "Corretivo",
+              "url": "#"
+            },
+            {
+              "label": "Delineador",
+              "url": "#"
+            },
+            {
+              "label": "Lapiseira",
+              "url": "#"
+            },
+            {
+              "label": "Máscara de Cílios",
+              "url": "#"
+            },
+            {
+              "label": "Máscara de Sobrancelha",
+              "url": "#"
+            },
+            {
+              "label": "Stick Brilhoso",
+              "url": "Stick Tudo"
+            },
+            {
+              "label": "Stick Tudo",
+              "url": "#"
+            }
+          ],
+          "title": "Produtos"
+        },
+        {
+          "links": [
+            {
+              "label": "Batom",
+              "url": "/batom"
+            },
+            {
+              "label": "Gloss",
+              "url": "/gloss"
+            }
+          ],
+          "title": "Produtos"
+        }
+      ],
+      "cards": [
+        {
+          "image": "https://assets.decocache.com/vicbeaute/832e38a3-0b54-44b4-b6a7-a23b69835942/Small_Banner_Desktop_ad6c282e-dd07-437a-bd25-581cd15579a9.jpg.png",
+          "title": "Skulls no are",
+          "description": "Production feature too email keep pushback skulls diligence our let's. Speed blue dear leverage can't teams. Old submit on circle.",
+          "buttonText": "Explorar",
+          "url": "/explorar"
+        },
+        {
+          "image": "https://assets.decocache.com/vicbeaute/832e38a3-0b54-44b4-b6a7-a23b69835942/Small_Banner_Desktop_ad6c282e-dd07-437a-bd25-581cd15579a9.jpg.png",
+          "title": "Skulls no are",
+          "description": "Production feature too email keep pushback skulls diligence our let's. Speed blue dear leverage can't teams. Old submit on circle.",
+          "buttonText": "Explorar",
+          "url": "/explorar"
+        }
+      ]
     },
     {
       "@type": "SiteNavigationElement",
-      "url": "/doces-e-chocolates",
-      "name": "Doces e Chocolates",
-      "children": [],
-      "image": null
+      "url": "/boca",
+      "name": "Boca",
+      "children": []
     },
     {
       "@type": "SiteNavigationElement",
-      "url": "/mercearia",
-      "name": "Mercearia",
-      "children": [],
-      "image": null
+      "url": "/olhos",
+      "name": "Olhos",
+      "children": []
     },
     {
       "@type": "SiteNavigationElement",
-      "url": "/enlatados",
-      "name": "Enlatados",
-      "children": [],
-      "image": null
+      "url": "/faces",
+      "name": "Faces",
+      "children": []
     },
     {
       "@type": "SiteNavigationElement",
-      "url": "/ofertas",
-      "name": "Ofertas",
+      "url": "/kits",
+      "name": "Kits",
+      "children": []
+    },
+    {
       "children": [],
-      "image": null,
-      "identifier": "highlight"
+      "name": "Mais"
     }
   ],
-  "loading": "eager"
+  "loading": "eager",
+  "alertInterval": 3,
+  "miniBanners": {
+    "images": [
+      {
+        "desktop": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "desktopWidth": 100,
+        "desktopHeight": 100,
+        "mobile": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "mobileWidth": 100,
+        "mobileHeight": 100,
+        "alt": "Iluminador Image",
+        "href": "#",
+        "caption": "Iluminador"
+      },
+      {
+        "desktop": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "desktopWidth": 100,
+        "desktopHeight": 100,
+        "mobile": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "mobileWidth": 100,
+        "mobileHeight": 100,
+        "alt": "Iluminador Image",
+        "href": "#",
+        "caption": "Iluminador"
+      },
+      {
+        "desktop": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "desktopWidth": 100,
+        "desktopHeight": 100,
+        "mobile": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "mobileWidth": 100,
+        "mobileHeight": 100,
+        "alt": "Iluminador Image",
+        "href": "#",
+        "caption": "Iluminador"
+      },
+      {
+        "desktop": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "desktopWidth": 100,
+        "desktopHeight": 100,
+        "mobile": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "mobileWidth": 100,
+        "mobileHeight": 100,
+        "alt": "Iluminador Image",
+        "href": "#",
+        "caption": "Iluminador"
+      },
+      {
+        "desktop": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "desktopWidth": 100,
+        "desktopHeight": 100,
+        "mobile": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "mobileWidth": 100,
+        "mobileHeight": 100,
+        "alt": "Iluminador Image",
+        "href": "#",
+        "caption": "Iluminador"
+      },
+      {
+        "desktop": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "desktopWidth": 100,
+        "desktopHeight": 100,
+        "mobile": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "mobileWidth": 100,
+        "mobileHeight": 100,
+        "alt": "Iluminador Image",
+        "href": "#",
+        "caption": "Iluminador"
+      },
+      {
+        "desktop": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "desktopWidth": 100,
+        "desktopHeight": 100,
+        "mobile": "https://assets.decocache.com/vicbeaute/470670c0-0cc8-49df-8a3a-360781c40e74/Rectangle-4.png",
+        "mobileWidth": 100,
+        "mobileHeight": 100,
+        "alt": "Iluminador Image",
+        "href": "#",
+        "caption": "Iluminador"
+      }
+    ],
+    "slider": {
+      "mobile": {
+        "dots": true
+      }
+    }
+  },
+  "drawerShelf": {
+    "__resolveType": "site/sections/Product/ProductShelf.tsx",
+    "arrows": false,
+    "dots": true,
+    "products": {
+      "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+      "props": {
+        "sort": "price:desc",
+        "collection": "141",
+        "count": 8
+      }
+    },
+    "title": "Os mais queridos"
+  },
+  "minicartShelf": {
+    "__resolveType": "site/sections/Product/ProductShelf.tsx",
+    "arrows": true,
+    "products": {
+      "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+      "props": {
+        "sort": "price:desc",
+        "collection": "141",
+        "count": 8
+      }
+    },
+    "dots": true,
+    "title": "Preferidos da semana"
+  },
+  "minicartCategories": {
+    "__resolveType": "site/sections/Category/MinicartCategories.tsx",
+    "items": [
+      {
+        "image": "https://assets.decocache.com/vicbeaute/c637f29d-d92a-4729-876e-1e4d0819cf0d/Rectangle-4.png",
+        "href": "/iluminador",
+        "label": "Iluminador"
+      },
+      {
+        "image": "https://assets.decocache.com/vicbeaute/ed711ba8-102b-41f3-989f-1253f6e49753/Rectangle-4.png",
+        "href": "#",
+        "label": "Lip Balm"
+      },
+      {
+        "image": "https://assets.decocache.com/vicbeaute/9274f308-ec7a-4b39-86f6-fc1cf01ec111/Rectangle-4.png",
+        "href": "#",
+        "label": "Blush"
+      },
+      {
+        "image": "https://assets.decocache.com/vicbeaute/1c3abc14-3f72-4424-854d-429503575291/Rectangle-4.png",
+        "href": "#",
+        "label": "Base"
+      },
+      {
+        "image": "https://assets.decocache.com/vicbeaute/78392796-3ce5-4294-bebf-5338a712a25d/Rectangle-4.png",
+        "href": "#",
+        "label": "Corretivo"
+      },
+      {
+        "image": "https://assets.decocache.com/vicbeaute/c33f160d-fcc7-4b4e-9332-3ceff82ee0f8/Rectangle-4.png",
+        "href": "#",
+        "label": "Iluminador"
+      }
+    ],
+    "dots": true
+  },
+  "mobileMenuCategories": {
+    "__resolveType": "site/sections/Category/MinicartCategories.tsx",
+    "dots": true,
+    "items": [
+      {
+        "image": "https://assets.decocache.com/vicbeaute/c637f29d-d92a-4729-876e-1e4d0819cf0d/Rectangle-4.png",
+        "href": "/iluminador",
+        "label": "Iluminador"
+      },
+      {
+        "image": "https://assets.decocache.com/vicbeaute/ed711ba8-102b-41f3-989f-1253f6e49753/Rectangle-4.png",
+        "href": "#",
+        "label": "Lip Balm"
+      },
+      {
+        "image": "https://assets.decocache.com/vicbeaute/9274f308-ec7a-4b39-86f6-fc1cf01ec111/Rectangle-4.png",
+        "href": "#",
+        "label": "Blush"
+      },
+      {
+        "image": "https://assets.decocache.com/vicbeaute/1c3abc14-3f72-4424-854d-429503575291/Rectangle-4.png",
+        "label": "Base",
+        "href": "#"
+      },
+      {
+        "image": "https://assets.decocache.com/vicbeaute/78392796-3ce5-4294-bebf-5338a712a25d/Rectangle-4.png",
+        "label": "Corretivo",
+        "href": "#"
+      },
+      {
+        "image": "https://assets.decocache.com/vicbeaute/c33f160d-fcc7-4b4e-9332-3ceff82ee0f8/Rectangle-4.png",
+        "href": "/iluminador",
+        "label": "Iluminador"
+      }
+    ]
+  },
+  "mobileMenuBanner": {
+    "src": "https://assets.decocache.com/vicbeaute/7ef651c2-9aba-41af-8843-191d3403d596/Frame-1984078329.png",
+    "alt": "Brinde",
+    "width": 335,
+    "height": 70
+  }
 }

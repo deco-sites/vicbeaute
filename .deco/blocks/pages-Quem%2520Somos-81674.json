@@ -8,21 +8,21 @@
     {
       "__resolveType": "site/sections/Content/BannerInstitutional.tsx",
       "mobile": {
-        "image": "https://assets.decocache.com/easycommerce/79b8eb9f-4737-4459-8d66-d30661d91e3b/Group-6423.png",
+        "image": "https://assets.decocache.com/vicbeaute/3c56cbe3-7e7e-42db-a18d-b70e3816637b/Rectangle-1293-(1).png",
         "href": "/",
         "alt": "Banner Institucional",
         "height": 500,
         "width": 375
       },
       "tablet": {
-        "image": "https://assets.decocache.com/easycommerce/b879f6e2-27c1-4f31-9237-0567cf5948b0/Rectangle-3706.png",
+        "image": "https://assets.decocache.com/vicbeaute/ba38caad-f2aa-4e48-b71c-733676f03e4d/Rectangle-1293.png",
         "href": "/",
         "alt": "Banner Institucional",
         "width": 1920,
         "height": 496
       },
       "desktop": {
-        "image": "https://assets.decocache.com/easycommerce/b879f6e2-27c1-4f31-9237-0567cf5948b0/Rectangle-3706.png",
+        "image": "https://assets.decocache.com/vicbeaute/ba38caad-f2aa-4e48-b71c-733676f03e4d/Rectangle-1293.png",
         "href": "/",
         "alt": "Banner Institucional",
         "width": 1920,
@@ -31,7 +31,7 @@
     },
     {
       "__resolveType": "site/sections/Content/InstitutionalMain.tsx",
-      "pageTitle": "Quem Somos",
+      "pageTitle": "Sobre a Vic Beauté",
       "institutionalMenu": [
         {
           "menuItem": "Política de Privacidade",
@@ -50,7 +50,175 @@
           "menuLink": "/quem-somos"
         }
       ],
-      "institutionalText": "<p><span>Sit purus eu sollicitudin dolor ultrices massa. At sapien euismod nunc bibendum aliquam ornare. Netus suspendisse eget malesuada diam </span><br><span>eget amet massa. Pellentesque viverra accumsan viverra congue ut facilisis suspendisse ac dui. Elementum duis magna sit sit. Lacus parturient amet </span><br><span>nulla sed eu. </span><br><br><span>Ac sed vehicula tincidunt diam et nibh sagittis rhoncus eleifend. Odio felis blandit vel tristique adipiscing tellus dignissim. Tellus eget tempor sagittis lorem eleifend placerat urna. Dolor turpis egestas iaculis amet cursus phasellus auctor feugiat. Amet adipiscing cras dui diam. Dictumst eget pulvinar ultrices </span><br><span>non mi dui tempus.</span><br><br><span>Quis suspendisse euismod sagittis magna viverra proin ac odio. Neque egestas tortor eget non aliquam elementum. Arcu purus auctor porta ultricies neque interdum. Viverra ultricies cras interdum risus amet congue integer in risus. Etiam mi eget nulla id blandit luctus. Ipsum ornare ipsum nulla habitant placerat. Cursus vitae velit lacinia lacus aliquet pellentesque. In donec nec ullamcorper ullamcorper</span><br><span>urna mauris mi lobortis.</span><br><br><span> Tristique pellentesque ut sit et purus facilisis. Massa tincidunt tincidunt dignissim hendrerit interdum.</span></p>"
+      "institutionalText": "<p><span style=\"font-size: 16px\">Vic Beauté é uma marca de maquiagem brasileira criada pela jornalista e empresária Vic Ceridono, que tem mais de 20 anos de experiência, com o propósito de simplificar a relação das pessoas com a beleza.</span></p><p></p><p><span style=\"font-size: 16px\">Sua extensa bagagem foi traduzida em uma marca pensada para a vida real, que combinasofisticação,praticidade e autenticidade. Os produtos são desenvolvidos nos mínimos detalhes — das fórmulas e texturas às embalagens e cores.</span></p><p><br><span style=\"font-size: 16px\">Com design inteligente, alta performance e resultados intuitivos, a Vic Beauté oferece maquiagem fácil de usar e difícil de errar, que se adapta a diferentes rotinas, estilos e momentos.</span></p><p><br><span style=\"font-size: 16px\">A marca valoriza a beleza real, o cuidado e a liberdade de escolha, traduzindo o conceito de sofisticação acessível: produtos de alta qualidade, desenvolvidos de forma independente, com foco em experiência, conforto e versatilidade.</span></p>"
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Institutional/imageiconinstitucionla.tsx",
+        "mobile": {
+          "image": "https://assets.decocache.com/vicbeaute/e56ed356-61af-433e-a18e-1f15b84a14c8/quotationmark.png",
+          "width": 26,
+          "height": 20,
+          "alt": "/",
+          "href": "/"
+        },
+        "desktop": {
+          "image": "https://assets.decocache.com/vicbeaute/e56ed356-61af-433e-a18e-1f15b84a14c8/quotationmark.png",
+          "href": "/",
+          "alt": " /",
+          "width": 20,
+          "height": 20
+        },
+        "tablet": {
+          "image": "https://assets.decocache.com/vicbeaute/e56ed356-61af-433e-a18e-1f15b84a14c8/quotationmark.png",
+          "alt": "/",
+          "href": "/",
+          "width": 26,
+          "height": 20
+        },
+        "title": "Maquiagem fácil de usar, dificil de errar.",
+        "secondImage": {
+          "desktop": {
+            "image": "https://assets.decocache.com/vicbeaute/a37263ac-fa87-40a4-afe0-e3ee3cd2719e/quotationmark2.png",
+            "href": "/",
+            "alt": "/",
+            "width": 26,
+            "height": 20
+          },
+          "mobile": {
+            "href": "/",
+            "alt": "/",
+            "width": 26,
+            "height": 20,
+            "image": "https://assets.decocache.com/vicbeaute/a37263ac-fa87-40a4-afe0-e3ee3cd2719e/quotationmark2.png"
+          },
+          "tablet": {
+            "href": "/",
+            "alt": "/",
+            "width": 26,
+            "height": 20,
+            "image": "https://assets.decocache.com/vicbeaute/a37263ac-fa87-40a4-afe0-e3ee3cd2719e/quotationmark2.png"
+          }
+        },
+        "firstImage": {
+          "mobile": {
+            "image": "https://assets.decocache.com/vicbeaute/e56ed356-61af-433e-a18e-1f15b84a14c8/quotationmark.png",
+            "href": "/",
+            "alt": "/",
+            "width": 26,
+            "height": 20
+          },
+          "tablet": {
+            "href": "/",
+            "alt": "/",
+            "width": 26,
+            "height": 20,
+            "image": "https://assets.decocache.com/vicbeaute/e56ed356-61af-433e-a18e-1f15b84a14c8/quotationmark.png"
+          },
+          "desktop": {
+            "href": "/",
+            "alt": "/",
+            "width": 26,
+            "height": 20,
+            "image": "https://assets.decocache.com/vicbeaute/e56ed356-61af-433e-a18e-1f15b84a14c8/quotationmark.png"
+          }
+        },
+        "text": "Maquiagem fácil de usar, difícil de errar."
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Institutional/Lipimageinstitutional.tsx",
+        "mobile": {
+          "image": "https://assets.decocache.com/vicbeaute/a328aac6-13ef-4c8d-b0ba-15704d2bcdbd/Rectangle-3776.png",
+          "alt": "/",
+          "href": "/",
+          "width": 375,
+          "height": 150
+        },
+        "desktop": {
+          "image": "https://assets.decocache.com/vicbeaute/a328aac6-13ef-4c8d-b0ba-15704d2bcdbd/Rectangle-3776.png",
+          "href": "/",
+          "alt": "/",
+          "width": 375,
+          "height": 150
+        },
+        "tablet": {
+          "image": "https://assets.decocache.com/vicbeaute/a328aac6-13ef-4c8d-b0ba-15704d2bcdbd/Rectangle-3776.png",
+          "href": "/",
+          "alt": "/",
+          "width": 375,
+          "height": 150
+        }
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Institutional/Cardinstitutional.tsx",
+        "title": "Vic Ceridono",
+        "text": "<p>“Eu sempre acreditei no poder transformador da maquiagem para a autoconfiança. Ao longo dos meus 20 anos de carreira, pude ver o impacto que a beleza tem na vida das pessoas. Os maiores desafios para as mulheres se maquiarem são a falta de tempo e de experiência, e o propósito da Vic Beauté é criar produtos que fazem parte do dia a dia, trazendo praticidade ou até resolvendo um problema que ela nem sabia que tinha. E lindos, para embelezar sua bancada ou exibir por aí!”</p>"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Institutional/Imagecardinstitutional.tsx",
+        "firstImage": {
+          "mobile": {
+            "image": "https://assets.decocache.com/vicbeaute/735eb8d5-bb3d-450c-a92a-f62d202d3ce6/Rectangle-3776-(1).png",
+            "href": "/",
+            "alt": "/",
+            "width": 250,
+            "height": 250
+          },
+          "tablet": {}
+        },
+        "secondImage": {
+          "mobile": {
+            "image": "https://assets.decocache.com/vicbeaute/bd98bd3c-78e7-4ad3-b75b-668200052249/Rectangle-3778.png",
+            "href": "/",
+            "alt": "/",
+            "width": 250,
+            "height": 250
+          }
+        },
+        "thirdImage": {
+          "mobile": {
+            "image": "https://assets.decocache.com/vicbeaute/14a74ee4-e4c8-4754-adff-f098130feb0a/Rectangle-3777.png",
+            "alt": "/"
+          }
+        },
+        "fourthImage": {
+          "mobile": {
+            "image": "https://assets.decocache.com/vicbeaute/8cabd33b-9245-46ba-a4a6-36c5860fc93c/Rectangle-3779.png"
+          }
+        }
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Institutional/Wherefindinstitutional.tsx",
+        "title": "Vic",
+        "text": "<h2></h2>",
+        "pageTitle": "vic",
+        "institutionalText": "<p><span style=\"font-size: 18pt\">Nossos produtos</span></p>",
+        "secondInstitutionalText": "<p><span style=\"font-size: 36pt\">Onde encontrar</span></p>",
+        "dynamicImage": {
+          "mobile": {
+            "image": "https://assets.decocache.com/vicbeaute/82d2eb23-8214-44e2-9142-b3450ba8990a/Rectangle-3780.png",
+            "alt": "/"
+          }
+        },
+        "finalText": "<p><span style=\"font-size: 12pt\">Em nossos quiosques e parceiros, você pode descobrir de perto a praticidade e multifuncionalidade dos nossos produtos. Explore cores, texturas, teste suas combinações favoritas, receba dicas exclusivas da nossa equipe e leve tudo o que vai realçar a sua beleza natural para casa na hora.</span></p>",
+        "dynamicButton": {
+          "label": "Ver endereços",
+          "link": "/"
+        }
+      }
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",

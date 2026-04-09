@@ -5,14 +5,10 @@
     "channelPrivacy": "public"
   },
   "platform": "vtex",
-  "account": "vicbeaute",
-  "publicUrl": "https://vicbeaute.myvtex.com/",
+  "account": "vbeaute",
+  "publicUrl": "https://vbeaute.myvtex.com/",
   "salesChannel": "1",
   "cachedSearchTerms": {
-    "terms": {
-      "searches": [],
-      "products": null
-    },
-    "extraTerms": []
+    "terms": {}
   }
 }
