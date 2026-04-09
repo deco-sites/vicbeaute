@@ -6,7 +6,7 @@
   },
   "platform": "vtex",
   "account": "vbeaute",
-  "publicUrl": "https://vbeaute.myvtex.com/",
+  "publicUrl": "vbeaute.myvtex.com",
   "salesChannel": "1",
   "cachedSearchTerms": {
     "terms": {}
