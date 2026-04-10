@@ -1,1 +1,1 @@
-export { default } from "../../components/Institutional/imagecardinstitutional.tsx";
+export { default } from "../../components/Institutional/Imagecardinstitutional.tsx";
