@@ -67,14 +67,17 @@ const Wherefindinstitutional = (
 
     if (!currentImage?.image) return null;
 
+    const isDesktop = device === "desktop";
+
     return (
-      <a href={currentImage.href || "#"} class="block w-full h-full">
+      <a href={currentImage.href || "#"} class={isDesktop ? "block" : "block w-full h-full"}>
         <img
           alt={currentImage.alt}
           src={currentImage.image}
-          width={currentImage.width}
-          height={currentImage.height}
-          class="w-full h-auto object-cover"
+          width={isDesktop ? 640 : currentImage.width}
+          height={isDesktop ? 550 : currentImage.height}
+          class={isDesktop ? "object-cover" : "w-full h-auto object-cover"}
+          style={isDesktop ? { width: '640px', height: '550px', minWidth: '640px' } : {}}
         />
       </a>
     );

@@ -20,16 +20,21 @@ export interface Props {
   firstImage: ImageGroup;
   secondImage: ImageGroup;
   thirdImage: ImageGroup;
-  fourthImage: ImageGroup;
+  /** @title Quarta Imagem (Apenas Mobile/Tablet) */
+  fourthImage: {
+    mobile: ImageDeviceProps;
+    tablet: ImageDeviceProps;
+  };
   text?: string;
 }
 
 function ImageCardInstitutional({ firstImage, secondImage, thirdImage, fourthImage, text }: Props) {
   const device = useDevice();
 
-  const renderImageGroup = (imgGroup: ImageGroup) => {
+  const renderImageGroup = (imgGroup: { mobile: ImageDeviceProps; tablet: ImageDeviceProps; desktop?: ImageDeviceProps }) => {
     if (!imgGroup) return null;
     
+<<<<<<< HEAD
     // Auto-fallback: escolhe a melhor imagem disponível se a requirida estiver vazia
     let activeProps = imgGroup.mobile;
     if (device === "desktop" && imgGroup.desktop?.image) activeProps = imgGroup.desktop;
@@ -51,6 +56,51 @@ function ImageCardInstitutional({ firstImage, secondImage, thirdImage, fourthIma
         />
       </a>
     );
+=======
+    if (device === "desktop" && imgGroup.desktop) {
+      return (
+        <a href={imgGroup.desktop.href || "#"} class="block w-full h-full" draggable={false}>
+          <img
+            alt={imgGroup.desktop.alt}
+            src={imgGroup.desktop.image}
+            width={imgGroup.desktop.width}
+            height={imgGroup.desktop.height}
+            class="w-full h-full object-cover select-none"
+            draggable={false}
+          />
+        </a>
+      );
+    }
+    if (device === "tablet" && imgGroup.tablet) {
+      return (
+        <a href={imgGroup.tablet.href || "#"} class="block w-full h-full" draggable={false}>
+          <img
+            alt={imgGroup.tablet.alt}
+            src={imgGroup.tablet.image}
+            width={imgGroup.tablet.width}
+            height={imgGroup.tablet.height}
+            class="w-full h-full object-cover select-none"
+            draggable={false}
+          />
+        </a>
+      );
+    }
+    if (device === "mobile" && imgGroup.mobile) {
+      return (
+        <a href={imgGroup.mobile.href || "#"} class="block w-full h-full" draggable={false}>
+          <img
+            alt={imgGroup.mobile.alt}
+            src={imgGroup.mobile.image}
+            width={imgGroup.mobile.width}
+            height={imgGroup.mobile.height}
+            class="w-full h-full object-cover select-none"
+            draggable={false}
+          />
+        </a>
+      );
+    }
+    return null;
+>>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
   };
 
   return (
@@ -61,7 +111,7 @@ function ImageCardInstitutional({ firstImage, secondImage, thirdImage, fourthIma
       `}} />
 
       {text && (
-        <h2 class="my-[10px] max-w-[381px] h-fit leading-[32px] text-[32px] text-[#CE9680] text-10 font-Queens text-center px-3">
+        <h2 class="my-[10px] max-w-[381px] h-fit leading-[32px] text-[32px] text-[#CE9680] md:text-[#4D5D49] text-10 font-Queens text-center px-3">
           {text}
         </h2>
       )}
@@ -86,18 +136,83 @@ function ImageCardInstitutional({ firstImage, secondImage, thirdImage, fourthIma
         </div>
       </div>
 
+      {/* Script para arrastar com o mouse sem precisar tornar a página inteira interativa */}
+      <script dangerouslySetInnerHTML={{
+        __html: `
+        document.addEventListener("DOMContentLoaded", () => {
+          document.querySelectorAll('.drag-carousel').forEach(slider => {
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+            let isDragging = false;
+            let dragThreshold = 5;
+
+            slider.addEventListener('mousedown', (e) => {
+              isDown = true;
+              isDragging = false;
+              startX = e.pageX - slider.offsetLeft;
+              scrollLeft = slider.scrollLeft;
+              slider.style.cursor = 'grabbing';
+              slider.style.scrollSnapType = 'none'; // Desabilita trava dura durante o arraste
+            });
+            slider.addEventListener('mouseleave', () => { 
+              isDown = false; 
+              slider.style.cursor = 'grab';
+              slider.style.scrollSnapType = 'x mandatory'; // Restaura trava suave
+            });
+            slider.addEventListener('mouseup', () => { 
+              isDown = false; 
+              slider.style.cursor = 'grab';
+              slider.style.scrollSnapType = 'x mandatory'; // Restaura trava suave
+            });
+            slider.addEventListener('mousemove', (e) => {
+              if(!isDown) return;
+              e.preventDefault();
+              
+              const x = e.pageX - slider.offsetLeft;
+              const walk = (x - startX) * 2;
+              
+              if (Math.abs(walk) > dragThreshold) {
+                isDragging = true;
+              }
+              
+              slider.scrollLeft = scrollLeft - walk;
+            });
+
+            // Evita que as fotos sejam "clicadas" (agindo como link) ao terminar um arrasto de mouse.
+            slider.addEventListener('click', (e) => {
+              if (isDragging) {
+                  e.preventDefault();
+                  e.stopImmediatePropagation();
+              }
+            }, true);
+          });
+        });
+        `
+      }} />
+
       {/* DESKTOP: Carrossel 1 Linha (Scroll) */}
-      <div class="hidden md:flex overflow-x-auto w-full gap-[20px] mt-[40px] px-[10vw] hide-scrollbar snap-x snap-mandatory">
-        {[firstImage, secondImage, thirdImage, fourthImage].map((imgProps, i, arr) => {
+      <div 
+        class="drag-carousel hidden md:flex overflow-x-auto w-full gap-[20px] mt-[40px] px-0 hide-scrollbar snap-x snap-mandatory"
+      >
+        {/* Parede Invisível NATIVA do Flexbox (Força a foto pra direita garantindo os 80px livre de Tailwind) */}
+        <div class="flex-shrink-0 w-[60px] h-[1px] pointer-events-none snap-start" />
+        
+        {[firstImage, secondImage, thirdImage].map((imgProps, i, arr) => {
           if (!imgProps) return null;
           const isLast = i === arr.length - 1;
           return (
-            <div 
-               key={i} 
-               class={`flex-shrink-0 w-[40vw] max-w-[450px] aspect-square snap-center overflow-hidden ${isLast ? 'pr-[10vw] box-content' : ''}`}
-            >
-              {renderImageGroup(imgProps)}
-            </div>
+            <>
+              <div 
+                 key={i} 
+                 class="flex-shrink-0 aspect-square snap-start overflow-hidden"
+                 style={{ width: '500px', height: '500px' }}
+              >
+                {renderImageGroup(imgProps)}
+              </div>
+              {/* Espaçador rígido fantasma apenas no último item para garantir margem de 80px do scroll */}
+              {isLast && <div class="flex-shrink-0 w-[60px] h-[1px] pointer-events-none block" />} 
+            </>
           );
         })}
       </div>

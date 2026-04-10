@@ -36,17 +36,17 @@ export default function FaqInstitutionalInteractive({ title, searchPlaceholder, 
 
   return (
     <section class="flex flex-col items-center w-full mt-[40px] mb-[60px] px-[12px]">
-      <div class="flex flex-col items-start w-full max-w-[351px]">
+      <div class="flex flex-col items-start w-full max-w-[351px] md:max-w-[904px] md:max-h-[939px] md:w-full md:mx-auto md:items-center">
         {/* Título */}
         {title && (
-          <h2 class="queens-text text-[32px] text-[#CE9680] leading-[32px] mb-[15px] pt-[57px]">
+          <h2 class="queens-text text-[32px] text-[#CE9680] leading-[32px] mb-[15px] pt-[57px] md:pt-[56px]">
             {title}
           </h2>
         )}
 
         {/* Barra de Pesquisa */}
         <div
-          class="flex items-center justify-between w-full h-[54px] rounded-sm px-4 mb-[30px] bg-[#F2F2F2]"
+          class="flex items-center justify-between w-full h-[54px] md:w-[800px] md:h-[54px] rounded-sm px-4 mb-[30px] bg-[#F2F2F2]"
         >
           <input
             type="text"
@@ -93,12 +93,12 @@ export default function FaqInstitutionalInteractive({ title, searchPlaceholder, 
             return (
               <div
                 key={card.originalIndex}
-                class="flex flex-col items-center w-[351px] h-fit bg-white"
+                class="flex flex-col items-center w-full md:w-[800px] h-fit bg-white"
               >
                 {/* Card Header (Clickable) */}
                 <button
                   onClick={() => toggleAccordion(card.originalIndex)}
-                  class="flex items-center justify-between w-[351px] min-h-[57px] py-[10px] text-left bg-transparent"
+                  class="flex items-center justify-between w-full md:w-[800px] min-h-[57px] py-[10px] text-left bg-transparent"
                 >
                   <span class="font-Hanken-Grotesk font-bold text-[#4D5D49] text-[15px] pr-4 leading-[20px]">
                     {card.question}
@@ -126,7 +126,7 @@ export default function FaqInstitutionalInteractive({ title, searchPlaceholder, 
 
                 {/* Card Body */}
                 <div
-                  class={`w-[351px] overflow-hidden transition-all duration-300 ${
+                  class={`w-full md:w-[800px] overflow-hidden transition-all duration-300 ${
                     isOpen ? "max-h-[1000px] pb-4" : "max-h-0"
                   }`}
                 >
@@ -137,7 +137,7 @@ export default function FaqInstitutionalInteractive({ title, searchPlaceholder, 
                 </div>
                 
                 {/* Linha Divisória */}
-                <hr class="w-[351px] border-t border-[#D5D8C2] self-start" />
+                <hr class="w-full md:w-[800px] border-t border-[#D5D8C2] self-start" />
               </div>
             );
           })}

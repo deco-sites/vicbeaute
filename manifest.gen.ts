@@ -43,11 +43,11 @@ import * as $$$$$$25 from "./sections/Institutional/Cardinstitutional.tsx";
 import * as $$$$$$26 from "./sections/Institutional/Faqinstitutional.tsx";
 import * as $$$$$$27 from "./sections/Institutional/Imagecardinstitutional.tsx";
 import * as $$$$$$28 from "./sections/Institutional/Imageicon2institutional.tsx";
-import * as $$$$$$32 from "./sections/Institutional/imageiconinstitucionla.tsx";
+import * as $$$$$$33 from "./sections/Institutional/imageiconinstitucionla.tsx";
 import * as $$$$$$29 from "./sections/Institutional/Lipimageinstitutional.tsx";
 import * as $$$$$$30 from "./sections/Institutional/Newgiftinstitutional.tsx";
-import * as $$$$$$33 from "./sections/Institutional/quiosquesinstitutional.tsx";
-import * as $$$$$$31 from "./sections/Institutional/Wherefindinstitutional.tsx";
+import * as $$$$$$31 from "./sections/Institutional/Quiosquesinstitutional.tsx";
+import * as $$$$$$32 from "./sections/Institutional/Wherefindinstitutional.tsx";
 import * as $$$$$$34 from "./sections/Links/LinkTree.tsx";
 import * as $$$$$$35 from "./sections/Miscellaneous/Benefits.tsx";
 import * as $$$$$$36 from "./sections/Miscellaneous/CampaignTimer.tsx";
@@ -105,11 +105,11 @@ const manifest = {
     "site/sections/Institutional/Faqinstitutional.tsx": $$$$$$26,
     "site/sections/Institutional/Imagecardinstitutional.tsx": $$$$$$27,
     "site/sections/Institutional/Imageicon2institutional.tsx": $$$$$$28,
-    "site/sections/Institutional/imageiconinstitucionla.tsx": $$$$$$32,
+    "site/sections/Institutional/imageiconinstitucionla.tsx": $$$$$$33,
     "site/sections/Institutional/Lipimageinstitutional.tsx": $$$$$$29,
     "site/sections/Institutional/Newgiftinstitutional.tsx": $$$$$$30,
-    "site/sections/Institutional/quiosquesinstitutional.tsx": $$$$$$33,
-    "site/sections/Institutional/Wherefindinstitutional.tsx": $$$$$$31,
+    "site/sections/Institutional/Quiosquesinstitutional.tsx": $$$$$$31,
+    "site/sections/Institutional/Wherefindinstitutional.tsx": $$$$$$32,
     "site/sections/Links/LinkTree.tsx": $$$$$$34,
     "site/sections/Miscellaneous/Benefits.tsx": $$$$$$35,
     "site/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$36,
