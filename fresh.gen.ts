@@ -4,6 +4,7 @@
 
 import * as $_app from "./routes/_app.tsx";
 import * as $ColorVariantSelector from "./islands/ColorVariantSelector.tsx";
+import * as $FaqInstitutionalInteractive from "./islands/FaqInstitutionalInteractive.tsx";
 import * as $FilterRangePrice from "./islands/FilterRangePrice.tsx";
 import * as $Filters from "./islands/Filters.tsx";
 import * as $Gallery from "./islands/Gallery.tsx";
@@ -25,6 +26,7 @@ const manifest = {
   },
   islands: {
     "./islands/ColorVariantSelector.tsx": $ColorVariantSelector,
+    "./islands/FaqInstitutionalInteractive.tsx": $FaqInstitutionalInteractive,
     "./islands/FilterRangePrice.tsx": $FilterRangePrice,
     "./islands/Filters.tsx": $Filters,
     "./islands/Gallery.tsx": $Gallery,

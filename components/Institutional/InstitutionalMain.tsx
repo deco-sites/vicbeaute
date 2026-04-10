@@ -26,20 +26,20 @@ const InstitutionalMain = (
     <div class="bg-[#fff] w-full">
       <div class="max-w-[1340px] xl:mr-[350px] xl:ml-[250px] institutional-wrapper pt-5">
       
-      <div class="flex items-start justify-between flex-col lg:flex-row pt-5">
-        <div class="institutional-text flex justify-center flex-col px-3">
-          <h1 class="text-[#CE9680] w-full max-w-[351px] h-fit text-[36px] leading-[36px] font-Queens mobile-text institutional-main-title">
+      <div class="flex items-start md:items-center justify-between md:justify-center flex-col pt-5 w-full">
+        <div class="institutional-text flex justify-center md:items-center flex-col px-3 w-full">
+          <h1 class="text-[#CE9680] w-full max-w-[351px] md:max-w-none h-fit text-[36px] leading-[36px] font-Queens mobile-text institutional-main-title text-center mb-6">
             {pageTitle}
           </h1>
           
           {institutionalText && (
             <div
-              class="w-full text-big mobile-text institutionalText"
+              class="w-full text-big mobile-text institutionalText md:max-w-[950px] md:text-left md:mx-auto"
               dangerouslySetInnerHTML={{ __html: institutionalText }}
             />
           )}
         </div>
-        </div>
+      </div>
       </div>
     </div>
   );

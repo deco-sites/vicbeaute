@@ -1,0 +1,86 @@
+{
+  "name": "Faq",
+  "path": "/perguntas-frequentes",
+  "sections": [
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Header"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Institutional/Faqinstitutional.tsx",
+        "title": "Perguntas frequentes",
+        "searchPlaceholder": "O que você procura?",
+        "cards": [
+          {
+            "question": "If productize emails what's hit ditching would.",
+            "answer": "<p>vic beautevic beautevic beautevic beautevic beaute</p>"
+          },
+          {
+            "question": "Ideal good bake cob nail eye most.",
+            "answer": "<p>vic beautevic beautevic beautevic beautevic beautevic beautevic beaute</p>"
+          },
+          {
+            "question": "Those tomorrow dangerous call meat sandwich lot.",
+            "answer": "<p>vic beautevic beautevic beautevic beautevic beaute</p>"
+          },
+          {
+            "question": "Weeks important please low hiring reinvent note.",
+            "answer": "<p>vic beautevic beautevic beautevic beaute</p>"
+          },
+          {
+            "question": "An place functional indicators options only you.",
+            "answer": "<p>vic beautevic beautevic beautevic beaute</p>"
+          },
+          {
+            "question": "Loop needle cause incentivization driving those flesh.",
+            "answer": "<p>vic beautevic beautevic beautevic beaute</p>"
+          },
+          {
+            "question": "4-blocker our chime awareness bandwagon elephant weaponize.",
+            "answer": "<p>vic beautevic beautevic beautevic beaute</p>"
+          },
+          {
+            "question": "4-blocker scope post productive criticality businesses per.",
+            "answer": "<p>vic beautevic beautevic beautevic beautevic beaute</p>"
+          },
+          {
+            "question": "Loop and closer don't any alarming point.",
+            "answer": "<p>vic beautevic beautevic beautevic beautevic beaute</p>"
+          },
+          {
+            "answer": "<p>vic beautevic beautevic beautevic beautevic beaute</p>",
+            "question": "Product anomalies join job eager want then."
+          },
+          {
+            "answer": "<p>vic beautevic beautevic beautevic beautevic beaute</p>",
+            "question": "4-blocker scope post productive criticality businesses per."
+          },
+          {
+            "answer": "<p>vic beautevic beautevic beautevic beaute</p>",
+            "question": "Loop and closer don't any alarming point."
+          }
+        ]
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "newsletter"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Footer"
+      }
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}
