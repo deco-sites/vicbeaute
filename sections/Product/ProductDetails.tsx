@@ -48,9 +48,6 @@ export default function ProductDetails({ page }: Props) {
           <ProductInfo page={page} />
         </div>
       </div>
-      <div class="hidden lg:block w-full lg:max-w-[1130px] max-w-[1536px] lg:border-t">
-        <ProductAccordion page={page} />
-      </div>
     </div>
   );
 }

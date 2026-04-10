@@ -49,6 +49,71 @@
       }
     },
     {
+      "__resolveType": "site/sections/Product/ProductDescription.tsx",
+      "page": {
+        "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+        "advancedConfigs": {
+          "includeOriginalAttributes": []
+        },
+        "simulationBehavior": "default",
+        "slug": {
+          "__resolveType": "website/functions/requestToParam.ts",
+          "param": "slug"
+        }
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Product/ProductTips.tsx",
+        "page": {
+          "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+          "slug": {
+            "__resolveType": "website/functions/requestToParam.ts",
+            "param": "slug"
+          },
+          "advancedConfigs": {
+            "includeOriginalAttributes": []
+          },
+          "simulationBehavior": "default"
+        }
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Product/ProductComposition.tsx",
+        "page": {
+          "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+          "slug": {
+            "__resolveType": "website/functions/requestToParam.ts",
+            "param": "slug"
+          },
+          "advancedConfigs": {
+            "includeOriginalAttributes": []
+          },
+          "simulationBehavior": "default"
+        }
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Product/ProductFaq.tsx",
+        "page": {
+          "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+          "advancedConfigs": {
+            "includeOriginalAttributes": []
+          },
+          "simulationBehavior": "default",
+          "slug": {
+            "__resolveType": "website/functions/requestToParam.ts",
+            "param": "slug"
+          }
+        }
+      }
+    },
+    {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
       "products": {
         "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
