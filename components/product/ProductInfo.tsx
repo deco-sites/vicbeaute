@@ -5,11 +5,14 @@ import { formatPrice } from "../../sdk/format.ts";
 import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
+import { relative } from "../../sdk/url.ts";
 import AddToCartButtonPdp from "./AddToCartButtonPdp.tsx";
 import OutOfStock from "./OutOfStock.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 import ProductAccordion from "./ProductAccordion.tsx";
 import Breadcrumb from "../../components/ui/Breadcrumb.tsx";
+import ColorVariantSelector from "../../islands/ColorVariantSelector.tsx";
+import ProductBadges from "./ProductBadges.tsx";
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -41,6 +44,42 @@ function ProductInfo({ page }: Props) {
   const { breadcrumbList, product } = page;
   const { productID, offers, isVariantOf } = product;
   const title = isVariantOf?.name ?? product.name;
+
+  // 🔍 DEBUG — Especificações de Produto
+  console.log(
+    "📦 isVariantOf.additionalProperty (specs do produto pai):",
+    isVariantOf?.additionalProperty,
+  );
+
+  const modelSpecs = isVariantOf?.additionalProperty ?? [];
+  const selosRaw = modelSpecs.find((s) => s.name === "Selos")?.value || "";
+  const badges = selosRaw.split(";").map((s) => s.trim()).filter(Boolean);
+
+  // ── Cores: produto atual + isSimilarTo ──────────────────────
+  // A imagem de swatch tem imageLabel = "cor" → name = "cor" na ImageObject
+  const getSwatchUrl = (
+    images?: { url?: string; name?: string }[] | null,
+  ) =>
+    images?.find((img) => img.name?.toLowerCase() === "cor")?.url ??
+      images?.[0]?.url ??
+      "";
+
+  const currentColor = {
+    url: relative(product.url) ?? "/",
+    name: product.name ?? "",
+    subtitle: product.alternateName ?? "",
+    imgUrl: getSwatchUrl(product.image),
+  };
+  const similarColors = (product.isSimilarTo ?? []).map((p) => ({
+    url: relative(p.url) ?? "/",
+    name: p.name ?? "",
+    subtitle: p.alternateName ?? "",
+    imgUrl: getSwatchUrl(p.image),
+  }));
+  const allColors = [currentColor, ...similarColors];
+  const hasColors = allColors.length > 1;
+  const selectedUrl = relative(product.url) ?? "/";
+  // ────────────────────────────────────────────────────────────
 
   const { price = 0, listPrice = 0, seller = "1", availability } = useOffer(
     offers,
@@ -108,14 +147,17 @@ function ProductInfo({ page }: Props) {
                 {title}
               </h1>
 
-              {product.description && (
+              {product.alternateName && (
                 <div class="mt-2 flex flex-col font-Hanken-Grotesk">
                   <div
                     class="text-[#4C4C4C] text-[15px] leading-[22px]"
-                    dangerouslySetInnerHTML={{ __html: product.description }}
+                    dangerouslySetInnerHTML={{ __html: product.alternateName }}
                   />
                   <div class="text-right mt-1">
-                    <a href="#" class="underline text-[#4C4C4C] text-[14px]">
+                    <a
+                      href="#product-description"
+                      class="underline text-[#4C4C4C] text-[14px]"
+                    >
                       Saiba mais
                     </a>
                   </div>
@@ -145,6 +187,14 @@ function ProductInfo({ page }: Props) {
           </>
         )}
 
+        {/* Seletor de cores — abaixo da descrição */}
+        {hasColors && (
+          <ColorVariantSelector
+            colors={allColors}
+            selectedUrl={selectedUrl}
+          />
+        )}
+
         {hasValidVariants && (
           <div className="mt-4 sm:mt-8 lg:hidden">
             <ProductSelector product={product} />
@@ -164,6 +214,8 @@ function ProductInfo({ page }: Props) {
             )
             : <OutOfStock productID={productID} />}
         </div>
+
+        {badges.length > 0 && <ProductBadges badges={badges} />}
       </div>
 
       <div
@@ -175,18 +227,29 @@ function ProductInfo({ page }: Props) {
           {title}
         </span>
 
-        {product.description && (
+        {product.alternateName && (
           <div class="mt-0 mb-2 flex flex-col font-Hanken-Grotesk">
             <div
               class="text-[#4C4C4C] text-sm leading-[20px]"
-              dangerouslySetInnerHTML={{ __html: product.description }}
+              dangerouslySetInnerHTML={{ __html: product.alternateName }}
             />
             <div class="text-right mt-1">
-              <a href="#" class="underline text-[#4C4C4C] text-sm">
+              <a
+                href="#product-description"
+                class="underline text-[#4C4C4C] text-sm"
+              >
                 Saiba mais
               </a>
             </div>
           </div>
+        )}
+
+        {/* Seletor de cores mobile */}
+        {hasColors && (
+          <ColorVariantSelector
+            colors={allColors}
+            selectedUrl={selectedUrl}
+          />
         )}
 
         {product.gtin && (
@@ -237,9 +300,7 @@ function ProductInfo({ page }: Props) {
             : <OutOfStock productID={productID} />}
         </div>
 
-        <div class="mt-4 sm:mt-6 border-t">
-          <ProductAccordion page={page} />
-        </div>
+        {badges.length > 0 && <ProductBadges badges={badges} />}
       </div>
     </div>
   );
