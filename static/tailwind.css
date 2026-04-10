@@ -4326,27 +4326,21 @@ details.collapse summary::-webkit-details-marker {
 .ml-\[6px\] {
   margin-left: 6px;
 }
-<<<<<<< HEAD
 .ml-auto {
   margin-left: auto;
 }
 .ml-vc-15 {
   margin-left: .9375rem;
 }
-=======
->>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
 .mr-2 {
   margin-right: 0.5rem;
 }
 .mr-3 {
   margin-right: 0.75rem;
 }
-<<<<<<< HEAD
 .mr-4 {
   margin-right: 1rem;
 }
-=======
->>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
 .mt-0 {
   margin-top: 0px;
 }
@@ -4400,6 +4394,9 @@ details.collapse summary::-webkit-details-marker {
 }
 .mt-\[72px\] {
   margin-top: 72px;
+}
+.mt-\[8px\] {
+  margin-top: 8px;
 }
 .mt-auto {
   margin-top: auto;
@@ -4545,12 +4542,9 @@ details.collapse summary::-webkit-details-marker {
 .h-\[17px\] {
   height: 17px;
 }
-<<<<<<< HEAD
-=======
 .h-\[1px\] {
   height: 1px;
 }
->>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
 .h-\[200px\] {
   height: 200px;
 }
@@ -4775,13 +4769,11 @@ details.collapse summary::-webkit-details-marker {
 .w-\[148px\] {
   width: 148px;
 }
-<<<<<<< HEAD
 .w-\[16px\] {
   width: 16px;
-=======
+}
 .w-\[1px\] {
   width: 1px;
->>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
 }
 .w-\[200px\] {
   width: 200px;
@@ -4932,9 +4924,6 @@ details.collapse summary::-webkit-details-marker {
 }
 .max-w-\[1452px\] {
   max-width: 1452px;
-}
-.max-w-\[1440px\] {
-  max-width: 1440px;
 }
 .max-w-\[1536px\] {
   max-width: 1536px;
@@ -5125,15 +5114,13 @@ details.collapse summary::-webkit-details-marker {
 .cursor-pointer {
   cursor: pointer;
 }
-<<<<<<< HEAD
-.resize {
-  resize: both;
-=======
 .select-none {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
->>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
+}
+.resize {
+  resize: both;
 }
 .snap-x {
   scroll-snap-type: x var(--tw-scroll-snap-strictness);
@@ -5347,9 +5334,6 @@ details.collapse summary::-webkit-details-marker {
 .self-start {
   align-self: flex-start;
 }
-.self-start {
-  align-self: flex-start;
-}
 .overflow-auto {
   overflow: auto;
 }
@@ -5535,7 +5519,6 @@ details.collapse summary::-webkit-details-marker {
   --tw-border-opacity: 1;
   border-color: rgb(213 216 194 / var(--tw-border-opacity));
 }
-<<<<<<< HEAD
 .border-\[\#E1E1E1\] {
   --tw-border-opacity: 1;
   border-color: rgb(225 225 225 / var(--tw-border-opacity));
@@ -5544,8 +5527,6 @@ details.collapse summary::-webkit-details-marker {
   --tw-border-opacity: 1;
   border-color: rgb(232 232 232 / var(--tw-border-opacity));
 }
-=======
->>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
 .border-\[\#EAEAEA\] {
   --tw-border-opacity: 1;
   border-color: rgb(234 234 234 / var(--tw-border-opacity));
@@ -5641,10 +5622,6 @@ details.collapse summary::-webkit-details-marker {
   --tw-bg-opacity: 1;
   background-color: rgb(69 92 66 / var(--tw-bg-opacity));
 }
-.bg-\[\#353930\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(53 57 48 / var(--tw-bg-opacity));
-}
 .bg-\[\#45D268\] {
   --tw-bg-opacity: 1;
   background-color: rgb(69 210 104 / var(--tw-bg-opacity));
@@ -5673,7 +5650,6 @@ details.collapse summary::-webkit-details-marker {
   --tw-bg-opacity: 1;
   background-color: rgb(213 216 194 / var(--tw-bg-opacity));
 }
-<<<<<<< HEAD
 .bg-\[\#D99477\] {
   --tw-bg-opacity: 1;
   background-color: rgb(217 148 119 / var(--tw-bg-opacity));
@@ -5682,14 +5658,13 @@ details.collapse summary::-webkit-details-marker {
   --tw-bg-opacity: 1;
   background-color: rgb(234 232 226 / var(--tw-bg-opacity));
 }
-.bg-\[\#EEEBE6\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(238 235 230 / var(--tw-bg-opacity));
-=======
 .bg-\[\#EAEAEA\] {
   --tw-bg-opacity: 1;
   background-color: rgb(234 234 234 / var(--tw-bg-opacity));
->>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
+}
+.bg-\[\#EEEBE6\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(238 235 230 / var(--tw-bg-opacity));
 }
 .bg-\[\#EF781C\] {
   --tw-bg-opacity: 1;
@@ -5963,19 +5938,13 @@ details.collapse summary::-webkit-details-marker {
   padding-left: 27px;
   padding-right: 27px;
 }
-<<<<<<< HEAD
-.px-vc-10 {
-  padding-left: .625rem;
-  padding-right: .625rem;
-=======
 .px-\[80px\] {
   padding-left: 80px;
   padding-right: 80px;
 }
-.px-vc-6 {
-  padding-left: .375rem;
-  padding-right: .375rem;
->>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
+.px-vc-10 {
+  padding-left: .625rem;
+  padding-right: .625rem;
 }
 .py-0 {
   padding-top: 0px;
@@ -6033,7 +6002,10 @@ details.collapse summary::-webkit-details-marker {
   padding-top: 14px;
   padding-bottom: 14px;
 }
-<<<<<<< HEAD
+.py-\[16px\] {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
 .py-\[18px\] {
   padding-top: 18px;
   padding-bottom: 18px;
@@ -6041,14 +6013,6 @@ details.collapse summary::-webkit-details-marker {
 .py-\[6px\] {
   padding-top: 6px;
   padding-bottom: 6px;
-=======
-.py-\[16px\] {
-  padding-top: 16px;
-  padding-bottom: 16px;
-}
-.pb-0 {
-  padding-bottom: 0px;
->>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
 }
 .pb-1 {
   padding-bottom: 0.25rem;
@@ -6095,12 +6059,9 @@ details.collapse summary::-webkit-details-marker {
 .pb-\[30px\] {
   padding-bottom: 30px;
 }
-<<<<<<< HEAD
 .pb-\[50px\] {
   padding-bottom: 50px;
 }
-=======
->>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
 .pl-1 {
   padding-left: 0.25rem;
 }
@@ -6142,12 +6103,9 @@ details.collapse summary::-webkit-details-marker {
 }
 .pr-\[12px\] {
   padding-right: 12px;
-<<<<<<< HEAD
 }
 .pt-0 {
   padding-top: 0px;
-=======
->>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
 }
 .pt-1 {
   padding-top: 0.25rem;
@@ -8142,8 +8100,13 @@ ul.closed {
     margin-right: 2.5rem;
   }
 
-  .md\:block {
-    display: block;
+  .md\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .md\:mb-0 {
+    margin-bottom: 0px;
   }
 
   .md\:mb-10 {
@@ -8262,12 +8225,6 @@ ul.closed {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
-<<<<<<< HEAD
-=======
-  .md\:grid-cols-\[260px_1fr\] {
-    grid-template-columns: 260px 1fr;
-  }
-
   .md\:flex-row {
     flex-direction: row;
   }
@@ -8280,11 +8237,6 @@ ul.closed {
     align-items: center;
   }
 
-  .md\:justify-start {
-    justify-content: flex-start;
-  }
-
->>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
   .md\:justify-center {
     justify-content: center;
   }
@@ -8297,12 +8249,6 @@ ul.closed {
     gap: 5rem;
   }
 
-<<<<<<< HEAD
-=======
-  .md\:gap-5 {
-    gap: 1.25rem;
-  }
-
   .md\:gap-x-12 {
     -moz-column-gap: 3rem;
          column-gap: 3rem;
@@ -8313,12 +8259,6 @@ ul.closed {
     padding-right: 0px;
   }
 
-  .md\:px-12 {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-
->>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
   .md\:px-\[60px\] {
     padding-left: 60px;
     padding-right: 60px;
@@ -8347,8 +8287,6 @@ ul.closed {
     padding-right: 0px;
   }
 
-<<<<<<< HEAD
-=======
   .md\:pt-\[56px\] {
     padding-top: 56px;
   }
@@ -8361,7 +8299,6 @@ ul.closed {
     text-align: center;
   }
 
->>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;

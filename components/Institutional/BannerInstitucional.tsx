@@ -33,7 +33,7 @@ export interface Props {
 function BannerInstitucional({ tablet, desktop, mobile }: Props) {
   const device = useDevice();
   return (
-    <div class="cy-banner block h-fit mt-2.5 sm:mx-auto w-full pt-14">
+    <div class="cy-banner block h-fit mt-2.5 sm:mx-auto w-full">
       {device === "desktop" && desktop && (
         <a href={desktop.href || "#"} class="block w-full">
           <img
