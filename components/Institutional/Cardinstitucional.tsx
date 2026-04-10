@@ -19,7 +19,7 @@ const Cardinstitucional = ({ title, text }: Props) => {
       <div class="flex items-start md:items-center justify-between md:justify-center flex-col lg:flex-row pb-[10px] w-full md:max-w-[800px]">
         <div class="institutional-text flex justify-center md:items-center flex-col px-3 w-full">
           {title && (
-            <h2 class="text-[#CE9680] px-3 max-w-[351px] md:max-w-none h-fit text-[32px] leading-[32px] font-Queens mobile-text institutional-main-title mb-4 md:text-center w-full">
+            <h2 class="text-[#CE9680] md:text-[#4D5D49] px-3 max-w-[351px] md:max-w-none h-fit text-[32px] leading-[32px] font-Queens mobile-text institutional-main-title mb-4 md:text-center w-full">
               {title}
             </h2>
           )}

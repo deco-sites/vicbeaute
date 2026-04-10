@@ -4077,6 +4077,9 @@ details.collapse summary::-webkit-details-marker {
 .right-6 {
   right: 1.5rem;
 }
+.right-\[-24px\] {
+  right: -24px;
+}
 .right-\[-40px\] {
   right: -40px;
 }
@@ -4290,6 +4293,9 @@ details.collapse summary::-webkit-details-marker {
 .mb-\[10px\] {
   margin-bottom: 10px;
 }
+.mb-\[12px\] {
+  margin-bottom: 12px;
+}
 .mb-\[15px\] {
   margin-bottom: 15px;
 }
@@ -4298,6 +4304,9 @@ details.collapse summary::-webkit-details-marker {
 }
 .mb-\[30px\] {
   margin-bottom: 30px;
+}
+.mb-\[40px\] {
+  margin-bottom: 40px;
 }
 .mb-\[60px\] {
   margin-bottom: 60px;
@@ -4317,21 +4326,27 @@ details.collapse summary::-webkit-details-marker {
 .ml-\[6px\] {
   margin-left: 6px;
 }
+<<<<<<< HEAD
 .ml-auto {
   margin-left: auto;
 }
 .ml-vc-15 {
   margin-left: .9375rem;
 }
+=======
+>>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
 .mr-2 {
   margin-right: 0.5rem;
 }
 .mr-3 {
   margin-right: 0.75rem;
 }
+<<<<<<< HEAD
 .mr-4 {
   margin-right: 1rem;
 }
+=======
+>>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
 .mt-0 {
   margin-top: 0px;
 }
@@ -4530,6 +4545,12 @@ details.collapse summary::-webkit-details-marker {
 .h-\[17px\] {
   height: 17px;
 }
+<<<<<<< HEAD
+=======
+.h-\[1px\] {
+  height: 1px;
+}
+>>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
 .h-\[200px\] {
   height: 200px;
 }
@@ -4754,8 +4775,13 @@ details.collapse summary::-webkit-details-marker {
 .w-\[148px\] {
   width: 148px;
 }
+<<<<<<< HEAD
 .w-\[16px\] {
   width: 16px;
+=======
+.w-\[1px\] {
+  width: 1px;
+>>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
 }
 .w-\[200px\] {
   width: 200px;
@@ -4781,9 +4807,6 @@ details.collapse summary::-webkit-details-marker {
 .w-\[332px\] {
   width: 332px;
 }
-.w-\[351px\] {
-  width: 351px;
-}
 .w-\[35px\] {
   width: 35px;
 }
@@ -4795,9 +4818,6 @@ details.collapse summary::-webkit-details-marker {
 }
 .w-\[400px\] {
   width: 400px;
-}
-.w-\[40vw\] {
-  width: 40vw;
 }
 .w-\[4px\] {
   width: 4px;
@@ -4913,6 +4933,9 @@ details.collapse summary::-webkit-details-marker {
 .max-w-\[1452px\] {
   max-width: 1452px;
 }
+.max-w-\[1440px\] {
+  max-width: 1440px;
+}
 .max-w-\[1536px\] {
   max-width: 1536px;
 }
@@ -4972,9 +4995,6 @@ details.collapse summary::-webkit-details-marker {
 }
 .max-w-\[425px\] {
   max-width: 425px;
-}
-.max-w-\[450px\] {
-  max-width: 450px;
 }
 .max-w-\[480px\] {
   max-width: 480px;
@@ -5105,8 +5125,15 @@ details.collapse summary::-webkit-details-marker {
 .cursor-pointer {
   cursor: pointer;
 }
+<<<<<<< HEAD
 .resize {
   resize: both;
+=======
+.select-none {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+>>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
 }
 .snap-x {
   scroll-snap-type: x var(--tw-scroll-snap-strictness);
@@ -5508,6 +5535,7 @@ details.collapse summary::-webkit-details-marker {
   --tw-border-opacity: 1;
   border-color: rgb(213 216 194 / var(--tw-border-opacity));
 }
+<<<<<<< HEAD
 .border-\[\#E1E1E1\] {
   --tw-border-opacity: 1;
   border-color: rgb(225 225 225 / var(--tw-border-opacity));
@@ -5516,6 +5544,8 @@ details.collapse summary::-webkit-details-marker {
   --tw-border-opacity: 1;
   border-color: rgb(232 232 232 / var(--tw-border-opacity));
 }
+=======
+>>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
 .border-\[\#EAEAEA\] {
   --tw-border-opacity: 1;
   border-color: rgb(234 234 234 / var(--tw-border-opacity));
@@ -5643,6 +5673,7 @@ details.collapse summary::-webkit-details-marker {
   --tw-bg-opacity: 1;
   background-color: rgb(213 216 194 / var(--tw-bg-opacity));
 }
+<<<<<<< HEAD
 .bg-\[\#D99477\] {
   --tw-bg-opacity: 1;
   background-color: rgb(217 148 119 / var(--tw-bg-opacity));
@@ -5654,6 +5685,11 @@ details.collapse summary::-webkit-details-marker {
 .bg-\[\#EEEBE6\] {
   --tw-bg-opacity: 1;
   background-color: rgb(238 235 230 / var(--tw-bg-opacity));
+=======
+.bg-\[\#EAEAEA\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 234 234 / var(--tw-bg-opacity));
+>>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
 }
 .bg-\[\#EF781C\] {
   --tw-bg-opacity: 1;
@@ -5666,6 +5702,10 @@ details.collapse summary::-webkit-details-marker {
 .bg-\[\#F0F0F0\] {
   --tw-bg-opacity: 1;
   background-color: rgb(240 240 240 / var(--tw-bg-opacity));
+}
+.bg-\[\#F1F1F1\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 241 241 / var(--tw-bg-opacity));
 }
 .bg-\[\#F2F2F2\] {
   --tw-bg-opacity: 1;
@@ -5911,21 +5951,31 @@ details.collapse summary::-webkit-details-marker {
   padding-left: 2rem;
   padding-right: 2rem;
 }
-.px-\[10vw\] {
-  padding-left: 10vw;
-  padding-right: 10vw;
-}
 .px-\[12px\] {
   padding-left: 12px;
   padding-right: 12px;
+}
+.px-\[16px\] {
+  padding-left: 16px;
+  padding-right: 16px;
 }
 .px-\[27px\] {
   padding-left: 27px;
   padding-right: 27px;
 }
+<<<<<<< HEAD
 .px-vc-10 {
   padding-left: .625rem;
   padding-right: .625rem;
+=======
+.px-\[80px\] {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+.px-vc-6 {
+  padding-left: .375rem;
+  padding-right: .375rem;
+>>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
 }
 .py-0 {
   padding-top: 0px;
@@ -5983,6 +6033,7 @@ details.collapse summary::-webkit-details-marker {
   padding-top: 14px;
   padding-bottom: 14px;
 }
+<<<<<<< HEAD
 .py-\[18px\] {
   padding-top: 18px;
   padding-bottom: 18px;
@@ -5990,6 +6041,14 @@ details.collapse summary::-webkit-details-marker {
 .py-\[6px\] {
   padding-top: 6px;
   padding-bottom: 6px;
+=======
+.py-\[16px\] {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.pb-0 {
+  padding-bottom: 0px;
+>>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
 }
 .pb-1 {
   padding-bottom: 0.25rem;
@@ -6036,9 +6095,12 @@ details.collapse summary::-webkit-details-marker {
 .pb-\[30px\] {
   padding-bottom: 30px;
 }
+<<<<<<< HEAD
 .pb-\[50px\] {
   padding-bottom: 50px;
 }
+=======
+>>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
 .pl-1 {
   padding-left: 0.25rem;
 }
@@ -6080,9 +6142,12 @@ details.collapse summary::-webkit-details-marker {
 }
 .pr-\[12px\] {
   padding-right: 12px;
+<<<<<<< HEAD
 }
 .pt-0 {
   padding-top: 0px;
+=======
+>>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
 }
 .pt-1 {
   padding-top: 0.25rem;
@@ -6386,6 +6451,9 @@ details.collapse summary::-webkit-details-marker {
 }
 .leading-\[22px\] {
   line-height: 22px;
+}
+.leading-\[24px\] {
+  line-height: 24px;
 }
 .leading-\[32px\] {
   line-height: 32px;
@@ -8078,6 +8146,30 @@ ul.closed {
     display: block;
   }
 
+  .md\:mb-10 {
+    margin-bottom: 2.5rem;
+  }
+
+  .md\:mb-12 {
+    margin-bottom: 3rem;
+  }
+
+  .md\:mb-8 {
+    margin-bottom: 2rem;
+  }
+
+  .md\:mt-2 {
+    margin-top: 0.5rem;
+  }
+
+  .md\:mt-\[30px\] {
+    margin-top: 30px;
+  }
+
+  .md\:block {
+    display: block;
+  }
+
   .md\:flex {
     display: flex;
   }
@@ -8086,13 +8178,29 @@ ul.closed {
     display: none;
   }
 
+  .md\:h-\[54px\] {
+    height: 54px;
+  }
+
+  .md\:max-h-\[939px\] {
+    max-height: 939px;
+  }
+
   .md\:w-1\/2 {
     width: 50%;
+  }
+
+  .md\:w-\[800px\] {
+    width: 800px;
   }
 
   .md\:w-fit {
     width: -moz-fit-content;
     width: fit-content;
+  }
+
+  .md\:w-full {
+    width: 100%;
   }
 
   .md\:w-w-vc-300 {
@@ -8113,6 +8221,14 @@ ul.closed {
 
   .md\:max-w-\[800px\] {
     max-width: 800px;
+  }
+
+  .md\:max-w-\[904px\] {
+    max-width: 904px;
+  }
+
+  .md\:max-w-\[950px\] {
+    max-width: 950px;
   }
 
   .md\:max-w-none {
@@ -8146,6 +8262,29 @@ ul.closed {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
+<<<<<<< HEAD
+=======
+  .md\:grid-cols-\[260px_1fr\] {
+    grid-template-columns: 260px 1fr;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:items-start {
+    align-items: flex-start;
+  }
+
+  .md\:items-center {
+    align-items: center;
+  }
+
+  .md\:justify-start {
+    justify-content: flex-start;
+  }
+
+>>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
   .md\:justify-center {
     justify-content: center;
   }
@@ -8158,9 +8297,36 @@ ul.closed {
     gap: 5rem;
   }
 
+<<<<<<< HEAD
+=======
+  .md\:gap-5 {
+    gap: 1.25rem;
+  }
+
+  .md\:gap-x-12 {
+    -moz-column-gap: 3rem;
+         column-gap: 3rem;
+  }
+
+  .md\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .md\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+>>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
   .md\:px-\[60px\] {
     padding-left: 60px;
     padding-right: 60px;
+  }
+
+  .md\:px-\[80px\] {
+    padding-left: 80px;
+    padding-right: 80px;
   }
 
   .md\:py-20 {
@@ -8181,6 +8347,21 @@ ul.closed {
     padding-right: 0px;
   }
 
+<<<<<<< HEAD
+=======
+  .md\:pt-\[56px\] {
+    padding-top: 56px;
+  }
+
+  .md\:text-left {
+    text-align: left;
+  }
+
+  .md\:text-center {
+    text-align: center;
+  }
+
+>>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -8203,6 +8384,11 @@ ul.closed {
   .md\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+
+  .md\:text-\[\#4D5D49\] {
+    --tw-text-opacity: 1;
+    color: rgb(77 93 73 / var(--tw-text-opacity));
   }
 }
 

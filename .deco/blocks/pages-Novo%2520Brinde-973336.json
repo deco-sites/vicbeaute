@@ -34,6 +34,9 @@
             "alt": "/",
             "width": 375,
             "height": 300
+          },
+          "desktop": {
+            "image": "https://assets.decocache.com/vicbeaute/40d77727-3b9b-4e98-852a-25cc47a2c7ae/Rectangle-1293-desk-faq-(6).png"
           }
         },
         "topPlainText": "<p><span>Conheça o</span></p>",
@@ -54,10 +57,13 @@
           "image": "https://assets.decocache.com/vicbeaute/082cdca3-08ef-498c-8d47-ce7aa1eb754f/Rectangle-1296.png"
         },
         "image2": {
-          "image": "https://assets.decocache.com/vicbeaute/df57a158-528a-4d3a-b3e7-5874febbd9fb/Rectangle-1294.png"
+          "image": "https://assets.decocache.com/vicbeaute/d471bb88-d8ea-4764-8543-3d47aefaa2b0/Rectangle-1294-desktop-new-gift-(1).png"
         },
         "bottomTitle": "<p><span>Como ganhar o</span></p>",
-        "bottomSubtitle": "<p><span style=\"font-size: 36px\">Seu brinde</span></p>"
+        "bottomSubtitle": "<p><span style=\"font-size: 36px\">Seu brinde</span></p>",
+        "image3": {
+          "image": "https://assets.decocache.com/vicbeaute/df57a158-528a-4d3a-b3e7-5874febbd9fb/Rectangle-1294.png"
+        }
       }
     },
     {

@@ -185,21 +185,32 @@
         },
         "secondImage": {
           "mobile": {
-            "image": "https://assets.decocache.com/vicbeaute/c67c5629-f4b9-49aa-9257-c8a6bd5d0b29/Rectangle-3778-slider-(1).png",
+            "image": "https://assets.decocache.com/vicbeaute/daa63ab6-b657-4a56-a14d-8294cc8c85d1/Rectangle-3778-slider-(1).png",
             "href": "/",
             "alt": "/",
             "width": 250,
             "height": 250
+          },
+          "desktop": {
+            "image": "https://assets.decocache.com/vicbeaute/66d11d27-4de7-4c2f-b832-ea8e002a78dc/Rectangle-3777-slider-(1).png"
           }
         },
         "thirdImage": {
           "mobile": {
             "image": "https://assets.decocache.com/vicbeaute/66d11d27-4de7-4c2f-b832-ea8e002a78dc/Rectangle-3777-slider-(1).png",
             "alt": "/"
+          },
+          "desktop": {
+            "image": "https://assets.decocache.com/vicbeaute/8cabd33b-9245-46ba-a4a6-36c5860fc93c/Rectangle-3779.png",
+            "width": 500,
+            "height": 500
           }
         },
         "fourthImage": {
           "mobile": {
+            "image": "https://assets.decocache.com/vicbeaute/8cabd33b-9245-46ba-a4a6-36c5860fc93c/Rectangle-3779.png"
+          },
+          "desktop": {
             "image": "https://assets.decocache.com/vicbeaute/8cabd33b-9245-46ba-a4a6-36c5860fc93c/Rectangle-3779.png"
           }
         }
@@ -218,6 +229,11 @@
           "mobile": {
             "image": "https://assets.decocache.com/vicbeaute/82d2eb23-8214-44e2-9142-b3450ba8990a/Rectangle-3780.png",
             "alt": "/"
+          },
+          "desktop": {
+            "image": "https://assets.decocache.com/vicbeaute/82d2eb23-8214-44e2-9142-b3450ba8990a/Rectangle-3780.png",
+            "width": 650,
+            "height": 540
           }
         },
         "finalText": "<p><span style=\"font-size: 12pt\">Em nossos quiosques e parceiros, você pode descobrir de perto a praticidade e multifuncionalidade dos nossos produtos. Explore cores, texturas, teste suas combinações favoritas, receba dicas exclusivas da nossa equipe e leve tudo o que vai realçar a sua beleza natural para casa na hora.</span></p>",
