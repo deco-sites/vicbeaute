@@ -33,17 +33,21 @@ export interface Props {
 function BannerInstitucional({ tablet, desktop, mobile }: Props) {
   const device = useDevice();
   return (
-    <div class="cy-banner block h-fit mt-2.5  sm:mx-auto w-full pt-14">
-      {device === "desktop" && (
-        <img
-          alt={desktop.alt}
-          src={desktop.image}
-          width={desktop.width}
-          height={desktop.height}
-        />
+    <div class="cy-banner block h-fit mt-2.5 sm:mx-auto w-full">
+      {device === "desktop" && desktop && (
+        <a href={desktop.href || "#"} class="block w-full">
+          <img
+            class="w-full object-cover"
+            alt={desktop.alt}
+            src={desktop.image}
+            width={1440}
+            height={432}
+            style={{ height: '432px' }}
+          />
+        </a>
       )}
 
-      {device === "tablet" && (
+      {device === "tablet" && tablet && (
         <a href={tablet.href}>
           <img
             class="w-full"
@@ -55,7 +59,7 @@ function BannerInstitucional({ tablet, desktop, mobile }: Props) {
         </a>
       )}
 
-      {device === "mobile" && (
+      {device === "mobile" && mobile && (
         <a href={mobile.href}>
           <img
             class="w-full"

@@ -30,7 +30,7 @@ export interface Props {
 function Lipimageinstitution({ tablet, desktop, mobile }: Props) {
   const device = useDevice();
   return (
-    <div class="cy-banner block h-fit sm:mx-auto w-full">
+    <div class="cy-banner block h-fit sm:mx-auto w-full md:absolute md:right-0 md:-translate-y-full md:w-fit z-10 pointer-events-none">
       {device === "desktop" && desktop && (
         <img
           alt={desktop.alt}
