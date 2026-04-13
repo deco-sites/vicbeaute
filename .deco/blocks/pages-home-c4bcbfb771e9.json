@@ -296,7 +296,7 @@
             "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
             "props": {
               "sort": "price:desc",
-              "collection": "141",
+              "collection": "137",
               "count": 12
             }
           },
@@ -307,8 +307,8 @@
             "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
             "props": {
               "sort": "price:desc",
-              "collection": "195",
-              "count": 12
+              "count": 12,
+              "collection": "137"
             }
           },
           "label": "Corretivo"
@@ -432,7 +432,7 @@
             "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
             "props": {
               "sort": "price:desc",
-              "collection": "141",
+              "collection": "137",
               "count": 3
             }
           }
@@ -447,7 +447,7 @@
             "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
             "props": {
               "sort": "price:desc",
-              "collection": "141",
+              "collection": "137",
               "count": 3
             }
           }
@@ -462,7 +462,7 @@
             "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
             "props": {
               "sort": "price:desc",
-              "collection": "141",
+              "collection": "137",
               "count": 3
             }
           }
