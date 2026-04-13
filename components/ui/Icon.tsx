@@ -44,13 +44,20 @@ export type AvailableIcons =
   | "minicartbag"
   | "search-drawer"
   | "user"
+  | "vegano"
+  | "multifuncional"
+  | "cruelty"
+  | "parabenos"
   | "user-orange"
   | "menu-mobile-dark"
   | "arrow-down-white"
+  | "bagpdp"
   | "user-black"
   | "user-dark"
   | "minicartbagdark"
-  | "lupa-dark";
+  | "lupa-dark"
+  | "heartpdp"
+  | "pix";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**

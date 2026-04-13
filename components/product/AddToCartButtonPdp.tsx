@@ -11,6 +11,7 @@ export interface Props extends JSX.HTMLAttributes<HTMLButtonElement> {
   product: Product;
   seller: string;
   item: AnalyticsItem;
+  label?: string;
 }
 
 const onClick = () => {
@@ -141,12 +142,13 @@ function AddToCartButtonPdp(props: Props) {
       <button
         disabled
         class={clx(
-          "w-full rounded-none bg-green-5 font-medium text-base hover:bg-green-5",
+          "w-full rounded-md font-medium text-base flex items-center justify-center gap-2 h-[45px]",
           _class?.toString(),
         )}
         hx-on:click={useScript(onClick)}
       >
-        Adicionar a Sacola
+        {props.label || "Adicionar ao carrinho"}
+        {props.label !== "Adicionar" && <Icon id="bagpdp" width={24} height={24} />}
       </button>
 
       <script
