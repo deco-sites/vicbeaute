@@ -44,7 +44,8 @@
           "slug": {
             "__resolveType": "website/functions/requestToParam.ts",
             "param": "slug"
-          }
+          },
+          "similars": true
         }
       }
     },
@@ -111,6 +112,28 @@
             "param": "slug"
           }
         }
+      }
+    },
+    {
+      "__resolveType": "site/sections/Product/ProductColors.tsx",
+      "title": "Cores",
+      "page": {
+        "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+        "advancedConfigs": {
+          "includeOriginalAttributes": []
+        },
+        "slug": {
+          "__resolveType": "website/functions/requestToParam.ts",
+          "param": "slug"
+        },
+        "simulationBehavior": "default",
+        "similars": true
+      },
+      "additionalColors": {
+        "__resolveType": "vtex/loaders/legacy/relatedProductsLoader.ts",
+        "crossSelling": "similars",
+        "count": 10,
+        "id": "11"
       }
     },
     {

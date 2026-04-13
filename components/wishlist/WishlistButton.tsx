@@ -5,7 +5,7 @@ import { useSendEvent } from "../../sdk/useSendEvent.ts";
 import Icon from "../ui/Icon.tsx";
 import { useScript } from "@deco/deco/hooks";
 interface Props {
-  variant?: "full" | "icon";
+  variant?: "full" | "icon" | "pdp";
   item: AnalyticsItem;
 }
 const onLoad = (id: string, productID: string) =>
@@ -58,10 +58,18 @@ function WishlistButton({ item, variant = "full" }: Props) {
           "btn no-animation",
           variant === "icon"
             ? "btn-circle btn-ghost btn-sm"
-            : "btn-primary btn-outline gap-2 w-full",
+            : variant === "pdp"
+              ? "h-[45px] w-[45px] bg-white rounded-md shrink-0 transition-opacity hover:opacity-80 hover:bg-white min-h-[45px] border-none flex items-center justify-center"
+              : "btn-primary btn-outline gap-2 w-full",
         )}
       >
-        <Icon id="favorite" class="[.htmx-request_&]:hidden" fill="none" />
+        <Icon 
+          id={variant === "pdp" ? "heartpdp" : "favorite"} 
+          width={variant === "pdp" ? 21 : 24}
+          height={variant === "pdp" ? 16 : 24}
+          class="[.htmx-request_&]:hidden" 
+          fill="none" 
+        />
         {variant === "full" && (
           <span class="[.htmx-request_&]:hidden">Add to wishlist</span>
         )}
