@@ -98,6 +98,36 @@
       }
     },
     {
+      "__resolveType": "site/sections/Product/ProductBuyTogether.tsx",
+      "page": {
+        "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+        "slug": {
+          "__resolveType": "website/functions/requestToParam.ts",
+          "param": "slug"
+        },
+        "advancedConfigs": {
+          "includeOriginalAttributes": []
+        },
+        "simulationBehavior": "default",
+        "similars": false
+      },
+      "productTogether": {
+        "__resolveType": "site/loaders/product/buyTogetherSuggestions.ts",
+        "page": {
+          "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+          "slug": {
+            "__resolveType": "website/functions/requestToParam.ts",
+            "param": "slug"
+          },
+          "advancedConfigs": {
+            "includeOriginalAttributes": []
+          },
+          "simulationBehavior": "default"
+        },
+        "count": 1
+      }
+    },
+    {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
         "__resolveType": "site/sections/Product/ProductFaq.tsx",
@@ -134,6 +164,27 @@
         "crossSelling": "similars",
         "count": 10,
         "id": "11"
+      }
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/Product/ProductReviews.tsx",
+        "page": {
+          "__resolveType": "site/loaders/konfidency/productDetailsPage.ts",
+          "page": {
+            "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+            "slug": {
+              "__resolveType": "website/functions/requestToParam.ts",
+              "param": "slug"
+            },
+            "advancedConfigs": {
+              "includeOriginalAttributes": []
+            },
+            "simulationBehavior": "default"
+          },
+          "customer": "vicbeaute"
+        }
       }
     },
     {
