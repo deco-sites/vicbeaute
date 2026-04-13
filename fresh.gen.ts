@@ -3,6 +3,7 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import * as $_app from "./routes/_app.tsx";
+import * as $AddToCartBuyTogether from "./islands/AddToCartBuyTogether.tsx";
 import * as $ColorDetails from "./islands/ColorDetails.tsx";
 import * as $ColorVariantSelector from "./islands/ColorVariantSelector.tsx";
 import * as $FaqInstitutionalInteractive from "./islands/FaqInstitutionalInteractive.tsx";
@@ -10,6 +11,7 @@ import * as $FilterRangePrice from "./islands/FilterRangePrice.tsx";
 import * as $Filters from "./islands/Filters.tsx";
 import * as $Gallery from "./islands/Gallery.tsx";
 import * as $InstitutionalMobileMenu from "./islands/InstitutionalMobileMenu.tsx";
+import * as $KonfidencyReviews from "./islands/KonfidencyReviews.tsx";
 import * as $Newsletter from "./islands/Newsletter.tsx";
 import * as $ProductTipsVideo from "./islands/ProductTipsVideo.tsx";
 import * as $QuantitySelectorInteractive from "./islands/QuantitySelectorInteractive.tsx";
@@ -26,6 +28,7 @@ const manifest = {
     "./routes/_app.tsx": $_app,
   },
   islands: {
+    "./islands/AddToCartBuyTogether.tsx": $AddToCartBuyTogether,
     "./islands/ColorDetails.tsx": $ColorDetails,
     "./islands/ColorVariantSelector.tsx": $ColorVariantSelector,
     "./islands/FaqInstitutionalInteractive.tsx": $FaqInstitutionalInteractive,
@@ -33,6 +36,7 @@ const manifest = {
     "./islands/Filters.tsx": $Filters,
     "./islands/Gallery.tsx": $Gallery,
     "./islands/InstitutionalMobileMenu.tsx": $InstitutionalMobileMenu,
+    "./islands/KonfidencyReviews.tsx": $KonfidencyReviews,
     "./islands/Newsletter.tsx": $Newsletter,
     "./islands/ProductTipsVideo.tsx": $ProductTipsVideo,
     "./islands/QuantitySelectorInteractive.tsx": $QuantitySelectorInteractive,
