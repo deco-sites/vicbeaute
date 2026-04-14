@@ -18,24 +18,26 @@ function Dot({ index, ...props }: {
   );
 }
 
-function Slider(props: JSX.IntrinsicElements["ul"]) {
+function Slider({ class: _class, ...props }: JSX.IntrinsicElements["ul"]) {
   return (
     <ul
       data-slider
       class={clx(
-        "flex snap-x snap-start scroll-x-mandatory overflow-x-scroll no-scrollbar",
+        "ll no-scrollbar flex snap-x snap-start scroll-x-mandatory overflow-x-scroll no-scrollbar",
         "gap-vc-6 xl:gap-0",
         "lg:grid-cols-5 md:grid-cols-5",
-        props.class?.toString(),
+        _class?.toString(),
       )}
       {...props}
     />
   );
 }
 
-function Item({ index, ...props }: JSX.IntrinsicElements["li"] & {
-  index: number;
-}) {
+function Item(
+  { index, class: _class, ...props }: JSX.IntrinsicElements["li"] & {
+    index: number;
+  },
+) {
   return (
     <li
       data-slider-item={index}
@@ -43,7 +45,7 @@ function Item({ index, ...props }: JSX.IntrinsicElements["li"] & {
         "md:min-w-[20%] min-w-vc-150",
         "flex-grow-0 lg:flex-shrink-0 flex-shrink-0 md:flex-shrink-[unset]",
         "snap-start",
-        props.class?.toString(),
+        _class?.toString(),
       )}
       {...props}
     />
@@ -172,7 +174,9 @@ const onLoad = ({ rootId, scroll, interval, infinite }: Props) => {
         elements.forEach((e) => {
           const item = e.target.getAttribute("data-slider-item");
           const index = Number(item) || 0;
-          const pageIndex = Math.floor(index / getElementsInsideContainer().length);
+          const pageIndex = Math.floor(
+            index / getElementsInsideContainer().length,
+          );
           const dot = dots?.item(pageIndex);
 
           if (e.isIntersecting) {
