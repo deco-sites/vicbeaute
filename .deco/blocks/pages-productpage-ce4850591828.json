@@ -188,16 +188,17 @@
       }
     },
     {
-      "__resolveType": "site/sections/Product/ProductShelf.tsx",
+      "__resolveType": "site/sections/Product/ProductShelfSimilars.tsx",
       "products": {
         "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
         "props": {
           "sort": "price:desc",
           "collection": "137",
-          "count": 8
+          "count": 12,
+          "similars": true
         }
       },
-      "title": "Mais vendidos"
+      "title": "Mais Amados"
     },
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",

@@ -204,22 +204,19 @@
       }
     },
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/Product/ProductShelf.tsx",
-        "title": "Mais Vendidos",
-        "products": {
-          "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
-          "props": {
-            "sort": "price:desc",
-            "collection": "141",
-            "count": 8,
-            "hideUnavailableItems": false
-          }
-        },
-        "arrows": true,
-        "dots": true
-      }
+      "__resolveType": "site/sections/Product/ProductShelfSimilars.tsx",
+      "products": {
+        "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+        "props": {
+          "sort": "price:desc",
+          "collection": "137",
+          "count": 12,
+          "similars": true
+        }
+      },
+      "arrows": true,
+      "dots": true,
+      "title": "aaaaa"
     },
     {
       "__resolveType": "site/sections/Images/BannerSlider.tsx",
@@ -276,16 +273,19 @@
       "dotsMobile": true
     },
     {
-      "__resolveType": "site/sections/Product/ProductShelf.tsx",
-      "title": "Os Mais Queridos",
+      "__resolveType": "site/sections/Product/ProductShelfSimilars.tsx",
+      "title": "aaaaa",
       "products": {
         "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
         "props": {
           "sort": "price:desc",
           "collection": "137",
-          "count": 8
+          "count": 12,
+          "similars": true
         }
-      }
+      },
+      "arrows": true,
+      "dots": true
     },
     {
       "__resolveType": "site/sections/Product/TabbedProductSlider.tsx",

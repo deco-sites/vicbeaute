@@ -13,11 +13,13 @@ import * as $Gallery from "./islands/Gallery.tsx";
 import * as $InstitutionalMobileMenu from "./islands/InstitutionalMobileMenu.tsx";
 import * as $KonfidencyReviews from "./islands/KonfidencyReviews.tsx";
 import * as $Newsletter from "./islands/Newsletter.tsx";
+import * as $ProductCardColorSelector from "./islands/ProductCardColorSelector.tsx";
 import * as $ProductTipsVideo from "./islands/ProductTipsVideo.tsx";
 import * as $QuantitySelectorInteractive from "./islands/QuantitySelectorInteractive.tsx";
 import * as $QuantitySelectorMinicartInteractive from "./islands/QuantitySelectorMinicartInteractive.tsx";
 import * as $ScrollHeader from "./islands/ScrollHeader.tsx";
 import * as $SearchError from "./islands/SearchError.tsx";
+import * as $ShelfColorModal from "./islands/ShelfColorModal.tsx";
 import * as $ShopTheLookModal from "./islands/ShopTheLookModal.tsx";
 import * as $SliderJS from "./islands/SliderJS.tsx";
 import * as $TabbedSliderJS from "./islands/TabbedSliderJS.tsx";
@@ -38,12 +40,14 @@ const manifest = {
     "./islands/InstitutionalMobileMenu.tsx": $InstitutionalMobileMenu,
     "./islands/KonfidencyReviews.tsx": $KonfidencyReviews,
     "./islands/Newsletter.tsx": $Newsletter,
+    "./islands/ProductCardColorSelector.tsx": $ProductCardColorSelector,
     "./islands/ProductTipsVideo.tsx": $ProductTipsVideo,
     "./islands/QuantitySelectorInteractive.tsx": $QuantitySelectorInteractive,
     "./islands/QuantitySelectorMinicartInteractive.tsx":
       $QuantitySelectorMinicartInteractive,
     "./islands/ScrollHeader.tsx": $ScrollHeader,
     "./islands/SearchError.tsx": $SearchError,
+    "./islands/ShelfColorModal.tsx": $ShelfColorModal,
     "./islands/ShopTheLookModal.tsx": $ShopTheLookModal,
     "./islands/SliderJS.tsx": $SliderJS,
     "./islands/TabbedSliderJS.tsx": $TabbedSliderJS,
