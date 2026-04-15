@@ -54,6 +54,13 @@ interface Props {
   textFooter?: TextArea;
   textPrivacity?: string;
   linkPrivacity?: string;
+
+  /** @description Título da seção de newsletter */
+  newsletterTitle?: string;
+  /** @description Link para a Política de Privacidade */
+  newsletterPrivacyLink?: string;
+  /** @description Link para os Termos de Uso */
+  newsletterTermsLink?: string;
 }
 
 function Footer({
@@ -71,9 +78,43 @@ function Footer({
   textFooter,
   textPrivacity,
   linkPrivacity,
+  newsletterTitle = "Inscreva-se e fique por dentro das novidades",
+  newsletterPrivacyLink = "/politica-de-privacidade",
+  newsletterTermsLink = "/termos-de-uso",
 }: Props) {
   return (
     <footer class="w-full flex flex-col xl:gap-0 bg-green-5 xl:pb-4 pb-4">
+      {/* NEWSLETTER MOBILE */}
+      <div class="xl:hidden bg-white-15 xl:px-5 xl:py-8 px-[22px] py-[26px] rounded-b-2xl">
+        <h3 class="font-Queens text-[28px] leading-[1.15] text-black mb-5">
+          {newsletterTitle}
+        </h3>
+        <form class="flex flex-col gap-3">
+          <div class="flex items-center border-b border-[#191C1F] pb-1">
+            <input
+              type="email"
+              placeholder="Digite seu e-mail"
+              class="flex-1 bg-transparent text-[14px] text-black outline-none placeholder:text-[#4a4a4a]"
+            />
+            <button
+              type="submit"
+              class="ml-3 bg-[#556B50] text-white-15 py-[10px] px-3 rounded-md text-[13px] font-semibold whitespace-nowrap hover:bg-[#455C42] transition-colors"
+            >
+              Cadastrar
+            </button>
+          </div>
+          <p class="text-[11px] leading-snug text-[#4a4a4a] mt-0 xl:mt-1">
+            Ao se inscrever você aceita a{" "}
+            <a href={newsletterPrivacyLink} class="underline hover:text-black">
+              Política de Privacidade
+            </a>{" "}
+            e{" "}
+            <a href={newsletterTermsLink} class="underline hover:text-black">
+              Termos de Uso
+            </a>.
+          </p>
+        </form>
+      </div>
       <div class="w-full md:max-w-none xl:hidden px-3 bg-white">
         <Accordion
           children={links.map(({ title, children }) => ({
@@ -111,6 +152,7 @@ function Footer({
           }))}
         />
       </div>
+
       <div class="flex items-center gap-5 md:w-w-vc-300 xl:w-vc-150 lg:hidden pl-3 pt-10 pb-[30px]">
         <span class="text-black-35 font-Manrope">Redes sociais</span>
         <ul class="flex gap-5">
@@ -121,8 +163,8 @@ function Footer({
                   src={image}
                   alt={alt}
                   loading="lazy"
-                  width={24}
-                  height={24}
+                  width={32}
+                  height={32}
                 />
               </a>
             </li>
@@ -130,7 +172,7 @@ function Footer({
         </ul>
       </div>
       <div class="grid grid-cols-2 gap-4 mx-auto xl:hidden">
-        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-vc-150 md:w-w-vc-300 xl:w-vc-150 py-1">
+        <div class="flex flex-col items-center gap-[10px] border border-gray-300/50 w-vc-150 md:w-w-vc-300 xl:w-vc-150 py-1">
           <span class="text-sm text-black-25 font-Manrope">Plataforma:</span>
           <a
             href={platformLink ?? "#"}
@@ -142,7 +184,7 @@ function Footer({
             )}
           </a>
         </div>
-        <div class="flex flex-col items-center gap-1 border border-gray-300/50 w-vc-150 md:w-w-vc-300 xl:w-vc-150 py-1">
+        <div class="flex flex-col items-center gap-[10px] border border-gray-300/50 w-vc-150 md:w-w-vc-300 xl:w-vc-150 py-1">
           <span class="text-sm text-black-25 font-Manrope">Managed by:</span>
           <a href={managedLink ?? "#"} target="_blank" data-cy="managed-mobile">
             {managedImg && (
@@ -152,16 +194,16 @@ function Footer({
         </div>
       </div>
       {/* VISTA DESKTOP NOVA */}
-      <div class="hidden xl:flex flex-col gap-8 pt-16 max-w-[1452px] w-full mx-auto px-4 lg:px-8 bg-transparent">
-        <div class="w-full flex flex-row gap-12 items-start justify-between">
+      <div class="hidden xl:flex flex-col gap-8 pt-16 max-w-[1240px] w-full mx-auto px-4 lg:px-8 bg-transparent">
+        <div class="w-full flex flex-row gap-20 items-start justify-between">
           {/* COLUNA 1: NEWSLETTER E LOGOS */}
-          <div class="flex flex-col max-w-[360px] w-full gap-8">
+          <div class="flex flex-col max-w-[430px] w-full gap-8">
             <div class="flex flex-col gap-4">
               <h3 class="font-Queens text-[36px] leading-[1.1] text-black">
                 Inscreva-se e fique por dentro das novidades
               </h3>
 
-              <form class="flex flex-col gap-3 mt-4">
+              <form class="flex flex-col xl:gap-2 gap-3 mt-4">
                 <input
                   type="email"
                   placeholder="Digite seu e-mail"
@@ -169,14 +211,14 @@ function Footer({
                 />
                 <button
                   type="submit"
-                  class="w-full bg-[#556B50] text-white py-3 rounded-sm text-[14px] uppercase tracking-widest font-semibold hover:bg-[#455C42] transition-colors mt-2"
+                  class="w-full bg-[#556B50] text-white-15 py-3 rounded-md text-[14px] uppercase tracking-widest font-semibold hover:bg-[#455C42] transition-colors mt-2"
                 >
                   Cadastrar
                 </button>
-                <label class="flex items-start gap-2 mt-2 cursor-pointer group">
+                <label class="flex xl:items-center items-start gap-2 mt-2 cursor-pointer group">
                   <input
                     type="checkbox"
-                    class="mt-1 w-4 h-4 rounded-sm border-gray-400 text-[#556B50] focus:ring-[#556B50]"
+                    class="mt-1 xl:mt-0 w-4 h-4 rounded-sm border-gray-400 text-[#556B50] focus:ring-[#556B50]"
                   />
                   <span class="text-[11px] leading-tight text-[#4a4a4a]">
                     Ao se inscrever você aceita a{" "}
@@ -245,17 +287,17 @@ function Footer({
 
           {/* COLUNAS MENUS E NAVEGAÇÃO + SOCIAIS NA ÚLTIMA COLUNA */}
           <div class="flex-1 flex justify-end w-full">
-            <div class="grid grid-cols-4 w-full max-w-[800px] gap-8">
+            <div class="grid grid-cols-4 w-full max-w-[730px] gap-[30px]">
               {links.map(({ title, children }, index) => (
-                <div class="flex flex-col gap-4 w-full h-full">
+                <div class="flex flex-col gap-4 xl:gap-5 w-full h-full">
                   <div>
                     <h4
                       data-cy="title-footer"
-                      class="font-bold text-[12px] uppercase text-[#191C1F] tracking-wide mb-1"
+                      class="font-bold text-[12px] uppercase text-[#191C1F] tracking-wide mb-3"
                     >
                       {title}
                     </h4>
-                    <ul class="flex flex-col gap-3">
+                    <ul class="flex flex-col gap-2">
                       {children.map((child) =>
                         child.isLink
                           ? (
@@ -287,7 +329,7 @@ function Footer({
 
                   {/* REDES SOCIAIS E CONTATO ALINHADOS ABAIXO DA ÚLTIMA COLUNA */}
                   {index === links.length - 1 && (
-                    <div class="flex flex-col gap-4 w-full mt-[72px]">
+                    <div class="flex flex-col gap-3 w-full mt-[72px]">
                       <h4 class="font-bold text-[12px] uppercase text-[#191C1F] tracking-wide mb-1">
                         Redes Sociais
                       </h4>
@@ -303,15 +345,15 @@ function Footer({
                                 src={image}
                                 alt={alt}
                                 loading="lazy"
-                                width={22}
-                                height={22}
+                                width={24}
+                                height={24}
                                 class="object-contain"
                               />
                             </a>
                           </li>
                         ))}
                       </ul>
-                      <div class="flex flex-col gap-2 mt-4 text-[13px] text-[#191C1F]">
+                      <div class="flex flex-col gap-2 mt-2 text-[13px] text-[#191C1F]">
                         <a
                           href="tel:1149352378"
                           class="hover:opacity-70 transition-opacity"
@@ -354,7 +396,7 @@ function Footer({
       </div>
 
       {/* VISTA MOBILE DO COPYRIGHT (Inalterada mas escondida no desk) */}
-      <div class="xl:hidden flex flex-col gap-1 mt-4">
+      <div class="xl:hidden flex flex-col gap-1 mt-6 px-3">
         <div
           data-cy="text-footer-desk"
           class="text-footer-desk leading-normal text-center tracking-wider text-black-35 text-xs text-black font-medium lg:max-w-[1052px] w-full mx-auto font-Manrope"

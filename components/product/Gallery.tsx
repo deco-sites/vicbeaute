@@ -26,7 +26,9 @@ export default function GallerySlider(props: Props) {
 
   const { page: { product: { name, isVariantOf, image: pImages } } } = props;
 
-  const groupImages = isVariantOf?.image ?? pImages ?? [];
+  const groupImages = (isVariantOf?.image ?? pImages ?? []).filter(
+    (img) => img.name?.toLowerCase() !== "cor"
+  );
   const filtered = groupImages.filter((img) =>
     name?.includes(img.alternateName || "")
   );
