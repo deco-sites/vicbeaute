@@ -7,6 +7,8 @@ export interface LookModalData {
   imageDesk: string;
   imageMobile?: string;
   imageAlt?: string;
+  modalImage?: string;
+  modalImageMobile?: string;
   cardType?: string;
   title: string;
   subtitle: string;
@@ -107,9 +109,9 @@ export default function ShopTheLookModal(
       />
 
       {/* Modal Container */}
-      <div class="bg-[#ffffff] w-full max-w-[850px] max-h-[90vh] overflow-hidden flex flex-col lg:flex-row relative z-10 rounded-sm shadow-2xl animate-fade-in">
+      <div class="bg-[#ffffff] xl:px-[30px] xl:py-[30px] w-full max-w-[850px] max-h-[90vh] overflow-hidden flex flex-col lg:flex-row relative z-10 rounded-sm shadow-2xl animate-fade-in gap-[18px] xl:gap-[25px]">
         <button
-          class="absolute top-5 right-5 z-20 text-[#191C1F] hover:opacity-70 transition-opacity bg-white/50 lg:bg-transparent rounded-full p-1"
+          class="absolute xl:top-[30px] xl:right-[30px] top-5 right-5 z-20 text-[#191C1F] hover:opacity-70 transition-opacity bg-white/50 lg:bg-transparent rounded-full p-1"
           onClick={closeModal}
         >
           <svg
@@ -129,9 +131,9 @@ export default function ShopTheLookModal(
         </button>
 
         {/* Left Side: Header (Mobile) + Image */}
-        <div class="w-full lg:w-[45%] flex flex-col max-h-[40vh] lg:max-h-none overflow-hidden relative">
+        <div class="w-full flex flex-col relative xl:gap-4">
           {/* Header visivel no topo da imagem no Desktop, em cima no Mobile? Fica melhor integrado no topo da img */}
-          <div class="bg-white px-6 pt-6 pb-4 lg:pb-6 z-10 flex flex-col shadow-sm lg:shadow-none">
+          <div class="bg-white px-5 pt-5 pb-[13px] xl:px-0 xl:py-0 z-10 flex flex-col lg:shadow-none">
             <h2 class="text-[26px] lg:text-[32px] text-[#455C42] font-Queens leading-[1.1]">
               {activeLook.title}
             </h2>
@@ -140,18 +142,26 @@ export default function ShopTheLookModal(
             </span>
           </div>
 
-          <div class="flex-grow overflow-hidden px-6 lg:px-6 pb-6 w-full">
-            <img
-              src={activeLook.imageDesk}
-              alt={activeLook.imageAlt || "Look"}
-              class="w-full h-full object-cover object-top rounded-sm"
-            />
+          <div class="lg:flex-grow lg:overflow-hidden px-6 lg:px-0 lg:py-0 w-full">
+            <picture>
+              {activeLook.modalImageMobile && (
+                <source
+                  media="(max-width: 1023px)"
+                  srcSet={activeLook.modalImageMobile}
+                />
+              )}
+              <img
+                src={activeLook.modalImage || activeLook.imageDesk}
+                alt={activeLook.imageAlt || "Look"}
+                class="w-full lg:h-full lg:object-cover lg:object-top rounded-sm"
+              />
+            </picture>
           </div>
         </div>
 
         {/* Right Side: Products List */}
-        <div class="w-full lg:w-[55%] flex flex-col border-t lg:border-t-0 lg:border-l border-gray-100 flex-grow relative bg-white">
-          <div class="overflow-y-auto px-6 py-6 pb-24 lg:pb-32 flex flex-col gap-6 custom-scrollbar h-full">
+        <div class="w-full lg:w-[55%] flex flex-col flex-grow relative">
+          <div class="overflow-y-auto px-6 xl:px-0 xl:pt-[70px] pb-24 lg:pb-32 flex flex-col gap-6 xl:gap-[12px] custom-scrollbar h-full">
             {(activeLook.products || []).map((product) => {
               const price = product.offers?.offers[0]?.price || 0;
               const colorAttr = product.additionalProperty?.find((attr) =>
@@ -164,11 +174,11 @@ export default function ShopTheLookModal(
               return (
                 <div
                   key={product.productID}
-                  class="flex items-center gap-5 border-b border-gray-100 pb-5 last:border-0 last:pb-0"
+                  class="flex items-center gap-5 xl:gap-3 border-b border-gray-100 pb-5 xl:pb-[12px] last:border-0 last:pb-0"
                 >
                   {/* Checkbox custom */}
                   <button
-                    class={`w-[22px] h-[22px] rounded-sm flex items-center justify-center flex-shrink-0 transition-all ${
+                    class={`w-[22px] h-[22px] xl:w-[26px] xl:h-[26px] rounded-sm flex items-center justify-center flex-shrink-0 transition-all ${
                       isSelected
                         ? "bg-[#EAE8E2] border-[#455C42] border border-opacity-30"
                         : "bg-[#EAE8E2] border-transparent border hover:border-gray-300"
@@ -182,11 +192,11 @@ export default function ShopTheLookModal(
                     )}
                   </button>
 
-                  <div class="w-[80px] h-[80px] bg-[#F4F4F4] rounded-sm overflow-hidden flex-shrink-0 flex items-center justify-center p-1">
+                  <div class="w-[80px] h-[80px] bg-[#F4F4F4] rounded-sm overflow-hidden flex-shrink-0 flex items-center justify-center xl:p-0 p-1">
                     {product.image?.[0]?.url && (
                       <img
                         src={product.image[0].url}
-                        class="w-full h-full object-contain mix-blend-multiply"
+                        class="w-full h-full xl:w-[80px] xl:h-[80px] object-contain mix-blend-multiply"
                         alt={product.name}
                       />
                     )}
@@ -209,9 +219,9 @@ export default function ShopTheLookModal(
           </div>
 
           {/* Fixed Bottom Action */}
-          <div class="absolute bottom-0 left-0 w-full bg-white border-t border-gray-100 px-6 py-5 z-20">
+          <div class="xl:pt-[10px] xl:rounded-full absolute bottom-0 left-0 w-full border-gray-100 xl:px-0 xl:py-0 px-6 py-5 z-20">
             <button
-              class={`w-full py-[14px] text-[13px] font-bold tracking-widest uppercase transition-all rounded-sm flex items-center justify-center gap-3 shadow-md ${
+              class={`w-full xl:rounded-full py-[14px] text-[13px] font-bold tracking-widest uppercase transition-all rounded-sm flex items-center justify-center gap-3 shadow-md ${
                 selectedProductIds.size > 0
                   ? "bg-[#556b50] text-[#EBE8E3] hover:bg-[#455C42]"
                   : "bg-[#e5e5e5] text-gray-500 pointer-events-none"
@@ -220,7 +230,7 @@ export default function ShopTheLookModal(
             >
               ADICIONAR PRODUTOS{" "}
               {selectedProductIds.size > 0 && `(${selectedProductIds.size})`}
-              <Icon id="shopping_bag" size={18} />
+              <Icon id="bag-shop-the-look" size={24} />
             </button>
           </div>
         </div>

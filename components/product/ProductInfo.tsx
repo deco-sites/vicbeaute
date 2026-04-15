@@ -73,17 +73,38 @@ function ProductInfo({ page }: Props) {
 
   const similars = product.isSimilarTo ?? [];
   let allProducts = similars.length > 0 ? [product, ...similars] : (product.isVariantOf?.hasVariant ?? [product]);
-  
-  // Deduplicar pelo nome
-  allProducts = Array.from(new Map(allProducts.map(p => [p.name, p])).values());
 
-  const allColors = allProducts.map((p) => ({
-    url: relative(p.url) ?? "/",
-    name: p.name ?? "",
-    subtitle: p.alternateName ?? "",
-    imgUrl: getSwatchUrl(p.image),
-  }));
-  const hasColors = allColors.length > 0;
+  // Deduplicar por productID (único por produto). Usar Set para preservar a PRIMEIRA ocorrência,
+  // garantindo que o produto atual (primeiro da lista) nunca seja substituído por um similar com mesmo nome.
+  const seenIds = new Set<string>();
+  allProducts = allProducts.filter((p) => {
+    const key = p.productID ?? p.sku ?? p.name ?? "";
+    if (seenIds.has(key)) return false;
+    seenIds.add(key);
+    return true;
+  });
+
+  // Extrai a cor do SKU (spec "Cor" no nível de SKU)
+  const getSkuColor = (p: typeof product) =>
+    p.additionalProperty?.find((a) => a.name === "Cor")?.value ?? p.name ?? "";
+
+  // Extrai o atributo "Cores" do produto (spec no nível de produto)
+  const getProductCores = (p: typeof product) =>
+    (p.isVariantOf?.additionalProperty ?? p.additionalProperty ?? [])
+      .find((a) => a.name === "Cores")?.value ?? "";
+
+  const allColors = allProducts
+    .filter((p) => {
+      const url = relative(p.url);
+      return url && url !== "/"; // Apenas produtos com URL válida e não-raiz
+    })
+    .map((p) => ({
+      url: relative(p.url)!,
+      name: getSkuColor(p),         // Cor do SKU  (ex: "Preto", "Corada")
+      subtitle: getProductCores(p), // Atributo "Cores" do produto (ex: "Coral")
+      imgUrl: getSwatchUrl(p.image),
+    }));
+  const hasColors = allColors.length > 1; // Exibe seletor apenas quando há mais de 1 cor
   const selectedUrl = relative(product.url) ?? "/";
   // ────────────────────────────────────────────────────────────
 

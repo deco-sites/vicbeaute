@@ -11,6 +11,10 @@ export interface Look {
   /** @description Imagem Mobile (Vertical: 170x348 | Quadrado: 170x170) */
   imageMobile: ImageWidget;
   imageAlt?: string;
+  /** @description Imagem exibida dentro do modal/drawer ao abrir o look (Desktop). Se não preenchida, usa a imagem desktop do card. */
+  modalImage?: ImageWidget;
+  /** @description Imagem exibida dentro do modal/drawer no Mobile (335x280). */
+  modalImageMobile?: ImageWidget;
   /** @description Define se ele estica verticalmente por 2 blocos ou se é o quadrado base */
   cardType: "Vertical" | "Quadrado";
   /** @description Título base que aparece no Modal */
@@ -55,14 +59,14 @@ export default function ShopTheLook({
       class="w-full bg-[#F4F4F4] py-16 flex flex-col items-center"
     >
       {/* Header */}
-      <div class="px-5 text-center mb-8 lg:mb-12 max-w-[650px] mx-auto flex flex-col items-center">
+      <div class="px-5 text-center mb-[10px] lg:mb-12 xl:max-w-[970px] max-w-[650px] mx-auto flex flex-col items-center">
         {title && (
-          <span class="text-[14px] tracking-wide font-medium text-[#191C1F] mb-2">
+          <span class="text-[14px] tracking-wide font-medium text-[#191C1F] mb-0">
             {title}
           </span>
         )}
         {highlightTitle && (
-          <h2 class="text-[44px] lg:text-[56px] font-Queens text-[#CE9680] leading-[1.0] mb-4">
+          <h2 class="text-[44px] lg:text-[56px] font-Queens text-[#CE9680] leading-[1.0] mb-[10px]">
             {highlightTitle}
           </h2>
         )}
@@ -75,11 +79,11 @@ export default function ShopTheLook({
 
       {/* Grid Masonry usando CSS Columns para evitar falhas de altura com items verticais/quadrados */}
       <div
-        class="w-full max-w-[1440px] px-5 lg:px-20 mx-auto"
+        class="w-full xl:max-w-[1280px] max-w-[1440px] xl:px-0 px-5 lg:px-20 mx-auto"
         id={`${rootId}-grid-container`}
       >
         <div
-          class="columns-2 lg:columns-4 gap-2 lg:gap-4 relative"
+          class="columns-2 lg:columns-4 gap-2 lg:gap-[14px] relative"
           id={`${rootId}-grid`}
         >
           {looks.map((look, index) => {
@@ -113,22 +117,8 @@ export default function ShopTheLook({
                 </picture>
 
                 {/* Botão overlay Plus */}
-                <div class="absolute bottom-3 right-3 lg:bottom-4 lg:right-4 w-9 h-9 lg:w-11 lg:h-11 bg-[#D99477] hover:bg-[#b07d68] transition-colors rounded-sm flex items-center justify-center text-white z-10 opacity-90 shadow-sm">
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    class="lg:w-[24px] lg:h-[24px]"
-                  >
-                    <path
-                      d="M12 5V19M5 12H19"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
+                <div class="absolute bottom-3 right-3 lg:bottom-4 lg:right-4 w-9 h-9 lg:w-10 lg:h-10 bg-[#D99477] hover:bg-[#b07d68] transition-colors rounded-sm flex items-center justify-center text-white z-10 opacity-90 shadow-sm">
+                  <Icon id="pluswhite" size={24} />
                 </div>
               </div>
             );
@@ -140,7 +130,7 @@ export default function ShopTheLook({
       <div class="mt-8 lg:mt-12 px-5">
         <button
           id={`${rootId}-btn`}
-          class="hidden bg-[#556b50] hover:bg-[#455C42] transition-colors text-white text-[13px] tracking-wide px-10 py-[14px] rounded-sm uppercase font-semibold ring-1 ring-transparent focus:ring-offset-2"
+          class="hidden bg-[#556b50] hover:bg-[#455C42] transition-colors text-white-15 text-[13px] tracking-wide px-[52px] py-[16px] rounded-md font-semibold ring-1 ring-transparent focus:ring-offset-2"
         >
           Ver mais looks
         </button>
@@ -221,6 +211,8 @@ export default function ShopTheLook({
          imageDesk: l.imageDesk,
          imageMobile: l.imageMobile,
          imageAlt: l.imageAlt,
+         modalImage: l.modalImage,
+         modalImageMobile: l.modalImageMobile,
          title: l.title,
          subtitle: l.subtitle,
          products: (l.products || []).map(p => ({

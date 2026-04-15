@@ -42,9 +42,16 @@ export default function ProductColors({ title = "Cores", page }: Props) {
       return name === "descrição" || alt === "descrição" || name === "decricao" || alt === "decricao";
     })?.url ?? p.image?.[2]?.url ?? p.image?.[0]?.url ?? "";
 
-    // 3. Texts
-    const name = p.name ?? "";
-    const subtitle = p.alternateName ?? "";
+    // 3. Texts — mesma lógica do ColorVariantSelector:
+    //    name    = spec "Cor" no nível do SKU   (ex: "Preto", "Corada")
+    //    subtitle = spec "Cores" no nível do produto (ex: "Coral")
+    const name =
+      p.additionalProperty?.find((a) => a.name === "Cor")?.value ??
+      p.name ??
+      "";
+    const subtitle =
+      (p.isVariantOf?.additionalProperty ?? p.additionalProperty ?? [])
+        .find((a) => a.name === "Cores")?.value ?? "";
 
     // 4. Description HTML -> from Cartela De Cores
     // The "isVariantOf" stores the specifications (additionalProperty) generally.
