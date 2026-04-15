@@ -424,7 +424,7 @@
       "looks": [
         {
           "cardType": "Vertical",
-          "imageDesk": "https://assets.decocache.com/vicbeaute/b5689eb7-f2f0-4520-8d88-2ae02358e662/Frame-1000004117.png",
+          "imageDesk": "https://assets.decocache.com/vicbeaute/1cadfb64-9067-49c9-9cd7-c26ae20b7e8d/Frame-1000004117.png",
           "imageMobile": "https://assets.decocache.com/vicbeaute/a827d85f-ee19-49d0-b488-041a4eee42ec/Frame-100000411-mobile7.png",
           "title": "O clássico do dia",
           "subtitle": "@vicceridono",
@@ -435,7 +435,9 @@
               "collection": "137",
               "count": 3
             }
-          }
+          },
+          "modalImage": "https://assets.decocache.com/vicbeaute/381741be-814f-4022-916f-f47146dd4eb5/Captura-de-Tela-2024-05-11-as-02.30-2.png",
+          "modalImageMobile": "https://assets.decocache.com/vicbeaute/ff7e9e5b-3ab1-44b0-b194-8d78a7a86c36/Captura-de-Tela-2024-05-11-as-02.30-2.png"
         },
         {
           "cardType": "Quadrado",
@@ -450,7 +452,9 @@
               "collection": "137",
               "count": 3
             }
-          }
+          },
+          "modalImage": "https://assets.decocache.com/vicbeaute/381741be-814f-4022-916f-f47146dd4eb5/Captura-de-Tela-2024-05-11-as-02.30-2.png",
+          "modalImageMobile": "https://assets.decocache.com/vicbeaute/ff7e9e5b-3ab1-44b0-b194-8d78a7a86c36/Captura-de-Tela-2024-05-11-as-02.30-2.png"
         },
         {
           "cardType": "Quadrado",
@@ -465,7 +469,9 @@
               "collection": "137",
               "count": 3
             }
-          }
+          },
+          "modalImage": "https://assets.decocache.com/vicbeaute/381741be-814f-4022-916f-f47146dd4eb5/Captura-de-Tela-2024-05-11-as-02.30-2.png",
+          "modalImageMobile": "https://assets.decocache.com/vicbeaute/ff7e9e5b-3ab1-44b0-b194-8d78a7a86c36/Captura-de-Tela-2024-05-11-as-02.30-2.png"
         },
         {
           "cardType": "Quadrado",
@@ -480,7 +486,9 @@
               "collection": "141",
               "count": 3
             }
-          }
+          },
+          "modalImage": "https://assets.decocache.com/vicbeaute/381741be-814f-4022-916f-f47146dd4eb5/Captura-de-Tela-2024-05-11-as-02.30-2.png",
+          "modalImageMobile": "https://assets.decocache.com/vicbeaute/ff7e9e5b-3ab1-44b0-b194-8d78a7a86c36/Captura-de-Tela-2024-05-11-as-02.30-2.png"
         },
         {
           "cardType": "Quadrado",
@@ -495,7 +503,9 @@
               "collection": "141",
               "count": 3
             }
-          }
+          },
+          "modalImage": "https://assets.decocache.com/vicbeaute/381741be-814f-4022-916f-f47146dd4eb5/Captura-de-Tela-2024-05-11-as-02.30-2.png",
+          "modalImageMobile": "https://assets.decocache.com/vicbeaute/ff7e9e5b-3ab1-44b0-b194-8d78a7a86c36/Captura-de-Tela-2024-05-11-as-02.30-2.png"
         },
         {
           "cardType": "Vertical",
@@ -510,7 +520,9 @@
               "collection": "141",
               "count": 3
             }
-          }
+          },
+          "modalImage": "https://assets.decocache.com/vicbeaute/381741be-814f-4022-916f-f47146dd4eb5/Captura-de-Tela-2024-05-11-as-02.30-2.png",
+          "modalImageMobile": "https://assets.decocache.com/vicbeaute/ff7e9e5b-3ab1-44b0-b194-8d78a7a86c36/Captura-de-Tela-2024-05-11-as-02.30-2.png"
         }
       ]
     },
