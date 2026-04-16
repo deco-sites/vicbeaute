@@ -4577,6 +4577,9 @@ details.collapse summary::-webkit-details-marker {
 .aspect-video {
   aspect-ratio: 16 / 9;
 }
+.\!h-\[100vh\] {
+  height: 100vh !important;
+}
 .h-0 {
   height: 0px;
 }
@@ -6099,6 +6102,10 @@ details.collapse summary::-webkit-details-marker {
   --tw-bg-opacity: 1;
   background-color: rgb(232 232 232 / var(--tw-bg-opacity));
 }
+.bg-gray-20 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 244 244 / var(--tw-bg-opacity));
+}
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
@@ -7108,10 +7115,6 @@ details.collapse summary::-webkit-details-marker {
 .text-green-20 {
   --tw-text-opacity: 1;
   color: rgb(94 108 91 / var(--tw-text-opacity));
-}
-.text-green-5 {
-  --tw-text-opacity: 1;
-  color: rgb(213 216 194 / var(--tw-text-opacity));
 }
 .text-pink-15 {
   --tw-text-opacity: 1;
