@@ -154,7 +154,7 @@ function ProductInfo({ page }: Props) {
     <div>
       <div
         {...viewItemEvent}
-        class="lg:flex hidden flex-col product-info max-w-[350px]"
+        class="lg:flex hidden flex-col product-info w-[350px]"
         id={id}
       >
         <div class="hidden lg:block mb-[30px] -mt-2 [&_.breadcrumbs]:lg:!pt-0">
