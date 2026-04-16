@@ -56,7 +56,7 @@ export default function CardSlider(
   return (
     <div
       id={id}
-      class="relative w-full flex flex-col gap-4 overflow-hidden py-4"
+      class="relative w-full flex flex-col overflow-hidden py-4"
     >
       {/* SLIDER */}
       <Slider class="carousel carousel-center w-full gap-4 px-4 lg:px-8">
@@ -69,10 +69,10 @@ export default function CardSlider(
             {/* --- MOBILE CARD (280x460) --- */}
             <a
               href={card.buttonLink || "#"}
-              class="card-slider-item-mobile lg:hidden relative flex-col overflow-hidden flex-shrink-0 flex bg-[#ffffff]"
+              class="card-slider-item-mobile lg:hidden relative flex-col overflow-hidden flex-shrink-0 flex bg-[#ffffff] rounded-md"
               style={{ width: "280px", height: "460px" }}
             >
-              <div class="w-full h-[250px] overflow-hidden">
+              <div class="w-full overflow-hidden">
                 <img
                   class="w-full h-full object-cover"
                   loading={index === 0 ? "eager" : "lazy"}
@@ -80,19 +80,19 @@ export default function CardSlider(
                   alt={card.alt || card.title}
                 />
               </div>
-              <div class="flex flex-col items-center justify-start text-center p-6 flex-1">
+              <div class="flex flex-col items-center justify-start text-center px-3 pt-3 pb-[10px] flex-1">
                 {card.title && (
                   <h3 class="text-[#455C42] text-[20px] font-Queens font-semibold leading-tight max-w-[240px]">
                     {card.title}
                   </h3>
                 )}
                 {card.text && (
-                  <p class="text-[#191C1F] text-xs leading-snug mt-3">
+                  <p class="text-[#191C1F] text-xs leading-snug mt-[10px]">
                     {card.text}
                   </p>
                 )}
                 {card.buttonText && (
-                  <span class="mt-auto bg-[#455C42] text-white text-xs font-semibold px-6 py-3 rounded-sm uppercase tracking-wider">
+                  <span class="mt-2 bg-[#455C42] text-white-15 text-xs font-semibold px-[53px] py-4 rounded-md tracking-wider">
                     {card.buttonText}
                   </span>
                 )}
@@ -111,19 +111,19 @@ export default function CardSlider(
                 src={card.desktopImage}
                 alt={card.alt || card.title}
               />
-              <div class="absolute inset-0 p-8 xl:p-10 flex flex-col justify-center items-start w-1/2 min-w-[320px]">
+              <div class="absolute inset-0 py-8 xl:py-[72px] xl:pl-5 flex flex-col justify-center items-start w-1/2 min-w-[320px] xl:min-w-[unset] xl:max-w-[270px] xl:gap-[10px]">
                 {card.title && (
                   <h3 class="text-[#FFFFFF] text-[32px]  xl:font-hanken-grotesk xl:leading-[1.0] leading-tight font-semibold">
                     {card.title}
                   </h3>
                 )}
                 {card.text && (
-                  <p class="text-[#FFFFFF] xl:text-[16px] text-sm leading-snug mt-3">
+                  <p class="text-[#FFFFFF] xl:text-[16px] text-sm leading-snug mt-3 xl:mt-0">
                     {card.text}
                   </p>
                 )}
                 {card.buttonText && (
-                  <span class="mt-6 bg-[#FFFFFF] text-[#191C1F] px-8 py-3 rounded-sm text-[13px] xl:text-[16px] xl:leading-[1.5] font-bold tracking-wider">
+                  <span class="mt-6 xl:mt-0 bg-[#FFFFFF] text-[#191C1F] px-8 py-3 rounded-sm text-[13px] xl:text-[16px] xl:leading-[1.5] font-bold tracking-wider">
                     {card.buttonText}
                   </span>
                 )}
@@ -191,7 +191,7 @@ export default function CardSlider(
           />
           <div
             class={[
-              "w-full px-4 lg:px-8 mx-auto justify-center z-10",
+              "w-full px-4 lg:px-8 mx-auto justify-center z-10 mt-2 lg:mt-[6px]",
               dotsMobile ? "flex" : "hidden",
               dotsDesktop ? "lg:flex" : "lg:hidden",
             ].join(" ")}

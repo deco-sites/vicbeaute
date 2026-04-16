@@ -23,7 +23,7 @@ function ProductSliderSimilars(
 
   return (
     <>
-      <div id={id} class="relative w-full lg:px-0 pl-3 pt-2">
+      <div id={id} class="relative w-full lg:px-0 pl-3 pt-[14px]">
         <Slider id="shelf-slider" class="lg:mr-[calc(50%-50vw)] lg:pr-[calc(50vw-50%)]">
           {products?.map((product, index) => (
             <Slider.Item index={index}>
@@ -82,7 +82,7 @@ function ProductSliderSimilars(
               `,
               }}
             />
-            <div class="flex w-full lg:max-w-[351px] px-4 lg:px-0 gap-0 productslider-similars-dots-tracker justify-center mx-auto mt-4 pb-6">
+            <div class="flex w-full lg:max-w-[351px] px-4 lg:px-0 gap-0 productslider-similars-dots-tracker justify-center mx-auto mt-2 lg:mt-[6px] pb-6">
               {Array.from(
                 { length: totalPages },
                 (_, index) => (

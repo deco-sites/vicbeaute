@@ -22,7 +22,9 @@ function Header({ title, cta }: Props) {
           ? "justify-center lg:justify-start pt-6 lg:pt-0"
           : title === "Preferidos da semana"
           ? "justify-center lg:justify-center pt-0"
-          : "justify-between lg:justify-center pt-6 lg:pt-0",
+          : title === "Mais amados"
+          ? "justify-center lg:justify-center pt-6 lg:pt-0"
+          : "justify-between lg:justify-center pt-6 lg:pt-0"
       )}
     >
       <h2 class="font-Queens text-2xl text-[#CE9680] text-[36px]">
@@ -53,7 +55,7 @@ function Container({ class: _class, ...props }: JSX.IntrinsicElements["div"]) {
     <div
       {...props}
       class={clx(
-        " lg:max-w-[1130px] mx-auto w-full",
+        " lg:max-w-[1280px] mx-auto w-full",
         _class?.toString(),
       )}
     />
