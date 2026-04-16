@@ -8,7 +8,6 @@ import { useOffer } from "../../sdk/useOffer.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
 import { useVariantPossibilities } from "../../sdk/useVariantPossiblities.ts";
 import WishlistButton from "../wishlist/WishlistButton.tsx";
-import AddToCartButton from "./AddToCartButton.tsx";
 import { Ring } from "./ProductVariantSelector.tsx";
 import { useId } from "../../sdk/useId.ts";
 
@@ -192,30 +191,35 @@ function ProductCard({
 
       <div class="flex-grow" />
 
-      <div class="p-1">
+      <div class="p-1.5 mt-auto">
         {inStock
           ? (
             <div
               class={clx(
-                "btn",
-                "border-none text-sm no-animation w-full",
-                "flex w-full justify-center rounded-lg mx-auto bg-green-10 font-Manrope font-medium text-xs text-green-5 px-0 lg:text-base",
+                "btn border-none text-sm no-animation w-full px-0 lg:text-[14px]",
+                "flex justify-center rounded-sm mx-auto bg-[#455C42] hover:bg-[#3d513a] text-white-15 font-medium min-h-[40px] h-[40px]",
               )}
             >
-              Produto Indisponível
+              Compre agora{" "}
+              <span class="ml-1">
+                <svg id="bag-icon" width="14" height="15">
+                  <path
+                    d="M10.8871 4.54589H3.14945V3.88246C3.14945 1.74175 4.88414 0 7.02485 0C9.16556 0 10.9003 1.73469 10.9003 3.87541V4.54589H10.8871ZM2.1543 4.54589L1.49087 14.1209H12.5588L11.8954 4.54589H2.1543Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
             </div>
           )
           : (
             <div
               class={clx(
-                "btn",
-                "border-none text-sm no-animation w-full",
-                "disabled:!bg-transparent",
-                "hover:!text-error disabled:!text-error",
-                "flex w-full max-w-vc-152 justify-center rounded-lg mx-auto bg-gray-30 font-Inter text-black-15 font-medium text-base px-0 lg:text-base",
+                "btn border-none text-[13px] no-animation w-full px-0 lg:text-[14px]",
+                "disabled:!bg-transparent hover:!text-error disabled:!text-error",
+                "flex justify-center rounded-sm mx-auto bg-gray-30 font-Inter text-black-15 font-medium min-h-[40px] h-[40px]",
               )}
             >
-              Produto Indisponível
+              Indisponível
             </div>
           )}
       </div>

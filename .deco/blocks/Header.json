@@ -370,8 +370,9 @@
       "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
       "props": {
         "sort": "price:desc",
-        "collection": "141",
-        "count": 8
+        "collection": "137",
+        "count": 8,
+        "similars": true
       }
     },
     "title": "Os mais queridos"
@@ -383,8 +384,9 @@
       "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
       "props": {
         "sort": "price:desc",
-        "collection": "141",
-        "count": 8
+        "collection": "137",
+        "count": 8,
+        "similars": true
       }
     },
     "dots": true,

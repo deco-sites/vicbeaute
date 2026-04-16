@@ -38,10 +38,10 @@ export default function ColorDetails({ title = "Cores", colors }: Props) {
   }
 
   return (
-    <div id="product-color-details" class="w-full py-8 lg:py-16 bg-[#ffffff]">
+    <div id="product-color-details" class="w-full py-8 bg-gray-20">
       <div
         class={clx(
-          "container grid grid-cols-1 max-w-[1044px] gap-8 px-5 lg:px-0",
+          "container grid grid-cols-1 max-w-[1280px] bg-white-15 xl:gap-[30px] gap-8 px-5 lg:px-0",
           "lg:grid-cols-2 lg:gap-16 xl:gap-24",
         )}
       >
@@ -58,7 +58,7 @@ export default function ColorDetails({ title = "Cores", colors }: Props) {
             src={activeColor.largeImageUrl}
             alt={activeColor.name || "Cor do produto"}
             width={640}
-            height={640}
+            height={540}
             class="hidden lg:block w-full object-cover lg:h-auto"
           />
         </div>
