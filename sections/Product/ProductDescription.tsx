@@ -51,13 +51,12 @@ export default function ProductDescription({ page }: Props) {
     <div id="product-description" class="w-full py-8 lg:py-16">
       <div
         class={clx(
-          "container grid grid-cols-1 max-w-[1044px] gap-8 px-5 lg:px-0 bg-[#ffffff]",
-          finalImage ? "lg:grid-cols-2 lg:gap-16 xl:gap-24" : "lg:grid-cols-1",
+          "container flex flex-col lg:flex-row max-w-[1280px] px-5 lg:px-0 bg-[#ffffff]"
         )}
       >
         {/* Mobile: Text on top or Image on top? Image on top. */}
         {finalImage && (
-          <div class="lg:order-2 flex justify-center h-full">
+          <div class="lg:order-2 flex justify-center h-full lg:w-1/2">
             <Image
               src={finalImage}
               alt={product.name || "Descrição do produto"}
@@ -70,14 +69,14 @@ export default function ProductDescription({ page }: Props) {
               alt={product.name || "Descrição do produto"}
               width={640}
               height={560}
-              class="hidden lg:block w-full object-cover rounded-sm lg:h-auto"
+              class="hidden lg:block w-full rounded-sm lg:h-auto"
             />
           </div>
         )}
 
         {/* Text Content */}
-        <div class="lg:order-1 flex flex-col justify-center h-full">
-          <h2 class="font-Queens text-[32px] lg:text-[40px] text-pink-15 mb-4 lg:mb-6 leading-tight">
+        <div class="lg:order-1 flex flex-col justify-center lg:px-10 h-full lg:w-1/2">
+          <h2 class="font-Queens text-[32px] lg:text-[40px] text-pink-15 mb-2 pt-3 leading-tight">
             Descri&#231;&#227;o
           </h2>
 

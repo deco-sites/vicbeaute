@@ -59,7 +59,7 @@ function WishlistButton({ item, variant = "full" }: Props) {
           variant === "icon"
             ? "btn-circle btn-ghost btn-sm"
             : variant === "pdp"
-              ? "h-[45px] w-[45px] bg-white rounded-md shrink-0 transition-opacity hover:opacity-80 hover:bg-white min-h-[45px] border-none flex items-center justify-center"
+              ? "h-[45px] w-[45px] bg-white rounded-full shrink-0 transition-opacity hover:opacity-80 hover:bg-white min-h-[45px] border-none flex items-center justify-center"
               : "btn-primary btn-outline gap-2 w-full",
         )}
       >

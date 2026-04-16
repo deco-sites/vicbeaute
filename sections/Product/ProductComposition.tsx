@@ -17,7 +17,7 @@ export default function ProductComposition({ page }: Props) {
 
   return (
     <div id="product-composition" class="w-full bg-[#f4f2ee] py-8 lg:py-16">
-      <div class="container flex flex-col w-full px-5 sm:px-0 max-w-[1044px]">
+      <div class="container flex flex-col w-full px-5 sm:px-0 max-w-[1280px]">
         <div class="compo-card">
           {/* Checkbox escondido — controla tudo via CSS irmão ~ */}
           <input type="checkbox" id="compo-toggle" class="compo-checkbox" />
