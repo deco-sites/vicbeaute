@@ -29,10 +29,10 @@
                 "image": {}
               }
             ],
-            "title": "Boca",
-            "imageDesk": "https://assets.decocache.com/vicbeaute/5f3da128-d44d-464e-84bd-64cd39fa706f/Banner-categoria-desk.png",
-            "imageMobile": "https://assets.decocache.com/vicbeaute/123b3f97-502a-48c2-8e03-d7b253d67e81/Banner-categoria-mobile.png",
-            "darkText": false
+            "imageDesk": "https://assets.decocache.com/vicbeaute/1ab7b956-7f39-4aea-9727-8a6ef2d32f9f/PLP-LABIOS---DESK.jpg",
+            "imageMobile": "https://assets.decocache.com/vicbeaute/6c2ba33f-c7bb-4088-9868-c94630b5452b/PLP-LABIOS---MOB.jpg",
+            "darkText": true,
+            "title": "Lábios"
           },
           {
             "__resolveType": "website/sections/Rendering/Lazy.tsx",
