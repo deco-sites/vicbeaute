@@ -210,7 +210,8 @@ function ProductCardSimilars({
       <div class="px-1.5 pb-1.5 mt-auto">
         {inStock
           ? (
-            <div
+            <a
+              href={relativeUrl}
               class={clx(
                 "btn border-none text-sm no-animation w-full px-0 lg:text-[14px]",
                 "flex justify-center rounded-sm mx-auto bg-[#455C42] hover:bg-[#3d513a] text-[#D5D8C2] font-medium min-h-[40px] h-[40px]",
@@ -227,7 +228,7 @@ function ProductCardSimilars({
                 />
               
               </span>
-            </div>
+            </a>
           )
           : (
             <div

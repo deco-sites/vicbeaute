@@ -8,8 +8,8 @@
       "__resolveType": "site/sections/Images/Carousel.tsx",
       "images": [
         {
-          "desktop": "https://assets.decocache.com/vicbeaute/f85502be-70f8-43f7-a50f-78b027a3b84a/VIC_ECOMM_CASTING-63-ETEREO-1.png",
-          "mobile": "https://assets.decocache.com/vicbeaute/91ce20f4-f840-40ac-966f-34e6023af7a5/Banner-Hero.png",
+          "desktop": "https://assets.decocache.com/vicbeaute/6c5c414b-7707-4eef-9ffd-92225e293069/Banner-Principal---Institucional.jpg",
+          "mobile": "https://assets.decocache.com/vicbeaute/a8506939-f430-44e8-834a-7863127f5427/Banner-Principal---Institucional4.jpg",
           "alt": "Home Banner",
           "action": {
             "href": "#"
@@ -47,8 +47,8 @@
       "preload": true,
       "dots": true,
       "arrows": true,
-      "arrowsDesktop": true,
-      "arrowsMobile": true,
+      "arrowsDesktop": false,
+      "arrowsMobile": false,
       "dotsDesktop": true,
       "dotsMobile": true
     },
@@ -61,9 +61,9 @@
           "imageWidth": 32,
           "imageHeight": 32,
           "line1": "Ganhe a nécessaire  nas",
-          "line2": "compras acima de R$329",
+          "line2": "compras acima de R$349",
           "mobileLine1": "Ganhe a nécessaire  nas",
-          "mobileLine2": "compras acima de R$329"
+          "mobileLine2": "compras acima de R$349"
         },
         {
           "label": "PARCELE SUAS COMPRAS Parcele em até 5 vezes sem juros",
@@ -71,9 +71,9 @@
           "imageWidth": 37,
           "imageHeight": 32,
           "line1": "Frete grátis nas compras ",
-          "line2": "acima de R$190",
+          "line2": "acima de R$220",
           "mobileLine1": "Frete grátis nas compras",
-          "mobileLine2": "acima de R$190"
+          "mobileLine2": "acima de R$220"
         },
         {
           "label": "LOJA SEGURA Loja com SSL e proteção de dados",
@@ -110,90 +110,90 @@
           "imageWidth": 126,
           "imageHeight": 126,
           "href": "/",
-          "caption": "Iluminador",
-          "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "caption": "Face",
+          "desktop": "https://assets.decocache.com/vicbeaute/265b9a6e-4cb5-43c7-8cae-d5955c9d9ea5/Menu_Categorias_Face.jpg",
           "desktopHeight": 200,
-          "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "mobile": "https://assets.decocache.com/vicbeaute/265b9a6e-4cb5-43c7-8cae-d5955c9d9ea5/Menu_Categorias_Face.jpg",
           "mobileWidth": 120,
           "mobileHeight": 120,
-          "alt": "Iluminador",
-          "desktopWidth": 200
+          "desktopWidth": 200,
+          "alt": "Face"
         },
         {
           "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
           "imageWidth": 126,
           "imageHeight": 126,
           "href": "/",
-          "caption": "Iluminador",
-          "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "caption": "Lábios",
+          "desktop": "https://assets.decocache.com/vicbeaute/958ae3ae-7d7f-4ba7-80c6-da8cef4c9b75/Menu_Categorias_Labios.jpg",
           "desktopWidth": 200,
           "desktopHeight": 200,
-          "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "mobile": "https://assets.decocache.com/vicbeaute/958ae3ae-7d7f-4ba7-80c6-da8cef4c9b75/Menu_Categorias_Labios.jpg",
           "mobileWidth": 120,
           "mobileHeight": 120,
-          "alt": "Iluminador"
+          "alt": "Lábios"
         },
         {
           "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
           "imageWidth": 126,
           "imageHeight": 126,
           "href": "/",
-          "caption": "Iluminador",
-          "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "caption": "Olhos",
+          "desktop": "https://assets.decocache.com/vicbeaute/51e93344-f3df-40ed-a065-8c50244e31e8/Menu_Categorias_Olhos.jpg",
           "desktopWidth": 200,
           "desktopHeight": 200,
-          "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "mobile": "https://assets.decocache.com/vicbeaute/51e93344-f3df-40ed-a065-8c50244e31e8/Menu_Categorias_Olhos.jpg",
           "mobileWidth": 120,
           "mobileHeight": 120,
-          "alt": "Iluminador"
+          "alt": "Olhos"
         },
         {
           "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
           "imageWidth": 126,
           "imageHeight": 126,
           "href": "/",
-          "caption": "Iluminador",
-          "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "caption": "Multifuncional",
+          "desktop": "https://assets.decocache.com/vicbeaute/2ecf1461-802a-445a-8150-e14b013a4c85/Menu_Categorias_Multifuncional.jpg",
           "desktopWidth": 200,
           "desktopHeight": 200,
-          "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "mobile": "https://assets.decocache.com/vicbeaute/2ecf1461-802a-445a-8150-e14b013a4c85/Menu_Categorias_Multifuncional.jpg",
           "mobileWidth": 120,
           "mobileHeight": 120,
-          "alt": "Iluminador"
+          "alt": "Multifuncional"
         },
         {
           "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
           "imageWidth": 126,
           "imageHeight": 126,
           "href": "/",
-          "caption": "Iluminador",
-          "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "caption": "Kit",
+          "desktop": "https://assets.decocache.com/vicbeaute/6979c3f5-59fb-471c-9667-904899faf59c/Menu_Categorias_Kit.jpg",
           "desktopWidth": 200,
           "desktopHeight": 200,
-          "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "mobile": "https://assets.decocache.com/vicbeaute/6979c3f5-59fb-471c-9667-904899faf59c/Menu_Categorias_Kit.jpg",
           "mobileWidth": 120,
           "mobileHeight": 120,
-          "alt": "Iluminador"
+          "alt": "Kit"
         },
         {
           "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
           "imageWidth": 126,
           "imageHeight": 126,
           "href": "/",
-          "caption": "Iluminador",
-          "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "caption": "Kit",
+          "desktop": "https://assets.decocache.com/vicbeaute/6979c3f5-59fb-471c-9667-904899faf59c/Menu_Categorias_Kit.jpg",
           "desktopWidth": 200,
           "desktopHeight": 200,
-          "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "mobile": "https://assets.decocache.com/vicbeaute/6979c3f5-59fb-471c-9667-904899faf59c/Menu_Categorias_Kit.jpg",
           "mobileWidth": 120,
           "mobileHeight": 120,
-          "alt": "Iluminador"
+          "alt": "Kit"
         }
       ],
       "slider": {
         "desktop": {
-          "arrow": true,
-          "dots": true
+          "arrow": false,
+          "dots": false
         },
         "mobile": {
           "dots": true
@@ -283,7 +283,7 @@
               "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
               "props": {
                 "sort": "price:desc",
-                "collection": "137",
+                "collection": "138",
                 "count": 12,
                 "similars": true
               }
@@ -297,7 +297,7 @@
             "props": {
               "sort": "price:desc",
               "count": 12,
-              "collection": "137",
+              "collection": "139",
               "similars": true
             }
           },
