@@ -9,6 +9,7 @@ import { useSendEvent } from "../../sdk/useSendEvent.ts";
 import WishlistButton from "../wishlist/WishlistButton.tsx";
 import { useId } from "../../sdk/useId.ts";
 import ProductCardColorSelector from "../../islands/ProductCardColorSelector.tsx";
+import Icon from "../ui/Icon.tsx";
 
 interface Props {
   product: Product;
@@ -37,7 +38,7 @@ function ProductCardSimilars({
 }: Props) {
   const id = useId();
 
-  const { url, image: images, offers, isVariantOf } = product;
+  const { url, image: images, offers, isVariantOf, aggregateRating } = product;
   const title = isVariantOf?.name ?? product.name;
   const variantName = product.name;
   const [front, back] = images ?? [];
@@ -67,6 +68,9 @@ function ProductCardSimilars({
     item?.description === "highlight"
   );
 
+  const colorProp = (product?.isVariantOf?.additionalProperty ?? product?.additionalProperty ?? [])
+    .find((a) => a.name === "Cores")?.value ?? "";
+
   // Extrair Similars
   const similars = product.isSimilarTo ?? [];
 
@@ -88,7 +92,7 @@ function ProductCardSimilars({
     <div
       {...event}
       class={clx(
-        "card card-compact group text-sm w-full lg:max-w-vc-210 border border-gray-15 rounded-lg relative overflow-hidden",
+        "card card-compact group text-sm w-full xl:max-w-[300px] max-w-[220px] bg-white-15 rounded-lg relative overflow-hidden",
         _class,
       )}
       data-cy={`product-card-${title?.replace(/\s+/g, "-").toLowerCase()}`}
@@ -162,14 +166,28 @@ function ProductCardSimilars({
         </div>
       </figure>
 
-      <div class="py-1 px-2 flex flex-col flex-grow">
+      <div class="xl:px-3 px-2 xl:pt-[14px] pt-[10px] xl:pb-4 pb-[11px] flex flex-col flex-grow">
         <a href={relativeUrl} class="block flex-grow focus:outline-none">
           <span class="font-hanken-grotesk xl:text-[12px] text-vc-10 text-[#4c4c4c] line-clamp-1">
-            {variantName}
+            {colorProp || variantName}
           </span>
-          <h3 class="text-[#363931] font-hanken-grotesk text-[16px] line-clamp-2 min-h-[36px] mt-0.5">
+          <h3 class="text-[#363931] font-hanken-grotesk text-[16px] line-clamp-2 min-h-[42px] flex items-center">
             {title}
           </h3>
+
+          <div class="flex items-center gap-1 mt-1 h-[18px]">
+            {aggregateRating && (aggregateRating.ratingValue ?? 0) > 0 && (
+              <>
+                  <Icon id="star-konfidency" size={14} />
+                <span class="font-hanken-grotesk text-[12px] text-[#363931] leading-none">
+                  {(aggregateRating.ratingValue ?? 0).toFixed(1).replace(".", ",")}
+                </span>
+                <span class="font-hanken-grotesk text-[12px] text-[#363931] leading-none">
+                  ({aggregateRating.reviewCount})
+                </span>
+              </>
+            )}
+          </div>
 
           <div
             class={clx(
@@ -189,7 +207,7 @@ function ProductCardSimilars({
         </a>
       </div>
 
-      <div class="p-1.5 mt-auto">
+      <div class="px-1.5 pb-1.5 mt-auto">
         {inStock
           ? (
             <div
@@ -202,16 +220,12 @@ function ProductCardSimilars({
             >
               Compre agora{" "}
               <span class="ml-1">
-                <svg
-                  id="bag-icon"
-                  width="14"
-                  height="15"
-                >
-                  <path
-                    d="M10.8871 4.54589H3.14945V3.88246C3.14945 1.74175 4.88414 0 7.02485 0C9.16556 0 10.9003 1.73469 10.9003 3.87541V4.54589H10.8871ZM2.1543 4.54589L1.49087 14.1209H12.5588L11.8954 4.54589H2.1543Z"
-                    fill="white"
-                  />
-                </svg>
+                <Icon
+                  id="bag-cards"
+                  width="15"
+                  height="16"
+                />
+              
               </span>
             </div>
           )

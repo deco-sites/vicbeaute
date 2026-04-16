@@ -44,6 +44,8 @@ export type AvailableIcons =
   | "minicartbag"
   | "search-drawer"
   | "user"
+  | "bag-cards"
+  | "star-konfidency"
   | "bag-shop-the-look"
   | "vegano"
   | "multifuncional"

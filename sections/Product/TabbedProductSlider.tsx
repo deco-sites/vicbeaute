@@ -43,7 +43,7 @@ export default function TabbedProductSlider({
       {/* Title */}
       {title && (
         <h2 
-          class="text-center font-Queens text-[36px] lg:text-[44px] leading-tight mb-8"
+          class="text-center font-Queens text-[36px] lg:text-[44px] leading-tight mb-4"
           style={{ color: titleColor }}
         >
           {title}
@@ -51,8 +51,8 @@ export default function TabbedProductSlider({
       )}
 
       {/* Tabs Navigation */}
-      <div class="w-full overflow-x-auto no-scrollbar mb-8 lg:mb-12">
-        <div class="flex justify-start lg:justify-center items-center gap-6 lg:gap-10 px-5 lg:px-0 w-max mx-auto border-b border-[#E1E1E1]">
+      <div class="w-full overflow-x-auto no-scrollbar mb-[14px]">
+        <div class="flex justify-start lg:justify-center items-center gap-6 lg:gap-10 px-5 lg:px-0 w-max mx-auto">
           {tabs.map((tab, index) => {
             const isActive = index === 0;
             return (
@@ -60,7 +60,7 @@ export default function TabbedProductSlider({
                 key={index}
                 data-tab-button={index}
                 class={clx(
-                  " font-hanken-grotesk pb-2 outline-none whitespace-nowrap text-base lg:text-[18px] transition-all border-b-2",
+                  "font-hanken-grotesk pb-1 outline-none whitespace-nowrap text-base lg:text-[18px] transition-all border-b-2 mb-[-1px]",
                   isActive
                     ? "border-[#455C42] text-[#455C42] font-medium"
                     : "border-transparent text-[#8a8a8a] hover:text-[#455C42]"
