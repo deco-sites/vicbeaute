@@ -1,7 +1,7 @@
 import type { ImageWidget as LiveImage } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import Icon from "../../components/ui/Icon.tsx";
-import Slider from "../../components/ui/Slider.tsx";
+import Slider from "../../components/ui/MiniBannersSlider.tsx";
 import SliderJS from "../../islands/SliderJS.tsx";
 import { useId } from "../../sdk/useId.ts";
 
@@ -64,10 +64,10 @@ export default function MiniBanners({ images, slider, header }: Props) {
   return (
     <div
       id={id}
-      class="flex flex-col relative container mx-auto lg:pb-14 mb-7 lg:mb-0 mt-5 lg:mt-9 gap-vc-10 xl:max-w-vc-1130"
+      class="flex flex-col relative container mx-auto lg:pb-14 mb-7 lg:mb-0 mt-5 lg:mt-9 gap-vc-10 xl:max-w-vc-1280"
     >
       <div class="flex justify-between items-start pl-vc-15 xl:pl-[0px]">
-        <div class="flex flex-col w-full sm:mb-3 lg:mb-2">
+        <div class="flex flex-col w-full sm:mb-3">
           <h2 class="flex lg:justify-center lg:align-center font-Queens xl:text-[36px] text-[32px] text-[#CE9680]">
             {header?.title}
           </h2>
@@ -115,7 +115,7 @@ export default function MiniBanners({ images, slider, header }: Props) {
                   {image.caption && (
                     <figcaption
                       data-cy={`categoria-caption-${index + 1}`}
-                      class="mt-2 text-[16px] text-black font-Hanken-Grotesk"
+                      class="mt-1 text-[16px] text-black font-Hanken-Grotesk"
                     >
                       {image.caption}
                     </figcaption>
@@ -177,7 +177,7 @@ export default function MiniBanners({ images, slider, header }: Props) {
       )}
 
       <div
-        className={`relative flex w-full max-w-[1440px] px-5 lg:px-0 mx-auto justify-center z-10 mt-6 ${
+        className={`relative flex w-full max-w-[1440px] px-5 lg:px-0 mx-auto justify-center z-10 xl:mt-2 ${
           slider?.mobile?.dots ? "block" : "hidden"
         } ${slider?.desktop?.dots ? "lg:flex" : "lg:hidden"}`}
       >
