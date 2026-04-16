@@ -113,7 +113,7 @@ export default function CardSlider(
               />
               <div class="absolute inset-0 py-8 xl:py-[72px] xl:pl-5 flex flex-col justify-center items-start w-1/2 min-w-[320px] xl:min-w-[unset] xl:max-w-[270px] xl:gap-[10px]">
                 {card.title && (
-                  <h3 class="text-[#FFFFFF] text-[32px]  xl:font-hanken-grotesk xl:leading-[1.0] leading-tight font-semibold">
+                  <h3 class="text-[#FFFFFF] text-[32px]  xl:font-Hanken-Grotesk xl:leading-[1.0] leading-tight font-semibold">
                     {card.title}
                   </h3>
                 )}
