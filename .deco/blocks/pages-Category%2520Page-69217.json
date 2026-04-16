@@ -486,7 +486,7 @@
           "__resolveType": "website/matchers/pathname.ts",
           "case": {
             "type": "Equals",
-            "pathname": "/maquiagem/la"
+            "pathname": "/maquiagem/labios"
           }
         }
       },
