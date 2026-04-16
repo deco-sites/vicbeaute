@@ -1,5 +1,5 @@
 {
-  "path": "/*",
+  "path": "/labios",
   "sections": {
     "__resolveType": "website/flags/multivariate.ts",
     "variants": [
@@ -486,7 +486,7 @@
           "__resolveType": "website/matchers/pathname.ts",
           "case": {
             "type": "Equals",
-            "pathname": "/maquiagem/labios"
+            "pathname": "/labios"
           }
         }
       },
