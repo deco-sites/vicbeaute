@@ -3,12 +3,16 @@
   "path": "/offline",
   "sections": [
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "commerce/sections/Seo/SeoPLPV2.tsx",
-        "jsonLD": {
-          "__resolveType": "PLP Loader"
-        }
+      "__resolveType": "commerce/sections/Seo/SeoPLPV2.tsx",
+      "jsonLD": {
+        "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
+        "count": 24,
+        "sort": "price:desc",
+        "fuzzy": "automatic",
+        "advancedConfigs": {
+          "includeOriginalAttributes": []
+        },
+        "simulationBehavior": "default"
       }
     },
     {
@@ -17,7 +21,6 @@
     {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
       "title": "Oh no! You are offline!",
-      "products": null,
       "description": "Maybe take some time to explore"
     },
     {
