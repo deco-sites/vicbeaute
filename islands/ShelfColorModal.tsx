@@ -21,7 +21,7 @@ function LocalBag() {
   return (
     <label
       for={MINICART_DRAWER_ID}
-      class="w-[52px] h-[52px] lg:h-[48px] bg-[#51614C] rounded-sm flex items-center justify-center cursor-pointer hover:bg-[#3f4b3a] transition-colors relative flex-shrink-0"
+      class="w-[52px] h-[52px] xl:h-[42px] xl:w-[42px] bg-[#51614C] rounded-sm flex items-center justify-center cursor-pointer hover:bg-[#3f4b3a] transition-colors relative flex-shrink-0"
       aria-label="Abrir carrinho"
     >
       <span
@@ -123,20 +123,13 @@ export default function ShelfColorModal(
       window.STOREFRONT.CART.addToCart(item, platformProps);
     }
 
-    // Pequeno feedback ou close automático
-    setTimeout(() => {
-      // Optional: closeModal();
-      // We keep it open so they see the bag count update directly!
-    }, 100);
+    closeModal();
   };
 
-  // Getting images
-  const allImages = activeProduct.image || [];
-  const mainImage =
-    allImages.find((img) => img.name?.toLowerCase() === "principal") ||
-    allImages[0];
-  const otherImages = allImages.filter((img) => img.url !== mainImage?.url)
-    .slice(0, 2);
+  // Getting images — all except color swatch (label "cor")
+  const allImages = (activeProduct.image || []).filter(
+    (img) => img.name?.toLowerCase() !== "cor",
+  );
 
   // Description
   const description = activeProduct.description ||
@@ -148,6 +141,11 @@ export default function ShelfColorModal(
       attr.name?.toLowerCase() === "cor"
     )?.value || "";
 
+  // Atributo "Cores" no nível de produto (igual ao subtitle do seletor da PDP)
+  const coresSpec =
+    (activeProduct.isVariantOf?.additionalProperty ?? activeProduct.additionalProperty ?? [])
+      .find((attr) => attr.name === "Cores")?.value || "";
+
   return (
     <div class="fixed inset-0 z-50 flex items-end lg:items-center justify-center animate-fade-in lg:p-4">
       {/* Backdrop */}
@@ -157,9 +155,9 @@ export default function ShelfColorModal(
       />
 
       {/* Modal Container */}
-      <div class="bg-[#ffffff] w-full max-w-[500px] h-[90vh] lg:h-auto lg:max-h-[85vh] rounded-t-[32px] lg:rounded-2xl overflow-hidden flex flex-col relative z-10 shadow-2xl animate-slide-up lg:animate-fade-in">
+      <div class="bg-[#ffffff] w-full xl:max-w-[500px] h-[90vh] lg:h-auto lg:max-h-[85vh] rounded-t-[32px] lg:rounded-2xl overflow-hidden flex flex-col relative z-10 shadow-2xl animate-slide-up lg:animate-fade-in">
         {/* Top Header - Barra Branca Fullwidth */}
-        <div class="w-full bg-white px-5 py-4 flex items-center border-b border-gray-100 z-20 shrink-0">
+        <div class="w-full bg-white px-5 pt-4 flex items-center z-20 shrink-0">
           <button
             class="p-1 px-[3px] text-[#191919] hover:opacity-70 transition-opacity rounded-full border border-[#4c4c4c] flex items-center justify-center w-[38px] h-[38px] bg-white"
             onClick={closeModal}
@@ -181,20 +179,11 @@ export default function ShelfColorModal(
         </div>
 
         {/* Content Scrollable Area */}
-        <div class="flex-grow overflow-y-auto px-6 py-6 pb-28 custom-scrollbar">
-          {/* Fileira Horizontal de Imagens Topo (120x120, gap 5px) */}
+        <div class="flex-grow overflow-y-auto px-6 pt-[14px] pb-28 custom-scrollbar">
+          {/* Fileira Horizontal de Imagens Topo (130x130, gap 5px) */}
           <div class="flex flex-row overflow-x-auto gap-[5px] pb-4 mb-2 scrollbar-none snap-x w-[calc(100%+48px)] -ml-6 px-6">
-            {mainImage && (
-              <div class="w-[120px] h-[120px] shrink-0 bg-[#f4f4f4] rounded-[4px] overflow-hidden flex items-center justify-center snap-start">
-                <img
-                  src={mainImage.url}
-                  alt={mainImage.alternateName}
-                  class="w-full h-full object-cover mix-blend-multiply"
-                />
-              </div>
-            )}
-            {otherImages.map((img) => (
-              <div class="w-[120px] h-[120px] shrink-0 bg-[#f4f4f4] rounded-[4px] overflow-hidden flex items-center justify-center snap-start">
+            {allImages.map((img) => (
+              <div class="w-[130px] h-[130px] shrink-0 bg-[#f4f4f4] rounded-[4px] overflow-hidden flex items-center justify-center snap-start">
                 <img
                   src={img.url}
                   alt={img.alternateName}
@@ -207,12 +196,12 @@ export default function ShelfColorModal(
           <h2 class="text-[17px] font-bold text-[#191919] leading-[1.2] mt-4 font-Manrope xl:text-[20px]">
             {activeProduct.isVariantOf?.name || activeProduct.name}
             <span class="font-normal text-[#4c4c4c] ml-1.5 opacity-90">
-              {colorSpec || activeProduct.name?.split("-").pop()?.trim()}
+              {coresSpec || colorSpec || activeProduct.name?.split("-").pop()?.trim()}
             </span>
           </h2>
-          <div class="flex gap-2 items-center mt-1.5 mb-1">
+          <div class="flex gap-2 items-center">
             <span class="text-[15px] text-[#191919] font-medium xl:text-[16px]">
-              R$ {formatPrice(price)}
+              {formatPrice(price)}
             </span>
             {listPrice && listPrice > price && (
               <span class="text-[13px] text-gray-400 line-through">
@@ -221,8 +210,8 @@ export default function ShelfColorModal(
             )}
           </div>
 
-          <div class="mt-4 mb-4">
-            <details class="group border-t border-b border-[#f2f2f2] py-3.5">
+          <div>
+            <details class="group first:border-t-0 border-t border-b border-[#f2f2f2] pt-5 pb-3">
               <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-[20px] lg:text-[22px] text-[#D1927D] font-Queens">
                 Descrição
                 <span class="transition group-open:rotate-180">
@@ -262,16 +251,19 @@ export default function ShelfColorModal(
             </details>
           </div>
 
-          <h3 class="text-[20px] lg:text-[22px] text-[#D1927D] font-Queens mb-4">
+          <h3 class="text-[20px] lg:text-[22px] text-[#D1927D] font-Queens mt-[10px] mb-2">
             Cores
           </h3>
 
           {/* Bolinhas de Cores */}
-          <div class="grid grid-cols-4 sm:grid-cols-5 gap-y-4 gap-x-2">
+          <div class="grid grid-cols-4 sm:grid-cols-5 gap-y-4 gap-x-2 pb-5">
             {products.map((p) => {
               const pCor = p.additionalProperty?.find((attr) =>
                 attr.name?.toLowerCase() === "cor"
               )?.value || p.name?.split("-").pop()?.trim() || "";
+              const pCores =
+                (p.isVariantOf?.additionalProperty ?? p.additionalProperty ?? [])
+                  .find((attr) => attr.name === "Cores")?.value || "";
               const pImage = p.image?.find((img) =>
                 img.name?.toLowerCase() === "cor"
               )?.url ?? p.image?.[0]?.url;
@@ -280,11 +272,11 @@ export default function ShelfColorModal(
               return (
                 <button
                   onClick={() => setActiveProductId(p.productID)}
-                  class="flex flex-col items-center gap-1.5 group outline-none"
+                  class="flex flex-col items-center group outline-none"
                   aria-label={`Selecionar cor ${pCor}`}
                 >
                   <div
-                    class={`w-14 h-14 rounded-full overflow-hidden transition-all duration-200 border border-[#e5e5e5] ${
+                    class={`w-[30px] h-[30px] sm:w-14 sm:h-14 rounded-full overflow-hidden transition-all duration-200 border border-[#e5e5e5] ${
                       isSelected
                         ? "border-[#4c4c4c] p-[2px]"
                         : "border-transparent group-hover:border-gray-300 p-[2px]"
@@ -307,12 +299,17 @@ export default function ShelfColorModal(
                     </div>
                   </div>
                   <span
-                    class={`text-[10px] leading-[1.1] text-center line-clamp-2 px-0.5 ${
-                      isSelected ? "font-bold text-[#191919]" : "text-[#4c4c4c]"
+                    class={`font-Hanken-Grotesk font-normal text-[10px] leading-[10px] tracking-normal text-center line-clamp-2 px-0.5 text-[#13100D] mt-1${
+                      isSelected ? "opacity-100" : "opacity-75"
                     }`}
                   >
                     {pCor}
                   </span>
+                  {pCores && (
+                    <span class="font-Hanken-Grotesk font-normal text-[10px] leading-[10px] tracking-normal text-center line-clamp-1 px-0.5 text-[#13100D] opacity-75">
+                      {pCores}
+                    </span>
+                  )}
                 </button>
               );
             })}
@@ -320,10 +317,10 @@ export default function ShelfColorModal(
         </div>
 
         {/* Action Bottom Bar */}
-        <div class="absolute bottom-0 left-0 w-full bg-white-15 border-t border-gray-100 p-5 px-6 z-20 flex flex-col gap-4">
+        <div class="absolute bottom-0 left-0 w-full bg-white-15 border-t border-gray-100 pt-[10px] pb-2 px-4 z-20 flex flex-col gap-2">
           <div class="flex items-center gap-3 w-full">
             <button
-              class="flex-grow py-[14px] lg:py-3.5 text-[15px] text-white transition-all rounded-[3px] flex items-center justify-center bg-[#51614C] hover:bg-[#3f4b3a]"
+              class="flex-grow py-[14px] xl:py-4 xl:px-[75px] text-[15px] text-white-15 transition-all rounded-[3px] flex items-center justify-center bg-[#51614C] font-Manrope font-medium text-sm leading-[10px] "
               onClick={handleAddToCart}
             >
               Adicionar ao carrinho
@@ -331,7 +328,7 @@ export default function ShelfColorModal(
             <LocalBag />
           </div>
 
-          <div class="flex justify-center items-center gap-2 text-[14px] font-Manrope opacity-90">
+          <div class="flex justify-center items-center gap-3 text-[14px] font-Manrope opacity-90">
             <a
               href={activeProduct.url}
               class="font-medium text-[#191919] hover:opacity-70 transition-opacity underline-offset-4"
