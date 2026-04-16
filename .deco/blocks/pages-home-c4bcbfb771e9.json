@@ -278,6 +278,18 @@
       "tabs": [
         {
           "products": {
+            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+            "props": {
+              "sort": "price:desc",
+              "count": 12,
+              "collection": "139",
+              "similars": true
+            }
+          },
+          "label": "Corretivo"
+        },
+        {
+          "products": {
             "__resolveType": "site/loaders/konfidency/productList.ts",
             "products": {
               "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
@@ -290,18 +302,6 @@
             }
           },
           "label": "Stick Tudo"
-        },
-        {
-          "products": {
-            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
-            "props": {
-              "sort": "price:desc",
-              "count": 12,
-              "collection": "139",
-              "similars": true
-            }
-          },
-          "label": "Corretivo"
         },
         {
           "products": {
