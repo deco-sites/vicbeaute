@@ -1,13 +1,12 @@
 {
   "seo": {
     "type": "website",
-    "jsonLDs": [],
     "noIndexing": false,
-    "description": "Made by Social S.A.",
-    "titleTemplate": "%s | Easycommerce",
-    "descriptionTemplate": "%s | Easycommerce",
-    "favicon": "https://assets.decocache.com/easycommerce/ac43afbf-6dd4-4237-91ae-562aae256908/favicon.png",
-    "title": "Social's Fast Template"
+    "titleTemplate": "%s | Maquiagem fácil de usar, difícil de errar",
+    "favicon": "https://assets.decocache.com/vicbeaute/e6ca4455-b3a3-422c-b60a-6fd8e44d3acc/vb-favicon.png",
+    "title": "Vic Beauté",
+    "description": "Descubra a Vic Beauté e desperte sua beleza com simplicidade e elegância. Produtos que refletem a sofisticação e a autenticidade.",
+    "descriptionTemplate": "%s"
   },
   "theme": {
     "__resolveType": "Deco"
@@ -32,18 +31,12 @@
     },
     {
       "__resolveType": "site/sections/Session.tsx",
-      "minicart": null,
-      "wishlist": null,
-      "mode": "lazy",
-      "user": null
+      "mode": "lazy"
     }
   ],
   "routes": [
     {
-      "__resolveType": "vtex/loaders/proxy.ts",
-      "extraPathsToProxy": [],
-      "includeSiteMap": [],
-      "excludePathsFromDecoSiteMap": []
+      "__resolveType": "vtex/loaders/proxy.ts"
     },
     {
       "__resolveType": "website/loaders/pages.ts"
@@ -52,9 +45,7 @@
       "__resolveType": "website/loaders/redirects.ts"
     }
   ],
-  "caching": {
-    "directives": []
-  },
+  "caching": {},
   "commerce": {
     "platform": "other"
   },
@@ -62,17 +53,10 @@
   "__resolveType": "site/apps/site.ts",
   "firstByteThresholdMS": false,
   "abTesting": {
-    "replaces": [],
-    "includeScriptsToHead": {
-      "includes": []
-    },
-    "includeScriptsToBody": {
-      "includes": []
-    }
+    "includeScriptsToHead": {},
+    "includeScriptsToBody": {}
   },
   "flavor": {
     "framework": "htmx"
-  },
-  "whilelistURLs": [],
-  "whitelistPatterns": []
+  }
 }
