@@ -20,6 +20,8 @@ export interface BannerCard {
   buttonText?: string;
   /** @description Link do Botão */
   buttonLink?: string;
+  /** @description Fundo branco translúcido (white/15). Quando desativado, usa o fundo bege padrão (#EEEBE6) */
+  whiteBackground?: boolean;
 }
 
 export interface Props {
@@ -56,8 +58,9 @@ export default function BannerSlider(
   return (
     <div
       id={id}
-      class="relative w-full overflow-hidden flex flex-col mb-10"
+      class="relative w-full flex flex-col mb-10"
     >
+      <div class="relative w-full overflow-hidden">
       <Slider class="carousel carousel-center w-full col-span-full row-span-full">
         {banners.map((banner, index) => (
           <Slider.Item
@@ -73,21 +76,21 @@ export default function BannerSlider(
                 src={banner.mobileImage}
                 alt={banner.alt || banner.title}
               />
-              <div class="flex flex-col items-center justify-center text-center px-6 py-10 w-full bg-[#f4f4f4]">
+              <div class="flex flex-col items-center justify-center text-center px-[14px] py-[12px] w-full bg-[#f4f4f4]">
                 {banner.subtitle && (
-                  <span class="text-[#CE9680] text-sm mb-3">
+                  <span class="text-[#CE9680] text-sm mb-2">
                     {banner.subtitle}
                   </span>
                 )}
                 {banner.title && (
-                  <h2 class="text-[#455C42] text-3xl font-Queens mb-6 leading-[1.1] max-w-[280px]">
+                  <h2 class="text-[#455C42] text-3xl font-Queens mb-[10px] leading-[1.1] max-w-[280px]">
                     {banner.title}
                   </h2>
                 )}
                 {banner.buttonText && (
                   <a
                     href={banner.buttonLink || "#"}
-                    class="bg-[#455C42] text-white px-8 py-3 text-sm font-medium transition-opacity rounded-sm uppercase tracking-wider"
+                    class="bg-[#455C42] text-white-15 px-[53px] py-4 text-sm font-medium transition-opacity rounded-md tracking-wider"
                   >
                     {banner.buttonText}
                   </a>
@@ -98,15 +101,15 @@ export default function BannerSlider(
             {/* DESKTOP LAYOUT: Duas colunas — esquerda bg + texto, direita imagem */}
             <div class="hidden lg:grid w-full h-[480px]" style="grid-template-columns: 1fr 724px;">
               {/* Coluna esquerda: background neutro + texto */}
-              <div class="flex items-center justify-center bg-[#EEEBE6] px-16 xl:px-24">
-                <div class="flex flex-col items-start text-left max-w-[420px]">
+              <div class={`flex items-center justify-center ${banner.whiteBackground ? "bg-white-15" : "bg-[#EEEBE6]"}`}>
+                <div class="flex flex-col items-start text-left max-w-[360px] mx-auto">
                   {banner.subtitle && (
-                    <span class="text-[#CE9680] xl:tracking-normal xl:leading-[1.2] font-Hanken-Grotesk font-light text-[16px] mb-4">
+                    <span class="text-[#CE9680] xl:tracking-normal xl:leading-[1.2] font-Hanken-Grotesk font-light text-[16px] mb-3">
                       {banner.subtitle}
                     </span>
                   )}
                   {banner.title && (
-                    <h2 class="text-[#455C42] text-[42px] xl:text-[48px] font-Queens mb-8 leading-[1.05]
+                    <h2 class="text-[#455C42] text-[42px] xl:text-[48px] font-Queens mb-6 leading-[1.05]
                     xl:leading-[1.0] xl:font-regular">
                       {banner.title}
                     </h2>
@@ -114,7 +117,7 @@ export default function BannerSlider(
                   {banner.buttonText && (
                     <a
                       href={banner.buttonLink || "#"}
-                      class="bg-[#455C42] text-[#ffffff] px-8 py-3 text-sm xl:font-regular xl: font-hanken-grotesk font-medium transition-colors rounded-sm tracking-wider xl:text-[14px]"
+                      class="bg-[#455C42] text-[#ffffff] px-6 py-3 text-sm xl:font-regular xl: font-hanken-grotesk font-medium transition-colors rounded-md tracking-wider xl:text-[14px]"
                     >
                       {banner.buttonText}
                     </a>
@@ -162,6 +165,8 @@ export default function BannerSlider(
         </div>
       )}
 
+      </div>{/* end overflow-hidden wrapper */}
+
       {/* DOTS CONTAINER */}
       {(dotsDesktop || dotsMobile) && banners.length > 1 && (
         <>
@@ -186,8 +191,8 @@ export default function BannerSlider(
             }}
           />
           <div
-            class={`relative lg:absolute bottom-[0px] lg:bottom-[30px] w-full px-5 lg:px-20 mx-auto justify-center z-10 max-w-[1440px] lg:left-1/2 lg:-translate-x-1/2 mt-5 lg:mt-0 
-              ${dotsMobile ? "flex" : "hidden"} 
+            class={`w-full px-5 lg:px-20 mx-auto justify-center z-10 max-w-[351px] mt-5 lg:mt-[6px]
+              ${dotsMobile ? "flex" : "hidden"}
               ${dotsDesktop ? "lg:flex" : "lg:hidden"}`}
           >
             <ul class="flex w-full gap-0 bannerslider-dots-tracker">

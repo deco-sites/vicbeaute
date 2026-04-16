@@ -191,7 +191,6 @@ html:has(.drawer-toggle:checked) {
 
 @media (max-width: 767px) {
   #shelf-slider .product-slider {
-    max-width: 150px;
     width: 100%;
   }
 }

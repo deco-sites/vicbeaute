@@ -24,7 +24,7 @@ function Slider({ class: _class, ...props }: JSX.IntrinsicElements["ul"]) {
       data-slider
       class={clx(
         "ll no-scrollbar flex snap-x snap-start scroll-x-mandatory overflow-x-scroll no-scrollbar",
-        "gap-vc-6 xl:gap-0",
+        "gap-vc-6 xl:gap-[10px]",
         "lg:grid-cols-5 md:grid-cols-5",
         _class?.toString(),
       )}
@@ -42,7 +42,7 @@ function Item(
     <li
       data-slider-item={index}
       class={clx(
-        "md:min-w-[20%] min-w-vc-150",
+        "xl:min-w-[300px] min-w-[220px]",
         "flex-grow-0 lg:flex-shrink-0 flex-shrink-0 md:flex-shrink-[unset]",
         "snap-start",
         _class?.toString(),

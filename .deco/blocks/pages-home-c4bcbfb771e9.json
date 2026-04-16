@@ -203,12 +203,15 @@
     {
       "__resolveType": "site/sections/Product/ProductShelfSimilars.tsx",
       "products": {
-        "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
-        "props": {
-          "sort": "price:desc",
-          "collection": "137",
-          "count": 12,
-          "similars": true
+        "__resolveType": "site/loaders/konfidency/productList.ts",
+        "products": {
+          "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+          "props": {
+            "sort": "price:desc",
+            "collection": "137",
+            "count": 12,
+            "similars": true
+          }
         }
       },
       "arrows": true,
@@ -275,12 +278,15 @@
       "tabs": [
         {
           "products": {
-            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
-            "props": {
-              "sort": "price:desc",
-              "collection": "137",
-              "count": 12,
-              "similars": true
+            "__resolveType": "site/loaders/konfidency/productList.ts",
+            "products": {
+              "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+              "props": {
+                "sort": "price:desc",
+                "collection": "137",
+                "count": 12,
+                "similars": true
+              }
             }
           },
           "label": "Stick Tudo"
@@ -522,8 +528,18 @@
           "mobileImage": "https://assets.decocache.com/vicbeaute/f423b40d-c409-48ac-8e50-e906e6c182bf/Picture--Image_Banner_Mobile_ae6004eb-226f-4ec3-a4cb-685fc102c604.jpg.png",
           "alt": "Banner",
           "subtitle": "Landing Page Stick tudo",
-          "title": "Radiant essentials for every party this season",
-          "buttonText": "Compre agora",
+          "title": "Radiant essentials forevery party this season",
+          "buttonText": "Compre aqui",
+          "buttonLink": "#",
+          "whiteBackground": true
+        },
+        {
+          "desktopImage": "https://assets.decocache.com/vicbeaute/97e6a6ea-eaee-47e1-949e-6b038355b9a9/VIC_ECOMM_CASTING-63-ETEREO-2.png",
+          "mobileImage": "https://assets.decocache.com/vicbeaute/f423b40d-c409-48ac-8e50-e906e6c182bf/Picture--Image_Banner_Mobile_ae6004eb-226f-4ec3-a4cb-685fc102c604.jpg.png",
+          "alt": "Banner",
+          "subtitle": "Landing Page Stick tudo",
+          "title": "Radiant essentials forevery party this season",
+          "buttonText": "Compre aqui",
           "buttonLink": "#"
         },
         {
@@ -531,8 +547,8 @@
           "mobileImage": "https://assets.decocache.com/vicbeaute/f423b40d-c409-48ac-8e50-e906e6c182bf/Picture--Image_Banner_Mobile_ae6004eb-226f-4ec3-a4cb-685fc102c604.jpg.png",
           "alt": "Banner",
           "subtitle": "Landing Page Stick tudo",
-          "title": "Radiant essentials for every party this season",
-          "buttonText": "Compre agora",
+          "title": "Radiant essentials forevery party this season",
+          "buttonText": "Compre aqui",
           "buttonLink": "#"
         },
         {
@@ -540,8 +556,8 @@
           "mobileImage": "https://assets.decocache.com/vicbeaute/f423b40d-c409-48ac-8e50-e906e6c182bf/Picture--Image_Banner_Mobile_ae6004eb-226f-4ec3-a4cb-685fc102c604.jpg.png",
           "alt": "Banner",
           "subtitle": "Landing Page Stick tudo",
-          "title": "Radiant essentials for every party this season",
-          "buttonText": "Compre agora",
+          "title": "Radiant essentials forevery party this season",
+          "buttonText": "Compre aqui",
           "buttonLink": "#"
         },
         {
@@ -549,17 +565,8 @@
           "mobileImage": "https://assets.decocache.com/vicbeaute/f423b40d-c409-48ac-8e50-e906e6c182bf/Picture--Image_Banner_Mobile_ae6004eb-226f-4ec3-a4cb-685fc102c604.jpg.png",
           "alt": "Banner",
           "subtitle": "Landing Page Stick tudo",
-          "title": "Radiant essentials for every party this season",
-          "buttonText": "Compre agora",
-          "buttonLink": "#"
-        },
-        {
-          "desktopImage": "https://assets.decocache.com/vicbeaute/97e6a6ea-eaee-47e1-949e-6b038355b9a9/VIC_ECOMM_CASTING-63-ETEREO-2.png",
-          "mobileImage": "https://assets.decocache.com/vicbeaute/f423b40d-c409-48ac-8e50-e906e6c182bf/Picture--Image_Banner_Mobile_ae6004eb-226f-4ec3-a4cb-685fc102c604.jpg.png",
-          "alt": "Banner",
-          "subtitle": "Landing Page Stick tudo",
-          "title": "Radiant essentials for every party this season",
-          "buttonText": "Compre agora",
+          "title": "Radiant essentials forevery party this season",
+          "buttonText": "Compre aqui",
           "buttonLink": "#"
         }
       ],
