@@ -199,7 +199,7 @@ function Footer({
           {/* COLUNA 1: NEWSLETTER E LOGOS */}
           <div class="flex flex-col max-w-[430px] w-full gap-8">
             <div class="flex flex-col gap-4">
-              <h3 class="font-Queens text-[36px] leading-[1.1] text-black">
+              <h3 class="font-Queens xl:font-normal text-[36px] xl:leading-[1.0] leading-[1.1] xl:text-[#353930] xl:text-[32px]">
                 Inscreva-se e fique por dentro das novidades
               </h3>
 
@@ -207,20 +207,20 @@ function Footer({
                 <input
                   type="email"
                   placeholder="Digite seu e-mail"
-                  class="w-full bg-transparent border-0 border-b border-[#191C1F] pb-2 text-[14px] text-black outline-none placeholder:text-[#4a4a4a]"
+                  class="w-full bg-transparent xl:text-Hanken-Grotesk xl:font-medium xl:leading-[1.5] xl:tracking-[0.05em] border-0 border-b border-[#191C1F] pb-2 text-[14px] text-black outline-none placeholder:text-[#353930]"
                 />
                 <button
                   type="submit"
-                  class="w-full bg-[#556B50] text-white-15 py-3 rounded-md text-[14px] uppercase tracking-widest font-semibold hover:bg-[#455C42] transition-colors mt-2"
+                  class="w-full bg-[#5E6C5B] xl:text-[#FAFAFA] py-3 rounded-md text-[14px] tracking-widest font-medium xl:font-manrope  transition-colors mt-2"
                 >
                   Cadastrar
                 </button>
                 <label class="flex xl:items-center items-start gap-2 mt-2 cursor-pointer group">
                   <input
                     type="checkbox"
-                    class="mt-1 xl:mt-0 w-4 h-4 rounded-sm border-gray-400 text-[#556B50] focus:ring-[#556B50]"
+                    class="mt-1 xl:mt-0 w-4 h-4 rounded-sm xl:!border-0 xl:!border-transparent xl:!bg-white text-[#556B50] focus:ring-[#556B50] xl:!ring-0 xl:!outline-none xl:!shadow-none"
                   />
-                  <span class="text-[11px] leading-tight text-[#4a4a4a]">
+                  <span class="text-[11px] xl:font-manrope xl:text-[12px] xl:font-medium xl:leading-[1.5] xl:tracking-[0.05em] leading-tight text-[#353930]">
                     Ao se inscrever você aceita a{" "}
                     <a
                       href="/politica-de-privacidade"
@@ -293,7 +293,7 @@ function Footer({
                   <div>
                     <h4
                       data-cy="title-footer"
-                      class="font-bold text-[12px] uppercase text-[#191C1F] tracking-wide mb-3"
+                      class="font-Hanken-Grotesk xl:text-[14px] font-semibold text-[12px] xl:leading-[1.5] xl:tracking-[0.05em] uppercase text-[#353930] mb-3"
                     >
                       {title}
                     </h4>
@@ -305,7 +305,7 @@ function Footer({
                               <a
                                 data-cy="footer-options"
                                 href={child.href}
-                                class="text-[13px] text-[#191C1F] hover:opacity-70 transition-opacity"
+                                class="text-[13px] text-[#353930] xl:leading-[1.5] xl:tracking-[0.05em]font-Hanken-Grotesk xl:text-[14px] xl:font-medium hover:opacity-70 transition-opacity"
                               >
                                 {child.title}
                               </a>
@@ -330,7 +330,7 @@ function Footer({
                   {/* REDES SOCIAIS E CONTATO ALINHADOS ABAIXO DA ÚLTIMA COLUNA */}
                   {index === links.length - 1 && (
                     <div class="flex flex-col gap-3 w-full mt-[72px]">
-                      <h4 class="font-bold text-[12px] uppercase text-[#191C1F] tracking-wide mb-1">
+                      <h4 class="font-bold text-[12px] xl:font-Hanken-Grotesk uppercase xl:leading-[1.5] xl:tracking-[0.05em] xl:text-[#353930] text-[#191C1F] tracking-wide mb-1">
                         Redes Sociais
                       </h4>
                       <ul class="flex gap-3 mb-2">
@@ -356,13 +356,13 @@ function Footer({
                       <div class="flex flex-col gap-2 mt-2 text-[13px] text-[#191C1F]">
                         <a
                           href="tel:1149352378"
-                          class="hover:opacity-70 transition-opacity"
+                          class="hover:opacity-70 xl:font-Hanken-Grotesk xl:text-[#353930] xl: text-[14px]xl:leading-[1.5] xl:tracking-[0.05em] xl:font-medium transition-opacity"
                         >
                           (11) 4935-2378
                         </a>
                         <a
                           href="mailto:sac@vicbeaute.com.br"
-                          class="hover:opacity-70 transition-opacity"
+                          class="hover:opacity-70 xl:font-Manrope xl:text-[#353930] xl: text-[14px]xl:leading-[1.5] xl:tracking-[0.05em] xl:font-medium transition-opacity"
                         >
                           sac@vicbeaute.com.br
                         </a>
