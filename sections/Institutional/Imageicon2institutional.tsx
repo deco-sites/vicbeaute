@@ -1,0 +1,1 @@
+export { default } from "../../components/Institutional/Imageicon2institucional.tsx";

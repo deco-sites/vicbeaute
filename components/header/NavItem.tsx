@@ -58,7 +58,7 @@ function NavItem(
     >
       <a
         href={url}
-        class={`flex items-center gap-1.5 group-hover:opacity-80 transition-opacity font-medium lg:text-[15px] font-Hanken-Grotesk leading-tight tracking-wide uppercase ${
+        class={`flex items-center gap-1.5 group-hover:opacity-80 transition-opacity font-medium lg:text-[18px] font-Hanken-Grotesk leading-tight tracking-wide uppercase ${
           transparent ? "text-[#FFFFFF]" : "text-[#363931]"
         } ${highlight ? "bg-[#EF781C] !text-white px-2 py-1 rounded" : ""}`}
       >
@@ -84,7 +84,7 @@ function NavItem(
                 >
                   {/* Título da Coluna */}
                   {col.title && col.title.trim() !== "" && (
-                    <span class="block text-[15px] font-medium uppercase tracking-widest mb-1 font-Hanken-Grotesk xl:font-light xl:text-xl text-black-5 xl:tracking-normal">
+                    <span class="block text-[15px] xl:font-light xl:tracking-[0]font-medium uppercase tracking-widest mb-1 font-Hanken-Grotesk xl:text-[20px] text-black-5 xl:text-[#2C2C2C] xl:tracking-normal">
                       {col.title}
                     </span>
                   )}
@@ -136,7 +136,7 @@ function NavItem(
                         </span>
                       )}
 
-                      <span class="bg-green-10 text-[#ffffff] px-5 py-[6px] w-max text-sm font-Hanken-Grotesk rounded-[3px]">
+                      <span class="xl:font-light bg-green-10 text-[#ffffff] px-5 xl:leading-[1.2] py-[6px] w-max text-sm font-Hanken-Grotesk rounded-[3px]">
                         {card.buttonText || "Explorar"}
                       </span>
                     </div>

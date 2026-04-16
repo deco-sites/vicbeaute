@@ -146,10 +146,10 @@ function ProductCard({
       </figure>
 
       <a href={relativeUrl} class="py-1 px-1">
-        <span class="font-Manrope text-vc-10 text-black-20">
+        <span class="font-hanken-grotesk xl:text-[12px] text-vc-10 text-[#4c4c4c] line-clamp-1">
           {variantName }
         </span>
-        <h3 class="font-Manrope font-medium text-xs text-black-35 line-clamp-2 min-h-8">
+        <h3 class="font-hanken-grotesk xl:text-[16px] font-medium xl:font-regular text-xs text-black-35 line-clamp-2 min-h-8">
           {title}
         </h3>
 
