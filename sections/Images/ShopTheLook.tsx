@@ -61,17 +61,17 @@ export default function ShopTheLook({
       {/* Header */}
       <div class="px-5 text-center mb-[10px] lg:mb-12 xl:max-w-[970px] max-w-[650px] mx-auto flex flex-col items-center">
         {title && (
-          <span class="text-[14px] tracking-wide font-medium text-[#191C1F] mb-0">
+          <span class="xl: text=[#333333]text-[14px] xl:text-[16px] tracking-wide xl:font-regular xl:font-hanken-grotesk font-medium text-[#191C1F] mb-0">
             {title}
           </span>
         )}
         {highlightTitle && (
-          <h2 class="text-[44px] lg:text-[56px] font-Queens text-[#CE9680] leading-[1.0] mb-[10px]">
+          <h2 class="text-[44px] lg:text-[36px] font-Queens text-[#CE9680] leading-[1.0] mb-[10px]">
             {highlightTitle}
           </h2>
         )}
         {description && (
-          <p class="text-[15px] lg:text-[16px] text-[#2c2c2c] leading-snug">
+          <p class="text-[15px] lg:text-[20px] xl:font-hanken-grotesk text-[#2c2c2c] leading-snug lg:whitespace-nowrap">
             {description}
           </p>
         )}
