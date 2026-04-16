@@ -47,8 +47,8 @@
       "preload": true,
       "dots": true,
       "arrows": true,
-      "arrowsDesktop": true,
-      "arrowsMobile": true,
+      "arrowsDesktop": false,
+      "arrowsMobile": false,
       "dotsDesktop": true,
       "dotsMobile": true
     },
@@ -174,12 +174,26 @@
           "mobileWidth": 120,
           "mobileHeight": 120,
           "alt": "Kit"
+        },
+        {
+          "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
+          "imageWidth": 126,
+          "imageHeight": 126,
+          "href": "/",
+          "caption": "Kit",
+          "desktop": "https://assets.decocache.com/vicbeaute/6979c3f5-59fb-471c-9667-904899faf59c/Menu_Categorias_Kit.jpg",
+          "desktopWidth": 200,
+          "desktopHeight": 200,
+          "mobile": "https://assets.decocache.com/vicbeaute/6979c3f5-59fb-471c-9667-904899faf59c/Menu_Categorias_Kit.jpg",
+          "mobileWidth": 120,
+          "mobileHeight": 120,
+          "alt": "Kit"
         }
       ],
       "slider": {
         "desktop": {
-          "arrow": true,
-          "dots": true
+          "arrow": false,
+          "dots": false
         },
         "mobile": {
           "dots": true
