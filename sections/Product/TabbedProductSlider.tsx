@@ -1,5 +1,5 @@
 import type { Product } from "apps/commerce/types.ts";
-import ProductSlider from "../../components/product/ProductSlider.tsx";
+import ProductSliderSimilars from "../../components/product/ProductSliderSimilars.tsx";
 import { useId } from "../../sdk/useId.ts";
 import TabbedSliderJS from "../../islands/TabbedSliderJS.tsx";
 import { clx } from "../../sdk/clx.ts";
@@ -82,9 +82,9 @@ export default function TabbedProductSlider({
             class={clx("w-full transition-opacity duration-300", index === 0 ? "block" : "hidden")}
           >
             {tab.products && tab.products.length > 0 ? (
-              <ProductSlider 
-                products={tab.products} 
-                itemListName={title} 
+              <ProductSliderSimilars
+                products={tab.products}
+                itemListName={title}
               />
             ) : (
               <div class="flex justify-center items-center h-40 text-[#8a8a8a] text-sm">
