@@ -22,7 +22,7 @@ export interface Props {
 export default function Benefits({ benefits = [] }: Props) {
   const listOfBenefits = benefits.map((benefit, index) => (
     <div
-      class="max-lg:carousel-item flex-shrink-0 flex gap-cm-5 max-w-[214px] lg:max-w-[unset] lg:w-auto lg:h-[56px] h-[34px] lg:w-cm-300 lg:max-w-cm-300 w-full bg-cm-gray-300 xl:px-cm-26 xl:py-3 rounded-tl-cm-10 rounded-br-cm-10 px-3 py-2 rounded-bl-md items-center bg-[#FFFFFF] gap-[14px] lg:px-3"
+      class="max-lg:carousel-item flex-shrink-0 flex gap-cm-5 max-w-[214px] lg:max-w-[306px] lg:w-auto lg:h-[56px] h-[34px] lg:w-cm-300 lg:max-w-cm-300 w-full bg-cm-gray-300 xl:px-cm-26 xl:py-3 rounded-tl-cm-10 rounded-br-cm-10 px-3 py-2 rounded-bl-md items-center bg-[#FFFFFF] gap-[14px] lg:px-5 xl:w-full"
       id={`Home-benefits${index}-cy`}
     >
       <div class="flex-none">
