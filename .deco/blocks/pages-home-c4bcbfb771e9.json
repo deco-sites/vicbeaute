@@ -306,12 +306,12 @@
             "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
             "props": {
               "sort": "price:desc",
-              "collection": "137",
+              "collection": "141",
               "count": 12,
               "similars": true
             }
           },
-          "label": "Corretivo"
+          "label": "Facinho"
         },
         {
           "products": {
