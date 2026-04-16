@@ -486,7 +486,7 @@
           "__resolveType": "website/matchers/pathname.ts",
           "case": {
             "type": "Equals",
-            "pathname": "/maquiagem/boca"
+            "pathname": "/maquiagem/la"
           }
         }
       },
@@ -1460,7 +1460,7 @@
           "__resolveType": "website/matchers/pathname.ts",
           "case": {
             "type": "Equals",
-            "pathname": "/maquiagem/face"
+            "pathname": "/multifuncional"
           }
         }
       },
