@@ -55,7 +55,7 @@ export interface Props {
 function BannerInstitucional({ firstImage, text, secondImage }: Props) {
   const device = useDevice();
   return (
-    <div class="cy-banner flex flex-col items-center justify-center h-fit mt-[40px] mb-[30px]">
+    <div class="cy-banner flex flex-col items-center justify-center h-fit mt-[40px] mb-[40px]">
       {device === "desktop" && (
         <img
           alt={firstImage.desktop.alt}

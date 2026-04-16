@@ -25,7 +25,7 @@ function Header({ title, cta }: Props) {
           : "justify-between lg:justify-center pt-6 lg:pt-0",
       )}
     >
-      <h2 class="font-Queens text-2xl text-pink-5">
+      <h2 class="font-Queens text-2xl text-[#CE9680] text-[36px]">
         {title}
       </h2>
     </div>

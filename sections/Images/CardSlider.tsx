@@ -113,17 +113,17 @@ export default function CardSlider(
               />
               <div class="absolute inset-0 p-8 xl:p-10 flex flex-col justify-center items-start w-1/2 min-w-[320px]">
                 {card.title && (
-                  <h3 class="text-[#FFFFFF] text-[32px] font-Queens leading-tight font-semibold">
+                  <h3 class="text-[#FFFFFF] text-[32px]  xl:font-hanken-grotesk xl:leading-[1.0] leading-tight font-semibold">
                     {card.title}
                   </h3>
                 )}
                 {card.text && (
-                  <p class="text-[#FFFFFF] text-sm leading-snug mt-3">
+                  <p class="text-[#FFFFFF] xl:text-[16px] text-sm leading-snug mt-3">
                     {card.text}
                   </p>
                 )}
                 {card.buttonText && (
-                  <span class="mt-6 bg-[#FFFFFF] text-[#191C1F] px-8 py-3 rounded-sm text-[13px] font-bold uppercase tracking-wider hover:bg-neutral-200 transition-colors">
+                  <span class="mt-6 bg-[#FFFFFF] text-[#191C1F] px-8 py-3 rounded-sm text-[13px] xl:text-[16px] xl:leading-[1.5] font-bold tracking-wider">
                     {card.buttonText}
                   </span>
                 )}
