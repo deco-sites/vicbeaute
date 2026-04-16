@@ -99,7 +99,7 @@ function Aside({
     <div
       data-aside
       id={drawer === "minicart-drawer" ? "minicartdrawer" : undefined}
-      class="bg-base-100 flex flex-col h-[100vh] w-full"
+      class="bg-base-100 flex flex-col !h-[100vh] w-full"
       style={{ maxWidth: "100vw" }}
     >
       {drawer !== "sidemenu-drawer" && (

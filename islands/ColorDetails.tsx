@@ -23,11 +23,25 @@ export default function ColorDetails({ title = "Cores", colors }: Props) {
 
   const activeColor = colors[selectedIdx.value] || colors[0];
 
+  // Extrai o nome da cor do <strong> inicial e o resto como descrição
+  let colorDisplayName = activeColor.name;
+  let remainingHtml = activeColor.descriptionHtml;
+  if (activeColor.descriptionHtml) {
+    const match = activeColor.descriptionHtml.match(/^<strong[^>]*>([\s\S]*?)<\/strong>\s*(?:<br\s*\/?>)?\s*([\s\S]*)$/i);
+    if (match) {
+      const extracted = match[1].replace(/<[^>]+>/g, "").trim();
+      if (extracted) {
+        colorDisplayName = extracted;
+        remainingHtml = match[2].trim();
+      }
+    }
+  }
+
   return (
-    <div id="product-color-details" class="w-full py-8 lg:py-16 bg-[#ffffff]">
+    <div id="product-color-details" class="w-full py-8 bg-gray-20">
       <div
         class={clx(
-          "container grid grid-cols-1 max-w-[1044px] gap-8 px-5 lg:px-0",
+          "container grid grid-cols-1 max-w-[1280px] bg-white-15 xl:gap-[30px] gap-8 px-5 lg:px-0",
           "lg:grid-cols-2 lg:gap-16 xl:gap-24",
         )}
       >
@@ -44,7 +58,7 @@ export default function ColorDetails({ title = "Cores", colors }: Props) {
             src={activeColor.largeImageUrl}
             alt={activeColor.name || "Cor do produto"}
             width={640}
-            height={640}
+            height={540}
             class="hidden lg:block w-full object-cover lg:h-auto"
           />
         </div>
@@ -55,8 +69,14 @@ export default function ColorDetails({ title = "Cores", colors }: Props) {
             {title}
           </h2>
 
+          {/* Esconde scrollbar do container de tabs */}
+          <style dangerouslySetInnerHTML={{ __html: `
+            .color-details-tabs { -ms-overflow-style: none; scrollbar-width: none; }
+            .color-details-tabs::-webkit-scrollbar { display: none; }
+          `}} />
+
           {/* Tabs Container */}
-          <div class="flex flex-row overflow-x-auto gap-3 pb-2 mb-4 scrollbar-none">
+          <div class="color-details-tabs flex flex-row overflow-x-auto gap-3 pb-1">
             {colors.map((color, i) => {
               const isSelected = i === selectedIdx.value;
               return (
@@ -95,21 +115,57 @@ export default function ColorDetails({ title = "Cores", colors }: Props) {
             })}
           </div>
 
-          <hr class="border-[#EBEBEB] w-full mb-6" />
-
-          {/* HTML Description */}
-          {activeColor.descriptionHtml && (
-            <div
-              class={clx(
-                "flex flex-col font-Hanken-Grotesk text-[15px] leading-relaxed text-[#4C4C4C]",
-                "[&_strong]:font-bold [&_strong]:text-[#212121] [&_strong]:mb-1 [&_strong]:block",
-                "[&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-2 [&_li]:mb-1 [&_li]:text-[#4C4C4C]",
-                "[&_p]:mb-4 last:[&_p]:mb-0"
-              )}
-              // deno-lint-ignore react-dangerouslysetinnerhtml
-              dangerouslySetInnerHTML={{ __html: activeColor.descriptionHtml }}
-            />
+          {/* Dots — linhas finas idênticas aos sliders do projeto */}
+          {colors.length > 1 && (
+            <div class="flex w-full gap-0 mt-2 mb-1">
+              {colors.map((_, i) => (
+                <button
+                  type="button"
+                  key={i}
+                  onClick={() => selectedIdx.value = i}
+                  aria-label={`Selecionar cor ${i + 1}`}
+                  style={{
+                    flex: 1,
+                    height: "3px",
+                    borderRadius: 0,
+                    border: "none",
+                    outline: "none",
+                    cursor: "pointer",
+                    backgroundColor: i === selectedIdx.value
+                      ? "#455C42"
+                      : "rgba(25,28,31,0.2)",
+                    transition: "background-color 0.3s ease",
+                  }}
+                />
+              ))}
+            </div>
           )}
+
+          <hr class="border-[#EBEBEB] w-full mb-6 mt-3" />
+
+          {/* Structured Description */}
+          <div class="flex flex-col font-Hanken-Grotesk text-[15px] leading-relaxed text-[#4C4C4C]">
+            {colorDisplayName && (
+              <div class="mb-4">
+                <strong class="font-bold text-[#212121] block mb-1">Nome da cor:</strong>
+                <span>{colorDisplayName}</span>
+              </div>
+            )}
+            {remainingHtml && (
+              <div class="flex flex-col">
+                <strong class="font-bold text-[#212121] block mb-1">Descrição:</strong>
+                <div
+                  class={clx(
+                    "[&_strong]:font-bold [&_strong]:text-[#212121] [&_strong]:mb-1 [&_strong]:block",
+                    "[&_ul]:list-disc [&_ul]:pl-5 [&_ul]:my-2 [&_li]:mb-1 [&_li]:text-[#4C4C4C]",
+                    "[&_p]:mb-4 last:[&_p]:mb-0",
+                  )}
+                  // deno-lint-ignore react-dangerouslysetinnerhtml
+                  dangerouslySetInnerHTML={{ __html: remainingHtml }}
+                />
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

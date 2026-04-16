@@ -100,106 +100,103 @@
       "description": "aa"
     },
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/Images/Minibanners.tsx",
-        "header": {
-          "title": "Categorias"
+      "__resolveType": "site/sections/Images/Minibanners.tsx",
+      "header": {
+        "title": "Categorias"
+      },
+      "images": [
+        {
+          "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
+          "imageWidth": 126,
+          "imageHeight": 126,
+          "href": "/",
+          "caption": "Iluminador",
+          "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "desktopHeight": 200,
+          "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "mobileWidth": 120,
+          "mobileHeight": 120,
+          "alt": "Iluminador",
+          "desktopWidth": 200
         },
-        "images": [
-          {
-            "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
-            "imageWidth": 126,
-            "imageHeight": 126,
-            "href": "/",
-            "caption": "Iluminador",
-            "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
-            "desktopHeight": 200,
-            "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
-            "mobileWidth": 120,
-            "mobileHeight": 120,
-            "alt": "Iluminador",
-            "desktopWidth": 200
-          },
-          {
-            "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
-            "imageWidth": 126,
-            "imageHeight": 126,
-            "href": "/",
-            "caption": "Iluminador",
-            "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
-            "desktopWidth": 200,
-            "desktopHeight": 200,
-            "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
-            "mobileWidth": 120,
-            "mobileHeight": 120,
-            "alt": "Iluminador"
-          },
-          {
-            "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
-            "imageWidth": 126,
-            "imageHeight": 126,
-            "href": "/",
-            "caption": "Iluminador",
-            "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
-            "desktopWidth": 200,
-            "desktopHeight": 200,
-            "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
-            "mobileWidth": 120,
-            "mobileHeight": 120,
-            "alt": "Iluminador"
-          },
-          {
-            "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
-            "imageWidth": 126,
-            "imageHeight": 126,
-            "href": "/",
-            "caption": "Iluminador",
-            "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
-            "desktopWidth": 200,
-            "desktopHeight": 200,
-            "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
-            "mobileWidth": 120,
-            "mobileHeight": 120,
-            "alt": "Iluminador"
-          },
-          {
-            "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
-            "imageWidth": 126,
-            "imageHeight": 126,
-            "href": "/",
-            "caption": "Iluminador",
-            "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
-            "desktopWidth": 200,
-            "desktopHeight": 200,
-            "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
-            "mobileWidth": 120,
-            "mobileHeight": 120,
-            "alt": "Iluminador"
-          },
-          {
-            "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
-            "imageWidth": 126,
-            "imageHeight": 126,
-            "href": "/",
-            "caption": "Iluminador",
-            "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
-            "desktopWidth": 200,
-            "desktopHeight": 200,
-            "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
-            "mobileWidth": 120,
-            "mobileHeight": 120,
-            "alt": "Iluminador"
-          }
-        ],
-        "slider": {
-          "desktop": {
-            "arrow": true,
-            "dots": true
-          },
-          "mobile": {
-            "dots": true
-          }
+        {
+          "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
+          "imageWidth": 126,
+          "imageHeight": 126,
+          "href": "/",
+          "caption": "Iluminador",
+          "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "desktopWidth": 200,
+          "desktopHeight": 200,
+          "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "mobileWidth": 120,
+          "mobileHeight": 120,
+          "alt": "Iluminador"
+        },
+        {
+          "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
+          "imageWidth": 126,
+          "imageHeight": 126,
+          "href": "/",
+          "caption": "Iluminador",
+          "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "desktopWidth": 200,
+          "desktopHeight": 200,
+          "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "mobileWidth": 120,
+          "mobileHeight": 120,
+          "alt": "Iluminador"
+        },
+        {
+          "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
+          "imageWidth": 126,
+          "imageHeight": 126,
+          "href": "/",
+          "caption": "Iluminador",
+          "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "desktopWidth": 200,
+          "desktopHeight": 200,
+          "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "mobileWidth": 120,
+          "mobileHeight": 120,
+          "alt": "Iluminador"
+        },
+        {
+          "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
+          "imageWidth": 126,
+          "imageHeight": 126,
+          "href": "/",
+          "caption": "Iluminador",
+          "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "desktopWidth": 200,
+          "desktopHeight": 200,
+          "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "mobileWidth": 120,
+          "mobileHeight": 120,
+          "alt": "Iluminador"
+        },
+        {
+          "image": "https://assets.decocache.com/easycommerce/eac0349b-0164-433f-85cd-97021d740499/Captura-de-tela-2025-09-09-211924.png",
+          "imageWidth": 126,
+          "imageHeight": 126,
+          "href": "/",
+          "caption": "Iluminador",
+          "desktop": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "desktopWidth": 200,
+          "desktopHeight": 200,
+          "mobile": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+          "mobileWidth": 120,
+          "mobileHeight": 120,
+          "alt": "Iluminador"
+        }
+      ],
+      "slider": {
+        "desktop": {
+          "arrow": true,
+          "dots": true
+        },
+        "mobile": {
+          "dots": true
         }
       }
     },
@@ -216,7 +213,7 @@
       },
       "arrows": true,
       "dots": true,
-      "title": "aaaaa"
+      "title": "Mais amados"
     },
     {
       "__resolveType": "site/sections/Images/BannerSlider.tsx",
@@ -273,21 +270,6 @@
       "dotsMobile": true
     },
     {
-      "__resolveType": "site/sections/Product/ProductShelfSimilars.tsx",
-      "title": "aaaaa",
-      "products": {
-        "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
-        "props": {
-          "sort": "price:desc",
-          "collection": "137",
-          "count": 12,
-          "similars": true
-        }
-      },
-      "arrows": true,
-      "dots": true
-    },
-    {
       "__resolveType": "site/sections/Product/TabbedProductSlider.tsx",
       "title": "Novidades",
       "tabs": [
@@ -297,7 +279,8 @@
             "props": {
               "sort": "price:desc",
               "collection": "137",
-              "count": 12
+              "count": 12,
+              "similars": true
             }
           },
           "label": "Stick Tudo"
@@ -308,7 +291,8 @@
             "props": {
               "sort": "price:desc",
               "count": 12,
-              "collection": "137"
+              "collection": "137",
+              "similars": true
             }
           },
           "label": "Corretivo"
@@ -318,8 +302,9 @@
             "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
             "props": {
               "sort": "price:desc",
-              "collection": "141",
-              "count": 12
+              "collection": "137",
+              "count": 12,
+              "similars": true
             }
           },
           "label": "Corretivo"
@@ -329,8 +314,9 @@
             "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
             "props": {
               "sort": "price:desc",
-              "collection": "141",
-              "count": 12
+              "collection": "137",
+              "count": 12,
+              "similars": true
             }
           },
           "label": "Corretivo"
@@ -340,8 +326,9 @@
             "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
             "props": {
               "sort": "price:desc",
-              "collection": "141",
-              "count": 12
+              "collection": "137",
+              "count": 12,
+              "similars": true
             }
           },
           "label": "Corretivo"
@@ -351,8 +338,9 @@
             "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
             "props": {
               "sort": "price:desc",
-              "collection": "141",
-              "count": 12
+              "collection": "137",
+              "count": 12,
+              "similars": true
             }
           },
           "label": "Corretivo"
@@ -424,7 +412,7 @@
       "looks": [
         {
           "cardType": "Vertical",
-          "imageDesk": "https://assets.decocache.com/vicbeaute/b5689eb7-f2f0-4520-8d88-2ae02358e662/Frame-1000004117.png",
+          "imageDesk": "https://assets.decocache.com/vicbeaute/1cadfb64-9067-49c9-9cd7-c26ae20b7e8d/Frame-1000004117.png",
           "imageMobile": "https://assets.decocache.com/vicbeaute/a827d85f-ee19-49d0-b488-041a4eee42ec/Frame-100000411-mobile7.png",
           "title": "O clássico do dia",
           "subtitle": "@vicceridono",
@@ -435,7 +423,9 @@
               "collection": "137",
               "count": 3
             }
-          }
+          },
+          "modalImage": "https://assets.decocache.com/vicbeaute/381741be-814f-4022-916f-f47146dd4eb5/Captura-de-Tela-2024-05-11-as-02.30-2.png",
+          "modalImageMobile": "https://assets.decocache.com/vicbeaute/ff7e9e5b-3ab1-44b0-b194-8d78a7a86c36/Captura-de-Tela-2024-05-11-as-02.30-2.png"
         },
         {
           "cardType": "Quadrado",
@@ -450,7 +440,9 @@
               "collection": "137",
               "count": 3
             }
-          }
+          },
+          "modalImage": "https://assets.decocache.com/vicbeaute/381741be-814f-4022-916f-f47146dd4eb5/Captura-de-Tela-2024-05-11-as-02.30-2.png",
+          "modalImageMobile": "https://assets.decocache.com/vicbeaute/ff7e9e5b-3ab1-44b0-b194-8d78a7a86c36/Captura-de-Tela-2024-05-11-as-02.30-2.png"
         },
         {
           "cardType": "Quadrado",
@@ -465,7 +457,9 @@
               "collection": "137",
               "count": 3
             }
-          }
+          },
+          "modalImage": "https://assets.decocache.com/vicbeaute/381741be-814f-4022-916f-f47146dd4eb5/Captura-de-Tela-2024-05-11-as-02.30-2.png",
+          "modalImageMobile": "https://assets.decocache.com/vicbeaute/ff7e9e5b-3ab1-44b0-b194-8d78a7a86c36/Captura-de-Tela-2024-05-11-as-02.30-2.png"
         },
         {
           "cardType": "Quadrado",
@@ -480,7 +474,9 @@
               "collection": "141",
               "count": 3
             }
-          }
+          },
+          "modalImage": "https://assets.decocache.com/vicbeaute/381741be-814f-4022-916f-f47146dd4eb5/Captura-de-Tela-2024-05-11-as-02.30-2.png",
+          "modalImageMobile": "https://assets.decocache.com/vicbeaute/ff7e9e5b-3ab1-44b0-b194-8d78a7a86c36/Captura-de-Tela-2024-05-11-as-02.30-2.png"
         },
         {
           "cardType": "Quadrado",
@@ -495,7 +491,9 @@
               "collection": "141",
               "count": 3
             }
-          }
+          },
+          "modalImage": "https://assets.decocache.com/vicbeaute/381741be-814f-4022-916f-f47146dd4eb5/Captura-de-Tela-2024-05-11-as-02.30-2.png",
+          "modalImageMobile": "https://assets.decocache.com/vicbeaute/ff7e9e5b-3ab1-44b0-b194-8d78a7a86c36/Captura-de-Tela-2024-05-11-as-02.30-2.png"
         },
         {
           "cardType": "Vertical",
@@ -510,7 +508,9 @@
               "collection": "141",
               "count": 3
             }
-          }
+          },
+          "modalImage": "https://assets.decocache.com/vicbeaute/381741be-814f-4022-916f-f47146dd4eb5/Captura-de-Tela-2024-05-11-as-02.30-2.png",
+          "modalImageMobile": "https://assets.decocache.com/vicbeaute/ff7e9e5b-3ab1-44b0-b194-8d78a7a86c36/Captura-de-Tela-2024-05-11-as-02.30-2.png"
         }
       ]
     },
@@ -576,10 +576,7 @@
       "__resolveType": "newsletter"
     },
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "Footer"
-      }
+      "__resolveType": "Footer"
     }
   ],
   "__resolveType": "website/pages/Page.tsx",

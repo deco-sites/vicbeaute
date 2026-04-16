@@ -65,7 +65,7 @@ export default function KonfidencyReviews({ reviews = [], aggregateRating }: Pro
     <div class="w-full bg-white text-[#4C4C4C] font-Hanken-Grotesk">
       {/* Header Topic */}
       <div class="flex flex-col items-center justify-center text-center mt-12 mb-8">
-        <span class="text-sm font-medium uppercase tracking-wider text-gray-500 mb-1">
+        <span class="text-sm font-medium tracking-wider text-gray-500 mb-1">
           O que estão dizendo
         </span>
         <h2 class="font-Queens text-[32px] lg:text-[40px] text-pink-15 leading-tight">
