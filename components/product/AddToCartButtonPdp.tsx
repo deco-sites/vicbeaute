@@ -133,7 +133,7 @@ function AddToCartButtonPdp(props: Props) {
   return (
     <div
       id={id}
-      class="flex items-center bg-gray-15 lg:bg-white flex-col-reverse"
+      class="flex items-center bg-gray-15 lg:bg-white flex-col-reverse w-full"
       data-item-id={product.productID}
       data-cart-item={encodeURIComponent(
         JSON.stringify({ item, platformProps }),
@@ -142,7 +142,7 @@ function AddToCartButtonPdp(props: Props) {
       <button
         disabled
         class={clx(
-          "w-full rounded-md font-medium text-base flex items-center justify-center gap-2 h-[45px]",
+          "w-full rounded-md font-medium font-Hanken-Grotesk text-sm flex items-center justify-center gap-2 h-[45px]",
           _class?.toString(),
         )}
         hx-on:click={useScript(onClick)}

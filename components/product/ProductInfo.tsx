@@ -72,7 +72,9 @@ function ProductInfo({ page }: Props) {
   };
 
   const similars = product.isSimilarTo ?? [];
-  let allProducts = similars.length > 0 ? [product, ...similars] : (product.isVariantOf?.hasVariant ?? [product]);
+  let allProducts = similars.length > 0
+    ? [product, ...similars]
+    : (product.isVariantOf?.hasVariant ?? [product]);
 
   // Deduplicar por productID (único por produto). Usar Set para preservar a PRIMEIRA ocorrência,
   // garantindo que o produto atual (primeiro da lista) nunca seja substituído por um similar com mesmo nome.
@@ -100,7 +102,7 @@ function ProductInfo({ page }: Props) {
     })
     .map((p) => ({
       url: relative(p.url)!,
-      name: getSkuColor(p),         // Cor do SKU  (ex: "Preto", "Corada")
+      name: getSkuColor(p), // Cor do SKU  (ex: "Preto", "Corada")
       subtitle: getProductCores(p), // Atributo "Cores" do produto (ex: "Coral")
       imgUrl: getSwatchUrl(p.image),
     }));
@@ -108,9 +110,10 @@ function ProductInfo({ page }: Props) {
   const selectedUrl = relative(product.url) ?? "/";
   // ────────────────────────────────────────────────────────────
 
-  const { price = 0, listPrice = 0, seller = "1", availability, installments } = useOffer(
-    offers,
-  );
+  const { price = 0, listPrice = 0, seller = "1", availability, installments } =
+    useOffer(
+      offers,
+    );
 
   const percent = listPrice && price
     ? Math.round(((listPrice - price) / listPrice) * 100)
@@ -151,15 +154,15 @@ function ProductInfo({ page }: Props) {
     <div>
       <div
         {...viewItemEvent}
-        class="lg:flex hidden flex-col product-info"
+        class="lg:flex hidden flex-col product-info max-w-[350px]"
         id={id}
       >
-        <div class="hidden lg:block mb-4 -mt-2 [&_.breadcrumbs]:lg:!pt-0">
+        <div class="hidden lg:block mb-[30px] -mt-2 [&_.breadcrumbs]:lg:!pt-0">
           <Breadcrumb itemListElement={breadcrumbList?.itemListElement} />
         </div>
         {product.gtin && (
           <>
-            <span class="text-sm text-gray-60">
+            <span class="text-[10px] text-black-10">
               Ref.: {product.gtin}
             </span>
 
@@ -167,15 +170,15 @@ function ProductInfo({ page }: Props) {
             <div>
               <h1
                 class={clx(
-                  "text-3xl font-semibold lg:font-normal lg:font-Poppins",
-                  "pt-4 lg:pt-1",
+                  "text-3xl text-pink-5 font-semibold lg:font-normal lg:font-Queens",
+                  "pt-[30px]",
                 )}
               >
                 {title}
               </h1>
 
               {product.alternateName && (
-                <div class="mt-2 flex flex-col font-Hanken-Grotesk">
+                <div class="flex flex-col font-Hanken-Grotesk">
                   <div
                     class="text-[#4C4C4C] text-[15px] leading-[22px]"
                     dangerouslySetInnerHTML={{ __html: product.alternateName }}
@@ -212,35 +215,42 @@ function ProductInfo({ page }: Props) {
         )}
 
         {/* ADD TO CART BOX */}
-        <div id="add-to-cart-box-desktop" class="mt-4 sm:mt-[14px] bg-green-15 p-4 rounded-md flex flex-col gap-4">
-          <div class="flex flex-col gap-1 items-center sm:items-start justify-center sm:justify-start">
-             <div class="flex items-center gap-2">
-                {listPrice > price && (
-                  <span class="line-through text-sm text-gray-5">
-                    {formatPrice(listPrice, offers?.priceCurrency)}
-                  </span>
-                )}
-                <span class="text-[26px] font-bold text-green-10 flex items-center">
-                  {formatPriceWithStyledSymbol(price, offers?.priceCurrency)}
+        <div class="mt-4 sm:mt-[14px] bg-green-15 p-4 rounded-md flex flex-col gap-4">
+          <div class="flex flex-col gap-1 items-center justify-center">
+            <div class="flex items-center gap-2">
+              {listPrice > price && (
+                <span class="line-through text-sm text-gray-5">
+                  {formatPrice(listPrice, offers?.priceCurrency)}
                 </span>
-                {percent > 0 && (
-                  <span class="text-[10px] font-bold text-white bg-[#EE3730] rounded px-[6px] py-[2px] ml-1">
-                    -{percent}% OFF
-                  </span>
-                )}
-             </div>
-             {installments && (
-                <span class="text-xs text-green-10 text-center sm:text-left mt-[-4px] font-Hanken-Grotesk">
-                  {installments}
+              )}
+              <span class="text-[26px] font-bold text-green-10 flex justify-center items-center">
+                {formatPrice(price, offers?.priceCurrency)}
+              </span>
+              {percent > 0 && (
+                <span class="text-[10px] font-bold text-white bg-[#EE3730] rounded px-[6px] py-[2px] ml-1">
+                  -{percent}% OFF
                 </span>
-             )}
-             <div class="flex items-center gap-1 mt-1 justify-center sm:justify-start">
-                <span class="text-[11px] text-black-20">Tenha 5% de desconto no PIX</span>
-                <Icon id="pix" width={14} height={14} class="text-black-20" />
-             </div>
+              )}
+            </div>
+            {installments && (
+              <span class="text-xs text-green-10 text-center sm:text-left mt-[-4px] font-Hanken-Grotesk">
+                {installments}
+              </span>
+            )}
+            <div class="flex items-center gap-1 justify-center">
+              <span class="text-xs text-green-10 text-center font-Hanken-Grotesk">
+                Tenha 5% de desconto no PIX
+              </span>
+              <Icon
+                id="pdpPix"
+                size={13}
+                strokeWidth={1}
+                class="text-black-20"
+              />
+            </div>
           </div>
-          
-          <div class="flex items-center gap-2 w-full mt-2">
+
+          <div class="flex items-center gap-2 w-full">
             {availability === "https://schema.org/InStock"
               ? (
                 <>
@@ -276,26 +286,34 @@ function ProductInfo({ page }: Props) {
         class="lg:hidden flex flex-col px-3 product-info-mobile"
         id={id}
       >
-        <span class="text-base font-medium text-black-5 pb-2">
-          {title}
-        </span>
+        <div>
+          <h1
+            class={clx(
+              "text-3xl text-pink-5 font-normal font-Queens"
+            )}
+          >
+            {title}
+          </h1>
 
-        {product.alternateName && (
-          <div class="mt-0 mb-2 flex flex-col font-Hanken-Grotesk">
-            <div
-              class="text-[#4C4C4C] text-sm leading-[20px]"
-              dangerouslySetInnerHTML={{ __html: product.alternateName }}
-            />
-            <div class="text-right mt-1">
-              <a
-                href="#product-description"
-                class="underline text-[#4C4C4C] text-sm"
-              >
-                Saiba mais
-              </a>
+          {product.alternateName && (
+            <div class="flex flex-col font-Hanken-Grotesk">
+              <div
+                class="text-[#4C4C4C] text-[15px] leading-[22px]"
+                dangerouslySetInnerHTML={{ __html: product.alternateName }}
+              />
+              <div class="text-right mt-1">
+                <a
+                  href="#product-description"
+                  class="underline text-[#4C4C4C] text-[14px]"
+                >
+                  Saiba mais
+                </a>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+
+          {/* Preços originais removidos daqui. Agora estão dentro do AddToCartBox abaixo. */}
+        </div>
 
         {/* Seletor de cores mobile */}
         {hasColors && (
@@ -312,51 +330,56 @@ function ProductInfo({ page }: Props) {
         )}
 
         {/* ADD TO CART BOX MOBILE */}
-        <div class="mt-4 pb-7">
-          <div id="add-to-cart-box-mobile" class="bg-green-15 p-4 rounded-md flex flex-col gap-4">
-            <div class="flex flex-col gap-1 items-center justify-center">
-               <div class="flex items-center gap-2">
-                  {listPrice > price && (
-                    <span class="line-through text-sm text-gray-5">
-                      {formatPrice(listPrice, offers?.priceCurrency)}
-                    </span>
-                  )}
-                  <span class="text-[26px] font-bold text-green-10 flex items-center">
-                    {formatPriceWithStyledSymbol(price, offers?.priceCurrency)}
-                  </span>
-                  {percent > 0 && (
-                    <span class="text-[10px] font-bold text-white bg-[#EE3730] rounded px-[6px] py-[2px] ml-1">
-                      -{percent}% OFF
-                    </span>
-                  )}
-               </div>
-               {installments && (
-                  <span class="text-xs text-green-10 text-center mt-[-4px] font-Hanken-Grotesk">
-                    {installments}
-                  </span>
-               )}
-               <div class="flex items-center gap-1 mt-1 justify-center">
-                  <span class="text-[11px] text-black-20">Tenha 5% de desconto no PIX</span>
-                  <Icon id="pix" width={14} height={14} class="text-black-20" />
-               </div>
+        <div class="mt-4 sm:mt-[14px] bg-green-15 p-4 rounded-md flex flex-col gap-4">
+          <div class="flex flex-col gap-1 items-center justify-center">
+            <div class="flex items-center gap-2">
+              {listPrice > price && (
+                <span class="line-through text-sm text-gray-5">
+                  {formatPrice(listPrice, offers?.priceCurrency)}
+                </span>
+              )}
+              <span class="text-[26px] font-bold text-green-10 flex justify-center items-center">
+                {formatPrice(price, offers?.priceCurrency)}
+              </span>
+              {percent > 0 && (
+                <span class="text-[10px] font-bold text-white bg-[#EE3730] rounded px-[6px] py-[2px] ml-1">
+                  -{percent}% OFF
+                </span>
+              )}
             </div>
-            
-            <div id="add-to-cart-quantity-pdp" class="flex items-center gap-2 w-full mt-2">
-              {availability === "https://schema.org/InStock"
-                ? (
-                  <>
-                    <AddToCartButtonPdp
-                      item={item}
-                      seller={seller}
-                      product={product}
-                      class="btn btn-primary no-animation flex-1 bg-green-10 hover:bg-green-10 text-white border-none min-h-[45px]"
-                      disabled={false}
-                    />
-                    <WishlistButton variant="pdp" item={item} />
-                  </>
-                )
-                : <OutOfStock productID={productID} />}
+            {installments && (
+              <span class="text-xs text-green-10 text-center sm:text-left mt-[-4px] font-Hanken-Grotesk">
+                {installments}
+              </span>
+            )}
+            <div class="flex items-center gap-1 justify-center">
+              <span class="text-xs text-green-10 text-center font-Hanken-Grotesk">
+                Tenha 5% de desconto no PIX
+              </span>
+              <Icon
+                id="pdpPix"
+                size={13}
+                strokeWidth={1}
+                class="text-black-20"
+              />
             </div>
+          </div>
+
+          <div class="flex items-center gap-2 w-full">
+            {availability === "https://schema.org/InStock"
+              ? (
+                <>
+                  <AddToCartButtonPdp
+                    item={item}
+                    seller={seller}
+                    product={product}
+                    class="btn btn-primary no-animation flex-1 bg-green-10 hover:bg-green-10 text-white border-none min-h-[45px]"
+                    disabled={false}
+                  />
+                  <WishlistButton variant="pdp" item={item} />
+                </>
+              )
+              : <OutOfStock productID={productID} />}
           </div>
         </div>
 
@@ -372,14 +395,14 @@ function ProductInfo({ page }: Props) {
           ]}
         />
       </div>
-      <AddToCartSticky 
-         item={item} 
-         product={product} 
-         seller={seller} 
-         price={price} 
-         listPrice={listPrice} 
-         percent={percent} 
-         installments={installments} 
+      <AddToCartSticky
+        item={item}
+        product={product}
+        seller={seller}
+        price={price}
+        listPrice={listPrice}
+        percent={percent}
+        installments={installments}
       />
     </div>
   );

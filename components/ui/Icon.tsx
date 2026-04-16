@@ -61,6 +61,7 @@ export type AvailableIcons =
   | "minicartbagdark"
   | "lupa-dark"
   | "heartpdp"
+  | "pdpPix"
   | "pix";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {

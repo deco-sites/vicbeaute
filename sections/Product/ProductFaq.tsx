@@ -38,7 +38,7 @@ export default function ProductFaq({ page }: Props) {
 
   return (
     <div id="product-faq" class="w-full py-8 lg:py-16">
-      <div class="container flex flex-col w-full px-5 sm:px-0 max-w-[1044px]">
+      <div class="container flex flex-col w-full px-5 sm:px-0 max-w-[1280px]">
         {/* Title */}
         <h2 class="faq-title font-Queens">Duvidas Frequentes</h2>
 

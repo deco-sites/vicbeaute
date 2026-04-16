@@ -22,7 +22,7 @@ function Breadcrumb({ itemListElement = [] }: Props) {
       : items;
 
   return (
-    <div class="breadcrumbs py-0 text-xs font-normal text-base-400 lg:pt-20 pt-14">
+    <div class="breadcrumbs !pl-0 py-0 text-xs font-normal text-base-400 lg:pt-20">
       {/* Mobile */}
       <ul class="!flex lg:!hidden gap-1">
         {mobileItems.map(({ name, item }, index, arr) => {
@@ -30,8 +30,8 @@ function Breadcrumb({ itemListElement = [] }: Props) {
           return (
             <li class="gap-2" key={item}>
               {isLast
-                ? <span class="font-semibold text-xs text-black-5">{name}</span>
-                : <a class="text-xs text-gray-35 no-underline" href={relative(item)}>{name}</a>}
+                ? <span class="font-semibold font-Hanken-Grotesk text-xs text-black-10">{name}</span>
+                : <a class="text-xs font-Hanken-Grotesk text-gray-35 no-underline" href={relative(item)}>{name}</a>}
             </li>
           );
         })}
@@ -44,8 +44,8 @@ function Breadcrumb({ itemListElement = [] }: Props) {
           return (
             <li key={item}>
               {isLast
-                ? <span class="font-semibold text-xs text-black-5">{name}</span>
-                : <a class="text-xs text-gray-35 no-underline" href={relative(item)}>{name}</a>}
+                ? <span class="font-Hanken-Grotesk font-semibold text-xs text-black-10">{name}</span>
+                : <a class="font-Hanken-Grotesk text-xs text-gray-35 no-underline" href={relative(item)}>{name}</a>}
             </li>
           );
         })}
