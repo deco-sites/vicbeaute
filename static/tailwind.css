@@ -8160,11 +8160,6 @@ ul.closed {
   background-color: rgb(43 48 39 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-\[\#344632\]:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(52 70 50 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-\[\#3d513a\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(61 81 58 / var(--tw-bg-opacity));
@@ -8223,11 +8218,6 @@ ul.closed {
 .hover\:bg-green-10:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(77 93 73 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-neutral-200:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 229 229 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-neutral-50:hover {
@@ -9664,8 +9654,8 @@ ul.closed {
     font-size: 16px;
   }
 
-  .lg\:text-\[17px\] {
-    font-size: 17px;
+  .lg\:text-\[18px\] {
+    font-size: 18px;
   }
 
   .lg\:text-\[20px\] {
@@ -9948,6 +9938,12 @@ ul.closed {
     padding-right: 100px;
   }
 
+  .xl\:text-\[12px\] {
+    font-size: 12px;
+  }
+
+  .xl\:text-\[14px\] {
+    font-size: 14px;
   .xl\:pt-\[10px\] {
     padding-top: 10px;
   }
@@ -9962,6 +9958,10 @@ ul.closed {
 
   .xl\:text-\[20px\] {
     font-size: 20px;
+  }
+
+  .xl\:text-\[36px\] {
+    font-size: 36px;
   }
 
   .xl\:text-\[48px\] {
@@ -9982,8 +9982,29 @@ ul.closed {
     font-weight: 300;
   }
 
+  .xl\:leading-\[1\.0\] {
+    line-height: 1.0;
+  }
+
+  .xl\:leading-\[1\.2\] {
+    line-height: 1.2;
+  }
+
+  .xl\:leading-\[1\.5\] {
+    line-height: 1.5;
+  }
+
+  .xl\:tracking-\[0\] {
+    letter-spacing: 0;
+  }
+
   .xl\:tracking-normal {
     letter-spacing: 0em;
+  }
+
+  .xl\:text-\[\#2C2C2C\] {
+    --tw-text-opacity: 1;
+    color: rgb(44 44 44 / var(--tw-text-opacity));
   }
 }
 

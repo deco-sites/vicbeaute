@@ -34,7 +34,7 @@ export default function Benefits({ benefits = [] }: Props) {
           alt={`${benefit.line1} ${benefit.line2}`}
         />
       </div>
-      <div class="flex-auto flex flex-col text-cm-gray-800 text-xs text-black-10 font-Hanken-Grotesk leading-[14px]">
+      <div class="flex-auto flex flex-col text-cm-gray-800 xl:text-[14px] text-xs text-black-10 font-Hanken-Grotesk leading-[14px]">
         {/* TEXTO PARA MOBILE */}
         <div class="lg:hidden">
           <div class="font-Hanken-Grotesk text-xs text-[#363931]">

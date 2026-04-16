@@ -164,10 +164,10 @@ function ProductCardSimilars({
 
       <div class="py-1 px-2 flex flex-col flex-grow">
         <a href={relativeUrl} class="block flex-grow focus:outline-none">
-          <span class="font-Manrope text-vc-10 text-[#4c4c4c] line-clamp-1">
+          <span class="font-hanken-grotesk xl:text-[12px] text-vc-10 text-[#4c4c4c] line-clamp-1">
             {variantName}
           </span>
-          <h3 class="font-Manrope font-medium text-[13px] text-black-35 line-clamp-2 min-h-[36px] mt-0.5">
+          <h3 class="text-[#363931] font-hanken-grotesk text-[16px] line-clamp-2 min-h-[36px] mt-0.5">
             {title}
           </h3>
 
@@ -182,7 +182,7 @@ function ProductCardSimilars({
                 {formatPrice(listPrice, offers?.priceCurrency)}
               </span>
             )}
-            <span class="font-bold font-Manrope text-[15px] sm:text-[16px] text-[#455C42] leading-none">
+            <span class="font-bold font-hanken-grotesk text-[22px] sm:text-[16px] text-[#455C42] leading-none">
               {formatPrice(price, offers?.priceCurrency)}
             </span>
           </div>
@@ -195,7 +195,7 @@ function ProductCardSimilars({
             <div
               class={clx(
                 "btn border-none text-sm no-animation w-full px-0 lg:text-[14px]",
-                "flex justify-center rounded-sm mx-auto bg-[#455C42] hover:bg-[#3d513a] text-white-15 font-medium min-h-[40px] h-[40px]",
+                "flex justify-center rounded-sm mx-auto bg-[#455C42] hover:bg-[#3d513a] text-[#D5D8C2] font-medium min-h-[40px] h-[40px]",
               )}
               // Temporary unavailable state based on original product card logic.
               // Wait, the original had 'Produto Indisponível' on BOTH branches??? Let me fix it based on the screenshots: it's 'Compre agora' with a bag icon.

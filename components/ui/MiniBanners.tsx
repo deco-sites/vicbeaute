@@ -68,7 +68,7 @@ export default function MiniBanners({ images, slider, header }: Props) {
     >
       <div class="flex justify-between items-start pl-vc-15 xl:pl-[0px]">
         <div class="flex flex-col w-full sm:mb-3 lg:mb-2">
-          <h2 class="flex lg:justify-center lg:align-center font-Queens text-[32px] text-[#CE9680]">
+          <h2 class="flex lg:justify-center lg:align-center font-Queens xl:text-[36px] text-[32px] text-[#CE9680]">
             {header?.title}
           </h2>
           {header?.description && (
@@ -115,7 +115,7 @@ export default function MiniBanners({ images, slider, header }: Props) {
                   {image.caption && (
                     <figcaption
                       data-cy={`categoria-caption-${index + 1}`}
-                      class="mt-2 text-sm text-black font-Hanken-Grotesk"
+                      class="mt-2 text-[16px] text-black font-Hanken-Grotesk"
                     >
                       {image.caption}
                     </figcaption>

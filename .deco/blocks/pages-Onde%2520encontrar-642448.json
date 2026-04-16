@@ -170,7 +170,7 @@
           {
             "secondTitle": "Shopping Iguatemi - São Paulo",
             "secondText": "<p><br><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Av. Brig. Faria Lima, 2232 - Piso Térreo - Jardim Paulistano, São Paulo/ SP</span><br><span style=\"font-size: 16px\">Piso Térreo</span><br><strong><span style=\"font-size: 16px\">Inserir Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">De Segunda à sexta: 9h às 18h</span><br><span style=\"font-size: 16px\">Sábados, domingos e feriados fechado.</span><br><span style=\"font-size: 16px\">(11) 99354-8590</span><br></p>",
-            "showDivider": true,
+            "showDivider": false,
             "linkIcon": {
               "mobile": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png",
               "desktop": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png"
