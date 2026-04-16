@@ -8,8 +8,8 @@
       "__resolveType": "site/sections/Images/Carousel.tsx",
       "images": [
         {
-          "desktop": "https://assets.decocache.com/vicbeaute/f85502be-70f8-43f7-a50f-78b027a3b84a/VIC_ECOMM_CASTING-63-ETEREO-1.png",
-          "mobile": "https://assets.decocache.com/vicbeaute/91ce20f4-f840-40ac-966f-34e6023af7a5/Banner-Hero.png",
+          "desktop": "https://assets.decocache.com/vicbeaute/6c5c414b-7707-4eef-9ffd-92225e293069/Banner-Principal---Institucional.jpg",
+          "mobile": "https://assets.decocache.com/vicbeaute/a8506939-f430-44e8-834a-7863127f5427/Banner-Principal---Institucional4.jpg",
           "alt": "Home Banner",
           "action": {
             "href": "#"
@@ -61,9 +61,9 @@
           "imageWidth": 32,
           "imageHeight": 32,
           "line1": "Ganhe a nécessaire  nas",
-          "line2": "compras acima de R$329",
+          "line2": "compras acima de R$349",
           "mobileLine1": "Ganhe a nécessaire  nas",
-          "mobileLine2": "compras acima de R$329"
+          "mobileLine2": "compras acima de R$349"
         },
         {
           "label": "PARCELE SUAS COMPRAS Parcele em até 5 vezes sem juros",
@@ -71,9 +71,9 @@
           "imageWidth": 37,
           "imageHeight": 32,
           "line1": "Frete grátis nas compras ",
-          "line2": "acima de R$190",
+          "line2": "acima de R$220",
           "mobileLine1": "Frete grátis nas compras",
-          "mobileLine2": "acima de R$190"
+          "mobileLine2": "acima de R$220"
         },
         {
           "label": "LOJA SEGURA Loja com SSL e proteção de dados",
