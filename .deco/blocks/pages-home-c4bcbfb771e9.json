@@ -178,7 +178,7 @@
       ],
       "slider": {
         "desktop": {
-          "arrow": true,
+          "arrow": false,
           "dots": true
         },
         "mobile": {
