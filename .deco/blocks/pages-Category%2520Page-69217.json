@@ -1460,7 +1460,7 @@
           "__resolveType": "website/matchers/pathname.ts",
           "case": {
             "type": "Equals",
-            "pathname": "/multifuncional"
+            "pathname": "/maquiagem/face"
           }
         }
       },
