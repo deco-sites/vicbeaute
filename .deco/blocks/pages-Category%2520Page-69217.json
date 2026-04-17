@@ -1,5 +1,4 @@
 {
-  "path": "/labios",
   "sections": {
     "__resolveType": "website/flags/multivariate.ts",
     "variants": [
@@ -2353,5 +2352,6 @@
     "__resolveType": "website/sections/Seo/SeoV2.tsx"
   },
   "__resolveType": "website/pages/Page.tsx",
-  "name": "Category"
+  "name": "Category",
+  "path": "/*"
 }
