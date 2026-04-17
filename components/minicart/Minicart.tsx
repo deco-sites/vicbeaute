@@ -197,7 +197,7 @@ export default function Cart(
             : (
               <>
                 {/* Free Shipping Bar */}
-                <div class="pt-[10px] pb-[50px] w-full">
+                <div class="pt-[10px] pb-[20px] w-full">
                   <FreeShippingProgressBar
                     total={total}
                     locale={locale}
@@ -209,7 +209,7 @@ export default function Cart(
                 {/* Cart Items */}
                 <ul
                   role="list"
-                  class="px-4 flex-grow overflow-y-auto flex flex-col w-full"
+                  class="flex-grow overflow-y-auto flex flex-col w-full"
                 >
                   {items.map((item, index) => (
                     <li data-cy="minicart-list">
@@ -226,7 +226,7 @@ export default function Cart(
 
                 {/* Cart Footer */}
                 <footer class="shadow-minicart w-full border-t border-base-200">
-                  <div class="flex flex-col px-4 py-4 gap-2">
+                  <div class="flex flex-col gap-2">
                     {/* Título Resumo */}
                     <h3 class="text-xl font-medium border-b pb-2">
                       Resumo do pedido
@@ -252,7 +252,7 @@ export default function Cart(
                     {/* Botão Finalizar compra */}
                     <a
                       data-cy="minicart-go-to-checkout"
-                      class="bg-[#48C993] text-white text-base font-semibold py-3 rounded w-full text-center"
+                      class="bg-green-10 text-white-15 text-base font-semibold py-3 rounded w-full text-center"
                       href={checkoutHref}
                       hx-on:click={useScript(sendBeginCheckoutEvent)}
                     >
@@ -263,7 +263,7 @@ export default function Cart(
                     <label
                       data-cy="minicart-start-buying"
                       for={MINICART_DRAWER_ID}
-                      class="border border-[#7A7A7A] text-[#7A7A7A] font-semibold py-3 rounded text-center cursor-pointer"
+                      class="text-[#7A7A7A] font-semibold py-3 text-center cursor-pointer"
                     >
                       Continuar comprando
                     </label>
