@@ -54,7 +54,7 @@ function Suggestions(
       <div class="flex flex-col gap-vc-14 lg:bg-white">
         {hasTerms && (
           <>
-            <span class="font-Manrope font-bold text-lg text-black-5 pt-5">
+            <span class="font-Manrope font-bold text-lg text-black-5 xl:pt-5">
               Mais pesquisados
             </span>
             <ul class="flex flex-col gap-vc-10">

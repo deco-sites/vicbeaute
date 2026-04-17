@@ -256,9 +256,9 @@ function Carousel(
   return (
     <div
       id={id}
-      class="relative max-w-vc-1920 mx-auto w-full grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_auto_1fr] lg:min-h-[496px] md:min-height-[unset] lg:pb-14"
+      class="relative max-w-vc-1920 mx-auto w-full grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_auto_1fr] lg:min-h-[496px] md:min-height-[unset] lg:pb-14 xl:pt-[39px]"
     >
-      <Slider class="carousel carousel-center w-full col-span-full row-span-full">
+      <Slider class="carousel carousel-center w-full col-span-full row-span-full pt-[38px] xl:pt-0">
         {images.map((image, index) => (
           <Slider.Item index={index} class="carousel-item w-full">
             <BannerItem
