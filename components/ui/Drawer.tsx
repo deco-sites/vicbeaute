@@ -106,7 +106,7 @@ function Aside({
         <div
           class={drawer === "search-drawer"
             ? "drawer-fake-header flex justify-between items-center h-14 ml-2 w-full absolute"
-            : "drawer-fake-header flex justify-between items-center h-14 ml-2 w-full"}
+            : "drawer-fake-header flex justify-between items-center w-full"}
         >
           <span class="order-3">
             <span
@@ -120,10 +120,10 @@ function Aside({
                       Minha Sacola
                     </span>
 
-                    <div class="relative">
+                    <div class="relative w-8 h-8">
                       <Icon id="minicartbag" width={19} height={21} />
 
-                      <span class="items-number indicator-item badge badge-primary badge-sm font-thin absolute -right-vc-5 pr-1 pl-1 top-vc-5 bg-white-15 border-green-20 text-green-20 w-[16px] h-[16px]">
+                      <span class="items-number indicator-item badge badge-primary badge-sm font-thin absolute right-[6px] pr-1 pl-1 top-vc-5 bg-white-15 border-green-20 text-green-20 w-[16px] h-[16px]">
                         {/* inserted by script */}
                       </span>
                     </div>

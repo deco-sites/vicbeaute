@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs grep *)",
+      "Bash(python3 -c ' *)",
+      "Bash(grep -n \"^export interface Props\\\\|^interface Props\\\\|^export default Footer\\\\|Props$\" \"c:/Users/r.nantes/Desktop/Projetos/Vic Beaute - redesign Deco/vicbeaute/sections/Footer/Footer.tsx\")"
+    ]
+  }
+}

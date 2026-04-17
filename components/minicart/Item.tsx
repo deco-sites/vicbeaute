@@ -2,7 +2,6 @@ import { AnalyticsItem } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { formatPrice } from "../../sdk/format.ts";
-import Icon from "../ui/Icon.tsx";
 import QuantitySelector from "../../islands/QuantitySelectorMinicartInteractive.tsx";
 import { useScript } from "@deco/deco/hooks";
 export type Item = AnalyticsItem & {
@@ -39,25 +38,25 @@ function CartItem({ item, index, locale, currency }: Props) {
       <Image
         alt={name}
         src={image}
-        width={90}
-        height={90}
+        width={76}
+        height={76}
         class="object-contain"
       />
 
       {/* Info */}
       <div class="flex flex-col justify-between">
         {/* Name and Remove button */}
-        <div class="flex justify-between items-center lg:h-8">
+        <div class="flex justify-between">
 
           <legend class="lg:text-[12px] text-[14px] text-black max-w-[182px] min-h-9 line-clamp-2">{name}</legend>
           <button
             class={clx(
               isGift && "hidden",
-              "btn btn-ghost btn-square no-animation hover:bg-transparent",
+              "font-Hanken-Grotesk text-[10px] text-[#363931] underline leading-none bg-transparent border-none cursor-pointer p-0 self-start pt-[10px]",
             )}
             hx-on:click={useScript(removeItemHandler)}
           >
-            <Icon id="trashnew" width={32} height={29} />
+            Remover
           </button>
         </div>
         <div class="flex justify-between items-center lg:gap-0 h-[38px]">

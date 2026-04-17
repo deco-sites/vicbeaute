@@ -3,7 +3,7 @@ import Image from "apps/website/components/Image.tsx";
 import Section, {
   type Props as SectionHeaderProps,
 } from "../../components/ui/Section.tsx";
-import Slider from "../../components/ui/Slider.tsx";
+import Slider from "../../components/ui/MinicartCategoriesSlider.tsx";
 import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
 import { useDevice } from "@deco/deco/hooks";

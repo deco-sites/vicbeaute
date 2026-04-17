@@ -363,29 +363,28 @@
     }
   },
   "drawerShelf": {
-    "__resolveType": "site/sections/Product/ProductShelf.tsx",
+    "__resolveType": "site/sections/Product/ProductShelfSimilars.tsx",
     "arrows": false,
-    "dots": true,
     "products": {
       "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
       "props": {
         "sort": "price:desc",
         "collection": "137",
-        "count": 8,
+        "count": 12,
         "similars": true
       }
     },
-    "title": "Os mais queridos"
+    "dots": true
   },
   "minicartShelf": {
-    "__resolveType": "site/sections/Product/ProductShelf.tsx",
-    "arrows": true,
+    "__resolveType": "site/sections/Product/ProductShelfSimilars.tsx",
+    "arrows": false,
     "products": {
       "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
       "props": {
         "sort": "price:desc",
         "collection": "137",
-        "count": 8,
+        "count": 12,
         "similars": true
       }
     },
@@ -394,10 +393,11 @@
   },
   "minicartCategories": {
     "__resolveType": "site/sections/Category/MinicartCategories.tsx",
+    "dots": true,
     "items": [
       {
-        "image": "https://assets.decocache.com/vicbeaute/c637f29d-d92a-4729-876e-1e4d0819cf0d/Rectangle-4.png",
-        "href": "/iluminador",
+        "image": "https://assets.decocache.com/vicbeaute/42fb6fcf-804e-4173-9193-f40deb46f45c/iluiminador.png",
+        "href": "#",
         "label": "Iluminador"
       },
       {
@@ -425,8 +425,7 @@
         "href": "#",
         "label": "Iluminador"
       }
-    ],
-    "dots": true
+    ]
   },
   "mobileMenuCategories": {
     "__resolveType": "site/sections/Category/MinicartCategories.tsx",
