@@ -5,6 +5,7 @@ import { formatPrice } from "../../sdk/format.ts";
 import { relative } from "../../sdk/url.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import Icon from "../ui/Icon.tsx";
+import ProductCardColorSelector from "../../islands/ProductCardColorSelector.tsx";
 
 interface Props {
   product: Product;
@@ -18,92 +19,122 @@ const HEIGHT = 287;
 const ASPECT_RATIO = `${WIDTH} / ${HEIGHT}`;
 
 function ProductCardBuyTogether({ product, class: _class }: Props) {
-  const { url, image: images, offers, isVariantOf } = product;
+  const { url, image: images, offers, isVariantOf, aggregateRating } = product;
   const title = isVariantOf?.name ?? product.name;
+  const variantName = product.name;
   const [front, back] = images ?? [];
 
-  const { price } = useOffer(offers);
+  const { price, installments } = useOffer(offers);
   const relativeUrl = relative(url);
 
-  // Formatar preço com partes separadas, ex: "R$" "99" ",00"
-  const formattedPrice = formatPrice(price, offers?.priceCurrency);
-  let currency = "R$";
-  let mainPrice = "0";
-  let cents = "00";
+  // Formatar preço matematicamente para evitar duplicação de R$ vinda do formatPrice padrão
+  const formattedThousands = new Intl.NumberFormat('pt-BR').format(Math.floor(price ?? 0));
+  const centsStr = price ? Math.round((price % 1) * 100).toString().padStart(2, '0') : "00";
+  const currency = "R$";
 
-  if (formattedPrice) {
-    const parts = formattedPrice.split(",");
-    if (parts.length > 1) {
-      const firstPart = parts[0];
-      const match = firstPart.match(/^([^\\d]+)(\\d.*)$/);
-      if (match) {
-        currency = match[1].trim();
-        mainPrice = match[2];
-      } else {
-        mainPrice = firstPart;
-      }
-      cents = parts[1];
-    } else {
-      const match = formattedPrice.match(/^([^\\d]+)(\\d.*)$/);
-      if (match) {
-        currency = match[1].trim();
-        mainPrice = match[2];
-      } else {
-        mainPrice = formattedPrice;
-      }
-    }
+  const colorProp =
+    (product?.isVariantOf?.additionalProperty ?? product?.additionalProperty ??
+      [])
+      .find((a) => a.name === "Cores")?.value ?? "";
+
+  // Construir a lista completa de opções (principal + similares) para as cores
+  let allProducts: Product[] = [];
+  const similars = product.isSimilarTo ?? [];
+  if (similars.length > 0) {
+    allProducts = [product, ...similars];
+  } else {
+    allProducts = product.isVariantOf?.hasVariant ?? [product];
   }
-
-  // Pegando a nota média (mocada ou extraída se existir, o design mostra 4,2)
-  const ratingValue = product.aggregateRating?.ratingValue ?? "4,2";
+  allProducts = Array.from(
+    new Map(allProducts.map((p) => [p.productID, p])).values(),
+  );
 
   return (
     <div
       class={clx(
-        "flex flex-col gap-3 group text-sm w-full max-w-[287px] bg-white rounded-lg",
+        "card card-compact group text-sm w-full bg-white-15 rounded-lg relative overflow-hidden",
         _class,
       )}
     >
       <figure
         class={clx(
-          "relative bg-[#F4F4F4] rounded-lg overflow-hidden flex items-center justify-center p-2",
+          "relative bg-base-200 rounded border border-transparent",
         )}
         style={{ aspectRatio: ASPECT_RATIO }}
       >
-        <a href={relativeUrl} aria-label="view product" class="w-full h-full flex items-center justify-center">
+        <a
+          href={relativeUrl}
+          aria-label="view product"
+          class="w-full h-full flex items-center justify-center absolute top-0 left-0"
+        >
           <Image
-            src={front.url!}
-            alt={front.alternateName}
-            width={WIDTH}
-            height={HEIGHT}
+            src={front?.url!}
+            alt={front?.alternateName}
+            width={150}
+            height={150}
             style={{ aspectRatio: ASPECT_RATIO }}
-            class="object-contain w-full h-full mix-blend-multiply"
+            class="object-cover w-full h-full"
             sizes="(max-width: 150px) 100vw, 30vw"
             loading="lazy"
             decoding="async"
           />
         </a>
 
-        {/* Rating badge nativo do design */}
-        <div class="absolute top-2 right-2 flex items-center gap-1 text-[11px] font-bold text-[#4a4a4a]">
-          <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5 0L6.12257 3.45492H9.75528L6.81636 5.59017L7.93893 9.04508L5 6.90983L2.06107 9.04508L3.18364 5.59017L0.244718 3.45492H3.87743L5 0Z" />
-          </svg>
-          {ratingValue}
+        {/* Avaliação em cima da imagem APENAS no Mobile */}
+        <div class="absolute lg:hidden top-1 right-1 flex items-center gap-[2px] z-20">
+          <Icon id="star-konfidency" size={12} />
+          <span class="font-hanken-grotesk text-[12px] text-[#363931] leading-none pt-[1px]">
+            {(aggregateRating?.ratingValue ?? 4.2).toFixed(1).replace(".", ",")}
+          </span>
+        </div>
+
+        <div class="absolute bottom-1 left-1 z-20">
+          <ProductCardColorSelector
+            products={allProducts}
+            currentProductId={product.productID}
+          />
         </div>
       </figure>
 
-      <a href={relativeUrl} class="flex flex-col gap-1 px-1">
-        <h3 class="font-Manrope font-medium text-[14px] leading-tight text-[#4a4a4a] min-h-10">
-          {title}
-        </h3>
+      <div class="xl:px-3 px-[5px] pt-[6px] xl:pt-[14px] pb-[11px] xl:pb-4 flex flex-col flex-grow text-left">
+        <a
+          href={relativeUrl}
+          class="block flex-grow focus:outline-none text-left"
+        >
+          <span class="hidden xl:block font-hanken-grotesk text-[11px] xl:text-[12px] text-vc-10 text-[#4c4c4c] line-clamp-1">
+            {colorProp || variantName}
+          </span>
+          <h3 class="font-Hanken-Grotesk text-[14px] xl:text-[16px] line-clamp-2 text-[#191C1F] flex items-center">
+            {title}
+          </h3>
 
-        <div class="flex items-baseline text-[#4a4a4a] mt-1 font-Manrope">
-          <span class="text-[12px] mr-1">{currency}</span>
-          <span class="text-[20px] font-bold">{mainPrice}</span>
-          <span class="text-[12px]">,{cents}</span>
-        </div>
-      </a>
+          <div class="hidden lg:flex items-center gap-1 mt-1 h-[18px]">
+            <Icon id="star-konfidency" size={14} />
+            <span class="font-hanken-grotesk text-[12px] text-[#363931] leading-none">
+              {(aggregateRating?.ratingValue ?? 4.8).toFixed(1).replace(
+                ".",
+                ",",
+              )}
+            </span>
+            <span class="font-hanken-grotesk text-[12px] text-[#363931] leading-none">
+              ({aggregateRating?.reviewCount ?? 263})
+            </span>
+          </div>
+
+          <div class="flex flex-col gap-y-0.5 items-start mt-[8px]">
+            <div class="flex items-baseline font-Hanken-Grotesk text-[#4D5D49] leading-none">
+              <span class="font-medium text-[16px] mr-1">{currency}</span>
+              <span class="font-semibold text-[22px]">{formattedThousands}</span>
+              <span class="font-medium text-[16px]">,{centsStr}</span>
+            </div>
+            {installments && (
+              <span class="text-[11px] font-Manrope text-[#4A4A4A] mt-[4px]">
+                {installments}
+              </span>
+            )}
+          </div>
+        </a>
+      </div>
     </div>
   );
 }

@@ -4,6 +4,8 @@ import AddToCartBuyTogether from "../../islands/AddToCartBuyTogether.tsx";
 import { useOffer } from "../../sdk/useOffer.ts";
 
 export interface Props {
+  /** @title Título da Seção */
+  title?: string;
   /** @title Integração da Página */
   page: ProductDetailsPage | null;
   /**
@@ -13,7 +15,9 @@ export interface Props {
   productTogether?: Product[] | null;
 }
 
-export default function ProductBuyTogether({ page, productTogether }: Props) {
+export default function ProductBuyTogether(
+  { title = "Compre Junto", page, productTogether }: Props,
+) {
   if (!page || !page.product) {
     return null;
   }
@@ -44,37 +48,49 @@ export default function ProductBuyTogether({ page, productTogether }: Props) {
   });
 
   return (
-    <div id="compre-junto" class="w-full bg-[#f4f2ee] py-12 lg:py-16">
-      <div class="container flex flex-col items-center w-full px-5 sm:px-0 max-w-[1044px]">
-        <h2 class="text-[32px] text-[#D1927D] font-Queens leading-[1.1] mb-8 lg:mb-12 text-center w-full">
-          Compre Junto
+    <div id="compre-junto" class="w-full bg-[#FAF9F5] py-12 lg:py-16">
+      <div class="container flex flex-col items-center w-full px-5 sm:px-0 max-w-[960px]">
+        <h2 class="text-[36px] md:text-[40px] text-[#CE9680] font-Queens leading-[1.1] mb-8 lg:mb-12 text-center w-full">
+          {title}
         </h2>
 
-        <div class="flex flex-col items-center justify-center w-full">
+        <div class="flex flex-col lg:flex-row items-center lg:items-stretch justify-center w-full gap-[14px] lg:gap-0 lg:justify-between px-2 lg:px-10">
           {/* Container dos Produtos (Lado a Lado) */}
-          <div class="flex flex-row items-center justify-center gap-2 lg:gap-6 w-full max-w-[650px] relative px-2">
+          <div class="flex flex-row items-stretch justify-center gap-2 lg:gap-14 relative w-full lg:w-auto">
             {allProducts.map((p, index) => (
               <>
                 {index > 0 && (
-                  <div class="z-10 absolute left-1/2 top-[40%] -translate-x-1/2 w-8 h-8 lg:w-10 lg:h-10 shrink-0 bg-[#455C42] text-white rounded-full flex items-center justify-center text-lg lg:text-xl font-light border-2 lg:border-4 border-[#f4f2ee] pointer-events-none">
+                  <div class="z-10 absolute left-1/2 top-[40%] -translate-x-1/2 lg:static lg:translate-x-0 lg:self-center w-10 h-10 lg:w-10 lg:h-10 shrink-0 bg-[#363931] text-white-15 rounded-full flex items-center justify-center text-xl font-light border-2 lg:border-none border-[#FAF9F5] pointer-events-none">
                     +
                   </div>
                 )}
-                <div class="flex-1 w-[50%] flex justify-center">
+                <div class="flex-1 lg:flex-none w-1/2 lg:w-[287px] flex justify-center">
                   <ProductCardBuyTogether
                     key={p.productID}
                     product={p}
                     index={index}
-                    class="w-full max-w-[287px]"
+                    class="w-full h-full"
                   />
                 </div>
               </>
             ))}
           </div>
 
-          {/* Botão Container Embaixo */}
-          <div class="w-full mt-4 lg:mt-6 flex flex-col items-center">
-            <AddToCartBuyTogether products={allProducts} totalPrice={totalPrice} />
+          {/* Desktop divider: | = | */}
+          <div class="hidden lg:flex items-center gap-8 self-center mx-4">
+            <div class="w-[1px] h-10 bg-[#D1927D] opacity-40"></div>
+            <div class="w-10 h-10 shrink-0 bg-[#363931] text-white rounded-full flex items-center justify-center text-xl font-light">
+              =
+            </div>
+            <div class="w-[1px] h-10 bg-[#D1927D] opacity-40"></div>
+          </div>
+
+          {/* Botão Container Embaixo (Mobile) ou Direita (Desktop) */}
+          <div class="w-full lg:mt-0 lg:w-[260px] flex flex-col items-center lg:items-start lg:justify-center self-center">
+            <AddToCartBuyTogether
+              products={allProducts}
+              totalPrice={totalPrice}
+            />
           </div>
         </div>
       </div>

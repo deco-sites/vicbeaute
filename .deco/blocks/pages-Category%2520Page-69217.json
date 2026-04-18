@@ -973,7 +973,7 @@
           "__resolveType": "website/matchers/pathname.ts",
           "case": {
             "type": "Equals",
-            "pathname": "/maquiagem/olhos"
+            "pathname": "/olhos"
           }
         }
       },
