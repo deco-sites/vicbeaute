@@ -1,6 +1,6 @@
 import type { ProductListingPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
-import ProductCard from "../../components/product/ProductCard.tsx";
+import ProductCardSimilars from "../../components/product/ProductCardSimilars.tsx";
 import Filters from "../../islands/Filters.tsx";
 import Icon from "../../components/ui/Icon.tsx";
 import { clx } from "../../sdk/clx.ts";
@@ -174,7 +174,7 @@ function PageResult(props: SectionProps<typeof loader>) {
             } else if (productIndex < validProductCount) {
               const product = products[productIndex];
               itemsToRender.push(
-                <ProductCard
+                <ProductCardSimilars
                   key={`product-card-${product.productID}`}
                   product={product}
                   preload={productIndex === 0 && !hasPromo}
