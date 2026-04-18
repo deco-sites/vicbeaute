@@ -62,14 +62,18 @@ export default function AddToCartBuyTogether(
   const formattedPrice = formatPrice(totalPrice);
 
   return (
-    <div class="flex flex-col items-center gap-3 w-full max-w-[500px] mx-auto mt-6">
-      <p class="text-[15px] text-[#4a4a4a] text-center">
-        Compre os <span class="font-bold">{products.length}</span> produtos por:{" "}
-        <span class="font-bold text-[18px] text-[#343a30]">{formattedPrice}</span>
-      </p>
+    <div class="flex flex-col items-center lg:items-start gap-4 lg:gap-5 w-full mx-auto max-w-[375px] lg:max-w-none">
+      <div class="text-center lg:text-left w-full flex flex-row lg:flex-col items-center lg:items-start justify-center lg:justify-start gap-1 lg:gap-0">
+        <p class="text-[14px] lg:text-[16px] text-[#4a4a4a] font-Manrope leading-tight">
+          Compre os <span class="font-bold">{products.length}</span> produtos por:
+        </p>
+        <p class="font-bold text-[18px] lg:text-[26px] text-[#363931] mt-0 lg:mt-2 font-hanken-grotesk leading-none">
+          {formattedPrice}
+        </p>
+      </div>
 
       <button
-        class="w-full py-[14px] text-[14px] text-white transition-all rounded-sm flex items-center justify-center bg-[#343a30] hover:bg-[#2b3027]"
+        class="w-full py-[12px] lg:py-[15px] text-[14px] lg:text-[16px] text-[#FAF9F5] transition-all rounded px-4 flex items-center justify-center bg-[#455C42] hover:bg-[#3d513a] font-medium font-Inter tracking-wide"
         onClick={handleAddToCart}
       >
         Adicionar ao carrinho
