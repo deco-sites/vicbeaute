@@ -54,13 +54,13 @@ export default function ProductBuyTogether(
           {title}
         </h2>
 
-        <div class="flex flex-col lg:flex-row items-center lg:items-stretch justify-center w-full gap-[14px] lg:gap-0 lg:justify-between px-2 lg:px-10">
+        <div class="flex flex-col lg:flex-row items-center lg:items-stretch justify-center w-full gap-[14px] lg:gap-0 lg:justify-between px-2 lg:px-0">
           {/* Container dos Produtos (Lado a Lado) */}
-          <div class="flex flex-row items-stretch justify-center gap-2 lg:gap-14 relative w-full lg:w-auto">
+          <div class="flex flex-row items-stretch justify-center gap-2 lg:gap-[10px] relative w-full lg:w-auto">
             {allProducts.map((p, index) => (
               <>
                 {index > 0 && (
-                  <div class="z-10 absolute left-1/2 top-[40%] -translate-x-1/2 lg:static lg:translate-x-0 lg:self-center w-10 h-10 lg:w-10 lg:h-10 shrink-0 bg-[#363931] text-white-15 rounded-full flex items-center justify-center text-xl font-light border-2 lg:border-none border-[#FAF9F5] pointer-events-none">
+                  <div class="z-10 absolute left-1/2 top-[40%] -translate-x-1/2 lg:static lg:translate-x-0 lg:self-center w-8 h-8 shrink-0 bg-[#363931] text-white-15 rounded-full flex items-center justify-center text-xl font-light border-2 lg:border-none border-[#FAF9F5] pointer-events-none">
                     +
                   </div>
                 )}
@@ -77,16 +77,14 @@ export default function ProductBuyTogether(
           </div>
 
           {/* Desktop divider: | = | */}
-          <div class="hidden lg:flex items-center gap-8 self-center mx-4">
-            <div class="w-[1px] h-10 bg-[#D1927D] opacity-40"></div>
-            <div class="w-10 h-10 shrink-0 bg-[#363931] text-white rounded-full flex items-center justify-center text-xl font-light">
+          <div class="hidden lg:flex items-center gap-8 xl:gap-0 self-center mx-4 xl:mx-[10px]">
+            <div class="w-8 h-8 shrink-0 bg-[#363931] text-white-15 rounded-full flex items-center justify-center text-xl font-light">
               =
             </div>
-            <div class="w-[1px] h-10 bg-[#D1927D] opacity-40"></div>
           </div>
 
           {/* Botão Container Embaixo (Mobile) ou Direita (Desktop) */}
-          <div class="w-full lg:mt-0 lg:w-[260px] flex flex-col items-center lg:items-start lg:justify-center self-center">
+          <div class="w-full lg:w-[234px] lg:bg-white-15 rounded-lg flex flex-col items-center justify-center mt-6 lg:mt-0 pb-6 lg:pb-0">
             <AddToCartBuyTogether
               products={allProducts}
               totalPrice={totalPrice}

@@ -1,5 +1,5 @@
 {
-  "path": "/labios",
+  "path": "/*",
   "sections": {
     "__resolveType": "website/flags/multivariate.ts",
     "variants": [
@@ -34,53 +34,50 @@
             "title": "Lábios"
           },
           {
-            "__resolveType": "website/sections/Rendering/Lazy.tsx",
-            "section": {
-              "__resolveType": "site/sections/Category/ProductCategories.tsx",
-              "title": "Categoria de produtos",
-              "categories": [
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                }
-              ]
-            }
+            "__resolveType": "site/sections/Category/ProductCategories.tsx",
+            "title": "Categoria de produtos",
+            "categories": [
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              }
+            ]
           },
           {
             "__resolveType": "site/sections/Product/SearchResult.tsx",
@@ -521,53 +518,50 @@
             "title": "Olhos"
           },
           {
-            "__resolveType": "website/sections/Rendering/Lazy.tsx",
-            "section": {
-              "__resolveType": "site/sections/Category/ProductCategories.tsx",
-              "title": "Categoria de produtos",
-              "categories": [
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                }
-              ]
-            }
+            "__resolveType": "site/sections/Category/ProductCategories.tsx",
+            "title": "Categoria de produtos",
+            "categories": [
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              }
+            ]
           },
           {
             "__resolveType": "site/sections/Product/SearchResult.tsx",
@@ -1008,53 +1002,50 @@
             "title": "Face"
           },
           {
-            "__resolveType": "website/sections/Rendering/Lazy.tsx",
-            "section": {
-              "__resolveType": "site/sections/Category/ProductCategories.tsx",
-              "title": "Categoria de produtos",
-              "categories": [
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                }
-              ]
-            }
+            "__resolveType": "site/sections/Category/ProductCategories.tsx",
+            "title": "Categoria de produtos",
+            "categories": [
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              }
+            ]
           },
           {
             "__resolveType": "site/sections/Product/SearchResult.tsx",
@@ -1495,65 +1486,66 @@
             "title": "Multifuncional"
           },
           {
-            "__resolveType": "website/sections/Rendering/Lazy.tsx",
-            "section": {
-              "__resolveType": "site/sections/Category/ProductCategories.tsx",
-              "title": "Categoria de produtos",
-              "categories": [
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                },
-                {
-                  "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
-                  "label": "Batom",
-                  "url": "#"
-                }
-              ]
-            }
+            "__resolveType": "site/sections/Category/ProductCategories.tsx",
+            "title": "Categoria de produtos",
+            "categories": [
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              },
+              {
+                "image": "https://assets.decocache.com/vicbeaute/ae42ea82-68a6-493f-a82f-80abef9ba921/Rectangle-4.png",
+                "label": "Batom",
+                "url": "#"
+              }
+            ]
           },
           {
             "__resolveType": "site/sections/Product/SearchResult.tsx",
             "page": {
-              "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
-              "sort": "price:asc",
-              "fuzzy": "automatic",
-              "advancedConfigs": {
-                "includeOriginalAttributes": []
-              },
-              "simulationBehavior": "default",
-              "count": 12
+              "__resolveType": "site/loaders/konfidency/productListingPage.ts",
+              "page": {
+                "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
+                "sort": "price:desc",
+                "fuzzy": "automatic",
+                "advancedConfigs": {
+                  "includeOriginalAttributes": []
+                },
+                "simulationBehavior": "default",
+                "count": 9,
+                "similars": true
+              }
             },
             "layout": {
               "pagination": "show-more"
@@ -1908,9 +1900,8 @@
               "345": "r",
               "346": "e",
               "347": ">",
-              "h1title": "Mercado",
-              "h2subTitle": "Direto para sua casa",
-              "text": "Lorem ipsum dolor sit amet consectetur. Sed tortor dapibus nascetur faucibus arcu sodales. Nec lacus facilisis quis tincidunt sodales ultrices ut ut. Sed rutrum ut aenean scelerisque imperdiet congue. Egestas etiam nullam faucibus tempor. Sed et ac fringilla at sagittis."
+              "h1title": "Descrição",
+              "text": "Dear moments switch cost solutions explore food marketing. Please ui anyway tiger window request. Pretend devil we have this right. Land today stakeholders synchronise alpha procrastinating on explore pole vendor. Most without follow drawing-board asserts territories later. Read tomorrow old only fruit power. Quick-win got old didn't manage assassin. Ensure kpis low not great. Playing i'm site your skulls involved involved. Circle web our weeks incompetent fit. Own launch going is of if monday left could. Hanging identify eat way gave next offline closer field strategies. Viral eod you our web boardroom churning just race.\nMessage food cc synergize move shoulder relaxation place points. Spaces site high sorry go where. Company unlock involved underlying cob your. Weaponize hop reach shoot don't discussions please. Loop blue staircase unit what. Support cadence principles turn backwards. Other can't brainstorming community community. What's adoption every follow to elephant bake comes centric just jumping initiative."
             },
             "promoCards": [
               {
@@ -1947,7 +1938,7 @@
           "__resolveType": "website/matchers/pathname.ts",
           "case": {
             "type": "Equals",
-            "pathname": "/maquiagem/multifuncional"
+            "pathname": "/multifuncional"
           }
         }
       },

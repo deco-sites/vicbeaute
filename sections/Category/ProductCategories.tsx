@@ -28,7 +28,7 @@ export default function ProductCategories({
 
   return (
     <div style={{ backgroundColor }} class="w-full py-8 lg:py-12">
-      <div class="max-w-[1280px] mx-auto lg:px-[80px]">
+      <div class="max-w-[1280px] mx-auto">
         <div class="px-[12px] lg:px-0">
           {title && (
             <h2 class="text-[#363931] font-Hanken-Grotesk font-medium text-[17px] lg:text-[22px] mb-4 lg:mb-6">
@@ -38,7 +38,7 @@ export default function ProductCategories({
         </div>
 
         {/* Native Horizontal Scroll Container - No Arrows / No Dots */}
-        <div class="flex overflow-x-auto snap-x snap-mandatory gap-[8px] lg:gap-[11px] px-[12px] lg:px-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pb-4">
+        <div class="flex overflow-x-auto snap-x snap-mandatory gap-[8px] lg:gap-[11px] mx-3 xl:mx-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pb-4">
           {categories.map((category, index) => (
             <a
               key={index}
