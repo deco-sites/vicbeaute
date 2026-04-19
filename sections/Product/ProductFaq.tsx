@@ -37,8 +37,8 @@ export default function ProductFaq({ page }: Props) {
   if (faqItems.length === 0) return null;
 
   return (
-    <div id="product-faq" class="w-full py-8 lg:py-16">
-      <div class="container flex flex-col w-full px-5 sm:px-0 max-w-[1280px]">
+    <div id="product-faq" class="w-full py-8 lg:py-16 bg-white-15">
+      <div class="container flex flex-col w-full px-5 sm:px-0 max-w-[904px]">
         {/* Title */}
         <h2 class="faq-title font-Queens">Duvidas Frequentes</h2>
 

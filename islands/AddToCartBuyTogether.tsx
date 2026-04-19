@@ -45,10 +45,16 @@ export default function AddToCartBuyTogether(
       const price = product.offers?.offers[0]?.price || 0;
       const analyticsItem = { item_id: product.productID, quantity: 1, price };
 
-      let platformProps: Record<string, unknown> = { quantity: 1, itemId: product.productID };
+      let platformProps: Record<string, unknown> = {
+        quantity: 1,
+        itemId: product.productID,
+      };
 
       if (platform === "wake") {
-        platformProps = { productVariantId: Number(product.productID), quantity: 1 };
+        platformProps = {
+          productVariantId: Number(product.productID),
+          quantity: 1,
+        };
       }
 
       // @ts-ignore
@@ -62,10 +68,11 @@ export default function AddToCartBuyTogether(
   const formattedPrice = formatPrice(totalPrice);
 
   return (
-    <div class="flex flex-col items-center lg:items-start gap-4 lg:gap-5 w-full mx-auto max-w-[375px] lg:max-w-none">
-      <div class="text-center lg:text-left w-full flex flex-row lg:flex-col items-center lg:items-start justify-center lg:justify-start gap-1 lg:gap-0">
-        <p class="text-[14px] lg:text-[16px] text-[#4a4a4a] font-Manrope leading-tight">
-          Compre os <span class="font-bold">{products.length}</span> produtos por:
+    <div class="flex flex-col items-center gap-4 lg:gap-5 w-full mx-auto max-w-[375px] lg:max-w-none px-4 lg:px-[18px]">
+      <div class="text-center w-full flex flex-row lg:flex-col items-center justify-center gap-1 lg:gap-0">
+        <p class="text-[14px] text-[#000000] font-Hanken-Grotesk xl:text-[20px] xl:leading-normal leading-tight">
+          Compre os <span class="font-bold">{products.length}</span>{" "}
+          produtos por:
         </p>
         <p class="font-bold text-[18px] lg:text-[26px] text-[#363931] mt-0 lg:mt-2 font-hanken-grotesk leading-none">
           {formattedPrice}
@@ -73,7 +80,7 @@ export default function AddToCartBuyTogether(
       </div>
 
       <button
-        class="w-full py-[12px] lg:py-[15px] text-[14px] lg:text-[16px] text-[#FAF9F5] transition-all rounded px-4 flex items-center justify-center bg-[#455C42] hover:bg-[#3d513a] font-medium font-Inter tracking-wide"
+        class="w-full py-[12px] lg:py-[15px] text-[14px] lg:text-[16px] text-[#FAF9F5] transition-all rounded px-4 flex items-center justify-center bg-[#455C42] hover:bg-[#3d513a] font-medium font-Hanken-Grotesk tracking-wide"
         onClick={handleAddToCart}
       >
         Adicionar ao carrinho

@@ -28,8 +28,12 @@ function ProductCardBuyTogether({ product, class: _class }: Props) {
   const relativeUrl = relative(url);
 
   // Formatar preço matematicamente para evitar duplicação de R$ vinda do formatPrice padrão
-  const formattedThousands = new Intl.NumberFormat('pt-BR').format(Math.floor(price ?? 0));
-  const centsStr = price ? Math.round((price % 1) * 100).toString().padStart(2, '0') : "00";
+  const formattedThousands = new Intl.NumberFormat("pt-BR").format(
+    Math.floor(price ?? 0),
+  );
+  const centsStr = price
+    ? Math.round((price % 1) * 100).toString().padStart(2, "0")
+    : "00";
   const currency = "R$";
 
   const colorProp =
@@ -73,7 +77,17 @@ function ProductCardBuyTogether({ product, class: _class }: Props) {
             width={150}
             height={150}
             style={{ aspectRatio: ASPECT_RATIO }}
-            class="object-cover w-full h-full"
+            class="block xl:hidden object-cover w-full h-full"
+            sizes="(max-width: 150px) 100vw, 30vw"
+            loading="lazy"
+            decoding="async"
+          />
+          <Image
+            src={front?.url!}
+            alt={front?.alternateName}
+            width={300}
+            height={300}
+            class="hidden xl:block object-cover w-full h-full"
             sizes="(max-width: 150px) 100vw, 30vw"
             loading="lazy"
             decoding="async"
@@ -121,10 +135,12 @@ function ProductCardBuyTogether({ product, class: _class }: Props) {
             </span>
           </div>
 
-          <div class="flex flex-col gap-y-0.5 items-start mt-[8px]">
+          <div class="flex flex-col gap-y-0.5 items-start mt-[8px] xl:mt-[6px]">
             <div class="flex items-baseline font-Hanken-Grotesk text-[#4D5D49] leading-none">
               <span class="font-medium text-[16px] mr-1">{currency}</span>
-              <span class="font-semibold text-[22px]">{formattedThousands}</span>
+              <span class="font-semibold text-[22px]">
+                {formattedThousands}
+              </span>
               <span class="font-medium text-[16px]">,{centsStr}</span>
             </div>
             {installments && (

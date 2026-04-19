@@ -105,24 +105,27 @@ function PageResult(props: SectionProps<typeof loader>) {
     props: { partial: "hideLess" },
   });
   const infinite = layout?.pagination !== "pagination";
+  const hasPromo = props.promoCards && props.promoCards.length > 0 &&
+    zeroIndexedOffsetPage === 0;
+
   return (
     <div class="grid grid-flow-row grid-cols-1 place-items-center">
       <div
         class={clx(
-          "pb-2 sm:pb-10",
+          "pb-2 sm:pb-10 flex justify-center w-full",
           (!prevPageUrl || partial === "hideLess") && "hidden",
         )}
       >
         <a
           rel="prev"
-          class="btn btn-ghost"
+          class="flex items-center justify-center font-medium text-[12px] xl:text-sm bg-[#5E6C5B] text-white-15 hover:bg-[#4d594b] w-[251px] h-[42px] rounded-[5px] transition-colors font-Hanken-Grotesk"
           hx-swap="outerHTML show:parent:top"
           hx-get={partialPrev}
         >
           <span class="inline [.htmx-request_&]:hidden">
-            Show Less
+            Carregar menos produtos
           </span>
-          <span class="loading loading-spinner hidden [.htmx-request_&]:block" />
+          <span class="loading loading-spinner hidden [.htmx-request_&]:block text-white" />
         </a>
       </div>
 
@@ -131,7 +134,8 @@ function PageResult(props: SectionProps<typeof loader>) {
         class={clx(
           "grid items-start",
           "grid-cols-2 gap-[18px]",
-          "lg:grid-cols-4 lg:gap-10",
+          hasPromo ? "lg:grid-cols-[350px_1fr_1fr_1fr]" : "lg:grid-cols-4",
+          "lg:gap-x-[10px] gap-x-[10px] lg:gap-y-[40px] gap-y-5",
           "w-full",
         )}
       >
@@ -141,8 +145,6 @@ function PageResult(props: SectionProps<typeof loader>) {
           let promoIndex = 0;
           let productIndex = 0;
 
-          const hasPromo = props.promoCards && props.promoCards.length > 0 &&
-            zeroIndexedOffsetPage === 0;
           const promoCount = hasPromo ? props.promoCards!.length : 0;
 
           // ---- ALGORITMO AUTO-GRID PERFEITO ----
@@ -196,16 +198,16 @@ function PageResult(props: SectionProps<typeof loader>) {
               <a
                 rel="next"
                 class={clx(
-                  "btn btn-ghost",
+                  "flex items-center justify-center font-Manrope font-medium text-[12px] bg-[#5E6C5B] text-white-15 hover:bg-[#4d594b] w-[251px] h-[42px] rounded-[5px] transition-colors",
                   (!nextPageUrl || partial === "hideMore") && "hidden",
                 )}
                 hx-swap="outerHTML show:parent:top"
                 hx-get={partialNext}
               >
                 <span class="inline [.htmx-request_&]:hidden">
-                  Show More
+                  Carregar mais produtos
                 </span>
-                <span class="loading loading-spinner hidden [.htmx-request_&]:block" />
+                <span class="loading loading-spinner hidden [.htmx-request_&]:block text-white" />
               </a>
             </div>
           )
@@ -300,19 +302,28 @@ function Result(props: SectionProps<typeof loader>) {
   );
   return (
     <>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+        .drawer-filters > .drawer-side {
+          z-index: 100 !important;
+        }
+      `,
+        }}
+      />
       <div id={container} {...viewItemListEvent} class="w-full">
         {partial
           ? <PageResult {...props} />
           : (
-            <div class="container flex flex-col w-full py-4 sm:py-5 px-4 sm:px-0 lg:max-w-[1280px] container-search">
+            <div class="container flex flex-col w-full py-4 sm:py-5 px-3 xl:px-4 sm:px-0 lg:max-w-[1280px] container-search">
               <Drawer
-                class="block w-full"
+                class="block w-full drawer-filters"
                 id={controls}
                 aside={
                   <div class="bg-[#ffffff] flex flex-col h-full w-[380px] max-w-[100vw] relative">
                     <div class="bg-[#ffffff] flex justify-between items-center px-6 py-6 border-b border-[#E1E1E1]">
                       <div class="w-8"></div> {/* Spacer for centering */}
-                      <span class="font-semibold text-[#CE9680] text-[32px] font-Queens">
+                      <span class="text-[#CE9680] text-[32px] font-Queens">
                         Filtros
                       </span>
                       <label
@@ -408,6 +419,8 @@ function Result(props: SectionProps<typeof loader>) {
                 <div class="flex flex-col w-full">
                   <PageResult {...props} />
                 </div>
+
+                {props.textSeo && <SeoText textSeo={props.textSeo} />}
               </Drawer>
             </div>
           )}
