@@ -25,7 +25,7 @@ export default function PromoCard(props: PromoCardProps) {
   return (
     <a
       href={url || "#"}
-      class="group relative flex flex-col justify-end overflow-hidden w-full h-[394px] lg:h-[510px] rounded-sm bg-black"
+      class="group relative flex flex-col justify-end overflow-hidden w-full lg:w-[350px] h-[394px] lg:h-[510px] rounded-sm bg-black"
     >
       <Picture class="absolute inset-0 w-full h-full">
         <Source
@@ -42,6 +42,8 @@ export default function PromoCard(props: PromoCardProps) {
         />
         <img
           src={desktopImage}
+          width={350}
+          height={510}
           alt={alt || title || "Promo Card"}
           class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
           loading="lazy"
