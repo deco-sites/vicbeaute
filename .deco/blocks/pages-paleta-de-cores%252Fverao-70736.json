@@ -1,0 +1,44 @@
+{
+  "name": "Verão",
+  "path": "/paleta-de-cores/verao",
+  "sections": [
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "Header"
+      }
+    },
+    {
+      "__resolveType": "site/sections/Content/ColorPaletteInteractive.tsx",
+      "overline": "Cartela de cor",
+      "title": "Verão",
+      "description": "Destaca tons frios, como azul-pálido, rosa-claro e lavanda. As características incluem pele com subtons rosados ou azulados, cabelos em tons frios e olhos em tons como azul, verde ou cinza claro. Evitam-se cores vibrantes e quentes. O objetivo é realçar a beleza natural com uma aparência suave e equilibrada.",
+      "tabs": [
+        {
+          "label": "Frio",
+          "description": "Para pessoas com subtona frios, como azulados, na pele."
+        },
+        {
+          "label": "Claro",
+          "description": "Para pessoas com subtona frios, como azulados, na pele."
+        },
+        {
+          "label": "Suave",
+          "description": "Para pessoas com subtona frios, como azulados, na pele."
+        }
+      ],
+      "image": {
+        "mobile": "https://assets.decocache.com/vicbeaute/db20e886-e626-4208-a4ef-dfadfc50b9e1/Rectangle-1293.png",
+        "desktop": "https://assets.decocache.com/vicbeaute/56ea86e2-819c-41d7-918c-37c478bb8b88/Rectangle-1293.png",
+        "altText": "Banner pallete"
+      }
+    },
+    {
+      "__resolveType": "Footer"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}

@@ -35,10 +35,6 @@ const loader = async (
     return null;
   }
 
-  console.log(
-    `[BuyTogether] Buscando 'showtogether' para productId: ${productId}`,
-  );
-
   try {
     const vtex = ctx as unknown as AppContextVTEX;
 
