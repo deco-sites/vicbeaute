@@ -115,7 +115,7 @@ export default function MiniBanners({ images, slider, header }: Props) {
                   {image.caption && (
                     <figcaption
                       data-cy={`categoria-caption-${index + 1}`}
-                      class="mt-1 text-[16px] text-black font-Hanken-Grotesk"
+                      class="mt-1 text-[14px] text-black font-Hanken-Grotesk"
                     >
                       {image.caption}
                     </figcaption>

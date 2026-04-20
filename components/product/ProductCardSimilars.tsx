@@ -168,10 +168,10 @@ function ProductCardSimilars({
 
       <div class="xl:px-3 px-2 xl:pt-[14px] pt-[10px] xl:pb-4 pb-[11px] flex flex-col flex-grow">
         <a href={relativeUrl} class="block flex-grow focus:outline-none">
-          <span class="font-hanken-grotesk xl:text-[12px] text-vc-10 text-[#4c4c4c] line-clamp-1">
+          <span class="font-Hanken-Grotesk xl:text-[12px] text-vc-10 text-[#4c4c4c] line-clamp-1">
             {colorProp || variantName}
           </span>
-          <h3 class="text-[#363931] font-hanken-grotesk text-[16px] line-clamp-2 min-h-[42px] flex items-center">
+          <h3 class="text-[#363931] font-Hanken-Grotesk text-[16px] line-clamp-2 min-h-[42px] flex items-center">
             {title}
           </h3>
 
@@ -179,10 +179,10 @@ function ProductCardSimilars({
             {aggregateRating && (aggregateRating.ratingValue ?? 0) > 0 && (
               <>
                   <Icon id="star-konfidency" size={14} />
-                <span class="font-hanken-grotesk text-[12px] text-[#363931] leading-none">
+                <span class="font-Hanken-Grotesk text-[12px] text-[#363931] leading-none">
                   {(aggregateRating.ratingValue ?? 0).toFixed(1).replace(".", ",")}
                 </span>
-                <span class="font-hanken-grotesk text-[12px] text-[#363931] leading-none">
+                <span class="font-Hanken-Grotesk text-[12px] text-[#363931] leading-none">
                   ({aggregateRating.reviewCount})
                 </span>
               </>
@@ -200,7 +200,7 @@ function ProductCardSimilars({
                 {formatPrice(listPrice, offers?.priceCurrency)}
               </span>
             )}
-            <span class="font-bold font-hanken-grotesk text-[22px] sm:text-[16px] text-[#455C42] leading-none">
+            <span class="font-bold font-Hanken-Grotesk text-[22px] sm:text-[16px] text-[#455C42] leading-none">
               {formatPrice(price, offers?.priceCurrency)}
             </span>
           </div>
@@ -214,7 +214,7 @@ function ProductCardSimilars({
               href={relativeUrl}
               class={clx(
                 "btn border-none text-sm no-animation w-full px-0 lg:text-[14px]",
-                "flex justify-center rounded-sm mx-auto bg-[#455C42] hover:bg-[#3d513a] text-[#D5D8C2] font-medium min-h-[40px] h-[40px]",
+                "flex justify-center rounded-sm mx-auto bg-[#455C42] hover:bg-[#3d513a] text-[#D5D8C2] font-Hanken-Grotesk font-medium min-h-[40px] h-[40px]",
               )}
               // Temporary unavailable state based on original product card logic.
               // Wait, the original had 'Produto Indisponível' on BOTH branches??? Let me fix it based on the screenshots: it's 'Compre agora' with a bag icon.

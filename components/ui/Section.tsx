@@ -27,7 +27,7 @@ function Header({ title, cta }: Props) {
           : "justify-between lg:justify-center pt-6 lg:pt-0"
       )}
     >
-      <h2 class="font-Queens text-2xl text-[#CE9680] text-[36px] title-minicart">
+      <h2 class="font-Queens text-2xl text-[32px] text-[#CE9680] xl:text-[36px] title-minicart">
         {title}
       </h2>
     </div>
