@@ -1,0 +1,166 @@
+{
+  "name": "Quiz game",
+  "path": "/quiz/cores",
+  "sections": [
+    {
+      "__resolveType": "Header"
+    },
+    {
+      "__resolveType": "site/sections/Content/ColorQuizSection.tsx",
+      "steps": [
+        {
+          "title": "Desscubra as cores ideais para você!",
+          "isForm": true,
+          "description": "Responda as perguntas abaixo e saiba quais cores combinam mais com você para realçar a sua beleza natural.",
+          "formImageDesktop": "https://assets.decocache.com/vicbeaute/722f4dd7-3286-4471-b1de-311409811144/Rectangle-1293.png",
+          "formImageMobile": "https://assets.decocache.com/vicbeaute/dca4c781-96b0-48e1-a06e-01b3c3b1fbca/Rectangle-1293.png",
+          "showUncertainButton": false
+        },
+        {
+          "title": "Qual seu tom de pele?",
+          "description": "*De acordo com a classificação dos fototipos de pele fornecida pela Sociedade Brasileira de Dermatologia.",
+          "options": [
+            {
+              "images": [
+                "https://assets.decocache.com/vicbeaute/b9028361-399e-4cbb-9631-0e02565ec016/Rectangle-3809.png"
+              ],
+              "label": "Extremamente branca",
+              "image": "https://assets.decocache.com/vicbeaute/b9028361-399e-4cbb-9631-0e02565ec016/Rectangle-3809.png"
+            },
+            {
+              "images": [
+                "https://assets.decocache.com/vicbeaute/ad2e3253-22c7-42f8-8bd5-c4de0a9431d8/Rectangle-3809.png"
+              ],
+              "label": "Branca",
+              "image": "https://assets.decocache.com/vicbeaute/ad2e3253-22c7-42f8-8bd5-c4de0a9431d8/Rectangle-3809.png"
+            },
+            {
+              "images": [
+                "https://assets.decocache.com/vicbeaute/28ef3138-d756-42e8-8cf8-7bf9dab3f730/Rectangle-3809.png"
+              ],
+              "label": "Morena Clara",
+              "image": "https://assets.decocache.com/vicbeaute/28ef3138-d756-42e8-8cf8-7bf9dab3f730/Rectangle-3809.png"
+            },
+            {
+              "images": [
+                "https://assets.decocache.com/vicbeaute/f714a3b1-2ff5-46ba-a67c-3bfdd16a55cc/Rectangle-3809.png"
+              ],
+              "label": "Morena Média",
+              "image": "https://assets.decocache.com/vicbeaute/f714a3b1-2ff5-46ba-a67c-3bfdd16a55cc/Rectangle-3809.png"
+            },
+            {
+              "images": [
+                "https://assets.decocache.com/vicbeaute/7beb9efa-c263-4357-9e0b-f0878624a4be/Rectangle-3809.png"
+              ],
+              "label": "Morena Escura",
+              "image": "https://assets.decocache.com/vicbeaute/7beb9efa-c263-4357-9e0b-f0878624a4be/Rectangle-3809.png"
+            },
+            {
+              "images": [
+                "https://assets.decocache.com/vicbeaute/49d43a83-8639-4ce0-92cd-961bae4a71e5/Rectangle-3809.png"
+              ],
+              "label": "Negra",
+              "image": "https://assets.decocache.com/vicbeaute/49d43a83-8639-4ce0-92cd-961bae4a71e5/Rectangle-3809.png"
+            },
+            {
+              "images": [
+                "https://assets.decocache.com/vicbeaute/db4a092d-e0d4-401a-9b07-d207f90b0539/Rectangle-3809.png"
+              ],
+              "label": "Negra Retinta",
+              "image": "https://assets.decocache.com/vicbeaute/db4a092d-e0d4-401a-9b07-d207f90b0539/Rectangle-3809.png"
+            }
+          ]
+        },
+        {
+          "title": "Qual sua preferência de tons de maquiagem?",
+          "description": "*De acordo com a classificação dos fototipos de pele fornecida pela Sociedade Brasileira de Dermatologia.",
+          "showUncertainButton": true,
+          "options": [
+            {
+              "images": [
+                "https://assets.decocache.com/vicbeaute/11658ebf-a053-4f31-b3d5-fd83455c6064/image-5.png"
+              ],
+              "label": "Frio",
+              "image": "https://assets.decocache.com/vicbeaute/11658ebf-a053-4f31-b3d5-fd83455c6064/image-5.png"
+            },
+            {
+              "images": [
+                "https://assets.decocache.com/vicbeaute/3047f51a-3060-4c01-b325-554616085567/image-5.png"
+              ],
+              "label": "Neutro",
+              "image": "https://assets.decocache.com/vicbeaute/3047f51a-3060-4c01-b325-554616085567/image-5.png"
+            },
+            {
+              "label": "Oliva",
+              "image": "https://assets.decocache.com/vicbeaute/e7654ae8-aed6-4256-a5cf-04ce6f6296f6/image-5.png"
+            },
+            {
+              "images": [
+                "https://assets.decocache.com/vicbeaute/3243f662-229e-42a2-bbf0-94009d38bb5f/image-5.png"
+              ],
+              "label": "Quente",
+              "image": "https://assets.decocache.com/vicbeaute/3243f662-229e-42a2-bbf0-94009d38bb5f/image-5.png"
+            }
+          ]
+        },
+        {
+          "title": "Qual a cor do seu cabelo?",
+          "description": "*De acordo com a classificação dos fototipos de pele fornecida pela Sociedade Brasileira de Dermatologia.",
+          "options": [
+            {
+              "image": "https://assets.decocache.com/vicbeaute/623652bd-7f8e-4de3-a600-0fd7d390c0e6/Rectangle-3809.png",
+              "label": "Branco"
+            },
+            {
+              "image": "https://assets.decocache.com/vicbeaute/0181bde6-ec03-4c9b-8047-c32e589b7d13/Rectangle-3809.png",
+              "label": "Grisalho"
+            },
+            {
+              "image": "https://assets.decocache.com/vicbeaute/b7fb0c00-2db8-48f8-9d28-0bd4b5c0835e/Rectangle-3809.png",
+              "label": "Loiro Claro"
+            },
+            {
+              "image": "https://assets.decocache.com/vicbeaute/5f013fe3-ae9c-4e82-be5b-bd54cf4986b1/Rectangle-3809.png",
+              "label": "Loiro"
+            },
+            {
+              "image": "https://assets.decocache.com/vicbeaute/2e2f9512-1adc-418d-b83c-bc39e896f287/Rectangle-3809.png",
+              "label": "Ruivo"
+            },
+            {
+              "image": "https://assets.decocache.com/vicbeaute/ee29df5f-e28c-4f70-ba8c-801df608dd4d/Rectangle-3809.png",
+              "label": "Castanho Claro"
+            },
+            {
+              "image": "https://assets.decocache.com/vicbeaute/96681ba0-8742-4ef7-88d2-7a7dcbdab544/Rectangle-3809.png",
+              "label": "Castanho"
+            },
+            {
+              "image": "https://assets.decocache.com/vicbeaute/17d91bda-c698-4754-94d2-a5ee82c0f4eb/Rectangle-3809.png",
+              "label": "Preto"
+            }
+          ]
+        }
+      ],
+      "mainTitle": "Qual seu tom de pele?",
+      "result": {
+        "topTitle": "Essas são as cores que mais combinam com você",
+        "topDescription": "Aqui na Vic Beauté acreditamos que o autoconhecimento é essencial na hora da maquiagem para descobrir os tons que vão valorizar a sua beleza natural.",
+        "topImageDesktop": "https://assets.decocache.com/vicbeaute/722f4dd7-3286-4471-b1de-311409811144/Rectangle-1293.png",
+        "topImageMobile": "https://assets.decocache.com/vicbeaute/dca4c781-96b0-48e1-a06e-01b3c3b1fbca/Rectangle-1293.png",
+        "productTitle": "A cor de Stick Tudo que mais combina com você é:",
+        "productName": "Quentinho",
+        "productImage": "https://assets.decocache.com/vicbeaute/b2f4ab97-3295-4faa-a0c3-08996e954669/Rectangle-3811.png",
+        "ctaLabel": "Eu quero",
+        "ctaHref": "/stick-tudo-quentinho/p?skuId=14"
+      }
+    },
+    {
+      "__resolveType": "Footer"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}

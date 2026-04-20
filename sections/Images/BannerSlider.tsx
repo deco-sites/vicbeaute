@@ -191,17 +191,15 @@ export default function BannerSlider(
             }}
           />
           <div
-            class={`w-full px-5 lg:px-20 mx-auto justify-center z-10 max-w-[351px] mt-5 lg:mt-[6px]
+            class={`flex w-full lg:max-w-[351px] gap-0 bannerslider-dots-tracker justify-center mx-auto mt-2 lg:mt-[6px] pb-4
               ${dotsMobile ? "flex" : "hidden"}
               ${dotsDesktop ? "lg:flex" : "lg:hidden"}`}
           >
-            <ul class="flex w-full gap-0 bannerslider-dots-tracker">
-              {banners.map((_, index) => (
-                <li key={index} class="carousel-item flex-1">
-                  <Slider.Dot index={index} class="" />
-                </li>
-              ))}
-            </ul>
+            {banners.map((_, index) => (
+              <div key={index} class="carousel-item flex-1">
+                <Slider.Dot index={index} class="w-full" />
+              </div>
+            ))}
           </div>
         </>
       )}
