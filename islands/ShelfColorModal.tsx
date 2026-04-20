@@ -195,12 +195,12 @@ export default function ShelfColorModal(
 
           <h2 class="text-[17px] font-bold text-[#191919] leading-[1.2] mt-4 font-Manrope xl:text-[20px]">
             {activeProduct.isVariantOf?.name || activeProduct.name}
-            <span class="font-normal text-[#4c4c4c] ml-1.5 opacity-90">
+            <span class="font-normal font-Manrope text-[#363931] ml-1.5 opacity-90">
               {coresSpec || colorSpec || activeProduct.name?.split("-").pop()?.trim()}
             </span>
           </h2>
           <div class="flex gap-2 items-center">
-            <span class="text-[15px] text-[#191919] font-medium xl:text-[16px]">
+            <span class="font-Hanken-Grotesk text-[14px] text-[#363931] font-medium xl:text-[16px]">
               {formatPrice(price)}
             </span>
             {listPrice && listPrice > price && (
@@ -212,7 +212,7 @@ export default function ShelfColorModal(
 
           <div>
             <details class="group first:border-t-0 border-t border-b border-[#f2f2f2] pt-5 pb-3">
-              <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-[20px] lg:text-[22px] text-[#D1927D] font-Queens">
+              <summary class="flex justify-between items-center font-medium cursor-pointer list-none text-[20px] lg:text-[24px] text-[#CE9680] font-Queens">
                 Descrição
                 <span class="transition group-open:rotate-180">
                   <svg
@@ -251,7 +251,7 @@ export default function ShelfColorModal(
             </details>
           </div>
 
-          <h3 class="text-[20px] lg:text-[22px] text-[#D1927D] font-Queens mt-[10px] mb-2">
+          <h3 class="text-[20px] lg:text-[24px] text-[#CE9680] font-Queens mt-[10px] mb-2">
             Cores
           </h3>
 
