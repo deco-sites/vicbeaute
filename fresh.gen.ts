@@ -5,6 +5,8 @@
 import * as $_app from "./routes/_app.tsx";
 import * as $AddToCartBuyTogether from "./islands/AddToCartBuyTogether.tsx";
 import * as $ColorDetails from "./islands/ColorDetails.tsx";
+import * as $ColorPaletteInteractiveTabs from "./islands/ColorPaletteInteractiveTabs.tsx";
+import * as $ColorQuiz from "./islands/ColorQuiz.tsx";
 import * as $ColorVariantSelector from "./islands/ColorVariantSelector.tsx";
 import * as $FaqInstitutionalInteractive from "./islands/FaqInstitutionalInteractive.tsx";
 import * as $FilterRangePrice from "./islands/FilterRangePrice.tsx";
@@ -32,6 +34,8 @@ const manifest = {
   islands: {
     "./islands/AddToCartBuyTogether.tsx": $AddToCartBuyTogether,
     "./islands/ColorDetails.tsx": $ColorDetails,
+    "./islands/ColorPaletteInteractiveTabs.tsx": $ColorPaletteInteractiveTabs,
+    "./islands/ColorQuiz.tsx": $ColorQuiz,
     "./islands/ColorVariantSelector.tsx": $ColorVariantSelector,
     "./islands/FaqInstitutionalInteractive.tsx": $FaqInstitutionalInteractive,
     "./islands/FilterRangePrice.tsx": $FilterRangePrice,

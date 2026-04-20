@@ -1,0 +1,126 @@
+{
+  "name": "Quiz",
+  "path": "/quiz",
+  "sections": [
+    {
+      "__resolveType": "Header"
+    },
+    {
+      "__resolveType": "site/sections/Content/FindYourColor.tsx",
+      "title": "Encontre sua cor",
+      "subtitle": "Não sabe por onde começar?\nA gente te ajuda a encontrar a sua cor!",
+      "description": "Aqui na Vic Beauté acreditamos que o autoconhecimento é essencial na hora da maquiagem para descobrir os tons que vão valorizar a sua beleza natural.",
+      "callToAction": "Responda ao quiz e saiba quais cores combinam mais com você.",
+      "image": {
+        "mobile": "https://assets.decocache.com/vicbeaute/2a85a930-5756-4321-aef7-68490088862f/Rectangle-1293.png",
+        "desktop": "https://assets.decocache.com/vicbeaute/4e9152a4-f3fc-473d-8c7f-4a6f30c87dbe/Rectangle-1293.png",
+        "altText": "Image-quiz"
+      },
+      "cta": {
+        "label": "Descubra",
+        "href": "/quiz/cores"
+      }
+    },
+    {
+      "__resolveType": "site/sections/Content/ColorPalette.tsx",
+      "title": "Cartela de cor",
+      "description": "<p><span>Para quem já conhece mais sobre cores e é adepta da coloração pessoal na hora de escolher roupas e maquiagens, temos a indicação de cartelas de cores para cada produto!</span><br><span>As cartelas de cores, ou analise de coloração pessoal, não usada para identificar as tonalidades que harmonizam melhor com a pele, olhos e cabelo de uma pessoa, realçando a beleza natural de cada indivíduo.</span><br><span>Para entender mais sobre o que compõe a cartela de cor, aqui vão alguns pontos importantes para considerar:</span></p>",
+      "image": {
+        "desktop": "https://assets.decocache.com/vicbeaute/e15fc084-2ddd-4c8f-8e39-ffea35905f2e/Rectangle-1293.png",
+        "mobile": "https://assets.decocache.com/vicbeaute/dbc3d203-3fce-4994-9ad2-f1208dfc173c/Rectangle-1293.png",
+        "altText": "Image-quiz"
+      }
+    },
+    {
+      "__resolveType": "site/sections/Content/ColorDimensions.tsx",
+      "title": "As três dimensões de cor",
+      "cards": [
+        {
+          "title": "Intensidade",
+          "text": "Refere-se à vivacidade ou saturação de uma cor, indicando quão brilhante ou apagada ela é. Cores intensas são vibrantes e chamativas, enquanto cores menos intensas são mais suaves."
+        },
+        {
+          "title": "Profundidade",
+          "text": "Relaciona-se à claridade ou escuridão de uma cor, ou seja, se ela é clara, média ou escura. Isso influencia como a cor é percebida em diferentes tonalidades."
+        },
+        {
+          "title": "Temperatura",
+          "text": "Diz respeito á sensação de calor ou frieza que a cor transmite, Cores quentes (como vermelho, laranja) trazem a sensação de calor, enquanto cores frias (como azul, verde) trazem a sensação de frio."
+        }
+      ],
+      "image": {
+        "desktop": "https://assets.decocache.com/vicbeaute/602a0bb1-4f0e-4bc8-87fa-3be2e84842a0/Rectangle-3812.png",
+        "mobile": "https://assets.decocache.com/vicbeaute/b0a68ab9-4dba-429f-b773-7d3d588064cc/Rectangle-3812.png",
+        "altText": "Dimensions image"
+      }
+    },
+    {
+      "__resolveType": "site/sections/Content/SkinToneGuide.tsx",
+      "mainTitle": "Tom e Subtom de Pele",
+      "blocks": [
+        {
+          "imagePlacement": "left",
+          "imageDesktop": "https://assets.decocache.com/vicbeaute/b5a65f24-2b4c-4af2-a6cd-327cbe7178cd/Rectangle-3812.png",
+          "imageMobile": "https://assets.decocache.com/vicbeaute/05fca432-dcd2-478e-bc65-c6206caddbe3/Rectangle-3812.png",
+          "imageAlt": "Tom de pele",
+          "title": "Tom de Pele",
+          "text": "Refere-se à cor superficial da pele, variando entre claro, médio e escuro"
+        },
+        {
+          "imagePlacement": "right",
+          "imageDesktop": "https://assets.decocache.com/vicbeaute/59ac3bcc-5e31-4b32-8ad9-f784493a8364/Rectangle-3813.png",
+          "imageMobile": "https://assets.decocache.com/vicbeaute/8c13c62b-36ba-4b33-8f53-ebd48fe34779/Rectangle-3813.png",
+          "imageAlt": "Quiz image",
+          "title": "Subtom de Pele",
+          "text": "É a cor subjacente que influencia a aparência geral da pele, Existem três principais subtons: quentes (tons amarelados/dourados), frios (tons rosados/azulados) e neutro (uma mistura de ambos). O subtom permanece constante, independentemente da exposição ao sol ou mudanças na pele."
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/Content/ColorRecommendations.tsx",
+      "title": "Confira nossas indicações de produtos para cada Cartela de Cor:",
+      "cards": [
+        {
+          "image": "https://assets.decocache.com/vicbeaute/8c8ec429-29fb-47ff-ba55-2ed707a78aaa/image-6.png",
+          "altText": "Verao",
+          "href": "/paleta-de-cores/verao",
+          "imageDesktop": "https://assets.decocache.com/vicbeaute/8c8ec429-29fb-47ff-ba55-2ed707a78aaa/image-6.png",
+          "imageMobile": "https://assets.decocache.com/vicbeaute/d18f504b-c7ae-42b3-a338-3ee3928184b0/image-6.png"
+        },
+        {
+          "image": "https://assets.decocache.com/vicbeaute/ee7e800a-6845-4dc0-8949-1893212ce3dd/image-7.png",
+          "altText": "Outono",
+          "href": "/paleta-de-cores/outono",
+          "imageDesktop": "https://assets.decocache.com/vicbeaute/ee7e800a-6845-4dc0-8949-1893212ce3dd/image-7.png",
+          "imageMobile": "https://assets.decocache.com/vicbeaute/754655c1-cf6e-49b4-b9b9-34d475d1c630/image-7.png"
+        },
+        {
+          "image": "https://assets.decocache.com/vicbeaute/99ef458e-845c-48a3-8fde-dcfdc8a8f1d2/image-8.png",
+          "altText": "Inverno",
+          "href": "/paleta-de-cores/inverno",
+          "imageDesktop": "https://assets.decocache.com/vicbeaute/99ef458e-845c-48a3-8fde-dcfdc8a8f1d2/image-8.png",
+          "imageMobile": "https://assets.decocache.com/vicbeaute/f4d5041f-a40a-4ceb-bb0e-16f7b853ae68/image-8.png"
+        },
+        {
+          "image": "https://assets.decocache.com/vicbeaute/cb4200b6-a51c-4d51-95dc-c01644f5caa1/image-9.png",
+          "altText": "Primavera",
+          "href": "/paleta-de-cores/primavera",
+          "imageDesktop": "https://assets.decocache.com/vicbeaute/cb4200b6-a51c-4d51-95dc-c01644f5caa1/image-9.png",
+          "imageMobile": "https://assets.decocache.com/vicbeaute/39a5a327-b403-409c-b016-cb8a92038de2/image-9.png"
+        }
+      ],
+      "disclaimer": "*Fotos de modelos correspondentes ao produto, não a cartela de cor.",
+      "cta": {
+        "label": "Voltar ao inicio",
+        "href": "#"
+      }
+    },
+    {
+      "__resolveType": "Footer"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}
