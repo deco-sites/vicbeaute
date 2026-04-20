@@ -78,19 +78,19 @@ export default function BannerSlider(
               />
               <div class="flex flex-col items-center justify-center text-center px-[14px] py-[12px] w-full bg-[#f4f4f4]">
                 {banner.subtitle && (
-                  <span class="text-[#CE9680] text-sm mb-2">
+                  <span class="text-[#CE9680] font-Hanken-Grotesk text-sm mb-2">
                     {banner.subtitle}
                   </span>
                 )}
                 {banner.title && (
-                  <h2 class="text-[#455C42] text-3xl font-Queens mb-[10px] leading-[1.1] max-w-[280px]">
+                  <h2 class="text-[#455C42] text-3xl text-[24px] font-Hanken-Grotesk mb-[10px] leading-[1.1] max-w-[280px]">
                     {banner.title}
                   </h2>
                 )}
                 {banner.buttonText && (
                   <a
                     href={banner.buttonLink || "#"}
-                    class="bg-[#455C42] text-white-15 px-[53px] py-4 text-sm font-medium transition-opacity rounded-md tracking-wider"
+                    class="bg-[#455C42] text-[#EBEDE2] px-[53px] font-Hanken-Grotesk py-4 text-sm font-medium transition-opacity rounded-md tracking-wider"
                   >
                     {banner.buttonText}
                   </a>

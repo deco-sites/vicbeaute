@@ -61,17 +61,17 @@ export default function ShopTheLook({
       {/* Header */}
       <div class="px-5 text-center mb-[10px] lg:mb-12 xl:max-w-[970px] max-w-[650px] mx-auto flex flex-col items-center">
         {title && (
-          <span class="xl: text=[#333333]text-[14px] xl:text-[16px] tracking-wide xl:font-regular xl:font-hanken-grotesk font-medium text-[#191C1F] mb-0">
+          <span class="xl:text-[#333333] text-[14px] xl:text-[16px] tracking-wide xl:font-regular xl:font-hanken-grotesk font-medium text-[#363931] mb-0">
             {title}
           </span>
         )}
         {highlightTitle && (
-          <h2 class="text-[44px] lg:text-[36px] font-Queens text-[#CE9680] leading-[1.0] mb-[10px]">
+          <h2 class="text-[44px] lg:text-[32px] font-Queens text-[#CE9680] leading-[1.0] mb-[10px]">
             {highlightTitle}
           </h2>
         )}
         {description && (
-          <p class="text-[15px] lg:text-[20px] xl:font-hanken-grotesk text-[#2c2c2c] leading-snug lg:whitespace-nowrap">
+          <p class="text-[15px] lg:text-[10px] xl:font-hanken-grotesk text-[#2c2c2c] font-inter leading-snug lg:whitespace-nowrap">
             {description}
           </p>
         )}
@@ -130,7 +130,7 @@ export default function ShopTheLook({
       <div class="mt-8 lg:mt-12 px-5">
         <button
           id={`${rootId}-btn`}
-          class="hidden bg-[#556b50] hover:bg-[#455C42] transition-colors text-white-15 text-[13px] tracking-wide px-[52px] py-[16px] rounded-md font-semibold ring-1 ring-transparent focus:ring-offset-2"
+          class="hidden bg-[#556b50] font-Hanken-Grotesk hover:bg-[#455C42] transition-colors text-[#ffffff] text-[14px] tracking-wide px-[52px] py-[16px] rounded-md font-regular ring-1 ring-transparent focus:ring-offset-2"
         >
           Ver mais looks
         </button>

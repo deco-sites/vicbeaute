@@ -60,7 +60,7 @@ export default function TabbedProductSlider({
                 key={index}
                 data-tab-button={index}
                 class={clx(
-                  "font-hanken-grotesk pb-1 outline-none whitespace-nowrap text-base lg:text-[18px] transition-all border-b-2 mb-[-1px]",
+                  "font-Hanken-Grotesk pb-1 outline-none whitespace-nowrap text-base lg:text-[18px] transition-all border-b-2 mb-[-1px]",
                   isActive
                     ? "border-[#455C42] text-[#455C42] font-medium"
                     : "border-transparent text-[#8a8a8a] hover:text-[#455C42]"

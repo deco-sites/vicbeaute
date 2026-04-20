@@ -97,7 +97,7 @@ function ProductCardBuyTogether({ product, class: _class }: Props) {
         {/* Avaliação em cima da imagem APENAS no Mobile */}
         <div class="absolute lg:hidden top-1 right-1 flex items-center gap-[2px] z-20">
           <Icon id="star-konfidency" size={12} />
-          <span class="font-hanken-grotesk text-[12px] text-[#363931] leading-none pt-[1px]">
+          <span class="font-Hanken-Grotesk text-[12px] text-[#363931] leading-none pt-[1px]">
             {(aggregateRating?.ratingValue ?? 4.2).toFixed(1).replace(".", ",")}
           </span>
         </div>
@@ -124,13 +124,13 @@ function ProductCardBuyTogether({ product, class: _class }: Props) {
 
           <div class="hidden lg:flex items-center gap-1 mt-1 h-[18px]">
             <Icon id="star-konfidency" size={14} />
-            <span class="font-hanken-grotesk text-[12px] text-[#363931] leading-none">
+            <span class="font-Hanken-Grotesk text-[12px] text-[#363931] leading-none">
               {(aggregateRating?.ratingValue ?? 4.8).toFixed(1).replace(
                 ".",
                 ",",
               )}
             </span>
-            <span class="font-hanken-grotesk text-[12px] text-[#363931] leading-none">
+            <span class="font-Hanken-Grotesk text-[12px] text-[#363931] leading-none">
               ({aggregateRating?.reviewCount ?? 263})
             </span>
           </div>

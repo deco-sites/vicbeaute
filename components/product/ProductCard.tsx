@@ -146,10 +146,10 @@ function ProductCard({
       </figure>
 
       <a href={relativeUrl} class="py-1 px-1">
-        <span class="font-hanken-grotesk xl:text-[12px] text-vc-10 text-[#4c4c4c] line-clamp-1">
+        <span class="font-Hanken-Grotesk xl:text-[12px] text-vc-10 text-[#4c4c4c] line-clamp-1">
           {variantName }
         </span>
-        <h3 class="font-hanken-grotesk xl:text-[16px] font-medium xl:font-regular text-xs text-black-35 line-clamp-2 min-h-8">
+        <h3 class="font-Hanken-Grotesk xl:text-[16px] font-medium xl:font-regular text-xs text-black-35 line-clamp-2 min-h-8">
           {title}
         </h3>
 
@@ -196,7 +196,7 @@ function ProductCard({
           ? (
             <div
               class={clx(
-                "btn border-none text-sm no-animation w-full px-0 lg:text-[14px]",
+                "btn border-none font-Hanken-Grotesk text-sm no-animation w-full px-0 lg:text-[14px]",
                 "flex justify-center rounded-sm mx-auto bg-[#455C42] hover:bg-[#3d513a] text-white-15 font-medium min-h-[40px] h-[40px]",
               )}
             >

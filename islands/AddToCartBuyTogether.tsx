@@ -74,7 +74,7 @@ export default function AddToCartBuyTogether(
           Compre os <span class="font-bold">{products.length}</span>{" "}
           produtos por:
         </p>
-        <p class="font-bold text-[18px] lg:text-[26px] text-[#363931] mt-0 lg:mt-2 font-hanken-grotesk leading-none">
+        <p class="font-bold text-[18px] lg:text-[26px] text-[#363931] mt-0 lg:mt-2 font-Hanken-Grotesk leading-none">
           {formattedPrice}
         </p>
       </div>

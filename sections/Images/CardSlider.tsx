@@ -82,17 +82,17 @@ export default function CardSlider(
               </div>
               <div class="flex flex-col items-center justify-start text-center px-3 pt-3 pb-[10px] flex-1">
                 {card.title && (
-                  <h3 class="text-[#455C42] text-[20px] font-Queens font-semibold leading-tight max-w-[240px]">
+                  <h3 class="text-[#4D5D49] text-[20px] font-Hanken-Grotesk font-regular leading-tight max-w-[240px]">
                     {card.title}
                   </h3>
                 )}
                 {card.text && (
-                  <p class="text-[#191C1F] text-xs leading-snug mt-[10px]">
+                  <p class="text-[#191C1F] text-xs text-[14px] font-Manrope font-regular leading-snug mt-[10px]">
                     {card.text}
                   </p>
                 )}
                 {card.buttonText && (
-                  <span class="mt-2 bg-[#455C42] text-white-15 text-xs font-semibold px-[53px] py-4 rounded-md tracking-wider">
+                  <span class="mt-2 bg-[#455C42] text-[#EBEDE2] font-Hanken-Grotesk text-[14px]text-xs font-regular px-[53px] py-4 rounded-md tracking-wider">
                     {card.buttonText}
                   </span>
                 )}
