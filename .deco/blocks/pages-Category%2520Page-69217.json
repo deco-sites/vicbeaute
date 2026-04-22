@@ -2328,6 +2328,15 @@
               "h1title": "Mercado",
               "h2subTitle": "Direto para sua casa",
               "text": "Lorem ipsum dolor sit amet consectetur. Sed tortor dapibus nascetur faucibus arcu sodales. Nec lacus facilisis quis tincidunt sodales ultrices ut ut. Sed rutrum ut aenean scelerisque imperdiet congue. Egestas etiam nullam faucibus tempor. Sed et ac fringilla at sagittis."
+            },
+            "notFoundFallback": {
+              "__resolveType": "site/sections/Content/NotFound.tsx",
+              "desktop": "https://assets.decocache.com/vicbeaute/09b95f3b-4565-4b37-9fa8-c8d911e5335a/Rectangle-3.png",
+              "mobile": "https://assets.decocache.com/vicbeaute/09b95f3b-4565-4b37-9fa8-c8d911e5335a/Rectangle-3.png",
+              "title": "Página não encontrada.",
+              "description": "<p>A beleza que você procura pode ter mudado de lugar. Volte para a página inicial e continue explorando nossos essenciais de maquiagem.</p><p><br></p>",
+              "buttonLabel": "Voltar para o início",
+              "buttonUrl": "/"
             }
           },
           {
@@ -2344,6 +2353,5 @@
     "__resolveType": "website/sections/Seo/SeoV2.tsx"
   },
   "__resolveType": "website/pages/Page.tsx",
-  "name": "Category",
-  "path": "/*"
+  "name": "Category"
 }
