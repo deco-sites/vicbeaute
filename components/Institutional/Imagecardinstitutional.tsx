@@ -34,7 +34,6 @@ function ImageCardInstitutional({ firstImage, secondImage, thirdImage, fourthIma
   const renderImageGroup = (imgGroup: { mobile: ImageDeviceProps; tablet: ImageDeviceProps; desktop?: ImageDeviceProps }) => {
     if (!imgGroup) return null;
     
-<<<<<<< HEAD
     // Auto-fallback: escolhe a melhor imagem disponível se a requirida estiver vazia
     let activeProps = imgGroup.mobile;
     if (device === "desktop" && imgGroup.desktop?.image) activeProps = imgGroup.desktop;
@@ -46,61 +45,17 @@ function ImageCardInstitutional({ firstImage, secondImage, thirdImage, fourthIma
     if (!activeProps?.image) return null;
 
     return (
-      <a href={activeProps.href || "#"} class="block w-full h-full">
+      <a href={activeProps.href || "#"} class="block w-full h-full" draggable={false}>
         <img
           alt={activeProps.alt}
           src={activeProps.image}
           width={activeProps.width || 260}
           height={activeProps.height || 260}
-          class="w-full h-full object-cover"
+          class="w-full h-full object-cover select-none"
+          draggable={false}
         />
       </a>
     );
-=======
-    if (device === "desktop" && imgGroup.desktop) {
-      return (
-        <a href={imgGroup.desktop.href || "#"} class="block w-full h-full" draggable={false}>
-          <img
-            alt={imgGroup.desktop.alt}
-            src={imgGroup.desktop.image}
-            width={imgGroup.desktop.width}
-            height={imgGroup.desktop.height}
-            class="w-full h-full object-cover select-none"
-            draggable={false}
-          />
-        </a>
-      );
-    }
-    if (device === "tablet" && imgGroup.tablet) {
-      return (
-        <a href={imgGroup.tablet.href || "#"} class="block w-full h-full" draggable={false}>
-          <img
-            alt={imgGroup.tablet.alt}
-            src={imgGroup.tablet.image}
-            width={imgGroup.tablet.width}
-            height={imgGroup.tablet.height}
-            class="w-full h-full object-cover select-none"
-            draggable={false}
-          />
-        </a>
-      );
-    }
-    if (device === "mobile" && imgGroup.mobile) {
-      return (
-        <a href={imgGroup.mobile.href || "#"} class="block w-full h-full" draggable={false}>
-          <img
-            alt={imgGroup.mobile.alt}
-            src={imgGroup.mobile.image}
-            width={imgGroup.mobile.width}
-            height={imgGroup.mobile.height}
-            class="w-full h-full object-cover select-none"
-            draggable={false}
-          />
-        </a>
-      );
-    }
-    return null;
->>>>>>> 44cf962 (feat(institutional) : implement desktop institutional version)
   };
 
   return (
@@ -111,13 +66,13 @@ function ImageCardInstitutional({ firstImage, secondImage, thirdImage, fourthIma
       `}} />
 
       {text && (
-        <h2 class="my-[10px] max-w-[381px] h-fit leading-[32px] text-[32px] text-[#CE9680] md:text-[#4D5D49] text-10 font-Queens text-center px-3">
+        <h2 class="my-[10px] max-w-[381px] h-fit leading-[32px] text-[32px] text-[#CE9680] xl:text-[#4D5D49] text-10 font-Queens text-center px-3">
           {text}
         </h2>
       )}
 
       {/* Carrossel Linha 1 (Rola independente) */}
-      <div class="flex overflow-x-auto w-full gap-[8px] mt-[10px] pl-4 md:pl-0 md:justify-center hide-scrollbar snap-x snap-mandatory">
+      <div class="flex xl:hidden overflow-x-auto w-full gap-[8px] mt-[10px] pl-4 md:pl-0 md:justify-center hide-scrollbar snap-x snap-mandatory">
         <div class="flex-shrink-0 w-[260px] h-[260px] snap-center overflow-hidden aspect-square">
           {renderImageGroup(firstImage)}
         </div>
@@ -127,7 +82,7 @@ function ImageCardInstitutional({ firstImage, secondImage, thirdImage, fourthIma
       </div>
 
       {/* Carrossel Linha 2 (Rola independente) */}
-      <div class="flex overflow-x-auto w-full gap-[8px] pl-4 md:pl-0 md:justify-center hide-scrollbar snap-x snap-mandatory pb-4">
+      <div class="flex xl:hidden overflow-x-auto w-full gap-[8px] pl-4 md:pl-0 md:justify-center hide-scrollbar snap-x snap-mandatory pb-4">
         <div class="flex-shrink-0 w-[260px] h-[260px] snap-center overflow-hidden aspect-square">
           {renderImageGroup(thirdImage)}
         </div>
@@ -193,7 +148,7 @@ function ImageCardInstitutional({ firstImage, secondImage, thirdImage, fourthIma
 
       {/* DESKTOP: Carrossel 1 Linha (Scroll) */}
       <div 
-        class="drag-carousel hidden md:flex overflow-x-auto w-full gap-[20px] mt-[40px] px-0 hide-scrollbar snap-x snap-mandatory"
+        class="drag-carousel hidden xl:flex overflow-x-auto w-full gap-[20px] mt-[40px] px-0 hide-scrollbar snap-x snap-mandatory"
       >
         {/* Parede Invisível NATIVA do Flexbox (Força a foto pra direita garantindo os 80px livre de Tailwind) */}
         <div class="flex-shrink-0 w-[60px] h-[1px] pointer-events-none snap-start" />

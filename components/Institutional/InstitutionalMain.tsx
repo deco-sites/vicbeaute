@@ -24,7 +24,7 @@ const InstitutionalMain = (
 ) => {
   return (
     <div class="bg-[#fff] w-full">
-      <div class="max-w-[1340px] xl:mr-[350px] xl:ml-[250px] institutional-wrapper pt-5">
+      <div class="max-w-[1340px] institutional-wrapper pt-5 xl:mx-auto">
       
       <div class="flex items-start md:items-center justify-between md:justify-center flex-col pt-5 w-full">
         <div class="institutional-text flex justify-center md:items-center flex-col px-3 w-full">

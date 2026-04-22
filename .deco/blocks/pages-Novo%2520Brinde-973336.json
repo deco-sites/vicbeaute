@@ -38,7 +38,8 @@
           "desktop": {
             "image": "https://assets.decocache.com/vicbeaute/40d77727-3b9b-4e98-852a-25cc47a2c7ae/Rectangle-1293-desk-faq-(6).png",
             "alt": "brinde",
-            "width": -1
+            "width": 1440,
+            "height": 432
           },
           "tablet": {
             "image": "https://assets.decocache.com/vicbeaute/aa5ace6c-9e63-4f8d-9659-60fcf2c37cb8/Rectangle-1293-(3).png",
