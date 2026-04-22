@@ -2,7 +2,6 @@
   "__resolveType": "site/sections/Footer/Footer.tsx",
   "links": [
     {
-      "title": "Descubra",
       "children": [
         {
           "title": "Novos",
@@ -25,60 +24,86 @@
           "title": "Acessórios",
           "href": "#"
         }
-      ]
-    },
-    {
-      "title": "Ajuda",
-      "href": "#",
-      "children": [
-        {
-          "title": "Faqs",
-          "href": "/perguntas-frequentes",
-          "isLink": true
-        },
-        {
-          "title": "Entrega",
-          "href": "#",
-          "isLink": true
-        },
-        {
-          "title": "Troca e Devolução",
-          "href": "#",
-          "isLink": true
-        },
-        {
-          "title": "Regulamentos",
-          "isLink": true,
-          "href": "#"
-        },
-        {
-          "isLink": true,
-          "title": "Termo UGC",
-          "href": "#"
-        }
-      ]
+      ],
+      "title": "COMPRAR"
     },
     {
       "title": "Institucional",
+      "href": "#",
       "children": [
         {
           "title": "Sobre nós",
           "isLink": true,
-          "href": "#"
+          "href": "/quem-somos"
         },
         {
-          "isLink": true,
           "title": "Pilares da marca",
-          "href": "#"
+          "href": "#",
+          "isLink": true
+        },
+        {
+          "title": "Onde encontrar",
+          "href": "#",
+          "isLink": true
         },
         {
           "isLink": true,
-          "title": "Onde encontrar",
-          "href": "#"
+          "title": "Dia de Beauté",
+          "href": "https://diadebeaute.com/"
         },
         {
           "isLink": true,
           "title": "Brinde da vez",
+          "href": "/novo-brinde"
+        },
+        {
+          "isLink": true,
+          "title": "Conheça VB+",
+          "href": "/fidelidade"
+        }
+      ]
+    },
+    {
+      "title": "Ajuda",
+      "children": [
+        {
+          "title": "FAQs",
+          "isLink": true,
+          "href": "/perguntas-frequentes"
+        },
+        {
+          "isLink": true,
+          "title": "Entrega",
+          "href": "#"
+        },
+        {
+          "isLink": true,
+          "title": "Troca e Devolução",
+          "href": "/trocas-e-devolucoes"
+        },
+        {
+          "isLink": true,
+          "title": "Troca Fácil",
+          "href": "#"
+        },
+        {
+          "isLink": true,
+          "title": "Regulamentos",
+          "href": "/regulamentos"
+        },
+        {
+          "isLink": true,
+          "title": "Termo #VicBeauté",
+          "href": "#"
+        },
+        {
+          "isLink": true,
+          "title": "Política de Segurança",
+          "href": "#"
+        },
+        {
+          "isLink": true,
+          "title": "Central de Atendimento",
           "href": "#"
         }
       ],
@@ -88,42 +113,32 @@
       "children": [
         {
           "isLink": true,
-          "title": "Sobre nós",
-          "href": "#"
-        },
-        {
-          "isLink": true,
-          "title": "Pilares da marca",
-          "href": "#"
-        },
-        {
-          "isLink": true,
-          "title": "Onde encontrar",
+          "title": "sac@vicbeaute.com.br",
           "href": "#"
         }
       ],
-      "title": "Beleza em foco"
+      "title": "Fale conosco"
     }
   ],
   "social": [
     {
       "alt": "instagram",
-      "href": "#",
+      "href": "/vic_beaute/",
       "image": "https://assets.decocache.com/vicbeaute/61112a7a-a763-4306-a42e-af981c6485cf/icon-social-insta-1.svg"
     },
     {
       "alt": "youtube",
-      "href": "#",
+      "href": "/@vic_beaute",
       "image": "https://assets.decocache.com/vicbeaute/ad166226-4816-4ebf-b2dc-0de973049187/Group-(1).svg"
     },
     {
       "alt": "facebook",
-      "href": "#",
+      "href": "https://www.facebook.com/p/Vic-Beaut%C3%A9-100084064627140/",
       "image": "https://assets.decocache.com/vicbeaute/11e83fe3-4fac-47ce-8ff6-924772e054d0/Group.svg"
     },
     {
       "alt": "tiktok",
-      "href": "#",
+      "href": "https://www.tiktok.com/@vic_beaute",
       "image": "https://assets.decocache.com/vicbeaute/efc84f99-ed95-4f16-bf9e-78ac78ebe88a/footer.svg"
     }
   ],

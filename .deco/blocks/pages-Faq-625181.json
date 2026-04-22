@@ -90,6 +90,74 @@
           {
             "answer": "<p><span style=\"color: rgb(0, 0, 0); font-size: 14px\">\"Após a finalização da compra, não é possível realizar alterações no seu pedido. Você pode solicitar a devolução do produto assim que chegar em sua residência, forneceremos o código de postagem gratuito. Se for necessário o cancelamento da compra, você pode entrar em contato com nossos canais de atendimento e solicitar o cancelamento do pedido.\"</span></p>",
             "question": "Posso efetuar a troca do produto ou alterar a forma de pagamento após fechar o pedido?"
+          },
+          {
+            "answer": "<p><span style=\"color: rgb(0, 0, 0); font-size: 14px\">\"Existem alguns motivos para o cancelamento de pedidos: - Produtos indisponíveis: o item é cancelado se há algum problema na peça ou ela está indisponível no estoque. Nesse caso, a equipe fará contato via e-mail. - Divergência de dados do pagamento: os pedidos realizados com cartão de crédito passam por uma análise de segurança. São conferidas as informações do cadastro e as informações passadas pela administradora do seu cartão. Se houver divergências, a compra é cancelada automaticamente por motivos de segurança. Para maiores esclarecimentos, entre em contato com nossa Central de Atendimento, em </span><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"mailto:sac@vicbeaute.com.br\"><span style=\"color: rgb(0, 0, 0); font-size: 14px\">sac@vicbeaute.com.br</span></a><span style=\"color: rgb(0, 0, 0); font-size: 14px\">.\"</span></p>",
+            "question": "Por que o meu pedido foi cancelado?"
+          },
+          {
+            "answer": "<p><span style=\"color: rgb(0, 0, 0); font-size: 14px\">Sim, entregamos em todo o Brasil! A data de entrega do seu pedido varia de acordo com a região do país, você pode simular o valor do frete e o prazo de entrega no ato da compra.</span></p>",
+            "question": "A Vic Beauté entrega em todo Brasil?"
+          },
+          {
+            "answer": "<p><span style=\"color: rgb(0, 0, 0); font-size: 14px\">Neste caso, você precisará entrar em contato com o </span><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"mailto:sac@vicbeaute.com.br\"><span style=\"color: rgb(0, 0, 0); font-size: 14px\">sac@vicbeaute.com.br</span></a><span style=\"color: rgb(0, 0, 0); font-size: 14px\"> para verificar se a alteração poderá ser realizada. Depois da emissão do pedido, só é possível alterar o endereço caso fique dentro no mesmo bairro do endereço inicial.</span></p>",
+            "question": "Já fiz meu pedido, posso alterar o endereço de entrega?"
+          },
+          {
+            "answer": "<p><span style=\"color: rgb(0, 0, 0); font-size: 14px\">\"Após a conclusão do seu pedido, você pode acompanhar o status dele das seguintes formas: - Pelos e-mails automáticos que enviamos contendo todas informações sobre cada passo do seu pedido. - Na área \"\"Minha Conta &gt; \"\"Meus Pedidos\"\" &gt; Acesse o pedido que deseja &gt; Rastrear Pedido - Acessando o nosso chat, localizado no canto inferior direito da tela do site, para consultar o status do seu pedido\"</span></p>",
+            "question": "Como acompanhar a minha entrega?"
+          },
+          {
+            "answer": "<p><span style=\"color: rgb(0, 0, 0); font-size: 14px\">\"Suas compras serão entregues em embalagens personalizadas e lacradas. Ao receber o pedido, confira se a embalagem não está violada e se os produtos correspondem ao que foi solicitado em nosso site. Caso encontre qualquer problema, recuse o recebimento e entre em contato com </span><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"mailto:sac@vicbeaute.com.br\"><span style=\"color: rgb(0, 0, 0); font-size: 14px\">sac@vicbeaute.com.br</span></a><span style=\"color: rgb(0, 0, 0); font-size: 14px\">. Se já tiver recebido e identificar um problema, também indicamos que entre em contato pelo e-mail.\"</span></p>",
+            "question": "O que verificar no ato da entrega?"
+          },
+          {
+            "answer": "<p><span style=\"color: rgb(0, 0, 0); font-size: 14px\">A data de entrega do seu pedido varia de acordo com a região do país, você pode simular o valor do frete e o prazo de entrega no ato da compra, seja na sacola de compras ou na página do produto.</span></p>",
+            "question": "Qual é o prazo de entrega?"
+          },
+          {
+            "answer": "<p><span style=\"color: rgb(0, 0, 0); font-size: 14px\">O valor do frete do seu pedido varia de acordo com a região do país e o peso dos produtos em seu pedido, você pode simular o valor do frete e o prazo de entrega no ato da compra na sacola de compras.</span></p>",
+            "question": "Qual o valor do frete?"
+          },
+          {
+            "answer": "<p><span style=\"color: rgb(0, 0, 0); font-size: 14px\">\"Temos três formas de envio disponíveis: Entrega Econômica - O valor do frete é mais baixo e a data de entrega do seu pedido pode levar alguns dias. Entrega Rápida - Opção de entrega no dia seguinte para pedidos realizados até às 15h. Confirme valores e disponibilidade do CEP na finalização do pedido. Entrega Expressa - Opção de entrega no mesmo dia para pedidos realizados até às 10h59 em dias úteis. Válida somente para a cidade de São Paulo. Confirme a disponibilidade do CEP na finalização do pedido.\"</span></p>",
+            "question": "Quais as formas de entrega disponíveis?"
+          },
+          {
+            "answer": "<p><span style=\"color: rgb(0, 0, 0); font-size: 14px\">\"Temos três formas de envio disponíveis: Entrega Econômica - O valor do frete é mais baixo e a data de entrega do seu pedido pode levar alguns dias. Entrega Rápida - Opção de entrega no dia seguinte para pedidos realizados até às 15h. Confirme valores e disponibilidade do CEP na finalização do pedido. Entrega Expressa - Opção de entrega no mesmo dia para pedidos realizados até às 10h59 em dias úteis. Válida somente para a cidade de São Paulo. Confirme a disponibilidade do CEP na finalização do pedido.\"</span></p>",
+            "question": "Quais as formas de entrega disponíveis?"
+          },
+          {
+            "answer": "<p><span style=\"color: rgb(0, 0, 0); font-size: 14px\">Serão realizadas três tentativas de entrega, em dias e horários diferentes. Caso não haja sucesso, o produto retorna para o nosso Centro de Distribuição e a Central de Atendimento entrará em contato com você.</span></p>",
+            "question": "Se não tiver ninguém no local para receber meu pedido, o que acontece?"
+          },
+          {
+            "answer": "<p><span style=\"color: rgb(0, 0, 0); font-size: 14px\">\"Você pode conferir se o seu pedido realmente está fora do prazo de entrega através do link de rastreamento do seu pedido, lembrando que o prazo começa a contar a partir da aprovação do pagamento do pedido. Se o prazo informado para entrega, após a confirmação do pagamento, estiver expirado, pedimos que entre em contato conosco pelo e-mail </span><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"mailto:sac@vicbeaute.com.br\"><span style=\"color: rgb(0, 0, 0); font-size: 14px\">sac@vicbeaute.com.br</span></a><span style=\"color: rgb(0, 0, 0); font-size: 14px\">. Informe o número de seu pedido e confirme o endereço de entrega para que possamos validar que todas as informações estão corretas.\"</span></p>",
+            "question": "Minha entrega está atrasada, e agora?"
+          },
+          {
+            "answer": "<p><span style=\"color: rgb(0, 0, 0); font-size: 14px\">Caso faça o rastreio e identifique a informação de \"Extravio\" ou \"Insucesso na entrega\", entre em contato conosco através dos canais de atendimento: (11) 4935-2378 ou </span><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"mailto:sac@vicbeaute.com.br\"><span style=\"color: rgb(0, 0, 0); font-size: 14px\">sac@vicbeaute.com.br</span></a><span style=\"color: rgb(0, 0, 0); font-size: 14px\">.</span></p>",
+            "question": "Meu pedido foi extraviado, e agora?"
+          },
+          {
+            "answer": "<p><span style=\"color: rgb(0, 0, 0); font-size: 14px\">Nós não realizamos a troca de produtos, apenas devolução do valor em extorno ou vale-troca. Para realizar a devolução do seu produto ou pedido verifique as informações no item desta página.</span></p>",
+            "question": "Como funciona a troca de produtos comprados no site Vic Beauté?"
+          },
+          {
+            "answer": "<p><span style=\"color: rgb(0, 0, 0); font-size: 14px\">\"O Vale-Troca é um voucher utilizado principalmente após a devolução de algum produto e tem o prazo de 12 meses para utilização. Ele aparecerá junto às demais opções na etapa de Pagamento. Você consegue selecioná-lo como forma de pagamento integral, se o saldo for o suficiente, ou parcial complementando o valor excedente com o cartão de crédito, boleto bancário ou Pix.\"</span></p>",
+            "question": "Como funciona o vale-trocas?"
+          },
+          {
+            "answer": "<p><span style=\"color: rgb(0, 0, 0); font-size: 14px\">\"Caso receba um produto diferente do que comprou, deverá solicitar a devolução dele acessando \"\"Devoluções\"\" no rodapé do nosso site, digitar o número do pedido e o e-mail cadastrado. E pronto! Sua solicitação estará feita. Enviaremos um código de postagem para a devolução gratuita, o produto será analisado ao recebermos em nosso Centro de Distribuição, para darmos continuidade ao processo de troca ou restituição do valor.\"</span></p>",
+            "question": "Recebi um produto diferente do que comprei, o que faço?"
+          },
+          {
+            "answer": "<p><span style=\"color: rgb(0, 0, 0); font-size: 14px\">\"Aceitamos a devolução de sua compra em até 7 dias corridos após o recebimento do seu pedido, por qualquer que seja o motivo. Para solicitar a devolução, acesse \"\"Devoluções\"\" no rodapé do nosso site, digite o número do pedido e o e-mail cadastrado e realize sua solicitação.\"\"</span></p>",
+            "question": "Desisti da minha compra, posso devolver?"
+          },
+          {
+            "answer": "<p><span style=\"color: rgb(0, 0, 0); font-size: 14px\">Para compras feitas nas lojas parceiras onde estão nossas Pop-up Stores orientamos que entrem em contato pelos canais da própria loja e solicite a troca. O prazo para a troca pode variar de acordo com as políticas de cada marca.</span></p>",
+            "question": "Posso trocar um produto Vic Beauté comprado nas lojas Gallerist ou Studio Lorena?"
           }
         ]
       }
