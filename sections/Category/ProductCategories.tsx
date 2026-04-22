@@ -31,7 +31,7 @@ export default function ProductCategories({
       <div class="max-w-[1280px] mx-auto">
         <div class="px-[12px] lg:px-0">
           {title && (
-            <h2 class="text-[#363931] font-Hanken-Grotesk font-medium text-[17px] lg:text-[22px] mb-4 lg:mb-6">
+            <h2 class="text-[#2C2C2C] font-Hanken-Grotesk font-medium text-[18px] xl:text-[24px] mb-4 lg:mb-6">
               {title}
             </h2>
           )}
@@ -61,7 +61,7 @@ export default function ProductCategories({
                   loading="lazy"
                 />
               </div>
-              <span class="text-center font-Hanken-Grotesk text-[13px] lg:text-[15px] text-[#363931] leading-tight transition-colors px-1 whitespace-nowrap overflow-hidden text-ellipsis lg:max-w-[150px] max-w-[80px]">
+              <span class="text-center font-Hanken-Grotesk text-[12px] xl:text-[16px] text-[#363931] leading-tight transition-colors px-1 whitespace-nowrap overflow-hidden text-ellipsis lg:max-w-[150px] max-w-[80px]">
                 {category.label}
               </span>
             </a>

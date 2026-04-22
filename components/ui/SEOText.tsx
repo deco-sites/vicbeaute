@@ -37,14 +37,14 @@ function SeoText({ textSeo }: Props) {
       {(textSeo.h1title || textSeo.h2subTitle) && (
         <div class="flex flex-wrap items-center justify-center gap-2 mb-4 lg:mb-6">
           {textSeo.h1title && (
-            <h1 class="text-[32px] lg:text-[40px] font-Queens text-[#333333] leading-none text-center">
+            <h1 class="text-[28px] font-Queens text-[#333333] leading-none text-center">
               {textSeo.h1title}
             </h1>
           )}
           {textSeo.h2subTitle && (
             <>
               <span class="text-[32px] lg:text-[40px] font-Queens text-[#333333] leading-none">|</span>
-              <h2 class="text-[32px] lg:text-[40px] font-Queens text-[#333333] leading-none text-center">
+              <h2 class="text-[28px] font-Queens text-[#333333] leading-none text-center">
                 {textSeo.h2subTitle}
               </h2>
             </>
@@ -53,7 +53,7 @@ function SeoText({ textSeo }: Props) {
       )}
 
       {textSeo.text && (
-        <div class="w-full relative flex flex-col items-center">
+      <div class="w-full relative flex flex-col items-center font-Hanken-Grotesk text-[14px]">
           <style
             dangerouslySetInnerHTML={{
               __html: `
@@ -125,7 +125,7 @@ function SeoText({ textSeo }: Props) {
             class={`seo-checkbox-${id}`}
           />
           
-          <div class={`seo-body-${id} w-full text-[15px] lg:text-[16px] text-[#808080] font-Hanken-Grotesk leading-[24px]`}>
+          <div class={`seo-body-${id} w-full text-[14px] lg:text-[16px] text-[#808080] font-Hanken-Grotesk`}>
             <div dangerouslySetInnerHTML={{ __html: textSeo.text }} />
             <div class={`seo-fade-${id}`} />
           </div>
@@ -134,8 +134,8 @@ function SeoText({ textSeo }: Props) {
             for={`${id}-control-cb`}
             class={`seo-btn-${id} font-Hanken-Grotesk select-none`}
           >
-            <span class="seo-text-more">Ler Mais</span>
-            <span class="seo-text-less">Ler Menos</span>
+            <span class="seo-text-more text-[12px] font-Hanken-Grotesk">Ler Mais</span>
+            <span class="seo-text-less text-[12px] font-Hanken-Grotesk">Ler Menos</span>
             <Icon id="chevron-right" size={16} class="seo-chevron" />
           </label>
         </div>

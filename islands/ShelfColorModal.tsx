@@ -331,7 +331,7 @@ export default function ShelfColorModal(
           <div class="flex justify-center items-center gap-3 text-[14px] font-Manrope opacity-90">
             <a
               href={activeProduct.url}
-              class="font-medium text-[#191919] hover:opacity-70 transition-opacity underline-offset-4"
+              class="font-medium text-[#000000] hover:opacity-70 transition-opacity font-Manrope text-[12px] underline-offset-4"
               style={{ textDecoration: "underline" }}
             >
               Ver mais detalhes
