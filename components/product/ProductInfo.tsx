@@ -17,6 +17,7 @@ import Breadcrumb from "../../components/ui/Breadcrumb.tsx";
 import ColorVariantSelector from "../../islands/ColorVariantSelector.tsx";
 import ProductBadges from "./ProductBadges.tsx";
 import ShippingSimulation from "../shipping/Form.tsx";
+import { useSection } from "@deco/deco/hooks";
 
 interface Props {
   page: ProductDetailsPage | null;
@@ -100,12 +101,16 @@ function ProductInfo({ page }: Props) {
       const url = relative(p.url);
       return url && url !== "/"; // Apenas produtos com URL válida e não-raiz
     })
-    .map((p) => ({
-      url: relative(p.url)!,
-      name: getSkuColor(p), // Cor do SKU  (ex: "Preto", "Corada")
-      subtitle: getProductCores(p), // Atributo "Cores" do produto (ex: "Coral")
-      imgUrl: getSwatchUrl(p.image),
-    }));
+    .map((p) => {
+      const urlStr = relative(p.url)!;
+      return {
+        url: urlStr,
+        name: getSkuColor(p), // Cor do SKU  (ex: "Preto", "Corada")
+        subtitle: getProductCores(p), // Atributo "Cores" do produto (ex: "Coral")
+        imgUrl: getSwatchUrl(p.image),
+        sectionUrl: useSection({ href: urlStr }),
+      };
+    });
   const hasColors = allColors.length > 1; // Exibe seletor apenas quando há mais de 1 cor
   const selectedUrl = relative(product.url) ?? "/";
   // ────────────────────────────────────────────────────────────
