@@ -14,7 +14,9 @@ export interface FaqProps {
   cards: FaqCard[];
 }
 
-export default function FaqInstitutionalInteractive({ title, searchPlaceholder, cards }: FaqProps) {
+export default function FaqInstitutionalInteractive(
+  { title, searchPlaceholder, cards }: FaqProps,
+) {
   const [searchTerm, setSearchTerm] = useState("");
   // Track open state for each card using its exact index in the original array
   const [openStates, setOpenStates] = useState<Record<number, boolean>>({});
@@ -28,15 +30,18 @@ export default function FaqInstitutionalInteractive({ title, searchPlaceholder, 
 
   // We filter the cards, but we need to map them back to their original index
   // so the open state matches the correct card even while searching.
-  const cardsWithIndex = cards.map((card, idx) => ({ ...card, originalIndex: idx }));
-  
+  const cardsWithIndex = cards.map((card, idx) => ({
+    ...card,
+    originalIndex: idx,
+  }));
+
   const filteredCards = cardsWithIndex.filter((card) =>
     card.question.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
     <section class="flex flex-col items-center w-full mt-[40px] mb-[60px] px-[12px]">
-      <div class="flex flex-col items-start w-full max-w-[351px] md:max-w-[904px] md:max-h-[939px] md:w-full md:mx-auto md:items-center">
+      <div class="flex flex-col items-start w-full max-w-[351px] md:max-w-[904px] md:w-full md:mx-auto md:items-center">
         {/* Título */}
         {title && (
           <h2 class="queens-text text-[32px] text-[#CE9680] leading-[32px] mb-[15px] pt-[57px] md:pt-[56px]">
@@ -45,9 +50,7 @@ export default function FaqInstitutionalInteractive({ title, searchPlaceholder, 
         )}
 
         {/* Barra de Pesquisa */}
-        <div
-          class="flex items-center justify-between w-full h-[54px] md:w-[800px] md:h-[54px] rounded-sm px-4 mb-[30px] bg-[#F2F2F2]"
-        >
+        <div class="flex items-center justify-between w-full h-[54px] md:w-[800px] md:h-[54px] rounded-sm px-4 mb-[30px] bg-[#F2F2F2]">
           <input
             type="text"
             placeholder={searchPlaceholder}
@@ -135,7 +138,7 @@ export default function FaqInstitutionalInteractive({ title, searchPlaceholder, 
                     dangerouslySetInnerHTML={{ __html: card.answer }}
                   />
                 </div>
-                
+
                 {/* Linha Divisória */}
                 <hr class="w-full md:w-[800px] border-t border-[#D5D8C2] self-start" />
               </div>
@@ -143,13 +146,16 @@ export default function FaqInstitutionalInteractive({ title, searchPlaceholder, 
           })}
         </div>
       </div>
-      
+
       {/* Estilos fallback */}
-      <style dangerouslySetInnerHTML={{
-        __html: `
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
         .queens-text, .queens-text * { font-family: "Queens", serif !important; }
         .font-Hanken-Grotesk, .font-Hanken-Grotesk * { font-family: "Hanken Grotesk", sans-serif !important; }
-      `}} />
+      `,
+        }}
+      />
     </section>
   );
 }

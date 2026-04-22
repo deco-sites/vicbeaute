@@ -82,6 +82,14 @@
           {
             "answer": "<p><span style=\"color: rgb(0, 0, 0); font-size: 14px\">Quando seu pagamento for confirmado pela instituição financeira, enviaremos um e-mail informando que o pagamento foi autorizado. A qualquer momento, você pode consultar o estágio de seu pedido até o faturamento em “Meus pedidos”. O processo de aprovação pode durar até 3 dias úteis, dependendo da forma de pagamento escolhida.</span></p>",
             "question": "Como fico sabendo que o pagamento do meu pedido foi aprovado?"
+          },
+          {
+            "answer": "<p><span style=\"color: rgb(0, 0, 0); font-size: 14px\">Depois que um pedido é finalizado, não é possível adicionar outros produtos. Para comprar novos itens, é só fazer uma nova compra.</span></p>",
+            "question": "É possível adicionar um novo produto no pedido já realizado?"
+          },
+          {
+            "answer": "<p><span style=\"color: rgb(0, 0, 0); font-size: 14px\">\"Após a finalização da compra, não é possível realizar alterações no seu pedido. Você pode solicitar a devolução do produto assim que chegar em sua residência, forneceremos o código de postagem gratuito. Se for necessário o cancelamento da compra, você pode entrar em contato com nossos canais de atendimento e solicitar o cancelamento do pedido.\"</span></p>",
+            "question": "Posso efetuar a troca do produto ou alterar a forma de pagamento após fechar o pedido?"
           }
         ]
       }
