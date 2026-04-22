@@ -24,6 +24,10 @@ export const cartFrom = (form: Cart, url: string): Minicart => {
           ...itemToAnalyticsItem({ ...item, detailUrl, coupon }, index),
           image: item.imageUrl,
           listPrice: item.listPrice / 100,
+          price: item.price / 100,
+          // deno-lint-ignore no-explicit-any
+          colorImageExtracted: (item as any).colorImageFromCatalog,
+          vtexItem: item,
         };
       }),
 
@@ -45,6 +49,37 @@ async function loader(
   ctx: AppContext,
 ): Promise<Minicart> {
   const response = await ctx.invoke("vtex/loaders/cart.ts");
+
+  // Augment items with Catalog Data to get the exact color image
+  const skuIds = response?.items?.map((i: any) => i.id) || [];
+  // deno-lint-ignore no-explicit-any
+  let catalogProducts: any[] = [];
+  if (skuIds.length > 0) {
+    try {
+      catalogProducts = await ctx.invoke("vtex/loaders/intelligentSearch/productList.ts", {
+        ids: skuIds
+      }) || [];
+    } catch {
+      // ignore silently to not break cart
+    }
+  }
+
+  if (response?.items && catalogProducts.length > 0) {
+    // deno-lint-ignore no-explicit-any
+    response.items = response.items.map((item: any) => {
+      // deno-lint-ignore no-explicit-any
+      const catalogInfo = catalogProducts.find((p: any) => p.sku === item.id || p.productID === item.id);
+      if (catalogInfo) {
+        // Find image labeled "cor"
+        // deno-lint-ignore no-explicit-any
+        const colorImg = catalogInfo.image?.find((img: any) => img.name?.toLowerCase() === "cor" || img.alternateName?.toLowerCase() === "cor")?.url;
+        if (colorImg) {
+          item.colorImageFromCatalog = colorImg;
+        }
+      }
+      return item;
+    });
+  }
 
   return cartFrom(response, req.url);
 }
