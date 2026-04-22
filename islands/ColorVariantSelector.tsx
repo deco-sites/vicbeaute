@@ -10,12 +10,16 @@ export interface ColorOption {
   subtitle: string;
   /** URL da imagem usada como swatch */
   imgUrl: string;
+  /** URL do useSection para SPA navigations */
+  sectionUrl?: string;
 }
 
 interface Props {
   colors: ColorOption[];
   /** URL relativa do produto atualmente selecionado (ex: "/produto/corada/p") */
   selectedUrl: string;
+  /** Atualizar a URL do navegador ao selecionar a cor? Default: true */
+  pushUrl?: boolean;
 }
 
 const ChevronUp = () => (
@@ -33,7 +37,7 @@ const ChevronUp = () => (
   </svg>
 );
 
-export default function ColorVariantSelector({ colors, selectedUrl }: Props) {
+export default function ColorVariantSelector({ colors, selectedUrl, pushUrl = true }: Props) {
   // Encontra o index do produto selecionado pela URL atual
   const initialIndex = Math.max(
     0,
@@ -55,7 +59,12 @@ export default function ColorVariantSelector({ colors, selectedUrl }: Props) {
   const selected = colors[selectedIdx.value] ?? colors[0];
 
   return (
-    <div class="flex flex-col gap-[10px] w-full mt-2">
+    <div 
+      class="flex flex-col gap-[10px] w-full mt-2"
+      hx-target="closest section"
+      hx-swap="outerHTML show:none"
+      hx-sync="this:replace"
+    >
       {/* Label */}
       <span class="text-sm text-[#212121]">
         Selecione a cor de desejo
@@ -69,6 +78,11 @@ export default function ColorVariantSelector({ colors, selectedUrl }: Props) {
             <a
               key={i}
               href={color.url}
+              hx-get={color.sectionUrl}
+              hx-push-url={pushUrl ? color.url : undefined}
+              onClick={(e) => {
+                selectedIdx.value = i;
+              }}
               title={color.name}
               aria-label={`Selecionar cor: ${color.name}`}
               class={clx(
@@ -93,7 +107,7 @@ export default function ColorVariantSelector({ colors, selectedUrl }: Props) {
 
       {/* ── Dropdown expandível (details/summary nativo — sem JS) ── */}
       <details class="border border-[#E2E2E2] rounded-lg overflow-hidden w-full group">
-        <summary class="flex items-center gap-3 px-4 py-[10px] bg-white cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden">
+        <summary class="flex items-center gap-3 px-4 py-[10px] bg-white-15 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden">
           {/* Swatch circle 40px */}
           <div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border border-[#F0F0F0]">
             <img
@@ -129,12 +143,17 @@ export default function ColorVariantSelector({ colors, selectedUrl }: Props) {
               <a
                 key={i}
                 href={color.url}
+                hx-get={color.sectionUrl}
+                hx-push-url={pushUrl ? color.url : undefined}
+                onClick={(e) => {
+                  selectedIdx.value = i;
+                }}
                 class={clx(
                   "w-full flex items-center gap-3 px-4 py-[10px] transition-colors text-left",
                   i > 0 ? "border-t border-[#F2F2F2]" : "",
                   isSelected
                     ? "bg-[#F4F0EB]"
-                    : "bg-white hover:bg-[#FAFAFA]",
+                    : "bg-white-15 hover:bg-[#FAFAFA]",
                 )}
               >
                 {/* Swatch circle 36px */}

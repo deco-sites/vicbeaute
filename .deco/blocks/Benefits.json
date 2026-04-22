@@ -1,0 +1,38 @@
+{
+  "__resolveType": "site/sections/Content/Benefits.tsx",
+  "title": "Porque você vai amar",
+  "cards": [
+    {
+      "image": {
+        "desktop": "https://assets.decocache.com/vicbeaute/2d0a1c90-c2f3-4cfb-abb7-bf5a432d7640/Rectangle-3805.png",
+        "mobile": "https://assets.decocache.com/vicbeaute/1713716c-c94d-46d0-b26e-c5ab1a110d26/Rectangle-3805.png"
+      },
+      "alt": "Benefício 1",
+      "text": "3 em 1: blush, batom e sombra"
+    },
+    {
+      "image": {
+        "desktop": "https://assets.decocache.com/vicbeaute/21c3a149-0171-4fbf-ac16-80b03216e7ea/Rectangle-3805.png",
+        "mobile": "https://assets.decocache.com/vicbeaute/844cfa4a-639f-46c6-94ab-0adc7f9f86fb/Rectangle-3805.png"
+      },
+      "alt": "Benefício 2",
+      "text": "Textura cremosa e fácil de esfumar"
+    },
+    {
+      "image": {
+        "desktop": "https://assets.decocache.com/vicbeaute/626e7231-7faa-4a4b-a6d2-8f29457fed3e/Rectangle-3805.png",
+        "mobile": "https://assets.decocache.com/vicbeaute/1f2e5e82-4d4f-4e78-aafe-fccfe5c44c43/Rectangle-3805.png"
+      },
+      "alt": "Benefício 3",
+      "text": "Resultado natural, sem pesar"
+    },
+    {
+      "image": {
+        "desktop": "https://assets.decocache.com/vicbeaute/7b6cdb75-e5eb-4536-8202-296f7c91f154/Rectangle-3805.png",
+        "mobile": "https://assets.decocache.com/vicbeaute/5d325592-530b-4c37-888a-85930ac15b48/Rectangle-3805.png"
+      },
+      "alt": "Benefício 4",
+      "text": "Ideal para o dia a dia e para levar na bolsa"
+    }
+  ]
+}

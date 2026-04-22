@@ -1,0 +1,137 @@
+{
+  "name": "Dia das mães",
+  "path": "/dia-das-maes",
+  "sections": [
+    {
+      "__resolveType": "Header"
+    },
+    {
+      "__resolveType": "site/sections/Images/Carousel.tsx",
+      "images": [
+        {
+          "mobile": "https://assets.decocache.com/vicbeaute/6ef1af61-2ae9-4dcf-b8ea-c7b853d9d378/Frame-1984078244.png",
+          "widthMobile": 375,
+          "heightMobile": 640,
+          "alt": "Banner image",
+          "action": {
+            "href": "#"
+          },
+          "showContent": true,
+          "title": "Maquiagem completa em um só stick",
+          "text": "Blush, batom e sombra para facilitar sua rotina.",
+          "cto": "Saiba mais",
+          "desktop": "https://assets.decocache.com/vicbeaute/fb3766d6-e477-4a6f-b8ac-844ce99c3645/Banner-Hero.png",
+          "widthDesktop": 1440,
+          "heightDesktop": 602
+        }
+      ],
+      "showContent": false,
+      "dotsDesktop": false
+    },
+    {
+      "__resolveType": "Benefits"
+    },
+    {
+      "__resolveType": "site/sections/Content/ImageTextBanner.tsx",
+      "content": {
+        "kicker": "Land Page Stick Tudo",
+        "title": "Feito para quem quer se maquiar sem complicação",
+        "description": "<p><span>O Stick Tudo nasceu para quem não é expert,</span><br><span>mas quer se sentir bem. Ele resolve a maquiagem inteira em poucos minutos.</span></p>",
+        "button": {
+          "label": "Compre aqui",
+          "url": "/stick-tudo-saude/p?skuId=11"
+        }
+      },
+      "image": {
+        "desktop": "https://assets.decocache.com/vicbeaute/beee5d19-e106-433a-8b74-da787f08fdbb/VIC_ECOMM_CASTING-63-ETEREO-1.png",
+        "mobile": "https://assets.decocache.com/vicbeaute/09b95f3b-4565-4b37-9fa8-c8d911e5335a/Rectangle-3.png"
+      },
+      "imagePosition": "right"
+    },
+    {
+      "__resolveType": "site/sections/Content/QuoteBanner.tsx",
+      "quote": {
+        "text": "<p><span style=\"font-size: 24px\">“Bochechas coradas e com um ar de saúde? É pra já! Item coringa no nécessaire, esse bastão multifuncional tem textura cremosa que torna o uso à prova de erros. A intensidade da cor fica a nosso critério, já que é fácil de esfumar e possibilita a construção de camadas de uma forma delicada e suave.”</span></p>",
+        "author": "Revista Glamour"
+      },
+      "banner": {
+        "desktop": "https://assets.decocache.com/vicbeaute/ae6ca7f0-0b1b-4aea-9c6c-412042ebdf44/Rectangle-3821.png",
+        "mobile": "https://assets.decocache.com/vicbeaute/ae6ca7f0-0b1b-4aea-9c6c-412042ebdf44/Rectangle-3821.png",
+        "title": "<p>Menos produtos.</p><p>Mais praticidade.</p>",
+        "button": {
+          "label": "Ver cores disponíveis.",
+          "url": "#"
+        }
+      }
+    },
+    {
+      "__resolveType": "site/sections/Content/FeatureImageText.tsx",
+      "content": {
+        "title": "Textura cremosa que funciona de verdade",
+        "descriptionDesktop": "<p><span>O Stick Tudo nasceu para quem não é expert, mas quer se sentir bem. Ele resolve a maquiagem inteira em poucos minutos.</span></p>",
+        "descriptionMobile": "<p><span>Desliza, esfuma fácil e não pesa.</span><br><span>Não marca poros e seca confortável.</span></p>"
+      },
+      "image": {
+        "desktop": "https://assets.decocache.com/vicbeaute/c1e5638b-859d-4751-92e7-0042728fec91/VIC_ECOMM_CASTING-63-ETEREO-1.png",
+        "mobile": "https://assets.decocache.com/vicbeaute/ec1cea41-8a89-416b-9919-8bca41da0983/Rectangle-5.png",
+        "alt": "Image"
+      },
+      "imagePosition": "right"
+    },
+    {
+      "__resolveType": "site/sections/Content/AwardBanner.tsx",
+      "badge": "Prêmio Glamour de Beleza",
+      "title": "<p><span style=\"font-size: 36px\">Produto premiado e aprovado por quem entende de beleza</span></p>",
+      "subtitle": "Beleza com consciência",
+      "icons": [
+        {
+          "icon": "https://assets.decocache.com/vicbeaute/88ef9582-e3a4-4681-99c1-911404c39e84/Frame-1984078380.png",
+          "label": "Vegano"
+        },
+        {
+          "icon": "https://assets.decocache.com/vicbeaute/01d910e9-d60a-490a-a41f-841df6192a6f/Vector.png",
+          "label": "Vegano"
+        },
+        {
+          "icon": "https://assets.decocache.com/vicbeaute/f5287f08-4d77-415e-852a-9cff1d90f5c2/Frame-1984078380.png",
+          "label": "Vegano"
+        },
+        {
+          "icon": "https://assets.decocache.com/vicbeaute/48c92b85-c839-4943-af8c-48aeccdc5c64/Frame-1984078380.png",
+          "label": "Vegano"
+        }
+      ],
+      "image": {
+        "desktop": "https://assets.decocache.com/vicbeaute/a8d077c5-0125-4a6c-bea6-47a137884dc2/Frame-1984078260.png",
+        "mobile": "https://assets.decocache.com/vicbeaute/85ab866b-3e31-46a6-99d0-afb7b72ab471/Frame-1984078260.png",
+        "alt": "Image"
+      },
+      "imagePosition": "right"
+    },
+    {
+      "__resolveType": "Benefits"
+    },
+    {
+      "__resolveType": "site/sections/Product/ProductColors.tsx",
+      "skuId": "11",
+      "title": "Cores"
+    },
+    {
+      "__resolveType": "site/sections/Product/FeaturedProduct.tsx",
+      "title": "Se maquiar pode  ser simples",
+      "subtitle": "O Stick Tudo foi feito para facilitar sua rotina e valorizar sua beleza real.",
+      "skuId": "11",
+      "customProductHook": {
+        "__resolveType": "vtex/loaders/workflow/product.ts",
+        "productID": "11"
+      }
+    },
+    {
+      "__resolveType": "Footer"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}
