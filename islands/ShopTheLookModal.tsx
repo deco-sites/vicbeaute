@@ -134,7 +134,7 @@ export default function ShopTheLookModal(
         <div class="w-full flex flex-col relative xl:gap-4">
           {/* Header visivel no topo da imagem no Desktop, em cima no Mobile? Fica melhor integrado no topo da img */}
           <div class="bg-white px-5 pt-5 pb-[13px] xl:px-0 xl:py-0 z-10 flex flex-col lg:shadow-none">
-            <h2 class="text-[26px] lg:text-[32px] text-[#455C42] xl:text-[#CE9680] font-Queens xl:font-Hanken-Grotesk">
+            <h2 class="text-[26px] xl:text-[32px] text-[#455C42] xl:text-[#CE9680] font-Manrope xl:font-Hanken-Grotesk">
               {activeLook.title}
             </h2>
             <span class="text-[13px] text-gray-500 mt-1">
@@ -203,13 +203,13 @@ export default function ShopTheLookModal(
                   </div>
 
                   <div class="flex flex-col gap-1 pr-2">
-                    <span class="text-[14px] text-[#8a8a8a] line-clamp-2 leading-snug xl:font-Manrope xl:text-[#4D5D49]">
+                    <span class="text-[14px] line-clamp-2 leading-snug font-Manrope text-[#4D5D49]">
                       {product.name}
                     </span>
                     {corStr && (
-                      <span class="text-[13px] text-gray-500 xl:font-Manrope xl:text-[#4D5D49]">{corStr}</span>
+                      <span class="text-[14px] font-Manrope text-[#4D5D49]">{corStr}</span>
                     )}
-                    <span class="text-[14px] text-[#8a8a8a] mt-1 xl:font-Manrope xl:text-[#4D5D49]">
+                    <span class="text-[14px] mt-1 font-Manrope text-[#4D5D49]">
                        {formatPrice(price)}
                     </span>
                   </div>
@@ -221,18 +221,15 @@ export default function ShopTheLookModal(
           {/* Fixed Bottom Action */}
           <div class="xl:pt-[10px] xl:rounded-full absolute bottom-0 left-0 w-full border-gray-100 xl:px-0 xl:py-0 px-6 py-5 z-20">
             <button
-              class={`w-full xl:rounded-full py-[14px] xl:px-8 text-[13px] font-bold tracking-widest uppercase transition-all rounded-sm flex items-center justify-center xl:justify-between gap-3 shadow-md ${
+              class={`w-full xl:rounded-full py-[14px] xl:px-8 text-[14px] font-bold tracking-widest uppercase transition-all rounded-sm flex items-center justify-center xl:justify-between gap-3 shadow-md ${
                 selectedProductIds.size > 0
-                  ? "bg-[#556b50] text-[#EBE8E3] hover:bg-[#455C42]"
+                  ? "bg-[#556b50] text-[#FAFAFA] hover:bg-[#455C42]"
                   : "bg-[#e5e5e5] text-white-15 pointer-events-none"
               }`}
               onClick={handleAddToCart}
             >
-              <span class="xl:whitespace-nowrap flex items-center xl:font-Manrope xl:font-bold xl:font[12px] gap-1">
+              <span class="xl:whitespace-nowrap flex items-center font-Manrope font-bold font[14px] gap-1">
                 ADICIONAR PRODUTOS
-                {selectedProductIds.size > 0 && (
-                  <span class="xl:hidden">({selectedProductIds.size})</span>
-                )}
               </span>
               <div class="xl:-translate-y-[3px]">
                 <Icon id="bag-shop-the-look" size={24} />

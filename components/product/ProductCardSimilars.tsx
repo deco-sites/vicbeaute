@@ -168,10 +168,10 @@ function ProductCardSimilars({
 
       <div class="xl:px-3 px-2 xl:pt-[14px] pt-[10px] xl:pb-4 pb-[11px] flex flex-col flex-grow">
         <a href={relativeUrl} class="block flex-grow focus:outline-none">
-          <span class="font-Hanken-Grotesk xl:text-[12px] text-vc-10 text-[#4c4c4c] line-clamp-1">
+          <span class="font-Hanken-Grotesk xl:text-[12px] text-vc-10 text-[#363931] line-clamp-1">
             {colorProp || variantName}
           </span>
-          <h3 class="text-[#363931] font-Hanken-Grotesk text-[16px] line-clamp-2 min-h-[42px] flex items-center">
+          <h3 class="text-[#363931] font-Hanken-Grotesk xl:text-[16px] text-[14px] line-clamp-2 min-h-[42px] flex items-center">
             {title}
           </h3>
 
