@@ -155,6 +155,300 @@
       "@type": "SiteNavigationElement",
       "url": "/novos",
       "name": "Novos",
+      "columns": [],
+      "cards": []
+    },
+    {
+      "children": [
+        {
+          "image": [],
+          "children": [
+            {
+              "children": [],
+              "name": "Subcategoria 1",
+              "url": "aa"
+            },
+            {
+              "children": [],
+              "name": "aaaaaa"
+            }
+          ],
+          "name": "Lorem Ipsum",
+          "url": "/lorem-ipsum"
+        },
+        {
+          "image": [],
+          "children": [
+            {
+              "children": [],
+              "name": "aaaaaaaaaaa"
+            }
+          ],
+          "url": "/lorem-ipsum"
+        },
+        {
+          "children": [],
+          "name": "Lorem Ipsum",
+          "url": "/lorem-ipsum"
+        }
+      ],
+      "@type": "SiteNavigationElement",
+      "url": "/labios",
+      "columns": [
+        {
+          "links": [
+            {
+              "label": "Mais vendidos",
+              "url": "/mais-vendidos"
+            },
+            {
+              "label": "Lançamentos",
+              "url": "/lancamentos"
+            },
+            {
+              "label": "Coleções",
+              "url": "/colecoes"
+            },
+            {
+              "label": "Kits",
+              "url": "#"
+            },
+            {
+              "label": "Ver Todos",
+              "url": "#",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "links": [
+            {
+              "label": "Corretivo",
+              "url": "#"
+            },
+            {
+              "label": "Delineador",
+              "url": "#"
+            },
+            {
+              "label": "Lapiseira",
+              "url": "#"
+            },
+            {
+              "label": "Máscara de Cílios",
+              "url": "#"
+            },
+            {
+              "label": "Máscara de Sobrancelha",
+              "url": "#"
+            },
+            {
+              "label": "Stick Brilhoso",
+              "url": "Stick Tudo"
+            },
+            {
+              "label": "Stick Tudo",
+              "url": "#"
+            }
+          ],
+          "title": "Produtos"
+        },
+        {
+          "links": [
+            {
+              "label": "Batom",
+              "url": "/batom"
+            },
+            {
+              "label": "Gloss",
+              "url": "/gloss"
+            }
+          ],
+          "title": "Produtos"
+        }
+      ],
+      "cards": [
+        {
+          "image": "https://assets.decocache.com/vicbeaute/832e38a3-0b54-44b4-b6a7-a23b69835942/Small_Banner_Desktop_ad6c282e-dd07-437a-bd25-581cd15579a9.jpg.png",
+          "title": "Skulls no are",
+          "description": "Production feature too email keep pushback skulls diligence our let's. Speed blue dear leverage can't teams. Old submit on circle.",
+          "buttonText": "Explorar",
+          "url": "/explorar"
+        },
+        {
+          "image": "https://assets.decocache.com/vicbeaute/832e38a3-0b54-44b4-b6a7-a23b69835942/Small_Banner_Desktop_ad6c282e-dd07-437a-bd25-581cd15579a9.jpg.png",
+          "title": "Skulls no are",
+          "description": "Production feature too email keep pushback skulls diligence our let's. Speed blue dear leverage can't teams. Old submit on circle.",
+          "buttonText": "Explorar",
+          "url": "/explorar"
+        }
+      ],
+      "name": "Lábios"
+    },
+    {
+      "children": [
+        {
+          "image": [],
+          "children": [
+            {
+              "children": [],
+              "name": "Subcategoria 1",
+              "url": "aa"
+            },
+            {
+              "children": [],
+              "name": "aaaaaa"
+            }
+          ],
+          "name": "Lorem Ipsum",
+          "url": "/lorem-ipsum"
+        },
+        {
+          "image": [],
+          "children": [
+            {
+              "children": [],
+              "name": "aaaaaaaaaaa"
+            }
+          ],
+          "url": "/lorem-ipsum"
+        },
+        {
+          "children": [],
+          "name": "Lorem Ipsum",
+          "url": "/lorem-ipsum"
+        }
+      ],
+      "@type": "SiteNavigationElement",
+      "url": "/olhos",
+      "columns": [
+        {
+          "links": [
+            {
+              "label": "Mais vendidos",
+              "url": "/mais-vendidos"
+            },
+            {
+              "label": "Lançamentos",
+              "url": "/lancamentos"
+            },
+            {
+              "label": "Coleções",
+              "url": "/colecoes"
+            },
+            {
+              "label": "Kits",
+              "url": "#"
+            },
+            {
+              "label": "Ver Todos",
+              "url": "#",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "links": [
+            {
+              "label": "Corretivo",
+              "url": "#"
+            },
+            {
+              "label": "Delineador",
+              "url": "#"
+            },
+            {
+              "label": "Lapiseira",
+              "url": "#"
+            },
+            {
+              "label": "Máscara de Cílios",
+              "url": "#"
+            },
+            {
+              "label": "Máscara de Sobrancelha",
+              "url": "#"
+            },
+            {
+              "label": "Stick Brilhoso",
+              "url": "Stick Tudo"
+            },
+            {
+              "label": "Stick Tudo",
+              "url": "#"
+            }
+          ],
+          "title": "Produtos"
+        },
+        {
+          "links": [
+            {
+              "label": "Batom",
+              "url": "/batom"
+            },
+            {
+              "label": "Gloss",
+              "url": "/gloss"
+            }
+          ],
+          "title": "Produtos"
+        }
+      ],
+      "cards": [
+        {
+          "image": "https://assets.decocache.com/vicbeaute/832e38a3-0b54-44b4-b6a7-a23b69835942/Small_Banner_Desktop_ad6c282e-dd07-437a-bd25-581cd15579a9.jpg.png",
+          "title": "Skulls no are",
+          "description": "Production feature too email keep pushback skulls diligence our let's. Speed blue dear leverage can't teams. Old submit on circle.",
+          "buttonText": "Explorar",
+          "url": "/explorar"
+        },
+        {
+          "image": "https://assets.decocache.com/vicbeaute/832e38a3-0b54-44b4-b6a7-a23b69835942/Small_Banner_Desktop_ad6c282e-dd07-437a-bd25-581cd15579a9.jpg.png",
+          "title": "Skulls no are",
+          "description": "Production feature too email keep pushback skulls diligence our let's. Speed blue dear leverage can't teams. Old submit on circle.",
+          "buttonText": "Explorar",
+          "url": "/explorar"
+        }
+      ],
+      "name": "Olhos"
+    },
+    {
+      "children": [
+        {
+          "image": [],
+          "children": [
+            {
+              "children": [],
+              "name": "Subcategoria 1",
+              "url": "aa"
+            },
+            {
+              "children": [],
+              "name": "aaaaaa"
+            }
+          ],
+          "name": "Lorem Ipsum",
+          "url": "/lorem-ipsum"
+        },
+        {
+          "image": [],
+          "children": [
+            {
+              "children": [],
+              "name": "aaaaaaaaaaa"
+            }
+          ],
+          "url": "/lorem-ipsum"
+        },
+        {
+          "children": [],
+          "name": "Lorem Ipsum",
+          "url": "/lorem-ipsum"
+        }
+      ],
+      "@type": "SiteNavigationElement",
+      "url": "/face",
+      "name": "Faces",
       "columns": [
         {
           "links": [
@@ -246,32 +540,171 @@
       ]
     },
     {
+      "children": [
+        {
+          "image": [],
+          "children": [
+            {
+              "children": [],
+              "name": "Subcategoria 1",
+              "url": "aa"
+            },
+            {
+              "children": [],
+              "name": "aaaaaa"
+            }
+          ],
+          "name": "Lorem Ipsum",
+          "url": "/lorem-ipsum"
+        },
+        {
+          "image": [],
+          "children": [
+            {
+              "children": [],
+              "name": "aaaaaaaaaaa"
+            }
+          ],
+          "url": "/lorem-ipsum"
+        },
+        {
+          "children": [],
+          "name": "Lorem Ipsum",
+          "url": "/lorem-ipsum"
+        }
+      ],
       "@type": "SiteNavigationElement",
-      "url": "/boca",
-      "name": "Boca",
-      "children": []
-    },
-    {
-      "@type": "SiteNavigationElement",
-      "url": "/olhos",
-      "name": "Olhos",
-      "children": []
-    },
-    {
-      "@type": "SiteNavigationElement",
-      "url": "/faces",
-      "name": "Faces",
-      "children": []
-    },
-    {
-      "@type": "SiteNavigationElement",
-      "url": "/kits",
+      "url": "/kit",
       "name": "Kits",
-      "children": []
+      "columns": [],
+      "cards": []
     },
     {
-      "children": [],
-      "name": "Mais"
+      "children": [
+        {
+          "image": [],
+          "children": [
+            {
+              "children": [],
+              "name": "Subcategoria 1",
+              "url": "aa"
+            },
+            {
+              "children": [],
+              "name": "aaaaaa"
+            }
+          ],
+          "name": "Lorem Ipsum",
+          "url": "/lorem-ipsum"
+        },
+        {
+          "image": [],
+          "children": [
+            {
+              "children": [],
+              "name": "aaaaaaaaaaa"
+            }
+          ],
+          "url": "/lorem-ipsum"
+        },
+        {
+          "children": [],
+          "name": "Lorem Ipsum",
+          "url": "/lorem-ipsum"
+        }
+      ],
+      "@type": "SiteNavigationElement",
+      "url": "/mais",
+      "name": "Mais",
+      "columns": [
+        {
+          "links": [
+            {
+              "label": "Mais vendidos",
+              "url": "/mais-vendidos"
+            },
+            {
+              "label": "Lançamentos",
+              "url": "/lancamentos"
+            },
+            {
+              "label": "Coleções",
+              "url": "/colecoes"
+            },
+            {
+              "label": "Kits",
+              "url": "#"
+            },
+            {
+              "label": "Ver Todos",
+              "url": "#",
+              "bold": true
+            }
+          ]
+        },
+        {
+          "links": [
+            {
+              "label": "Corretivo",
+              "url": "#"
+            },
+            {
+              "label": "Delineador",
+              "url": "#"
+            },
+            {
+              "label": "Lapiseira",
+              "url": "#"
+            },
+            {
+              "label": "Máscara de Cílios",
+              "url": "#"
+            },
+            {
+              "label": "Máscara de Sobrancelha",
+              "url": "#"
+            },
+            {
+              "label": "Stick Brilhoso",
+              "url": "Stick Tudo"
+            },
+            {
+              "label": "Stick Tudo",
+              "url": "#"
+            }
+          ],
+          "title": "Produtos"
+        },
+        {
+          "links": [
+            {
+              "label": "Batom",
+              "url": "/batom"
+            },
+            {
+              "label": "Gloss",
+              "url": "/gloss"
+            }
+          ],
+          "title": "Produtos"
+        }
+      ],
+      "cards": [
+        {
+          "image": "https://assets.decocache.com/vicbeaute/832e38a3-0b54-44b4-b6a7-a23b69835942/Small_Banner_Desktop_ad6c282e-dd07-437a-bd25-581cd15579a9.jpg.png",
+          "title": "Skulls no are",
+          "description": "Production feature too email keep pushback skulls diligence our let's. Speed blue dear leverage can't teams. Old submit on circle.",
+          "buttonText": "Explorar",
+          "url": "/explorar"
+        },
+        {
+          "image": "https://assets.decocache.com/vicbeaute/832e38a3-0b54-44b4-b6a7-a23b69835942/Small_Banner_Desktop_ad6c282e-dd07-437a-bd25-581cd15579a9.jpg.png",
+          "title": "Skulls no are",
+          "description": "Production feature too email keep pushback skulls diligence our let's. Speed blue dear leverage can't teams. Old submit on circle.",
+          "buttonText": "Explorar",
+          "url": "/explorar"
+        }
+      ]
     }
   ],
   "loading": "eager",
