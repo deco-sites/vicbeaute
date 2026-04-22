@@ -105,8 +105,8 @@ function Aside({
       {drawer !== "sidemenu-drawer" && (
         <div
           class={drawer === "search-drawer"
-            ? "drawer-fake-header flex justify-between items-center h-14 ml-2 w-full absolute"
-            : "drawer-fake-header flex justify-between items-center w-full"}
+            ? "drawer-fake-header flex justify-between items-center h-14 ml-2 w-full absolute z-50 pointer-events-none pl-4"
+            : "drawer-fake-header flex justify-between items-center w-full relative z-50 pl-4"}
         >
           <span class="order-3">
             <span
@@ -151,7 +151,7 @@ function Aside({
             aria-label="X"
             id={drawer === "minicart-drawer" ? "closeminicart" : undefined}
             class={drawer === "search-drawer"
-              ? "btn btn-ghost order-1 absolute right-vc-26 p-0 max-h-5 hover:bg-transparent top-vc-11"
+              ? "btn btn-ghost order-1 absolute right-vc-26 p-0 max-h-5 hover:bg-transparent top-vc-11 pointer-events-auto"
               : "btn btn-ghost order-1 absolute left-7 p-0 max-h-5 hover:bg-transparent top-1"}
           >
             <Icon
