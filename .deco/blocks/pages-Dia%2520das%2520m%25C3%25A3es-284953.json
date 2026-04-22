@@ -127,6 +127,10 @@
       }
     },
     {
+      "__resolveType": "site/sections/Social/InstagramFeed.tsx",
+      "title": "Junte-se a nossa comunidade"
+    },
+    {
       "__resolveType": "Footer"
     }
   ],

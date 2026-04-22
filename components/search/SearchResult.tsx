@@ -13,7 +13,7 @@ import Sort from "./Sort.tsx";
 import { useDevice, useScript, useSection } from "@deco/deco/hooks";
 import { type SectionProps } from "@deco/deco";
 import SeoText from "../ui/SEOText.tsx";
-import NotFoundSearch from "../../islands/SearchError.tsx";
+import NotFoundSection from "../../sections/Content/NotFound.tsx";
 import ErrorBreadcrumbs from "./searchError/searchErrorBreadcrumb.tsx";
 import PromoCard, { PromoCardProps } from "./PromoCard.tsx";
 export interface Layout {
@@ -23,6 +23,8 @@ export interface Layout {
    */
   pagination?: "show-more" | "pagination";
 }
+import { type Section } from "@deco/deco/blocks";
+
 export interface Props {
   /** @title Integration */
   page: ProductListingPage | null;
@@ -46,6 +48,12 @@ export interface Props {
   promoCards?: PromoCardProps[];
 
   /**
+   * @title Bloco de Erro 404 Customizado
+   * @description Este bloco será renderizado na tela de 404, podendo ser configurada as imagens e textos pela agência.
+   */
+  notFoundFallback?: Section;
+
+  /**
    * @title Texto SEO
    * @default
    */
@@ -67,13 +75,7 @@ export interface Props {
   // textSeo?: RichText;
 }
 
-function NotFound() {
-  return (
-    <div class="w-full flex justify-center items-center py-10">
-      <span>Not Found!</span>
-    </div>
-  );
-}
+
 const useUrlRebased = (overrides: string | undefined, base: string) => {
   let url: string | undefined = undefined;
   if (overrides) {
@@ -452,10 +454,14 @@ function SearchResult({ page, url, ...props }: SectionProps<typeof loader>) {
   const q = searchParams.get("q")?.trim();
 
   if (!page) {
+    if (props.notFoundFallback) {
+      return (
+        <props.notFoundFallback.Component {...props.notFoundFallback.props} />
+      );
+    }
     return (
       <>
-        <ErrorBreadcrumbs titleBreadcrumb="Erro 404" />
-        <NotFoundSearch />
+        <NotFoundSection />
       </>
     );
   }
