@@ -1,5 +1,5 @@
 {
-  "path": "/*",
+  "path": "/labios",
   "sections": {
     "__resolveType": "website/flags/multivariate.ts",
     "variants": [
