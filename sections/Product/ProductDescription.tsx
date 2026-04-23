@@ -51,7 +51,7 @@ export default function ProductDescription({ page }: Props) {
     <div id="product-description" class="w-full py-8 lg:py-16">
       <div
         class={clx(
-          "container flex flex-col lg:flex-row max-w-[1280px] px-5 lg:px-0 bg-[#ffffff]",
+          "container flex flex-col lg:flex-row max-w-[1280px] px-5 lg:px-0 xl:px-[30px] xl2:px-0 bg-[#ffffff]",
         )}
       >
         {/* Mobile: Text on top or Image on top? Image on top. */}

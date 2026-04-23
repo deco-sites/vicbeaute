@@ -462,3 +462,15 @@ ul.closed {
   color: #ce9680 !important;
   font-size: 24px !important;
 }
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+.drawer-side>:not(.drawer-overlay){
+  transform: translateX(-105%);
+}
+ 
