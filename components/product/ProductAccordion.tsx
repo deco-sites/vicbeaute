@@ -56,7 +56,7 @@ export default function ProductAccordion({ page }: Props) {
 
   const items = [
     {
-       title: (
+      title: (
         <span className="text-base text-black-5 lg:font-bold">
           Descrição
         </span>
@@ -80,7 +80,7 @@ export default function ProductAccordion({ page }: Props) {
         <span className="text-base text-black-5 lg:font-bold">
           Especificações
         </span>
-       ),
+      ),
       subtitle: (
         <div className="text-sm">
           {specifications.map((line, i) => {

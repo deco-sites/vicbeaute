@@ -14,7 +14,8 @@ export interface ProductSliderSimilarsProps {
 }
 
 function ProductSliderSimilars(
-  { products, itemListName, arrows = true, dots = true }: ProductSliderSimilarsProps,
+  { products, itemListName, arrows = true, dots = true }:
+    ProductSliderSimilarsProps,
 ) {
   const id = useId();
   const device = useDevice();
@@ -24,7 +25,10 @@ function ProductSliderSimilars(
   return (
     <>
       <div id={id} class="relative w-full lg:px-0 pl-3 pt-[14px]">
-        <Slider id="shelf-slider" class="lg:mr-[calc(50%-50vw)] lg:pr-[calc(50vw-50%)]">
+        <Slider
+          id="shelf-slider"
+          class="lg:mr-[calc(50%-50vw)] lg:pr-[calc(50vw-50%)]"
+        >
           {products?.map((product, index) => (
             <Slider.Item index={index}>
               <ProductCardSimilars
@@ -59,8 +63,7 @@ function ProductSliderSimilars(
               </Slider.NextButton>
             </div>
           </>
-        )}{" "}
-        {dots && (
+        )} {dots && (
           <>
             <style
               dangerouslySetInnerHTML={{

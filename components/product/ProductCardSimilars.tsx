@@ -68,8 +68,10 @@ function ProductCardSimilars({
     item?.description === "highlight"
   );
 
-  const colorProp = (product?.isVariantOf?.additionalProperty ?? product?.additionalProperty ?? [])
-    .find((a) => a.name === "Cores")?.value ?? "";
+  const colorProp =
+    (product?.isVariantOf?.additionalProperty ?? product?.additionalProperty ??
+      [])
+      .find((a) => a.name === "Cores")?.value ?? "";
 
   // Extrair Similars
   const similars = product.isSimilarTo ?? [];
@@ -178,9 +180,12 @@ function ProductCardSimilars({
           <div class="flex items-center gap-1 mt-1 h-[18px]">
             {aggregateRating && (aggregateRating.ratingValue ?? 0) > 0 && (
               <>
-                  <Icon id="star-konfidency" size={14} />
+                <Icon id="star-konfidency" size={14} />
                 <span class="font-Hanken-Grotesk text-[12px] text-[#363931] leading-none">
-                  {(aggregateRating.ratingValue ?? 0).toFixed(1).replace(".", ",")}
+                  {(aggregateRating.ratingValue ?? 0).toFixed(1).replace(
+                    ".",
+                    ",",
+                  )}
                 </span>
                 <span class="font-Hanken-Grotesk text-[12px] text-[#363931] leading-none">
                   ({aggregateRating.reviewCount})
@@ -226,7 +231,6 @@ function ProductCardSimilars({
                   width="15"
                   height="16"
                 />
-              
               </span>
             </a>
           )

@@ -23,12 +23,14 @@ export default function ImageHomeSlider({ items, interval }: Props) {
   return (
     <section id={id} className="w-full">
       <div className="relative">
-
         {/* SLIDER */}
         <Slider className="w-full">
           {items.map((item, index) => (
-            <Slider.Item index={index} key={index} className="flex flex-col items-center">
-
+            <Slider.Item
+              index={index}
+              key={index}
+              className="flex flex-col items-center"
+            >
               <a href={item.link} className="w-full flex justify-center">
                 {/* Desktop */}
                 <Image
@@ -63,7 +65,6 @@ export default function ImageHomeSlider({ items, interval }: Props) {
                   </button>
                 </a>
               </div>
-
             </Slider.Item>
           ))}
         </Slider>
@@ -75,9 +76,7 @@ export default function ImageHomeSlider({ items, interval }: Props) {
           </Slider.PrevButton>
 
           <div className="flex gap-2">
-            {items.map((_, index) => (
-              <Slider.Dot index={index} />
-            ))}
+            {items.map((_, index) => <Slider.Dot index={index} />)}
           </div>
 
           <Slider.NextButton className="cursor-pointer">

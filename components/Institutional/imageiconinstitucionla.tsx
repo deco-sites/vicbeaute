@@ -3,52 +3,52 @@ import Image from "apps/website/components/Image.tsx";
 import { useDevice as useDevice } from "@deco/deco/hooks";
 
 export interface Props {
-    firstImage: {
-        mobile: {
-            image: ImageWidget;
-            href?: string;
-            alt: string;
-            width: number;
-            height: number;
-        };
-        tablet: {
-            image: ImageWidget;
-            href?: string;
-            alt: string;
-            width: number;
-            height: number;
-        };
-        desktop: {
-            image: ImageWidget;
-            href?: string;
-            alt: string;
-            width: number;
-            height: number;
-        };
-    }
-    secondImage: {
-        mobile: {
-            image: ImageWidget;
-            href?: string;
-            alt: string;
-            width: number;
-            height: number;
-        };
-        tablet: {
-            image: ImageWidget;
-            href?: string;
-            alt: string;
-            width: number;
-            height: number;
-        };
-        desktop: {
-            image: ImageWidget;
-            href?: string;
-            alt: string;
-            width: number;
-            height: number;
-        };
-    }  
+  firstImage: {
+    mobile: {
+      image: ImageWidget;
+      href?: string;
+      alt: string;
+      width: number;
+      height: number;
+    };
+    tablet: {
+      image: ImageWidget;
+      href?: string;
+      alt: string;
+      width: number;
+      height: number;
+    };
+    desktop: {
+      image: ImageWidget;
+      href?: string;
+      alt: string;
+      width: number;
+      height: number;
+    };
+  };
+  secondImage: {
+    mobile: {
+      image: ImageWidget;
+      href?: string;
+      alt: string;
+      width: number;
+      height: number;
+    };
+    tablet: {
+      image: ImageWidget;
+      href?: string;
+      alt: string;
+      width: number;
+      height: number;
+    };
+    desktop: {
+      image: ImageWidget;
+      href?: string;
+      alt: string;
+      width: number;
+      height: number;
+    };
+  };
   text?: string;
 }
 

@@ -55,10 +55,35 @@ function ValueItem({ url, selected, label, quantity }: FilterToggleValue) {
     >
       <div class="flex items-center gap-[12px]">
         {/* Nova Checkbox UI conforme Print */}
-        <div class={`w-5 h-5 flex flex-shrink-0 items-center justify-center rounded-[3px] border border-[#d4d4d4] transition-colors ${selected ? "bg-[#556B50] border-[#556B50]" : "bg-white group-hover:border-[#8a8a8a]"}`}>
-           {selected && <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>}
+        <div
+          class={`w-5 h-5 flex flex-shrink-0 items-center justify-center rounded-[3px] border border-[#d4d4d4] transition-colors ${
+            selected
+              ? "bg-[#556B50] border-[#556B50]"
+              : "bg-white group-hover:border-[#8a8a8a]"
+          }`}
+        >
+          {selected && (
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          )}
         </div>
-        <span class={`text-[15px] tracking-wide ${selected ? "text-[#191C1F] font-medium" : "text-[#4a4a4a]"}`}>{label}</span>
+        <span
+          class={`text-[15px] tracking-wide ${
+            selected ? "text-[#191C1F] font-medium" : "text-[#4a4a4a]"
+          }`}
+        >
+          {label}
+        </span>
       </div>
     </a>
   );
@@ -91,8 +116,10 @@ function FilterValues({ key, values, label }: FilterToggle) {
     max = Math.max(...arr);
 
     let url: any | undefined = values[0]?.url?.split("&filter.price")[0];
-    let urlChanged: any | undefined = values[0]?.url?.split('&filter.price=')[1]
-		let minMax: any | undefined = urlChanged?.split('%3A')
+    let urlChanged: any | undefined = values[0]?.url?.split(
+      "&filter.price=",
+    )[1];
+    let minMax: any | undefined = urlChanged?.split("%3A");
 
     return (
       <FilterRange
@@ -160,7 +187,10 @@ function Filters({ filters, sortOptions, url }: Props) {
           ? openFilters[filter.key]
           : false; // O print mostra itens recolhidos por padrão na maioria
         return (
-          <li key={filter.key} class="flex flex-col border-b border-[#E1E1E1] last:border-none">
+          <li
+            key={filter.key}
+            class="flex flex-col border-b border-[#E1E1E1] last:border-none"
+          >
             <button
               type="button"
               onClick={() => toggleFilter(filter.key)}

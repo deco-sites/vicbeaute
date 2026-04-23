@@ -147,7 +147,7 @@ function ProductCard({
 
       <a href={relativeUrl} class="py-1 px-1">
         <span class="font-Hanken-Grotesk xl:text-[12px] text-vc-10 text-[#4c4c4c] line-clamp-1">
-          {variantName }
+          {variantName}
         </span>
         <h3 class="font-Hanken-Grotesk xl:text-[16px] font-medium xl:font-regular text-xs text-black-35 line-clamp-2 min-h-8">
           {title}

@@ -1,1 +1,1 @@
- export { default } from "../../components/search/searchError/searchErrorBreadcrumb.tsx";
+export { default } from "../../components/search/searchError/searchErrorBreadcrumb.tsx";

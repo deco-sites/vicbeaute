@@ -6,15 +6,15 @@ export interface Props {
    * @title Texto SEO
    */
   textSeo?: {
-    /** 
-     * @title Título H1 
+    /**
+     * @title Título H1
      */
     h1title?: string;
-    /** 
-     * @title Subtítulo H2 
+    /**
+     * @title Subtítulo H2
      */
     h2subTitle?: string;
-    /** 
+    /**
      * @title Texto
      * @format textarea
      */
@@ -116,7 +116,7 @@ function SeoText({ textSeo }: Props) {
                 .seo-checkbox-${id}:not(:checked) ~ .seo-btn-${id} .seo-text-less {
                   display: none;
                 }
-              `
+              `,
             }}
           />
           <input

@@ -1,5 +1,3 @@
-
-
 export interface Props {
   /**
    * @title Título do Card
@@ -23,7 +21,7 @@ const Cardinstitucional = ({ title, text }: Props) => {
               {title}
             </h2>
           )}
-          
+
           {text && (
             <div
               class="px-3 text-big mobile-text institutionalText bg-[#F4DFD4] border-l-[3px] border-[#A6705A] rounded-lg p-6 pr-3"
