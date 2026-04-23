@@ -4,187 +4,391 @@
   "default": {
     "possiblePaths": []
   },
-  "sections": [
-    {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "commerce/sections/Seo/SeoPDPV2.tsx",
-        "jsonLD": {
-          "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
-          "advancedConfigs": {
-            "includeOriginalAttributes": []
+  "sections": {
+    "__resolveType": "website/flags/multivariate.ts",
+    "variants": [
+      {
+        "value": [
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "commerce/sections/Seo/SeoPDPV2.tsx",
+              "jsonLD": {
+                "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+                "advancedConfigs": {
+                  "includeOriginalAttributes": []
+                },
+                "slug": {
+                  "__resolveType": "website/functions/requestToParam.ts",
+                  "param": "slug"
+                },
+                "similars": true,
+                "indexingSkus": true
+              },
+              "jsonLDs": [
+                {}
+              ]
+            }
           },
-          "slug": {
-            "__resolveType": "website/functions/requestToParam.ts",
-            "param": "slug"
+          {
+            "__resolveType": "Header"
           },
-          "similars": true,
-          "indexingSkus": true
-        },
-        "jsonLDs": [
-          {}
-        ]
-      }
-    },
-    {
-      "__resolveType": "Header"
-    },
-    {
-      "__resolveType": "site/sections/Product/ProductDetails.tsx",
-      "page": {
-        "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
-        "advancedConfigs": {
-          "includeOriginalAttributes": []
-        },
-        "slug": {
-          "__resolveType": "website/functions/requestToParam.ts",
-          "param": "slug"
-        },
-        "similars": true
-      }
-    },
-    {
-      "__resolveType": "site/sections/Product/ProductDescription.tsx",
-      "page": {
-        "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
-        "advancedConfigs": {
-          "includeOriginalAttributes": []
-        },
-        "simulationBehavior": "default",
-        "slug": {
-          "__resolveType": "website/functions/requestToParam.ts",
-          "param": "slug"
+          {
+            "__resolveType": "site/sections/Product/ProductDetailsKit.tsx",
+            "page": {
+              "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+              "advancedConfigs": {
+                "includeOriginalAttributes": []
+              },
+              "slug": {
+                "__resolveType": "website/functions/requestToParam.ts",
+                "param": "slug"
+              },
+              "similars": true,
+              "simulationBehavior": "default"
+            }
+          },
+          {
+            "__resolveType": "site/sections/Product/ProductDescriptionKit.tsx",
+            "page": {
+              "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+              "slug": {
+                "__resolveType": "website/functions/requestToParam.ts",
+                "param": "slug"
+              },
+              "advancedConfigs": {
+                "includeOriginalAttributes": []
+              },
+              "simulationBehavior": "default",
+              "similars": true
+            }
+          },
+          {
+            "__resolveType": "site/sections/Product/ProductTips.tsx",
+            "page": {
+              "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+              "slug": {
+                "__resolveType": "website/functions/requestToParam.ts",
+                "param": "slug"
+              },
+              "advancedConfigs": {
+                "includeOriginalAttributes": []
+              },
+              "simulationBehavior": "default"
+            }
+          },
+          {
+            "__resolveType": "site/sections/Product/ProductComposition.tsx",
+            "page": {
+              "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+              "slug": {
+                "__resolveType": "website/functions/requestToParam.ts",
+                "param": "slug"
+              },
+              "advancedConfigs": {
+                "includeOriginalAttributes": []
+              },
+              "simulationBehavior": "default"
+            }
+          },
+          {
+            "__resolveType": "site/sections/Product/ProductBuyTogether.tsx",
+            "page": {
+              "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+              "advancedConfigs": {
+                "includeOriginalAttributes": []
+              },
+              "simulationBehavior": "default",
+              "slug": {
+                "__resolveType": "website/functions/requestToParam.ts",
+                "param": "slug"
+              },
+              "similars": false
+            },
+            "productTogether": {
+              "__resolveType": "site/loaders/product/buyTogetherSuggestions.ts",
+              "page": {
+                "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+                "slug": {
+                  "__resolveType": "website/functions/requestToParam.ts",
+                  "param": "slug"
+                },
+                "advancedConfigs": {
+                  "includeOriginalAttributes": []
+                },
+                "simulationBehavior": "default"
+              },
+              "count": 1
+            }
+          },
+          {
+            "__resolveType": "site/sections/Product/ProductFaq.tsx",
+            "page": {
+              "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+              "advancedConfigs": {
+                "includeOriginalAttributes": []
+              },
+              "slug": {
+                "__resolveType": "website/functions/requestToParam.ts",
+                "param": "slug"
+              },
+              "simulationBehavior": "default"
+            }
+          },
+          {
+            "__resolveType": "site/sections/Product/ProductColors.tsx",
+            "page": {
+              "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+              "advancedConfigs": {
+                "includeOriginalAttributes": []
+              },
+              "slug": {
+                "__resolveType": "website/functions/requestToParam.ts",
+                "param": "slug"
+              },
+              "simulationBehavior": "default",
+              "similars": true
+            },
+            "title": "Cores",
+            "additionalColors": {
+              "__resolveType": "vtex/loaders/legacy/relatedProductsLoader.ts",
+              "crossSelling": "similars",
+              "count": 10,
+              "id": "11"
+            }
+          },
+          {
+            "__resolveType": "site/sections/Product/ProductReviews.tsx",
+            "page": {
+              "__resolveType": "site/loaders/konfidency/productDetailsPage.ts",
+              "page": {
+                "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+                "slug": {
+                  "__resolveType": "website/functions/requestToParam.ts",
+                  "param": "slug"
+                },
+                "advancedConfigs": {
+                  "includeOriginalAttributes": []
+                },
+                "simulationBehavior": "default"
+              },
+              "customer": "vicbeaute"
+            }
+          },
+          {
+            "__resolveType": "site/sections/Product/ProductShelfSimilars.tsx",
+            "products": {
+              "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+              "props": {
+                "sort": "price:desc",
+                "collection": "137",
+                "count": 12,
+                "similars": true
+              }
+            },
+            "title": "Mais Amados"
+          },
+          {
+            "__resolveType": "Footer"
+          }
+        ],
+        "rule": {
+          "case": {
+            "type": "Includes",
+            "negate": false,
+            "pathname": "kit"
+          },
+          "__resolveType": "website/matchers/pathname.ts"
+        }
+      },
+      {
+        "value": [
+          {
+            "__resolveType": "website/sections/Rendering/Lazy.tsx",
+            "section": {
+              "__resolveType": "commerce/sections/Seo/SeoPDPV2.tsx",
+              "jsonLD": {
+                "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+                "advancedConfigs": {
+                  "includeOriginalAttributes": []
+                },
+                "slug": {
+                  "__resolveType": "website/functions/requestToParam.ts",
+                  "param": "slug"
+                },
+                "similars": true,
+                "indexingSkus": true
+              },
+              "jsonLDs": [
+                {}
+              ]
+            }
+          },
+          {
+            "__resolveType": "Header"
+          },
+          {
+            "__resolveType": "site/sections/Product/ProductDetails.tsx",
+            "page": {
+              "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+              "advancedConfigs": {
+                "includeOriginalAttributes": []
+              },
+              "slug": {
+                "__resolveType": "website/functions/requestToParam.ts",
+                "param": "slug"
+              },
+              "similars": true
+            }
+          },
+          {
+            "__resolveType": "site/sections/Product/ProductDescription.tsx",
+            "page": {
+              "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+              "slug": {
+                "__resolveType": "website/functions/requestToParam.ts",
+                "param": "slug"
+              },
+              "advancedConfigs": {
+                "includeOriginalAttributes": []
+              },
+              "simulationBehavior": "default"
+            }
+          },
+          {
+            "__resolveType": "site/sections/Product/ProductTips.tsx",
+            "page": {
+              "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+              "slug": {
+                "__resolveType": "website/functions/requestToParam.ts",
+                "param": "slug"
+              },
+              "advancedConfigs": {
+                "includeOriginalAttributes": []
+              },
+              "simulationBehavior": "default"
+            }
+          },
+          {
+            "__resolveType": "site/sections/Product/ProductComposition.tsx",
+            "page": {
+              "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+              "slug": {
+                "__resolveType": "website/functions/requestToParam.ts",
+                "param": "slug"
+              },
+              "advancedConfigs": {
+                "includeOriginalAttributes": []
+              },
+              "simulationBehavior": "default"
+            }
+          },
+          {
+            "__resolveType": "site/sections/Product/ProductBuyTogether.tsx",
+            "page": {
+              "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+              "advancedConfigs": {
+                "includeOriginalAttributes": []
+              },
+              "simulationBehavior": "default",
+              "slug": {
+                "__resolveType": "website/functions/requestToParam.ts",
+                "param": "slug"
+              },
+              "similars": false
+            },
+            "productTogether": {
+              "__resolveType": "site/loaders/product/buyTogetherSuggestions.ts",
+              "page": {
+                "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+                "slug": {
+                  "__resolveType": "website/functions/requestToParam.ts",
+                  "param": "slug"
+                },
+                "advancedConfigs": {
+                  "includeOriginalAttributes": []
+                },
+                "simulationBehavior": "default"
+              },
+              "count": 1
+            }
+          },
+          {
+            "__resolveType": "site/sections/Product/ProductFaq.tsx",
+            "page": {
+              "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+              "advancedConfigs": {
+                "includeOriginalAttributes": []
+              },
+              "slug": {
+                "__resolveType": "website/functions/requestToParam.ts",
+                "param": "slug"
+              },
+              "simulationBehavior": "default"
+            }
+          },
+          {
+            "__resolveType": "site/sections/Product/ProductColors.tsx",
+            "page": {
+              "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+              "advancedConfigs": {
+                "includeOriginalAttributes": []
+              },
+              "slug": {
+                "__resolveType": "website/functions/requestToParam.ts",
+                "param": "slug"
+              },
+              "simulationBehavior": "default",
+              "similars": true
+            },
+            "title": "Cores",
+            "additionalColors": {
+              "__resolveType": "vtex/loaders/legacy/relatedProductsLoader.ts",
+              "crossSelling": "similars",
+              "count": 10,
+              "id": "11"
+            }
+          },
+          {
+            "__resolveType": "site/sections/Product/ProductReviews.tsx",
+            "page": {
+              "__resolveType": "site/loaders/konfidency/productDetailsPage.ts",
+              "page": {
+                "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
+                "slug": {
+                  "__resolveType": "website/functions/requestToParam.ts",
+                  "param": "slug"
+                },
+                "advancedConfigs": {
+                  "includeOriginalAttributes": []
+                },
+                "simulationBehavior": "default"
+              },
+              "customer": "vicbeaute"
+            }
+          },
+          {
+            "__resolveType": "site/sections/Product/ProductShelfSimilars.tsx",
+            "products": {
+              "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+              "props": {
+                "sort": "price:desc",
+                "collection": "137",
+                "count": 12,
+                "similars": true
+              }
+            },
+            "title": "Mais Amados"
+          },
+          {
+            "__resolveType": "Footer"
+          }
+        ],
+        "rule": {
+          "__resolveType": "website/matchers/always.ts"
         }
       }
-    },
-    {
-      "__resolveType": "site/sections/Product/ProductTips.tsx",
-      "page": {
-        "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
-        "slug": {
-          "__resolveType": "website/functions/requestToParam.ts",
-          "param": "slug"
-        },
-        "advancedConfigs": {
-          "includeOriginalAttributes": []
-        },
-        "simulationBehavior": "default"
-      }
-    },
-    {
-      "__resolveType": "site/sections/Product/ProductComposition.tsx",
-      "page": {
-        "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
-        "slug": {
-          "__resolveType": "website/functions/requestToParam.ts",
-          "param": "slug"
-        },
-        "advancedConfigs": {
-          "includeOriginalAttributes": []
-        },
-        "simulationBehavior": "default"
-      }
-    },
-    {
-      "__resolveType": "site/sections/Product/ProductBuyTogether.tsx",
-      "page": {
-        "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
-        "slug": {
-          "__resolveType": "website/functions/requestToParam.ts",
-          "param": "slug"
-        },
-        "advancedConfigs": {
-          "includeOriginalAttributes": []
-        },
-        "simulationBehavior": "default",
-        "similars": false
-      },
-      "productTogether": {
-        "__resolveType": "site/loaders/product/buyTogetherSuggestions.ts",
-        "page": {
-          "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
-          "slug": {
-            "__resolveType": "website/functions/requestToParam.ts",
-            "param": "slug"
-          },
-          "advancedConfigs": {
-            "includeOriginalAttributes": []
-          },
-          "simulationBehavior": "default"
-        },
-        "count": 1
-      }
-    },
-    {
-      "__resolveType": "site/sections/Product/ProductFaq.tsx",
-      "page": {
-        "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
-        "advancedConfigs": {
-          "includeOriginalAttributes": []
-        },
-        "simulationBehavior": "default",
-        "slug": {
-          "__resolveType": "website/functions/requestToParam.ts",
-          "param": "slug"
-        }
-      }
-    },
-    {
-      "__resolveType": "site/sections/Product/ProductColors.tsx",
-      "title": "Cores",
-      "page": {
-        "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
-        "advancedConfigs": {
-          "includeOriginalAttributes": []
-        },
-        "slug": {
-          "__resolveType": "website/functions/requestToParam.ts",
-          "param": "slug"
-        },
-        "simulationBehavior": "default",
-        "similars": true
-      },
-      "additionalColors": {
-        "__resolveType": "vtex/loaders/legacy/relatedProductsLoader.ts",
-        "crossSelling": "similars",
-        "count": 10,
-        "id": "11"
-      }
-    },
-    {
-      "__resolveType": "site/sections/Product/ProductReviews.tsx",
-      "page": {
-        "__resolveType": "site/loaders/konfidency/productDetailsPage.ts",
-        "page": {
-          "__resolveType": "vtex/loaders/intelligentSearch/productDetailsPage.ts",
-          "slug": {
-            "__resolveType": "website/functions/requestToParam.ts",
-            "param": "slug"
-          },
-          "advancedConfigs": {
-            "includeOriginalAttributes": []
-          },
-          "simulationBehavior": "default"
-        },
-        "customer": "vicbeaute"
-      }
-    },
-    {
-      "__resolveType": "site/sections/Product/ProductShelfSimilars.tsx",
-      "products": {
-        "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
-        "props": {
-          "sort": "price:desc",
-          "collection": "137",
-          "count": 12,
-          "similars": true
-        }
-      },
-      "title": "Mais Amados"
-    },
-    {
-      "__resolveType": "Footer"
-    }
-  ],
+    ]
+  },
   "__resolveType": "website/pages/Page.tsx"
 }

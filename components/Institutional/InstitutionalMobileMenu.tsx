@@ -11,7 +11,7 @@ const InstitutionalMobileMenu = ({ institutionalMenu, pageTitle }: Props) => {
   const openList = useSignal(false);
 
   return (
-    <div class= "w-full">
+    <div class="w-full">
       <div class="xl:hidden w-full">
         <button
           class={`${

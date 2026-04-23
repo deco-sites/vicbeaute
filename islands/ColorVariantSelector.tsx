@@ -37,7 +37,9 @@ const ChevronUp = () => (
   </svg>
 );
 
-export default function ColorVariantSelector({ colors, selectedUrl, pushUrl = true }: Props) {
+export default function ColorVariantSelector(
+  { colors, selectedUrl, pushUrl = true }: Props,
+) {
   // Encontra o index do produto selecionado pela URL atual
   const initialIndex = Math.max(
     0,
@@ -59,7 +61,7 @@ export default function ColorVariantSelector({ colors, selectedUrl, pushUrl = tr
   const selected = colors[selectedIdx.value] ?? colors[0];
 
   return (
-    <div 
+    <div
       class="flex flex-col gap-[10px] w-full mt-2"
       hx-target="closest section"
       hx-swap="outerHTML show:none"

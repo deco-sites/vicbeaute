@@ -134,12 +134,16 @@ export default function Newgiftinstitutional({
           )}
         </div>
 
-        <style dangerouslySetInnerHTML={{ __html: `
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
           .queens-text, .queens-text * { font-family: "Queens", serif !important; }
           .font-Hanken-Grotesk, .font-Hanken-Grotesk * { font-family: "Hanken Grotesk", sans-serif !important; }
           .hide-scrollbar::-webkit-scrollbar { display: none; }
           .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        `}} />
+        `,
+          }}
+        />
 
         {/* Título e Subtítulo — centralizados */}
         <div class="flex flex-col items-center w-full text-center mb-[30px] px-[80px]">
@@ -159,11 +163,19 @@ export default function Newgiftinstitutional({
 
         {/* 3 Cards título+texto — 420x126 */}
         <div class="flex flex-row items-start justify-center gap-[10px] w-full px-[80px] mb-[30px]">
-          {[[htmlText1, plainText2], [htmlText2, plainText3], [htmlText3, plainText4]].map(([title, text], idx) => (
+          {[[htmlText1, plainText2], [htmlText2, plainText3], [
+            htmlText3,
+            plainText4,
+          ]].map(([title, text], idx) => (
             <div
               key={idx}
               class="flex flex-col justify-start bg-white px-[16px] py-[14px] rounded-lg"
-              style={{ width: '420px', minHeight: '126px', backgroundColor: '#ffffff', borderRadius: '8px' }}
+              style={{
+                width: "420px",
+                minHeight: "126px",
+                backgroundColor: "#ffffff",
+                borderRadius: "8px",
+              }}
             >
               {title && (
                 <div
@@ -192,17 +204,21 @@ export default function Newgiftinstitutional({
 
         {/* 3 Imagens lado a lado — 420x420 com gap 10px e 80px lateral */}
         <div class="flex flex-row items-start gap-[10px] px-[80px] mb-[40px]">
-          {[image1, image2, image3].map((img, idx) => img?.image ? (
-            <img
-              key={idx}
-              src={img.image}
-              alt={img.alt}
-              width={420}
-              height={420}
-              class="object-cover flex-shrink-0"
-              style={{ width: '420px', height: '420px' }}
-            />
-          ) : null)}
+          {[image1, image2, image3].map((img, idx) =>
+            img?.image
+              ? (
+                <img
+                  key={idx}
+                  src={img.image}
+                  alt={img.alt}
+                  width={420}
+                  height={420}
+                  class="object-cover flex-shrink-0"
+                  style={{ width: "420px", height: "420px" }}
+                />
+              )
+              : null
+          )}
         </div>
 
         {/* Seção inferior: Títulos à esquerda + Gift cards à direita */}
@@ -231,7 +247,12 @@ export default function Newgiftinstitutional({
                 <div
                   key={index}
                   class="flex flex-col items-center bg-white px-[12px] py-[16px] rounded-lg"
-                  style={{ width: '260px', minHeight: '215px', backgroundColor: '#ffffff', borderRadius: '8px' }}
+                  style={{
+                    width: "260px",
+                    minHeight: "215px",
+                    backgroundColor: "#ffffff",
+                    borderRadius: "8px",
+                  }}
                 >
                   <div class="w-[60px] h-[60px] flex-shrink-0 bg-[#D5D8C2] rounded-full flex items-center justify-center mb-[12px]">
                     {gift.logo && (
@@ -292,12 +313,16 @@ export default function Newgiftinstitutional({
         )}
       </div>
 
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
         .queens-text, .queens-text * { font-family: "Queens", serif !important; }
         .font-Hanken-Grotesk, .font-Hanken-Grotesk * { font-family: "Hanken Grotesk", sans-serif !important; }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-      `}} />
+      `,
+        }}
+      />
 
       <div class="flex flex-col items-start w-full pl-[12px] pr-4 text-left">
         {topPlainText && (

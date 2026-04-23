@@ -3,7 +3,10 @@ import Icon from "../../../components/ui/Icon.tsx";
 export const NavbarHeader = () => {
   const { user } = useUser();
   return (
-    <div data-cy="navbar-header" class="navbar-header pt-5 lg:hidden w-full flex flex-col items-start">
+    <div
+      data-cy="navbar-header"
+      class="navbar-header pt-5 lg:hidden w-full flex flex-col items-start"
+    >
       <span className="navbar-header-title text-2xl text-[#2d2d2c] mt-2.5 mb-3.5 px-5 block">
         Área do cliente
       </span>

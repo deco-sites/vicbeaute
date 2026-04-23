@@ -13,6 +13,7 @@ import * as $FilterRangePrice from "./islands/FilterRangePrice.tsx";
 import * as $Filters from "./islands/Filters.tsx";
 import * as $Gallery from "./islands/Gallery.tsx";
 import * as $InstitutionalMobileMenu from "./islands/InstitutionalMobileMenu.tsx";
+import * as $KitAddToCart from "./islands/KitAddToCart.tsx";
 import * as $KonfidencyReviews from "./islands/KonfidencyReviews.tsx";
 import * as $Newsletter from "./islands/Newsletter.tsx";
 import * as $ProductCardColorSelector from "./islands/ProductCardColorSelector.tsx";
@@ -42,6 +43,7 @@ const manifest = {
     "./islands/Filters.tsx": $Filters,
     "./islands/Gallery.tsx": $Gallery,
     "./islands/InstitutionalMobileMenu.tsx": $InstitutionalMobileMenu,
+    "./islands/KitAddToCart.tsx": $KitAddToCart,
     "./islands/KonfidencyReviews.tsx": $KonfidencyReviews,
     "./islands/Newsletter.tsx": $Newsletter,
     "./islands/ProductCardColorSelector.tsx": $ProductCardColorSelector,

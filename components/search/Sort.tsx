@@ -43,7 +43,7 @@ function Sort({ sortOptions, url }: Props) {
       >
         {options.map(({ value, label }) => (
           <option
-            class= "text-sm text-black-15"
+            class="text-sm text-black-15"
             label={labels[label] ?? label}
             value={value}
             selected={value === current}

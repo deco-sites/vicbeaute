@@ -25,12 +25,14 @@ const loader = async (
 
   const enriched = await Promise.all(
     products.map(async (product) => {
-      const sku = product.isVariantOf?.productID || product.sku || product.productID;
+      const sku = product.isVariantOf?.productID || product.sku ||
+        product.productID;
 
       if (!sku) return product;
 
       try {
-        const url = `https://reviews-api.konfidency.com.br/${customer}/${sku}/summary/helpful,desc?page=1&pageSize=1`;
+        const url =
+          `https://reviews-api.konfidency.com.br/${customer}/${sku}/summary/helpful,desc?page=1&pageSize=1`;
         const response = await fetch(url);
 
         if (!response.ok) return product;

@@ -106,51 +106,51 @@ export default function AddToCartSticky(
 
         {/* Right Side: Prices and Button */}
         <div class="flex items-center justify-between sm:justify-start pl-0 sm:pl-10 gap-4 sm:gap-8 w-full sm:w-auto">
-        {/* Prices block */}
-        <div class="flex flex-col items-start gap-0">
-          {listPrice && listPrice > price && (
-            <span class="line-through text-[13px] text-[#737373] font-Hanken-Grotesk leading-none mb-1">
-              {formatPrice(listPrice)}
-            </span>
-          )}
-          <div class="flex items-center gap-2 leading-none">
-            <span class="flex items-baseline text-green-10">
-              {formatPriceWithStyledSymbol(price)}
-            </span>
-            {percent > 0 && (
-              <span class="text-[10px] font-bold text-[#ffffff] bg-[#EE3730] rounded px-[6px] py-[2px] leading-none flex items-center">
-                -{percent}% OFF
+          {/* Prices block */}
+          <div class="flex flex-col items-start gap-0">
+            {listPrice && listPrice > price && (
+              <span class="line-through text-[13px] text-[#737373] font-Hanken-Grotesk leading-none mb-1">
+                {formatPrice(listPrice)}
+              </span>
+            )}
+            <div class="flex items-center gap-2 leading-none">
+              <span class="flex items-baseline text-green-10">
+                {formatPriceWithStyledSymbol(price)}
+              </span>
+              {percent > 0 && (
+                <span class="text-[10px] font-bold text-[#ffffff] bg-[#EE3730] rounded px-[6px] py-[2px] leading-none flex items-center">
+                  -{percent}% OFF
+                </span>
+              )}
+            </div>
+            {installments && (
+              <span class="text-xs text-[#4D5D49] font-Hanken-Grotesk mt-1 leading-none">
+                {installments}
               </span>
             )}
           </div>
-          {installments && (
-            <span class="text-xs text-[#4D5D49] font-Hanken-Grotesk mt-1 leading-none">
-              {installments}
-            </span>
-          )}
-        </div>
 
-        {/* Action Button */}
-        <div class="shrink-0 w-[140px] sm:w-auto">
-          {/* Mobile view uses "Adicionar", Desktop uses default "Adicionar ao carrinho" via label prop manipulation */}
-          <div class="sm:hidden w-full">
-            <AddToCartButtonPdp
-              item={item}
-              seller={seller}
-              product={product}
-              class="btn btn-primary no-animation bg-green-10 hover:bg-green-10 text-[#ffffff] border-none h-11 min-h-0 w-full px-2"
-              label="Adicionar"
-            />
+          {/* Action Button */}
+          <div class="shrink-0 w-[140px] sm:w-auto">
+            {/* Mobile view uses "Adicionar", Desktop uses default "Adicionar ao carrinho" via label prop manipulation */}
+            <div class="sm:hidden w-full">
+              <AddToCartButtonPdp
+                item={item}
+                seller={seller}
+                product={product}
+                class="btn btn-primary no-animation bg-green-10 hover:bg-green-10 text-[#ffffff] border-none h-11 min-h-0 w-full px-2"
+                label="Adicionar"
+              />
+            </div>
+            <div class="hidden sm:block w-[240px]">
+              <AddToCartButtonPdp
+                item={item}
+                seller={seller}
+                product={product}
+                class="btn btn-primary no-animation bg-green-10 hover:bg-green-10 text-[#ffffff] border-none h-11 min-h-0 w-full"
+              />
+            </div>
           </div>
-          <div class="hidden sm:block w-[240px]">
-            <AddToCartButtonPdp
-              item={item}
-              seller={seller}
-              product={product}
-              class="btn btn-primary no-animation bg-green-10 hover:bg-green-10 text-[#ffffff] border-none h-11 min-h-0 w-full"
-            />
-          </div>
-        </div>
         </div>
       </div>
 

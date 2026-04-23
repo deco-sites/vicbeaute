@@ -30,12 +30,11 @@ function QuantitySelector(
     max?: number;
   },
 ) {
-  const initial =
-  value !== undefined
+  const initial = value !== undefined
     ? Number(value)
     : defaultValue !== undefined
     ? Number(defaultValue)
-    : 1; 
+    : 1;
 
   const [val, setVal] = useState(initial);
 
@@ -44,11 +43,15 @@ function QuantitySelector(
     setVal(clamped);
 
     if (typeof onChange === "function") {
-      const event = new Event("change", { bubbles: true }) as unknown as JSX.TargetedEvent<
+      const event = new Event("change", {
+        bubbles: true,
+      }) as unknown as JSX.TargetedEvent<
         HTMLInputElement,
         Event
       >;
-      Object.defineProperty(event, "target", { value: { value: String(clamped) } });
+      Object.defineProperty(event, "target", {
+        value: { value: String(clamped) },
+      });
       onChange(event);
     }
   };
@@ -91,7 +94,8 @@ function QuantitySelector(
         min={min}
         max={max}
         value={val}
-        onInput={(e) => handleChange(Number((e.currentTarget as HTMLInputElement).value))}
+        onInput={(e) =>
+          handleChange(Number((e.currentTarget as HTMLInputElement).value))}
         {...props}
       />
 

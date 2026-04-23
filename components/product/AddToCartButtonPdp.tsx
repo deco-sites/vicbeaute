@@ -148,7 +148,9 @@ function AddToCartButtonPdp(props: Props) {
         hx-on:click={useScript(onClick)}
       >
         {props.label || "Adicionar ao carrinho"}
-        {props.label !== "Adicionar" && <Icon id="bagpdp" width={24} height={24} />}
+        {props.label !== "Adicionar" && (
+          <Icon id="bagpdp" width={24} height={24} />
+        )}
       </button>
 
       <script

@@ -42,7 +42,7 @@ function BannerInstitucional({ tablet, desktop, mobile }: Props) {
             src={desktop.image}
             width={1440}
             height={432}
-            style={{ height: '432px' }}
+            style={{ height: "432px" }}
           />
         </a>
       )}
