@@ -9,6 +9,9 @@ export default {
   theme: {
     container: { center: true },
     extend: {
+      screens: {
+        "xl2": "1440px",
+      },
       colors: {
         white: {
           5: "#FAFAFA",
