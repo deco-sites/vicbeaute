@@ -26,7 +26,7 @@
     {
       "__resolveType": "website/sections/Rendering/Lazy.tsx",
       "section": {
-        "__resolveType": "site/sections/Institutional/Quiosquesinstitutional.tsx",
+        "__resolveType": "site/sections/Institutional/quiosquesinstitutional.tsx",
         "cards": [
           {
             "secondTitle": "Shopping Iguatemi - São Paulo",
