@@ -26,12 +26,15 @@ const loader = async (
   }
 
   const { product } = page;
-  
+
   // Use Product Group ID (isVariantOf.productID) if available, fallback to SKU ID
   // This ensures reviews for all variants (colors) of the same product are grouped.
-  const sku = product.isVariantOf?.productID || product.sku || product.productID;
+  const sku = product.isVariantOf?.productID || product.sku ||
+    product.productID;
 
-  console.log(`[Konfidency] Fetching reviews for SKU/ProdID: ${sku}, Customer: ${konfidencyCustomer}`);
+  console.log(
+    `[Konfidency] Fetching reviews for SKU/ProdID: ${sku}, Customer: ${konfidencyCustomer}`,
+  );
 
   if (!sku) {
     console.log("[Konfidency] No ID found for product to fetch reviews");
@@ -39,38 +42,48 @@ const loader = async (
   }
 
   try {
-    const url = `https://reviews-api.konfidency.com.br/${konfidencyCustomer}/${sku}/summary/helpful,desc?page=1&pageSize=10`;
+    const url =
+      `https://reviews-api.konfidency.com.br/${konfidencyCustomer}/${sku}/summary/helpful,desc?page=1&pageSize=10`;
     console.log(`[Konfidency] API URL: ${url}`);
-    
+
     const response = await fetch(url);
-    
+
     if (!response.ok) {
-        console.log(`[Konfidency] API error: ${response.status} ${response.statusText}`);
-        return page;
+      console.log(
+        `[Konfidency] API error: ${response.status} ${response.statusText}`,
+      );
+      return page;
     }
 
     const data = await response.json();
-    console.log(`[Konfidency] API Response for ${sku}:`, JSON.stringify(data).slice(0, 500));
-    
+    console.log(
+      `[Konfidency] API Response for ${sku}:`,
+      JSON.stringify(data).slice(0, 500),
+    );
+
     if (data && Array.isArray(data.reviews) && data.reviews.length > 0) {
-        const productReviewData = data.reviews[0];
-        const reviewCount = productReviewData.reviewCount ?? 0;
-        
-        console.log(`[Konfidency] reviewCount=${reviewCount}, aggregateRating=${productReviewData.aggregateRating} for SKU ${sku}`);
-        
-        // toReview handles both empty and populated review data
-        const { aggregateRating, review } = toReview(productReviewData);
-        
-        return {
-            ...page,
-            product: {
-                ...product,
-                review: review,
-                aggregateRating: aggregateRating,
-            }
-        };
+      const productReviewData = data.reviews[0];
+      const reviewCount = productReviewData.reviewCount ?? 0;
+
+      console.log(
+        `[Konfidency] reviewCount=${reviewCount}, aggregateRating=${productReviewData.aggregateRating} for SKU ${sku}`,
+      );
+
+      // toReview handles both empty and populated review data
+      const { aggregateRating, review } = toReview(productReviewData);
+
+      return {
+        ...page,
+        product: {
+          ...product,
+          review: review,
+          aggregateRating: aggregateRating,
+        },
+      };
     } else {
-        console.log(`[Konfidency] API returned empty reviews array for SKU ${sku}`);
+      console.log(
+        `[Konfidency] API returned empty reviews array for SKU ${sku}`,
+      );
     }
   } catch (e) {
     console.error("Konfidency loader error:", e);

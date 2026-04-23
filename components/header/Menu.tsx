@@ -25,9 +25,19 @@ function MenuItem({ item }: { item: CustomNavItem }) {
       {hasColumns && <input type="checkbox" />}
 
       {hasColumns
-        ? <div class="collapse-title font-Hanken-Grotesk text-[22px] text-[#2c2c2c] font-normal leading-none">{item.name}</div>
-        : <a href={item.url} class="collapse-title block w-full font-Hanken-Grotesk text-[22px] text-[#2c2c2c] font-normal leading-none">{item.name}
-        </a>}
+        ? (
+          <div class="collapse-title font-Hanken-Grotesk text-[22px] text-[#2c2c2c] font-normal leading-none">
+            {item.name}
+          </div>
+        )
+        : (
+          <a
+            href={item.url}
+            class="collapse-title block w-full font-Hanken-Grotesk text-[22px] text-[#2c2c2c] font-normal leading-none"
+          >
+            {item.name}
+          </a>
+        )}
 
       {hasColumns && (
         <div class="collapse-content">

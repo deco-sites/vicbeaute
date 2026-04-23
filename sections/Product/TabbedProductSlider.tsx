@@ -29,10 +29,10 @@ export interface Props {
   titleColor?: string;
 }
 
-export default function TabbedProductSlider({ 
-  title = "Novidades", 
-  tabs = [], 
-  titleColor = "#CE9680" 
+export default function TabbedProductSlider({
+  title = "Novidades",
+  tabs = [],
+  titleColor = "#CE9680",
 }: Props) {
   const rootId = useId();
 
@@ -42,7 +42,7 @@ export default function TabbedProductSlider({
     <div id={rootId} class="w-full flex flex-col py-10 xl:py-16 bg-[#F4F4F4]">
       {/* Title */}
       {title && (
-        <h2 
+        <h2
           class="text-center font-Queens text-[36px] lg:text-[44px] leading-tight mb-4"
           style={{ color: titleColor }}
         >
@@ -63,7 +63,7 @@ export default function TabbedProductSlider({
                   "font-Hanken-Grotesk pb-1 outline-none whitespace-nowrap text-base lg:text-[18px] transition-all border-b-2 mb-[-1px]",
                   isActive
                     ? "border-[#455C42] text-[#455C42] font-medium"
-                    : "border-transparent text-[#8a8a8a] hover:text-[#455C42]"
+                    : "border-transparent text-[#8a8a8a] hover:text-[#455C42]",
                 )}
               >
                 {tab.label}
@@ -79,18 +79,23 @@ export default function TabbedProductSlider({
           <div
             key={index}
             data-tab-content={index}
-            class={clx("w-full transition-opacity duration-300", index === 0 ? "block" : "hidden")}
-          >
-            {tab.products && tab.products.length > 0 ? (
-              <ProductSliderSimilars
-                products={tab.products}
-                itemListName={title}
-              />
-            ) : (
-              <div class="flex justify-center items-center h-40 text-[#8a8a8a] text-sm">
-                Nenhum produto cadastrado para "{tab.label}"
-              </div>
+            class={clx(
+              "w-full transition-opacity duration-300",
+              index === 0 ? "block" : "hidden",
             )}
+          >
+            {tab.products && tab.products.length > 0
+              ? (
+                <ProductSliderSimilars
+                  products={tab.products}
+                  itemListName={title}
+                />
+              )
+              : (
+                <div class="flex justify-center items-center h-40 text-[#8a8a8a] text-sm">
+                  Nenhum produto cadastrado para "{tab.label}"
+                </div>
+              )}
           </div>
         ))}
       </div>

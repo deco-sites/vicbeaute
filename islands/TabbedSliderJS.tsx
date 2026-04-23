@@ -9,21 +9,27 @@ export default function TabbedSliderJS({ rootId }: Props) {
     const root = document.getElementById(rootId);
     if (!root) return;
 
-    const buttons = root.querySelectorAll<HTMLButtonElement>("[data-tab-button]");
-    const contents = root.querySelectorAll<HTMLDivElement>("[data-tab-content]");
+    const buttons = root.querySelectorAll<HTMLButtonElement>(
+      "[data-tab-button]",
+    );
+    const contents = root.querySelectorAll<HTMLDivElement>(
+      "[data-tab-content]",
+    );
 
     buttons.forEach((btn) => {
       btn.addEventListener("click", () => {
         const index = btn.getAttribute("data-tab-button");
-        
+
         // Hide all contents
         contents.forEach((c) => {
           c.classList.add("hidden");
           c.classList.remove("block");
         });
-        
+
         // Show target content
-        const activeContent = root.querySelector(`[data-tab-content="${index}"]`);
+        const activeContent = root.querySelector(
+          `[data-tab-content="${index}"]`,
+        );
         if (activeContent) {
           activeContent.classList.remove("hidden");
           activeContent.classList.add("block");
@@ -31,7 +37,11 @@ export default function TabbedSliderJS({ rootId }: Props) {
 
         // Reset all buttons styling
         buttons.forEach((b) => {
-          b.classList.remove("border-[#455C42]", "text-[#455C42]", "font-medium");
+          b.classList.remove(
+            "border-[#455C42]",
+            "text-[#455C42]",
+            "font-medium",
+          );
           b.classList.add("border-transparent", "text-[#8a8a8a]");
         });
 

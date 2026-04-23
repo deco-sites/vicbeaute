@@ -13,7 +13,10 @@ function SeoText({ textSeo = "" }: Props) {
   const id = useId();
 
   return (
-    <div id={id} class="container my-3 flex flex-col text-base-content pt-14 px-3">
+    <div
+      id={id}
+      class="container my-3 flex flex-col text-base-content pt-14 px-3"
+    >
       {textSeo && (
         <div class="lg:mb-4">
           <input class="peer hidden" id="control-cb" type="checkbox" checked />

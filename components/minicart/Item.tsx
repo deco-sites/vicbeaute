@@ -34,7 +34,9 @@ function CartItem({ item, index, locale, currency }: Props) {
   // Fallback visual para variantes até receber a cor
   // deno-lint-ignore no-explicit-any
   const rawVariant = (item as any).item_variant;
-  const variantName = typeof rawVariant === "string" ? rawVariant.split("-").pop()?.trim() : rawVariant;
+  const variantName = typeof rawVariant === "string"
+    ? rawVariant.split("-").pop()?.trim()
+    : rawVariant;
 
   // Busca imagem pela label "cor" extraída via catálogo no loader
   // deno-lint-ignore no-explicit-any
@@ -91,11 +93,18 @@ function CartItem({ item, index, locale, currency }: Props) {
             {/* Fake Color Bullet based on variant presence */}
             {variantName && (
               <>
-                {colorImageUrl ? (
-                  <img src={colorImageUrl} alt={variantName} class="w-[12px] h-[12px] rounded-full object-cover shadow-sm" />
-                ) : (
-                  <span class="w-[10px] h-[10px] rounded-full bg-[#8E2C3D] inline-block shadow-sm"></span>
-                )}
+                {colorImageUrl
+                  ? (
+                    <img
+                      src={colorImageUrl}
+                      alt={variantName}
+                      class="w-[12px] h-[12px] rounded-full object-cover shadow-sm"
+                    />
+                  )
+                  : (
+                    <span class="w-[10px] h-[10px] rounded-full bg-[#8E2C3D] inline-block shadow-sm">
+                    </span>
+                  )}
                 <span class="text-[#363931] text-[12px] font-medium max-w-[120px] truncate">
                   {variantName}
                 </span>

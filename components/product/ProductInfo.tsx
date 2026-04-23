@@ -220,58 +220,60 @@ function ProductInfo({ page }: Props) {
         )}
 
         {/* ADD TO CART BOX */}
-        {availability === "https://schema.org/InStock" ? (
-          <div class="mt-4 sm:mt-[14px] bg-green-15 p-4 rounded-md flex flex-col gap-4">
-            <div class="flex flex-col gap-1 items-center justify-center">
-              <div class="flex items-center gap-2">
-                {listPrice > price && (
-                  <span class="line-through text-sm text-gray-5">
-                    {formatPrice(listPrice, offers?.priceCurrency)}
+        {availability === "https://schema.org/InStock"
+          ? (
+            <div class="mt-4 sm:mt-[14px] bg-green-15 p-4 rounded-md flex flex-col gap-4">
+              <div class="flex flex-col gap-1 items-center justify-center">
+                <div class="flex items-center gap-2">
+                  {listPrice > price && (
+                    <span class="line-through text-sm text-gray-5">
+                      {formatPrice(listPrice, offers?.priceCurrency)}
+                    </span>
+                  )}
+                  <span class="text-[26px] font-bold text-green-10 flex justify-center items-center">
+                    {formatPrice(price, offers?.priceCurrency)}
+                  </span>
+                  {percent > 0 && (
+                    <span class="text-[10px] font-bold text-white bg-[#EE3730] rounded px-[6px] py-[2px] ml-1">
+                      -{percent}% OFF
+                    </span>
+                  )}
+                </div>
+                {installments && (
+                  <span class="text-xs text-green-10 text-center sm:text-left mt-[-4px] font-Hanken-Grotesk">
+                    {installments}
                   </span>
                 )}
-                <span class="text-[26px] font-bold text-green-10 flex justify-center items-center">
-                  {formatPrice(price, offers?.priceCurrency)}
-                </span>
-                {percent > 0 && (
-                  <span class="text-[10px] font-bold text-white bg-[#EE3730] rounded px-[6px] py-[2px] ml-1">
-                    -{percent}% OFF
+                <div class="flex items-center gap-1 justify-center">
+                  <span class="text-xs text-green-10 text-center font-Hanken-Grotesk">
+                    Tenha 5% de desconto no PIX
                   </span>
-                )}
+                  <Icon
+                    id="pdpPix"
+                    size={13}
+                    strokeWidth={1}
+                    class="text-black-20"
+                  />
+                </div>
               </div>
-              {installments && (
-                <span class="text-xs text-green-10 text-center sm:text-left mt-[-4px] font-Hanken-Grotesk">
-                  {installments}
-                </span>
-              )}
-              <div class="flex items-center gap-1 justify-center">
-                <span class="text-xs text-green-10 text-center font-Hanken-Grotesk">
-                  Tenha 5% de desconto no PIX
-                </span>
-                <Icon
-                  id="pdpPix"
-                  size={13}
-                  strokeWidth={1}
-                  class="text-black-20"
-                />
-              </div>
-            </div>
 
-            <div class="flex items-center gap-2 w-full">
-              <AddToCartButtonPdp
-                item={item}
-                seller={seller}
-                product={product}
-                class="btn btn-primary no-animation flex-1 bg-green-10 hover:bg-green-10 text-white border-none min-h-[45px]"
-                disabled={false}
-              />
-              <WishlistButton variant="pdp" item={item} />
+              <div class="flex items-center gap-2 w-full">
+                <AddToCartButtonPdp
+                  item={item}
+                  seller={seller}
+                  product={product}
+                  class="btn btn-primary no-animation flex-1 bg-green-10 hover:bg-green-10 text-white border-none min-h-[45px]"
+                  disabled={false}
+                />
+                <WishlistButton variant="pdp" item={item} />
+              </div>
             </div>
-          </div>
-        ) : (
-          <div class="mt-4 sm:mt-[14px]">
-            <OutOfStock productID={productID} />
-          </div>
-        )}
+          )
+          : (
+            <div class="mt-4 sm:mt-[14px]">
+              <OutOfStock productID={productID} />
+            </div>
+          )}
 
         {badges.length > 0 && <ProductBadges badges={badges} />}
 
@@ -294,7 +296,7 @@ function ProductInfo({ page }: Props) {
         <div>
           <h1
             class={clx(
-              "text-3xl text-pink-5 font-normal font-Queens"
+              "text-3xl text-pink-5 font-normal font-Queens",
             )}
           >
             {title}
@@ -335,58 +337,60 @@ function ProductInfo({ page }: Props) {
         )}
 
         {/* ADD TO CART BOX MOBILE */}
-        {availability === "https://schema.org/InStock" ? (
-          <div class="mt-4 sm:mt-[14px] bg-green-15 p-4 rounded-md flex flex-col gap-4">
-            <div class="flex flex-col gap-1 items-center justify-center">
-              <div class="flex items-center gap-2">
-                {listPrice > price && (
-                  <span class="line-through text-sm text-gray-5">
-                    {formatPrice(listPrice, offers?.priceCurrency)}
+        {availability === "https://schema.org/InStock"
+          ? (
+            <div class="mt-4 sm:mt-[14px] bg-green-15 p-4 rounded-md flex flex-col gap-4">
+              <div class="flex flex-col gap-1 items-center justify-center">
+                <div class="flex items-center gap-2">
+                  {listPrice > price && (
+                    <span class="line-through text-sm text-gray-5">
+                      {formatPrice(listPrice, offers?.priceCurrency)}
+                    </span>
+                  )}
+                  <span class="text-[26px] font-bold text-green-10 flex justify-center items-center">
+                    {formatPrice(price, offers?.priceCurrency)}
+                  </span>
+                  {percent > 0 && (
+                    <span class="text-[10px] font-bold text-white bg-[#EE3730] rounded px-[6px] py-[2px] ml-1">
+                      -{percent}% OFF
+                    </span>
+                  )}
+                </div>
+                {installments && (
+                  <span class="text-xs text-green-10 text-center sm:text-left mt-[-4px] font-Hanken-Grotesk">
+                    {installments}
                   </span>
                 )}
-                <span class="text-[26px] font-bold text-green-10 flex justify-center items-center">
-                  {formatPrice(price, offers?.priceCurrency)}
-                </span>
-                {percent > 0 && (
-                  <span class="text-[10px] font-bold text-white bg-[#EE3730] rounded px-[6px] py-[2px] ml-1">
-                    -{percent}% OFF
+                <div class="flex items-center gap-1 justify-center">
+                  <span class="text-xs text-green-10 text-center font-Hanken-Grotesk">
+                    Tenha 5% de desconto no PIX
                   </span>
-                )}
+                  <Icon
+                    id="pdpPix"
+                    size={13}
+                    strokeWidth={1}
+                    class="text-black-20"
+                  />
+                </div>
               </div>
-              {installments && (
-                <span class="text-xs text-green-10 text-center sm:text-left mt-[-4px] font-Hanken-Grotesk">
-                  {installments}
-                </span>
-              )}
-              <div class="flex items-center gap-1 justify-center">
-                <span class="text-xs text-green-10 text-center font-Hanken-Grotesk">
-                  Tenha 5% de desconto no PIX
-                </span>
-                <Icon
-                  id="pdpPix"
-                  size={13}
-                  strokeWidth={1}
-                  class="text-black-20"
-                />
-              </div>
-            </div>
 
-            <div class="flex items-center gap-2 w-full">
-              <AddToCartButtonPdp
-                item={item}
-                seller={seller}
-                product={product}
-                class="btn btn-primary no-animation flex-1 bg-green-10 hover:bg-green-10 text-white border-none min-h-[45px]"
-                disabled={false}
-              />
-              <WishlistButton variant="pdp" item={item} />
+              <div class="flex items-center gap-2 w-full">
+                <AddToCartButtonPdp
+                  item={item}
+                  seller={seller}
+                  product={product}
+                  class="btn btn-primary no-animation flex-1 bg-green-10 hover:bg-green-10 text-white border-none min-h-[45px]"
+                  disabled={false}
+                />
+                <WishlistButton variant="pdp" item={item} />
+              </div>
             </div>
-          </div>
-        ) : (
-          <div class="mt-4 sm:mt-[14px]">
-            <OutOfStock productID={productID} />
-          </div>
-        )}
+          )
+          : (
+            <div class="mt-4 sm:mt-[14px]">
+              <OutOfStock productID={productID} />
+            </div>
+          )}
 
         {badges.length > 0 && <ProductBadges badges={badges} />}
 

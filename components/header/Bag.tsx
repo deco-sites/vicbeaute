@@ -28,14 +28,24 @@ function Bag({ transparent }: { transparent?: boolean }) {
         />
 
         <span class="btn btn-square btn-sm btn-ghost no-animation hover:bg-transparent">
-          {transparent ? (
-            <>
-              <Icon id="minicart" width={19} height={21} class="header-icon-light" />
-              <Icon id="minicartbagdark" width={19} height={21} class="header-icon-dark hidden" />
-            </>
-          ) : (
-            <Icon id="minicartbagdark" width={19} height={21} />
-          )}
+          {transparent
+            ? (
+              <>
+                <Icon
+                  id="minicart"
+                  width={19}
+                  height={21}
+                  class="header-icon-light"
+                />
+                <Icon
+                  id="minicartbagdark"
+                  width={19}
+                  height={21}
+                  class="header-icon-dark hidden"
+                />
+              </>
+            )
+            : <Icon id="minicartbagdark" width={19} height={21} />}
         </span>
       </label>
       <script

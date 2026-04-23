@@ -9,7 +9,10 @@ function Dot({ index, ...props }: {
       {...props}
       data-dot={index}
       aria-label={`go to slider item ${index}`}
-      class={clx("focus:outline-none group disabled:!bg-black disabled:!opacity-100 disabled:ring-2 disabled:ring-offset-2 bg-black-15 opacity-50 w-2 h-2 rounded-full transition-all duration-300 ring-custom", props.class?.toString())}
+      class={clx(
+        "focus:outline-none group disabled:!bg-black disabled:!opacity-100 disabled:ring-2 disabled:ring-offset-2 bg-black-15 opacity-50 w-2 h-2 rounded-full transition-all duration-300 ring-custom",
+        props.class?.toString(),
+      )}
     />
   );
 }

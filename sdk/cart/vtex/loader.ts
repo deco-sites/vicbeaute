@@ -56,9 +56,10 @@ async function loader(
   let catalogProducts: any[] = [];
   if (skuIds.length > 0) {
     try {
-      catalogProducts = await ctx.invoke("vtex/loaders/intelligentSearch/productList.ts", {
-        ids: skuIds
-      }) || [];
+      catalogProducts =
+        await ctx.invoke("vtex/loaders/intelligentSearch/productList.ts", {
+          ids: skuIds,
+        }) || [];
     } catch {
       // ignore silently to not break cart
     }
@@ -68,11 +69,16 @@ async function loader(
     // deno-lint-ignore no-explicit-any
     response.items = response.items.map((item: any) => {
       // deno-lint-ignore no-explicit-any
-      const catalogInfo = catalogProducts.find((p: any) => p.sku === item.id || p.productID === item.id);
+      const catalogInfo = catalogProducts.find((p: any) =>
+        p.sku === item.id || p.productID === item.id
+      );
       if (catalogInfo) {
         // Find image labeled "cor"
         // deno-lint-ignore no-explicit-any
-        const colorImg = catalogInfo.image?.find((img: any) => img.name?.toLowerCase() === "cor" || img.alternateName?.toLowerCase() === "cor")?.url;
+        const colorImg = catalogInfo.image?.find((img: any) =>
+          img.name?.toLowerCase() === "cor" ||
+          img.alternateName?.toLowerCase() === "cor"
+        )?.url;
         if (colorImg) {
           item.colorImageFromCatalog = colorImg;
         }

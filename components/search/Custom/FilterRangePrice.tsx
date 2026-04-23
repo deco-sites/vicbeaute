@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useCallback } from "preact/hooks";
+import { useCallback, useEffect, useId, useRef } from "preact/hooks";
 import { RefObject } from "preact";
 import { useSignal } from "@preact/signals";
 import type { FilterRangeValue } from "apps/commerce/types.ts";
@@ -147,8 +147,7 @@ function FilterRange({
             handleSliderInput({
               min: Math.min(Number(ev.currentTarget.value), rangemax.value),
               max: rangemax.value,
-            })
-          }
+            })}
           value={rangemin.value}
         />
 
@@ -167,8 +166,7 @@ function FilterRange({
             handleSliderInput({
               min: rangemin.value,
               max: Math.max(Number(ev.currentTarget.value), rangemin.value),
-            })
-          }
+            })}
           value={rangemax.value}
         />
       </div>
@@ -204,8 +202,7 @@ function FilterRange({
           type="button"
           class="flex items-center justify-center"
           onClick={() =>
-            handleSliderInput({ min: rangemin.value, max: rangemax.value })
-          }
+            handleSliderInput({ min: rangemin.value, max: rangemax.value })}
         >
           <Icon id="lupa" width={32} height={32} />
         </button>

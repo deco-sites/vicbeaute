@@ -30,29 +30,28 @@ const onClick = () => {
   const currentQty = window.STOREFRONT.CART.getQuantity(productID) || 0;
 
   if (currentQty > 0) {
-  window.STOREFRONT.CART.setQuantity(productID, currentQty + qty);
-} else {
-  const itemToAdd = { 
-    ...item, 
-    quantity: qty // força sobrescrita correta
-  };
+    window.STOREFRONT.CART.setQuantity(productID, currentQty + qty);
+  } else {
+    const itemToAdd = {
+      ...item,
+      quantity: qty, // força sobrescrita correta
+    };
 
-  // também atualiza platformProps se precisar
-  const updatedPlatformProps = { ...platformProps };
-  
-  if ("orderItems" in updatedPlatformProps) {
-    updatedPlatformProps.orderItems[0].quantity = qty;
-  }
-  if ("quantity" in updatedPlatformProps) {
-    updatedPlatformProps.quantity = qty;
-  }
-  if ("lines" in updatedPlatformProps) {
-    updatedPlatformProps.lines.quantity = qty;
-  }
+    // também atualiza platformProps se precisar
+    const updatedPlatformProps = { ...platformProps };
 
-  window.STOREFRONT.CART.addToCart(itemToAdd, updatedPlatformProps);
-}
+    if ("orderItems" in updatedPlatformProps) {
+      updatedPlatformProps.orderItems[0].quantity = qty;
+    }
+    if ("quantity" in updatedPlatformProps) {
+      updatedPlatformProps.quantity = qty;
+    }
+    if ("lines" in updatedPlatformProps) {
+      updatedPlatformProps.lines.quantity = qty;
+    }
 
+    window.STOREFRONT.CART.addToCart(itemToAdd, updatedPlatformProps);
+  }
 };
 
 const onChange = () => {
@@ -62,7 +61,6 @@ const onChange = () => {
     input.value = "1";
   }
 };
-
 
 const onLoad = (id: string) => {
   window.STOREFRONT.CART.subscribe(() => {

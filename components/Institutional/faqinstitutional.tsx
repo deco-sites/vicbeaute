@@ -16,5 +16,7 @@ export default function FaqInstitutional({
   searchPlaceholder = "O que você procura?",
   cards = [],
 }: Props) {
-  return <FaqMap title={title} searchPlaceholder={searchPlaceholder} cards={cards} />;
+  return (
+    <FaqMap title={title} searchPlaceholder={searchPlaceholder} cards={cards} />
+  );
 }
