@@ -136,7 +136,7 @@ function PageResult(props: SectionProps<typeof loader>) {
           "grid items-start",
           "grid-cols-2 gap-[18px]",
           hasPromo ? "lg:grid-cols-[350px_1fr_1fr_1fr]" : "lg:grid-cols-4",
-          "lg:gap-x-[10px] gap-x-[10px] lg:gap-y-[40px] gap-y-5",
+          "lg:gap-x-[10px] mb-[30px] xl:mb-0 gap-x-[10px] lg:gap-y-[40px] gap-y-5",
           "w-full",
         )}
       >
@@ -208,7 +208,7 @@ function PageResult(props: SectionProps<typeof loader>) {
                 <span class="inline [.htmx-request_&]:hidden">
                   Carregar mais produtos
                 </span>
-                <span class="loading loading-spinner hidden [.htmx-request_&]:block text-white" />
+                <span class="loading loading-spinner hidden [.htmx-request_&]:block font-Manrope text-[12px] xl:text-[14px] font-medium" />
               </a>
             </div>
           )
@@ -294,7 +294,7 @@ function Result(props: SectionProps<typeof loader>) {
     },
   });
   const results = (
-    <span class="text-gray-45 text-xs lg:text-base pb-[14px] lg:pb-0">
+    <span class="text-gray-45 text-[12px] xl:text-[14px] pb-[14px] lg:pb-0 font-Poppins">
       ({page.pageInfo.records}) produtos
     </span>
   );

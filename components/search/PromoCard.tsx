@@ -55,17 +55,17 @@ export default function PromoCard(props: PromoCardProps) {
 
       <div class="relative z-10 flex flex-col p-5 lg:p-7 w-full text-[#ffffff]">
         {subtitle && (
-          <span class="text-[9px] lg:text-[10px] mb-2 font-medium tracking-wide uppercase opacity-90">
+          <span class="text-[10px] xl:text-[10px] mb-2 tracking-wide font-Hanken-Grotesk opacity-90">
             {subtitle}
           </span>
         )}
         {title && (
-          <h3 class="text-[17px] lg:text-[20px] font-sans leading-tight mb-5 lg:mb-6 text-[#ffffff]">
+          <h3 class="text-[18px] xl:text-[20px] font-Manrope xl:font-Hanken-Grotesk leading-tight mb-5 lg:mb-6 text-[#ffffff]">
             {title}
           </h3>
         )}
         {buttonText && (
-          <span class="inline-flex w-full justify-center items-center py-3 border border-[#ffffff]/40 text-[11px] lg:text-[12px] uppercase tracking-wider hover:bg-[#ffffff] hover:text-black hover:border-[#ffffff] transition-colors rounded-sm font-semibold">
+          <span class="inline-flex w-full justify-center items-center py-3 border border-[#ffffff]/40 text-[14px] tracking-wider transition-colors font-Manrope rounded-lg xl:rounded-sm font-regular">
             {buttonText}
           </span>
         )}

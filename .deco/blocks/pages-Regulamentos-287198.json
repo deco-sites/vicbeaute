@@ -1,0 +1,33 @@
+{
+  "name": "Regulamentos",
+  "path": "/regulamentos",
+  "sections": [
+    {
+      "__resolveType": "Header"
+    },
+    {
+      "__resolveType": "site/sections/Content/InstitutionalMain.tsx",
+      "pageTitle": "Regulamento das Promoções",
+      "institutionalMenu": [
+        {
+          "menuItem": "Regulamentos",
+          "menuLink": "/regulamentos"
+        }
+      ],
+      "institutionalText": "<h2 style=\"text-align: start\">Frete Grátis</h2><p style=\"text-align: start\">Disponível para compras a partir de R$ 220. Válido para entrega Econômica.</p><h2 style=\"text-align: start\">Cupom do Clube Beauté</h2><p style=\"text-align: start\">Você ganha uma esponja nas compras acima de R$ 275. Promoção não cumulativa com outros brindes.</p><h2 style=\"text-align: start\">Cupom da Vic Ceridono</h2><p style=\"text-align: start\">Em qualquer compra feita com o cupom VICVB, você ganha +5% OFF. Válido também para compras de kits e/ou combos.</p><p style=\"text-align: start\">Fique de olho nos canais oficiais da Vic Beauté, e aproveita pra entrar no nosso canal de transmissão no Instagram pra saber das novidades antes de todo mundo!</p><h2 style=\"text-align: start\">Cupom de Primeira Compra</h2><p style=\"text-align: start\">Você ganha 10% de desconto na primeira compra em nosso site usando o cupom VEMDEVIC. Promoção válida por tempo indeterminado e sujeita a alterações. Desconto não acumulativo com outras promoções e não válido para compra de quaisquer kits e/ou combos.</p><h2 style=\"text-align: start\">Brinde da Vez</h2><p style=\"text-align: start\">Você ganha uma nécessaire exclusiva em compras a partir de R$ 349. Promoção válida por tempo indeterminado, sujeita à disponibilidade de estoque e não cumulativa com outros brindes.</p>"
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "newsletter"
+      }
+    },
+    {
+      "__resolveType": "Footer"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}
