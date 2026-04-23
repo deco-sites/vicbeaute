@@ -62,7 +62,7 @@ function Drawer(
         <aside
           data-aside
           class={clx(
-            "drawer-side h-[100vh] z-40",
+            "drawer-side h-[100vh] z-40 overflow-hidden",
             "[[data-aside]&_section]:contents",
           )}
         >
