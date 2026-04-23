@@ -6,15 +6,15 @@ export interface Props {
    * @title Texto SEO
    */
   textSeo?: {
-    /** 
-     * @title Título H1 
+    /**
+     * @title Título H1
      */
     h1title?: string;
-    /** 
-     * @title Subtítulo H2 
+    /**
+     * @title Subtítulo H2
      */
     h2subTitle?: string;
-    /** 
+    /**
      * @title Texto
      * @format textarea
      */
@@ -43,7 +43,9 @@ function SeoText({ textSeo }: Props) {
           )}
           {textSeo.h2subTitle && (
             <>
-              <span class="text-[32px] lg:text-[40px] font-Queens text-[#333333] leading-none">|</span>
+              <span class="text-[32px] lg:text-[40px] font-Queens text-[#333333] leading-none">
+                |
+              </span>
               <h2 class="text-[32px] lg:text-[40px] font-Queens text-[#333333] leading-none text-center">
                 {textSeo.h2subTitle}
               </h2>
@@ -116,7 +118,7 @@ function SeoText({ textSeo }: Props) {
                 .seo-checkbox-${id}:not(:checked) ~ .seo-btn-${id} .seo-text-less {
                   display: none;
                 }
-              `
+              `,
             }}
           />
           <input
@@ -124,8 +126,10 @@ function SeoText({ textSeo }: Props) {
             type="checkbox"
             class={`seo-checkbox-${id}`}
           />
-          
-          <div class={`seo-body-${id} w-full text-[15px] lg:text-[16px] text-[#808080] font-Hanken-Grotesk leading-[24px]`}>
+
+          <div
+            class={`seo-body-${id} w-full text-[15px] lg:text-[16px] text-[#808080] font-Hanken-Grotesk leading-[24px]`}
+          >
             <div dangerouslySetInnerHTML={{ __html: textSeo.text }} />
             <div class={`seo-fade-${id}`} />
           </div>

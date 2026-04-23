@@ -207,10 +207,12 @@ export default function ShopTheLookModal(
                       {product.name}
                     </span>
                     {corStr && (
-                      <span class="text-[13px] text-gray-500 xl:font-Manrope xl:text-[#4D5D49]">{corStr}</span>
+                      <span class="text-[13px] text-gray-500 xl:font-Manrope xl:text-[#4D5D49]">
+                        {corStr}
+                      </span>
                     )}
                     <span class="text-[14px] text-[#8a8a8a] mt-1 xl:font-Manrope xl:text-[#4D5D49]">
-                       {formatPrice(price)}
+                      {formatPrice(price)}
                     </span>
                   </div>
                 </div>

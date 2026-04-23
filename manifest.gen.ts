@@ -76,23 +76,25 @@ import * as $$$$$$53 from "./sections/Product/ProductBuyTogether.tsx";
 import * as $$$$$$54 from "./sections/Product/ProductColors.tsx";
 import * as $$$$$$55 from "./sections/Product/ProductComposition.tsx";
 import * as $$$$$$56 from "./sections/Product/ProductDescription.tsx";
-import * as $$$$$$57 from "./sections/Product/ProductDetails.tsx";
-import * as $$$$$$58 from "./sections/Product/ProductFaq.tsx";
-import * as $$$$$$59 from "./sections/Product/ProductReviews.tsx";
-import * as $$$$$$60 from "./sections/Product/ProductShelf.tsx";
-import * as $$$$$$61 from "./sections/Product/ProductShelfSimilars.tsx";
-import * as $$$$$$62 from "./sections/Product/ProductShelfTabbed.tsx";
-import * as $$$$$$63 from "./sections/Product/ProductTips.tsx";
-import * as $$$$$$64 from "./sections/Product/SearchResult.tsx";
-import * as $$$$$$65 from "./sections/Product/ShelfWithImage.tsx";
-import * as $$$$$$66 from "./sections/Product/TabbedProductSlider.tsx";
-import * as $$$$$$67 from "./sections/Product/Wishlist.tsx";
-import * as $$$$$$68 from "./sections/SearchError/SearchErrorBreadcrumb.tsx";
-import * as $$$$$$69 from "./sections/Session.tsx";
-import * as $$$$$$70 from "./sections/Social/InstagramFeed.tsx";
-import * as $$$$$$71 from "./sections/Social/InstagramPosts.tsx";
-import * as $$$$$$72 from "./sections/Social/WhatsApp.tsx";
-import * as $$$$$$73 from "./sections/Theme/Theme.tsx";
+import * as $$$$$$57 from "./sections/Product/ProductDescriptionKit.tsx";
+import * as $$$$$$58 from "./sections/Product/ProductDetails.tsx";
+import * as $$$$$$59 from "./sections/Product/ProductDetailsKit.tsx";
+import * as $$$$$$60 from "./sections/Product/ProductFaq.tsx";
+import * as $$$$$$61 from "./sections/Product/ProductReviews.tsx";
+import * as $$$$$$62 from "./sections/Product/ProductShelf.tsx";
+import * as $$$$$$63 from "./sections/Product/ProductShelfSimilars.tsx";
+import * as $$$$$$64 from "./sections/Product/ProductShelfTabbed.tsx";
+import * as $$$$$$65 from "./sections/Product/ProductTips.tsx";
+import * as $$$$$$66 from "./sections/Product/SearchResult.tsx";
+import * as $$$$$$67 from "./sections/Product/ShelfWithImage.tsx";
+import * as $$$$$$68 from "./sections/Product/TabbedProductSlider.tsx";
+import * as $$$$$$69 from "./sections/Product/Wishlist.tsx";
+import * as $$$$$$70 from "./sections/SearchError/SearchErrorBreadcrumb.tsx";
+import * as $$$$$$71 from "./sections/Session.tsx";
+import * as $$$$$$72 from "./sections/Social/InstagramFeed.tsx";
+import * as $$$$$$73 from "./sections/Social/InstagramPosts.tsx";
+import * as $$$$$$74 from "./sections/Social/WhatsApp.tsx";
+import * as $$$$$$75 from "./sections/Theme/Theme.tsx";
 
 const manifest = {
   "loaders": {
@@ -164,23 +166,25 @@ const manifest = {
     "site/sections/Product/ProductColors.tsx": $$$$$$54,
     "site/sections/Product/ProductComposition.tsx": $$$$$$55,
     "site/sections/Product/ProductDescription.tsx": $$$$$$56,
-    "site/sections/Product/ProductDetails.tsx": $$$$$$57,
-    "site/sections/Product/ProductFaq.tsx": $$$$$$58,
-    "site/sections/Product/ProductReviews.tsx": $$$$$$59,
-    "site/sections/Product/ProductShelf.tsx": $$$$$$60,
-    "site/sections/Product/ProductShelfSimilars.tsx": $$$$$$61,
-    "site/sections/Product/ProductShelfTabbed.tsx": $$$$$$62,
-    "site/sections/Product/ProductTips.tsx": $$$$$$63,
-    "site/sections/Product/SearchResult.tsx": $$$$$$64,
-    "site/sections/Product/ShelfWithImage.tsx": $$$$$$65,
-    "site/sections/Product/TabbedProductSlider.tsx": $$$$$$66,
-    "site/sections/Product/Wishlist.tsx": $$$$$$67,
-    "site/sections/SearchError/SearchErrorBreadcrumb.tsx": $$$$$$68,
-    "site/sections/Session.tsx": $$$$$$69,
-    "site/sections/Social/InstagramFeed.tsx": $$$$$$70,
-    "site/sections/Social/InstagramPosts.tsx": $$$$$$71,
-    "site/sections/Social/WhatsApp.tsx": $$$$$$72,
-    "site/sections/Theme/Theme.tsx": $$$$$$73,
+    "site/sections/Product/ProductDescriptionKit.tsx": $$$$$$57,
+    "site/sections/Product/ProductDetails.tsx": $$$$$$58,
+    "site/sections/Product/ProductDetailsKit.tsx": $$$$$$59,
+    "site/sections/Product/ProductFaq.tsx": $$$$$$60,
+    "site/sections/Product/ProductReviews.tsx": $$$$$$61,
+    "site/sections/Product/ProductShelf.tsx": $$$$$$62,
+    "site/sections/Product/ProductShelfSimilars.tsx": $$$$$$63,
+    "site/sections/Product/ProductShelfTabbed.tsx": $$$$$$64,
+    "site/sections/Product/ProductTips.tsx": $$$$$$65,
+    "site/sections/Product/SearchResult.tsx": $$$$$$66,
+    "site/sections/Product/ShelfWithImage.tsx": $$$$$$67,
+    "site/sections/Product/TabbedProductSlider.tsx": $$$$$$68,
+    "site/sections/Product/Wishlist.tsx": $$$$$$69,
+    "site/sections/SearchError/SearchErrorBreadcrumb.tsx": $$$$$$70,
+    "site/sections/Session.tsx": $$$$$$71,
+    "site/sections/Social/InstagramFeed.tsx": $$$$$$72,
+    "site/sections/Social/InstagramPosts.tsx": $$$$$$73,
+    "site/sections/Social/WhatsApp.tsx": $$$$$$74,
+    "site/sections/Theme/Theme.tsx": $$$$$$75,
   },
   "actions": {
     "site/actions/minicart/submit.ts": $$$$$$$$$0,

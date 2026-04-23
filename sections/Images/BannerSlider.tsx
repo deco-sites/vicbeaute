@@ -61,63 +61,36 @@ export default function BannerSlider(
       class="relative w-full flex flex-col mb-10"
     >
       <div class="relative w-full overflow-hidden">
-      <Slider class="carousel carousel-center w-full col-span-full row-span-full">
-        {banners.map((banner, index) => (
-          <Slider.Item
-            key={index}
-            index={index}
-            class="carousel-item w-full"
-          >
-            {/* MOBILE LAYOUT: Imagem em cima + caixa de texto em baixo */}
-            <div class="flex lg:hidden flex-col w-full">
-              <img
-                class="object-cover w-full h-auto"
-                loading={index === 0 ? "eager" : "lazy"}
-                src={banner.mobileImage}
-                alt={banner.alt || banner.title}
-              />
-              <div class="flex flex-col items-center justify-center text-center px-[14px] py-[12px] w-full bg-[#f4f4f4]">
-                {banner.subtitle && (
-                  <span class="text-[#CE9680] font-Hanken-Grotesk text-sm mb-2">
-                    {banner.subtitle}
-                  </span>
-                )}
-                {banner.title && (
-                  <h2 class="text-[#455C42] text-3xl text-[24px] font-Hanken-Grotesk mb-[10px] leading-[1.1] max-w-[280px]">
-                    {banner.title}
-                  </h2>
-                )}
-                {banner.buttonText && (
-                  <a
-                    href={banner.buttonLink || "#"}
-                    class="bg-[#455C42] text-[#EBEDE2] px-[53px] font-Hanken-Grotesk py-4 text-sm font-medium transition-opacity rounded-md tracking-wider"
-                  >
-                    {banner.buttonText}
-                  </a>
-                )}
-              </div>
-            </div>
-
-            {/* DESKTOP LAYOUT: Duas colunas — esquerda bg + texto, direita imagem */}
-            <div class="hidden lg:grid w-full h-[480px]" style="grid-template-columns: 1fr 724px;">
-              {/* Coluna esquerda: background neutro + texto */}
-              <div class={`flex items-center justify-center ${banner.whiteBackground ? "bg-white-15" : "bg-[#EEEBE6]"}`}>
-                <div class="flex flex-col items-start text-left max-w-[360px] mx-auto">
+        <Slider class="carousel carousel-center w-full col-span-full row-span-full">
+          {banners.map((banner, index) => (
+            <Slider.Item
+              key={index}
+              index={index}
+              class="carousel-item w-full"
+            >
+              {/* MOBILE LAYOUT: Imagem em cima + caixa de texto em baixo */}
+              <div class="flex lg:hidden flex-col w-full">
+                <img
+                  class="object-cover w-full h-auto"
+                  loading={index === 0 ? "eager" : "lazy"}
+                  src={banner.mobileImage}
+                  alt={banner.alt || banner.title}
+                />
+                <div class="flex flex-col items-center justify-center text-center px-[14px] py-[12px] w-full bg-[#f4f4f4]">
                   {banner.subtitle && (
-                    <span class="text-[#CE9680] xl:tracking-normal xl:leading-[1.2] font-Hanken-Grotesk font-light text-[16px] mb-3">
+                    <span class="text-[#CE9680] font-Hanken-Grotesk text-sm mb-2">
                       {banner.subtitle}
                     </span>
                   )}
                   {banner.title && (
-                    <h2 class="text-[#455C42] text-[42px] xl:text-[48px] font-Queens mb-6 leading-[1.05]
-                    xl:leading-[1.0] xl:font-regular">
+                    <h2 class="text-[#455C42] text-3xl text-[24px] font-Hanken-Grotesk mb-[10px] leading-[1.1] max-w-[280px]">
                       {banner.title}
                     </h2>
                   )}
                   {banner.buttonText && (
                     <a
                       href={banner.buttonLink || "#"}
-                      class="bg-[#455C42] text-[#ffffff] px-6 py-3 text-sm xl:font-regular xl: font-hanken-grotesk font-medium transition-colors rounded-md tracking-wider xl:text-[14px]"
+                      class="bg-[#455C42] text-[#EBEDE2] px-[53px] font-Hanken-Grotesk py-4 text-sm font-medium transition-opacity rounded-md tracking-wider"
                     >
                       {banner.buttonText}
                     </a>
@@ -125,47 +98,81 @@ export default function BannerSlider(
                 </div>
               </div>
 
-              {/* Coluna direita: imagem */}
-              <div class="overflow-hidden h-full">
-                <img
-                  class="object-cover w-full h-full"
-                  loading={index === 0 ? "eager" : "lazy"}
-                  src={banner.desktopImage}
-                  alt={banner.alt || banner.title}
-                />
-              </div>
-            </div>
-          </Slider.Item>
-        ))}
-      </Slider>
+              {/* DESKTOP LAYOUT: Duas colunas — esquerda bg + texto, direita imagem */}
+              <div
+                class="hidden lg:grid w-full h-[480px]"
+                style="grid-template-columns: 1fr 724px;"
+              >
+                {/* Coluna esquerda: background neutro + texto */}
+                <div
+                  class={`flex items-center justify-center ${
+                    banner.whiteBackground ? "bg-white-15" : "bg-[#EEEBE6]"
+                  }`}
+                >
+                  <div class="flex flex-col items-start text-left max-w-[360px] mx-auto">
+                    {banner.subtitle && (
+                      <span class="text-[#CE9680] xl:tracking-normal xl:leading-[1.2] font-Hanken-Grotesk font-light text-[16px] mb-3">
+                        {banner.subtitle}
+                      </span>
+                    )}
+                    {banner.title && (
+                      <h2 class="text-[#455C42] text-[42px] xl:text-[48px] font-Queens mb-6 leading-[1.05]
+                    xl:leading-[1.0] xl:font-regular">
+                        {banner.title}
+                      </h2>
+                    )}
+                    {banner.buttonText && (
+                      <a
+                        href={banner.buttonLink || "#"}
+                        class="bg-[#455C42] text-[#ffffff] px-6 py-3 text-sm xl:font-regular xl: font-hanken-grotesk font-medium transition-colors rounded-md tracking-wider xl:text-[14px]"
+                      >
+                        {banner.buttonText}
+                      </a>
+                    )}
+                  </div>
+                </div>
 
-      {/* ARROWS CONTAINER */}
-      {(arrowsDesktop || arrowsMobile) && banners.length > 1 && (
-        <div
-          class={`absolute top-1/2 -translate-y-1/2 w-full justify-between items-center pointer-events-none z-10 px-4 lg:px-10
+                {/* Coluna direita: imagem */}
+                <div class="overflow-hidden h-full">
+                  <img
+                    class="object-cover w-full h-full"
+                    loading={index === 0 ? "eager" : "lazy"}
+                    src={banner.desktopImage}
+                    alt={banner.alt || banner.title}
+                  />
+                </div>
+              </div>
+            </Slider.Item>
+          ))}
+        </Slider>
+
+        {/* ARROWS CONTAINER */}
+        {(arrowsDesktop || arrowsMobile) && banners.length > 1 && (
+          <div
+            class={`absolute top-1/2 -translate-y-1/2 w-full justify-between items-center pointer-events-none z-10 px-4 lg:px-10
             ${arrowsMobile ? "flex" : "hidden"} 
             ${arrowsDesktop ? "lg:flex" : "lg:hidden"}`}
-        >
-          <Slider.PrevButton class="btn btn-circle glass opacity-80 hover:opacity-100 bg-[#EFEFEF] hover:bg-white text-black pointer-events-auto border-none w-10 h-10 min-h-10">
-            <Icon
-              class="text-base-100 rotate-180"
-              size={24}
-              id="right-arrow-category"
-              strokeWidth={3}
-            />
-          </Slider.PrevButton>
-          <Slider.NextButton class="btn btn-circle glass opacity-80 hover:opacity-100 bg-[#EFEFEF] hover:bg-white text-black pointer-events-auto border-none w-10 h-10 min-h-10">
-            <Icon
-              class="text-base-100"
-              size={24}
-              id="right-arrow-category"
-              strokeWidth={3}
-            />
-          </Slider.NextButton>
-        </div>
-      )}
-
-      </div>{/* end overflow-hidden wrapper */}
+          >
+            <Slider.PrevButton class="btn btn-circle glass opacity-80 hover:opacity-100 bg-[#EFEFEF] hover:bg-white text-black pointer-events-auto border-none w-10 h-10 min-h-10">
+              <Icon
+                class="text-base-100 rotate-180"
+                size={24}
+                id="right-arrow-category"
+                strokeWidth={3}
+              />
+            </Slider.PrevButton>
+            <Slider.NextButton class="btn btn-circle glass opacity-80 hover:opacity-100 bg-[#EFEFEF] hover:bg-white text-black pointer-events-auto border-none w-10 h-10 min-h-10">
+              <Icon
+                class="text-base-100"
+                size={24}
+                id="right-arrow-category"
+                strokeWidth={3}
+              />
+            </Slider.NextButton>
+          </div>
+        )}
+      </div>
+      {/* end overflow-hidden wrapper */}
 
       {/* DOTS CONTAINER */}
       {(dotsDesktop || dotsMobile) && banners.length > 1 && (

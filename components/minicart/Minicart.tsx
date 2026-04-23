@@ -225,7 +225,7 @@ export default function Cart(
 
                 {/* Cart Footer */}
                 <footer class="w-full">
-                  <div class="flex flex-col gap-2 relative">
+                  <div class="flex flex-col gap-2 relative xl:px-4">
                     {/* Divider that sits above subtotal, mimicking border-t */}
                     <hr class="absolute top-[-24px] left-[-20px] w-[calc(100%+40px)] border-t border-[#E1E1E1]" />
 

@@ -21,7 +21,6 @@ export default function ProductTips({ page }: Props) {
     <div id="product-tips" class="w-full bg-[#f4f2ee] py-8 lg:py-16">
       {/* Container shared alignment with description */}
       <div class="container flex flex-col w-full px-5 sm:px-0 max-w-[1280px]">
-        
         {/* Mobile Layout (Static, not accordion) */}
         <div class="flex flex-col lg:hidden w-full border-b border-black-5/20 pb-2">
           <h2 class="py-2 font-Queens text-[28px] text-[#D1927D]">
@@ -57,7 +56,6 @@ export default function ProductTips({ page }: Props) {
             </div>
           )}
         </div>
-
       </div>
     </div>
   );

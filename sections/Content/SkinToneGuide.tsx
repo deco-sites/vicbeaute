@@ -24,7 +24,6 @@ export interface Props {
 
   /** @title Blocos de Conteúdo (Ex: Tom e Subtom) */
   blocks?: ContentBlock[];
-
 }
 
 export default function SkinToneGuide({
@@ -33,17 +32,23 @@ export default function SkinToneGuide({
     {
       imagePlacement: "left",
       title: "Tom de Pele",
-      text: "Refere-se à cor superficial da pele, variando entre claro, médio e escuro",
-      imageMobile: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1818/ff6bb37e-0eab-40e1-a454-86856efc278e",
-      imageDesktop: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1818/ff6bb37e-0eab-40e1-a454-86856efc278e",
+      text:
+        "Refere-se à cor superficial da pele, variando entre claro, médio e escuro",
+      imageMobile:
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1818/ff6bb37e-0eab-40e1-a454-86856efc278e",
+      imageDesktop:
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1818/ff6bb37e-0eab-40e1-a454-86856efc278e",
       imageAlt: "Tom de Pele",
     },
     {
       imagePlacement: "right",
       title: "Subtom de Pele",
-      text: "É a cor subjacente que influencia a aparência geral da pele. Existem três principais subtons: quentes (tons amarelados/dourados), frios (tons rosados/azulados) e neutro (uma mistura de ambos). O subtom permanece constante, independentemente da exposição ao sol ou mudanças na pele.",
-      imageMobile: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1818/ff6bb37e-0eab-40e1-a454-86856efc278e",
-      imageDesktop: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1818/ff6bb37e-0eab-40e1-a454-86856efc278e",
+      text:
+        "É a cor subjacente que influencia a aparência geral da pele. Existem três principais subtons: quentes (tons amarelados/dourados), frios (tons rosados/azulados) e neutro (uma mistura de ambos). O subtom permanece constante, independentemente da exposição ao sol ou mudanças na pele.",
+      imageMobile:
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1818/ff6bb37e-0eab-40e1-a454-86856efc278e",
+      imageDesktop:
+        "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/1818/ff6bb37e-0eab-40e1-a454-86856efc278e",
       imageAlt: "Subtom de Pele",
     },
   ],
@@ -51,7 +56,6 @@ export default function SkinToneGuide({
   return (
     <div class="w-full relative bg-white-10 py-12 lg:py-20 flex flex-col items-center">
       <div class="w-full max-w-[1140px] px-0 lg:px-8 xl:px-0 mx-auto">
-        
         {/* Título Superior */}
         {mainTitle && (
           <h2 class="font-Queens text-[32px] sm:text-[40px] lg:text-[46px] xl:text-[50px] text-pink-15 text-center leading-[1.1] w-full px-5 lg:px-0 mb-10 lg:mb-16">
@@ -72,7 +76,9 @@ export default function SkinToneGuide({
             >
               {/* Textos Celular (Aparece antes da imagem no mobile) */}
               <div class="flex lg:hidden flex-col items-center text-center px-5 mb-5 w-full">
-                <h3 class="font-bold text-[18px] text-black-10 mb-2">{block.title}</h3>
+                <h3 class="font-bold text-[18px] text-black-10 mb-2">
+                  {block.title}
+                </h3>
                 <p class="text-[14px] text-black-20">{block.text}</p>
               </div>
 
@@ -116,8 +122,6 @@ export default function SkinToneGuide({
             </div>
           ))}
         </div>
-
-
       </div>
     </div>
   );

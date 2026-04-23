@@ -57,12 +57,14 @@ export default function ProductShelfSimilars({
       <ProductSliderSimilars
         products={products}
         itemListName={title}
-        arrows={arrows} 
-        dots={dots} 
+        arrows={arrows}
+        dots={dots}
       />
-      
-      {/* Modal is injected once per shelf grid. 
-          When a card dispatches the open-shelf-color-modal event, this component handles it. */}
+
+      {
+        /* Modal is injected once per shelf grid.
+          When a card dispatches the open-shelf-color-modal event, this component handles it. */
+      }
       <ShelfColorModal />
     </Section.Container>
   );

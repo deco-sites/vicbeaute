@@ -41,11 +41,9 @@ function ProductGallery({ page }: Props) {
         <div class="flex flex-col gap-2 mt-2">
           <button
             onClick={() =>
-              selectedIndex.value =
-                selectedIndex.value > 0
-                  ? selectedIndex.value - 1
-                  : images.length - 1
-            }
+              selectedIndex.value = selectedIndex.value > 0
+                ? selectedIndex.value - 1
+                : images.length - 1}
             class="p-2 rounded-full border hover:bg-gray-100"
           >
             <Icon id="ChevronUp" size={16} />
@@ -53,11 +51,9 @@ function ProductGallery({ page }: Props) {
 
           <button
             onClick={() =>
-              selectedIndex.value =
-                selectedIndex.value < images.length - 1
-                  ? selectedIndex.value + 1
-                  : 0
-            }
+              selectedIndex.value = selectedIndex.value < images.length - 1
+                ? selectedIndex.value + 1
+                : 0}
             class="p-2 rounded-full border hover:bg-gray-100"
           >
             <Icon id="ChevronDown" size={16} />

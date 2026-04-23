@@ -27,7 +27,7 @@ export default function GallerySlider(props: Props) {
   const { page: { product: { name, isVariantOf, image: pImages } } } = props;
 
   const groupImages = (isVariantOf?.image ?? pImages ?? []).filter(
-    (img) => img.name?.toLowerCase() !== "cor"
+    (img) => img.name?.toLowerCase() !== "cor",
   );
   const filtered = groupImages.filter((img) =>
     name?.includes(img.alternateName || "")
@@ -56,7 +56,8 @@ export default function GallerySlider(props: Props) {
 
             <Slider.PrevButton
               class="no-animation absolute left-2 top-1/2 btn btn-circle btn-outline disabled:invisible"
-              onClick={() => setCurrentImageIndex(Math.max(0, currentImageIndex - 1))}
+              onClick={() =>
+                setCurrentImageIndex(Math.max(0, currentImageIndex - 1))}
               disabled={currentImageIndex === 0}
             >
               <Icon id="chevron-right" class="rotate-180" />
@@ -64,7 +65,10 @@ export default function GallerySlider(props: Props) {
 
             <Slider.NextButton
               class="no-animation absolute right-2 top-1/2 btn btn-circle btn-outline disabled:invisible"
-              onClick={() => setCurrentImageIndex(Math.min(images.length - 1, currentImageIndex + 1))}
+              onClick={() =>
+                setCurrentImageIndex(
+                  Math.min(images.length - 1, currentImageIndex + 1),
+                )}
               disabled={currentImageIndex === images.length - 1}
             >
               <Icon id="chevron-right" />
@@ -93,10 +97,13 @@ export default function GallerySlider(props: Props) {
             {images.map((img, index) => (
               <li class="carousel-item w-16 h-16" key={index}>
                 <button
-                  onClick={() => setCurrentImageIndex(index)}
+                  onClick={() =>
+                    setCurrentImageIndex(index)}
                   class={clx(
                     "group-disabled:border-base-400 border rounded object-cover w-full h-full",
-                    index === currentImageIndex ? "border-primary" : "border-transparent"
+                    index === currentImageIndex
+                      ? "border-primary"
+                      : "border-transparent",
                   )}
                   style={{ aspectRatio: "1 / 1" }}
                 >

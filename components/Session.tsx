@@ -266,7 +266,6 @@ interface Props {
 export default function Session(
   { minicart, wishlist, user, mode = "lazy" }: Props,
 ) {
-
   if (mode === "lazy") {
     return (
       <>
@@ -291,9 +290,7 @@ export default function Session(
             title={`Minha Sacola`}
             drawer={MINICART_DRAWER_ID}
           >
-            <div
-              class="h-full w-full flex flex-col bg-base-100 items-center justify-center overflow-auto max-w-[425px] md:max-w-[570px] xl:max-[w-425px]"
-            >
+            <div class="h-full w-full flex flex-col bg-base-100 items-center justify-center overflow-auto max-w-[425px] md:max-w-[570px] xl:max-[w-425px]">
               <CartProvider cart={minicart!} />
             </div>
           </Drawer.Aside>

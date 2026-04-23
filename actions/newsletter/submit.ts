@@ -1,4 +1,4 @@
-export const runtime = "server"
+export const runtime = "server";
 import { AppContext } from "apps/vtex/mod.ts";
 import type { CreateNewDocument } from "apps/vtex/utils/types.ts";
 
@@ -8,7 +8,7 @@ export interface Props {
     email: string;
     whats?: string;
     aceite: boolean;
-  },
+  };
   acronym: string;
 }
 

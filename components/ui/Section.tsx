@@ -24,7 +24,7 @@ function Header({ title, cta }: Props) {
           ? "justify-center lg:justify-center pt-0"
           : title === "Mais amados"
           ? "justify-center lg:justify-center pt-6 lg:pt-0"
-          : "justify-between lg:justify-center pt-6 lg:pt-0"
+          : "justify-between lg:justify-center pt-6 lg:pt-0",
       )}
     >
       <h2 class="font-Queens text-2xl text-[32px] text-[#CE9680] xl:text-[36px] title-minicart">

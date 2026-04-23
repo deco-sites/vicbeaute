@@ -75,7 +75,6 @@ export interface Props {
   // textSeo?: RichText;
 }
 
-
 const useUrlRebased = (overrides: string | undefined, base: string) => {
   let url: string | undefined = undefined;
   if (overrides) {

@@ -2,7 +2,7 @@ import daisyui from "daisyui";
 
 export default {
   plugins: [
-    daisyui
+    daisyui,
   ],
   daisyui: { themes: [], logs: false },
   content: ["./**/*.tsx"],
@@ -85,7 +85,7 @@ export default {
         "g-vc-105": "6.5625rem",
         "vc-150": "150px",
         "w-vc-300": "300px",
-        "p-vc-10": ".625rem"
+        "p-vc-10": ".625rem",
       },
       maxWidth: {
         "vc-40": "40px",

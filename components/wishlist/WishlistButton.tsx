@@ -59,16 +59,16 @@ function WishlistButton({ item, variant = "full" }: Props) {
           variant === "icon"
             ? "btn-circle btn-ghost btn-sm"
             : variant === "pdp"
-              ? "h-[45px] w-[45px] bg-white rounded-full shrink-0 transition-opacity hover:opacity-80 hover:bg-white min-h-[45px] border-none flex items-center justify-center"
-              : "btn-primary btn-outline gap-2 w-full",
+            ? "h-[45px] w-[45px] bg-white rounded-full shrink-0 transition-opacity hover:opacity-80 hover:bg-white min-h-[45px] border-none flex items-center justify-center"
+            : "btn-primary btn-outline gap-2 w-full",
         )}
       >
-        <Icon 
-          id={variant === "pdp" ? "heartpdp" : "favorite"} 
+        <Icon
+          id={variant === "pdp" ? "heartpdp" : "favorite"}
           width={variant === "pdp" ? 21 : 24}
           height={variant === "pdp" ? 16 : 24}
-          class="[.htmx-request_&]:hidden" 
-          fill="none" 
+          class="[.htmx-request_&]:hidden"
+          fill="none"
         />
         {variant === "full" && (
           <span class="[.htmx-request_&]:hidden">Add to wishlist</span>

@@ -207,31 +207,40 @@ export default function ShopTheLook({
       />
 
       {/* Island do Modal com filtro restrito de chaves para evitar crash de JSON Circular (VTEX) */}
-      <ShopTheLookModal looks={looks.map(l => ({
-         imageDesk: l.imageDesk,
-         imageMobile: l.imageMobile,
-         imageAlt: l.imageAlt,
-         modalImage: l.modalImage,
-         modalImageMobile: l.modalImageMobile,
-         title: l.title,
-         subtitle: l.subtitle,
-         products: (l.products || []).map(p => ({
+      <ShopTheLookModal
+        looks={looks.map((l) => ({
+          imageDesk: l.imageDesk,
+          imageMobile: l.imageMobile,
+          imageAlt: l.imageAlt,
+          modalImage: l.modalImage,
+          modalImageMobile: l.modalImageMobile,
+          title: l.title,
+          subtitle: l.subtitle,
+          products: (l.products || []).map((p) => ({
             productID: p.productID,
             name: p.name,
-            offers: p.offers?.offers ? {
-               // @ts-ignore safe-strip
-               offers: [{ 
-                  price: p.offers.offers[0]?.price, 
-                  seller: p.offers.offers[0]?.seller 
-               }]
-            } : undefined,
-            additionalProperty: p.additionalProperty?.map(a => ({ name: a.name, value: a.value })),
+            offers: p.offers?.offers
+              ? {
+                // @ts-ignore safe-strip
+                offers: [{
+                  price: p.offers.offers[0]?.price,
+                  seller: p.offers.offers[0]?.seller,
+                }],
+              }
+              : undefined,
+            additionalProperty: p.additionalProperty?.map((a) => ({
+              name: a.name,
+              value: a.value,
+            })),
             // @ts-ignore safe-strip
             image: p.image?.length ? [{ url: p.image[0]?.url }] : undefined,
             // @ts-ignore safe-strip
-            isVariantOf: p.isVariantOf ? { productGroupID: p.isVariantOf.productGroupID } : undefined
-         }))
-      })) as any} />
+            isVariantOf: p.isVariantOf
+              ? { productGroupID: p.isVariantOf.productGroupID }
+              : undefined,
+          })),
+        })) as any}
+      />
     </div>
   );
 }

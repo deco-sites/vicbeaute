@@ -16,14 +16,17 @@ function ProductSlider(
   { products, itemListName, arrows = true, dots = true }: ProductSliderProps,
 ) {
   const id = useId();
-  const device = useDevice()
+  const device = useDevice();
   const itemsPerPage = device === "mobile" ? 2 : 5;
   const totalPages = Math.ceil(products.length / itemsPerPage);
 
   return (
     <>
       <div id={id} class="relative w-full lg:px-0 pl-3 pt-2">
-        <Slider id="shelf-slider" class="lg:mr-[calc(50%-50vw)] lg:pr-[calc(50vw-50%)]">
+        <Slider
+          id="shelf-slider"
+          class="lg:mr-[calc(50%-50vw)] lg:pr-[calc(50vw-50%)]"
+        >
           {products?.map((product, index) => (
             <Slider.Item index={index}>
               <ProductCard
@@ -58,8 +61,7 @@ function ProductSlider(
               </Slider.NextButton>
             </div>
           </>
-        )}{" "}
-        {dots && (
+        )} {dots && (
           <>
             <style
               dangerouslySetInnerHTML={{

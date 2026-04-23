@@ -142,9 +142,9 @@ export default function ShelfColorModal(
     )?.value || "";
 
   // Atributo "Cores" no nível de produto (igual ao subtitle do seletor da PDP)
-  const coresSpec =
-    (activeProduct.isVariantOf?.additionalProperty ?? activeProduct.additionalProperty ?? [])
-      .find((attr) => attr.name === "Cores")?.value || "";
+  const coresSpec = (activeProduct.isVariantOf?.additionalProperty ??
+    activeProduct.additionalProperty ?? [])
+    .find((attr) => attr.name === "Cores")?.value || "";
 
   return (
     <div class="fixed inset-0 z-50 flex items-end lg:items-center justify-center animate-fade-in lg:p-4">
@@ -196,7 +196,8 @@ export default function ShelfColorModal(
           <h2 class="text-[17px] font-bold text-[#191919] leading-[1.2] mt-4 font-Manrope xl:text-[20px]">
             {activeProduct.isVariantOf?.name || activeProduct.name}
             <span class="font-normal font-Manrope text-[#363931] ml-1.5 opacity-90">
-              {coresSpec || colorSpec || activeProduct.name?.split("-").pop()?.trim()}
+              {coresSpec || colorSpec ||
+                activeProduct.name?.split("-").pop()?.trim()}
             </span>
           </h2>
           <div class="flex gap-2 items-center">
@@ -262,8 +263,11 @@ export default function ShelfColorModal(
                 attr.name?.toLowerCase() === "cor"
               )?.value || p.name?.split("-").pop()?.trim() || "";
               const pCores =
-                (p.isVariantOf?.additionalProperty ?? p.additionalProperty ?? [])
-                  .find((attr) => attr.name === "Cores")?.value || "";
+                (p.isVariantOf?.additionalProperty ?? p.additionalProperty ??
+                  [])
+                  .find((attr) =>
+                    attr.name === "Cores"
+                  )?.value || "";
               const pImage = p.image?.find((img) =>
                 img.name?.toLowerCase() === "cor"
               )?.url ?? p.image?.[0]?.url;

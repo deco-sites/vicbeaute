@@ -94,13 +94,16 @@ const Quiosquesinstitutional = (
   };
 
   return (
-    <div class={`bg-[#fff] w-full overflow-hidden ${isLastSection ? "mb-[60px]" : ""}`}>
+    <div
+      class={`bg-[#fff] w-full overflow-hidden ${
+        isLastSection ? "mb-[60px]" : ""
+      }`}
+    >
       <div class="w-full md:px-[80px] max-w-[1440px] xl:mx-auto institutional-wrapper">
-      
         <div class="flex-col w-full px-3 md:px-0">
           {pageTitle && (
-            <h1 
-              style= {{ fontFamily: '"Queens", serif' }}
+            <h1
+              style={{ fontFamily: '"Queens", serif' }}
               class="text-[#CE9680] w-full max-w-[351px] mt-[30px] h-fit text-[36px] leading-[36px] font-Queens mobile-text institutional-main-title mb-6 md:mb-10"
             >
               {pageTitle}
@@ -114,11 +117,13 @@ const Quiosquesinstitutional = (
                 const currentLinkIcon = getDynamicImage(card.linkIcon);
 
                 return (
-                  <div key={idx} class="institutional-text flex flex-col relative w-full mb-4 md:mb-12">
-                    
+                  <div
+                    key={idx}
+                    class="institutional-text flex flex-col relative w-full mb-4 md:mb-12"
+                  >
                     {/* Título Informativo Dinâmico (Comportamento de Título Global) */}
                     {card.informativeTitle && (
-                      <h3 
+                      <h3
                         style={{ fontFamily: '"Queens", serif' }}
                         class="text-[#CE9680] w-full max-w-[351px] h-fit text-[36px] leading-[36px] font-Queens mobile-text institutional-main-title mb-6 md:mb-8"
                       >
@@ -134,11 +139,19 @@ const Quiosquesinstitutional = (
                     {(card.secondTitle || currentTitleIcon) && (
                       <div class="flex items-start md:mt-2 mb-2">
                         {currentTitleIcon && (
-                          <img src={currentTitleIcon} width={15} height={18} alt="Ícone do título" class="mt-1" />
+                          <img
+                            src={currentTitleIcon}
+                            width={15}
+                            height={18}
+                            alt="Ícone do título"
+                            class="mt-1"
+                          />
                         )}
                         {card.secondTitle && (
-                          <h2 
-                            style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+                          <h2
+                            style={{
+                              fontFamily: '"Hanken Grotesk", sans-serif',
+                            }}
                             class="text-[24px] text-black flex-1 break-words ml-[6px] pr-[12px] mt-0 leading-none text-[#4D5D49]"
                           >
                             {card.secondTitle}
@@ -153,23 +166,33 @@ const Quiosquesinstitutional = (
                         dangerouslySetInnerHTML={{ __html: card.secondText }}
                       />
                     )}
-                    
+
                     {card.institutionalText && (
                       <div
                         class="w-full text-big mobile-text institutionalText break-words"
-                        dangerouslySetInnerHTML={{ __html: card.institutionalText }}
+                        dangerouslySetInnerHTML={{
+                          __html: card.institutionalText,
+                        }}
                       />
                     )}
 
                     {(card.linkLabel || currentLinkIcon) && (
                       <div class="flex items-center justify-end w-full mt-[10px] mb-6">
                         {card.linkLabel && (
-                          <a href={card.linkUrl || "#"} class="text-base text-[#4D5D49] underline mr-2 font-Queens">
+                          <a
+                            href={card.linkUrl || "#"}
+                            class="text-base text-[#4D5D49] underline mr-2 font-Queens"
+                          >
                             {card.linkLabel}
                           </a>
                         )}
                         {currentLinkIcon && (
-                          <img src={currentLinkIcon} width={24} height={24} alt="Ícone do link" />
+                          <img
+                            src={currentLinkIcon}
+                            width={24}
+                            height={24}
+                            alt="Ícone do link"
+                          />
                         )}
                       </div>
                     )}
@@ -180,10 +203,8 @@ const Quiosquesinstitutional = (
                   </div>
                 );
               })}
-
             </div>
           )}
-
         </div>
       </div>
     </div>

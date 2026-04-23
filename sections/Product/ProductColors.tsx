@@ -1,12 +1,12 @@
-import type { ProductDetailsPage, Product } from "apps/commerce/types.ts";
+import type { Product, ProductDetailsPage } from "apps/commerce/types.ts";
 import ColorDetailsIsland from "../../islands/ColorDetails.tsx";
 
 export interface Props {
   /** @title Título da Seção */
   title?: string;
-  /** 
+  /**
    * @title ID do Produto Base (Opcional)
-   * @description Digite o ID do SKU (ex: 11) para forçar o carregamento de cores dos similares desse produto específico ignorando a página atual. 
+   * @description Digite o ID do SKU (ex: 11) para forçar o carregamento de cores dos similares desse produto específico ignorando a página atual.
    */
   skuId?: string;
   /** @ignore */
@@ -18,31 +18,41 @@ export interface Props {
 export const loader = async (
   props: Props,
   _req: Request,
-  ctx: { invoke: any }
+  ctx: { invoke: any },
 ) => {
   if (props.skuId && props.skuId.trim() !== "") {
     try {
       // 1. Busca o produto base pelo SKU ID inserido
-      const products = await ctx.invoke("vtex/loaders/intelligentSearch/productList.ts", {
-        ids: [props.skuId.trim()],
-        count: 1
-      });
+      const products = await ctx.invoke(
+        "vtex/loaders/intelligentSearch/productList.ts",
+        {
+          ids: [props.skuId.trim()],
+          count: 1,
+        },
+      );
       const baseProduct = products?.[0];
 
       if (baseProduct) {
         // 2. Busca ativamente os Similares (crossSelling) deste produto via API nativa da VTEX
-        const productId = baseProduct.isVariantOf?.productGroupID || baseProduct.productID;
+        const productId = baseProduct.isVariantOf?.productGroupID ||
+          baseProduct.productID;
         try {
-          const similars = await ctx.invoke("vtex/loaders/legacy/relatedProductsLoader.ts", {
-            crossSelling: "similars",
-            id: productId,
-          });
-          
+          const similars = await ctx.invoke(
+            "vtex/loaders/legacy/relatedProductsLoader.ts",
+            {
+              crossSelling: "similars",
+              id: productId,
+            },
+          );
+
           if (similars && similars.length > 0) {
             baseProduct.isSimilarTo = similars;
           }
         } catch (err) {
-          console.warn("[ProductColors] Aviso: Não foi possível carregar os similares.", err);
+          console.warn(
+            "[ProductColors] Aviso: Não foi possível carregar os similares.",
+            err,
+          );
         }
 
         return { ...props, customProductHook: baseProduct };
@@ -54,11 +64,11 @@ export const loader = async (
   return { ...props, customProductHook: null };
 };
 
-export default function ProductColors({ 
-  title = "Cores", 
-  page, 
+export default function ProductColors({
+  title = "Cores",
+  page,
   customProductHook,
-  skuId 
+  skuId,
 }: Props) {
   // A prioridade será o produto carregado via skuId no loader da section
   const baseProduct = customProductHook || page?.product;
@@ -66,14 +76,14 @@ export default function ProductColors({
   if (!baseProduct) return null;
 
   const product = baseProduct;
-  
+
   // Agrupar variantes e produtos similares
   const similars = product.isSimilarTo ?? [];
-  
-  // Como o VTEX pode retornar as opções como Similars (Cross-selling) OU Variantes, 
+
+  // Como o VTEX pode retornar as opções como Similars (Cross-selling) OU Variantes,
   // nós preferimos os 'similars' se eles tiverem sido configurados e carregados
   let allProducts: Product[] = [];
-  
+
   if (similars.length > 0) {
     allProducts = [product, ...similars];
   } else {
@@ -82,11 +92,15 @@ export default function ProductColors({
   }
 
   // Deduplicar produtos pelo nome ou ID real para evitar que o VTEX Legacy e o IS retornem o mesmo produto com IDs (SKU vs Product ID) diferentes
-  allProducts = Array.from(new Map(allProducts.map((p: Product) => [p.name, p])).values());
+  allProducts = Array.from(
+    new Map(allProducts.map((p: Product) => [p.name, p])).values(),
+  );
 
   const colorTabs = allProducts.map((p: Product) => {
     // 1. Swatch image (label "cor")
-    const swatchUrl = p.image?.find((img) => img.name?.toLowerCase() === "cor")?.url ??
+    const swatchUrl = p.image?.find((img) =>
+      img.name?.toLowerCase() === "cor"
+    )?.url ??
       p.image?.[0]?.url ??
       "";
 
@@ -94,14 +108,14 @@ export default function ProductColors({
     const largeImageUrl = p.image?.find((img) => {
       const name = img.name?.toLowerCase();
       const alt = img.alternateName?.toLowerCase();
-      return name === "descrição" || alt === "descrição" || name === "decricao" || alt === "decricao";
+      return name === "descrição" || alt === "descrição" ||
+        name === "decricao" || alt === "decricao";
     })?.url ?? p.image?.[2]?.url ?? p.image?.[0]?.url ?? "";
 
     // 3. Texts — mesma lógica do ColorVariantSelector:
     //    name    = spec "Cor" no nível do SKU   (ex: "Preto", "Corada")
     //    subtitle = spec "Cores" no nível do produto (ex: "Coral")
-    const name =
-      p.additionalProperty?.find((a) => a.name === "Cor")?.value ??
+    const name = p.additionalProperty?.find((a) => a.name === "Cor")?.value ??
       p.name ??
       "";
     const subtitle =
@@ -112,7 +126,9 @@ export default function ProductColors({
     // The "isVariantOf" stores the specifications (additionalProperty) generally.
     const baseP = p.isVariantOf ?? p;
     const specs = baseP.additionalProperty ?? [];
-    const cartela = specs.find((s) => s.name === "Cartela De Cores" || s.name === "Cartela de Cores")?.value ?? "";
+    const cartela = specs.find((s) =>
+      s.name === "Cartela De Cores" || s.name === "Cartela de Cores"
+    )?.value ?? "";
 
     return {
       id: p.productID,
@@ -126,6 +142,6 @@ export default function ProductColors({
 
   // Se não houver produtos na lista atual, não exibe a seção
   if (colorTabs.length === 0) return null;
-  
+
   return <ColorDetailsIsland title={title} colors={colorTabs} />;
 }

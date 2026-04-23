@@ -1,4 +1,3 @@
-
 export interface PDPReview {
   reviews: ProductReview[];
   composition: Composition[];

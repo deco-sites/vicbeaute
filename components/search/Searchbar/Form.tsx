@@ -125,7 +125,7 @@ export default function Searchbar(
         />
 
         {drawerShelf && (
-          <div class="hidden lg:block flex-grow overflow-y-auto lg:pl-10">
+          <div class="hidden lg:block flex-grow overflow-y-auto lg:pl-10 no-scrollbar">
             <drawerShelf.Component {...drawerShelf.props} />
           </div>
         )}
