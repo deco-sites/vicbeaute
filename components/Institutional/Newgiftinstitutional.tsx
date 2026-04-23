@@ -206,7 +206,7 @@ export default function Newgiftinstitutional({
         </div>
 
         {/* Seção inferior: Títulos à esquerda + Gift cards à direita */}
-        <div class="flex flex-row items-start justify-between w-full px-[80px] mt-[10px] gap-[40px]">
+        <div class="flex flex-row items-start justify-between w-full max-w-[1280px] mt-[10px] gap-[40px]">
           {/* Esquerda: titulo e subtítulo */}
           <div class="flex flex-col items-start flex-shrink-0 max-w-[300px]">
             {bottomTitle && (
