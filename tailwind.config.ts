@@ -10,7 +10,7 @@ export default {
     container: { center: true },
     extend: {
       screens: {
-        "xl2": "1440px",
+        "xlarge": "1440px",
       },
       colors: {
         white: {
