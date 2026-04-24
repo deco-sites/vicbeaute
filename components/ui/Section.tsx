@@ -55,7 +55,7 @@ function Container({ class: _class, ...props }: JSX.IntrinsicElements["div"]) {
     <div
       {...props}
       class={clx(
-        "lg:max-w-[1280px] xl:px-[30px] xl2:px-0 mx-auto w-full",
+        "lg:max-w-[1280px] xl:px-[30px] xlarge:px-0 mx-auto w-full",
         _class?.toString(),
       )}
     />

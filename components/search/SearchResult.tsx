@@ -316,7 +316,7 @@ function Result(props: SectionProps<typeof loader>) {
         {partial
           ? <PageResult {...props} />
           : (
-            <div class="container flex flex-col w-full py-4 sm:py-5 px-3 xl:px-4 sm:px-0 lg:max-w-[1280px] container-search">
+            <div class="container flex flex-col w-full py-4 sm:py-5 px-3 xl:px-4 xlarge:px-0 sm:px-0 lg:max-w-[1280px] container-search">
               <Drawer
                 class="block w-full drawer-filters"
                 id={controls}
