@@ -64,7 +64,7 @@ export default function MiniBanners({ images, slider, header }: Props) {
   return (
     <div
       id={id}
-      class="flex flex-col relative container mx-auto lg:pb-14 mb-7 lg:mb-0 mt-5 lg:mt-9 gap-vc-10 xl:max-w-vc-1280"
+      class="flex flex-col relative container mx-auto lg:pb-14 mb-7 lg:mb-0 mt-5 lg:mt-9 gap-vc-10 xl:max-w-vc-1280 xl:px-[30px] xl2:px-0"
     >
       <div class="flex justify-between items-start pl-vc-15 xl:pl-[0px]">
         <div class="flex flex-col w-full sm:mb-3">

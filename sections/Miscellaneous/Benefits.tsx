@@ -55,8 +55,8 @@ export default function Benefits({ benefits = [] }: Props) {
   ));
 
   return (
-    <div class="w-full mx-auto lg:max-w-8xl container pl-4 mb-cm-25 xl:mb-cm-50 flex flex-col gap-8 lg:gap-cm-50 lg:px-0 xl:max-w-[1130px]">
-      <div class="max-lg:carousel flex justify-between xl:justify-center gap-[10px] lg:gap-[18px] w-full">
+    <div class="w-full mx-auto mb-cm-25 xl:mb-cm-50 flex flex-col gap-8 lg:gap-cm-50 px-4 xl:max-w-[1280px]">
+      <div class="max-lg:carousel flex justify-between xl:justify-center gap-[10px] lg:gap-[18px] w-full ">
         {listOfBenefits}
       </div>
     </div>
