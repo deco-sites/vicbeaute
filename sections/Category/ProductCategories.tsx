@@ -28,7 +28,7 @@ export default function ProductCategories({
 
   return (
     <div style={{ backgroundColor }} class="w-full py-8 lg:py-12">
-      <div class="max-w-[1280px] mx-auto xl:px-[30px] xl2:px-0">
+      <div class="max-w-[1280px] mx-auto xl:px-[30px] xlarge:px-0">
         <div class="px-[12px] lg:px-0">
           {title && (
             <h2 class="text-[#2C2C2C] font-Hanken-Grotesk font-medium text-[18px] xl:text-[24px] mb-4 lg:mb-6">
