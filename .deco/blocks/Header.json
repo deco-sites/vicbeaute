@@ -618,25 +618,7 @@
       "name": "Mais",
       "columns": [
         {
-          "links": [
-            {
-              "label": "Encontre sua cor",
-              "url": "/paleta-de-cores/inverno"
-            },
-            {
-              "label": "Brinde da vez",
-              "url": "/novo-brinde"
-            },
-            {
-              "label": "Kits",
-              "url": "#"
-            },
-            {
-              "label": "Ver Todos",
-              "url": "#",
-              "bold": true
-            }
-          ]
+          "links": []
         },
         {
           "links": [
@@ -667,19 +649,6 @@
             {
               "label": "Stick Tudo",
               "url": "#"
-            }
-          ],
-          "title": "Produtos"
-        },
-        {
-          "links": [
-            {
-              "label": "Batom",
-              "url": "/batom"
-            },
-            {
-              "label": "Gloss",
-              "url": "/gloss"
             }
           ],
           "title": "Produtos"
