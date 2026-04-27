@@ -27,7 +27,14 @@ function Header({ title, cta }: Props) {
           : "justify-between lg:justify-center pt-6 lg:pt-0",
       )}
     >
-      <h2 class="font-Queens text-2xl text-[32px] text-[#CE9680] xl:text-[36px] title-minicart">
+      <h2
+        class={clx(
+          "font-Queens text-[#CE9680] title-minicart",
+          title === "Preferidos da semana"
+            ? "text-2xl"
+            : "text-[32px] xl:text-[36px]",
+        )}
+      >
         {title}
       </h2>
     </div>
@@ -50,12 +57,17 @@ function Tabbed(
   );
 }
 
-function Container({ class: _class, ...props }: JSX.IntrinsicElements["div"]) {
+function Container(
+  { class: _class, overflowHidden, ...props }: JSX.IntrinsicElements["div"] & {
+    overflowHidden?: boolean;
+  },
+) {
   return (
     <div
       {...props}
       class={clx(
-        "lg:max-w-[1280px] xl:px-[30px] xlarge:px-0 mx-auto w-full",
+        "lg:max-w-[1280px] xl:px-[30px] xlarge:px-0 mx-auto w-full px-5",
+        overflowHidden && "overflow-hidden",
         _class?.toString(),
       )}
     />

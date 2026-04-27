@@ -810,8 +810,7 @@
     "dots": true
   },
   "minicartShelf": {
-    "__resolveType": "site/sections/Product/ProductShelfSimilars.tsx",
-    "arrows": false,
+    "__resolveType": "site/sections/Product/ProductShelfSimilarsMinicart.tsx",
     "products": {
       "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
       "props": {
@@ -821,7 +820,6 @@
         "similars": true
       }
     },
-    "dots": true,
     "title": "Preferidos da semana"
   },
   "minicartCategories": {

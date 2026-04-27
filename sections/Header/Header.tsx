@@ -481,7 +481,11 @@ function Header({
         {minicartCategories && (
           <minicartCategories.Component {...minicartCategories.props} />
         )}
-        {minicartShelf && <minicartShelf.Component {...minicartShelf.props} />}
+        {minicartShelf && (
+          <div class="overflow-hidden">
+            <minicartShelf.Component {...minicartShelf.props} />
+          </div>
+        )}
       </div>
     </header>
   );
