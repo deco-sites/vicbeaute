@@ -628,27 +628,11 @@
             },
             {
               "label": "Encontre sua cor",
-              "url": "#"
+              "url": "/quiz/cores"
             },
             {
               "label": "Acessórios",
               "url": "/acessorios"
-            },
-            {
-              "label": "Máscara de Cílios",
-              "url": "#"
-            },
-            {
-              "label": "Máscara de Sobrancelha",
-              "url": "#"
-            },
-            {
-              "label": "Stick Brilhoso",
-              "url": "Stick Tudo"
-            },
-            {
-              "label": "Stick Tudo",
-              "url": "#"
             }
           ],
           "title": "Produtos"
