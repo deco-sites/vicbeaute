@@ -5493,6 +5493,9 @@ details.collapse summary::-webkit-details-marker {
 .max-w-\[1452px\] {
   max-width: 1452px;
 }
+.max-w-\[150px\] {
+  max-width: 150px;
+}
 .max-w-\[168px\] {
   max-width: 168px;
 }
@@ -11003,6 +11006,10 @@ ul.closed {
     max-width: 1280px;
   }
 
+  .xl\:max-w-\[150px\] {
+    max-width: 150px;
+  }
+
   .xl\:max-w-\[270px\] {
     max-width: 270px;
   }
@@ -11218,6 +11225,10 @@ ul.closed {
 
   .xl\:pl-32 {
     padding-left: 8rem;
+  }
+
+  .xl\:pl-4 {
+    padding-left: 1rem;
   }
 
   .xl\:pl-5 {
