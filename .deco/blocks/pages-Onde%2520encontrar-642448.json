@@ -15,11 +15,20 @@
         "mobile": {
           "image": "https://assets.decocache.com/vicbeaute/716a752e-c3b8-49c8-aa34-bccc27404885/Rectangle-1293-(2).png",
           "alt": "banner",
-          "width": 1440,
-          "height": 432
+          "width": 375,
+          "height": 300
         },
         "desktop": {
-          "image": "https://assets.decocache.com/vicbeaute/c98ce6dc-28a3-4785-9b57-45e1b8ab4628/Rectangle-1293-desk-(6).png"
+          "image": "https://assets.decocache.com/vicbeaute/c98ce6dc-28a3-4785-9b57-45e1b8ab4628/Rectangle-1293-desk-(6).png",
+          "alt": "/",
+          "width": 1440,
+          "height": 430
+        },
+        "tablet": {
+          "href": "/",
+          "alt": "/",
+          "width": 1440,
+          "height": 432
         }
       }
     },

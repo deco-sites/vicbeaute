@@ -175,7 +175,7 @@ export default function Cart(
             ? (
               <div class="flex flex-col pb-4 w-full">
                 {/* Free Shipping Bar */}
-                <div class="px-2 pt-[10px] pb-[30px] w-full">
+                <div class="px-5 pt-[10px] pb-[30px] w-full">
                   <FreeShippingProgressBar
                     total={total}
                     locale={locale}
@@ -196,7 +196,7 @@ export default function Cart(
             )
             : (
               <>
-                <div class="pt-[10px] pb-[10px] w-full px-5">
+                <div class="pt-[10px] pb-[10px] w-full xl:px-5">
                   <FreeShippingProgressBar
                     total={total}
                     locale={locale}
@@ -208,7 +208,7 @@ export default function Cart(
                 {/* Cart Items */}
                 <ul
                   role="list"
-                  class="flex-grow overflow-y-auto flex flex-col w-full px-5 pt-3"
+                  class="flex-grow overflow-y-auto flex flex-col w-full xl:px-5 pt-3"
                 >
                   {items.map((item, index) => (
                     <li data-cy="minicart-list">

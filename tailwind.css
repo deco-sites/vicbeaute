@@ -462,3 +462,28 @@ ul.closed {
   color: #ce9680 !important;
   font-size: 24px !important;
 }
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  [data-manifest-key="site/sections/Miscellaneous/Benefits.tsx"] > div {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  /* Allow benefit cards to flex proportionally so they don't overflow at 1280px */
+  [data-manifest-key="site/sections/Miscellaneous/Benefits.tsx"] > div > div > div {
+    flex: 1 1 0%;
+    min-width: 0;
+  }
+}
+
+.drawer-side>:not(.drawer-overlay){
+  transform: translateX(-105%);
+}
+ 

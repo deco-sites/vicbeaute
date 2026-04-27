@@ -9,6 +9,9 @@ export default {
   theme: {
     container: { center: true },
     extend: {
+      screens: {
+        "xlarge": "1440px",
+      },
       colors: {
         white: {
           5: "#FAFAFA",

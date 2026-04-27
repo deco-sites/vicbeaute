@@ -79,7 +79,7 @@ export default function ShopTheLook({
 
       {/* Grid Masonry usando CSS Columns para evitar falhas de altura com items verticais/quadrados */}
       <div
-        class="w-full xl:max-w-[1280px] max-w-[1440px] xl:px-0 px-5 lg:px-20 mx-auto"
+        class="w-full xl:max-w-[1280px] max-w-[1440px] xl:px-[30px] xlarge:px-0 px-5 lg:px-20 mx-auto"
         id={`${rootId}-grid-container`}
       >
         <div
