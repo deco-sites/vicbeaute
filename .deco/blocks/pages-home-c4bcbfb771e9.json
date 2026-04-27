@@ -70,30 +70,30 @@
           "image": "https://assets.decocache.com/vicbeaute/7fa78720-0227-4373-8a19-72b6bcf38dc5/Frame-1000004076.png",
           "imageWidth": 37,
           "imageHeight": 32,
-          "line1": "Frete grátis nas compras ",
-          "line2": "acima de R$220",
-          "mobileLine1": "Frete grátis nas compras",
-          "mobileLine2": "acima de R$220"
+          "line1": "Frete grátis em compras",
+          "mobileLine1": "Frete grátis em compras",
+          "mobileLine2": "a partir de R$220,00",
+          "line2": "a partir de R$220,00"
         },
         {
           "label": "LOJA SEGURA Loja com SSL e proteção de dados",
           "image": "https://assets.decocache.com/vicbeaute/fa185941-ad55-47c9-9a9f-5459e0f41209/Message_light.png",
           "imageWidth": 36,
           "imageHeight": 36,
-          "line1": "Natal Vic Beauté | A beleza de",
-          "line2": "celebrar e presentear",
-          "mobileLine2": "celebrar e presentear",
-          "mobileLine1": "Natal Vic Beauté | A beleza de"
+          "line1": "Cadastre-se para receber",
+          "line2": "benefícios exclusivos",
+          "mobileLine2": "benefícios exclusivos",
+          "mobileLine1": "Cadastre-se para receber"
         },
         {
           "label": "MAIS ECONOMIA Compre os nossos kits",
           "image": "https://assets.decocache.com/vicbeaute/f279dc50-85b5-438c-9a63-270cedacf832/Chield_check_light.png",
           "imageWidth": 36,
           "imageHeight": 36,
-          "line1": "Pague com cartão de crédito ou",
-          "line2": "Paypal em segurança",
-          "mobileLine1": "Pague com cartão de crédito ou",
-          "mobileLine2": "Paypal em segurança"
+          "line1": "Compre e ganhe cashback em",
+          "line2": "todos os pedidos | VB+",
+          "mobileLine1": "Compre e ganhe cashback em",
+          "mobileLine2": "todos os pedidos | VB+"
         }
       ],
       "title": "aa",
@@ -288,7 +288,7 @@
     },
     {
       "__resolveType": "site/sections/Product/TabbedProductSlider.tsx",
-      "title": "Novidades",
+      "title": "Conheça nossos produtos",
       "tabs": [
         {
           "products": {
@@ -322,12 +322,12 @@
             "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
             "props": {
               "sort": "price:desc",
-              "collection": "140",
+              "collection": "142",
               "count": 12,
               "similars": true
             }
           },
-          "label": "Lapiseira"
+          "label": "Sensa"
         },
         {
           "products": {
@@ -346,24 +346,36 @@
             "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
             "props": {
               "sort": "price:desc",
-              "collection": "142",
+              "collection": "140",
               "count": 12,
               "similars": true
             }
           },
-          "label": "Sensa Matte"
+          "label": "Lapiseira"
         },
         {
           "products": {
             "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
             "props": {
               "sort": "price:desc",
-              "collection": "137",
+              "collection": "144",
               "count": 12,
               "similars": true
             }
           },
-          "label": "Corretivo"
+          "label": "Realce"
+        },
+        {
+          "products": {
+            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+            "props": {
+              "sort": "price:desc",
+              "collection": "145",
+              "count": 12,
+              "similars": true
+            }
+          },
+          "label": "Uau"
         }
       ]
     },
