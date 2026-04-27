@@ -618,7 +618,20 @@
       "name": "Mais",
       "columns": [
         {
-          "links": []
+          "links": [
+            {
+              "label": "Sobre nós",
+              "url": "/quem-somos"
+            },
+            {
+              "label": "FAQs",
+              "url": "/perguntas-frequentes"
+            },
+            {
+              "url": "/ondeencontrar",
+              "label": "Onde Encontrar"
+            }
+          ]
         },
         {
           "links": [
