@@ -2726,7 +2726,7 @@
           "__resolveType": "website/matchers/pathname.ts",
           "case": {
             "type": "Equals",
-            "pathname": "/lkits"
+            "pathname": "/kits"
           }
         }
       },
