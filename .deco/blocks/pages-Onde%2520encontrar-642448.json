@@ -39,7 +39,7 @@
         "cards": [
           {
             "secondTitle": "Shopping Iguatemi - São Paulo",
-            "secondText": "<p><br><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Av. Brig. Faria Lima, 2232 - Piso Térreo - Jardim Paulistano, São Paulo/ SP</span><br><span style=\"font-size: 16px\">Piso Térreo</span><br><strong><span style=\"font-size: 16px\">Inserir Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">De Segunda à sexta: 9h às 18h</span><br><span style=\"font-size: 16px\">Sábados, domingos e feriados fechado.</span><br><span style=\"font-size: 16px\">(11) 99354-8590</span><br></p>",
+            "secondText": "<p><br><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"color: rgb(51, 51, 51); font-size: 16px\">Av. Brig. Faria Lima, 2232 - Piso Térreo - Jardim Paulistano, São Paulo/ SP.</span></p><p><strong><span style=\"font-size: 16px\">Horário de funcionamento</span></strong><br>Segunda a sábado: 10h às 22h</p><p> Domingo 14h às 20h Feriados: 12h às 20h (exceto feriados no sábado).</p><p><strong><span style=\"font-size: 16px\">Telefone para contato</span></strong></p><p>(11) 99342-3792</p>",
             "showDivider": true,
             "linkIcon": {
               "mobile": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png",
@@ -49,7 +49,8 @@
               "mobile": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png",
               "desktop": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
             },
-            "linkLabel": "Como chegar"
+            "linkLabel": "Como chegar",
+            "linkUrl": "https://www.google.com/maps/place/Shopping+Iguatemi/@-23.5769216,-46.6908733,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce576d78fdbdb5:0x5ffc6f2485c8ae!8m2!3d-23.5769265!4d-46.6882984!16s%2Fm%2F04m__zj?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D"
           },
           {
             "secondTitle": "Estamos no ifood",
@@ -81,7 +82,7 @@
             "linkLabel": "Como chegar"
           },
           {
-            "secondText": "<p><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Shopping Pátio Batel | Piso L2 - Av. do Batel, 1868 - Curitiba/PR</span><br><span style=\"font-size: 16px\">Piso L2</span><br><strong><span style=\"font-size: 16px\">Inserir Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">De Segunda à sexta: 9h às 18h</span><br><span style=\"font-size: 16px\">Sábados, domingos e feriados fechado.</span><br><u><span style=\"font-size: 14px\">Como chegar</span></u></p>",
+            "secondText": "<p><span style=\"color: rgb(51, 51, 51); font-size: 16px\">Rua Oscar Freire, 439 - Jardins, São Paulo/SP</span><br><u><span style=\"font-size: 14px\">Como chegar</span></u></p>",
             "showDivider": true,
             "linkIcon": {
               "mobile": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png",
@@ -92,92 +93,8 @@
               "desktop": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
             },
             "linkLabel": "Como chegar",
-            "secondTitle": "Gallerist - Curitiba",
+            "secondTitle": "Studio Lorena - São Paulo, Jardins",
             "informativeTitle": "Parceiros"
-          },
-          {
-            "secondTitle": "Gallerist - São Paulo, Pinheiros",
-            "secondText": "<p><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Rua Joaquim Antunes, 187 - Pinheiros, São Paulo/SP</span><br><span style=\"font-size: 16px\">Piso L2</span><br><strong><span style=\"font-size: 16px\">Inserir Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">De Segunda à sexta: 9h às 18h</span><br><span style=\"font-size: 16px\">Sábados, domingos e feriados fechado.</span></p>",
-            "showDivider": true,
-            "linkIcon": {
-              "mobile": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png",
-              "desktop": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png"
-            },
-            "titleIcon": {
-              "mobile": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png",
-              "desktop": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
-            },
-            "linkLabel": "Como chegar"
-          },
-          {
-            "secondText": "<p><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">R. João Lourenço, 250 - Vila Nova Conceição, São Paulo/SP</span><br><strong><span style=\"font-size: 16px\">Inserir Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">De Segunda à sexta: 9h às 18h</span><br><span style=\"font-size: 16px\">Sábados, domingos e feriados fechado.</span><br><u><span style=\"font-size: 14px\">Como chegar</span></u></p>",
-            "showDivider": true,
-            "linkIcon": {
-              "mobile": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png",
-              "desktop": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png"
-            },
-            "titleIcon": {
-              "mobile": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png",
-              "desktop": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
-            },
-            "linkLabel": "Como chegar",
-            "secondTitle": "Shopping Iguatemi - São Paulo"
-          },
-          {
-            "secondTitle": "Shopping Iguatemi - São Paulo",
-            "secondText": "<p><br><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Av. Brig. Faria Lima, 2232 - Piso Térreo - Jardim Paulistano, São Paulo/ SP</span><br><span style=\"font-size: 16px\">Piso Térreo</span><br><strong><span style=\"font-size: 16px\">Inserir Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">De Segunda à sexta: 9h às 18h</span><br><span style=\"font-size: 16px\">Sábados, domingos e feriados fechado.</span><br><span style=\"font-size: 16px\">(11) 99354-8590</span><br></p>",
-            "showDivider": true,
-            "linkIcon": {
-              "mobile": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png",
-              "desktop": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png"
-            },
-            "titleIcon": {
-              "mobile": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png",
-              "desktop": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
-            },
-            "linkLabel": "Como chegar"
-          },
-          {
-            "secondTitle": "Shopping Iguatemi - São Paulo",
-            "secondText": "<p><br><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Av. Brig. Faria Lima, 2232 - Piso Térreo - Jardim Paulistano, São Paulo/ SP</span><br><span style=\"font-size: 16px\">Piso Térreo</span><br><strong><span style=\"font-size: 16px\">Inserir Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">De Segunda à sexta: 9h às 18h</span><br><span style=\"font-size: 16px\">Sábados, domingos e feriados fechado.</span><br><span style=\"font-size: 16px\">(11) 99354-8590</span><br></p>",
-            "showDivider": true,
-            "linkIcon": {
-              "mobile": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png",
-              "desktop": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png"
-            },
-            "titleIcon": {
-              "mobile": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png",
-              "desktop": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
-            },
-            "linkLabel": "Como chegar"
-          },
-          {
-            "secondTitle": "Shopping Iguatemi - São Paulo",
-            "secondText": "<p><br><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Av. Brig. Faria Lima, 2232 - Piso Térreo - Jardim Paulistano, São Paulo/ SP</span><br><span style=\"font-size: 16px\">Piso Térreo</span><br><strong><span style=\"font-size: 16px\">Inserir Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">De Segunda à sexta: 9h às 18h</span><br><span style=\"font-size: 16px\">Sábados, domingos e feriados fechado.</span><br><span style=\"font-size: 16px\">(11) 99354-8590</span><br></p>",
-            "showDivider": true,
-            "linkIcon": {
-              "mobile": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png",
-              "desktop": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png"
-            },
-            "titleIcon": {
-              "mobile": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png",
-              "desktop": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
-            },
-            "linkLabel": "Como chegar"
-          },
-          {
-            "secondTitle": "Shopping Iguatemi - São Paulo",
-            "secondText": "<p><br><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Av. Brig. Faria Lima, 2232 - Piso Térreo - Jardim Paulistano, São Paulo/ SP</span><br><span style=\"font-size: 16px\">Piso Térreo</span><br><strong><span style=\"font-size: 16px\">Inserir Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">De Segunda à sexta: 9h às 18h</span><br><span style=\"font-size: 16px\">Sábados, domingos e feriados fechado.</span><br><span style=\"font-size: 16px\">(11) 99354-8590</span><br></p>",
-            "showDivider": false,
-            "linkIcon": {
-              "mobile": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png",
-              "desktop": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png"
-            },
-            "titleIcon": {
-              "mobile": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png",
-              "desktop": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
-            },
-            "linkLabel": "Como chegar"
           }
         ],
         "pageTitle": "Nossos quiosques"
