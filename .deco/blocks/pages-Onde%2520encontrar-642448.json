@@ -52,22 +52,8 @@
             "linkLabel": "Como chegar"
           },
           {
-            "secondTitle": "Shopping Pátio Higienópolis",
-            "secondText": "<p><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Av. Higienópolis, 618 - Piso Vilaboim - Higienópolis, São Paulo/SP</span><br><span style=\"font-size: 16px\">Piso Térreo</span><br><strong><span style=\"font-size: 16px\">Inserir Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">De Segunda à sexta: 9h às 18h</span><br><span style=\"font-size: 16px\">Sábados, domingos e feriados fechado.</span><br><span style=\"font-size: 16px\">(11) 99354-8590</span><br><u><span style=\"font-size: 14px\">Como chegar</span></u></p>",
-            "showDivider": true,
-            "linkIcon": {
-              "mobile": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png",
-              "desktop": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png"
-            },
-            "titleIcon": {
-              "mobile": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png",
-              "desktop": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
-            },
-            "linkLabel": "Como chegar"
-          },
-          {
             "secondTitle": "Estamos no ifood",
-            "secondText": "<p><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Entrega em menos de 2h. O raio de entrega do iFood é de 7km a partir de um dos nossos quiosques. É só buscar por Vic Beauté.</span><br><strong><span style=\"font-size: 16px\">Inserir Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">Segunda a sábado: 11h às 21h </span><br><span style=\"font-size: 16px\">Domingo: 15h às 19h</span><br></p>",
+            "secondText": "<p><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Entrega em menos de 1h. O raio de entrega do iFood é de 7km a partir de um dos nossos quiosques. É só buscar por Vic Beauté.</span><br><strong><span style=\"font-size: 16px\">Horário de funcionamento</span></strong><br><span style=\"color: rgb(51, 51, 51); font-size: 16px\">Segunda a sábado: 11h às 20h | Domingo: 14:30h às 18h</span><br></p><p></p>",
             "showDivider": true,
             "linkIcon": {
               "mobile": "https://assets.decocache.com/vicbeaute/8f60d301-913c-4b48-b670-1ad7d92f8c79/solar_route-outline.png",
@@ -81,6 +67,7 @@
             "informativeTitle": "Aplicativos"
           },
           {
+            "secondTitle": "Estamos na Rappi",
             "secondText": "<p><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Entrega em menos de 1h. O raio de entrega do Rappi é de 7km a partir de um dos nossos quiosques. É só buscar por Vic Beauté.</span><br><strong><span style=\"font-size: 16px\">Inserir Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">Segunda a sábado: 11h às 21h </span><br><span style=\"font-size: 16px\">Domingo: 15h às 19h</span></p>",
             "showDivider": true,
             "linkIcon": {
@@ -91,11 +78,9 @@
               "mobile": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png",
               "desktop": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
             },
-            "linkLabel": "Como chegar",
-            "secondTitle": "Estamos na Rappi"
+            "linkLabel": "Como chegar"
           },
           {
-            "secondTitle": "Gallerist - Curitiba",
             "secondText": "<p><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Shopping Pátio Batel | Piso L2 - Av. do Batel, 1868 - Curitiba/PR</span><br><span style=\"font-size: 16px\">Piso L2</span><br><strong><span style=\"font-size: 16px\">Inserir Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">De Segunda à sexta: 9h às 18h</span><br><span style=\"font-size: 16px\">Sábados, domingos e feriados fechado.</span><br><u><span style=\"font-size: 14px\">Como chegar</span></u></p>",
             "showDivider": true,
             "linkIcon": {
@@ -107,9 +92,11 @@
               "desktop": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
             },
             "linkLabel": "Como chegar",
+            "secondTitle": "Gallerist - Curitiba",
             "informativeTitle": "Parceiros"
           },
           {
+            "secondTitle": "Gallerist - São Paulo, Pinheiros",
             "secondText": "<p><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">Rua Joaquim Antunes, 187 - Pinheiros, São Paulo/SP</span><br><span style=\"font-size: 16px\">Piso L2</span><br><strong><span style=\"font-size: 16px\">Inserir Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">De Segunda à sexta: 9h às 18h</span><br><span style=\"font-size: 16px\">Sábados, domingos e feriados fechado.</span></p>",
             "showDivider": true,
             "linkIcon": {
@@ -120,11 +107,9 @@
               "mobile": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png",
               "desktop": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
             },
-            "linkLabel": "Como chegar",
-            "secondTitle": "Gallerist - São Paulo, Pinheiros"
+            "linkLabel": "Como chegar"
           },
           {
-            "secondTitle": "Shopping Iguatemi - São Paulo",
             "secondText": "<p><strong><span style=\"font-size: 16px\">Endereço</span></strong><br><span style=\"font-size: 16px\">R. João Lourenço, 250 - Vila Nova Conceição, São Paulo/SP</span><br><strong><span style=\"font-size: 16px\">Inserir Horário de funcionamento</span></strong><br><span style=\"font-size: 16px\">De Segunda à sexta: 9h às 18h</span><br><span style=\"font-size: 16px\">Sábados, domingos e feriados fechado.</span><br><u><span style=\"font-size: 14px\">Como chegar</span></u></p>",
             "showDivider": true,
             "linkIcon": {
@@ -135,7 +120,8 @@
               "mobile": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png",
               "desktop": "https://assets.decocache.com/vicbeaute/d52f0a28-7e6e-4bfe-89e1-fe887ebf4d46/heroicons-outline_location-marker.png"
             },
-            "linkLabel": "Como chegar"
+            "linkLabel": "Como chegar",
+            "secondTitle": "Shopping Iguatemi - São Paulo"
           },
           {
             "secondTitle": "Shopping Iguatemi - São Paulo",
