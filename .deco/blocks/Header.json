@@ -574,7 +574,7 @@
         }
       ],
       "@type": "SiteNavigationElement",
-      "url": "/kit",
+      "url": "/kits",
       "name": "Kits",
       "columns": [],
       "cards": []
