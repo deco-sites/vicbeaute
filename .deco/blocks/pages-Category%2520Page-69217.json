@@ -1919,10 +1919,10 @@
                 "image": {}
               }
             ],
-            "imageDesk": "https://assets.decocache.com/vicbeaute/463fd0f7-b30b-4738-902e-1e481082a75a/PLP-MULTI---DESK(1).jpg",
-            "imageMobile": "https://assets.decocache.com/vicbeaute/37f86817-96b9-47ab-a9f9-0f5b850ee52c/PLP-MULTI---DESK.jpg",
+            "imageDesk": "https://assets.decocache.com/vicbeaute/7a1d26db-33cb-4f4a-bb56-bd452094adf1/PLP-ACESSORIOS---DESK.jpg",
+            "imageMobile": "https://assets.decocache.com/vicbeaute/d01763b7-6563-46e1-aee8-70c0eda7d7ae/PLP-ACESSORIOS---MOB.jpg",
             "darkText": true,
-            "title": "Multifuncional"
+            "title": "Acessórios"
           },
           {
             "__resolveType": "site/sections/Category/ProductCategories.tsx",
