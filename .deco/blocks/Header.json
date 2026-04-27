@@ -623,16 +623,16 @@
         {
           "links": [
             {
-              "label": "Corretivo",
+              "label": "Brinde da vez",
+              "url": "/novo-brinde"
+            },
+            {
+              "label": "Encontre sua cor",
               "url": "#"
             },
             {
-              "label": "Delineador",
-              "url": "#"
-            },
-            {
-              "label": "Lapiseira",
-              "url": "#"
+              "label": "Acessórios",
+              "url": "/acessorios"
             },
             {
               "label": "Máscara de Cílios",
