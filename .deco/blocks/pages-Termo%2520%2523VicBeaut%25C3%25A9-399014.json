@@ -1,0 +1,45 @@
+{
+  "name": "Termo #VicBeauté",
+  "path": "/termo-ugc",
+  "sections": [
+    {
+      "__resolveType": "Header"
+    },
+    {
+      "__resolveType": "site/sections/Content/InstitutionalMain.tsx",
+      "pageTitle": "Termo #VicBeauté",
+      "institutionalMenu": [
+        {
+          "menuItem": "Política de Privacidade",
+          "menuLink": "/politica-de-privacidade"
+        },
+        {
+          "menuItem": "Trocas e Devoluções",
+          "menuLink": "/trocas-e-devolucoes"
+        },
+        {
+          "menuItem": "Política de Frete",
+          "menuLink": "/politica-de-frete"
+        },
+        {
+          "menuItem": "Quem somos",
+          "menuLink": "/quem-somos"
+        }
+      ],
+      "institutionalText": "<p><strong><span style=\"color: rgb(94, 108, 91)\">Estes Termos de Uso de Conteúdo Gerado por Usuário (“Termos UGC”) complementam, e não substituem, os Termos de Uso Gerais da VB.</span></strong></p><p>Para fins do presente Termos UGC:</p><ul><li><p>“Plataformas” significa os aplicativos e as plataformas Dia de Beauté (“Plataforma Dia de Beauté” no endereço <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"http://www.diadebeaute.com\">www.diadebeaute.com</a>) e Vic Beauté (“Plataforma Vic Beauté”, no endereço <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"http://www.vicbeaute.com.br\">www.vicbeaute.com.br</a>), e quaisquer meios de comunicações, físicos, digitais ou não fungíveis, atualmente existentes ou que venham a existir, incluindo, mas não se limitando, ao Instagram, Facebook, Twitter, TikTok, Snapchat e demais redes sociais através das quais seja possível a veiculação do Conteúdo, conforme definição abaixo.</p></li><li><p>“Conteúdo” significa fotos, vídeos, comentários, resenhas, reação, legendas, nomes, expressões, reviews, textos e/ou qualquer outro tipo de conteúdo produzido pelo Usuário em que seja utilizada a hashtag #VicBeaute ou #NossaBeleza e que sejam veiculados nas Plataformas.</p></li></ul><p>Ao gerar o Conteúdo ou ao interagir com a VB, exemplificativamente, marcando os perfis da VB nas Redes Sociais, adicionando uma localização VB, respondendo a enquetes da VB, e/ou compartilhando a hashtag #VicBeaute ou #NossaBeleza, o Usuário automaticamente concorda com estes Termos UGC, com os Termos de Uso Gerais e com as demais políticas da VB, disponibilizadas em seu website.</p><p><strong><span style=\"color: rgb(94, 108, 91)\">Licença e Autorização</span></strong></p><p>Ao gerar Conteúdo e reproduzi-lo nas Plataformas, o Usuário, de forma definitiva, universal e a título gratuito, licencia para a VB, suas subsidiárias e afiliadas, presentes ou futuras, o Conteúdo, bem como autoriza a VB, suas subsidiárias e afiliadas, presentes ou futuras, a usar seu nome, nome de usuário, apelido, imagem e voz, para fins institucionais e de divulgação e publicidade, sem limite de tempo e sem limitação de número de vezes, podendo a VB, no Brasil e no exterior, exemplificativamente, sublicenciar, editar, traduzir, dublar, adaptar para fins de produção de novos vídeos e mídias em geral,; utilizar para produção jornalística, e desenvolver qualquer atividade de licenciamento de produtos e/ou serviços derivados do Conteúdo; e disseminar por meio das Plataformas, podendo, também, ser utilizado pela VB a título de rolo histórico.</p><p><strong><span style=\"color: rgb(94, 108, 91)\">Responsabilidades do Usuário:</span></strong></p><p>Ao gerar o Conteúdo, o Usuário declara e garante:</p><ul><li><p>(i) ter todos os direitos sobre o Conteúdo, inclusive direitos autorais, de propriedade intelectual e direitos de uso de imagem;</p></li><li><p>(ii) que não violará qualquer lei, regra ou regulamento, bem como direitos de terceiros;</p></li><li><p>(iii) que o Conteúdo não conterá qualquer informação fraudulenta ou enganosa;</p></li><li><p>(iv) não disseminar mensagens de ódio e preconceito de todo tipo e natureza;</p></li><li><p>(v) não difamar, prejudicar ou afetar negativamente a imagem da VB; e</p></li><li><p>(vi) isentar a VB, suas subsidiárias e afiliadas, existentes ou que venham a existir, de responsabilidades, obrigações, reivindicações, demandas de todo tipo e natureza, decorrentes ou relacionadas de alguma forma ao Conteúdo.</p></li></ul><p>As expressões em letra maiúscula não definidas nos presentes Termos UGC terão o significado atribuído nos Termos de Uso Gerais.</p><p>A alteração dos Termos UGC e dos Termos de Uso Gerais poderá ser realizada sem qualquer notificação ao Usuário, podendo tais termos serem atualizados a qualquer tempo no site <a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"http://www.vicbeaute.com.br\">www.vicbeaute.com.br</a>.</p>"
+    },
+    {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "newsletter"
+      }
+    },
+    {
+      "__resolveType": "Footer"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}
