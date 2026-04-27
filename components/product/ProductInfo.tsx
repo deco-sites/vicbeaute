@@ -222,7 +222,7 @@ function ProductInfo({ page }: Props) {
         {/* ADD TO CART BOX */}
         {availability === "https://schema.org/InStock"
           ? (
-            <div class="mt-4 sm:mt-[14px] bg-green-15 p-4 rounded-md flex flex-col gap-4">
+            <div id="add-to-cart-box-desktop" class="mt-4 sm:mt-[14px] bg-green-15 p-4 rounded-md flex flex-col gap-4">
               <div class="flex flex-col gap-1 items-center justify-center">
                 <div class="flex items-center gap-2">
                   {listPrice > price && (
@@ -339,7 +339,7 @@ function ProductInfo({ page }: Props) {
         {/* ADD TO CART BOX MOBILE */}
         {availability === "https://schema.org/InStock"
           ? (
-            <div class="mt-4 sm:mt-[14px] bg-green-15 p-4 rounded-md flex flex-col gap-4">
+            <div id="add-to-cart-box-mobile" class="mt-4 sm:mt-[14px] bg-green-15 p-4 rounded-md flex flex-col gap-4">
               <div class="flex flex-col gap-1 items-center justify-center">
                 <div class="flex items-center gap-2">
                   {listPrice > price && (

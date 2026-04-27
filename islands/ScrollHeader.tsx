@@ -1,49 +1,50 @@
-import { useEffect } from "preact/compat";
+import { useScript } from "@deco/deco/hooks";
+
+const setupScrollHeader = () => {
+  const handleScroll = () => {
+    const scroll = globalThis.scrollY || document.documentElement.scrollTop;
+    const desktopHeaders = document.querySelectorAll(".floating-desktop-header-container");
+    const mobileHeaders = document.querySelectorAll(".floating-mobile-header-container");
+    const desktopTopBars = document.querySelectorAll(".floating-desktop-topbar-container");
+    const mobileTopBars = document.querySelectorAll(".floating-mobile-topbar-container");
+
+    const applyClasses = (elements: NodeListOf<Element>, add: boolean) => {
+      elements.forEach((el) => {
+        if (add) {
+          el.classList.add("opacity-100", "overcontent");
+          el.classList.remove("opacity-0", "-z-10");
+        } else {
+          el.classList.add("opacity-0", "-z-10");
+          el.classList.remove("opacity-100", "overcontent");
+        }
+      });
+    };
+
+    if (scroll > 168) {
+      applyClasses(desktopHeaders, true);
+      applyClasses(mobileHeaders, true);
+      applyClasses(desktopTopBars, true);
+      applyClasses(mobileTopBars, true);
+    } else {
+      applyClasses(desktopHeaders, false);
+      applyClasses(mobileHeaders, false);
+      applyClasses(desktopTopBars, false);
+      applyClasses(mobileTopBars, false);
+    }
+  };
+
+  globalThis.addEventListener("scroll", handleScroll, { passive: true });
+  // Call once on mount in case the page is already scrolled (e.g. refresh)
+  handleScroll();
+};
 
 const ScrollHeader = () => {
-  useEffect(() => {
-    globalThis.addEventListener("scroll", () => {
-      const scroll = globalThis.scrollY;
-      // HEADER
-      const desktopHeader = document.querySelector(
-        ".floating-desktop-header-container",
-      ) as HTMLElement;
-      const mobileHeader = document.querySelector(
-        ".floating-mobile-header-container",
-      ) as HTMLElement;
-      // TOPBAR
-      const desktopTopBar = document.querySelector(
-        ".floating-desktop-topbar-container",
-      ) as HTMLElement;
-      const mobileTopBar = document.querySelector(
-        ".floating-mobile-topbar-container",
-      ) as HTMLElement;
-
-      if (scroll > 168) {
-        desktopHeader?.classList?.add("opacity-100", "overcontent");
-        mobileHeader?.classList?.add("opacity-100", "overcontent");
-        desktopTopBar?.classList?.add("opacity-100", "overcontent");
-        mobileTopBar?.classList?.add("opacity-100", "overcontent");
-
-        desktopHeader?.classList?.remove("opacity-0", "-z-10");
-        mobileHeader?.classList?.remove("opacity-0", "-z-10");
-        desktopTopBar?.classList?.remove("opacity-0", "-z-10");
-        mobileTopBar?.classList?.remove("opacity-0", "-z-10");
-      } else {
-        desktopHeader?.classList?.add("opacity-0", "-z-10");
-        mobileHeader?.classList?.add("opacity-0", "-z-10");
-        desktopTopBar?.classList?.add("opacity-0", "-z-10");
-        mobileTopBar?.classList?.add("opacity-0", "-z-10");
-
-        desktopHeader?.classList?.remove("opacity-100", "overcontent");
-        mobileHeader?.classList?.remove("opacity-100", "overcontent");
-        desktopTopBar?.classList?.remove("opacity-100", "overcontent");
-        mobileTopBar?.classList?.remove("opacity-100", "overcontent");
-      }
-    });
-  }, []);
-
-  return null;
+  return (
+    <script
+      type="module"
+      dangerouslySetInnerHTML={{ __html: useScript(setupScrollHeader) }}
+    />
+  );
 };
 
 export default ScrollHeader;
