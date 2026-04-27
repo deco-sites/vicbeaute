@@ -620,16 +620,12 @@
         {
           "links": [
             {
-              "label": "Mais vendidos",
-              "url": "/mais-vendidos"
+              "label": "Encontre sua cor",
+              "url": "/paleta-de-cores/inverno"
             },
             {
-              "label": "Lançamentos",
-              "url": "/lancamentos"
-            },
-            {
-              "label": "Coleções",
-              "url": "/colecoes"
+              "label": "Brinde da vez",
+              "url": "/novo-brinde"
             },
             {
               "label": "Kits",
