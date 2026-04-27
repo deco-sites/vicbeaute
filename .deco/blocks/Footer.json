@@ -99,7 +99,7 @@
         {
           "isLink": true,
           "title": "Política de Segurança",
-          "href": "#"
+          "href": "/politica-de-privacidade"
         },
         {
           "isLink": true,
@@ -192,5 +192,5 @@
   "logoMobileWidth": 223,
   "logoMobileHeight": 50,
   "textPrivacity": "Política de privacidade",
-  "linkPrivacity": "#"
+  "linkPrivacity": "/politica-de-privacidade"
 }
