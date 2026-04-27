@@ -6,30 +6,6 @@
       "__resolveType": "Header"
     },
     {
-      "__resolveType": "site/sections/Content/BannerInstitutional.tsx",
-      "mobile": {
-        "image": "https://assets.decocache.com/easycommerce/79b8eb9f-4737-4459-8d66-d30661d91e3b/Group-6423.png",
-        "href": "/",
-        "alt": "Banner Institucional",
-        "height": 500,
-        "width": 375
-      },
-      "tablet": {
-        "image": "https://assets.decocache.com/vicbeaute/424c8f72-7b14-4142-a44e-f9f0bc6aed44/PLP-OLHOS---DESK.jpg.jpg",
-        "href": "/",
-        "alt": "Banner Institucional",
-        "width": 1920,
-        "height": 496
-      },
-      "desktop": {
-        "image": "https://assets.decocache.com/vicbeaute/424c8f72-7b14-4142-a44e-f9f0bc6aed44/PLP-OLHOS---DESK.jpg.jpg",
-        "href": "/",
-        "alt": "Banner Institucional",
-        "width": 1920,
-        "height": 500
-      }
-    },
-    {
       "__resolveType": "site/sections/Content/InstitutionalMain.tsx",
       "pageTitle": "Trocas e Devoluções",
       "institutionalMenu": [
