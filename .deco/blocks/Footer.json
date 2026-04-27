@@ -43,8 +43,8 @@
         },
         {
           "title": "Onde encontrar",
-          "href": "#",
-          "isLink": true
+          "isLink": true,
+          "href": "/ondeencontrar"
         },
         {
           "isLink": true,
