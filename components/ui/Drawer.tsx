@@ -106,7 +106,7 @@ function Aside({
         <div
           class={drawer === "search-drawer"
             ? "drawer-fake-header flex justify-between items-center h-14 ml-2 w-full absolute z-50 pointer-events-none pl-4"
-            : "drawer-fake-header flex justify-between items-center w-full relative z-50 pl-4"}
+            : "drawer-fake-header flex justify-between items-center w-full relative z-50 xl:pl-4"}
         >
           <span class="order-3">
             <span
