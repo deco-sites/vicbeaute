@@ -38,7 +38,7 @@ export default function GallerySlider(props: Props) {
 
   return (
     <>
-      <div id={id} class="relative flex flex-col w-full">
+      <div id="product-gallery" class="relative flex flex-col w-full">
         {/* === VERSÃO DESKTOP: Grid de 2 Colunas Sem Slider === */}
         <div class="hidden lg:grid grid-cols-2 gap-2 w-full">
           {images.map((img, index) => (

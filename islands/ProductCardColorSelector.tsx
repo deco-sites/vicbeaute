@@ -1,6 +1,6 @@
 import { Product } from "apps/commerce/types.ts";
 import { relative } from "../sdk/url.ts";
-import { Ring } from "../components/product/ProductVariantSelector.tsx"; // we can reuse Ring for styles if we want, or make custom circles
+import { useSection } from "@deco/deco/hooks";
 
 export interface Props {
   products: Product[];
@@ -10,7 +10,6 @@ export interface Props {
 export default function ProductCardColorSelector({ products, currentProductId }: Props) {
   if (products.length <= 1) return null;
 
-  // Render max 3 circles
   const maxVisible = 3;
   const visibleProducts = products.slice(0, maxVisible);
   const remainingCount = products.length - maxVisible;
@@ -18,8 +17,6 @@ export default function ProductCardColorSelector({ products, currentProductId }:
   const handleOpenModal = (e: Event) => {
     e.preventDefault();
     e.stopPropagation();
-    
-    // Dispatch event to structural modal
     window.dispatchEvent(
       new CustomEvent("open-shelf-color-modal", {
         detail: { products, initialProductId: currentProductId },
@@ -28,19 +25,31 @@ export default function ProductCardColorSelector({ products, currentProductId }:
   };
 
   return (
-    <div class="flex items-center justify-start z-20" onClick={(e) => e.preventDefault() /* prevent card click if clicking colors */}>
+    <div 
+      class="flex items-center justify-start z-20" 
+      onClick={(e) => e.stopPropagation()}
+      hx-target="closest .card"
+      hx-select="closest .card"
+      hx-swap="outerHTML transition:true show:none"
+    >
       <div class="flex items-center gap-1">
         {visibleProducts.map((p) => {
           const colorName = p.additionalProperty?.find(attr => attr.name?.toLowerCase() === "cor")?.value || p.name?.split("-").pop()?.trim() || "";
           const imgUrl = p.image?.find((img) => img.name?.toLowerCase() === "cor")?.url ?? p.image?.[0]?.url;
           const isSelected = p.productID === currentProductId;
+          const href = relative(p.url);
+          const sectionUrl = useSection({ href });
 
           return (
-            <a 
-              href={relative(p.url)} 
-              class="cursor-pointer group flex items-center justify-center outline-none"
+            <button
+              type="button"
+              hx-get={sectionUrl}
+              hx-push-url={href}
+              onClick={(e) => {
+                e.stopPropagation();
+              }}
               title={colorName}
-              onClick={(e) => { e.stopPropagation(); }} // let the standard <a> behavior happen
+              class="cursor-pointer group flex items-center justify-center outline-none border-none bg-transparent p-0"
             >
               <div class={`w-[18px] h-[18px] rounded-full overflow-hidden transition-all duration-200 border border-[#e5e5e5] ${isSelected ? 'border-[#4c4c4c] p-[1.5px]' : 'border-transparent group-hover:border-gray-300 p-[1.5px]'}`}>
                 <div class="w-full h-full rounded-full overflow-hidden flex items-center justify-center text-[7px] bg-[#f4f4f4]">
@@ -51,11 +60,10 @@ export default function ProductCardColorSelector({ products, currentProductId }:
                   )}
                 </div>
               </div>
-            </a>
+            </button>
           );
         })}
 
-        {/* Botao de mais Cores (+N) */}
         {remainingCount > 0 && (
           <button 
             type="button"

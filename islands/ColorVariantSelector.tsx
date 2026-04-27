@@ -1,4 +1,5 @@
 import { useSignal } from "@preact/signals";
+import { useEffect } from "preact/hooks";
 import { clx } from "../sdk/clx.ts";
 
 export interface ColorOption {
@@ -40,7 +41,6 @@ const ChevronUp = () => (
 export default function ColorVariantSelector(
   { colors, selectedUrl, pushUrl = true }: Props,
 ) {
-  // Encontra o index do produto selecionado pela URL atual
   const initialIndex = Math.max(
     0,
     colors.findIndex((c) => {
@@ -56,6 +56,23 @@ export default function ColorVariantSelector(
 
   const selectedIdx = useSignal(initialIndex);
 
+  useEffect(() => {
+    const disableScroll = (e: any) => {
+      if (e.detail) {
+        e.detail.shouldScroll = false;
+        e.detail.scroll = false;
+      }
+    };
+    
+    document.addEventListener("htmx:beforeSwap", disableScroll);
+    document.addEventListener("htmx:afterSwap", disableScroll);
+    
+    return () => {
+      document.removeEventListener("htmx:beforeSwap", disableScroll);
+      document.removeEventListener("htmx:afterSwap", disableScroll);
+    };
+  }, []);
+
   if (!colors.length) return null;
 
   const selected = colors[selectedIdx.value] ?? colors[0];
@@ -63,35 +80,34 @@ export default function ColorVariantSelector(
   return (
     <div
       class="flex flex-col gap-[10px] w-full mt-2"
-      hx-target="closest section"
-      hx-swap="outerHTML show:none"
+      hx-target="#product-content-area"
+      hx-select="#product-content-area"
+      hx-swap="outerHTML transition:true show:none focus-scroll:false"
       hx-sync="this:replace"
     >
-      {/* Label */}
-      <span class="text-sm text-[#212121]">
+      <span class="text-[13px] font-Hanken-Grotesk text-[#212121] uppercase tracking-wider">
         Selecione a cor de desejo
       </span>
 
-      {/* ── Bolinhas de cor ── */}
-      <div class="flex flex-row gap-[6px] flex-wrap">
+      {/* ── BOLINHAS ── */}
+      <div class="flex flex-row gap-[10px] flex-wrap pb-2">
         {colors.map((color, i) => {
           const isSelected = i === selectedIdx.value;
           return (
-            <a
+            <button
+              type="button"
               key={i}
-              href={color.url}
               hx-get={color.sectionUrl}
               hx-push-url={pushUrl ? color.url : undefined}
-              onClick={(e) => {
+              onClick={() => {
                 selectedIdx.value = i;
               }}
               title={color.name}
-              aria-label={`Selecionar cor: ${color.name}`}
               class={clx(
-                "w-[30px] h-[30px] rounded-full flex-shrink-0 transition-all duration-150 overflow-hidden block",
+                "w-[30px] h-[30px] rounded-full flex-shrink-0 transition-all duration-150 overflow-hidden block cursor-pointer outline-none border-none",
                 isSelected
-                  ? "ring-[2.5px] ring-offset-[2px] ring-[#888]"
-                  : "ring-0 hover:ring-[2px] hover:ring-offset-[2px] hover:ring-[#bbb]",
+                  ? "ring-[2.5px] ring-offset-[2px] ring-[#BBB]"
+                  : "ring-0 hover:ring-[2px] hover:ring-offset-[2px] hover:ring-[#DDD]",
               )}
             >
               <img
@@ -102,15 +118,14 @@ export default function ColorVariantSelector(
                 class="w-full h-full object-cover"
                 loading="eager"
               />
-            </a>
+            </button>
           );
         })}
       </div>
 
-      {/* ── Dropdown expandível (details/summary nativo — sem JS) ── */}
-      <details class="border border-[#E2E2E2] rounded-lg overflow-hidden w-full group">
-        <summary class="flex items-center gap-3 px-4 py-[10px] bg-white-15 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden">
-          {/* Swatch circle 40px */}
+      {/* ── CAIXA / DROPDOWN ── */}
+      <details class="border border-[#D4D4D8] rounded-lg overflow-hidden w-full group relative bg-white">
+        <summary class="flex items-center gap-3 px-4 py-[10px] cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden">
           <div class="w-10 h-10 rounded-full overflow-hidden flex-shrink-0 border border-[#F0F0F0]">
             <img
               src={selected?.imgUrl}
@@ -121,7 +136,6 @@ export default function ColorVariantSelector(
             />
           </div>
 
-          {/* Texts */}
           <div class="flex flex-col flex-1 text-left overflow-hidden">
             <span class="text-sm font-semibold text-[#212121] leading-tight truncate">
               {selected?.name}
@@ -131,34 +145,31 @@ export default function ColorVariantSelector(
             </span>
           </div>
 
-          {/* Chevron: fechado = apontando para baixo, aberto = para cima */}
           <span class="text-[#444] flex-shrink-0 transition-transform duration-200 rotate-180 group-open:rotate-0">
             <ChevronUp />
           </span>
         </summary>
 
-        {/* List: all color options */}
-        <div class="border-t border-[#EBEBEB] max-h-[240px] overflow-y-auto">
+        <div class="border-t border-[#EBEBEB] max-h-[300px] overflow-y-auto bg-white">
           {colors.map((color, i) => {
             const isSelected = i === selectedIdx.value;
             return (
-              <a
+              <button
+                type="button"
                 key={i}
-                href={color.url}
                 hx-get={color.sectionUrl}
                 hx-push-url={pushUrl ? color.url : undefined}
-                onClick={(e) => {
-                  selectedIdx.value = i;
+                onClick={() => {
+                   selectedIdx.value = i;
                 }}
                 class={clx(
-                  "w-full flex items-center gap-3 px-4 py-[10px] transition-colors text-left",
+                  "w-full flex items-center gap-3 px-4 py-[10px] transition-colors text-left border-none outline-none cursor-pointer",
                   i > 0 ? "border-t border-[#F2F2F2]" : "",
                   isSelected
                     ? "bg-[#F4F0EB]"
-                    : "bg-white-15 hover:bg-[#FAFAFA]",
+                    : "bg-white hover:bg-[#FAFAFA]",
                 )}
               >
-                {/* Swatch circle 36px */}
                 <div class="w-9 h-9 rounded-full overflow-hidden flex-shrink-0 border border-[#F0F0F0]">
                   <img
                     src={color.imgUrl}
@@ -169,7 +180,6 @@ export default function ColorVariantSelector(
                   />
                 </div>
 
-                {/* Texts */}
                 <div class="flex flex-col text-left overflow-hidden">
                   <span class="text-sm font-semibold text-[#212121] leading-tight truncate">
                     {color.name}
@@ -178,7 +188,7 @@ export default function ColorVariantSelector(
                     {color.subtitle}
                   </span>
                 </div>
-              </a>
+              </button>
             );
           })}
         </div>

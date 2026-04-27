@@ -4,6 +4,7 @@
 
 import * as $_app from "./routes/_app.tsx";
 import * as $AddToCartBuyTogether from "./islands/AddToCartBuyTogether.tsx";
+import * as $CartNotification from "./islands/CartNotification.tsx";
 import * as $ColorDetails from "./islands/ColorDetails.tsx";
 import * as $ColorPaletteInteractiveTabs from "./islands/ColorPaletteInteractiveTabs.tsx";
 import * as $ColorQuiz from "./islands/ColorQuiz.tsx";
@@ -34,6 +35,7 @@ const manifest = {
   },
   islands: {
     "./islands/AddToCartBuyTogether.tsx": $AddToCartBuyTogether,
+    "./islands/CartNotification.tsx": $CartNotification,
     "./islands/ColorDetails.tsx": $ColorDetails,
     "./islands/ColorPaletteInteractiveTabs.tsx": $ColorPaletteInteractiveTabs,
     "./islands/ColorQuiz.tsx": $ColorQuiz,

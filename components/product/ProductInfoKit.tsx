@@ -43,9 +43,13 @@ function ProductInfoKit({ page, kitProducts }: Props) {
 
   const builColorAllProducts = () => {
     const similars = product.isSimilarTo ?? [];
-    let allProducts = similars.length > 0
+    let allProducts = (similars.length > 0
       ? [product, ...similars]
-      : (product.isVariantOf?.hasVariant ?? [product]);
+      : (product.isVariantOf?.hasVariant ?? [product])).sort((a, b) =>
+        (a.productID ?? "").localeCompare(b.productID ?? "", undefined, {
+          numeric: true,
+        })
+      );
 
     const seenIds = new Set<string>();
     return allProducts.filter((p) => {
@@ -174,17 +178,32 @@ function ProductInfoKit({ page, kitProducts }: Props) {
         {...viewItemEvent}
         class="lg:flex hidden flex-col product-info w-[350px]"
         id={id}
+        style="view-transition-name: product-info;"
       >
         <div class="hidden lg:block mb-[30px] -mt-2 [&_.breadcrumbs]:lg:!pt-0">
           <Breadcrumb itemListElement={breadcrumbList?.itemListElement} />
         </div>
-        {product.gtin && (
-          <>
-            <span class="text-[10px] text-black-10">
+        <div class="flex items-center justify-between mt-[-10px] mb-2 pointer-events-none">
+          {/* Rating Section */}
+          <div class="flex items-center gap-1">
+            <Icon id="star-konfidency" size={14} class="text-[#D1927D]" />
+            <span class="text-xs font-semibold text-[#212121]">
+              {(page.product.aggregateRating?.ratingValue ?? 4.5).toFixed(1).replace(".", ",")}
+            </span>
+            <a href="#reviews" class="text-xs text-[#212121] underline ml-1 pointer-events-auto">
+              ({page.product.aggregateRating?.reviewCount ?? 7} Avaliações)
+            </a>
+          </div>
+
+          {/* Reference */}
+          {product.gtin && (
+            <span class="text-[10px] text-black-10 uppercase tracking-wider">
               Ref.: {product.gtin}
             </span>
+          )}
+        </div>
 
-            <div>
+        <div>
               <h1
                 class={clx(
                   "text-3xl text-pink-5 font-semibold lg:font-normal lg:font-Queens",
@@ -211,8 +230,6 @@ function ProductInfoKit({ page, kitProducts }: Props) {
                 </div>
               )}
             </div>
-          </>
-        )}
 
         {hasColors && (
           <ColorVariantSelector
