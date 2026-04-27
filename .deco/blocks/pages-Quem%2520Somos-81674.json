@@ -228,7 +228,7 @@
         "dynamicImage": {
           "mobile": {
             "image": "https://assets.decocache.com/vicbeaute/82d2eb23-8214-44e2-9142-b3450ba8990a/Rectangle-3780.png",
-            "alt": "/"
+            "alt": "/ondeencontrar"
           },
           "desktop": {
             "image": "https://assets.decocache.com/vicbeaute/82d2eb23-8214-44e2-9142-b3450ba8990a/Rectangle-3780.png",
@@ -236,7 +236,7 @@
             "height": 540
           }
         },
-        "finalText": "<p><span style=\"font-size: 12pt\">Em nossos quiosques e parceiros, você pode descobrir de perto a praticidade e multifuncionalidade dos nossos produtos. Explore cores, texturas, teste suas combinações favoritas, receba dicas exclusivas da nossa equipe e leve tudo o que vai realçar a sua beleza natural para casa na hora.</span></p>",
+        "finalText": "<p><span style=\"color: rgb(104, 104, 104); font-size: 16px\">Em nossos quiosques e parceiros, você pode descobrir de perto a praticidade e multifuncionalidade dos nossos produtos. Explore cores, texturas, teste suas combinações favoritas, receba dicas exclusivas da nossa equipe e leve tudo o que vai realçar a sua beleza natural para casa na hora.</span></p>",
         "dynamicButton": {
           "label": "Ver endereços",
           "link": "/"
